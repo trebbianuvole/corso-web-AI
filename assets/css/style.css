@@ -647,3 +647,96 @@ kbd {
   .ng-row, .ng-bars-head { grid-template-columns: 5.5em 1fr 3.4em 2em; gap: 6px; }
   .ng-form { flex-wrap: wrap; }
 }
+
+/* ---------- Storia cliccabile ---------- */
+a.era {
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+a.era:hover, a.era:focus-visible { background: var(--peach); box-shadow: inset 0 -4px 0 var(--orange); }
+a.era:last-child:hover, a.era:last-child:focus-visible { background: #f4c9ac; }
+a.era:hover p { color: var(--ink); }
+a.era .ext { position: absolute; top: 14px; right: 12px; color: var(--muted); opacity: .5; transition: opacity .2s; }
+a.era:hover .ext { opacity: 1; color: var(--orange-deep); }
+.milestones a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-left: -14px;
+  padding: 4px 8px 6px 14px;
+  border-radius: 0 8px 8px 0;
+  transition: background-color .2s ease;
+}
+.milestones a:hover, .milestones a:focus-visible { background: var(--peach); }
+.milestones a:hover b { color: var(--orange-deep); }
+.milestones li { transition: border-color .2s; }
+.milestones li:hover { border-left-color: var(--orange); }
+
+/* ---------- Figure SVG ---------- */
+.figure { margin: 0; }
+.diagram { width: 100%; height: auto; display: block; }
+.diagram text { font-family: var(--f-body); }
+.diagram .lbl { font-size: 15px; fill: var(--muted); }
+.diagram .px-on { fill: var(--ink); }
+.diagram .px-off { fill: var(--paper-2); }
+.diagram .w { stroke: #d8ccb6; stroke-width: 1.2; }
+.diagram .w-hot { stroke: var(--orange); stroke-width: 2.4; opacity: .85; }
+.diagram .n { fill: var(--card); stroke: var(--ink); stroke-width: 2; }
+.diagram .n-in { fill: var(--sky); stroke: var(--ink); stroke-width: 2; }
+.diagram .n-out { fill: var(--orange); stroke: var(--orange-deep); stroke-width: 2; }
+.diagram .out-t { font-family: var(--f-display); font-weight: 700; font-size: 20px; fill: var(--ink); dominant-baseline: middle; }
+.diagram .out-t.dim { fill: var(--muted); font-weight: 600; }
+.diagram .arrow { stroke: var(--orange); stroke-width: 3; fill: none; marker-end: none; }
+
+.venn .v1 { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.venn .v2 { fill: #fbeee3; stroke: #efcfb6; stroke-width: 2; }
+.venn .v3 { fill: var(--peach); stroke: #eeb795; stroke-width: 2; }
+.venn .v4 { fill: var(--orange); }
+.venn .vt { font-family: var(--f-display); font-weight: 700; font-size: 22px; fill: var(--ink); }
+.venn .vs { font-size: 14px; fill: var(--muted); }
+.venn .light { fill: #fff; }
+
+.defs { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.defs li { font-size: .92em; color: var(--muted); }
+.defs b { font-family: var(--f-display); color: var(--ink); margin-right: .35em; }
+
+/* ---------- Chat di esempio ---------- */
+.chat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+  font-size: .85em;
+}
+.bubble { padding: 12px 16px; border-radius: 16px; max-width: 92%; line-height: 1.45; }
+.bubble.user { justify-self: end; background: var(--ink); color: var(--paper); border-bottom-right-radius: 4px; }
+.bubble.bot { background: var(--paper-2); border-bottom-left-radius: 4px; }
+.bubble ol { margin: .5em 0 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.bubble u { text-decoration-color: var(--muted); }
+.flag-bad, .flag-ok {
+  display: inline-block;
+  font-size: .78em;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.flag-bad { background: var(--orange); color: #fff; }
+.flag-ok { background: #cfe6cf; color: #1f4d25; }
+.chat-note { font-size: .9em; color: var(--muted); }
+
+a.card.case { display: block; color: inherit; text-decoration: none; border-left: 4px solid var(--orange); transition: background-color .2s; }
+a.card.case:hover { background: var(--peach); }
+a.card.case:hover p { color: var(--ink); }
+.nn-split { grid-template-columns: 1.5fr 1fr; align-items: center; }
+.nn-split .card { padding: 14px 18px; }
+.venn-split { grid-template-columns: 1.15fr 1fr; }
+.venn .vt { font-size: 25px; }
+.venn .vs { font-size: 16px; }
+@media (max-width: 860px) { .nn-split, .venn-split { grid-template-columns: 1fr; } }

@@ -25,11 +25,10 @@
       lesson: "Le probabilità riflettono ciò che si trova scritto nei testi su cui il modello è stato addestrato: luoghi comuni compresi."
     },
     {
-      label: "Codice",
-      context: "<h1>Benvenuti nel mio",
-      code: true,
-      cands: [["sito", .58], ["blog", .15], ["portfolio", .09], ["negozio", .04], ["mondo", .04], ["profilo", .03]],
-      lesson: "Per un LLM il codice è testo come un altro. Sa scrivere HTML perché ne ha letto moltissimo: è la base del vibe coding."
+      label: "Sito web",
+      context: "Ogni sito web dovrebbe avere una pagina di",
+      cands: [["contatti", .38], ["presentazione", .14], ["accesso", .11], ["benvenuto", .09], ["prenotazione", .07], ["errore", .04]],
+      lesson: "Il modello sa com'è fatto un sito «tipico», perché ne ha visti milioni. Per questo propone in fretta pagine e struttura. Ma propone ciò che è comune, non per forza ciò che serve a voi: per questo serve un piano."
     },
     {
       label: "Favola",
