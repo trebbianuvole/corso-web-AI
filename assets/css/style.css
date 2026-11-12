@@ -742,7 +742,7 @@ a.card.case:hover p { color: var(--ink); }
 @media (max-width: 860px) { .nn-split, .venn-split { grid-template-columns: 1fr; } }
 
 /* ==========================================================
-   Lezione 2
+   Capitolo 2
    ========================================================== */
 
 /* MVP: due strade per arrivare all'auto */
@@ -946,3 +946,6 @@ a.card.case:hover p { color: var(--ink); }
   .screen.desk { width: 100%; max-width: 300px; }
   .screens figure:last-child { flex-basis: 100%; display: grid; justify-items: center; }
 }
+.compare.c4 td:nth-child(2) { color: var(--ink); }
+.compare.c4 thead th { color: var(--ink); }
+.compare.c4 thead th:nth-child(2) { color: var(--orange-deep); }

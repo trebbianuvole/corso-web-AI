@@ -1,4 +1,4 @@
-/* Navigazione "a presentazione" per le pagine delle lezioni.
+/* Navigazione "a presentazione" per le pagine dei capitoli.
    Frecce ← → / PagSu PagGiù / Spazio: slide precedente e successiva.
    F: schermo intero. Le frecce ↑ ↓ scorrono normalmente la pagina. */
 (function () {

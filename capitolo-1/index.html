@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capitolo 1: capire l'AI e orientarsi negli strumenti</title>
+  <meta name="description" content="Capitolo 1 del corso di uso dell'AI e vibe coding: storia, come funziona un LLM, il mercato, Claude e come si organizza un progetto.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="home-link" href="../">Corso <span>AI</span></a>
+  <nav class="chapters" aria-label="Sezioni del capitolo">
+    <button type="button" data-chapter="intro">Cap. 1</button>
+    <button type="button" data-chapter="storia">1.1 <span class="ch-name">Storia</span></button>
+    <button type="button" data-chapter="llm">1.2 <span class="ch-name">LLM</span></button>
+    <button type="button" data-chapter="mercato">1.3 <span class="ch-name">Mercato</span></button>
+    <button type="button" data-chapter="claude">1.4 <span class="ch-name">Claude</span></button>
+    <button type="button" data-chapter="progetto">1.5 <span class="ch-name">Progetto</span></button>
+  </nav>
+  <span class="counter" aria-live="polite"></span>
+  <button class="icon-btn" type="button" data-fullscreen aria-label="Schermo intero" title="Schermo intero (F)">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1.5 5.5v-4h4M10.5 1.5h4v4M14.5 10.5v4h-4M5.5 14.5h-4v-4"/></svg>
+  </button>
+  <span class="progress" aria-hidden="true"></span>
+</header>
+
+<main>
+
+<!-- ======================= COPERTINA ======================= -->
+<section class="slide" data-chapter="intro" id="inizio">
+  <div class="slide-inner">
+    <p class="kicker">Capitolo 1</p>
+    <h2 style="font-size:clamp(2.6rem,6vw,5.6rem);max-width:15ch">Capire l'AI e orientarsi negli strumenti</h2>
+    <p class="lead">Cosa sa fare l'AI, come funziona a grandi linee e come si usa per costruire qualcosa di vero.</p>
+    <ol class="steps mt-l" style="max-width:720px">
+      <li><div><strong>Breve storia</strong> <span>da regole scritte a mano a modelli che scrivono</span></div></li>
+      <li><div><strong>Come funziona un LLM</strong> <span>token, contesto, probabilità, allucinazioni</span></div></li>
+      <li><div><strong>Il mercato oggi</strong> <span>chi fa cosa e cosa sta succedendo</span></div></li>
+      <li><div><strong>Claude</strong> <span>l'app, i modelli, agenti, skill e artifact</span></div></li>
+      <li><div><strong>Organizzare un progetto</strong> <span>prima la ricetta, poi i fornelli</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= 1.1 STORIA ======================= -->
+<section class="slide chapter" data-chapter="storia" id="storia">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">1.1</div>
+    <div>
+      <h2>Breve storia dell'AI</h2>
+      <p>Settant'anni di tentativi per far «pensare» un computer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="storia">
+  <div class="slide-inner">
+    <p class="kicker">1.1 Breve storia</p>
+    <h2>Cinque ere, una dopo l'altra</h2>
+    <div class="eras mt-l">
+      <a class="era" href="https://it.wikipedia.org/wiki/Intelligenza_artificiale_simbolica" target="_blank" rel="noopener"><span class="years">1956 – anni '80</span><h3>AI simbolica</h3><p>Le regole le scrive una persona: «se succede questo, fai quello».</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+      <a class="era" href="https://it.wikipedia.org/wiki/Apprendimento_automatico" target="_blank" rel="noopener"><span class="years">anni '90 – 2000</span><h3>Machine learning</h3><p>Il programma impara le regole da solo, guardando tanti esempi.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+      <a class="era" href="https://it.wikipedia.org/wiki/Apprendimento_profondo" target="_blank" rel="noopener"><span class="years">dal 2012</span><h3>Deep learning</h3><p>Reti neurali con molti strati, tanti dati e schede grafiche.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+      <a class="era" href="https://it.wikipedia.org/wiki/Trasformatore_(informatica)" target="_blank" rel="noopener"><span class="years">2017</span><h3>Transformer</h3><p>L'architettura che sta dentro tutti gli LLM di oggi.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+      <a class="era" href="https://it.wikipedia.org/wiki/Intelligenza_artificiale_generativa" target="_blank" rel="noopener"><span class="years">dal 2022</span><h3>AI generativa</h3><p>Modelli che producono testo, codice, immagini, audio.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+    </div>
+    <ul class="milestones mt-l">
+      <li><a href="https://it.wikipedia.org/wiki/Conferenza_di_Dartmouth" target="_blank" rel="noopener"><b>1956</b><span>A Dartmouth nasce il termine «intelligenza artificiale»</span></a></li>
+      <li><a href="https://it.wikipedia.org/wiki/ELIZA_(chatterbot)" target="_blank" rel="noopener"><b>1966</b><span>ELIZA, il primo chatbot, simula uno psicoterapeuta</span></a></li>
+      <li><a href="https://it.wikipedia.org/wiki/Deep_Blue" target="_blank" rel="noopener"><b>1997</b><span>Deep Blue di IBM batte Kasparov a scacchi</span></a></li>
+      <li><a href="https://it.wikipedia.org/wiki/AlexNet" target="_blank" rel="noopener"><b>2012</b><span>AlexNet riconosce le immagini molto meglio di tutti</span></a></li>
+      <li><a href="https://it.wikipedia.org/wiki/AlphaGo_contro_Lee_Se-dol" target="_blank" rel="noopener"><b>2016</b><span>AlphaGo batte Lee Sedol a Go</span></a></li>
+      <li class="hot"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener"><b>2017</b><span>Google pubblica l'articolo sul Transformer</span></a></li>
+      <li class="hot"><a href="https://it.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener"><b>2022</b><span>Esce ChatGPT: 100 milioni di utenti in due mesi</span></a></li>
+      <li class="hot"><a href="https://it.wikipedia.org/wiki/Agente_intelligente" target="_blank" rel="noopener"><b>2025</b><span>Gli agenti: l'AI che lavora da sola su più passaggi</span></a></li>
+    </ul>
+    <p class="footnote">Ogni riquadro è un link: apre la voce di Wikipedia o l'articolo originale.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="storia">
+  <div class="slide-inner">
+    <p class="kicker">1.1 Breve storia</p>
+    <h2>Regole o esempi? Il filtro antispam</h2>
+    <div class="versus mt-l">
+      <div class="card">
+        <span class="tag">AI simbolica</span>
+        <h3>Scrivo io le regole</h3>
+        <pre class="code" style="margin-top:14px">se il testo contiene "hai vinto"
+   oppure "clicca subito"
+allora → spam</pre>
+        <p class="mt-m">Funziona finché gli spammer non cambiano parole. Ogni nuovo trucco richiede una regola nuova.</p>
+      </div>
+      <div class="vs" aria-hidden="true">vs</div>
+      <div class="card peach">
+        <span class="tag">Machine learning</span>
+        <h3>Gli do gli esempi</h3>
+        <div class="tokens" style="margin-top:14px">
+          <span class="tok">10.000 email «spam»</span>
+          <span class="tok">10.000 email «normali»</span>
+        </div>
+        <p class="mt-m">Il programma trova da solo i segnali che distinguono le due pile, anche quelli a cui nessuno avrebbe pensato. Il deep learning fa lo stesso con molti più dati e molti più «strati».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="slide" data-chapter="storia">
+  <div class="slide-inner">
+    <p class="kicker">1.1 Breve storia</p>
+    <h2>Le reti neurali, il motore del deep learning</h2>
+    <div class="split nn-split mt-m">
+      <figure class="figure"><svg class="diagram" viewBox="0 0 860 390" role="img" aria-labelledby="nn-t nn-d"><title id="nn-t">Schema di una rete neurale</title><desc id="nn-d">Un'immagine di un gatto entra come pixel, attraversa due strati nascosti di neuroni collegati da pesi ed esce come probabilità: gatto 92 per cento, cane 8 per cento.</desc><rect x="20" y="130" width="12" height="12" rx="2" class="px-off"/><rect x="34" y="130" width="12" height="12" rx="2" class="px-on"/><rect x="48" y="130" width="12" height="12" rx="2" class="px-off"/><rect x="62" y="130" width="12" height="12" rx="2" class="px-off"/><rect x="76" y="130" width="12" height="12" rx="2" class="px-off"/><rect x="90" y="130" width="12" height="12" rx="2" class="px-on"/><rect x="104" y="130" width="12" height="12" rx="2" class="px-off"/><rect x="20" y="144" width="12" height="12" rx="2" class="px-off"/><rect x="34" y="144" width="12" height="12" rx="2" class="px-on"/><rect x="48" y="144" width="12" height="12" rx="2" class="px-on"/><rect x="62" y="144" width="12" height="12" rx="2" class="px-off"/><rect x="76" y="144" width="12" height="12" rx="2" class="px-on"/><rect x="90" y="144" width="12" height="12" rx="2" class="px-on"/><rect x="104" y="144" width="12" height="12" rx="2" class="px-off"/><rect x="20" y="158" width="12" height="12" rx="2" class="px-off"/><rect x="34" y="158" width="12" height="12" rx="2" class="px-on"/><rect x="48" y="158" width="12" height="12" rx="2" class="px-on"/><rect x="62" y="158" width="12" height="12" rx="2" class="px-on"/><rect x="76" y="158" width="12" height="12" rx="2" class="px-on"/><rect x="90" y="158" width="12" height="12" rx="2" class="px-on"/><rect x="104" y="158" width="12" height="12" rx="2" class="px-off"/><rect x="20" y="172" width="12" height="12" rx="2" class="px-off"/><rect x="34" y="172" width="12" height="12" rx="2" class="px-on"/><rect x="48" y="172" width="12" height="12" rx="2" class="px-off"/><rect x="62" y="172" width="12" height="12" rx="2" class="px-on"/><rect x="76" y="172" width="12" height="12" rx="2" class="px-off"/><rect x="90" y="172" width="12" height="12" rx="2" class="px-on"/><rect x="104" y="172" width="12" height="12" rx="2" class="px-off"/><rect x="20" y="186" width="12" height="12" rx="2" class="px-off"/><rect x="34" y="186" width="12" height="12" rx="2" class="px-on"/><rect x="48" y="186" width="12" height="12" rx="2" class="px-on"/><rect x="62" y="186" width="12" height="12" rx="2" class="px-on"/><rect x="76" y="186" width="12" height="12" rx="2" class="px-on"/><rect x="90" y="186" width="12" height="12" rx="2" class="px-on"/><rect x="104" y="186" width="12" height="12" rx="2" class="px-off"/><rect x="20" y="200" width="12" height="12" rx="2" class="px-off"/><rect x="34" y="200" width="12" height="12" rx="2" class="px-off"/><rect x="48" y="200" width="12" height="12" rx="2" class="px-on"/><rect x="62" y="200" width="12" height="12" rx="2" class="px-on"/><rect x="76" y="200" width="12" height="12" rx="2" class="px-on"/><rect x="90" y="200" width="12" height="12" rx="2" class="px-off"/><rect x="104" y="200" width="12" height="12" rx="2" class="px-off"/><text x="69" y="238" class="lbl" text-anchor="middle">pixel</text><line x1="200" y1="60" x2="360" y2="80" class="w"/><line x1="200" y1="60" x2="360" y2="150" class="w-hot"/><line x1="200" y1="60" x2="360" y2="220" class="w"/><line x1="200" y1="60" x2="360" y2="290" class="w-hot"/><line x1="200" y1="125" x2="360" y2="80" class="w-hot"/><line x1="200" y1="125" x2="360" y2="150" class="w"/><line x1="200" y1="125" x2="360" y2="220" class="w"/><line x1="200" y1="125" x2="360" y2="290" class="w"/><line x1="200" y1="190" x2="360" y2="80" class="w"/><line x1="200" y1="190" x2="360" y2="150" class="w"/><line x1="200" y1="190" x2="360" y2="220" class="w"/><line x1="200" y1="190" x2="360" y2="290" class="w"/><line x1="200" y1="255" x2="360" y2="80" class="w-hot"/><line x1="200" y1="255" x2="360" y2="150" class="w-hot"/><line x1="200" y1="255" x2="360" y2="220" class="w-hot"/><line x1="200" y1="255" x2="360" y2="290" class="w"/><line x1="200" y1="320" x2="360" y2="80" class="w"/><line x1="200" y1="320" x2="360" y2="150" class="w"/><line x1="200" y1="320" x2="360" y2="220" class="w"/><line x1="200" y1="320" x2="360" y2="290" class="w-hot"/><line x1="360" y1="80" x2="520" y2="80" class="w"/><line x1="360" y1="80" x2="520" y2="150" class="w"/><line x1="360" y1="80" x2="520" y2="220" class="w"/><line x1="360" y1="80" x2="520" y2="290" class="w"/><line x1="360" y1="150" x2="520" y2="80" class="w"/><line x1="360" y1="150" x2="520" y2="150" class="w-hot"/><line x1="360" y1="150" x2="520" y2="220" class="w"/><line x1="360" y1="150" x2="520" y2="290" class="w"/><line x1="360" y1="220" x2="520" y2="80" class="w"/><line x1="360" y1="220" x2="520" y2="150" class="w-hot"/><line x1="360" y1="220" x2="520" y2="220" class="w"/><line x1="360" y1="220" x2="520" y2="290" class="w-hot"/><line x1="360" y1="290" x2="520" y2="80" class="w"/><line x1="360" y1="290" x2="520" y2="150" class="w"/><line x1="360" y1="290" x2="520" y2="220" class="w"/><line x1="360" y1="290" x2="520" y2="290" class="w"/><line x1="520" y1="80" x2="690" y2="140" class="w"/><line x1="520" y1="80" x2="690" y2="240" class="w"/><line x1="520" y1="150" x2="690" y2="140" class="w"/><line x1="520" y1="150" x2="690" y2="240" class="w"/><line x1="520" y1="220" x2="690" y2="140" class="w"/><line x1="520" y1="220" x2="690" y2="240" class="w"/><line x1="520" y1="290" x2="690" y2="140" class="w"/><line x1="520" y1="290" x2="690" y2="240" class="w"/><path d="M120 172 L184 172" class="arrow"/><circle cx="200" cy="60" r="13" class="n-in"/><circle cx="200" cy="125" r="13" class="n-in"/><circle cx="200" cy="190" r="13" class="n-in"/><circle cx="200" cy="255" r="13" class="n-in"/><circle cx="200" cy="320" r="13" class="n-in"/><circle cx="360" cy="80" r="13" class="n"/><circle cx="360" cy="150" r="13" class="n"/><circle cx="360" cy="220" r="13" class="n"/><circle cx="360" cy="290" r="13" class="n"/><circle cx="520" cy="80" r="13" class="n"/><circle cx="520" cy="150" r="13" class="n"/><circle cx="520" cy="220" r="13" class="n"/><circle cx="520" cy="290" r="13" class="n"/><circle cx="690" cy="140" r="13" class="n-out"/><circle cx="690" cy="240" r="13" class="n-out"/><text x="690" y="115" class="lbl" text-anchor="middle">uscita</text><text x="712" y="145" class="out-t">gatto 92%</text><text x="712" y="245" class="out-t dim">cane 8%</text><text x="200" y="365" class="lbl" text-anchor="middle">ingresso</text><text x="440" y="365" class="lbl" text-anchor="middle">strati nascosti</text></svg></figure>
+      <div class="stack">
+        <div class="card"><h3>Il neurone</h3><p>Riceve dei numeri, li moltiplica per dei <em>pesi</em>, li somma e passa il risultato avanti. Niente di più.</p></div>
+        <div class="card"><h3>L'addestramento</h3><p>Si mostrano milioni di esempi e si correggono i pesi un poco alla volta, finché le risposte diventano giuste.</p></div>
+        <div class="card peach"><h3>Perché «deep»</h3><p>Tanti strati uno dopo l'altro. GPT-3, nel 2020, aveva 175 miliardi di pesi; per i modelli di oggi i numeri non sono pubblici.</p></div>
+      </div>
+    </div>
+    <p class="footnote">L'idea si ispira, molto alla lontana, ai neuroni del cervello. Per approfondire: <a href="https://it.wikipedia.org/wiki/Rete_neurale_artificiale" target="_blank" rel="noopener">Rete neurale artificiale su Wikipedia</a>.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="storia">
+  <div class="slide-inner split venn-split">
+    <figure class="figure"><svg class="diagram venn" viewBox="0 0 640 470" role="img" aria-labelledby="v-t v-d"><title id="v-t">AI, machine learning, deep learning e LLM</title><desc id="v-d">Quattro insiemi uno dentro l'altro: l'intelligenza artificiale contiene il machine learning, che contiene il deep learning, che contiene gli LLM.</desc>
+<ellipse cx="320" cy="240" rx="310" ry="222" class="v1"/>
+<ellipse cx="345" cy="282" rx="248" ry="170" class="v2"/>
+<ellipse cx="370" cy="322" rx="182" ry="121" class="v3"/>
+<ellipse cx="395" cy="360" rx="112" ry="72" class="v4"/>
+<text x="320" y="56" text-anchor="middle" class="vt">Intelligenza artificiale</text>
+<text x="320" y="80" text-anchor="middle" class="vs">regole scritte a mano, sistemi esperti, Deep Blue</text>
+<text x="345" y="145" text-anchor="middle" class="vt">Machine learning</text>
+<text x="345" y="168" text-anchor="middle" class="vs">filtri antispam, consigli di Netflix</text>
+<text x="370" y="232" text-anchor="middle" class="vt">Deep learning</text>
+<text x="370" y="255" text-anchor="middle" class="vs">riconoscimento di volti, traduttori</text>
+<text x="395" y="355" text-anchor="middle" class="vt light">LLM</text>
+<text x="395" y="378" text-anchor="middle" class="vs light">ChatGPT, Claude, Gemini</text>
+</svg></figure>
+    <div>
+      <p class="kicker">1.1 Breve storia</p>
+      <h2>Una dentro l'altra, come le matrioske</h2>
+      <p class="lead">Ogni parola è un caso particolare della precedente.</p>
+      <ul class="defs mt-m">
+        <li><b>AI</b> qualunque programma che svolge compiti «intelligenti»</li>
+        <li><b>Machine learning</b> l'AI che impara dagli esempi</li>
+        <li><b>Deep learning</b> il machine learning fatto con reti neurali profonde</li>
+        <li><b>LLM</b> il deep learning applicato al linguaggio, con i Transformer</li>
+      </ul>
+      <div class="card sky mt-m"><h3>E l'AI generativa?</h3><p>Non è un altro cerchio dentro: è un modo di usare questi modelli. Invece di classificare, producono qualcosa di nuovo. Gli LLM generano testo; altri modelli generano immagini, musica, video.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="storia">
+  <div class="slide-inner">
+    <p class="kicker">1.1 Breve storia</p>
+    <h2>Perché proprio adesso?</h2>
+    <p class="lead">Le idee di base esistono da decenni. Dopo il 2010 sono arrivati, insieme, i tre ingredienti che mancavano.</p>
+    <div class="grid g3 trio mt-l">
+      <div class="card"><div class="big">Dati</div><h3 class="mt-m">Internet</h3><p>Miliardi di pagine, libri, codice e immagini da cui imparare.</p></div>
+      <div class="card"><div class="big">Calcolo</div><h3 class="mt-m">Schede grafiche (GPU)</h3><p>Nate per i videogiochi, sono perfette per i calcoli delle reti neurali.</p></div>
+      <div class="card"><div class="big">Algoritmi</div><h3 class="mt-m">Il Transformer</h3><p>Legge tutto il testo insieme e capisce quali parole contano per quali altre.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 1.2 LLM ======================= -->
+<section class="slide chapter" data-chapter="llm" id="llm">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">1.2</div>
+    <div>
+      <h2>Come funziona un LLM</h2>
+      <p>Large Language Model: un modello linguistico di grandi dimensioni.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">1.2 Come funziona un LLM</p>
+      <h2>Fa una cosa sola: indovina il pezzo successivo</h2>
+      <p class="lead">Guarda tutto il testo che ha davanti, calcola quale pezzo è più probabile che venga dopo, lo aggiunge. Poi ricomincia. Parola dopo parola, nasce una risposta.</p>
+    </div>
+    <div class="card">
+      <div class="tokens tok-big">
+        <span class="tok">Il</span><span class="tok"> gatto</span><span class="tok"> dorme</span><span class="tok"> sul</span><span class="tok" style="outline:3px solid var(--orange);background:var(--card)"> ?</span>
+      </div>
+      <div class="ng-bars mt-m" aria-label="Esempio di probabilità">
+        <div class="ng-row top"><span class="w">divano</span><span class="track"><span class="fill" style="width:41%"></span></span><span class="pct">41%</span><span></span></div>
+        <div class="ng-row"><span class="w">letto</span><span class="track"><span class="fill" style="width:27%"></span></span><span class="pct">27%</span><span></span></div>
+        <div class="ng-row"><span class="w">tetto</span><span class="track"><span class="fill" style="width:12%"></span></span><span class="pct">12%</span><span></span></div>
+        <div class="ng-row"><span class="w">tappeto</span><span class="track"><span class="fill" style="width:8%"></span></span><span class="pct">8%</span><span></span></div>
+      </div>
+      <p class="footnote" style="margin-top:14px">Numeri di esempio.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner">
+    <p class="kicker">1.2 Come funziona un LLM</p>
+    <h2>I token: i mattoncini del testo</h2>
+    <p class="lead">Il modello non legge lettere né parole intere, ma token: pezzi di parola. Ogni modello taglia il testo a modo suo.</p>
+    <div class="card mt-l">
+      <div class="tokens tok-big">
+        <span class="tok">Gli</span><span class="tok"> stud</span><span class="tok">enti</span><span class="tok"> proget</span><span class="tok">tano</span><span class="tok"> un</span><span class="tok"> sito</span><span class="tok"> web</span><span class="tok">.</span>
+      </div>
+      <p class="footnote" style="margin-top:14px">Divisione indicativa: 6 parole, 9 token.</p>
+    </div>
+    <div class="grid g3 mt-m">
+      <div class="card"><h3>Si paga a token</h3><p>Costi e limiti d'uso si misurano in token, sia in entrata sia in uscita.</p></div>
+      <div class="card"><h3>L'italiano costa di più</h3><p>Le lingue meno presenti nei dati vengono spezzate in più pezzi rispetto all'inglese.</p></div>
+      <div class="card"><h3>Per questo sbaglia a contare</h3><p>Chiedere «quante r ci sono in ramarro» è difficile: il modello non vede le singole lettere.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">1.2 Come funziona un LLM</p>
+      <h2>Il contesto: la memoria di lavoro</h2>
+      <p class="lead">È tutto quello che il modello vede in quel momento: le vostre istruzioni, la conversazione, i file allegati, la sua risposta.</p>
+    </div>
+    <div class="stack">
+      <div class="card peach"><h3>Grande, ma non infinito</h3><p>I modelli Claude di oggi arrivano a un milione di token: più di mille pagine di testo.</p></div>
+      <div class="card"><h3>Quello che non c'è, non esiste</h3><p>Se un'informazione non è nel contesto il modello non la conosce, o la tira a indovinare. Una nuova chat parte da zero.</p></div>
+      <div class="card"><h3>Più materiale, risposte migliori</h3><p>Allegare il documento giusto vale più di dieci domande ben scritte.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide compact" data-chapter="llm" id="gioco-slide">
+  <div class="slide-inner">
+    <p class="kicker">1.2 Gioco</p>
+    <h2>Indovina la parola successiva</h2>
+    <p class="lead" style="max-width:70ch">Leggete l'inizio della frase e proponete una parola. Poi vediamo cosa avrebbe scelto il modello.</p>
+
+    <div class="ng mt-m" id="gioco">
+      <div class="ng-rounds" role="group" aria-label="Frasi del gioco"></div>
+      <p class="ng-context" aria-live="polite"></p>
+
+      <div class="ng-body">
+        <div class="ng-panel">
+          <h3>Le parole della classe</h3>
+          <form class="ng-form" autocomplete="off">
+            <label class="sr" for="ng-input" style="position:absolute;left:-9999px">Proposta</label>
+            <input id="ng-input" type="text" placeholder="Scrivi una parola e premi Invio">
+            <button class="btn ghost" type="submit">Aggiungi</button>
+          </form>
+          <div class="ng-guesses"></div>
+
+          <div class="ng-actions">
+            <button class="btn" type="button" data-reveal>Mostra le probabilità</button>
+            <button class="btn orange" type="button" data-sample disabled>Fai scegliere al modello</button>
+            <button class="btn ghost" type="button" data-reset>Ricomincia</button>
+          </div>
+
+          <div class="ng-temp">
+            <label for="ng-temp">Temperatura <output>1,0</output></label>
+            <input id="ng-temp" type="range" min="0.1" max="2" step="0.1" value="1">
+            <div class="scale"><span>bassa: sceglie la più probabile</span><span>alta: più sorprese</span></div>
+          </div>
+        </div>
+
+        <div class="ng-panel">
+          <h3>Cosa pensa il modello</h3>
+          <div class="ng-bars"></div>
+          <p class="ng-lesson" hidden></p>
+        </div>
+      </div>
+      <p class="ng-disclaimer">Le probabilità sono illustrative, costruite a mano per il gioco, e mostrano solo le sei parole più probabili. Un modello vero ne considera decine di migliaia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">1.2 Allucinazioni</p>
+      <h2>Quando il modello inventa</h2>
+      <p class="lead">Il modello produce testo plausibile, non testo verificato. Quando non sa, di solito non lo dice: inventa con la stessa sicurezza con cui dice il vero.</p>
+      <p class="footnote">Conversazione costruita come esempio.</p>
+    </div>
+    <figure class="figure chat" aria-label="Esempio di conversazione con un'allucinazione">
+      <div class="bubble user">Mi consigli tre articoli scientifici sul turismo a Torino, con il link?</div>
+      <div class="bubble bot">
+        Certo! Ecco tre fonti utili:
+        <ol>
+          <li>Rossi, M. (2021). <i>Il turismo urbano a Torino dopo le Olimpiadi</i>. Rivista di Geografia Urbana, 14(2). <span class="flag-bad">rivista inesistente</span></li>
+          <li>Bianchi, L. (2019). <i>Musei e flussi turistici in Piemonte</i>. <u>www.studi-turismo.it/bianchi2019</u> <span class="flag-bad">link inventato</span></li>
+          <li>OECD (2020). <i>Tourism Trends and Policies 2020</i>. <span class="flag-ok">esiste davvero</span></li>
+        </ol>
+      </div>
+      <p class="chat-note">Il vero e il falso arrivano mescolati, con lo stesso tono sicuro.</p>
+    </figure>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner">
+    <p class="kicker">1.2 Allucinazioni</p>
+    <h2>Perché succede</h2>
+    <div class="grid g4 mt-l">
+      <div class="card"><span class="tag">Come funziona</span><h3>Sceglie il plausibile</h3><p>Ogni parola è la più probabile, non la più vera. Un titolo credibile e un titolo reale, per il modello, si somigliano molto.</p></div>
+      <div class="card"><span class="tag">Come è addestrato</span><h3>Premia chi risponde</h3><p>Addestramento e test spesso premiano una risposta sicura più di un «non lo so». Il modello impara a tirare a indovinare.</p></div>
+      <div class="card"><span class="tag">Cosa sa</span><h3>Buchi di conoscenza</h3><p>Fatti rari, persone poco note, notizie successive all'addestramento: dove i dati sono pochi, riempie con l'immaginazione.</p></div>
+      <div class="card peach"><span class="tag">Come chiediamo</span><h3>Premesse sbagliate</h3><p>Se la domanda dà per scontato qualcosa di falso, come il Nobel per la matematica, il modello tende ad assecondarla.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner">
+    <p class="kicker">1.2 Allucinazioni</p>
+    <h2>Dove si nascondono</h2>
+    <div class="grid g3 mt-l">
+      <div class="card"><h3>Fonti e citazioni</h3><p>Libri, articoli, sentenze e link che non esistono, con autori e date credibili.</p></div>
+      <div class="card"><h3>Codice</h3><p>Funzioni e librerie inventate. C'è chi registra apposta quei nomi inventati per far scaricare codice malevolo.</p></div>
+      <div class="card"><h3>Numeri e dettagli</h3><p>Date, prezzi, statistiche, biografie: più il dettaglio è preciso e raro, più è a rischio.</p></div>
+    </div>
+    <a class="card case mt-m" href="https://en.wikipedia.org/wiki/Mata_v._Avianca,_Inc." target="_blank" rel="noopener">
+      <span class="tag">Un caso vero, New York 2023</span>
+      <h3>Gli avvocati e le sentenze inventate</h3>
+      <p>Due avvocati presentano in tribunale un atto scritto con ChatGPT. Cita sentenze che non sono mai esistite, complete di citazioni. Il giudice se ne accorge: multa da 5.000 dollari e una pessima figura.</p>
+    </a>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">1.2 Allucinazioni</p>
+      <h2>Come difendersi</h2>
+      <p class="lead">I modelli di oggi sbagliano molto meno di qualche anno fa, ma l'errore non sparirà: è il modo stesso in cui funzionano.</p>
+    </div>
+    <ol class="steps">
+      <li><div><strong>Dategli il materiale</strong><br><span>Un documento allegato batte la memoria del modello.</span></div></li>
+      <li><div><strong>Dategli il permesso di non sapere</strong><br><span>«Se non sei sicuro, dimmelo» riduce le invenzioni.</span></div></li>
+      <li><div><strong>Chiedete le fonti, e apritele</strong><br><span>Con la ricerca web attiva, ogni link si può controllare.</span></div></li>
+      <li><div><strong>Provate il codice</strong><br><span>Nel vibe coding la verifica è semplice: il sito funziona o no.</span></div></li>
+      <li><div><strong>Diffidate delle risposte troppo comode</strong><br><span>Se è esattamente ciò che speravate, controllate due volte.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide" data-chapter="llm">
+  <div class="slide-inner">
+    <p class="kicker">1.2 Come funziona un LLM</p>
+    <h2>Multimodalità: non solo testo</h2>
+    <p class="lead">I modelli di oggi leggono immagini, documenti e audio, e oltre al testo producono codice, grafici e file.</p>
+    <div class="grid g3 mt-l">
+      <div class="card"><span class="tag">Foto</span><h3>Uno schizzo su carta</h3><p>Disegnate a mano la pagina che volete, fotografatela, e chiedete l'HTML.</p></div>
+      <div class="card"><span class="tag">Screenshot</span><h3>Un errore sullo schermo</h3><p>Invece di descriverlo, lo mostrate. Il modello legge il messaggio e propone la correzione.</p></div>
+      <div class="card"><span class="tag">Documento</span><h3>Un PDF o un menu</h3><p>Il menu del ristorante diventa la pagina del menu del sito, già impaginata.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 1.3 MERCATO ======================= -->
+<section class="slide chapter" data-chapter="mercato" id="mercato">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">1.3</div>
+    <div>
+      <h2>Il mercato e cosa sta succedendo</h2>
+      <p>Una fotografia di novembre 2026. Tra sei mesi sarà già diversa.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="mercato">
+  <div class="slide-inner">
+    <p class="kicker">1.3 Il mercato</p>
+    <h2>Chi costruisce i modelli</h2>
+    <div class="grid g3 mt-l">
+      <div class="card vendor"><h3>OpenAI <span class="flag">Stati Uniti</span></h3><p class="product">ChatGPT</p><p>Famiglia GPT-6: l'ultimo è GPT-6.1 Terra, uscito a fine ottobre.</p></div>
+      <div class="card vendor"><h3>Google <span class="flag">Stati Uniti</span></h3><p class="product">Gemini</p><p>Gemini 4 Argon, disponibile da metà ottobre. Integrato in Android, Gmail, Docs.</p></div>
+      <div class="card vendor peach"><h3>Anthropic <span class="flag">Stati Uniti</span></h3><p class="product">Claude</p><p>Haiku, Sonnet e Opus 5.5, più Fable 5.1 in cima alla gamma. Forte soprattutto sul codice.</p></div>
+      <div class="card vendor"><h3>Mistral <span class="flag">Francia</span></h3><p class="product">Le Chat</p><p>Il principale laboratorio europeo. Mistral Large 4 è in anteprima.</p></div>
+      <div class="card vendor"><h3>xAI e Meta <span class="flag">Stati Uniti</span></h3><p class="product">Grok, Meta AI</p><p>Grok dentro X; Meta AI dentro WhatsApp, Instagram e Facebook.</p></div>
+      <div class="card vendor"><h3>DeepSeek, Qwen, Kimi <span class="flag">Cina</span></h3><p class="product">Modelli aperti</p><p>Molti modelli cinesi si possono scaricare e far girare in proprio.</p></div>
+    </div>
+    <p class="footnote">Situazione a inizio novembre 2026. Nomi e versioni cambiano ogni poche settimane.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="mercato">
+  <div class="slide-inner">
+    <p class="kicker">1.3 Il mercato</p>
+    <h2>Gli strumenti per creare siti e app</h2>
+    <p class="lead">Lo stesso modello può stare dentro strumenti molto diversi. Cambia quanto controllo avete voi.</p>
+    <div class="grid g4 mt-l">
+      <div class="card"><span class="tag">Chat</span><h3>Chiedi e copi</h3><p>ChatGPT, Claude, Gemini. Ottimi per capire, progettare, scrivere pezzi di codice.</p></div>
+      <div class="card"><span class="tag">Costruttori visuali</span><h3>Descrivi e guardi</h3><p>Lovable, Bolt, v0, Replit. Scrivete cosa volete, l'app compare. Comodi, ma vi nascondono molto.</p></div>
+      <div class="card"><span class="tag">Assistenti nell'editor</span><h3>Scrivi con un aiuto</h3><p>GitHub Copilot, Cursor. Suggeriscono e modificano codice mentre lavorate.</p></div>
+      <div class="card peach"><span class="tag">Agenti di programmazione</span><h3>Delega il lavoro</h3><p>Claude Code, Codex di OpenAI. Ricevono un obiettivo, leggono il progetto, scrivono, provano, correggono.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="mercato">
+  <div class="slide-inner">
+    <p class="kicker">1.3 Cosa sta succedendo</p>
+    <h2>Cosa sta succedendo in matematica</h2>
+    <ul class="news mt-l">
+      <li><time>Luglio 2025</time><p>Modelli di Google DeepMind e OpenAI risolvono 5 problemi su 6 alle Olimpiadi internazionali di matematica: livello medaglia d'oro.</p></li>
+      <li><time>Gennaio 2026</time><p>GPT-5.2 risolve alcuni «problemi di Erdős», domande aperte lasciate dal matematico ungherese, per cui non si conosceva una soluzione.</p></li>
+      <li><time>Luglio 2026</time><p>Con Claude Fable 5 si trova un controesempio alla congettura Jacobiana, aperta dal 1939: la congettura è falsa.<small>Il controesempio è stato verificato al computer, con Lean, entro il giorno dopo.</small></p></li>
+      <li><time>Settembre 2026</time><p>Un modello di ricerca di Anthropic riscrive in Lean, in 11 giorni e quasi da solo, l'intera dimostrazione dell'Ultimo teorema di Fermat, che ora è controllata al computer.<small>Circa 13 milioni di righe di Lean: la più grande dimostrazione formale mai costruita.</small></p></li>
+      <li><time>Ottobre 2026</time><p>OpenAI annuncia risultati in analisi armonica, informatica teorica e fisica.<small>Al momento dell'annuncio gli esperti li stanno ancora verificando.</small></p></li>
+    </ul>
+    <p class="footnote">Fonti:
+      <a href="https://renyi.hu/en/news/we-are-midst-historic-moment-erdos-problems-solved-chatgpt">Istituto Rényi</a>,
+      <a href="https://fortune.com/2026/07/21/ai-solves-jacobian-conjecture-levant-alpoge-claude-fable-5/">Fortune</a>,
+      <a href="https://www.anthropic.com/news/formalizing-fermats-last-theorem">Anthropic</a>,
+      <a href="https://www.aljazeera.com/economy/2026/10/27/ai-makes-discoveries-in-mathematics-computer-science-physics-openai-says">Al Jazeera</a>.
+    </p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="mercato">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">1.3 Cosa sta succedendo</p>
+      <h2>Perché ci riguarda, anche se non facciamo matematica</h2>
+      <p class="lead">La matematica è il campo dove un risultato si può controllare in modo definitivo. Ed è lì che i modelli sono migliorati più in fretta.</p>
+    </div>
+    <div class="stack">
+      <div class="card peach"><h3>Produrre è diventato facile</h3><p>Un modello scrive una dimostrazione, o un sito, in pochi minuti.</p></div>
+      <div class="card"><h3>Verificare resta il lavoro vero</h3><p>I matematici usano Lean per controllare. Noi controlleremo il codice provandolo, leggendolo, mettendolo online.</p></div>
+      <div class="card"><h3>Il dibattito è aperto</h3><p>Tra i matematici c'è chi parla di età dell'oro e chi teme di perdere la comprensione di ciò che si dimostra.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 1.4 CLAUDE ======================= -->
+<section class="slide chapter" data-chapter="claude" id="claude">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">1.4</div>
+    <div>
+      <h2>Claude</h2>
+      <p>Lo strumento che useremo per tutto il corso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="claude">
+  <div class="slide-inner">
+    <p class="kicker">1.4 Claude</p>
+    <h2>Dove si usa</h2>
+    <div class="grid g3 mt-l">
+      <div class="card"><span class="tag">Web e telefono</span><h3>Claude</h3><p>Su claude.ai e nell'app. Si chatta, si allegano file, si ottengono documenti, grafici e pagine pronte.</p></div>
+      <div class="card peach"><span class="tag">Sul vostro computer</span><h3>Claude Desktop</h3><p>Lo stesso Claude, ma può lavorare sulle cartelle del PC, usare il browser e portare avanti attività lunghe.</p></div>
+      <div class="card"><span class="tag">Per programmare</span><h3>Claude Code</h3><p>Un agente che lavora dentro un progetto di codice: legge i file, li modifica, esegue comandi, pubblica su GitHub.</p></div>
+    </div>
+    <div class="card sky mt-m">
+      <h3>E Cowork?</h3>
+      <p>Era la modalità in cui Claude lavora in autonomia su file e attività. Ora chat e Cowork sono una cosa sola: è Claude a decidere se rispondere al volo o mettersi al lavoro. La novità arriva per gradi, quindi su qualche account potreste ancora vedere le due voci separate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="claude">
+  <div class="slide-inner">
+    <p class="kicker">1.4 Claude</p>
+    <h2>I modelli: scegliere la taglia giusta</h2>
+    <p class="lead">Più grande non vuol dire sempre migliore: i modelli grandi sono più lenti e consumano più in fretta i limiti d'uso.</p>
+    <div class="models mt-l">
+      <div class="model"><h3>Haiku 5.5</h3><p>Il più veloce. Per compiti semplici e ripetitivi.</p><div class="meter" aria-label="potenza 1 su 4"><i class="on"></i><i></i><i></i><i></i></div></div>
+      <div class="model"><h3>Sonnet 5.5</h3><p>L'equilibrio tra velocità e intelligenza. Il punto di partenza.</p><div class="meter" aria-label="potenza 2 su 4"><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+      <div class="model"><h3>Opus 5.5</h3><p>Per lavori lunghi e complessi, come scrivere e sistemare un intero progetto.</p><div class="meter" aria-label="potenza 3 su 4"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+      <div class="model"><h3>Fable 5.1</h3><p>Il ragionamento più impegnativo e i compiti più lunghi.</p><div class="meter" aria-label="potenza 4 su 4"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+    </div>
+    <div class="models-axis"><span>più veloce, consuma meno</span><span>più capace, più lento</span></div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="claude">
+  <div class="slide-inner">
+    <p class="kicker">1.4 Claude</p>
+    <h2>Le parole da conoscere</h2>
+    <div class="grid g2 mt-l">
+      <div class="card"><h3>Chatbot</h3><p>Risponde alle domande. Il lavoro lo fate voi: copiate, incollate, provate.</p></div>
+      <div class="card peach"><h3>Agente</h3><p>Riceve un obiettivo e lo porta a termine da solo, in più passaggi: cerca, legge file, scrive codice, lo prova, corregge.</p></div>
+      <div class="card"><h3>Artifact</h3><p>Una pagina, un'app o un documento creato da Claude, che si apre, si modifica e si condivide con un link.</p></div>
+      <div class="card"><h3>Skill</h3><p>Un pacchetto di istruzioni, ed eventualmente script, che Claude carica solo quando serve. Come una ricetta di famiglia per un compito preciso.</p></div>
+    </div>
+    <p class="footnote">Poi ci sono i connettori, che collegano Claude ad altre app come Gmail o GitHub. Li vedremo in un capitolo successivo.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="claude">
+  <div class="slide-inner">
+    <p class="kicker">1.4 Claude</p>
+    <h2>Come è nato questo sito</h2>
+    <p class="lead">Non è una presentazione: è un sito vero, costruito con gli stessi strumenti che userete voi.</p>
+    <div class="pipe mt-l">
+      <div><b>Il piano</b><span>Scaletta e contenuti decisi prima, a mano</span></div>
+      <div><b>Claude</b><span>Scrive HTML, CSS e JavaScript nella cartella del corso</span></div>
+      <div><b>GitHub</b><span>Conserva il codice e tutte le sue versioni</span></div>
+      <div><b>Vercel</b><span>Prende il codice da GitHub e lo mette online</span></div>
+      <div><b>Il link</b><span>Lo state guardando adesso</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 1.5 PROGETTO ======================= -->
+<section class="slide chapter" data-chapter="progetto" id="progetto">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">1.5</div>
+    <div>
+      <h2>Come si organizza un progetto con l'AI</h2>
+      <p>Nessuno cucina un piatto nuovo aprendo il frigo a caso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="progetto">
+  <div class="slide-inner">
+    <p class="kicker">1.5 Organizzare un progetto</p>
+    <h2>Un sito è una ricetta</h2>
+    <table class="recipe mt-l">
+      <thead><tr><th>In cucina</th><th>Nel progetto</th><th>La domanda da farsi</th></tr></thead>
+      <tbody>
+        <tr><td>Il piatto</td><td>L'obiettivo</td><td>Cosa deve fare il sito, in una frase?</td></tr>
+        <tr><td>Per quanti ospiti</td><td>Il pubblico</td><td>Chi lo userà, e da quale dispositivo?</td></tr>
+        <tr><td>Gli ingredienti</td><td>Contenuti e risorse</td><td>Testi, foto, logo, colori: cosa ho già, cosa manca?</td></tr>
+        <tr><td>Gli utensili</td><td>Gli strumenti</td><td>Claude, GitHub, Vercel: ho gli account pronti?</td></tr>
+        <tr><td>Il procedimento</td><td>Il piano a passi</td><td>In che ordine costruisco le pagine?</td></tr>
+        <tr><td>Assaggiare</td><td>Verificare</td><td>Funziona? Si legge bene dal telefono?</td></tr>
+        <tr><td>Impiattare</td><td>Pubblicare</td><td>È pronto per essere mostrato?</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="slide" data-chapter="progetto">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">1.5 Organizzare un progetto</p>
+      <h2>Il piano si fa a mano, prima</h2>
+      <p class="lead">L'AI esegue molto bene un piano chiaro. Non può decidere al posto vostro cosa volete.</p>
+    </div>
+    <ol class="steps">
+      <li><div><strong>L'obiettivo in una frase</strong><br><span>«Un sito che fa prenotare un tavolo in due clic.»</span></div></li>
+      <li><div><strong>Il pubblico</strong><br><span>Chi è, cosa cerca, cosa sa già.</span></div></li>
+      <li><div><strong>La mappa su carta</strong><br><span>Quali pagine, cosa c'è in ognuna.</span></div></li>
+      <li><div><strong>La raccolta delle risorse</strong><br><span>Testi, immagini, riferimenti di stile.</span></div></li>
+      <li><div><strong>Solo adesso: Claude</strong><br><span>Con il piano in mano, il primo prompt è facile.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide" data-chapter="progetto">
+  <div class="slide-inner">
+    <p class="kicker">1.5 Organizzare un progetto</p>
+    <h2>La differenza la fa il brief</h2>
+    <div class="grid g2 brief mt-l">
+      <div class="card bad">
+        <h3>Così Claude tira a indovinare</h3>
+        <blockquote>Fammi un sito per un ristorante.</blockquote>
+        <p class="mt-m">Colori, pagine, testi e stile li sceglie lui. Il risultato sarà generico.</p>
+      </div>
+      <div class="card good">
+        <h3>Così Claude sa cosa fare</h3>
+        <blockquote>Sito per la trattoria «Da Rina» a Torino, cucina piemontese. Pubblico: famiglie e turisti, quasi tutti da telefono. Tre pagine: home con foto e orari, menu (allego il PDF), prenotazioni via WhatsApp. Stile caldo e semplice, come il sito che allego come esempio.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="progetto">
+  <div class="slide-inner">
+    <p class="kicker">1.5 Organizzare un progetto</p>
+    <h2>Prima di accendere i fornelli</h2>
+    <ul class="checklist mt-l">
+      <li><div><strong>L'obiettivo è scritto</strong><span>Una frase che anche un estraneo capirebbe.</span></div></li>
+      <li><div><strong>La mappa delle pagine c'è</strong><span>Anche solo un foglio con dei rettangoli.</span></div></li>
+      <li><div><strong>I testi principali sono pronti</strong><span>Almeno una bozza, scritta da voi.</span></div></li>
+      <li><div><strong>Le immagini sono raccolte</strong><span>Vostre, o con licenza che ne permette l'uso.</span></div></li>
+      <li><div><strong>Ho due o tre siti di riferimento</strong><span>Quelli di cui mi piace lo stile.</span></div></li>
+      <li><div><strong>Gli account funzionano</strong><span>Claude, GitHub, Vercel.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide" data-chapter="progetto">
+  <div class="slide-inner">
+    <p class="kicker">Per la prossima volta</p>
+    <h2 style="max-width:18ch">Pensate al vostro sito</h2>
+    <div class="grid g3 mt-l">
+      <div class="card peach"><h3>Il piatto</h3><p>Che sito vorreste costruire, e a cosa serve?</p></div>
+      <div class="card"><h3>Gli ospiti</h3><p>Per chi è? Chi lo aprirà, e perché?</p></div>
+      <div class="card"><h3>Gli ingredienti</h3><p>Cosa avete già: testi, foto, idee, esempi che vi piacciono?</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="hint" role="status">Usa <kbd>←</kbd> <kbd>→</kbd> per le slide, <kbd>F</kbd> per lo schermo intero</div>
+
+<script src="../assets/js/deck.js"></script>
+<script src="../assets/js/next-word.js"></script>
+</body>
+</html>
