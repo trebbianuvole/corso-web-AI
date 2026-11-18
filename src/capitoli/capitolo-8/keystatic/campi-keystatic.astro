@@ -1,0 +1,18 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="8.3 Keystatic" titolo="I campi" lead="Ogni contenuto è fatto di campi, e ogni campo ha un tipo. Il tipo decide cosa vede il cliente nel modulo.">
+  <table class="compare mt-l">
+    <thead><tr><th>Campo</th><th>Nel pannello</th><th>Per la trattoria</th></tr></thead>
+    <tbody>
+      <tr><td>Testo</td><td data-label="Nel pannello">Una riga, o un riquadro più grande</td><td data-label="Per la trattoria">Nome e descrizione del piatto</td></tr>
+      <tr><td>Numero</td><td data-label="Nel pannello">Solo cifre</td><td data-label="Per la trattoria">Il prezzo</td></tr>
+      <tr><td>Scelta</td><td data-label="Nel pannello">Un menu a tendina, o caselle da spuntare</td><td data-label="Per la trattoria">La categoria, gli allergeni</td></tr>
+      <tr><td>Data</td><td data-label="Nel pannello">Un calendario</td><td data-label="Per la trattoria">Il giorno della serata a tema</td></tr>
+      <tr><td>Immagine</td><td data-label="Nel pannello">Carica un file</td><td data-label="Per la trattoria">La foto del piatto</td></tr>
+      <tr><td>Elenco</td><td data-label="Nel pannello">Righe da aggiungere e togliere</td><td data-label="Per la trattoria">Gli orari, giorno per giorno</td></tr>
+      <tr><td>Testo formattato</td><td data-label="Nel pannello">Grassetto, titoli, link</td><td data-label="Per la trattoria">La storia del locale</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote">Ce ne sono altri: casella sì/no, link, relazione con un altro contenuto. Fonte: <a href="https://keystatic.com/docs/fields/text" target="_blank" rel="noopener">Keystatic, i campi</a>.</p>
+</Slide>

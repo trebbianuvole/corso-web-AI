@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.2 I CMS" titolo="Quattro famiglie di CMS" lead="Nella 2.3 li abbiamo incontrati di sfuggita. Ora da vicino: quattro modi diversi di separare contenuti e sito.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Tradizionali" titolo="WordPress">Sito e pannello sono un unico programma, con un database. Il più diffuso al mondo.</Card>
+    <Card tag="Costruttori" titolo="Wix, Squarespace">Si trascinano i blocchi nel browser. Tutto incluso, ma tutto nelle mani del fornitore.</Card>
+    <Card tag="Headless" titolo="Sanity, Contentful">Solo il pannello, in cloud: il sito chiede i contenuti con un'API (2.5).</Card>
+    <Card variante="peach" tag="Basati su Git" titolo="Keystatic, Decap, Tina">Il pannello salva i contenuti come file nel repository. Niente database.</Card>
+  </Grid>
+  <p class="footnote">A novembre 2026 WordPress muove circa il 39% di tutti i siti web. Fonte: <a href="https://w3techs.com/technologies/overview/content_management" target="_blank" rel="noopener">W3Techs</a>.</p>
+</Slide>

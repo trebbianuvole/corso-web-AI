@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 8" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Contenuti e CMS" lead="Il sito è online. Il cliente vuole cambiare un prezzo. Chi lo fa, e come?">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Contenuti e codice" inLinea>due cose diverse, con due proprietari</Passo>
+    <Passo titolo="I CMS e Keystatic" inLinea>un pannello per il cliente, i file per voi</Passo>
+    <Passo titolo="Keystatic con Claude Code" inLinea>dallo schema al pannello online</Passo>
+    <Passo titolo="Scrivere per il web" inLinea>testi che si leggono a salti</Passo>
+    <Passo titolo="Immagini e media" inLinea>peso, licenze, persone, contenuti generati</Passo>
+  </Steps>
+  <SieteQui capitolo={8} classe="mt-m" />
+</Slide>

@@ -1,0 +1,12 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.1 Contenuti e codice" titolo="Dove possono stare i contenuti" lead="Quattro posti possibili, dal più semplice al più complesso.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Dentro il codice</span><b>Nella pagina</b><span>il prezzo scritto nell'HTML. Cambiarlo vuol dire modificare il codice</span></div>
+    <div><span class="role">Accanto al codice</span><b>In file di dati</b><span>l'elenco dei piatti della 6.5.6, in un file a parte. Già meglio</span></div>
+    <div><span class="role">Con un pannello</span><b>In un CMS</b><span>gli stessi file, ma il cliente li modifica da un modulo, senza vederli</span></div>
+    <div><span class="role">Altrove</span><b>In un database</b><span>per i dati che cambiano di continuo e li scrivono gli utenti: le prenotazioni di PrenotaAula (capitolo 10)</span></div>
+  </div>
+  <p class="lead mt-m">Per il menu della trattoria, il terzo posto è quello giusto: i contenuti restano file nel repository, e Rina ha il suo pannello.</p>
+</Slide>

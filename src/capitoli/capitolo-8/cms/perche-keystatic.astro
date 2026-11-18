@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.2 I CMS" titolo="Perché Keystatic" lead="Per un sito come quello della trattoria, quattro motivi.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="1" titolo="Gratuito">Open source, senza abbonamento.</Card>
+    <Card tag="2" titolo="Contenuti come file">Nel repository, con la loro storia in Git (capitolo 4).</Card>
+    <Card tag="3" titolo="Niente database">Niente da installare, aggiornare, proteggere a parte.</Card>
+    <Card variante="peach" tag="4" titolo="Un pannello semplice">Moduli chiari, con i campi che decidete voi.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Il prezzo da pagare">Funziona dentro un framework, per questo il corso usa Astro (2.4). E per il pannello online il sito ha bisogno di una piccola parte che gira sul server (8.4.5).</Card>
+  <p class="footnote">Fonte: <a href="https://keystatic.com/" target="_blank" rel="noopener">Keystatic</a>.</p>
+</Slide>

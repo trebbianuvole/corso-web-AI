@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.3 Keystatic" titolo="Dal salvataggio al sito online" lead="Rina cambia il prezzo e preme Salva. Due minuti dopo, il menu online è aggiornato. In mezzo, tutto quello che avete visto nel capitolo 4.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Rina</span><b>Salva</b><span>nel pannello, dal telefono o dal computer</span></div>
+    <div><span class="role">Keystatic</span><b>Commit</b><span>il file del piatto cambia, su GitHub</span></div>
+    <div><span class="role">Vercel</span><b>Build</b><span>vede il commit e ricostruisce il sito (4.6.4)</span></div>
+    <div><span class="role">I clienti</span><b>Il prezzo nuovo</b><span>online, senza che voi abbiate fatto niente</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Per voi, un vantaggio in più">Nella storia del repository vedete cosa ha cambiato Rina e quando. E se una sua modifica rompe la build, Vercel non pubblica: il sito resta com'era.</Card>
+</Slide>

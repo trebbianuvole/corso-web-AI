@@ -1,0 +1,19 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="8.3 Keystatic" titolo="Dove finiscono i contenuti" lead="Quando Rina salva, Keystatic scrive un file di testo nel repository. Nessun database: i contenuti sono file, come il codice (2.5.3).">
+  <Card slot="intro" variante="sky mt-m" titolo="Tre formati">YAML e JSON per i dati, come il piatto qui accanto. Markdoc per i testi lunghi formattati, come la storia del locale.</Card>
+  <div>
+<pre class="code" aria-label="Il file YAML del piatto Tagliatelle al ragù"><span class="m"># src/content/piatti/tagliatelle-al-ragu.yaml</span>
+<span class="k">nome:</span> Tagliatelle al ragù
+<span class="k">categoria:</span> primi
+<span class="k">prezzo:</span> 13
+<span class="k">descrizione:</span> Fatte a mano, ragù della casa
+<span class="k">allergeni:</span>
+  - glutine
+  - uova
+  - sedano</pre>
+    <p class="footnote">Il nome del file viene dal nome del piatto. Leggibile da una persona, da Git e da Claude.</p>
+  </div>
+</Slide>

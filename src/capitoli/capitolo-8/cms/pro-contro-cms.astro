@@ -1,0 +1,15 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="8.2 I CMS" titolo="Pro e contro" lead="Non esiste il CMS migliore: esiste quello giusto per quel cliente.">
+  <table class="compare mt-m">
+    <thead><tr><th></th><th>Tradizionali</th><th>Costruttori</th><th>Headless</th><th>Basati su Git</th></tr></thead>
+    <tbody>
+      <tr><td>Costi</td><td data-label="Tradizionali">Hosting e manutenzione</td><td data-label="Costruttori">Abbonamento mensile</td><td data-label="Headless">Gratis fino a una soglia, poi a utente</td><td data-label="Basati su Git">Spesso gratis</td></tr>
+      <tr><td>Sicurezza</td><td data-label="Tradizionali">Aggiornamenti continui di sistema e plugin</td><td data-label="Costruttori">Ci pensa il fornitore</td><td data-label="Headless">Ci pensa il fornitore</td><td data-label="Basati su Git">Sito statico: poco da attaccare</td></tr>
+      <tr><td>Libertà di design</td><td data-label="Tradizionali">Media, legata ai temi</td><td data-label="Costruttori">Bassa</td><td data-label="Headless">Totale</td><td data-label="Basati su Git">Totale</td></tr>
+      <tr><td>Dipendenza</td><td data-label="Tradizionali">Bassa, è open source</td><td data-label="Costruttori">Alta: andarsene è difficile</td><td data-label="Headless">Media: i contenuti stanno da loro</td><td data-label="Basati su Git">Bassa: i contenuti sono vostri file</td></tr>
+      <tr><td>Con l'AI</td><td data-label="Tradizionali">Via plugin e API</td><td data-label="Costruttori">Strumenti propri</td><td data-label="Headless">Via API e MCP</td><td data-label="Basati su Git">Claude legge e modifica i file</td></tr>
+    </tbody>
+  </table>
+</Slide>

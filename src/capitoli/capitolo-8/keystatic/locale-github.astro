@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.3 Keystatic" titolo="Modalità locale e modalità GitHub" lead="Lo stesso pannello può salvare in due posti diversi. Si sceglie nello schema, con una riga.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Mentre sviluppate</span>
+      <h3>Locale</h3>
+      <p>Il pannello gira sul vostro computer, su localhost, e salva i file nella cartella del progetto. Il commit lo fate voi.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Per il cliente</span>
+      <h3>GitHub</h3>
+      <p>Il pannello gira sul sito online. Ogni salvataggio diventa un commit nel repository su GitHub (capitolo 4).</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Ogni modifica ha una storia">In modalità GitHub, se Rina cancella per sbaglio un piatto, si recupera dalla storia di Git come qualsiasi altra modifica (4.3.7).</Card>
+  <p class="footnote">Fonte: <a href="https://keystatic.com/docs/github-mode" target="_blank" rel="noopener">Keystatic, modalità GitHub</a>.</p>
+</Slide>

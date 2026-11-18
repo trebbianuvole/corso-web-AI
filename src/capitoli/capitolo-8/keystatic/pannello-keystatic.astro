@@ -1,0 +1,18 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="8.3 Keystatic" titolo="Il pannello /keystatic" lead="All'indirizzo del sito più /keystatic. Rina vede solo quello che le serve: i piatti, gli orari, gli eventi.">
+  <div class="pannello mt-l" role="img" aria-label="Il pannello di Keystatic: a sinistra le voci Piatti, Eventi, Orari; a destra il modulo del piatto Tagliatelle al ragù con nome, categoria, prezzo, descrizione e allergeni, e il pulsante Salva">
+    <div class="pn-lato"><b>Trattoria Da Rina</b><span class="pn-sel">Piatti</span><span>Eventi</span><span>Orari</span></div>
+    <div class="pn-corpo">
+      <p class="pn-tit">Tagliatelle al ragù</p>
+      <label>Nome<span class="pn-campo">Tagliatelle al ragù</span></label>
+      <label>Categoria<span class="pn-campo">Primi ▾</span></label>
+      <label>Prezzo (€)<span class="pn-campo pn-hot">13</span></label>
+      <label>Descrizione<span class="pn-campo">Fatte a mano, ragù della casa</span></label>
+      <label>Allergeni<span class="pn-campo">☑ glutine ☑ uova ☑ sedano</span></label>
+      <span class="pn-salva">Salva</span>
+    </div>
+  </div>
+  <p class="footnote">Disegno semplificato. Il pannello vero ha lo stesso schema: elenco a sinistra, modulo a destra.</p>
+</Slide>

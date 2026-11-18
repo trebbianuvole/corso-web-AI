@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.3 Formati e Keystatic Cloud" titolo="Keystatic Cloud" lead="In modalità GitHub chi modifica deve avere un account GitHub con accesso al repository. Per molti clienti è un ostacolo. Keystatic Cloud lo toglie.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Cosa fa" titolo="L'accesso senza GitHub">Gestisce lui il collegamento a GitHub: niente app GitHub da creare, niente variabili d'ambiente. Chi modifica entra senza un account GitHub.</Card>
+    <Card tag="Quanto costa" titolo="Gratis fino a tre persone">Il piano gratuito ha squadre e progetti illimitati, con al massimo 3 utenti per squadra. Il piano Pro aggiunge utenti e lo spazio per le immagini.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Per la trattoria">Rina, il figlio e voi: tre persone, il piano gratuito basta. È la strada più semplice per un cliente che non sa cos'è GitHub.</Card>
+  <p class="footnote">Fonte: <a href="https://keystatic.com/docs/cloud" target="_blank" rel="noopener">Keystatic Cloud</a>, controllata il 18 novembre 2026: i prezzi possono cambiare.</p>
+</Slide>
