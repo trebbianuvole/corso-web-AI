@@ -949,3 +949,94 @@ a.card.case:hover p { color: var(--ink); }
 .compare.c4 td:nth-child(2) { color: var(--ink); }
 .compare.c4 thead th { color: var(--ink); }
 .compare.c4 thead th:nth-child(2) { color: var(--orange-deep); }
+
+/* ---------- Serpentina "Dal 2017 a oggi" (1.1) ---------- */
+.milestones li.more { border-left-color: transparent; padding-left: 0; display: flex; align-items: center; }
+.milestones li.more:hover { border-left-color: transparent; }
+.snake-open { display: inline-flex; gap: .5em; align-items: center; font-size: .9em; padding: 13px 18px; }
+.snake-open span { transition: transform .2s ease; }
+.snake-open:hover span { transform: translateX(3px); }
+
+html:has(dialog[open]) { overflow: hidden; }
+.snake-dialog {
+  width: min(1120px, 94vw);
+  max-width: none;
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-l);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: inherit;
+  box-shadow: 0 30px 80px rgba(31, 35, 48, .35);
+}
+.snake-dialog::backdrop { background: rgba(31, 35, 48, .6); }
+.snake-dialog[open] { animation: snake-in .25s ease; }
+@keyframes snake-in { from { opacity: 0; transform: translateY(12px); } }
+.snake-box { padding: clamp(20px, 3vw, 40px); }
+.snake-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.snake-head h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); max-width: 22ch; }
+.snake-head .kicker { margin-bottom: .4em; }
+
+.snake { position: relative; margin-top: clamp(24px, 4vh, 40px); padding: 0 40px; }
+.snake.one { padding: 0 0 0 4px; }
+.snake-path { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.snake-path path { fill: none; stroke: var(--orange); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.snake.play .snake-path path { transition: stroke-dashoffset 1.6s ease-in-out; }
+
+.snake-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 28px 18px; position: relative; }
+.snake-list li { text-align: center; opacity: 0; transition: opacity .45s ease; }
+.snake.play .snake-list li { opacity: 1; transition-delay: calc(var(--i, 0) * 120ms + 150ms); }
+.snake-list a { display: block; color: inherit; text-decoration: none; padding: 0 4px; }
+.snake-list .dot {
+  display: block;
+  width: 18px; height: 18px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--orange);
+  transition: transform .2s ease;
+}
+.snake-list li.hot .dot { background: var(--orange); }
+.snake-list time { display: block; font-family: var(--f-display); font-weight: 700; font-size: .78em; color: var(--orange-deep); }
+.snake-list b { display: block; font-family: var(--f-display); font-size: 1.02em; line-height: 1.15; margin-top: 2px; transition: color .2s; }
+.snake-list .txt { display: block; font-size: .78em; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+.snake-list a:hover b, .snake-list a:focus-visible b { color: var(--orange-deep); }
+.snake-list a:hover .dot, .snake-list a:focus-visible .dot { transform: scale(1.25); }
+.snake-list li.finale .dot { width: 26px; height: 26px; margin: -4px auto 8px; background: var(--orange); box-shadow: 0 0 0 6px var(--peach); }
+.snake-list li.finale time { display: inline-block; background: var(--peach); padding: 1px 8px; border-radius: 999px; }
+
+/* Una colonna sola (telefono): pallino a sinistra, testo a destra */
+.snake.one .snake-list li { text-align: left; }
+.snake.one .snake-list a { display: grid; grid-template-columns: 26px 1fr; column-gap: 14px; padding: 0; }
+.snake.one .snake-list .dot { grid-row: 1 / span 3; margin: 0 auto; }
+.snake.one .snake-list li.finale .dot { margin: -4px auto 0; }
+
+/* ---------- Lo stack (2.4) ---------- */
+/* La pila: strati dal più visibile al più nascosto */
+.pila { display: grid; gap: 8px; }
+.pila > div {
+  display: grid;
+  grid-template-columns: minmax(0, 11em) minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 14px 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+}
+.pila > div.top { background: var(--peach); border-color: transparent; }
+.pila > div.base { background: var(--sky); border-color: transparent; }
+.pila b { font-family: var(--f-display); font-size: 1.05em; }
+.pila > div > span:not(.chips) { font-size: .88em; color: var(--muted); }
+.pila .top > span:not(.chips), .pila .base > span:not(.chips) { color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips i { font-style: normal; font-family: var(--f-mono); font-size: .72em; padding: .3em .6em; border-radius: 6px; background: var(--paper); border: 1px solid var(--line); }
+@media (max-width: 760px) { .pila > div { grid-template-columns: 1fr; gap: 6px; } }
+
+/* I linguaggi: nove schede compatte */
+.langs .card { padding: 14px 18px; }
+.langs .card p { font-size: .84em; }
+.langs .card h3 + p { margin-top: .3em; }
+
+.card ul.defs { padding-left: 0; }
