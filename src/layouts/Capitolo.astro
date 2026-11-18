@@ -1,0 +1,60 @@
+---
+// Pagina di un capitolo: barra in alto con i pulsanti delle sezioni
+// (generati dai dati del capitolo), le slide in ordine, gli script.
+import Pagina from "./Pagina.astro";
+import type { Capitolo } from "../lib/numerazione.mjs";
+import { slideDel, rimandiDel } from "../lib/capitoli";
+
+interface Props {
+  cap: Capitolo;
+}
+const { cap } = Astro.props;
+const slide = slideDel(cap);
+const rimandi = rimandiDel(cap);
+
+// Indirizzi pubblicati in passato che oggi puntano altrove (vedi src/indirizzi.json)
+const codiceRimandi = Object.keys(rimandi).length
+  ? `(function () {
+  var r = ${JSON.stringify(rimandi)};
+  function vai() {
+    var t = r[decodeURIComponent(location.hash.slice(1))];
+    if (!t) return;
+    if (t.charAt(0) === "#") {
+      history.replaceState(null, "", t);
+      var e = document.getElementById(t.slice(1));
+      if (e) e.scrollIntoView();
+    } else {
+      location.replace(t);
+    }
+  }
+  vai();
+  window.addEventListener("hashchange", vai);
+})();`
+  : "";
+---
+<Pagina titolo={cap.titolo} descrizione={cap.descrizione} radice="../">
+<header class="topbar">
+  <a class="home-link" href="../">Corso <span>AI</span></a>
+  <nav class="chapters" aria-label="Sezioni del capitolo">
+    <button type="button" data-chapter="intro">Cap. {cap.numero}</button>
+    {cap.sezioni.map(s => (
+      <button type="button" data-chapter={s.chiave}>{s.num} <span class="ch-name">{s.nome}</span></button>
+    ))}
+  </nav>
+  <span class="counter" aria-live="polite"></span>
+  <button class="icon-btn" type="button" data-fullscreen aria-label="Schermo intero" title="Schermo intero (F)">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1.5 5.5v-4h4M10.5 1.5h4v4M14.5 10.5v4h-4M5.5 14.5h-4v-4"/></svg>
+  </button>
+  <span class="progress" aria-hidden="true"></span>
+</header>
+
+<main>
+{slide.map(({ Componente, id, numero, sezione }) => <Componente id={id} numero={numero} sezione={sezione} />)}
+</main>
+
+<div class="hint" role="status">Usa <kbd>←</kbd> <kbd>→</kbd> per le slide, <kbd>F</kbd> per lo schermo intero</div>
+
+{codiceRimandi && <script is:inline set:html={codiceRimandi} />}
+<script is:inline src="../assets/js/deck.js"></script>
+{cap.script.map(s => <script is:inline src={`../assets/js/${s}`}></script>)}
+</Pagina>

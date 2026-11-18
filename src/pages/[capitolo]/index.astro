@@ -1,0 +1,11 @@
+---
+// Una pagina per capitolo: /capitolo-1/, /capitolo-2/, …
+import Capitolo from "../../layouts/Capitolo.astro";
+import { capitoli } from "../../lib/capitoli";
+
+export function getStaticPaths() {
+  return capitoli.map(cap => ({ params: { capitolo: cap.slug }, props: { cap } }));
+}
+const { cap } = Astro.props;
+---
+<Capitolo cap={cap} />

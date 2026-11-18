@@ -1,0 +1,11 @@
+---
+// Una voce di <Steps>: titolo in grassetto e spiegazione nello slot.
+// inLinea: spiegazione sulla stessa riga (come nelle copertine).
+interface Props {
+  titolo: string;
+  inLinea?: boolean;
+}
+const { titolo, inLinea = false } = Astro.props;
+const testo = await Astro.slots.render("default");
+---
+<li><div><strong set:html={titolo} />{inLinea ? " " : <br />}<span set:html={testo} /></div></li>

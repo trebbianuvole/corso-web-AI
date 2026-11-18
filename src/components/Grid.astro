@@ -1,0 +1,10 @@
+---
+// Griglia di schede su 2, 3 o 4 colonne.
+interface Props {
+  colonne: 2 | 3 | 4;
+  /** classi in più, es. "mt-l" */
+  classe?: string;
+}
+const { colonne, classe } = Astro.props;
+---
+<div class:list={["grid", `g${colonne}`, classe]}><slot /></div>

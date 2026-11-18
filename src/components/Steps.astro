@@ -1,0 +1,9 @@
+---
+// Elenco numerato di passi; ogni voce è un <Passo>.
+interface Props {
+  classe?: string;
+  stile?: string;
+}
+const { classe, stile } = Astro.props;
+---
+<ol class:list={["steps", classe]} style={stile}><slot /></ol>

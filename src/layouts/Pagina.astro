@@ -1,0 +1,27 @@
+---
+// Lo scheletro di ogni pagina: <head> comune, font e foglio di stile.
+interface Props {
+  titolo: string;
+  descrizione: string;
+  /** percorso relativo verso la radice del sito: "" in home, "../" nei capitoli */
+  radice?: string;
+}
+const { titolo, descrizione, radice = "" } = Astro.props;
+---
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{titolo}</title>
+  <meta name="description" content={descrizione}>
+  <link rel="icon" href={`${radice}assets/favicon.svg`} type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href={`${radice}assets/css/style.css`}>
+</head>
+<body>
+<slot />
+</body>
+</html>
