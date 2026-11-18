@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.2 Lavorare con un agente" titolo="Affidare un lavoro, senza perdere il controllo">
+  <p class="lead" style="max-width:62ch">Un agente può sbagliare all'inizio e continuare per dieci passi, sicuro di sé. Gli errori si sommano.</p>
+  <Grid colonne={4} classe="mt-l">
+    <Card variante="peach" titolo="Obiettivo chiaro">Cosa deve ottenere, e come si capisce che ha finito.</Card>
+    <Card titolo="Permessi giusti">Cosa può toccare, e cosa no. Il minimo che serve.</Card>
+    <Card titolo="Controlli a metà">Prima il piano, poi il lavoro. E un modo per tornare indietro.</Card>
+    <Card titolo="Verifica finale">«Ho finito» non vuol dire «funziona». Provate voi.</Card>
+  </Grid>
+</Slide>

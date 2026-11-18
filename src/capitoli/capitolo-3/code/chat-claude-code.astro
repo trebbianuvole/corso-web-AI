@@ -1,0 +1,16 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.3 Claude Code" titolo="Chat o Claude Code?">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Chat</th><th>Claude Code</th></tr></thead>
+    <tbody>
+      <tr><td>Dove sta il codice</td><td>Nella conversazione</td><td>Nei file del progetto</td></tr>
+      <tr><td>Chi copia e incolla</td><td>Voi</td><td>Nessuno: scrive direttamente nei file</td></tr>
+      <tr><td>Cosa vede</td><td>Solo quello che allegate</td><td>Tutti i file del progetto</td></tr>
+      <tr><td>Può provare il codice</td><td>Poco</td><td>Sì: lo esegue, legge gli errori, corregge</td></tr>
+      <tr><td>Versioni</td><td>Da gestire a mano</td><td>Salva con git e pubblica su GitHub</td></tr>
+      <tr><td>Ideale per</td><td>Capire, progettare, pezzi piccoli</td><td>Costruire e mantenere un progetto vero</td></tr>
+    </tbody>
+  </table>
+</Slide>

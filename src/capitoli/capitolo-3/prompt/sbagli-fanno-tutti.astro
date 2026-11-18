@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Errori comuni" titolo="Gli sbagli che fanno tutti">
+  <Grid colonne={4} classe="mt-l">
+    <Card titolo="Troppo vago">«Fallo più bello.» Più bello come? Dite cosa non vi convince.</Card>
+    <Card titolo="Tutto insieme">Dieci richieste in un messaggio: metà verranno fatte male. Una alla volta.</Card>
+    <Card variante="peach" titolo="Chat infinite">Il contesto si riempie e il modello si confonde. Fatevi fare un riassunto e aprite una chat nuova.</Card>
+    <Card titolo="Urlare">Maiuscole, punti esclamativi, insulti non aiutano. Spiegare meglio sì.</Card>
+  </Grid>
+</Slide>

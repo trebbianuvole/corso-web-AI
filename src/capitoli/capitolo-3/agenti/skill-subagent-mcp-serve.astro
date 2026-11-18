@@ -1,0 +1,16 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.2 Agenti e skill" titolo="Skill, subagent, MCP: a cosa serve cosa">
+  <table class="compare c4 mt-l">
+    <thead><tr><th></th><th>Skill</th><th>Subagent</th><th>Server MCP</th></tr></thead>
+    <tbody>
+      <tr><td>Cos'è</td><td>Istruzioni e script in una cartella</td><td>Un altro agente, con compito e memoria suoi</td><td>Un collegamento a un servizio esterno</td></tr>
+      <tr><td>Cosa aggiunge</td><td>Sa come si fa</td><td>Più braccia, in parallelo</td><td>Dati e azioni di altre app</td></tr>
+      <tr><td>In cucina</td><td>La ricetta</td><td>L'aiuto cuoco</td><td>Il cameriere della 2.5</td></tr>
+      <tr><td>Quando serve</td><td>Rispiegate sempre le stesse cose</td><td>Un lavoro lungo, divisibile in pezzi</td><td>Serve un'app: Gmail, GitHub, Drive</td></tr>
+      <tr><td>Esempio</td><td>«Come prepariamo un foglio Excel in azienda»</td><td>«Cerca in tutti i file dove usiamo l'arancione»</td><td>«Leggi le segnalazioni aperte su GitHub»</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote">Si combinano: un agente usa le skill, chiama i subagent e passa dai server MCP. Nella 3.3 li ritroviamo tutti in Claude Code.</p>
+</Slide>

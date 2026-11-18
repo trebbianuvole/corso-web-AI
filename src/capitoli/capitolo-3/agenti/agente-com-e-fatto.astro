@@ -1,0 +1,28 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="3.2 Agenti" titolo="Com'è fatto un agente">
+  <Fragment slot="intro">
+  <Defs classe="mt-m">
+    <Def termine="Il modello">il cervello: ragiona e decide la prossima mossa</Def>
+    <Def termine="Gli strumenti">le mani: cercare, leggere e scrivere file, eseguire codice, usare il browser, i server MCP</Def>
+    <Def termine="Il ciclo">pensa, agisce, guarda il risultato, ricomincia</Def>
+    <Def termine="L'obiettivo">e quando fermarsi: «il modulo si invia anche dal telefono»</Def>
+  </Defs>
+  </Fragment>
+  <div class="term" role="img" aria-label="Esempio del ciclo di un agente">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">Obiettivo: il modulo delle prenotazioni
+non si invia. Trova il problema e risolvilo.</span>
+
+<span class="dim">pensa</span>    Forse è il JavaScript. Leggo form.js.
+<span class="dot">agisce</span>   legge form.js
+<span class="dim">guarda</span>   Alla riga 12 il campo si chiama
+         «telefono», nell'HTML «tel».
+<span class="dot">agisce</span>   corregge il nome
+<span class="dot">agisce</span>   apre la pagina e prova il modulo
+<span class="dim">guarda</span>   Inviato. <span class="ok">Obiettivo raggiunto.</span></pre>
+  </div>
+</Slide>
