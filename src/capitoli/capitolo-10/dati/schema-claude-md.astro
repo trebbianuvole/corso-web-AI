@@ -1,0 +1,24 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="10.2 Progettare i dati" titolo="Lo schema nel CLAUDE.md" lead="Lo schema è il disegno di tabelle, colonne, chiavi e vincoli. Fatelo proporre a Claude, discutetelo in classe, poi scrivetelo dove l'agente lo rilegge ogni volta.">
+  <Card slot="intro" variante="peach mt-m" titolo="Le domande da fare alla proposta">Ogni storia utente trova i suoi dati? C'è una colonna che nessuno usa? Cosa succede se si cancella un'aula con prenotazioni future? Quale vincolo manca?</Card>
+  <p slot="intro" class="footnote">Una <b>migrazione</b> è un file SQL con una modifica allo schema, salvato nel repository: così ogni cambiamento ai dati ha la sua storia, come il codice (10.2.6).</p>
+<pre class="code" aria-label="La parte del CLAUDE.md di PrenotaAula che descrive lo schema dei dati"><span class="k">## Dati (Supabase)</span>
+- utenti: id, nome, ruolo
+  (studente | docente | segreteria)
+- aule: id, nome, piano, posti, proiettore
+- prenotazioni: id, aula_id → aule,
+  utente_id → utenti, periodo, motivo
+- Vincolo: nessuna sovrapposizione
+  per la stessa aula (exclude using gist)
+
+<span class="k">## Regole sui dati</span>
+- Ogni modifica allo schema è una
+  migrazione, mai a mano dal pannello
+- Mai cancellare o rinominare colonne
+  senza chiedere
+- Si prova sul progetto di prova,
+  mai su quello vero</pre>
+</Slide>

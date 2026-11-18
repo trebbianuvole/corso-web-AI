@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="10.1 Dal sito alla webapp" titolo="Cosa cambia" lead="Il sito della trattoria e PrenotaAula sembrano fatti della stessa materia: pagine, pulsanti, moduli. Sotto, sono due mestieri diversi.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Sito: Da Rina</th><th>Webapp: PrenotaAula</th></tr></thead>
+    <tbody>
+      <tr><td>Utenti</td><td data-label="Da Rina">Chiunque legge, nessuno entra</td><td data-label="PrenotaAula">Ognuno ha un account e si collega</td></tr>
+      <tr><td>Dati</td><td data-label="Da Rina">Li scrive Rina, poche volte al mese</td><td data-label="PrenotaAula">Li scrivono tutti, ogni minuto, in un database</td></tr>
+      <tr><td>Permessi</td><td data-label="Da Rina">Nessuno: tutto è pubblico</td><td data-label="PrenotaAula">Ognuno vede e cambia solo quello che gli spetta</td></tr>
+      <tr><td>Se si rompe</td><td data-label="Da Rina">Una pagina storta</td><td data-label="PrenotaAula">Prenotazioni perse, dati personali esposti</td></tr>
+    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="E la responsabilità">Nomi ed email delle persone sono dati personali: chi li raccoglie risponde di come li protegge (GDPR, 5.7). Non basta che l'app funzioni.</Card>
+</Slide>

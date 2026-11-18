@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.4 Chi sei e cosa puoi fare" titolo="Non inventatevi l'autenticazione" lead="Password, email di conferma, «password dimenticata»: sembra facile, ed è dove si sbaglia di più. Si usa un servizio fatto apposta.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="bad" tag="Fatta in casa" titolo="Gli errori tipici">Password salvate in chiaro, sessioni che non scadono, link di recupero che funzionano due volte.</Card>
+    <Card variante="good" tag="Supabase Auth" titolo="Già pronta">Registrazione, accesso, recupero, accesso con Google. Nello stesso progetto del database, e collegata ai permessi.</Card>
+    <Card tag="Il vostro lavoro" titolo="Scegliere e configurare">Quali modi di accesso, quali indirizzi di ritorno, cosa vede chi non è entrato.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E se Claude propone di scriverla da zero?">Fermatelo e chiedete perché. Una funzione così l'AI la scrive in un minuto, e i suoi buchi non si vedono provandola.</Card>
+  <p class="footnote">Fonte: <a href="https://supabase.com/docs/guides/auth" target="_blank" rel="noopener">Supabase Auth</a>.</p>
+</Slide>

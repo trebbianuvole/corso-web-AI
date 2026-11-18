@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="10.1 Dal sito alla webapp" titolo="Dove l'AI rischia di più" lead="Su un sito, un errore dell'AI si vede: una pagina storta. In una webapp spesso non si vede: tutto funziona, e intanto i dati di tutti sono leggibili da chiunque.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="bad" tag="Permessi" titolo="Funziona nella demo">Voi vedete le vostre prenotazioni. Ma con due righe di codice chiunque vede anche quelle degli altri (10.4.5).</Card>
+    <Card variante="bad" tag="Chiavi" titolo="Il segreto nel browser">La chiave che apre tutto il database finisce nel codice della pagina, o in un commit su GitHub (10.6.1).</Card>
+    <Card variante="bad" tag="Dati" titolo="Una modifica di troppo">Per «sistemare» lo schema, l'agente cancella una colonna. Con dentro i dati veri.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Qui il vibe coding puro non basta">Leggete il piano prima del codice, chiedete il perché di ogni scelta sui dati, provate l'app da utenti diversi. E fate lavorare l'agente su un database di prova, mai su quello vero.</Card>
+</Slide>

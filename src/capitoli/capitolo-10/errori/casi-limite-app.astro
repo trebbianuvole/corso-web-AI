@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="10.5 Quando le cose vanno storte" titolo="I casi limite" lead="Le situazioni rare, ai bordi, che nessuno prova nella demo. In una webapp con cento utenti, una cosa rara succede ogni settimana.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Concorrenza" titolo="L'aula è appena stata presa">Due docenti prenotano la stessa aula nello stesso secondo. Una delle due deve ricevere un no chiaro.</Card>
+    <Card tag="Impazienza" titolo="Il doppio clic">Il pulsante premuto due volte: due prenotazioni uguali? Il pulsante si disattiva mentre aspetta (7.2.1).</Card>
+    <Card tag="Rete" titolo="La connessione cade">La richiesta parte e la risposta non torna. La prenotazione c'è o no? Bisogna poterlo controllare.</Card>
+    <Card tag="Permessi" titolo="L'utente non autorizzato">Uno studente prova a prenotare, o la sessione è scaduta. Cosa vede?</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E poi i dati strani">Un orario di fine prima dell'inizio, una prenotazione di dieci ore, un'aula chiusa per lavori, il 31 febbraio. Ognuno di questi è un criterio di accettazione.</Card>
+</Slide>

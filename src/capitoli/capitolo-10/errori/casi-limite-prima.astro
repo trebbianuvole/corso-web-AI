@@ -1,0 +1,19 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="10.5 Quando le cose vanno storte" titolo="Chiedere i casi limite prima del codice" lead="Claude è bravissimo a immaginare cosa può andare storto. Ma solo se glielo chiedete prima: dopo, tende a difendere il codice che ha scritto.">
+  <Card slot="intro" variante="peach mt-m" titolo="Poi li scegliete voi">Non tutti i casi meritano codice. Quelli che restano diventano criteri di accettazione, e la PR dice come sono stati provati.</Card>
+  <figure class="figure chat" aria-label="Esempio di conversazione: Claude elenca i casi limite prima di scrivere codice">
+    <div class="bubble user">Prima di scrivere codice per l'annullamento delle prenotazioni: elencami i casi limite e, per ognuno, cosa dovrebbe vedere l'utente. Niente codice finché non approvo.</div>
+    <div class="bubble bot">Ecco quelli che vedo:
+      <ol>
+        <li>Annullare una prenotazione già passata.</li>
+        <li>Annullare mentre un'altra persona la sta modificando.</li>
+        <li>Annullare due volte, da due schede aperte.</li>
+        <li>La segreteria annulla quella di un docente: il docente lo viene a sapere?</li>
+      </ol>
+    </div>
+    <p class="chat-note">Conversazione costruita come esempio.</p>
+  </figure>
+</Slide>

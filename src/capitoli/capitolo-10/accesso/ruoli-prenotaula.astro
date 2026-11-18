@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="10.4 Chi sei e cosa puoi fare" titolo="Ruoli" lead="Invece di decidere persona per persona, si decide per ruolo. Una tabella così va scritta prima del codice, e approvata dal cliente.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Studente</th><th>Docente</th><th>Segreteria</th></tr></thead>
+    <tbody>
+      <tr><td>Vedere le aule libere</td><td data-label="Studente">sì</td><td data-label="Docente">sì</td><td data-label="Segreteria">sì</td></tr>
+      <tr><td>Prenotare un'aula</td><td data-label="Studente">no</td><td data-label="Docente">sì</td><td data-label="Segreteria">sì</td></tr>
+      <tr><td>Annullare una prenotazione</td><td data-label="Studente">no</td><td data-label="Docente">solo le sue</td><td data-label="Segreteria">tutte</td></tr>
+      <tr><td>Vedere chi ha prenotato</td><td data-label="Studente">no</td><td data-label="Docente">sì</td><td data-label="Segreteria">sì</td></tr>
+      <tr><td>Aggiungere o chiudere aule</td><td data-label="Studente">no</td><td data-label="Docente">no</td><td data-label="Segreteria">sì</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Il ruolo lo decide la scuola, non l'utente">Nessuno sceglie da solo di essere «segreteria» al momento della registrazione. Il ruolo lo assegna chi ha già quel potere.</Card>
+</Slide>

@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Passo from "../../../../components/Passo.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Steps from "../../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="10.4 «Accedi con Google»" titolo="«Accedi con Google»" lead="Niente password da ricordare né da proteggere: Google conferma chi siete, e Supabase crea l'account. Per una scuola con account Google, è la scelta più comoda.">
+  <Card slot="intro" variante="sky mt-m" titolo="Nel codice, una riga">Il pulsante chiama <code>supabase.auth.signInWithOAuth(&#123; provider: 'google' &#125;)</code>. Il lavoro vero è nella configurazione dei due pannelli.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://supabase.com/docs/guides/auth/social-login/auth-google" target="_blank" rel="noopener">Supabase, accesso con Google</a>, controllata il 18 novembre 2026.</p>
+  <Steps>
+    <Passo titolo="Google Cloud" inLinea>un progetto, la schermata di consenso con nome e logo dell'app</Passo>
+    <Passo titolo="Un client OAuth «Applicazione web»" inLinea>con l'indirizzo dell'app e quello di ritorno di Supabase</Passo>
+    <Passo titolo="Supabase" inLinea>Authentication › Providers › Google: si incollano ID e segreto del client</Passo>
+    <Passo titolo="Gli indirizzi consentiti" inLinea>dove può tornare l'utente dopo l'accesso, compreso localhost</Passo>
+    <Passo titolo="La prova" inLinea>con un account della scuola e con uno personale: entrano entrambi? Devono?</Passo>
+  </Steps>
+</Slide>

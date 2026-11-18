@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="10.2 Progettare i dati" titolo="I backup" lead="Git salva il codice, non le prenotazioni (4.3.8). Se il database si perde, o un agente cancella una tabella, servono copie fatte apposta.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Piano gratuito" titolo="Nessuna copia automatica">Supabase consiglia di esportare i dati da soli, con regolarità, e di tenerli altrove.</Card>
+    <Card tag="Piano Pro" titolo="Una copia al giorno">Si possono recuperare gli ultimi 7 giorni. A pagamento si torna a un minuto preciso.</Card>
+    <Card variante="peach" tag="In ogni caso" titolo="Una copia vostra"><code>supabase db dump</code> salva il database in un file. Da tenere fuori da Supabase e fuori dal repository.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Un backup mai provato non è un backup">Una volta, provate a ripristinarlo nel progetto di prova. È lì che si scopre che mancava qualcosa. La consegna al cliente lo mette per iscritto (12.2).</Card>
+  <p class="footnote">Fonte: <a href="https://supabase.com/docs/guides/platform/backups" target="_blank" rel="noopener">Supabase, backup</a>, controllata il 18 novembre 2026.</p>
+</Slide>

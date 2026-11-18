@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="10.5 Quando le cose vanno storte" titolo="Messaggi d'errore per le persone" lead="Lo stato di errore della 7.2, applicato ai dati. Il database risponde in tecnichese: il messaggio per la persona lo scrivete voi.">
+  <table class="compare mt-l">
+    <thead><tr><th>Il database dice</th><th>La persona legge</th></tr></thead>
+    <tbody>
+      <tr><td><code>conflicting key value violates exclusion constraint</code></td><td data-label="La persona legge">L'aula 3 è già prenotata giovedì dalle 10 alle 11. Le aule libere a quell'ora sono: Aula 1, Laboratorio.</td></tr>
+      <tr><td><code>new row violates row-level security policy</code></td><td data-label="La persona legge">Solo i docenti possono prenotare le aule. Se pensate sia un errore, scrivete alla segreteria.</td></tr>
+      <tr><td><code>Failed to fetch</code></td><td data-label="La persona legge">Non riusciamo a collegarci. La prenotazione non è stata salvata: riprovate tra poco.</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Tre regole">Dire cosa è successo, in parole comuni. Dire cosa fare adesso. Non perdere quello che la persona aveva già scritto nel modulo.</Card>
+</Slide>

@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="demo" split kicker="10.2 Progettare i dati" titolo="Supabase passo per passo" lead="Supabase è un servizio che vi dà un database PostgreSQL già pronto, con accessi, permessi e un pannello web. È il pezzo che si aggiunge allo stack di Da Rina.">
+  <Card slot="intro" variante="peach mt-m" titolo="Il piano gratuito, e i suoi limiti">Due progetti attivi, 500 MB di database, 50.000 utenti attivi al mese. Un progetto senza attività per una settimana viene messo in pausa, e i backup non ci sono. Per un corso va benissimo, per un cliente no (10.8).</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://supabase.com/pricing" target="_blank" rel="noopener">Supabase, prezzi</a>; <a href="https://supabase.com/docs/guides/deployment/database-migrations" target="_blank" rel="noopener">migrazioni</a>, controllate il 18 novembre 2026.</p>
+  <Steps>
+    <Passo titolo="Due progetti" inLinea>uno di prova per lavorare, uno vero per gli utenti</Passo>
+    <Passo titolo="Lo schema come migrazione" inLinea><code>supabase migration new</code>, poi Claude scrive l'SQL nel file</Passo>
+    <Passo titolo="Provare in locale" inLinea><code>supabase db reset</code> ricrea tutto da capo con dati di prova</Passo>
+    <Passo titolo="Leggere prima di applicare" inLinea>voi leggete l'SQL, poi <code>supabase db push</code> lo porta online</Passo>
+    <Passo titolo="Controllare nel pannello" inLinea>le tabelle, le colonne, i vincoli, i permessi</Passo>
+  </Steps>
+</Slide>

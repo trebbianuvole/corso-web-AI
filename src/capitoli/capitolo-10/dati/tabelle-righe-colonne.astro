@@ -1,0 +1,25 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="10.2 Progettare i dati" titolo="Tabelle, righe, colonne" lead="Un database relazionale è un insieme di tabelle, come i fogli di un foglio di calcolo. Ma con regole più severe.">
+  <Defs slot="intro" classe="mt-m">
+    <Def termine="Tabella">un tipo di cosa: le aule</Def>
+    <Def termine="Riga">una cosa: l'aula 3</Def>
+    <Def termine="Colonna">un'informazione, sempre dello stesso tipo: testo, numero, data, sì o no</Def>
+  </Defs>
+  <div style="min-width:0">
+    <p class="kicker">Tabella <code>aule</code></p>
+    <table class="compare" style="margin-top:8px">
+      <thead><tr><th>id</th><th>nome</th><th>piano</th><th>posti</th><th>proiettore</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td data-label="nome">Aula 1</td><td data-label="piano">0</td><td data-label="posti">24</td><td data-label="proiettore">sì</td></tr>
+        <tr><td>2</td><td data-label="nome">Laboratorio</td><td data-label="piano">1</td><td data-label="posti">16</td><td data-label="proiettore">sì</td></tr>
+        <tr><td>3</td><td data-label="nome">Aula 3</td><td data-label="piano">1</td><td data-label="posti">30</td><td data-label="proiettore">no</td></tr>
+      </tbody>
+    </table>
+    <Card variante="sky mt-m" titolo="La differenza con un foglio di calcolo">Nella colonna «posti» il database accetta solo numeri. Un «circa trenta» viene rifiutato prima ancora di essere salvato.</Card>
+  </div>
+</Slide>
