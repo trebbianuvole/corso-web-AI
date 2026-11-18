@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Modello e applicazione non sono la stessa cosa" lead="Claude, ChatGPT e Gemini sono applicazioni, cioè prodotti. Dentro lavorano dei modelli, e spesso potete scegliere quale.">
+  <div class="versus mt-l">
+    <div class="card peach">
+      <span class="tag">L'applicazione</span>
+      <h3>Quello che aprite e usate</h3>
+      <ul class="mt-m"><li>La finestra della chat, l'app sul telefono</li><li>La cronologia, i progetti, i file allegati</li><li>La ricerca sul web, i collegamenti ad altre app</li><li>L'abbonamento e i limiti d'uso</li></ul>
+    </div>
+    <div class="vs" aria-hidden="true">e</div>
+    <div class="card">
+      <span class="tag">Il modello</span>
+      <h3>Il motore che scrive le risposte</h3>
+      <ul class="mt-m"><li>Ha un nome e una versione</li><li>Ogni applicazione ne offre più d'uno, di taglie diverse</li><li>Lo stesso modello può stare in prodotti diversi: Claude, per esempio, lavora anche dentro GitHub Copilot e Cursor</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Perché vi interessa">Quando qualcuno dice «ChatGPT ha sbagliato» o «Claude è più bravo», chiedetevi: quale modello, dentro quale applicazione, con quali impostazioni?</Card>
+</Slide>

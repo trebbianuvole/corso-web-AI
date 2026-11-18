@@ -1,0 +1,24 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="2.5 I dati" titolo="I formati dei dati" lead="Gli stessi dati si possono scrivere in modi diversi. Sono tutti file di testo: si aprono e si leggono, senza paura.">
+  <div class="grid g4 mt-m">
+    <div class="card"><span class="tag">JSON</span><h3>Per i programmi</h3><pre class="code">&#123;
+  "piatto": "Tajarin",
+  "prezzo": 12,
+  "vegetariano": true
+&#125;</pre><p class="mt-m">Le API rispondono quasi sempre così.</p></div>
+    <div class="card"><span class="tag">CSV</span><h3>Una tabella</h3><pre class="code">piatto,prezzo
+Tajarin,12
+Vitello tonnato,11</pre><p class="mt-m">Una riga per record, valori separati da virgole. Si apre con Excel.</p></div>
+    <div class="card peach"><span class="tag">YAML</span><h3>Per le persone</h3><pre class="code">piatto: Tajarin
+prezzo: 12
+vegetariano: true</pre><p class="mt-m">Come JSON, ma senza parentesi: conta il rientro delle righe.</p></div>
+    <div class="card peach"><span class="tag">Markdown</span><h3>Testo con i titoli</h3><pre class="code">## Tajarin
+Pasta all'uovo
+fatta in casa.
+**12 euro**</pre><p class="mt-m"><code>##</code> fa un titolo, <code>**</code> il grassetto.</p></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Li ritroverete in Keystatic">Keystatic salva i contenuti proprio così: i dati in YAML o JSON, i testi in Markdown. Nel capitolo 8 aprirete questi file e capirete cosa c'è dentro.</Card>
+</Slide>

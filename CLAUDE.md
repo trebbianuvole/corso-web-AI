@@ -28,7 +28,7 @@ src/layouts/Pagina.astro          <head> comune (titolo, descrizione, font, styl
 src/layouts/Capitolo.astro        barra in alto generata dalle sezioni, slide, hint, script, rimandi
 src/components/slide/Slide.astro  slide normale
 src/components/slide/Apertura.astro  apertura di sezione (X.Y.0)
-src/components/                   Card, Grid, Steps + Passo, Defs + Def
+src/components/                   Card, Grid, Steps + Passo, Defs + Def, SieteQui (la mappa del corso)
 src/capitoli/capitolo-N/capitolo.ts   dati del capitolo e ordine di sezioni e slide
 src/capitoli/capitolo-N/copertina-N.astro
 src/capitoli/capitolo-N/<chiave-sezione>/<nome-slide>.astro   una slide per file
@@ -58,7 +58,8 @@ docs/scaletta-corso.md            la scaletta del corso
   - griglie e schede: `.grid` con `g2`/`g3`/`g4` (componente `Grid`), `.card` con le varianti `peach`, `sky`, `good`, `bad` (componente `Card`), `.tag`;
   - confronti ed elenchi: `.versus`, `.compare` (tabelle), `.defs` (`Defs`), `.steps` (`Steps`), `.spectrum`, `.milestones`, `.pila`, `.chips`;
   - conversazioni e codice: `.bubble` (chat), `.term` (terminale), i blocchi di codice;
-  - impaginazione: `.slide-inner.split`.
+  - impaginazione: `.slide-inner.split`;
+  - la mappa del corso: componente `SieteQui` (`<SieteQui capitolo={N} />` sulle copertine dal capitolo 2 in poi).
 
   Prima di inventare uno stile nuovo, riusate questi.
 

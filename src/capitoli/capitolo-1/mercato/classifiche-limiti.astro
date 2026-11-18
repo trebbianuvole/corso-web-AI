@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Le classifiche e i loro limiti" lead="Un benchmark è un test uguale per tutti: le stesse domande, lo stesso modo di dare il voto. Con i risultati si fanno le classifiche.">
+  <Grid colonne={3} classe="mt-l">
+    <Card titolo="Misurano una cosa sola">Un test di matematica non dice niente su come il modello scrive il vostro sito. Il primo in classifica può non essere il migliore per voi.</Card>
+    <Card variante="peach" titolo="Si può studiare per il test">Se le domande finiscono nei dati di addestramento, il modello le ha già viste. A febbraio 2026 OpenAI ha smesso di usare SWE-bench Verified, un test molto citato sul codice, per questo motivo.</Card>
+    <Card titolo="Si può scegliere cosa mostrare">Nelle classifiche dove votano le persone, chi prova di nascosto molte versioni e pubblica solo la migliore parte avvantaggiato.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Come leggerle">Guardate più classifiche, chiedetevi cosa misurano, e alla fine provate voi, sul vostro compito.</Card>
+  <p class="footnote">Fonti:
+    <a href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/" target="_blank" rel="noopener">OpenAI, febbraio 2026</a>;
+    <a href="https://arxiv.org/abs/2504.20879" target="_blank" rel="noopener">«The Leaderboard Illusion», 2025</a>, uno studio critico su LMArena, che ha risposto contestandone le conclusioni.
+  </p>
+</Slide>

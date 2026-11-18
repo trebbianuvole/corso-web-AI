@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Il contesto" titolo="Non basta il prompt: serve il contesto" lead="Il prompt è la richiesta di oggi. Il contesto è tutto quello che Claude deve sapere per farla bene. Prepararlo è un lavoro a sé: si chiama context engineering.">
+  <Grid colonne={4} classe="mt-l">
+    <Card variante="peach" titolo="Il documento di progetto">Obiettivo, pubblico, funzionalità, criteri, stack (2.6).</Card>
+    <Card titolo="La struttura dei file">Dove sta ogni cosa, e dove deve andare quella nuova.</Card>
+    <Card titolo="Le regole">Lingua, tono, cosa non toccare mai, come si fanno i commit.</Card>
+    <Card titolo="Il design system">Colori, caratteri, componenti già pronti da riusare.</Card>
+    <Card titolo="Il codice esistente">Una pagina fatta bene è il miglior esempio di come farne un'altra.</Card>
+    <Card titolo="Le segnalazioni">La issue con il problema, i passi per riprodurlo, lo screenshot.</Card>
+    <Card titolo="Gli esempi">Un sito che vi piace, un testo nel tono giusto, un risultato atteso.</Card>
+    <Card variante="sky" titolo="Scritto una volta sola">Con Claude Code, gran parte di questo va nel <code>CLAUDE.md</code> (6.2): lo legge da solo a ogni sessione.</Card>
+  </Grid>
+</Slide>

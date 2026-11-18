@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="2.5 Con l'AI" titolo="Usare un'API con Claude" lead="Claude scrive la chiamata a un'API in pochi secondi. Ma solo voi sapete quanto costa, chi paga e cosa si può fare.">
+  <Fragment slot="intro">
+  <Steps classe="mt-m">
+    <Passo titolo="Dategli la documentazione">la pagina ufficiale dell'API, o il link. Senza, rischia di inventare richieste che non esistono.</Passo>
+    <Passo titolo="Lui scrive la chiamata">e il codice che usa la risposta.</Passo>
+    <Passo titolo="Voi provate">con dati finti, prima di quelli veri.</Passo>
+  </Steps>
+  </Fragment>
+  <div class="stack">
+    <Card variante="peach" titolo="Le chiavi">Mai nel codice, mai in chat. Vanno in un file a parte, escluso da GitHub, o nelle impostazioni di Vercel.</Card>
+    <Card titolo="I costi">Molte API si pagano a richiesta. Un errore che ripete la chiamata mille volte costa mille volte.</Card>
+    <Card titolo="I limiti">Quante richieste al minuto si possono fare? E cosa succede quando l'API non risponde?</Card>
+  </div>
+</Slide>

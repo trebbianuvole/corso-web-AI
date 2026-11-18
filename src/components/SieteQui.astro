@@ -1,0 +1,33 @@
+---
+// La mappa del corso in cinque tappe, con le parole della ricetta (2.1.2).
+// Sulle copertine evidenzia la tappa del capitolo: <SieteQui capitolo={2} />.
+// Con «completa» mostra anche i capitoli di ogni tappa (la slide della mappa).
+interface Props {
+  capitolo?: number;
+  completa?: boolean;
+  classe?: string;
+}
+const { capitolo, completa = false, classe } = Astro.props;
+
+const tappe = [
+  { nome: "La ricetta", verbo: "progettare", capitoli: [2, 3] },
+  { nome: "I fornelli", verbo: "costruire", capitoli: [4, 5, 6, 7, 8, 10] },
+  { nome: "L'assaggio", verbo: "verificare", capitoli: [11] },
+  { nome: "L'impiattamento", verbo: "pubblicare", capitoli: [9] },
+  { nome: "Il giorno dopo", verbo: "mantenere", capitoli: [12] },
+];
+const elenco = (c: number[]) => (c.length === 1 ? "Capitolo " : "Capitoli ") + c.join(", ").replace(/, (\d+)$/, " e $1");
+---
+<ol class:list={["siete-qui", { completa }, classe]} aria-label="La mappa del corso">
+  {tappe.map(t => {
+    const qui = capitolo !== undefined && t.capitoli.includes(capitolo);
+    return (
+      <li class:list={{ qui }} aria-current={qui ? "step" : undefined}>
+        <b>{t.nome}</b>
+        <span>{t.verbo}</span>
+        {completa && <small>{elenco(t.capitoli)}</small>}
+        {qui && <em>siete qui</em>}
+      </li>
+    );
+  })}
+</ol>

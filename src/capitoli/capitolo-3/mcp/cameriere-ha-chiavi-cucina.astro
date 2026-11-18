@@ -3,10 +3,11 @@ import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="2.5 Attenzione" titolo="Il cameriere ha le chiavi della cucina" lead="Collegare un servizio vuol dire dare all'AI il permesso di usarlo a nome vostro.">
+<Slide {...Astro.props} kicker="3.3 Attenzione" titolo="Il cameriere ha le chiavi della cucina" lead="Collegare un servizio vuol dire dare all'AI il permesso di usarlo a nome vostro.">
   <Grid colonne={3} classe="mt-l">
     <Card titolo="Solo server affidabili">Un server MCP è un programma: può leggere i vostri dati. Usate quelli ufficiali o molto conosciuti.</Card>
     <Card titolo="Il minimo dei permessi">Se serve solo leggere, non date il permesso di scrivere o cancellare.</Card>
     <Card variante="peach" titolo="Istruzioni nascoste">Un'email o una pagina web possono contenere ordini scritti per ingannare l'AI. Si chiama prompt injection: controllate le azioni importanti prima di approvarle.</Card>
   </Grid>
+  <p class="footnote">La sicurezza con gli agenti la riprendiamo nella 5.3.</p>
 </Slide>

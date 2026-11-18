@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="2.6 Con l'AI" titolo="Claude come analista" lead="Prima di fargli scrivere codice, fategli fare domande. È bravissimo a trovare i casi che non avete considerato.">
+  <Fragment slot="intro">
+  <Card variante="peach mt-m" titolo="Poi decidete voi">Claude propone regole plausibili, non le regole della vostra scuola o del vostro cliente. Ogni risposta la date voi, o la chiedete a chi lo sa.</Card>
+  </Fragment>
+  <figure class="figure chat" aria-label="Esempio di conversazione con Claude come analista">
+    <div class="bubble user">Sto progettando PrenotaAula. La storia è: «Come docente voglio prenotare un'aula libera». Fammi le domande che ho dimenticato, poi proponi i criteri di accettazione.</div>
+    <div class="bubble bot">Prima alcune domande:
+      <ol>
+        <li>Si può prenotare per più ore di fila?</li>
+        <li>Una docente può annullare la prenotazione di un'altra?</li>
+        <li>Cosa succede nei giorni di chiusura della scuola?</li>
+        <li>Con quanto anticipo si può prenotare?</li>
+      </ol>
+    </div>
+    <p class="chat-note">Conversazione costruita come esempio.</p>
+  </figure>
+</Slide>

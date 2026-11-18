@@ -1,0 +1,25 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="2.6 Il flusso" titolo="Cosa succede quando clicco" lead="Il flusso di una funzione: tutti i passi, compresi quelli in cui qualcosa va storto. Gli errori sono la parte che si dimentica.">
+  <Fragment slot="intro">
+  <Steps classe="mt-m">
+    <Passo titolo="La docente sceglie">aula 3, giovedì, ore 10, e preme «Prenota».</Passo>
+    <Passo titolo="Il sistema controlla">che sia collegata e che l'aula sia libera.</Passo>
+    <Passo titolo="Salva e conferma">«Aula 3 prenotata per giovedì alle 10».</Passo>
+  </Steps>
+  </Fragment>
+  <div>
+    <p class="kicker">E se…</p>
+    <Grid colonne={2}>
+      <Card variante="peach" titolo="…un collega la prende prima?">Nello stesso secondo, due persone sulla stessa aula. Una sola deve vincere, l'altra deve saperlo.</Card>
+      <Card titolo="…la sessione è scaduta?">Si chiede di accedere di nuovo, senza perdere la scelta fatta.</Card>
+      <Card titolo="…cade la connessione?">Un messaggio chiaro, e la possibilità di riprovare.</Card>
+      <Card titolo="…sceglie una data passata?">Il modulo non lo permette, e spiega perché.</Card>
+    </Grid>
+  </div>
+</Slide>

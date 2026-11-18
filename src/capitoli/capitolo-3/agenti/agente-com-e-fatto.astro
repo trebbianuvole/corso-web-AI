@@ -7,22 +7,27 @@ import Slide from "../../../components/slide/Slide.astro";
   <Fragment slot="intro">
   <Defs classe="mt-m">
     <Def termine="Il modello">il cervello: ragiona e decide la prossima mossa</Def>
-    <Def termine="Gli strumenti">le mani: cercare, leggere e scrivere file, eseguire codice, usare il browser, i server MCP</Def>
-    <Def termine="Il ciclo">pensa, agisce, guarda il risultato, ricomincia</Def>
-    <Def termine="L'obiettivo">e quando fermarsi: «il modulo si invia anche dal telefono»</Def>
+    <Def termine="Gli strumenti">le mani: leggere e scrivere file, eseguire codice, usare il browser, i server MCP</Def>
+    <Def termine="Il ciclo">obiettivo, piano, scelta dello strumento, azione, osservazione, decisione. E si ricomincia</Def>
   </Defs>
+  <p class="footnote">Ogni passo del ciclo può introdurre un errore: un piano sbagliato, lo strumento sbagliato, un risultato letto male.</p>
   </Fragment>
   <div class="term" role="img" aria-label="Esempio del ciclo di un agente">
     <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
 <pre><span class="u">Obiettivo: il modulo delle prenotazioni
 non si invia. Trova il problema e risolvilo.</span>
 
-<span class="dim">pensa</span>    Forse è il JavaScript. Leggo form.js.
-<span class="dot">agisce</span>   legge form.js
-<span class="dim">guarda</span>   Alla riga 12 il campo si chiama
-         «telefono», nell'HTML «tel».
-<span class="dot">agisce</span>   corregge il nome
-<span class="dot">agisce</span>   apre la pagina e prova il modulo
-<span class="dim">guarda</span>   Inviato. <span class="ok">Obiettivo raggiunto.</span></pre>
+<span class="dim">piano</span>      Leggo il modulo, trovo
+           l'errore, lo correggo, provo.
+<span class="dim">strumento</span>  lettura dei file
+<span class="dot">azione</span>     legge Prenota.astro
+<span class="dim">osserva</span>    Il campo si chiama «telefono»,
+           lo script cerca «tel».
+<span class="dim">decide</span>     Correggo il nome.
+<span class="dot">azione</span>     modifica Prenota.astro
+<span class="dim">strumento</span>  il browser
+<span class="dot">azione</span>     apre la pagina, prova il modulo
+<span class="dim">osserva</span>    Inviato.
+<span class="dim">decide</span>     <span class="ok">Obiettivo raggiunto.</span> Mi fermo.</pre>
   </div>
 </Slide>

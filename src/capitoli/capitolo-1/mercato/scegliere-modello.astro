@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Come si sceglie un modello" lead="Non esiste il modello migliore in assoluto. Esiste quello giusto per un lavoro preciso.">
+  <Grid colonne={4} classe="mt-l">
+    <Card titolo="Qualità">Quanto sono giuste e chiare le risposte, nel vostro campo.</Card>
+    <Card variante="peach" titolo="Codice">Quanto bene scrive, legge e corregge programmi. Per noi conta molto.</Card>
+    <Card titolo="Velocità">Quanto aspettate. Per una modifica piccola, conta più della potenza.</Card>
+    <Card titolo="Contesto">Quanto testo legge in una volta: un file o un progetto intero.</Card>
+    <Card titolo="Costo">Abbonamento, limiti d'uso, prezzo a consumo per le applicazioni.</Card>
+    <Card titolo="Uso degli strumenti">Se sa cercare sul web, leggere file, usare altri programmi.</Card>
+    <Card titolo="Autonomia">Per quanti passi lavora da solo prima di perdere la strada.</Card>
+    <Card variante="sky" titolo="La prova vera">Lo stesso compito, dato a due modelli. Guardate voi quale risultato funziona meglio.</Card>
+  </Grid>
+</Slide>

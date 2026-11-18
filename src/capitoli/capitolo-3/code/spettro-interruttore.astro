@@ -1,7 +1,9 @@
 ---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="3.3 Vibe coding" titolo="Uno spettro, non un interruttore">
+<Slide {...Astro.props} classe="compact" kicker="3.4 Vibe coding" titolo="Uno spettro, non un interruttore">
   <p class="lead" style="max-width:60ch">Tra «non guardo il codice» e «scrivo tutto io» ci sono molte vie di mezzo. Conta quanto capite e controllate.</p>
   <div class="spectrum mt-l" style="margin-top:72px !important">
     <span class="pin">Noi, in questo corso</span>
@@ -12,4 +14,9 @@ import Slide from "../../../components/slide/Slide.astro";
       <div><b>Programmazione assistita</b><span>Scrivo e rivedo ogni riga; l'AI mi fa risparmiare tempo.</span></div>
     </div>
   </div>
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Assistente" titolo="Chiedete, e decidete voi">Domande, spiegazioni, pezzi di codice da copiare. Per imparare e per i lavori piccoli.</Card>
+    <Card variante="peach" tag="Collaboratore" titolo="Lavora nei vostri file">Propone modifiche, voi le approvate una per una. Il lavoro di tutti i giorni.</Card>
+    <Card tag="Agente" titolo="Gli date un obiettivo">Lavora da solo per molti passi. Per compiti chiari, con un risultato facile da controllare.</Card>
+  </Grid>
 </Slide>

@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.6 Il problema" titolo="Dall'idea al problema da risolvere" lead="Un'idea dice cosa costruire. Un problema dice perché. Partite dal problema: vi dirà anche quando avete finito.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">L'idea</span>
+      <h3>«Un'app per prenotare le aule»</h3>
+      <p class="mt-m">Si può fare in mille modi. Nessuno vi dice quali funzioni servono, e quali no.</p>
+    </div>
+    <div class="vs" aria-hidden="true">→</div>
+    <div class="card peach">
+      <span class="tag">Il problema</span>
+      <h3>«Le aule si prenotano su un foglio in segreteria»</h3>
+      <p class="mt-m">Due classi nella stessa aula, telefonate per sapere cosa è libero, aule prenotate e poi vuote.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Quattro domande">Chi ha il problema? Quanto spesso succede? Come lo risolvono oggi? Come capiremo che è risolto?</Card>
+</Slide>

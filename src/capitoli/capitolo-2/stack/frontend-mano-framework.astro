@@ -3,13 +3,14 @@ import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="2.4 Frontend" titolo="Il frontend: a mano o con un framework">
+<Slide {...Astro.props} classe="compact" kicker="2.4 Frontend" titolo="Il frontend: a mano o con un framework">
   <p class="lead" style="max-width:62ch">La parte che si vede si può scrivere da zero, oppure con strumenti che danno già una struttura.</p>
   <Grid colonne={4} classe="mt-l">
-    <Card variante="peach" tag="A mano" titolo="HTML, CSS, JavaScript">Come questo sito. Si legge tutto e non serve imparare altro. Per siti piccoli basta e avanza.</Card>
-    <Card tag="Per le interfacce" titolo="React, Vue, Svelte">La pagina è divisa in componenti riutilizzabili, come mattoncini. Utili per web app con tante schermate.</Card>
-    <Card tag="Framework completi" titolo="Next.js, Astro">Pagine, indirizzi e pubblicazione già organizzati. Next.js si basa su React.</Card>
+    <Card tag="A mano" titolo="HTML, CSS, JavaScript">Si legge tutto e non serve imparare altro. Per una pagina sola basta e avanza.</Card>
+    <Card variante="peach" tag="Per i siti di contenuti" titolo="Astro">Le pagine sono quasi HTML. I pezzi che si ripetono diventano componenti. Al browser arriva HTML leggero. Lo usiamo noi.</Card>
+    <Card tag="Per le web app" titolo="React, Vue, Next.js">Interfacce con tante schermate che cambiano mentre le usate. Next.js si basa su React e organizza pagine e indirizzi.</Card>
     <Card tag="Per lo stile" titolo="Tailwind, Bootstrap">Classi CSS già pronte per colori, spazi e colonne. Si scrive meno CSS, ma l'HTML diventa più fitto.</Card>
   </Grid>
   <Card variante="sky mt-m" titolo="Se non dite niente, decide l'AI">Costruttori come Lovable e v0 partono quasi sempre da React e Tailwind. Non è sbagliato, ma è una scelta: se volete altro, scrivetelo nel documento di progetto.</Card>
+  <p class="footnote">Framework: una struttura già pronta, con le sue regole, dentro cui si scrive il proprio codice. Su Astro: <a href="https://docs.astro.build/en/concepts/why-astro/" target="_blank" rel="noopener">documentazione ufficiale</a>.</p>
 </Slide>

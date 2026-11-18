@@ -3,11 +3,11 @@ import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Scrivete il documento del vostro progetto" lead="Partite da quello che avete pensato nella 2.1 e aggiungete le scelte del capitolo 2. Sarà il CLAUDE.md del vostro sito.">
+<Slide {...Astro.props} kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Scrivete il documento del vostro progetto" lead="Partite da quello che avete pensato nella 2.1 e aggiungete le scelte del capitolo 2. Diventerà il primo commit del vostro progetto (4.8), e poi il CLAUDE.md.">
   <Grid colonne={4} classe="mt-l">
     <Card variante="peach" titolo="Obiettivo e MVP">Cosa fa il sito, e qual è la versione più piccola che funziona?</Card>
     <Card titolo="Pubblico">Chi lo usa, da quale dispositivo, con quali esigenze?</Card>
-    <Card titolo="Stack">Sito statico in HTML, CSS e JavaScript? Serve un backend?</Card>
-    <Card titolo="Regole">Tono, stile, lingua, cose da non fare mai.</Card>
+    <Card titolo="Funzionalità e criteri">Le storie degli utenti e, per ognuna, quando è finita (2.6).</Card>
+    <Card titolo="Stack e regole">Astro e Keystatic, GitHub e Vercel. Serve anche Supabase? Tono, lingua, cose da non fare mai.</Card>
   </Grid>
 </Slide>

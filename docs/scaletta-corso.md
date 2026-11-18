@@ -16,7 +16,7 @@ Corso ENGIM sull'AI e sul vibe coding. Versione 2, 18 novembre 2026. Rivista dop
    
    Gli studenti, in parallelo, lavorano al proprio progetto.
 5. **Lo stack del corso è Astro + Keystatic + GitHub + Vercel.** Per la webapp si aggiunge Supabase. Keystatic funziona solo dentro un framework (Astro, Next.js, Remix), quindi il sito degli studenti si fa in Astro fin dall'inizio. Le pagine di Astro sono quasi HTML, e i componenti nascono da sé.
-   - Da cambiare nei capitoli già pubblicati: 2.2.10, 2.4.8, 2.4.9 e 3.1.3, che oggi dicono «HTML, CSS e JavaScript senza framework».
+   - I capitoli già pubblicati (2.4.4, 2.4.8, 2.4.9, 2.6.9, 3.1.3, 3.4.11) sono stati portati ad Astro nell'obiettivo 1.
 
 ## Come leggere questa scaletta
 
@@ -119,7 +119,8 @@ Etichette:
 ### 2.1 Organizzare un progetto
 - 2.1.0 Apertura
 - 2.1.1 **Un sito è una ricetta.**
-- 2.1.2 **La mappa del corso.** Novità, idea di Gilberto con le parole della ricetta: la ricetta (progettare), i fornelli (costruire), l'assaggio (verificare), l'impiattamento (pubblicare), il giorno dopo (mantenere). Ogni copertina di capitolo mostra «siete qui».
+- 2.1.2 **La mappa del corso.** Novità, idea di Gilberto con le parole della ricetta: la ricetta (progettare), i fornelli (costruire), l'assaggio (verificare), l'impiattamento (pubblicare), il giorno dopo (mantenere). Ogni copertina di capitolo mostra «siete qui» (componente `SieteQui`).
+  - Tappe e capitoli: la ricetta 2 e 3; i fornelli 4, 5, 6, 7, 8 e 10; l'assaggio 11; l'impiattamento 9; il giorno dopo 12. Il capitolo 1 resta fuori dalla mappa.
 - 2.1.3 **Il piano si fa a mano, prima.**
 - 2.1.4 **La differenza la fa il brief.** **[Con l'AI]**
 - 2.1.5 **Prima di accendere i fornelli.** **[Checklist]**
