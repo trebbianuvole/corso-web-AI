@@ -34,7 +34,7 @@ Etichette:
 - **[Scheda aggiornabile]**: rimanda a una scheda con data
 - **[Verificare]**: fatto da ricontrollare sulle fonti quando si scrive
 
-**Come si comportano gli approfondimenti sul sito** (da realizzare):
+**Come si comportano gli approfondimenti sul sito** (realizzato; il primo è 1.1.a1–a8):
 - Sulle slide che hanno un approfondimento c'è un pulsante blu-viola.
 - Cliccandolo, la pagina corrente si stringe in una barra verticale a sinistra, con il numero della sezione e il titolo della slide in piccolo.
 - Il resto dello schermo lo occupano le slide dell'approfondimento, con colori sul blu e sul rosa al posto dell'arancione e del beige.
