@@ -1,0 +1,14 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Com'è fatto un sito" titolo="Anatomia di un indirizzo" lead="Ogni pezzo di un URL ha un significato preciso.">
+  <div class="card mt-l">
+    <div class="url">
+      <div class="seg"><code>https://</code><small><b>Protocollo</b>come si parla. La «s» vuol dire sicuro: la connessione è cifrata.</small></div>
+      <div class="seg"><code>www.darina.it</code><small><b>Dominio</b>il nome del sito, che si affitta ogni anno.</small></div>
+      <div class="seg"><code>/menu</code><small><b>Percorso</b>quale pagina, dentro il sito.</small></div>
+      <div class="seg"><code>?lingua=en</code><small><b>Parametri</b>informazioni in più per il server.</small></div>
+    </div>
+  </div>
+  <p class="footnote">Il lucchetto nella barra del browser indica HTTPS. Oggi è la norma: i siti senza vengono segnalati come «non sicuri».</p>
+</Slide>

@@ -1,0 +1,23 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.2 MVP" titolo="Il MVP della trattoria «Da Rina»" lead="La domanda è sempre la stessa: qual è la cosa più piccola che risolve il problema principale?">
+  <div class="scope mt-l">
+    <div class="card peach">
+      <span class="tag">Subito</span>
+      <h3>Indispensabile</h3>
+      <ul><li>Una pagina con foto, indirizzo e orari</li><li>Il menu, leggibile dal telefono</li><li>Un pulsante «Prenota su WhatsApp»</li></ul>
+    </div>
+    <div class="card">
+      <span class="tag">Dopo</span>
+      <h3>Utile</h3>
+      <ul><li>La versione in inglese per i turisti</li><li>Una galleria di piatti</li><li>Gli eventi della settimana</li></ul>
+    </div>
+    <div class="card">
+      <span class="tag">Un giorno, forse</span>
+      <h3>Bello ma costoso</h3>
+      <ul><li>Prenotazioni online con calendario</li><li>Account dei clienti</li><li>Ordini da asporto con pagamento</li></ul>
+    </div>
+  </div>
+  <p class="footnote">Con l'AI aggiungere funzioni sembra gratis. Non lo è: ogni funzione in più è codice da controllare, provare e mantenere.</p>
+</Slide>

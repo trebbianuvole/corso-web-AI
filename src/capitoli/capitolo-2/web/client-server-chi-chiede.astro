@@ -1,0 +1,19 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Com'è fatto un sito" titolo="Client e server: chi chiede e chi serve">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Client</span>
+      <h3>Il browser, sul vostro dispositivo</h3>
+      <p class="mt-m">Chrome, Safari, Firefox. Chiede le pagine e le mostra. È il cliente seduto al tavolo: ordina, poi riceve il piatto.</p>
+    </div>
+    <div class="vs" aria-hidden="true">↔</div>
+    <div class="card peach">
+      <span class="tag">Server</span>
+      <h3>Un computer acceso sempre, da qualche parte</h3>
+      <p class="mt-m">Conserva i file del sito e li manda a chi li chiede, a qualunque ora, a migliaia di persone insieme. È la cucina.</p>
+    </div>
+  </div>
+  <p class="footnote">Un server non è una macchina speciale: è un computer come gli altri, pensato per stare acceso e rispondere alle richieste.</p>
+</Slide>

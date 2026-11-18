@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.2 Cosa costruiamo" titolo="Sito, web app o app? Anche Mac o solo Windows?" lead="Prima di scegliere gli strumenti bisogna sapere che tipo di oggetto stiamo facendo.">
+  <Grid colonne={4} classe="mt-l">
+    <Card variante="peach" tag="Si apre nel browser" titolo="Sito">Informa e presenta. Va su qualunque dispositivo, senza installare niente. Il sito di una trattoria.</Card>
+    <Card tag="Si apre nel browser" titolo="Web app">Si usa, non si legge soltanto: account, dati salvati, cose che cambiano. Gmail, Canva.</Card>
+    <Card tag="Si scarica dallo store" titolo="App per telefono">Una versione per iPhone e una per Android, con regole e costi per pubblicarle. WhatsApp.</Card>
+    <Card tag="Si installa sul PC" titolo="Programma">Per Windows, per Mac, o per entrambi: sono due lavori diversi. Word, Photoshop.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="In questo corso">Costruiamo siti: si aprono ovunque, si pubblicano gratis, e il codice è il più semplice da leggere. La domanda «Mac o Windows?» non ci tocca. Per un programma invece sarebbe la prima da fare.</Card>
+  <p class="footnote">Gli strumenti adatti a ciascuno li vediamo nella 2.4, dedicata allo stack.</p>
+</Slide>

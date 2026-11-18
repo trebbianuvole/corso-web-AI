@@ -1,0 +1,12 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.5 La metafora" titolo="Al ristorante" lead="Quattro personaggi, quattro pezzi di tecnologia.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Voi</span><b>Il cliente</b><span>sa cosa vuole, e lo dice con parole sue: «qualcosa di leggero, senza glutine»</span></div>
+    <div><span class="role">Server MCP</span><b>Il cameriere</b><span>capisce la richiesta, conosce il menu, la trasforma nell'ordine giusto</span></div>
+    <div><span class="role">API</span><b>Il menu</b><span>l'elenco preciso di cosa si può ordinare e come chiederlo</span></div>
+    <div><span class="role">Backend</span><b>La cucina</b><span>dove si fa il lavoro vero; il cliente non la vede mai</span></div>
+  </div>
+  <p class="footnote">Per la precisione: a capire la lingua è il modello, cioè Claude. Il server MCP gli spiega quali piatti esistono e come ordinarli. Insieme fanno il cameriere.</p>
+</Slide>

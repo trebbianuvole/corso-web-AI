@@ -1,0 +1,38 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="2.3 Prova" titolo="Accendete gli strati, uno alla volta">
+  <div class="layers mt-m" data-layers>
+    <div>
+      <div class="layers-controls" role="group" aria-label="Strati della pagina">
+        <label><input type="checkbox" checked disabled> HTML</label>
+        <label><input type="checkbox" data-layer="css"> CSS</label>
+        <label><input type="checkbox" data-layer="js"> JavaScript</label>
+      </div>
+      <div class="layers-stage" data-css="off" data-js="off">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>darina.it</span></div>
+        <div class="demo-site">
+          <h4>Trattoria <span>Da Rina</span></h4>
+          <p>Cucina piemontese a Torino. Aperti tutti i giorni, 12–15 e 19–23.</p>
+          <button type="button">Prenota un tavolo</button>
+          <p class="demo-msg" hidden>Fatto! Vi richiamiamo per confermare.</p>
+        </div>
+      </div>
+      <p class="layers-note" aria-live="polite"></p>
+    </div>
+    <div class="layers-code">
+<pre class="code" data-for="html"><b>HTML</b><span class="k">&lt;h4&gt;</span>Trattoria <span class="k">&lt;span&gt;</span>Da Rina<span class="k">&lt;/span&gt;&lt;/h4&gt;</span>
+<span class="k">&lt;p&gt;</span>Cucina piemontese a Torino…<span class="k">&lt;/p&gt;</span>
+<span class="k">&lt;button&gt;</span>Prenota un tavolo<span class="k">&lt;/button&gt;</span></pre>
+<pre class="code is-off" data-for="css"><b>CSS</b><span class="k">h4 span</span> &#123; color: <span class="s">orange</span>; &#125;
+<span class="k">button</span> &#123;
+  background: <span class="s">orange</span>; color: <span class="s">white</span>;
+  border-radius: <span class="s">999px</span>; padding: <span class="s">14px 22px</span>;
+&#125;</pre>
+<pre class="code is-off" data-for="js"><b>JavaScript</b><span class="k">button</span>.addEventListener(<span class="s">"click"</span>, () =&gt; &#123;
+  messaggio.hidden = <span class="s">false</span>;
+  button.textContent = <span class="s">"Richiesta inviata"</span>;
+&#125;);</pre>
+    </div>
+  </div>
+</Slide>

@@ -1,0 +1,17 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.2 Il pubblico" titolo="Il target decide le scelte tecniche">
+  <p class="lead" style="max-width:60ch">Nella 2.1 ci siamo chiesti per chi è il sito. Ora vediamo perché la risposta cambia il modo in cui lo costruiamo.</p>
+  <table class="recipe target mt-l">
+    <thead><tr><th>Domanda</th><th>Risposta di esempio</th><th>Cosa cambia</th></tr></thead>
+    <tbody>
+      <tr><td>Da quale dispositivo?</td><td>Nove su dieci dal telefono</td><td>Si progetta prima per lo schermo piccolo</td></tr>
+      <tr><td>Con quale sistema?</td><td>Windows, Mac, iPhone, Android</td><td>Un sito va bene per tutti; un'app va fatta per ciascuno</td></tr>
+      <tr><td>Che età, che abitudini?</td><td>Anche over 65, poco pratici</td><td>Caratteri grandi, pochi passaggi, niente gergo</td></tr>
+      <tr><td>Che lingua?</td><td>Italiani e turisti stranieri</td><td>Testi in più lingue</td></tr>
+      <tr><td>Da dove, con che rete?</td><td>Per strada, con il 4G</td><td>Pagine leggere, immagini compresse</td></tr>
+      <tr><td>Esigenze particolari?</td><td>Chi vede poco, chi non distingue i colori</td><td>Contrasto, testi alternativi alle immagini</td></tr>
+    </tbody>
+  </table>
+</Slide>

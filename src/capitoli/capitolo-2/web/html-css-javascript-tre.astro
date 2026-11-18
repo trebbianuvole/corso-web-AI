@@ -1,0 +1,32 @@
+---
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 I tre linguaggi" titolo="HTML, CSS, JavaScript: tre lavori diversi" lead="Ogni pagina web è fatta di tre strati. Pensate a una casa.">
+  <Grid colonne={3} classe="mt-l">
+    <div class="card">
+      <span class="tag">La struttura</span>
+      <h3>HTML: i muri</h3>
+      <p>Dice cosa c'è nella pagina: un titolo, un paragrafo, un'immagine, un pulsante.</p>
+<pre class="code"><span class="k">&lt;h1&gt;</span>Trattoria Da Rina<span class="k">&lt;/h1&gt;</span>
+<span class="k">&lt;button&gt;</span>Prenota<span class="k">&lt;/button&gt;</span></pre>
+    </div>
+    <div class="card">
+      <span class="tag">L'aspetto</span>
+      <h3>CSS: l'arredamento</h3>
+      <p>Dice come appare: colori, caratteri, spazi, dove sta ogni cosa sullo schermo.</p>
+<pre class="code"><span class="k">button</span> &#123;
+  background: <span class="s">orange</span>;
+  border-radius: <span class="s">20px</span>;
+&#125;</pre>
+    </div>
+    <div class="card peach">
+      <span class="tag">Il comportamento</span>
+      <h3>JavaScript: l'impianto elettrico</h3>
+      <p>Dice cosa succede quando fate qualcosa: un clic, un tocco, un modulo inviato.</p>
+<pre class="code"><span class="k">button</span>.onclick = () =&gt; &#123;
+  mostra(<span class="s">"Richiesta inviata"</span>);
+&#125;;</pre>
+    </div>
+  </Grid>
+</Slide>

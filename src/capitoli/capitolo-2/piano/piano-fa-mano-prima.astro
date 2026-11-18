@@ -1,0 +1,14 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="2.1 Organizzare un progetto" titolo="Il piano si fa a mano, prima" lead="L'AI esegue molto bene un piano chiaro. Non può decidere al posto vostro cosa volete.">
+  <Steps>
+    <Passo titolo="L'obiettivo in una frase">«Un sito che fa prenotare un tavolo in due clic.»</Passo>
+    <Passo titolo="Il pubblico">Chi è, cosa cerca, cosa sa già.</Passo>
+    <Passo titolo="La mappa su carta">Quali pagine, cosa c'è in ognuna.</Passo>
+    <Passo titolo="La raccolta delle risorse">Testi, immagini, riferimenti di stile.</Passo>
+    <Passo titolo="Solo adesso: Claude">Con il piano in mano, il primo prompt è facile.</Passo>
+  </Steps>
+</Slide>

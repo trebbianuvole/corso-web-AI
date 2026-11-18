@@ -1,0 +1,14 @@
+---
+import Passo from "../../components/Passo.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} kicker="Capitolo 2" titoloStile="font-size:clamp(2.6rem,6vw,5.6rem);max-width:16ch" titolo="Progettare e capire il web" lead="Prima di chiedere a Claude di scrivere codice: cosa costruire, con quali strumenti, su cosa si regge.">
+  <Steps classe="mt-l" stile="max-width:760px">
+    <Passo titolo="Organizzare un progetto" inLinea>prima la ricetta, poi i fornelli</Passo>
+    <Passo titolo="Dal piano al progetto" inLinea>POC, MVP, pubblico, architettura</Passo>
+    <Passo titolo="Com'è fatto un sito" inLinea>browser, server, dominio, HTML, CSS, JavaScript</Passo>
+    <Passo titolo="Lo stack" inLinea>linguaggi e strumenti, dal sito al videogioco</Passo>
+    <Passo titolo="API e server MCP" inLinea>il menu, la cucina e il cameriere</Passo>
+  </Steps>
+</Slide>

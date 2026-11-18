@@ -1,0 +1,32 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="2.2 Architettura" titolo="Architettura: dove sta ogni cosa" lead="È il modo in cui il codice è diviso in file e cartelle, e come questi pezzi parlano tra loro. Come la pianta di una cucina: dispensa, fornelli, lavello, sala.">
+  <Fragment slot="intro">
+  <Defs classe="mt-m">
+    <Def termine="Ogni file un compito">uno per lo stile, uno per la navigazione, uno per il gioco</Def>
+    <Def termine="Nomi che si capiscono"><code>style.css</code>, non <code>file2-nuovo.css</code></Def>
+    <Def termine="Niente copie">lo stesso codice in due posti diventa due errori</Def>
+  </Defs>
+  </Fragment>
+  <figure class="figure">
+    <pre class="code tree"><span class="m">Il sito di questo corso</span>
+
+<span class="d">corso-web-ai/</span>
+├── index.html          <span class="c">la home</span>
+├── <span class="d">capitolo-1/</span>
+│   └── index.html      <span class="c">le slide del capitolo 1</span>
+├── <span class="d">capitolo-2/</span>
+│   └── index.html      <span class="c">quelle che state guardando</span>
+├── <span class="d">capitolo-3/</span>
+│   └── index.html      <span class="c">prompt, agenti, Claude Code</span>
+└── <span class="d">assets/</span>
+    ├── <span class="d">css/</span>
+    │   └── style.css   <span class="c">un solo stile per tutto</span>
+    └── <span class="d">js/</span>
+        ├── deck.js     <span class="c">le frecce per le slide</span>
+        └── layers.js   <span class="c">la demo dei tre strati</span></pre>
+  </figure>
+</Slide>

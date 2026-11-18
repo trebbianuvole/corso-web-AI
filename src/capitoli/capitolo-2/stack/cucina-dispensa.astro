@@ -1,0 +1,31 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.4 Backend e dati" titolo="La cucina e la dispensa">
+  <p class="lead" style="max-width:62ch">Servono solo quando il sito deve ricordarsi qualcosa: utenti, prenotazioni, ordini.</p>
+  <Grid colonne={2} classe="mt-l">
+    <div class="card">
+      <span class="tag">La cucina</span>
+      <h3>Backend</h3>
+      <Defs classe="mt-m">
+        <Def termine="JavaScript">con Node.js: lo stesso linguaggio del frontend</Def>
+        <Def termine="Python">con Django o FastAPI</Def>
+        <Def termine="PHP">con Laravel, o dentro WordPress</Def>
+        <Def termine="Java">con Spring, nelle grandi aziende</Def>
+      </Defs>
+    </div>
+    <div class="card">
+      <span class="tag">La dispensa</span>
+      <h3>Database</h3>
+      <Defs classe="mt-m">
+        <Def termine="A tabelle (SQL)">righe e colonne, come un foglio di calcolo molto severo. PostgreSQL, MySQL, SQLite</Def>
+        <Def termine="A documenti (NoSQL)">schede libere, ognuna con i suoi campi. MongoDB, Firestore</Def>
+      </Defs>
+    </div>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Il backend già pronto">Servizi come Supabase e Firebase offrono database, accesso degli utenti e archivio dei file senza scrivere un server. Si collegano dal frontend e hanno piani gratuiti per iniziare.</Card>
+</Slide>

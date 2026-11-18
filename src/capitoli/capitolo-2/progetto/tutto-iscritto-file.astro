@@ -1,0 +1,27 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="2.2 Il documento di progetto" titolo="Tutto per iscritto, in un file" lead="Obiettivo, MVP, pubblico, stack e regole stanno in un file di testo dentro il progetto. Claude lo legge all'inizio di ogni lavoro, così non dovete ripetere tutto ogni volta.">
+  <Fragment slot="intro">
+  <p class="footnote">Nel capitolo 3 vedremo che con Claude Code questo file ha un nome preciso: <code>CLAUDE.md</code>.</p>
+  </Fragment>
+  <pre class="code"><span class="k"># Sito della trattoria «Da Rina»</span>
+
+<span class="k">## Obiettivo</span>
+Far trovare orari e menu, far prenotare su WhatsApp.
+
+<span class="k">## MVP</span>
+Una pagina: foto, orari, menu, pulsante WhatsApp.
+
+<span class="k">## Pubblico</span>
+Famiglie e turisti, quasi tutti dal telefono.
+
+<span class="k">## Stack</span>
+HTML, CSS e JavaScript semplici, senza framework.
+Codice su GitHub, pubblicato con Vercel.
+
+<span class="k">## Regole</span>
+- Testi in italiano, tono caldo e semplice.
+- Prima il telefono, poi il computer.
+- Una modifica alla volta, spiegando cosa cambi.</pre>
+</Slide>

@@ -1,0 +1,23 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.2 MVP" titolo="MVP: la versione più piccola che funziona">
+  <p class="lead" style="max-width:60ch">Minimum Viable Product, prodotto minimo funzionante. Non è un pezzo del prodotto finale: è un prodotto intero, solo più semplice, che qualcuno può già usare.</p>
+  <div class="mvp mt-l">
+    <div class="mvp-row bad">
+      <span class="lbl">Così no</span>
+      <div class="mvp-step"><b>Una ruota</b><span>non serve a nessuno</span></div>
+      <div class="mvp-step"><b>Il telaio</b><span>ancora inutile</span></div>
+      <div class="mvp-step"><b>La carrozzeria</b><span>non si muove</span></div>
+      <div class="mvp-step"><b>L'auto</b><span>finalmente si usa, dopo mesi</span></div>
+    </div>
+    <div class="mvp-row good">
+      <span class="lbl">Così sì</span>
+      <div class="mvp-step"><b>Uno skateboard</b><span>ci si sposta già</span></div>
+      <div class="mvp-step"><b>Un monopattino</b><span>più comodo</span></div>
+      <div class="mvp-step"><b>Una bicicletta</b><span>più veloce</span></div>
+      <div class="mvp-step"><b>L'auto</b><span>e intanto avete imparato cosa serve</span></div>
+    </div>
+  </div>
+  <p class="footnote">L'esempio dello skateboard è di Henrik Kniberg: <a href="https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp" target="_blank" rel="noopener">Making sense of MVP</a> (2016).</p>
+</Slide>

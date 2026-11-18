@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.4 I linguaggi" titolo="I linguaggi più diffusi, e dove si usano">
+  <Grid colonne={3} classe="langs mt-l">
+    <Card variante="peach" tag="Pagine web" titolo="HTML e CSS">Struttura e aspetto delle pagine. Non sono veri linguaggi di programmazione: descrivono, non calcolano.</Card>
+    <Card variante="peach" tag="Web, dal browser al server" titolo="JavaScript e TypeScript">Tutto ciò che si muove in una pagina; con Node.js gira anche sul server. TypeScript è JavaScript con più controlli.</Card>
+    <Card tag="Dati, AI, automazioni" titolo="Python">Facile da leggere, usatissimo per imparare. Con Python si addestrano i modelli di AI; il server di Instagram è nato in Python.</Card>
+    <Card tag="Server dei siti" titolo="PHP">Il linguaggio di WordPress e di Wikipedia. Vecchio ma ancora ovunque.</Card>
+    <Card tag="Android e aziende" titolo="Java e Kotlin">Le app Android, i sistemi di banche e grandi aziende. Minecraft è nato in Java.</Card>
+    <Card tag="Mondo Apple" titolo="Swift">Le app per iPhone, iPad e Mac.</Card>
+    <Card tag="Windows e videogiochi" titolo="C#">Programmi per Windows e giochi fatti con Unity.</Card>
+    <Card tag="Dove serve velocità" titolo="C e C++">Sistemi operativi, browser come Chrome, motori dei videogiochi, schede elettroniche.</Card>
+    <Card tag="Interrogare i dati" titolo="SQL">Fa domande a un database: «tutte le prenotazioni di sabato, in ordine di orario».</Card>
+  </Grid>
+</Slide>
