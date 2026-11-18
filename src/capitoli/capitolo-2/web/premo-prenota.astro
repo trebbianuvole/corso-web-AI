@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Frontend, backend, database" titolo="Cosa succede quando premo «Prenota»" lead="In PrenotaAula una docente vuole l'aula 3 per giovedì alle 10. Preme un pulsante, e in un secondo succedono cinque cose.">
+  <div class="pipe mt-l">
+    <div><span class="role">Frontend</span><b>Il modulo</b><span>controlla che giorno e ora siano scelti, e manda la richiesta</span></div>
+    <div><span class="role">Rete</span><b>La richiesta</b><span>viaggia fino al server: chi sei, quale aula, quando</span></div>
+    <div><span class="role">Backend</span><b>Il controllo</b><span>sei collegata? Hai il permesso? L'aula è ancora libera?</span></div>
+    <div><span class="role">Database</span><b>Il salvataggio</b><span>la prenotazione viene scritta, così la vedono tutti</span></div>
+    <div><span class="role">Frontend</span><b>La risposta</b><span>torna al browser: «Prenotata», oppure «Aula già occupata»</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Perché vi serve saperlo">Quando chiederete a Claude una funzione come questa, saprete dove può rompersi e cosa controllare a ogni passo. La costruiremo davvero nel capitolo 10.</Card>
+</Slide>

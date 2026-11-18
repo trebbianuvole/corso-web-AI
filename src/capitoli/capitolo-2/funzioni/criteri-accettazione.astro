@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="2.6 Criteri di accettazione" titolo="Quando una funzione è finita" lead="I criteri di accettazione sono frasi che si possono controllare: o sono vere, o no. Quando sono tutte vere, la funzione è finita.">
+  <Fragment slot="intro">
+  <Card variante="sky mt-m" titolo="Li ritroverete">Nel prompt, per dire a Claude cosa deve funzionare (6.5). Nei test, per controllarlo da soli (11.2).</Card>
+  <p class="footnote">Lo schema «dato che, quando, allora» in inglese è <i>Given, When, Then</i>.</p>
+  </Fragment>
+  <div class="stack">
+    <pre class="code"><span class="m">Prenotare un'aula: criterio 1</span>
+<span class="k">Dato che</span> l'aula 3 è libera giovedì alle 10,
+<span class="k">quando</span> la docente la prenota,
+<span class="k">allora</span> vede «Prenotata»
+e l'aula sparisce da quelle libere.</pre>
+    <pre class="code"><span class="m">Prenotare un'aula: criterio 2</span>
+<span class="k">Dato che</span> l'aula 3 è già prenotata,
+<span class="k">quando</span> un'altra persona prova a prenotarla,
+<span class="k">allora</span> vede «Aula già occupata»
+e non viene salvato niente.</pre>
+  </div>
+</Slide>

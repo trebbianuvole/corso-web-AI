@@ -1,12 +1,15 @@
 ---
 import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
 import Slide from "../../components/slide/Slide.astro";
 import Steps from "../../components/Steps.astro";
 ---
-<Slide {...Astro.props} kicker="Capitolo 3" titoloStile="font-size:clamp(2.6rem,6vw,5.6rem);max-width:16ch" titolo="Parlare con l'AI e farla lavorare" lead="Come si chiede bene, cosa vuol dire affidare un lavoro a un agente, e lo strumento con cui costruiremo il sito.">
-  <Steps classe="mt-l" stile="max-width:760px">
-    <Passo titolo="Prompt engineering" inLinea>come si scrive una richiesta che funziona</Passo>
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 3" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Parlare con l'AI e farla lavorare" lead="Come si chiede bene, cosa vuol dire affidare un lavoro a un agente, e lo strumento con cui costruiremo il sito.">
+  <Steps classe="mt-m" stile="max-width:760px">
+    <Passo titolo="Prompt e contesto" inLinea>come si scrive una richiesta che funziona, e cosa serve sapere a Claude</Passo>
     <Passo titolo="Gli agenti" inLinea>cosa sono, in Claude, e la differenza con le skill</Passo>
+    <Passo titolo="MCP e connettori" inLinea>l'AI che usa i vostri programmi</Passo>
     <Passo titolo="Vibe coding e Claude Code" inLinea>programmare parlando, ma con giudizio</Passo>
   </Steps>
+  <SieteQui capitolo={3} classe="mt-m" />
 </Slide>

@@ -3,13 +3,13 @@ import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="3.3 Claude Code" titolo="Gli strumenti da conoscere">
+<Slide {...Astro.props} kicker="3.4 Claude Code" titolo="Gli strumenti da conoscere">
   <Grid colonne={3} classe="mt-l">
-    <Card variante="peach" tag="La memoria del progetto" titolo="CLAUDE.md">Il documento di progetto della 2.2. Claude lo legge all'inizio di ogni sessione: obiettivo, stack, regole.</Card>
+    <Card variante="peach" tag="La memoria del progetto" titolo="CLAUDE.md">Il documento di progetto della 2.6. Claude lo legge all'inizio di ogni sessione: obiettivo, stack, regole.</Card>
     <Card tag="Prima pensa, poi tocca" titolo="Plan mode">Claude esplora e propone un piano senza modificare niente. Voi lo correggete, poi si parte. Si attiva con <kbd>Shift</kbd> <kbd>Tab</kbd>.</Card>
     <Card tag="Chi decide" titolo="Permessi">Potete fargli chiedere conferma prima di ogni modifica o comando, oppure lasciarlo più libero.</Card>
-    <Card tag="Tornare indietro" titolo="Checkpoint">Se una modifica non piace, si riavvolge la sessione al punto prima, con <code>/rewind</code>.</Card>
+    <Card tag="Tornare indietro" titolo="Checkpoint">Se una modifica non piace, si riavvolge la sessione al punto prima, con <code>/rewind</code>. Non sostituisce il commit di Git (4.7).</Card>
     <Card tag="Aiutanti" titolo="Subagent">Claude può affidare pezzi di lavoro, come cercare nei file, ad altri agenti che lavorano in parallelo.</Card>
-    <Card tag="Già visti" titolo="Skill e MCP">Le skill della 3.2 e i server MCP della 2.5 funzionano anche qui.</Card>
+    <Card tag="Già visti" titolo="Skill e MCP">Le skill della 3.2 e i server MCP della 3.3 funzionano anche qui.</Card>
   </Grid>
 </Slide>

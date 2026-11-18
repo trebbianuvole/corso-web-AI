@@ -1,0 +1,19 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.6 Requisiti" titolo="Requisiti funzionali e non funzionali" lead="Un requisito è una cosa che il prodotto deve avere. Alcuni dicono cosa fa, altri come deve farlo.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Funzionali</span>
+      <h3>Cosa fa</h3>
+      <ul class="mt-m"><li>La docente prenota un'aula</li><li>La docente annulla una sua prenotazione</li><li>La segreteria vede il calendario della settimana</li></ul>
+    </div>
+    <div class="vs" aria-hidden="true">e</div>
+    <div class="card peach">
+      <span class="tag">Non funzionali</span>
+      <h3>Come deve farlo</h3>
+      <ul class="mt-m"><li><b>Veloce:</b> si apre in pochi secondi anche dal telefono</li><li><b>Accessibile:</b> si usa da tastiera e con un lettore di schermo</li><li><b>Sicuro:</b> solo chi ha un account della scuola può prenotare</li></ul>
+    </div>
+  </div>
+  <p class="footnote">L'AI tende a curare i primi e a dimenticare i secondi, se non li scrivete.</p>
+</Slide>

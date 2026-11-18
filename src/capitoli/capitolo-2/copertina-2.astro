@@ -1,14 +1,17 @@
 ---
 import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
 import Slide from "../../components/slide/Slide.astro";
 import Steps from "../../components/Steps.astro";
 ---
-<Slide {...Astro.props} kicker="Capitolo 2" titoloStile="font-size:clamp(2.6rem,6vw,5.6rem);max-width:16ch" titolo="Progettare e capire il web" lead="Prima di chiedere a Claude di scrivere codice: cosa costruire, con quali strumenti, su cosa si regge.">
-  <Steps classe="mt-l" stile="max-width:760px">
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 2" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Progettare un prodotto web" lead="Cosa costruire, per chi, con quali strumenti, e come si capisce quando è finito.">
+  <Steps classe="mt-m" stile="max-width:760px">
     <Passo titolo="Organizzare un progetto" inLinea>prima la ricetta, poi i fornelli</Passo>
     <Passo titolo="Dal piano al progetto" inLinea>POC, MVP, pubblico, architettura</Passo>
-    <Passo titolo="Com'è fatto un sito" inLinea>browser, server, dominio, HTML, CSS, JavaScript</Passo>
-    <Passo titolo="Lo stack" inLinea>linguaggi e strumenti, dal sito al videogioco</Passo>
-    <Passo titolo="API e server MCP" inLinea>il menu, la cucina e il cameriere</Passo>
+    <Passo titolo="Com'è fatto un sito" inLinea>browser, server, frontend, backend, CMS</Passo>
+    <Passo titolo="Lo stack" inLinea>gli strumenti, e quelli che useremo noi</Passo>
+    <Passo titolo="API e dati" inLinea>come si parlano i programmi, e in che formato</Passo>
+    <Passo titolo="Funzionalità e criteri" inLinea>cosa deve fare, e quando una funzione è finita</Passo>
   </Steps>
+  <SieteQui capitolo={2} classe="mt-m" />
 </Slide>

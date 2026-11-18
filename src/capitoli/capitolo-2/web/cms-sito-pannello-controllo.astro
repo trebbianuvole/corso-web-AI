@@ -4,12 +4,13 @@ import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.3 CMS" titolo="I CMS: il sito con il pannello di controllo">
-  <p class="lead" style="max-width:62ch">Content Management System, sistema di gestione dei contenuti: testi, foto e pagine si cambiano da un pannello, senza toccare il codice.</p>
-  <Grid colonne={3} classe="mt-l">
-    <Card variante="peach" tag="Il più diffuso" titolo="WordPress">Gratuito e aperto. Lo usano circa quattro siti su dieci in tutto il web. Migliaia di temi e plugin, ma va ospitato e tenuto aggiornato.</Card>
-    <Card tag="Tutto compreso" titolo="Wix, Squarespace">Si costruisce trascinando blocchi, hosting incluso. Facilissimi, ma si paga un abbonamento e si resta legati a loro.</Card>
-    <Card tag="Per vendere" titolo="Shopify">Pensato per i negozi online: prodotti, carrello, pagamenti, spedizioni. Anche qui, un abbonamento al mese.</Card>
+  <p class="lead" style="max-width:62ch">Content Management System, sistema di gestione dei contenuti: testi, foto e pagine si cambiano da un pannello, senza toccare il codice. Ne esistono quattro famiglie.</p>
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Il più diffuso" titolo="WordPress">Gratuito e aperto, lo usano circa quattro siti su dieci. Migliaia di temi e plugin, ma va ospitato e tenuto aggiornato.</Card>
+    <Card tag="Tutto compreso" titolo="I costruttori">Wix, Squarespace, Shopify per i negozi. Si trascinano blocchi, l'hosting è incluso. Si paga un abbonamento e si resta legati a loro.</Card>
+    <Card tag="Solo il pannello" titolo="I CMS headless">Sanity, Contentful, Strapi. Danno il pannello e conservano i contenuti; il sito lo fate voi, e li chiede tramite API (2.5).</Card>
+    <Card variante="peach" tag="I contenuti sono file" titolo="I CMS basati su Git">Keystatic, Decap. Il pannello salva i testi come file dentro il progetto, su GitHub. Niente database da gestire.</Card>
   </Grid>
-  <Card variante="sky mt-m" titolo="Quando conviene, e cosa costa">Conviene quando a cambiare testi e foto sarà chi non programma, come il titolare della trattoria che aggiorna il menu ogni settimana. In cambio: siti più pesanti, plugin da aggiornare, meno libertà su come è fatto.</Card>
-  <p class="footnote">Dato di W3Techs, autunno 2026. Nel corso scriviamo il codice con Claude: per aggiornare il sito basta chiederglielo. Un CMS resta una scelta valida, da valutare quando si decide lo stack (2.4).</p>
+  <Card variante="sky mt-m" titolo="Noi useremo Keystatic: capitolo 8">La titolare della trattoria cambia il menu da un pannello. Ogni modifica diventa un file nel progetto, con la sua versione su GitHub, e il sito si aggiorna da solo.</Card>
+  <p class="footnote">Fonti: <a href="https://w3techs.com/technologies/details/cm-wordpress" target="_blank" rel="noopener">W3Techs</a>, novembre 2026 (circa il 39% di tutti i siti); <a href="https://github.com/Thinkmill/keystatic" target="_blank" rel="noopener">Keystatic su GitHub</a>.</p>
 </Slide>

@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.4 Con l'AI" titolo="Lo stack che l'AI conosce meglio" lead="Un modello ha imparato da tutto il codice che ha letto. Dove ha letto tanto, sbaglia poco.">
+  <Grid colonne={3} classe="mt-l">
+    <Card titolo="Diffuso e stabile">Strumenti usati da molti, che cambiano poco: nei dati di addestramento ci sono migliaia di esempi. Meno errori, risposte più sicure.</Card>
+    <Card variante="peach" titolo="La data di taglio">Il modello non sa cosa è uscito dopo il suo addestramento. Con una versione nuova di uno strumento, scrive codice vecchio con la stessa sicurezza.</Card>
+    <Card titolo="Il rimedio: la documentazione">Dategli le pagine ufficiali aggiornate, o ditegli di leggerle. Molti progetti ne pubblicano una versione pensata per l'AI, come il file <code>llms.txt</code>.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Come accorgersene">Errori del tipo «questa funzione non esiste», comandi che non funzionano più, avvisi di funzioni «deprecate», cioè vecchie e in via di eliminazione. Chiedete: «Quale versione stai usando? Controlla la documentazione».</Card>
+  <p class="footnote">Il formato <code>llms.txt</code>: <a href="https://llmstxt.org/" target="_blank" rel="noopener">llmstxt.org</a>.</p>
+</Slide>
