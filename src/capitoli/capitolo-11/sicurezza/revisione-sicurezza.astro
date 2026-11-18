@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="11.3 La sicurezza del codice generato" titolo="La revisione di sicurezza" lead="Claude Code ha un comando apposta, /security-review: rilegge le modifiche del ramo cercando i problemi di sicurezza più comuni. È un buon inizio, non un certificato.">
+  <Fragment slot="intro">
+    <Card variante="peach mt-m" titolo="Cosa non fa">Non sostituisce i test, gli avvisi sulle dipendenze, né una persona che conosce il progetto. E può segnalare problemi che non ci sono: ogni segnalazione si verifica.</Card>
+    <p class="footnote">Fonte: <a href="https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code" target="_blank" rel="noopener">Claude, revisioni di sicurezza automatiche</a>, controllata il 18 novembre 2026.</p>
+  </Fragment>
+  <figure class="figure chat" aria-label="Esempio di richiesta di revisione di sicurezza a Claude">
+    <div class="bubble user">Fai una revisione di sicurezza di PrenotaAula. Per ogni operazione sui dati dimmi dove si controlla chi sei e cosa puoi fare. Cerca chiavi segrete in file che arrivano al browser o nel repository, tabelle senza regole sulle righe, testo dell'utente che finisce in SQL o HTML. Elenca i problemi per gravità, con file e riga. Non correggere niente finché non te lo dico.</div>
+    <p class="chat-note">Una richiesta da adattare al vostro progetto.</p>
+  </figure>
+</Slide>

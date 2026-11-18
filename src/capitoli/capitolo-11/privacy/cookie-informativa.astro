@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="11.4 Privacy e prestazioni" titolo="Cookie e informativa" lead="Un cookie è un piccolo file che il sito salva nel browser. Le linee guida del Garante del 2021 dicono quando serve chiedere il permesso, e come.">
+  <div class="versus mt-m">
+    <div class="card good">
+      <span class="tag">Senza consenso</span>
+      <h3>Basta l'informativa</h3>
+      <ul class="mt-m"><li>Cookie tecnici: la sessione di chi ha fatto l'accesso, la lingua</li><li>Statistiche ridotte al minimo, senza profilare (9.4.3)</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <span class="tag">Con consenso</span>
+      <h3>Serve il banner</h3>
+      <ul class="mt-m"><li>Cookie di profilazione e pubblicità</li><li>La X per chiudere vale come rifiuto</li><li>Chi rifiuta entra lo stesso; scorrere non è consenso</li><li>Un link in fondo alla pagina per cambiare idea</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="La scelta più semplice">Senza cookie di profilazione non serve il banner: per Da Rina e PrenotaAula è la strada giusta. L'informativa sulla privacy serve comunque (5.7).</Card>
+  <p class="footnote">Sintesi a scopo didattico. Fonte: <a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener">Garante, linee guida sui cookie</a>, 10 giugno 2021.</p>
+</Slide>

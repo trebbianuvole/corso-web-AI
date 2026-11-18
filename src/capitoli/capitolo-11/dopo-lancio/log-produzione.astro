@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="11.5 Dopo il lancio" titolo="Log ed errori in produzione" lead="Un log è il diario dell'app: ogni richiesta, ogni errore, con l'ora. Quando un utente dice «non funziona», è lì che si guarda.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Vercel</span>
+      <h3>Logs, nel progetto</h3>
+      <p>Le richieste alle funzioni (10.6.3), con lo stato: in giallo i 4xx, in rosso i 5xx. Si filtra per errore, pagina, data. Sul piano gratuito si vede solo l'ultima ora; sul Pro un giorno.</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card">
+      <span class="tag">Supabase</span>
+      <h3>Logs, nel pannello</h3>
+      <p>Le richieste al database, gli accessi, gli errori di PostgreSQL, come una regola sulle righe che ha detto no. Si conservano un giorno sul piano gratuito, sette sul Pro.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Un'ora passa in fretta">Con log che durano così poco, l'errore di ieri sera stamattina non c'è più. Fatevi mandare subito l'ora esatta e cosa stava facendo l'utente, o usate un servizio che conservi gli errori più a lungo.</Card>
+  <p class="footnote">Fonti: <a href="https://vercel.com/docs/logs/runtime" target="_blank" rel="noopener">Vercel, log</a>; <a href="https://supabase.com/docs/guides/telemetry/logs" target="_blank" rel="noopener">Supabase, log</a> e <a href="https://supabase.com/pricing" target="_blank" rel="noopener">prezzi</a>, controllate il 18 novembre 2026.</p>
+</Slide>

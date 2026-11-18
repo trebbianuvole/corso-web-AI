@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" tipo="con-ai" kicker="11.3 La sicurezza del codice generato" titolo="Gli errori di sicurezza tipici dell'AI" lead="Li avete già visti uno per uno. Qui diventano la lista da controllare in ogni progetto.">
+  <table class="compare mt-l">
+    <thead><tr><th>L'errore</th><th>Come si riconosce</th><th>Dove l'abbiamo visto</th></tr></thead>
+    <tbody>
+      <tr><td>Chiavi nel frontend</td><td data-label="Come si riconosce">Una chiave segreta in un file del browser, o con <code>PUBLIC_</code></td><td data-label="Dove">10.6.1, 10.6.2</td></tr>
+      <tr><td>Controlli solo nel browser</td><td data-label="Come si riconosce">Il pulsante è nascosto, ma la richiesta passa lo stesso</td><td data-label="Dove">10.4.5</td></tr>
+      <tr><td>Database aperto</td><td data-label="Come si riconosce">Una tabella senza regole sulle righe, o con regole che fanno passare tutti</td><td data-label="Dove">10.4.4</td></tr>
+      <tr><td>Librerie vecchie o inventate</td><td data-label="Come si riconosce">Un pacchetto con falle note, o che non esiste</td><td data-label="Dove">5.3.6, 11.3.4</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Perché proprio questi">Sono errori che non si vedono provando l'app: tutto funziona. L'AI ottimizza per «funziona», e qui funzionare non basta.</Card>
+</Slide>

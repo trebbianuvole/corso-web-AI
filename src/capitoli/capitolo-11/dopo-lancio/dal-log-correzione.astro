@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="11.5 Dopo il lancio" titolo="Dal log alla correzione" lead="Claude è bravo a leggere un errore vero e a risalire alla causa. Ma prima di incollarlo, guardate cosa c'è dentro: i log contengono spesso dati delle persone.">
+  <Card slot="intro" variante="peach mt-m" titolo="Togliere prima di incollare">Email, nomi, indirizzi IP, token di accesso: si sostituiscono con segnaposti come <code>utente@esempio.it</code>. Le regole sono quelle della 5.2.</Card>
+  <figure class="figure chat" aria-label="Esempio di richiesta a Claude con un errore di produzione ripulito dai dati personali">
+    <div class="bubble user">In produzione, alle 9:14, la prenotazione è fallita con questo errore (ho tolto i dati personali):
+      <code>new row violates row-level security policy for table "prenotazioni"</code>, utente <code>[docente]</code>, ruolo docente. Prima riproduci l'errore sul progetto di prova con un test, poi trova la causa. Non toccare le regole in produzione.</div>
+    <div class="bubble bot">Riprodotto: la regola per l'inserimento controlla il ruolo nella tabella <code>utenti</code>, ma i docenti creati con «Accedi con Google» non hanno ancora una riga lì. Propongo di crearla al primo accesso, con un test che lo verifica.</div>
+    <p class="chat-note">Conversazione costruita come esempio.</p>
+  </figure>
+</Slide>

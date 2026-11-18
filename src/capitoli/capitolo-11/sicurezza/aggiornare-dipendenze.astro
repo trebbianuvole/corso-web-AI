@@ -1,0 +1,23 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" split kicker="11.3 La sicurezza del codice generato" titolo="Aggiornare le dipendenze" lead="Le dipendenze sono le librerie degli altri dentro il vostro progetto, elencate in package.json. Ogni settimana in qualcuna si scopre una falla.">
+  <Fragment slot="intro">
+    <Card variante="sky mt-m" titolo="Su GitHub, da solo">Gli avvisi di Dependabot segnalano le dipendenze con falle note e indicano la versione corretta. Si attivano nelle impostazioni del repository, alla voce sulla sicurezza.</Card>
+    <Card variante="peach mt-m" titolo="Aggiornare non è automatico">Una versione nuova può cambiare il comportamento. Si aggiorna su un ramo, si fanno girare build e test, poi si unisce.</Card>
+    <p class="footnote">Il terminale è un esempio. Fonti: <a href="https://docs.npmjs.com/cli/commands/npm-audit" target="_blank" rel="noopener">npm audit</a>; <a href="https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts" target="_blank" rel="noopener">avvisi di Dependabot</a>.</p>
+  </Fragment>
+  <div class="term" role="img" aria-label="Il comando npm audit che trova una dipendenza vulnerabile e propone la correzione">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; npm audit</span>
+<span class="rem">1 high severity vulnerability</span>
+<span class="dim">To address all issues, run:</span>
+  npm audit fix
+
+<span class="u">&gt; npm audit fix</span>
+<span class="ok">fixed 1 of 1 vulnerabilities</span>
+
+<span class="u">&gt; npm run build</span>      <span class="dim"># e poi i test</span></pre>
+  </div>
+</Slide>

@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="11.4 Privacy e prestazioni" titolo="Velocità" lead="Lighthouse, già dentro Chrome (7.6.3), misura anche la velocità. Google ne guarda tre aspetti, i Core Web Vitals, con una soglia per ciascuno.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="LCP · entro 2,5 s" titolo="Quando si vede">Il tempo per mostrare l'elemento più grande della pagina, di solito la foto o il titolo.</Card>
+    <Card tag="INP · entro 200 ms" titolo="Quando risponde">Il tempo tra un clic e la reazione della pagina.</Card>
+    <Card tag="CLS · entro 0,1" titolo="Se sta ferma">Quanto si sposta la pagina mentre carica: il pulsante che scappa sotto il dito.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Le correzioni più comuni">Immagini troppo grandi (formato WebP e misure giuste), larghezza e altezza scritte sulle immagini, meno JavaScript e meno servizi esterni. Astro aiuta già molto: si parte bene.</Card>
+  <p class="footnote">Si misura sul telefono, con la versione pubblicata, anche da <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>. Fonti: <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev, Core Web Vitals</a>; <a href="https://developer.chrome.com/docs/lighthouse/overview" target="_blank" rel="noopener">Lighthouse</a>, controllate il 18 novembre 2026.</p>
+</Slide>

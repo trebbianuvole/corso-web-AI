@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="11.6 Prima del lancio" titolo="Revisione incrociata" lead="Ogni gruppo controlla il progetto di un altro, con la checklist della 11.6.1. È più facile trovare i problemi nel lavoro degli altri: usatelo a vostro vantaggio.">
+  <Card slot="intro" variante="sky mt-m" titolo="Le regole">Si prova solo sull'anteprima e con gli account di prova che vi danno. Ogni problema diventa una issue nel loro repository, con i passi per riprodurlo. Niente giudizi: fatti.</Card>
+  <Steps>
+    <Passo titolo="Dieci minuti a mano" inLinea>il compito principale, da utente, sul telefono</Passo>
+    <Passo titolo="La checklist" inLinea>voce per voce: sì, no, non so</Passo>
+    <Passo titolo="Pensare come chi attacca" inLinea>un utente prova a fare quello che non deve (11.3.1)</Passo>
+    <Passo titolo="Con l'AI" inLinea>una revisione di sicurezza sul loro codice, con le segnalazioni verificate</Passo>
+    <Passo titolo="Le issue" inLinea>per gravità, ognuna con i passi per riprodurla</Passo>
+  </Steps>
+</Slide>

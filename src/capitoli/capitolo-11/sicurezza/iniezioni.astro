@@ -1,0 +1,22 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="11.3 La sicurezza del codice generato" titolo="Le iniezioni" lead="Un'iniezione succede quando un testo scritto dall'utente viene preso per un comando. È la stessa idea delle istruzioni nascoste per l'AI (5.3.2), ma con il database o con la pagina.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <span class="tag">Il testo diventa comando</span>
+<pre class="code mt-m" style="white-space:pre-wrap" aria-label="Codice che incolla il testo dell'utente dentro una query SQL"><span class="m">// la ricerca incolla il testo dentro l'SQL</span>
+<span class="s">"select * from aule where nome = '"</span> + cerca + <span class="s">"'"</span>
+
+<span class="m">// qualcuno scrive nel campo:</span>
+<span class="s">x' or '1'='1</span></pre>
+      <p class="mt-m">La condizione diventa sempre vera: escono tutte le righe. Con altri testi, si cancellano.</p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card good">
+      <span class="tag">La difesa</span>
+      <h3>Il testo resta testo</h3>
+      <ul class="mt-m"><li>Mai incollare a mano il testo dell'utente nell'SQL: <code>supabase.from(…).eq(…)</code> lo tratta già come dato</li><li>Nella pagina, mostrare il testo come testo: Astro lo fa da solo, <code>set:html</code> no</li><li>Chiedere a Claude: «dove un testo dell'utente finisce in SQL o HTML senza protezione?»</li></ul>
+    </div>
+  </div>
+</Slide>
