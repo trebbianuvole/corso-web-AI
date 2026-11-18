@@ -550,5 +550,27 @@
     "8-3-a1": "markdoc-markdown",
     "8-3-a2": "keystatic-cloud",
     "8-6-a1": "icone-loghi-marchi"
+  },
+  "capitolo-9": {
+    "9-0": "copertina-9",
+    "9-1-0": "apertura-ricerca",
+    "9-1-1": "scansione-indice-classifica",
+    "9-1-2": "cosa-conta-ricerca",
+    "9-2-0": "apertura-seo",
+    "9-2-1": "title-description",
+    "9-2-2": "titoli-testi-indirizzi",
+    "9-2-3": "sitemap-robots",
+    "9-2-4": "search-console-scheda",
+    "9-2-5": "claude-revisore-seo",
+    "9-3-0": "apertura-ricerca-ai",
+    "9-3-1": "risposte-al-posto-link",
+    "9-3-2": "farsi-citare",
+    "9-3-3": "crawler-ai",
+    "9-3-4": "cosa-non-fare-ricerca",
+    "9-4-0": "apertura-misurare",
+    "9-4-1": "anteprime-social",
+    "9-4-2": "sito-ottenere",
+    "9-4-3": "statistiche-privacy",
+    "9-4-4": "sito-si-trova"
   }
 }

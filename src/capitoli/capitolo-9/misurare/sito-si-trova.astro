@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="compito" split kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Il vostro sito si trova?" lead="Mettete il vostro sito nelle condizioni di farsi trovare, poi provate a cercarlo come lo cercherebbe un estraneo.">
+  <Card slot="intro" variante="sky mt-m" titolo="Da portare">Uno screenshot di Search Console, l'anteprima del link su WhatsApp, e la risposta di un'AI alla domanda «dove trovo…» che riguarda il vostro progetto.</Card>
+  <Steps>
+    <Passo titolo="Title e description" inLinea>diversi in ogni pagina</Passo>
+    <Passo titolo="Sitemap e robots.txt" inLinea>con la vostra scelta sui crawler delle AI</Passo>
+    <Passo titolo="Dati strutturati" inLinea>del tipo giusto per il vostro progetto</Passo>
+    <Passo titolo="Search Console" inLinea>collegata, con la sitemap inviata</Passo>
+    <Passo titolo="Le anteprime" inLinea>immagine e titolo per i social</Passo>
+    <Passo titolo="Le statistiche" inLinea>senza cookie, e scritte nell'informativa</Passo>
+  </Steps>
+</Slide>

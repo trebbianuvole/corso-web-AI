@@ -1,0 +1,15 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 9" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Farsi trovare" lead="Un sito che nessuno trova non serve. Oggi lo si cerca su Google, ma sempre più spesso lo si chiede a un'AI.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Come funziona la ricerca" inLinea>scansione, indice, classifica</Passo>
+    <Passo titolo="La SEO di base" inLinea>quello che ogni sito deve avere</Passo>
+    <Passo titolo="La ricerca con l'AI" inLinea>risposte al posto dei link, e i crawler</Passo>
+    <Passo titolo="Condividere e misurare" inLinea>le anteprime, le visite che diventano prenotazioni</Passo>
+  </Steps>
+  <SieteQui capitolo={9} classe="mt-m" />
+</Slide>

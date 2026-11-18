@@ -1,0 +1,17 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="9.4 Condividere e misurare" titolo="Le anteprime sui social" lead="Quando qualcuno manda il link del sito su WhatsApp o lo pubblica sui social, compare un riquadro con immagine, titolo e descrizione. Li decidete voi, con alcuni meta tag.">
+  <div slot="intro" class="anteprima mt-m" role="img" aria-label="L'anteprima del link in una chat: un'immagine delle tagliatelle, il titolo Trattoria Da Rina e una riga di descrizione">
+    <span class="ap-img" aria-hidden="true">tagliatelle.jpg</span>
+    <b>Trattoria Da Rina</b>
+    <span>Cucina di casa a Torino, dal martedì alla domenica</span>
+    <span class="ap-url">trattoriadarina.it</span>
+  </div>
+<pre class="code" aria-label="I meta tag Open Graph nel layout">&lt;meta property="og:title"
+      content="Trattoria Da Rina" /&gt;
+&lt;meta property="og:description"
+      content="Cucina di casa a Torino…" /&gt;
+&lt;meta property="og:image"
+      content="https://trattoriadarina.it/og.jpg" /&gt;</pre>
+</Slide>

@@ -1,0 +1,27 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="9.3 La ricerca con l'AI" titolo="I crawler delle AI" lead="Ogni azienda di AI ha più crawler, per scopi diversi. Con robots.txt si può decidere chi entra, e per cosa.">
+  <div class="grid g2 mt-m">
+    <table class="compare">
+      <thead><tr><th>Scopo</th><th>Esempi</th></tr></thead>
+      <tbody>
+        <tr><td>Addestrare i modelli</td><td data-label="Esempi">GPTBot, ClaudeBot; Google-Extended per Gemini</td></tr>
+        <tr><td>Cercare per rispondere</td><td data-label="Esempi">OAI-SearchBot, Claude-SearchBot, PerplexityBot</td></tr>
+        <tr><td>Leggere una pagina chiesta da un utente</td><td data-label="Esempi">ChatGPT-User, Claude-User</td></tr>
+      </tbody>
+    </table>
+<pre class="code" aria-label="Un robots.txt che blocca i crawler di addestramento e lascia entrare quelli di ricerca"><span class="m"># niente addestramento sui nostri testi</span>
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+Disallow: /
+
+<span class="m"># ma sì alla ricerca e a tutti gli altri</span>
+User-agent: *
+Allow: /</pre>
+  </div>
+  <Card variante="sky mt-m" titolo="Una scelta del cliente, con le sue conseguenze">Bloccare l'addestramento protegge i testi (5.5.3) e non toglie il sito dalle risposte. Bloccare anche la ricerca vuol dire non essere citati. Per una trattoria, di solito, conviene farsi trovare.</Card>
+  <p class="footnote">Fonti: <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">OpenAI</a>; <a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target="_blank" rel="noopener">Anthropic</a>; <a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers" target="_blank" rel="noopener">Google</a>. E il file llms.txt? È una proposta: Google dice che non serve, e uno studio del 2026 ha trovato che quasi nessuna AI lo legge.</p>
+</Slide>

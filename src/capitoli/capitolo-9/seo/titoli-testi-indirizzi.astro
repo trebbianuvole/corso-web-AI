@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="9.2 SEO di base" titolo="Titoli, testi, indirizzi, immagini" lead="Le stesse regole che rendono il sito leggibile per le persone (7.6, 8.5) lo rendono leggibile per i motori.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Titoli" titolo="Un h1 per pagina">Poi h2 e h3 in ordine. Il motore li usa per capire di cosa parla la pagina.</Card>
+    <Card tag="Testi" titolo="Le parole dei clienti">«Trattoria a Torino con pasta fatta in casa», non «esperienza gastronomica autentica».</Card>
+    <Card tag="Indirizzi" titolo="Leggibili">/menu e /dove-siamo, non /pagina?id=37. Astro li fa così dai nomi dei file.</Card>
+    <Card tag="Immagini" titolo="Testo alternativo e nome">tagliatelle-al-ragu.webp con «Tagliatelle al ragù nel piatto di coccio», non IMG_4512.jpg.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E i dati devono essere uguali ovunque">Indirizzo, telefono, orari: identici sul sito, su Google Maps, sui social. Se non coincidono, motori e AI non sanno di quale fidarsi (9.3.2).</Card>
+</Slide>

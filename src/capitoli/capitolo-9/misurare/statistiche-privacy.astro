@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="9.4 Condividere e misurare" titolo="Statistiche rispettose della privacy" lead="Per sapere quante persone visitano il sito non serve seguirle ovunque. Ci sono strumenti che contano senza schedare.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Molto completo, molto invadente</span>
+      <h3>Google Analytics</h3>
+      <p>Usa cookie e manda i dati a Google. In Italia, così com'è, chiede il consenso con il banner dei cookie.</p>
+    </div>
+    <span class="vs" aria-hidden="true">o</span>
+    <div class="card peach">
+      <span class="tag">Essenziali, senza cookie</span>
+      <h3>Vercel Web Analytics, Plausible, Umami</h3>
+      <p>Contano visite, pagine e provenienze senza cookie e senza identificare le persone. Per una trattoria bastano.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="La regola del Garante">Gli strumenti statistici possono fare a meno del consenso solo se i dati sono ridotti al minimo e non servono a profilare. Nel dubbio, si sceglie lo strumento meno invadente, e lo si scrive nell'informativa (5.7.1).</Card>
+  <p class="footnote">Sintesi a scopo didattico. Fonti: <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener">Vercel Web Analytics</a>; <a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener">Garante, linee guida sui cookie</a>, 2021.</p>
+</Slide>

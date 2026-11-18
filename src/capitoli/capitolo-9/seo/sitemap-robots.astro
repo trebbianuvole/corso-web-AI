@@ -1,0 +1,21 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="9.2 SEO di base" titolo="sitemap.xml e robots.txt" lead="Due piccoli file che parlano ai crawler: uno dice cosa c'è, l'altro dove si può entrare.">
+  <div class="grid g2 mt-l">
+    <div class="card" style="min-width:0">
+      <span class="tag">L'elenco delle pagine</span>
+      <h3>sitemap.xml</h3>
+      <p>Tutte le pagine del sito, con la data dell'ultimo aggiornamento. In Astro la crea un'integrazione ufficiale: <code>npx astro add sitemap</code>.</p>
+    </div>
+    <div class="card" style="min-width:0">
+      <span class="tag">Le regole d'ingresso</span>
+      <h3>robots.txt</h3>
+<pre class="code mt-m" aria-label="Un robots.txt che lascia entrare tutti e indica la sitemap">User-agent: *
+Allow: /
+
+Sitemap: https://trattoriadarina.it/sitemap-index.xml</pre>
+    </div>
+  </div>
+  <p class="footnote">robots.txt è una richiesta, non un lucchetto: i crawler seri la rispettano, gli altri no. Nella 9.3.3 lo useremo per i crawler delle AI. Fonte: <a href="https://docs.astro.build/en/guides/integrations-guide/sitemap/" target="_blank" rel="noopener">Astro, integrazione sitemap</a>.</p>
+</Slide>
