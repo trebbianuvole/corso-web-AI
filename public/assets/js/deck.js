@@ -2,7 +2,9 @@
    Frecce ← → / PagSu PagGiù / Spazio: slide precedente e successiva.
    F: schermo intero. Le frecce ↑ ↓ scorrono normalmente la pagina. */
 (function () {
-  const slides = Array.from(document.querySelectorAll(".slide"));
+  // Solo le slide della lezione: quelle degli approfondimenti
+  // hanno la loro navigazione (approfondimenti.js).
+  const slides = Array.from(document.querySelectorAll("main .slide"));
   if (!slides.length) return;
 
   slides.forEach((s, i) => { if (!s.id) s.id = "s" + (i + 1); });

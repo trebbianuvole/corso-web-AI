@@ -1,0 +1,37 @@
+---
+// Un approfondimento: una finestra a tutto schermo con le sue slide.
+// A sinistra resta la barra della lezione (numero della sezione e titolo
+// della slide di partenza, che lo script legge dalla pagina); a destra
+// le slide, con il tema blu e rosa. Lo gestisce assets/js/approfondimenti.js.
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Props {
+  chiave: string;
+  titolo: string;
+  /** numero della sezione, es. "1.1" */
+  num: string;
+  /** id della slide da cui si apre, es. "1-1-3" */
+  idDa: string;
+  posti: { id: string; numero: string; sezione: string; Componente: AstroComponentFactory }[];
+}
+const { chiave, titolo, num, idDa, posti } = Astro.props;
+const idTitolo = `approf-${chiave}-titolo`;
+---
+<dialog class="approf" id={`approf-${chiave}`} data-approf={chiave} data-da={idDa} aria-labelledby={idTitolo}>
+  <button class="approf-rail" type="button" data-chiudi>
+    <span class="rail-num">{num}</span>
+    <span class="rail-tit"></span>
+    <span class="rail-back"><span aria-hidden="true">←</span> Torna alla lezione</span>
+  </button>
+  <div class="approf-main tema-approf">
+    <header class="approf-bar">
+      <button class="btn ghost approf-back" type="button" data-chiudi><span aria-hidden="true">←</span> Torna alla lezione</button>
+      <p class="approf-titolo" id={idTitolo} tabindex="-1"><span class="approf-eti">Approfondimento</span> {titolo}</p>
+      <span class="approf-counter" aria-live="polite"></span>
+      <span class="approf-progress" aria-hidden="true"></span>
+    </header>
+    <div class="approf-slides">
+      {posti.map(({ Componente, id, numero, sezione }) => <Componente id={id} numero={numero} sezione={sezione} />)}
+    </div>
+  </div>
+</dialog>

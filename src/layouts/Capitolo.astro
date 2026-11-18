@@ -3,13 +3,15 @@
 // (generati dai dati del capitolo), le slide in ordine, gli script.
 import Pagina from "./Pagina.astro";
 import type { Capitolo } from "../lib/numerazione.mjs";
-import { slideDel, rimandiDel } from "../lib/capitoli";
+import { slideDel, approfondimentiDel, rimandiDel } from "../lib/capitoli";
+import Approfondimento from "../components/slide/Approfondimento.astro";
 
 interface Props {
   cap: Capitolo;
 }
 const { cap } = Astro.props;
 const slide = slideDel(cap);
+const gruppi = approfondimentiDel(cap);
 const rimandi = rimandiDel(cap);
 
 // Indirizzi pubblicati in passato che oggi puntano altrove (vedi src/indirizzi.json)
@@ -49,12 +51,19 @@ const codiceRimandi = Object.keys(rimandi).length
 </header>
 
 <main>
-{slide.map(({ Componente, id, numero, sezione }) => <Componente id={id} numero={numero} sezione={sezione} />)}
+{slide.map(({ Componente, id, numero, sezione, approfondimenti }) => (
+  approfondimenti.length
+    ? <Componente id={id} numero={numero} sezione={sezione} approfondimenti={approfondimenti} />
+    : <Componente id={id} numero={numero} sezione={sezione} />
+))}
 </main>
+
+{gruppi.map(g => <Approfondimento chiave={g.chiave} titolo={g.titolo} num={g.num} idDa={g.idDa} posti={g.posti} />)}
 
 <div class="hint" role="status">Usa <kbd>←</kbd> <kbd>→</kbd> per le slide, <kbd>F</kbd> per lo schermo intero</div>
 
 {codiceRimandi && <script is:inline set:html={codiceRimandi} />}
 <script is:inline src="../assets/js/deck.js"></script>
+{gruppi.length > 0 && <script is:inline src="../assets/js/approfondimenti.js"></script>}
 {cap.script.map(s => <script is:inline src={`../assets/js/${s}`}></script>)}
 </Pagina>

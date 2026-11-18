@@ -2,6 +2,8 @@
 // Una slide. Numero, id e sezione li passa il layout del capitolo:
 // nei file delle slide basta scrivere <Slide {...Astro.props} …>.
 // kicker, titolo e lead accettano HTML semplice (<em>, <br>, «»).
+// Se dalla slide si apre un approfondimento, il layout passa anche
+// «approfondimenti» e la slide disegna il pulsante blu-viola in fondo.
 interface Props {
   id: string;
   numero: string;
@@ -16,26 +18,52 @@ interface Props {
   classe?: string;
   /** classi in più su .slide-inner */
   interno?: string;
+  /** etichetta del tipo di contenuto, accanto al kicker */
+  tipo?: "concetto" | "esempio" | "demo" | "attivita" | "compito" | "con-ai" | "checklist";
+  /** lo passa il layout */
+  approfondimenti?: { chiave: string; pulsante: string }[];
 }
-const { id, numero, sezione, kicker, titolo, titoloStile, lead, split = false, classe, interno } = Astro.props;
-const haTesta = kicker || titolo || lead;
+const { id, numero, sezione, kicker, titolo, titoloStile, lead, split = false, classe, interno, tipo, approfondimenti = [] } = Astro.props;
+const haTesta = kicker || titolo || lead || tipo;
+
+const ETICHETTE = {
+  concetto: "Concetto",
+  esempio: "Esempio",
+  demo: "Demo",
+  attivita: "Attività",
+  compito: "Compito",
+  "con-ai": "Con l'AI",
+  checklist: "Checklist",
+};
 ---
 <section class:list={["slide", classe]} data-chapter={sezione} id={id} data-numero={numero}>
   <div class:list={["slide-inner", { split }, interno]}>
     {split ? (
       <div>
-        {kicker && <p class="kicker" set:html={kicker} />}
+        {tipo ? (
+          <p class="kicker"><span class:list={["etichetta", `et-${tipo}`]}>{ETICHETTE[tipo]}</span>{kicker && <span set:html={kicker} />}</p>
+        ) : kicker && <p class="kicker" set:html={kicker} />}
         {titolo && <h2 style={titoloStile} set:html={titolo} />}
         {lead && <p class="lead" set:html={lead} />}
         <slot name="intro" />
       </div>
     ) : haTesta && (
       <Fragment>
-        {kicker && <p class="kicker" set:html={kicker} />}
+        {tipo ? (
+          <p class="kicker"><span class:list={["etichetta", `et-${tipo}`]}>{ETICHETTE[tipo]}</span>{kicker && <span set:html={kicker} />}</p>
+        ) : kicker && <p class="kicker" set:html={kicker} />}
         {titolo && <h2 style={titoloStile} set:html={titolo} />}
         {lead && <p class="lead" set:html={lead} />}
       </Fragment>
     )}
-    <slot />
+    <slot />{approfondimenti.length > 0 && (
+      <p class="approf-apri-riga">
+        {approfondimenti.map(a => (
+          <button class="approf-apri" type="button" data-apri={a.chiave} aria-haspopup="dialog">
+            <span class="approf-apri-segno" aria-hidden="true">+</span> Approfondisci: {a.pulsante}
+          </button>
+        ))}
+      </p>
+    )}
   </div>
 </section>
