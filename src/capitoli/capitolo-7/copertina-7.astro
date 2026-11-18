@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 7" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Design e interfacce" lead="Un sito che funziona non basta: deve essere chiaro, riconoscibile e usabile da tutti. E l'AI, da sola, tende a farli tutti uguali.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="UX e UI" inLinea>gerarchia, spazio, caratteri, colore, coerenza</Passo>
+    <Passo titolo="Gli stati" inLinea>non esiste solo la schermata perfetta</Passo>
+    <Passo titolo="Il design system" inLinea>le regole visive, scritte una volta</Passo>
+    <Passo titolo="Il design con l'AI" inLinea>dare un'identità, far guardare il risultato</Passo>
+    <Passo titolo="Responsive e accessibilità" inLinea>su ogni schermo, per ogni persona</Passo>
+  </Steps>
+  <SieteQui capitolo={7} classe="mt-m" />
+</Slide>

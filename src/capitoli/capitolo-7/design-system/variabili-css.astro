@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="7.3 Il design system" titolo="Le variabili CSS" lead="Un colore con un nome, definito in un punto solo. Tutto il sito usa il nome, non il colore.">
+  <Card slot="intro" variante="sky mt-m" titolo="La prova">Il tema blu e rosa degli approfondimenti (1.1.3) non tocca nessun componente: ridefinisce solo queste variabili. Le stesse schede cambiano colore da sole.</Card>
+  <div>
+<pre class="code" aria-label="Le variabili di colore di questo sito e una scheda che le usa"><span class="m">/* style.css di questo sito */</span>
+:root &#123;
+  <span class="k">--paper</span>: <span class="s">#f6f1e7</span>;   <span class="m">/* sfondo crema */</span>
+  <span class="k">--ink</span>: <span class="s">#1f2330</span>;     <span class="m">/* testo */</span>
+  <span class="k">--orange</span>: <span class="s">#df5f26</span>;  <span class="m">/* accento */</span>
+  <span class="k">--peach</span>: <span class="s">#f8dcc9</span>;   <span class="m">/* superfici */</span>
+&#125;
+
+.card.peach &#123;
+  background: var(<span class="k">--peach</span>);
+&#125;</pre>
+    <div class="campioni mt-m" aria-hidden="true"><span style="background:#f6f1e7"></span><span style="background:#1f2330"></span><span style="background:#df5f26"></span><span style="background:#f8dcc9"></span></div>
+  </div>
+</Slide>

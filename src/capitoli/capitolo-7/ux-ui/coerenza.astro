@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.1 UX e UI" titolo="La coerenza" lead="La stessa cosa deve avere sempre lo stesso aspetto. Così chi usa il sito impara una volta e poi non pensa più.">
+  <div class="pd mt-l">
+    <figure class="pd-box"><figcaption>Tre pagine, tre pulsanti</figcaption>
+      <div class="mini mini-bottoni"><p class="b1">Prenota</p><p class="b2">PRENOTA ORA</p><p class="b3">prenota un tavolo »</p></div>
+    </figure>
+    <figure class="pd-box"><figcaption>Un pulsante, ovunque</figcaption>
+      <div class="mini mini-bottoni"><p class="b0">Prenota</p><p class="b0">Prenota</p><p class="b0">Prenota</p></div>
+    </figure>
+  </div>
+  <Card variante="peach mt-m" tag="Con l'AI" titolo="Il rischio">Ogni volta che chiedete una pagina nuova, l'AI può reinventare i pulsanti. La difesa è nella 7.3: il design system e i componenti.</Card>
+</Slide>

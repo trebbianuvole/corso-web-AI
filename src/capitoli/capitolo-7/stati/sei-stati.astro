@@ -1,0 +1,13 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.2 Gli stati" titolo="Non esiste solo la schermata perfetta" lead="Il pulsante «Prenota» di PrenotaAula, in sei momenti diversi. Chi progetta solo il primo ne lascia cinque al caso.">
+  <ul class="stati mt-l">
+    <li><span class="st-btn">Prenota l'aula 3</span><b>Iniziale</b><span>pronto per l'azione</span></li>
+    <li><span class="st-btn st-carica" aria-hidden="true">Prenoto…</span><b>Caricamento</b><span>la richiesta sta viaggiando</span></li>
+    <li><span class="st-btn st-ok">Prenotata ✓</span><b>Successo</b><span>conferma chiara, e cosa succede dopo</span></li>
+    <li><span class="st-btn st-err">L'aula è già occupata</span><b>Errore</b><span>cosa è andato storto e cosa fare</span></li>
+    <li><span class="st-btn st-vuoto">Nessuna aula libera giovedì</span><b>Vuoto</b><span>non c'è niente da mostrare: dirlo</span></li>
+    <li><span class="st-btn st-no">Solo i docenti possono prenotare</span><b>Non consentito</b><span>spiegare perché, e a chi chiedere</span></li>
+  </ul>
+</Slide>

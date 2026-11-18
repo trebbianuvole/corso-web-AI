@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.1 UX e UI" titolo="UX e UI non sono la stessa cosa" lead="Due parole che si sentono sempre insieme. Una riguarda com'è vissuto il prodotto, l'altra come appare.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">User experience</span>
+      <h3>UX: com'è vissuto</h3>
+      <p>Il cliente trova l'orario in tre secondi? Riesce a prenotare dal telefono senza perdersi? Capisce cosa succede dopo il clic?</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">User interface</span>
+      <h3>UI: come appare</h3>
+      <p>Colori, caratteri, spazi, pulsanti. È la parte che si vede, e che l'AI genera più in fretta.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Un sito bello può essere scomodo">E uno semplice può essere comodissimo. Si parte dalla UX: cosa deve riuscire a fare chi arriva (2.6). La UI viene dopo, e la serve.</Card>
+</Slide>

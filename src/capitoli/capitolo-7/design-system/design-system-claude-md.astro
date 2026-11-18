@@ -1,0 +1,19 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="7.3 Il design system" titolo="Scriverlo nel CLAUDE.md" lead="Se il design system sta solo nella vostra testa, l'AI ne inventa uno nuovo a ogni pagina. Va scritto dove Claude lo legge sempre.">
+  <Card slot="intro" variante="peach mt-m" titolo="La regola più utile">«Non scrivere colori, caratteri o spazi a mano: usa sempre le variabili e i componenti esistenti. Se ne serve uno nuovo, chiedimelo.»</Card>
+<pre class="code" aria-label="La sezione Design del CLAUDE.md della trattoria"><span class="k">## Design</span>
+- Colori: solo le variabili in src/styles/
+  global.css (--sfondo, --testo, --accento,
+  --errore). Mai codici di colore nei
+  componenti.
+- Caratteri: Fraunces per i titoli,
+  Atkinson Hyperlegible per il testo.
+- Spazi: --sp-1 … --sp-5, niente valori a caso.
+- Pulsanti: sempre il componente Pulsante
+  (varianti principale e secondario).
+- Stile: caldo, semplice, foto vere del locale.
+  Niente gradienti viola, niente emoji.</pre>
+</Slide>
