@@ -1,0 +1,14 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="6.7 Quando qualcosa si rompe" titolo="Uscire dal ciclo" lead="Al terzo giro uguale, smettete di insistere. Cinque mosse, in quest'ordine.">
+  <Steps classe="mt-l" stile="max-width:900px">
+    <Passo titolo="Fermatevi" inLinea>Esc, e niente «riprova»</Passo>
+    <Passo titolo="Tornate all'ultimo commit buono" inLinea><code>/rewind</code> o <code>git restore</code>: si riparte puliti (4.7.2)</Passo>
+    <Passo titolo="Sessione nuova, con un riassunto" inLinea><code>/clear</code>, poi tre righe: cosa volete, cosa avete provato, cosa non ha funzionato</Passo>
+    <Passo titolo="Restringete il problema" inLinea>«solo la griglia del menu, sotto i 400 pixel»</Passo>
+    <Passo titolo="Cambiate domanda" inLinea>non «sistemalo», ma «elenca tre cause possibili e come verificare ognuna»</Passo>
+  </Steps>
+</Slide>

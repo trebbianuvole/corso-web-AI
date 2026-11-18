@@ -1,0 +1,29 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.4 I componenti" titolo="Le props" lead="Le props sono i dati che passate a un componente. Lo stesso componente, con props diverse, disegna piatti diversi.">
+  <div class="grid g2 mt-l">
+<pre class="code" aria-label="Il componente Piatto.astro con tre props"><span class="m">---</span>
+<span class="m">// src/components/Piatto.astro</span>
+<span class="k">const</span> &#123; nome, descrizione, prezzo &#125;
+  = Astro.props;
+<span class="m">---</span>
+&lt;article class="piatto"&gt;
+  &lt;h3&gt;&#123;nome&#125;&lt;/h3&gt;
+  &lt;p&gt;&#123;descrizione&#125;&lt;/p&gt;
+  &lt;p class="prezzo"&gt;&#123;prezzo&#125; €&lt;/p&gt;
+&lt;/article&gt;</pre>
+<pre class="code" aria-label="La pagina del menu usa il componente Piatto due volte, con dati diversi"><span class="m">&lt;!-- src/pages/menu.astro --&gt;</span>
+&lt;Piatto
+  nome=<span class="s">"Tagliatelle al ragù"</span>
+  descrizione=<span class="s">"Fatte a mano, ragù della casa"</span>
+  prezzo=&#123;12&#125;
+/&gt;
+&lt;Piatto
+  nome=<span class="s">"Polpette al sugo"</span>
+  descrizione=<span class="s">"La ricetta di Rina"</span>
+  prezzo=&#123;10&#125;
+/&gt;</pre>
+  </div>
+  <p class="lead mt-m">Il componente dice <em>come</em> si mostra un piatto. La pagina dice <em>quali</em> piatti. Nel capitolo 8 i piatti arriveranno da Keystatic, e la pagina non cambierà.</p>
+</Slide>

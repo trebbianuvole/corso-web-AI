@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="6.5 Una funzionalità alla volta" titolo="Iterare senza rompere ciò che funziona" lead="Ogni modifica nuova può rompere una cosa vecchia. Il capitolo 4 vi ha dato gli attrezzi per accorgervene presto.">
+  <Card slot="intro" variante="sky mt-m" titolo="La lista delle prove">Tenete una lista corta di cose da controllare dopo ogni modifica: home, menu, telefono, build. Nel capitolo 11 diventerà una serie di test automatici.</Card>
+  <Steps>
+    <Passo titolo="Un ramo per la funzionalità" inLinea>main resta quello che funziona (4.4)</Passo>
+    <Passo titolo="Un commit per ogni passo" inLinea>il punto a cui tornare</Passo>
+    <Passo titolo="Le prove di sempre" inLinea>dopo ogni passo, non solo la parte nuova</Passo>
+    <Passo titolo="Il diff prima del merge" inLinea>cosa è cambiato davvero (4.7.4)</Passo>
+  </Steps>
+</Slide>

@@ -1,0 +1,25 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="6.4 I componenti" titolo="I componenti in Astro" lead="Un file .astro è quasi HTML. In testa, tra due righe di trattini, un po' di logica che gira mentre si costruisce il sito.">
+  <div class="annotato mt-l">
+<pre class="code" aria-label="Il componente PulsanteWhatsApp.astro"><span class="m">---</span>                                       <span class="m">①</span>
+<span class="m">// src/components/PulsanteWhatsApp.astro</span>
+<span class="k">const</span> numero = <span class="s">"390000000000"</span>;
+<span class="k">const</span> link = <span class="s">`https://wa.me/$&#123;numero&#125;`</span>;
+<span class="m">---</span>
+&lt;a class="whatsapp" href=&#123;link&#125;&gt;        <span class="m">②</span>
+  Prenota su WhatsApp
+&lt;/a&gt;
+
+&lt;style&gt;                                 <span class="m">③</span>
+  .whatsapp &#123; background: #25d366; &#125;
+&lt;/style&gt;</pre>
+    <ol class="note-codice">
+      <li><b>La testa</b>: JavaScript che gira solo durante la build. Nel sito finito non c'è.</li>
+      <li><b>L'HTML</b>, con le graffe per inserire i valori calcolati sopra.</li>
+      <li><b>Lo stile</b> vale solo per questo componente: non rompe il resto del sito.</li>
+    </ol>
+  </div>
+  <p class="footnote">Si usa scrivendo <code>&lt;PulsanteWhatsApp /&gt;</code> in una pagina, dopo averlo importato. Il numero è finto. Fonte: <a href="https://docs.astro.build/en/basics/astro-components/" target="_blank" rel="noopener">Astro, i componenti</a>.</p>
+</Slide>

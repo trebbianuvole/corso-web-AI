@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="6.7 Quando qualcosa si rompe" titolo="Quando l'AI usa una versione vecchia" lead="Il modello ha imparato com'erano le librerie alla sua data di taglio (2.4.10). Se nel frattempo sono cambiate, scrive codice per una versione superata.">
+  <div class="grid g2 mt-l">
+    <div class="card">
+      <h3>Come accorgersene</h3>
+      <ul class="mt-m"><li>Errori che parlano di funzioni «deprecated» o che non esistono</li><li>Opzioni di configurazione che la build non riconosce</li><li>Il codice sembra giusto ma non fa niente</li></ul>
+    </div>
+    <div class="card peach">
+      <h3>Cosa fare</h3>
+      <ul class="mt-m"><li>Dite la versione: «usiamo Astro 7»</li><li>Date la documentazione: il server MCP di Astro (6.2.a2), o un link alla pagina giusta</li><li>Chiedete: «controlla sulla documentazione attuale prima di scrivere»</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Mettetelo nel CLAUDE.md">La versione di Astro e una riga: «per le API di Astro, consulta sempre la documentazione aggiornata».</Card>
+</Slide>

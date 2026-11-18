@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="6.7 Quando qualcosa si rompe" titolo="Spiegarlo a Claude" lead="Un buon rapporto d'errore è un prompt come gli altri (3.1.5). «Non va» non basta a nessuno, nemmeno all'AI.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>Così no</h3>
+      <p>«Il sito non funziona più, sistemalo.»</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card good">
+      <h3>Così sì</h3>
+      <p>«Dopo l'ultimo commit <code>npm run build</code> si ferma con questo errore: [errore completo]. Prima funzionava. Ho solo rinominato il componente del piatto. <b>Spiegami la causa prima di correggere.</b>»</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Le quattro cose da dare">L'errore esatto, copiato, non riassunto. Cosa stavate facendo. Cosa è cambiato. Cosa vi aspettavate. Se Claude Code è nel progetto, spesso basta dirgli: «lancia la build e leggi l'errore».</Card>
+</Slide>

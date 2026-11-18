@@ -1,0 +1,16 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="6.7 Quando qualcosa si rompe" titolo="Gli errori classici dei principianti" lead="Li fanno tutti, almeno una volta. Meglio riconoscerli subito.">
+  <table class="compare mt-m">
+    <thead><tr><th>Sintomo</th><th>Causa probabile</th></tr></thead>
+    <tbody>
+      <tr><td>«command not found»</td><td data-label="Causa">Il programma non è installato, o serve un terminale nuovo dopo l'installazione</td></tr>
+      <tr><td>«Cannot find module»</td><td data-label="Causa">Manca <code>npm install</code>, o il nome del file è scritto male (6.7.2)</td></tr>
+      <tr><td>Le modifiche non si vedono</td><td data-label="Causa">State guardando un'altra cartella, un altro ramo, o la pagina va ricaricata</td></tr>
+      <tr><td>Il sito si apre su localhost:4322</td><td data-label="Causa">La porta 4321 è occupata: il sito è già acceso in un altro terminale</td></tr>
+      <tr><td>In locale va, online no</td><td data-label="Causa">Maiuscole nei nomi dei file, o una variabile del <code>.env</code> non impostata su Vercel</td></tr>
+      <tr><td>Il push viene rifiutato</td><td data-label="Causa">Qualcuno ha caricato prima: <code>git pull</code> (4.6.6)</td></tr>
+    </tbody>
+  </table>
+</Slide>

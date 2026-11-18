@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="6.4 I componenti" titolo="Chiedere componenti, non pagine" lead="Se chiedete pagine, l'AI tende a copiare lo stesso codice in ognuna. Funziona, finché non bisogna cambiare qualcosa.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>Come accorgersene</h3>
+      <ul class="mt-m"><li>Lo stesso blocco di HTML in più file</li><li>Una modifica del piè di pagina tocca cinque file</li><li>Pagine lunghe centinaia di righe</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card good">
+      <h3>Come chiedere</h3>
+      <ul class="mt-m"><li>«Crea il componente Piatto con le props nome, descrizione, prezzo»</li><li>«Usa il layout Base in tutte le pagine»</li><li>«Cerca il codice ripetuto e proponi componenti per riunirlo, senza cambiare l'aspetto»</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Mettetelo nel CLAUDE.md">«Un componente per ogni pezzo che si ripete» (6.2.2). È una delle regole che si dimenticano più spesso.</Card>
+</Slide>

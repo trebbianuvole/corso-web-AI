@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.4 I componenti" titolo="Il layout" lead="La cornice comune a tutte le pagine: intestazione, menu, piè di pagina. Ogni pagina mette solo il suo contenuto al centro.">
+  <Card slot="intro" variante="sky mt-m" titolo="Lo slot">È il buco nella cornice: lì Astro mette il contenuto della pagina che usa il layout.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://docs.astro.build/en/basics/layouts/" target="_blank" rel="noopener">Astro, i layout</a>.</p>
+<pre class="code" aria-label="Il layout Base.astro con il titolo come prop, il menu, lo slot e il piè di pagina"><span class="m">---</span>
+<span class="m">// src/layouts/Base.astro</span>
+<span class="k">import</span> Menu <span class="k">from</span> <span class="s">"../components/Menu.astro"</span>;
+<span class="k">import</span> PiePagina <span class="k">from</span> <span class="s">"../components/PiePagina.astro"</span>;
+<span class="k">const</span> &#123; titolo &#125; = Astro.props;
+<span class="m">---</span>
+&lt;html lang="it"&gt;
+  &lt;head&gt;&lt;title&gt;&#123;titolo&#125; · Da Rina&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;Menu /&gt;
+    &lt;main&gt;<span class="k">&lt;slot /&gt;</span>&lt;/main&gt;
+    &lt;PiePagina /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+</Slide>

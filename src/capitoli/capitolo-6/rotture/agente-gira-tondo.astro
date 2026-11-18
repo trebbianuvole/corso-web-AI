@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="6.7 Quando qualcosa si rompe" titolo="Quando l'agente gira in tondo" lead="A volte l'agente corregge, rompe, ricorregge, e torna al punto di partenza. Più insistete, più il contesto si riempie di tentativi sbagliati.">
+  <div slot="intro" class="card mt-m">
+    <h3>I segnali</h3>
+    <ul class="mt-m"><li>La stessa correzione, proposta di nuovo</li><li>Lo stesso errore, dopo tre tentativi</li><li>«Ora dovrebbe funzionare», e non funziona</li><li>Modifiche sempre più grandi per un problema piccolo</li></ul>
+  </div>
+  <div class="term" role="img" aria-label="Una sessione in cui Claude alterna due correzioni senza risolvere l'errore">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="dot">●</span> Il menu non si vede sul telefono.
+  Cambio display: grid in flex.
+<span class="rem">  ✗ Ora i piatti escono dallo schermo.</span>
+<span class="dot">●</span> Rimetto grid e riduco la larghezza.
+<span class="rem">  ✗ Il menu non si vede sul telefono.</span>
+<span class="dot">●</span> Provo con flex e flex-wrap.
+<span class="rem">  ✗ Ora i piatti escono dallo schermo.</span>
+<span class="dim">  ...</span></pre>
+  </div>
+</Slide>

@@ -1,0 +1,17 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.7 Quando qualcosa si rompe" titolo="Leggere un messaggio d'errore" lead="Sembra scritto per spaventare, ma quasi sempre dice tre cose: cosa è successo, dove, e cosa cercava.">
+  <div class="annotato mt-l">
+<pre class="code" aria-label="Un errore di build di Astro: non trova il file Piato.astro importato da menu.astro"><span class="rem">[ERROR] [vite] ✗ Build failed in 214ms</span>   <span class="m">①</span>
+Rollup failed to resolve import
+<span class="s">"../components/Piato.astro"</span>                 <span class="m">②</span>
+from <span class="s">"src/pages/menu.astro"</span>.                 <span class="m">③</span></pre>
+    <ol class="note-codice">
+      <li><b>Cosa:</b> la build si è fermata. Il sito non è stato costruito.</li>
+      <li><b>Cosa cercava:</b> un file che non trova. Guardate bene il nome: <em>Piato</em>, non <em>Piatto</em>.</li>
+      <li><b>Dove:</b> la riga che lo chiede è nella pagina del menu.</li>
+    </ol>
+  </div>
+  <p class="footnote">Si legge dall'alto, ma la riga utile spesso è l'ultima, o la prima che nomina un vostro file. Le righe con percorsi dentro <code>node_modules</code> di solito si possono saltare.</p>
+</Slide>

@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.5 Una funzionalità alla volta" titolo="Prima versione, poi migliorie" lead="Come per l'MVP (2.2): prima una versione che funziona, brutta ma vera. Poi, un miglioramento alla volta.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Giro 1" titolo="Funziona">I piatti si vedono, i prezzi sono giusti. Commit.</Card>
+    <Card tag="Giro 2" titolo="È chiaro">Sezioni, spazi, caratteri leggibili. Commit.</Card>
+    <Card tag="Giro 3" titolo="È bello">Colori, piccole animazioni, le foto. Commit.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="L'errore tipico">Chiedere tutto insieme: «menu bello, con foto, animato, con filtri». Se qualcosa non va, non sapete quale parte l'ha rotto, e non avete un punto sicuro a cui tornare.</Card>
+</Slide>

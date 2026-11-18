@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" tipo="attivita" kicker="6.4 I componenti" titolo="Come si scompone una pagina" lead="Venti minuti, su carta. Disegnate la home della trattoria a rettangoli, e date un nome a ogni rettangolo che è un componente.">
+  <div class="scomposta mt-l" role="img" aria-label="Una pagina divisa in rettangoli con il nome del componente: Menu in alto, Copertina, tre SchedaPiatto affiancate, Orari e PulsanteWhatsApp, PiePagina in fondo">
+    <div class="sc-full">Menu</div>
+    <div class="sc-full sc-alta">Copertina</div>
+    <div>SchedaPiatto</div><div>SchedaPiatto</div><div>SchedaPiatto</div>
+    <div class="sc-due">Orari</div><div class="sc-hot">PulsanteWhatsApp</div>
+    <div class="sc-full">PiePagina</div>
+  </div>
+  <Card variante="sky mt-m" titolo="Domande per il gruppo">Quali rettangoli si ripetono? Quali stanno su tutte le pagine (layout)? Quali dati cambiano tra una copia e l'altra (props)? Poi mostrate il disegno a Claude e chiedetegli di proporre i file.</Card>
+</Slide>

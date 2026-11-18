@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.5 Una funzionalità alla volta" titolo="Codice che funziona e codice che si capisce" lead="Che funzioni è solo il primo gradino. L'AI arriva lì in fretta; gli altri tre li dovete chiedere voi.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Livello 1</span><b>Funziona</b><span>fa quello che deve, oggi</span></div>
+    <div><span class="role">Livello 2</span><b>Si capisce</b><span>nomi chiari, niente trucchi: un altro lo legge e capisce</span></div>
+    <div><span class="role">Livello 3</span><b>È organizzato</b><span>componenti, cartelle, niente codice ripetuto</span></div>
+    <div><span class="role">Livello 4</span><b>Si mantiene</b><span>cambiare una cosa tocca un file, non dieci</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Perché vi riguarda">Il codice che non si capisce lo dovrete comunque modificare, con l'AI o senza. E un agente lavora molto meglio su un progetto ordinato: anche lui legge il codice prima di cambiarlo.</Card>
+</Slide>

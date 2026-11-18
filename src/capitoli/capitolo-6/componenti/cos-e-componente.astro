@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.4 I componenti" titolo="Cos'è un componente" lead="Un pezzo di interfaccia riutilizzabile, con un nome. Lo si scrive una volta; dove serve, lo si richiama.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Si ripete con dati diversi" titolo="La scheda di un piatto">Nome, descrizione, prezzo. Dieci piatti, una sola scheda.</Card>
+    <Card tag="Si ripete uguale" titolo="Il pulsante WhatsApp">In home, nella pagina del menu, in quella degli orari.</Card>
+    <Card tag="Su tutte le pagine" titolo="Il piè di pagina">Indirizzo, orari, telefono. Si cambia in un posto solo.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Perché conta">Se il numero di telefono cambia, si corregge un file, non dieci. E con l'AI: un componente piccolo si controlla in un minuto, una pagina di 400 righe no.</Card>
+  <p class="footnote">Anche questo sito è fatto di componenti: ogni slide è un file, con i componenti Slide, Card, Grid.</p>
+</Slide>
