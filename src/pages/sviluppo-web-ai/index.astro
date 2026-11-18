@@ -1,0 +1,60 @@
+---
+// La pagina del corso: titolo animato ed elenco dei capitoli, generato dai dati
+// dei capitoli. È riservata: il middleware (middleware.ts) la manda solo a chi
+// ha fatto l'accesso con un account che vede questo corso.
+import Pagina from "../../layouts/Pagina.astro";
+import BarraUtente from "../../components/BarraUtente.astro";
+import { capitoli } from "../../lib/capitoli";
+import { conVersione } from "../../lib/versione";
+
+const TOTALE = 12; // capitoli previsti dal corso
+const pronti = new Map(capitoli.map(c => [c.numero, c]));
+const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
+
+// Il titolo si "genera" un token alla volta (home.js)
+const passi = [
+  ["Costruire", ["Costruire", "Creare", "Imparare"]],
+  [" siti", [" siti", " app", " pagine"]],
+  [" web", [" web", " veri", " belli"]],
+  [" con", [" con", " grazie", " usando"]],
+  [" l'", [" l'", " Claude", " un"]],
+  ["AI", ["AI", "aiuto", "intelligenza"]],
+];
+---
+<Pagina titolo="Costruire siti web con l'AI" descrizione="Materiali del corso ENGIM di uso dell'AI e vibe coding: dodici capitoli per progettare e pubblicare un sito con l'intelligenza artificiale." radice="../">
+<BarraUtente radice="../" />
+<main>
+  <section class="home-hero">
+    <p class="eyebrow">Corso ENGIM di sviluppo web</p>
+    <h1 class="gen-title" id="gen-title" aria-label="Costruire siti web con l'AI" data-passi={JSON.stringify(passi)}>Costruire siti web con l'AI</h1>
+    <div class="gen-candidates" id="gen-candidates" aria-hidden="true"></div>
+    <p class="sub">Uso dell'intelligenza artificiale e vibe coding: dodici capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.</p>
+  </section>
+
+  <section class="lessons" aria-labelledby="capitoli">
+    <h2 id="capitoli">I capitoli</h2>
+    <ol class="lesson-list">
+      {numeri.map(n => {
+        const cap = pronti.get(n);
+        return cap ? (
+          <li>
+            <a href={`../${cap.slug}/`}>
+              <span class="n">{n}</span>
+              <span class="title">{cap.home.titolo}<span class="desc">{cap.home.desc}</span></span>
+              <span class="go">Apri il capitolo</span>
+            </a>
+          </li>
+        ) : (
+          <li><div class="soon"><span class="n">{n}</span><span class="title">Capitolo {n}</span><span>In preparazione</span></div></li>
+        );
+      })}
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot">
+  Sito costruito con Claude, pubblicato da GitHub con Vercel.
+</footer>
+
+<script is:inline src={`../${conVersione("assets/js/home.js")}`}></script>
+</Pagina>

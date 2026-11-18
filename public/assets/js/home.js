@@ -1,18 +1,15 @@
-/* Il titolo della home si "genera" un token alla volta,
-   mostrando sotto le alternative che il modello aveva scartato. */
+/* Il titolo grande si "genera" un token alla volta, mostrando sotto
+   le alternative che il modello aveva scartato.
+   I passi stanno nell'attributo data-passi del titolo, in JSON:
+   [["token scelto", ["token scelto", "alternativa", "alternativa"]], …] */
 (function () {
   const title = document.getElementById("gen-title");
   const cands = document.getElementById("gen-candidates");
-  if (!title || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!title || !cands || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const steps = [
-    ["Costruire", ["Costruire", "Creare", "Imparare"]],
-    [" siti", [" siti", " app", " pagine"]],
-    [" web", [" web", " veri", " belli"]],
-    [" con", [" con", " grazie", " usando"]],
-    [" l'", [" l'", " Claude", " un"]],
-    ["AI", ["AI", "aiuto", "intelligenza"]]
-  ];
+  let steps;
+  try { steps = JSON.parse(title.dataset.passi || "[]"); } catch (e) { return; }
+  if (!steps.length) return;
 
   title.textContent = "";
   const spans = steps.map(([t]) => {

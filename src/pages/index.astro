@@ -1,45 +1,46 @@
 ---
-// La home: titolo animato ed elenco dei capitoli, generato dai dati dei capitoli.
+// La home di Noema Lab: il nome e l'elenco dei corsi (src/lib/corsi.mjs).
+// È pubblica; le pagine dei corsi sono riservate (middleware.ts).
 import Pagina from "../layouts/Pagina.astro";
-import { capitoli } from "../lib/capitoli";
+import { corsi } from "../lib/corsi.mjs";
 import { conVersione } from "../lib/versione";
 
-const TOTALE = 12; // capitoli previsti dal corso
-const pronti = new Map(capitoli.map(c => [c.numero, c]));
-const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
+// Il titolo si "genera" un token alla volta (home.js)
+const passi = [
+  ["Noema", ["Noema", "Pensiero", "Idea"]],
+  [" Lab", [" Lab", " Studio", " Scuola"]],
+];
 ---
-<Pagina titolo="Costruire siti web con l'AI" descrizione="Materiali del corso ENGIM di uso dell'AI e vibe coding: dodici capitoli per progettare e pubblicare un sito con l'intelligenza artificiale.">
+<Pagina titolo="Noema Lab" descrizione="Noema Lab: corsi sull'intelligenza artificiale e sul vibe coding.">
 <main>
-  <section class="home-hero">
-    <p class="eyebrow">Corso ENGIM di sviluppo web</p>
-    <h1 class="gen-title" id="gen-title" aria-label="Costruire siti web con l'AI">Costruire siti web con l'AI</h1>
+  <section class="home-hero breve">
+    <p class="eyebrow">Formazione sull'intelligenza artificiale</p>
+    <h1 class="gen-title" id="gen-title" aria-label="Noema Lab" data-passi={JSON.stringify(passi)}>Noema Lab</h1>
     <div class="gen-candidates" id="gen-candidates" aria-hidden="true"></div>
-    <p class="sub">Uso dell'intelligenza artificiale e vibe coding: dodici capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.</p>
+    <p class="sub">Corsi per capire come funziona l'intelligenza artificiale e per lavorarci insieme, con giudizio.</p>
   </section>
 
-  <section class="lessons" aria-labelledby="capitoli">
-    <h2 id="capitoli">I capitoli</h2>
-    <ol class="lesson-list">
-      {numeri.map(n => {
-        const cap = pronti.get(n);
-        return cap ? (
-          <li>
-            <a href={`${cap.slug}/`}>
-              <span class="n">{n}</span>
-              <span class="title">{cap.home.titolo}<span class="desc">{cap.home.desc}</span></span>
-              <span class="go">Apri il capitolo</span>
-            </a>
-          </li>
-        ) : (
-          <li><div class="soon"><span class="n">{n}</span><span class="title">Capitolo {n}</span><span>In preparazione</span></div></li>
-        );
-      })}
-    </ol>
+  <section class="lessons" aria-labelledby="corsi">
+    <h2 id="corsi">I corsi</h2>
+    <ul class="lesson-list corsi">
+      {corsi.map(c => (
+        <li>
+          <a href={`${c.slug}/`}>
+            <span class="n" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            </span>
+            <span class="title">{c.titolo}<span class="desc">{c.descrizione}</span></span>
+            <span class="go">Entra<span class="sr-only"> nel corso (accesso riservato)</span></span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="nota-accesso">I corsi sono riservati agli iscritti: nome utente e password li consegna il docente.</p>
   </section>
 </main>
 
 <footer class="site-foot">
-  Sito costruito con Claude, pubblicato da GitHub con Vercel.
+  Noema Lab. Sito costruito con Claude, pubblicato da GitHub con Vercel.
 </footer>
 
 <script is:inline src={conVersione("assets/js/home.js")}></script>
