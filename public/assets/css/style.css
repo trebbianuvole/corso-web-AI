@@ -1411,3 +1411,24 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .rischi .r3 span { color: var(--ink); }
 .rischi .r2 { margin: 0 4%; }
 @media (max-width: 760px) { .rischi > div { grid-template-columns: 1fr; gap: 4px; margin: 0 !important; } }
+
+/* ==========================================================
+   Capitolo 6: costruire con l'AI
+   ========================================================== */
+
+/* Codice annotato: il codice a sinistra, le note numerate a destra */
+.annotato { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 36px); align-items: start; }
+.note-codice { list-style: none; padding: 0; margin: 0; counter-reset: n; display: grid; gap: 12px; font-size: .9em; }
+.note-codice li { counter-increment: n; position: relative; padding-left: 2em; color: var(--muted); }
+.note-codice li::before { content: counter(n); position: absolute; left: 0; top: 0; font-family: var(--f-display); font-weight: 800; color: var(--orange); }
+.note-codice b { color: var(--ink); }
+@media (max-width: 860px) { .annotato { grid-template-columns: 1fr; } }
+
+/* Una pagina scomposta in componenti (6.4.5) */
+.scomposta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; max-width: 760px; margin-left: auto; margin-right: auto; }
+.scomposta > div { border: 2px dashed var(--line); border-radius: var(--r-s); padding: 14px 10px; text-align: center; font-family: var(--f-mono); font-size: .78em; background: var(--card); }
+.scomposta .sc-full { grid-column: 1 / -1; }
+.scomposta .sc-alta { padding: 34px 10px; }
+.scomposta .sc-due { grid-column: span 2; }
+.scomposta .sc-hot { border-color: var(--orange); background: var(--peach); }
+@media (max-width: 520px) { .scomposta > div { font-size: .62em; padding: 10px 4px; } }
