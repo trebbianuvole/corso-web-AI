@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="7.4 Il design con l'AI" titolo="Claude guarda il risultato" lead="Scrivendo il codice, Claude non vede la pagina. Se gliela fate vedere, trova da solo molti errori.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Il modo semplice" titolo="Uno screenshot">Fotografate la pagina, anche dal telefono, e incollatela: «Il menu si sovrappone al titolo, vedi?»</Card>
+    <Card tag="Il modo comodo" titolo="Il browser collegato">Collegato a un browser, Claude apre la pagina, la guarda, la prova in larghezze diverse e corregge. È il modo in cui è stato controllato questo sito.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Ma l'occhio finale è vostro">Claude vede se un pulsante è fuori posto; non sa se la pagina «sa di trattoria». Il giudizio sul gusto e sul cliente resta a voi.</Card>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/chrome" target="_blank" rel="noopener">Claude Code e il browser Chrome</a>.</p>
+</Slide>

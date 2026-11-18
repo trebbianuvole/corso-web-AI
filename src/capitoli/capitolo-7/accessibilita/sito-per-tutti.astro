@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.6 Accessibilità" titolo="Un sito per tutti" lead="Accessibile vuol dire usabile da chiunque, comunque lo usi. Riguarda molte più persone di quanto si pensi, e prima o poi tutti.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Vista" titolo="Chi vede poco o niente">usa un lettore di schermo, che legge la pagina ad alta voce, o ingrandisce il testo</Card>
+    <Card tag="Movimento" titolo="Chi non usa il mouse">naviga con la tastiera, o con comandi vocali</Card>
+    <Card tag="Udito" titolo="Chi non sente">ha bisogno dei sottotitoli nei video</Card>
+    <Card tag="Situazioni" titolo="Chiunque, a volte">sotto il sole, con un braccio ingessato, con una connessione lenta, con gli occhiali dimenticati</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Le regole comuni">Si chiamano WCAG: linee guida internazionali del W3C, oggi alla versione 2.2. Le leggi europee e italiane le richiamano.</Card>
+  <p class="footnote">Fonte: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" target="_blank" rel="noopener">W3C, What's New in WCAG 2.2</a>.</p>
+</Slide>

@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="7.2 Gli stati" titolo="Cosa succede quando clicco" lead="Dopo un clic, chi usa il sito deve sapere subito che qualcosa sta succedendo. Se non vede niente, clicca di nuovo: e prenota due volte.">
+  <Card slot="intro" variante="peach mt-m" titolo="Il doppio clic">È uno degli errori più comuni nelle web app fatte in fretta: due prenotazioni uguali perché il pulsante è rimasto attivo. Lo si ritrova nella 10.5.</Card>
+  <Steps>
+    <Passo titolo="Il pulsante si disattiva">e cambia testo: «Prenoto…»</Passo>
+    <Passo titolo="Qualcosa si muove">un piccolo indicatore, se l'attesa supera un attimo</Passo>
+    <Passo titolo="Arriva la risposta">un messaggio vicino al pulsante, non in fondo alla pagina</Passo>
+    <Passo titolo="Il passo dopo è chiaro">«Vedi le tue prenotazioni», «Riprova», «Scegli un'altra aula»</Passo>
+  </Steps>
+</Slide>

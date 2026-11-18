@@ -1,0 +1,14 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.1 UX e UI" titolo="La gerarchia" lead="L'occhio deve sapere cosa leggere per primo. Se tutto è grande, niente è importante.">
+  <div class="pd mt-l">
+    <figure class="pd-box"><figcaption>Prima</figcaption>
+      <div class="mini mini-piatta"><p>Trattoria Da Rina</p><p>Cucina di casa, dal martedì alla domenica</p><p>Orari: 12–15 e 19–23</p><p>Prenota</p></div>
+    </figure>
+    <figure class="pd-box"><figcaption>Dopo</figcaption>
+      <div class="mini mini-gerarchia"><p class="m-tit">Trattoria Da Rina</p><p class="m-sub">Cucina di casa, dal martedì alla domenica</p><p class="m-btn">Prenota</p><p class="m-small">Orari: 12–15 e 19–23</p></div>
+    </figure>
+  </div>
+  <p class="lead mt-m">Strumenti: dimensione, peso, colore, posizione. Una cosa sola deve vincere: qui, il nome e il pulsante per prenotare.</p>
+</Slide>

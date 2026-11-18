@@ -1,0 +1,14 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.1 UX e UI" titolo="Lo spazio" lead="Lo spazio vuoto non è spazio sprecato: raggruppa le cose che stanno insieme e separa quelle diverse.">
+  <div class="pd mt-l">
+    <figure class="pd-box"><figcaption>Prima</figcaption>
+      <div class="mini mini-stretta"><p class="m-tit">Il menu</p><p><b>Tagliatelle al ragù</b> 12 €</p><p>Fatte a mano</p><p><b>Polpette al sugo</b> 10 €</p><p>La ricetta di Rina</p><p><b>Tiramisù</b> 6 €</p><p>Con il mascarpone</p></div>
+    </figure>
+    <figure class="pd-box"><figcaption>Dopo</figcaption>
+      <div class="mini mini-ariosa"><p class="m-tit">Il menu</p><div><p><b>Tagliatelle al ragù</b> 12 €</p><p>Fatte a mano</p></div><div><p><b>Polpette al sugo</b> 10 €</p><p>La ricetta di Rina</p></div><div><p><b>Tiramisù</b> 6 €</p><p>Con il mascarpone</p></div></div>
+    </figure>
+  </div>
+  <p class="lead mt-m">A destra il testo è lo stesso. Ma si vede subito che i piatti sono tre, e che ogni descrizione appartiene al suo piatto.</p>
+</Slide>

@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.4 Il design con l'AI" titolo="Perché i siti fatti con l'AI si somigliano tutti" lead="Senza indicazioni, il modello sceglie la risposta più probabile (1.2): i colori, i caratteri e gli schemi che ha visto più spesso.">
+  <div class="mini mini-generico mt-l" role="img" aria-label="Una pagina tipica generata senza indicazioni: sfondo con sfumatura viola, titolo centrato, tre schede con icone, pulsante arrotondato">
+    <p class="m-tit">Benvenuti alla Trattoria Da Rina</p>
+    <p class="m-sub">Un'esperienza culinaria unica e indimenticabile</p>
+    <p class="m-btn">Scopri di più</p>
+    <div class="m-tre"><span>✨ Qualità</span><span>🍝 Tradizione</span><span>❤️ Passione</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Lo riconoscete?">Sfumatura viola, titolo centrato, tre schede con un'icona, frasi che vanno bene per qualsiasi ristorante del mondo. Non è sbagliato: è anonimo. E i testi sono inventati.</Card>
+</Slide>

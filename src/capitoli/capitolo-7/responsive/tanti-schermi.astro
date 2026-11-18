@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.5 Responsive" titolo="Provare su tanti schermi" lead="Un sito si prova come lo useranno: su schermi diversi, girando il telefono, ingrandendo il testo.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Nel browser" titolo="La modalità dispositivo">F12, poi l'icona del telefono: si sceglie la larghezza e si vede la pagina come su uno smartphone.</Card>
+    <Card tag="Sul vero telefono" titolo="L'anteprima di Vercel">Aprite il link dell'anteprima (6.6.2) sul vostro telefono e su quello di un compagno.</Card>
+    <Card tag="Con Claude" titolo="Larghezze diverse">«Controlla la pagina a 375, 768 e 1280 pixel e dimmi cosa si rompe.»</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Il difetto più comune">La pagina che scorre di lato sul telefono: un'immagine, una tabella o una riga di codice più larga dello schermo. Anche questo sito l'aveva, nelle tabelle di confronto, poi corrette.</Card>
+</Slide>

@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.3 Librerie e design token" titolo="Librerie di componenti" lead="Invece di costruire il design system da zero, si può partire da uno già pronto. Comodo, ma con un prezzo.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Classi già pronte" titolo="Tailwind CSS">Invece di scrivere CSS, si mettono nell'HTML classi come <code>p-4 text-lg bg-orange-600</code>. Molto diffuso, e l'AI lo conosce benissimo. Oggi è alla versione 4.</Card>
+    <Card tag="Componenti da copiare" titolo="shadcn/ui">Pulsanti, finestre, moduli già fatti, che si copiano nel progetto e si modificano. Pensati per React (6.4.a2) e Tailwind.</Card>
+  </Grid>
+  <div class="grid g2 mt-m">
+    <Card variante="good" titolo="Il vantaggio">Si parte subito, con componenti accessibili e provati.</Card>
+    <Card variante="bad" titolo="Il prezzo">Tutti i siti che li usano senza personalizzarli si somigliano (7.4.1). E sono dipendenze in più da capire e aggiornare.</Card>
+  </div>
+  <p class="footnote">Fonti: <a href="https://tailwindcss.com/" target="_blank" rel="noopener">Tailwind CSS</a>; <a href="https://ui.shadcn.com/" target="_blank" rel="noopener">shadcn/ui</a>.</p>
+</Slide>

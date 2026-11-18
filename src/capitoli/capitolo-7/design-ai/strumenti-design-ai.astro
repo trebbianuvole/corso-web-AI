@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.4 Il design con l'AI" titolo="Gli strumenti di design con l'AI" lead="Oltre a Claude Code ci sono strumenti pensati per disegnare: si descrive una schermata, e loro propongono una bozza visiva.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Per esplorare" titolo="Bozze di schermate">Strumenti che da un testo o da uno schizzo producono più versioni di una pagina, da confrontare.</Card>
+    <Card tag="Per il prototipo" titolo="Cliccabili">Prototipi su cui si può cliccare, da mostrare al cliente prima di scrivere il sito.</Card>
+    <Card tag="Per i media" titolo="Immagini e video">Generatori di immagini e illustrazioni. Mai al posto delle foto vere del locale.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Nomi, prezzi e novità">Cambiano ogni pochi mesi: li trovate nella <a href="../schede/strumenti-design/" target="_blank" rel="noopener">scheda aggiornabile U.5</a>.</Card>
+</Slide>

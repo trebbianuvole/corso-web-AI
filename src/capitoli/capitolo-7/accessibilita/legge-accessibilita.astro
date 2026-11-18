@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="7.6 Accessibilità" titolo="È anche una legge" lead="In Italia l'accessibilità è obbligatoria per molti siti, non per tutti: dipende dal cliente e da cosa offre il sito.">
+  <table class="compare mt-m">
+    <thead><tr><th>Chi</th><th>Norma</th><th>Cosa vuol dire</th></tr></thead>
+    <tbody>
+      <tr><td>Pubbliche amministrazioni</td><td data-label="Norma">Legge Stanca (4/2004)</td><td data-label="Cosa vuol dire">Obbligo da vent'anni, con le linee guida AgID</td></tr>
+      <tr><td>Grandi aziende</td><td data-label="Norma">Legge Stanca, dal 2020</td><td data-label="Cosa vuol dire">Privati con fatturato medio sopra i 500 milioni che offrono servizi al pubblico online</td></tr>
+      <tr><td>Servizi ai consumatori</td><td data-label="Norma">European Accessibility Act (d.lgs. 82/2022)</td><td data-label="Cosa vuol dire">Dal 28 giugno 2025: commercio online, banche, trasporti, libri digitali e altri</td></tr>
+      <tr><td>Microimprese</td><td data-label="Norma">European Accessibility Act</td><td data-label="Cosa vuol dire">Meno di 10 dipendenti e fatturato fino a 2 milioni: escluse per i servizi</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="E la trattoria?">Microimpresa, con un sito di menu e orari: probabilmente non è obbligata. Ma un sito accessibile è migliore per tutti, e costa poco se si fa dall'inizio.</Card>
+  <p class="footnote">Sintesi didattica: per un cliente vero, verificate il caso. Fonti: <a href="https://www.agid.gov.it/it/notizie/eaa-consultazione-linee-guida-agid-accessibilita-dei-servizi" target="_blank" rel="noopener">AgID</a>; <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32019L0882" target="_blank" rel="noopener">Direttiva (UE) 2019/882</a>.</p>
+</Slide>

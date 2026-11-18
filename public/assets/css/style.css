@@ -1432,3 +1432,83 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .scomposta .sc-due { grid-column: span 2; }
 .scomposta .sc-hot { border-color: var(--orange); background: var(--peach); }
 @media (max-width: 520px) { .scomposta > div { font-size: .62em; padding: 10px 4px; } }
+
+/* ==========================================================
+   Capitolo 7: design e interfacce
+   ========================================================== */
+
+/* Prima e dopo: due mini-pagine affiancate */
+.pd { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2.4vw, 32px); }
+.pd-box { margin: 0; }
+.pd-box figcaption { font-family: var(--f-display); font-weight: 700; font-size: .8em; color: var(--orange-deep); margin-bottom: 8px; }
+@media (max-width: 640px) { .pd { grid-template-columns: 1fr; } }
+
+/* La mini-pagina: un finto sito, con i suoi caratteri e colori */
+.mini { background: #fff; color: #222; border: 1px solid var(--line); border-radius: var(--r-m); padding: 18px 20px; font-family: var(--f-body); font-size: .82em; line-height: 1.4; min-height: 210px; }
+.mini p { margin: 0; }
+.mini .m-tit { font-family: var(--f-display); font-weight: 700; }
+.mini .m-btn { display: inline-block; padding: 8px 14px; border-radius: 8px; font-weight: 700; }
+
+.mini-piatta p { font-size: 1em; margin-bottom: 6px; }
+.mini-piatta .m-tit { font-family: var(--f-body); font-weight: 400; }
+.mini-gerarchia .m-tit { font-size: 1.9em; line-height: 1.05; }
+.mini-gerarchia .m-sub { color: #555; margin: 6px 0 14px; }
+.mini-gerarchia .m-btn { background: #9c3d16; color: #fff; }
+.mini-gerarchia .m-small { font-size: .85em; color: #666; margin-top: 12px; }
+
+.mini-stretta { padding: 8px 10px; line-height: 1.15; }
+.mini-stretta .m-tit { font-size: 1.2em; }
+.mini-ariosa { display: grid; gap: 14px; }
+.mini-ariosa .m-tit { font-size: 1.3em; }
+.mini-ariosa div p + p { color: #666; font-size: .9em; }
+
+.mini-caos .m-tit { font-family: "Brush Script MT", cursive; font-size: 1.8em; font-weight: 400; }
+.mini-caos .m-sub { font-family: Impact, "Arial Black", sans-serif; font-size: 1.2em; letter-spacing: .08em; }
+.mini-caos .m-small { font-family: "Courier New", monospace; font-size: .75em; margin-top: 10px; }
+.mini-due .m-tit { font-size: 1.7em; }
+.mini-due .m-sub { font-family: var(--f-display); color: #9c3d16; margin: 4px 0 12px; }
+.mini-due .m-small { font-size: .95em; }
+
+.mini-arcobaleno { background: #fff; }
+.mini-arcobaleno .m-tit { color: #e01b84; font-size: 1.5em; }
+.mini-arcobaleno .m-sub { color: #1aa3ff; }
+.mini-arcobaleno .m-btn { background: #ffe14d; color: #fff; margin: 12px 0; }
+.mini-arcobaleno .m-small { color: #3cb043; }
+.mini-palette { background: #f7f1e6; }
+.mini-palette .m-tit { color: #2a2420; font-size: 1.5em; }
+.mini-palette .m-sub { color: #5a4f45; }
+.mini-palette .m-btn { background: #9c3d16; color: #fff; margin: 12px 0; }
+.mini-palette .m-small { color: #5a4f45; }
+
+.mini-bottoni { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; min-height: 0; }
+.mini-bottoni p { padding: 8px 14px; }
+.mini-bottoni .b0 { background: #9c3d16; color: #fff; border-radius: 8px; font-weight: 700; }
+.mini-bottoni .b-sec { border: 2px solid #9c3d16; color: #9c3d16; border-radius: 8px; font-weight: 700; }
+.mini-bottoni .b1 { background: #1aa3ff; color: #fff; border-radius: 999px; }
+.mini-bottoni .b2 { background: #222; color: #ffe14d; font-family: Impact, sans-serif; letter-spacing: .05em; }
+.mini-bottoni .b3 { color: #9c3d16; text-decoration: underline; font-style: italic; }
+
+.mini-generico { background: linear-gradient(135deg, #6d4bd8, #b04bd8); color: #fff; text-align: center; padding: 26px 20px; min-height: 0; }
+.mini-generico .m-tit { font-size: 1.5em; }
+.mini-generico .m-sub { opacity: .9; margin: 6px 0 12px; }
+.mini-generico .m-btn { background: #fff; color: #6d4bd8; border-radius: 999px; }
+.mini-generico .m-tre { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.mini-generico .m-tre span { background: rgba(255, 255, 255, .15); padding: 10px 14px; border-radius: 12px; }
+
+/* I sei stati di un pulsante (7.2.1) */
+.stati { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.stati li { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-m); padding: 16px; display: grid; gap: 4px; align-content: start; }
+.stati b { font-family: var(--f-display); margin-top: 10px; }
+.stati li > span:not(.st-btn) { font-size: .82em; color: var(--muted); }
+.st-btn { justify-self: start; padding: 9px 14px; border-radius: 8px; font-weight: 700; font-size: .82em; background: #9c3d16; color: #fff; }
+.st-carica { background: #c9b9ab; color: #2a2420; }
+.st-ok { background: #1f6b35; }
+.st-err { background: #fff; color: #a3202a; box-shadow: inset 0 0 0 2px #a3202a; }
+.st-vuoto { background: #fff; color: #5a4f45; box-shadow: inset 0 0 0 2px #d8cfc4; font-weight: 400; }
+.st-no { background: #ece6dd; color: #5a4f45; font-weight: 400; }
+@media (max-width: 860px) { .stati { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .stati { grid-template-columns: 1fr; } }
+
+/* Campioni di colore (7.3.2) */
+.campioni { display: flex; gap: 8px; }
+.campioni span { width: 48px; height: 48px; border-radius: 10px; border: 1px solid var(--line); }

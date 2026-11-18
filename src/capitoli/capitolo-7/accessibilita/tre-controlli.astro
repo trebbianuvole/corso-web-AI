@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="7.6 Accessibilità" titolo="Tre controlli sul vostro sito" lead="Trenta minuti, sul vostro MVP (6.7.8). Ogni problema trovato diventa una issue (4.5.5).">
+  <Card slot="intro" variante="sky mt-m" titolo="Poi, con Claude">Dategli le issue una alla volta, con il prompt della 7.6.4. Dopo ogni correzione, rifate il controllo che l'aveva trovata.</Card>
+  <Steps>
+    <Passo titolo="Lighthouse">F12 → Lighthouse → Accessibilità. Che punteggio? Quali problemi?</Passo>
+    <Passo titolo="Solo tastiera">arrivate al pulsante principale e usatelo, senza mouse</Passo>
+    <Passo titolo="Testo al 200%">Ctrl e + finché il testo raddoppia: la pagina regge?</Passo>
+  </Steps>
+</Slide>

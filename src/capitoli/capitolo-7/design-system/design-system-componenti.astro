@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="7.3 Il design system" titolo="Dal design system ai componenti" lead="I componenti della 6.4 sono il design system in pratica. Un pulsante con due varianti, scritto una volta, usato ovunque.">
+  <Card slot="intro" variante="sky mt-m" titolo="Una variante, non un pulsante nuovo">Serve un pulsante diverso? Si aggiunge una variante al componente, con un nome. Non si copia il pulsante cambiando il colore a mano.</Card>
+  <div>
+<pre class="code" aria-label="Il componente Pulsante con la prop variante, principale o secondario"><span class="m">---</span>
+<span class="m">// src/components/Pulsante.astro</span>
+<span class="k">const</span> &#123; href, variante = <span class="s">"principale"</span> &#125;
+  = Astro.props;
+<span class="m">---</span>
+&lt;a class:list=&#123;[<span class="s">"pulsante"</span>, variante]&#125; href=&#123;href&#125;&gt;
+  &lt;slot /&gt;
+&lt;/a&gt;</pre>
+    <div class="mini mini-bottoni mt-m" aria-label="Il pulsante nelle due varianti" role="img"><p class="b0">Prenota</p><p class="b-sec">Vedi il menu</p></div>
+  </div>
+</Slide>

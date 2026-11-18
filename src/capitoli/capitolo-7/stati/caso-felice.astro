@@ -1,0 +1,10 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="7.2 Gli stati" titolo="L'AI disegna solo il caso felice" lead="Chiedete «la pagina per prenotare un'aula» e avrete la pagina quando tutto va bene. Gli altri cinque stati, quasi sempre, mancano.">
+  <div class="chat mt-l">
+    <div class="bubble user">Per il modulo di prenotazione prepara tutti gli stati: iniziale, caricamento, successo, errore (aula occupata, connessione assente), vuoto (nessuna aula libera), non consentito (utente non docente). Il pulsante si disattiva durante l'invio. Per ogni stato, scrivi il testo che vede l'utente e mostrami come provarlo.</div>
+  </div>
+  <Card variante="sky mt-m" titolo="Come si controlla">Provate davvero i casi brutti: staccate il wi-fi, prenotate due volte la stessa aula, entrate con un utente senza permessi. Se lo stato non compare, mancava.</Card>
+</Slide>

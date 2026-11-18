@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.5 Responsive" titolo="Prima il telefono" lead="Si progetta prima lo schermo stretto, poi si allarga. Il contrario funziona male: quello che sta bene in largo, sul telefono va schiacciato.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Sul telefono</span>
+      <h3>Una colonna</h3>
+      <p>Una cosa sotto l'altra, nell'ordine di importanza. Pulsanti grandi, da toccare con il pollice. Il numero di telefono si chiama con un tocco.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Sul computer</span>
+      <h3>Più colonne</h3>
+      <p>Lo spazio in più si usa per affiancare: i piatti su tre colonne, gli orari accanto alla mappa.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" tag="Con l'AI" titolo="Ditelo all'inizio">«Progetta prima per il telefono, larghezza 375 pixel; poi adatta al computer.» Se no, Claude disegna per lo schermo grande e il telefono diventa un ripensamento.</Card>
+</Slide>

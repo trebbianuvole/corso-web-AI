@@ -110,7 +110,7 @@ Nella scaletta sono numerati `X.Y.a1`, `X.Y.a2`…; ogni gruppo indica la slide 
 ## Etichette e schede aggiornabili
 
 - **Etichette per tipo di contenuto:** concetto, esempio, demo, attività, compito, «Con l'AI», checklist. Si mettono con il prop `tipo` di `Slide`; sono discrete e coerenti con lo stile.
-- **Schede aggiornabili:** pagine con i contenuti che invecchiano (modelli, prodotti, prezzi, strumenti), con il layout `Scheda.astro` e il prop `aggiornato="AAAA-MM-GG"`, che mostra «Aggiornato al GG mese AAAA». Stanno in `src/pages/schede/`: U.2 `/schede/modelli-claude/`, U.4 `/schede/privacy-servizi/`. Le slide le richiamano con un link senza ripeterne i dati. Quando si aggiorna una scheda si aggiorna anche la data.
+- **Schede aggiornabili:** pagine con i contenuti che invecchiano (modelli, prodotti, prezzi, strumenti), con il layout `Scheda.astro` e il prop `aggiornato="AAAA-MM-GG"`, che mostra «Aggiornato al GG mese AAAA». Stanno in `src/pages/schede/`: U.2 `/schede/modelli-claude/`, U.4 `/schede/privacy-servizi/`, U.5 `/schede/strumenti-design/`. Le slide le richiamano con un link senza ripeterne i dati. Quando si aggiorna una scheda si aggiorna anche la data.
 
 ## Regole sui contenuti
 

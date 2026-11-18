@@ -1,0 +1,24 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="7.5 Responsive" titolo="Come si adatta una pagina" lead="Tre strumenti del CSS. Non serve saperli scrivere a memoria: serve riconoscerli, e chiederli per nome.">
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="Misure fluide">percentuali e larghezze massime invece di pixel fissi: la pagina si allarga e si stringe da sola.</Def>
+    <Def termine="Griglie che vanno a capo">«tante colonne quante ne stanno, larghe almeno 250 pixel».</Def>
+    <Def termine="Media query">regole che valgono solo sopra o sotto una certa larghezza.</Def>
+  </Defs>
+<pre class="code" aria-label="Una griglia di piatti che va a capo da sola, e una media query per gli schermi larghi"><span class="m">/* i piatti: quante colonne ci stanno */</span>
+.menu &#123;
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(<span class="s">250px</span>, 1fr));
+  gap: <span class="s">16px</span>;
+&#125;
+
+<span class="m">/* dai 900 pixel in su: orari e mappa affiancati */</span>
+<span class="k">@media</span> (min-width: <span class="s">900px</span>) &#123;
+  .dove &#123; display: flex; &#125;
+&#125;</pre>
+</Slide>

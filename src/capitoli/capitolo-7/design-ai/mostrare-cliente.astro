@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="7.4 Il design con l'AI" titolo="Mostrare al cliente" lead="Con l'AI fare tre versioni costa poco. Usatele: il cliente sceglie meglio tra cose vere che su una descrizione.">
+  <Card slot="intro" variante="peach mt-m" titolo="Attenzione ai testi segnaposto">Se nell'anteprima ci sono piatti inventati o «Lorem ipsum», il cliente commenterà quelli. Mettete testi veri, anche provvisori.</Card>
+  <Steps>
+    <Passo titolo="Due o tre direzioni" inLinea>diverse davvero, non tre sfumature della stessa</Passo>
+    <Passo titolo="Sull'anteprima" inLinea>un ramo per ciascuna, con il suo link (6.6.2)</Passo>
+    <Passo titolo="Dal telefono" inLinea>il cliente la guarda come la guarderanno i suoi clienti</Passo>
+    <Passo titolo="Domande precise" inLinea>«trovate subito orari e telefono?», non «vi piace?»</Passo>
+  </Steps>
+</Slide>

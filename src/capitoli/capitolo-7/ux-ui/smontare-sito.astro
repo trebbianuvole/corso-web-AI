@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="7.1 UX e UI" titolo="Smontare un sito" lead="Venti minuti, a coppie. Scegliete il sito di un locale della vostra zona e guardatelo con le cinque regole.">
+  <Card slot="intro" variante="sky mt-m" titolo="Poi, con Claude">Fate uno screenshot e chiedete a Claude la stessa analisi. Su cosa siete d'accordo? Cosa ha visto lui che voi no, e viceversa?</Card>
+  <Steps>
+    <Passo titolo="Gerarchia" inLinea>cosa si legge per primo? È la cosa giusta?</Passo>
+    <Passo titolo="Spazio" inLinea>si capisce cosa sta insieme?</Passo>
+    <Passo titolo="Caratteri" inLinea>quanti sono? Si legge dal telefono?</Passo>
+    <Passo titolo="Colore" inLinea>quanti colori? Ognuno ha un compito?</Passo>
+    <Passo titolo="Coerenza" inLinea>pulsanti e titoli sono uguali in tutte le pagine?</Passo>
+    <Passo titolo="La prova UX" inLinea>trovate orari e telefono in meno di dieci secondi?</Passo>
+  </Steps>
+</Slide>

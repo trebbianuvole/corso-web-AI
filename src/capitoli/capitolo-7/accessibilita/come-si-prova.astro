@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="7.6 Accessibilità" titolo="Come si prova" lead="Gli strumenti automatici trovano una parte dei problemi. Il resto si trova usando il sito in modo diverso dal solito.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Automatico" titolo="Lighthouse, axe, WAVE">Analizzano la pagina e segnalano contrasti, immagini senza descrizione, campi senza etichetta. Lighthouse è già dentro Chrome (F12).</Card>
+    <Card tag="A mano" titolo="Solo tastiera">Mettete via il mouse e provate a prenotare con Tab e Invio. Vi perdete? Non vedete dove siete?</Card>
+    <Card tag="A mano" titolo="Ingrandire">Testo al 200%: la pagina regge? Niente si sovrappone, niente scompare?</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E il lettore di schermo">Windows ha l'Assistente vocale, il Mac e l'iPhone VoiceOver. Provare due minuti a «sentire» la propria home è istruttivo.</Card>
+  <p class="footnote">Fonti: <a href="https://developer.chrome.com/docs/lighthouse/overview" target="_blank" rel="noopener">Lighthouse</a>; <a href="https://wave.webaim.org/" target="_blank" rel="noopener">WAVE</a>.</p>
+</Slide>
