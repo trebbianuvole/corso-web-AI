@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="11.2 Test con l'AI" titolo="Prove a mano con le persone" lead="Nessun test automatico vi dice che le persone non trovano il pulsante. Un test di usabilità in cinque minuti sì, e non serve un laboratorio.">
+  <Card slot="intro" variante="peach mt-m" titolo="La regola più difficile">Stare zitti. Niente «clicca lì», niente spiegazioni. Se la persona si blocca, è l'app da cambiare, non la persona.</Card>
+  <Steps>
+    <Passo titolo="Una persona vera" inLinea>non del gruppo: un compagno di un'altra classe, un docente</Passo>
+    <Passo titolo="Un compito, non istruzioni" inLinea>«Prenota un'aula con il proiettore per giovedì mattina»</Passo>
+    <Passo titolo="Pensare ad alta voce" inLinea>le chiedete di dire cosa cerca e cosa si aspetta</Passo>
+    <Passo titolo="Voi guardate e scrivete" inLinea>dove esita, dove sbaglia, cosa dice</Passo>
+    <Passo titolo="Tre persone bastano" inLinea>i problemi grossi si ripetono subito</Passo>
+  </Steps>
+</Slide>

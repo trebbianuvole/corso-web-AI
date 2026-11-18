@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 11" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Verificare: test e qualità" lead="Un prodotto che sembra funzionare non è un prodotto che funziona. Con l'AI il codice arriva in fretta: il vostro lavoro è dimostrare che va bene.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Test con l'AI" inLinea>dai criteri ai test, nel browser, con un secondo agente</Passo>
+    <Passo titolo="La sicurezza del codice generato" inLinea>pensare come chi attacca</Passo>
+    <Passo titolo="Privacy e velocità" inLinea>cookie, servizi esterni, Lighthouse</Passo>
+    <Passo titolo="Dopo il lancio" inLinea>i log e gli errori veri</Passo>
+    <Passo titolo="Prima del lancio" inLinea>la checklist e la revisione incrociata</Passo>
+  </Steps>
+  <SieteQui capitolo={11} classe="mt-m" />
+</Slide>

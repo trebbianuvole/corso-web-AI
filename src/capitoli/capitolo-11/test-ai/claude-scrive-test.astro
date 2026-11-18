@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="11.2 Test con l'AI" titolo="Claude scrive i test" lead="Un test automatico è un piccolo programma che usa l'app al posto vostro e controlla il risultato. Claude li scrive bene e in fretta. Il problema è che a volte controllano poco, o niente.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="bad" tag="Errore tipico" titolo="Il test che passa sempre">Controlla che la pagina si apra, non che la prenotazione sia salvata. Passa anche se la funzione è rotta.</Card>
+    <Card variante="bad" tag="Errore tipico" titolo="Il test aggiustato">Il test fallisce, e invece di sistemare il codice l'agente cambia il test finché passa.</Card>
+    <Card variante="good" tag="La prova" titolo="Rompere apposta">Togliete il vincolo sulle sovrapposizioni, o cambiate il messaggio. Se il test passa ancora, non controlla niente.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Cosa chiedere">«Scrivi un test per ogni criterio. Poi rompi il codice in un punto e mostrami quale test fallisce. Non modificare i test per farli passare senza chiedermelo.»</Card>
+</Slide>

@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="11.1 Verificare è il lavoro vero" titolo="Tre livelli di test" lead="Tre domande diverse, che si fanno con strumenti diversi. Un prodotto le passa tutte e tre, non solo la prima.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="1" titolo="Funziona?">Fa quello che dicono i criteri di accettazione, anche nei casi limite. Si prova con test automatici e a mano (11.2).</Card>
+    <Card tag="2" titolo="È facile da usare?">Una persona vera arriva in fondo senza aiuto? Si prova guardando qualcuno che lo usa (11.2.5).</Card>
+    <Card variante="peach" tag="3" titolo="È sicuro, veloce, accessibile?">Le cose che l'utente non vede finché non vanno storte. Si prova con controlli e strumenti appositi (11.3, 11.4, 7.6).</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="L'AI tende a fermarsi al primo">Se le chiedete «funziona?», controlla il primo livello. Gli altri due vanno chiesti per nome.</Card>
+</Slide>

@@ -1,0 +1,27 @@
+---
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="11.2 Test automatici da vicino" titolo="Playwright da vicino" lead="Playwright è uno strumento gratuito che apre un browser vero, senza finestra, e fa quello che gli scrivete. Il test del criterio della 11.2.1, in codice.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Un test Playwright che prova a prenotare un'aula già occupata"><span class="k">import</span> &#123; test, expect &#125; <span class="k">from</span> <span class="s">'@playwright/test'</span>
+
+test(<span class="s">'aula già occupata'</span>, <span class="k">async</span> (&#123; page &#125;) =&gt; &#123;  <span class="m">①</span>
+  <span class="k">await</span> page.goto(<span class="s">'/prenota'</span>)                     <span class="m">②</span>
+  <span class="k">await</span> page.getByLabel(<span class="s">'Aula'</span>).selectOption(<span class="s">'Aula 3'</span>)
+  <span class="k">await</span> page.getByLabel(<span class="s">'Dalle'</span>).fill(<span class="s">'10:30'</span>)
+  <span class="k">await</span> page.getByLabel(<span class="s">'Alle'</span>).fill(<span class="s">'11:30'</span>)
+  <span class="k">await</span> page.getByRole(<span class="s">'button'</span>,
+    &#123; name: <span class="s">'Prenota'</span> &#125;).click()
+
+  <span class="k">await</span> expect(                                <span class="m">③</span>
+    page.getByText(<span class="s">'Aula già occupata'</span>)
+  ).toBeVisible()
+&#125;)</pre>
+    <ol class="note-codice">
+      <li><b>Un test</b> con un nome che dice cosa prova. Prima, nel database di prova, l'Aula 3 è già prenotata dalle 10 alle 11.</li>
+      <li><b>Le azioni</b>, cercando gli elementi come una persona: per etichetta e per nome del pulsante. Senza etichette il test non li trova: aiuta anche l'accessibilità (7.6).</li>
+      <li><b>Il controllo:</b> il messaggio deve comparire. Se non compare, il test fallisce e dice dove.</li>
+    </ol>
+  </div>
+  <p class="footnote">Si installa con <code>npm init playwright@latest</code> e si lancia con <code>npx playwright test</code>. Fonti: <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright, installazione</a>; <a href="https://playwright.dev/docs/writing-tests" target="_blank" rel="noopener">scrivere i test</a>, controllate il 18 novembre 2026.</p>
+</Slide>
