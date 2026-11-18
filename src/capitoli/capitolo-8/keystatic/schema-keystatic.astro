@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.3 Keystatic" titolo="Lo schema" lead="Lo schema dice quali contenuti esistono e com'è fatto ciascuno. Lo scrivete voi, una volta, in un file del progetto.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Tanti elementi uguali</span>
+      <h3>Collezioni</h3>
+      <p>I piatti, gli eventi, le notizie. Il cliente ne aggiunge e ne toglie. Ognuno diventa un file.</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">Una cosa sola</span>
+      <h3>Singoli</h3>
+      <p>Gli orari, i contatti, il testo della home. Esistono una volta, e si modificano soltanto.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Lo schema è un contratto">Il cliente può scrivere solo nei campi previsti: non può rompere la pagina mettendo un prezzo dove va un titolo. E Claude, leggendo lo schema, sa com'è fatto ogni contenuto.</Card>
+  <p class="footnote">Fonte: <a href="https://keystatic.com/docs/collections" target="_blank" rel="noopener">Keystatic, collezioni</a> e <a href="https://keystatic.com/docs/singletons" target="_blank" rel="noopener">singoli</a>.</p>
+</Slide>

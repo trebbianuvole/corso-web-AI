@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.2 Altri CMS da vicino" titolo="Headless da vicino" lead="«Senza testa»: il CMS non ha un sito suo. Tiene i contenuti in cloud e li consegna, con un'API, a chi li chiede.">
+  <div class="pipe p3 mt-l">
+    <div><span class="role">In cloud</span><b>Il pannello</b><span>la redazione scrive e organizza i contenuti</span></div>
+    <div><span class="role">L'API</span><b>La consegna</b><span>i contenuti viaggiano in JSON (2.5.3)</span></div>
+    <div><span class="role">Ovunque</span><b>I siti e le app</b><span>lo stesso contenuto sul sito, nell'app, sul totem in negozio</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Quando ha senso">Tante persone che scrivono, più canali da servire, flussi di approvazione. Per una trattoria è troppo; per una rivista o una catena di negozi, spesso no. I piani gratuiti esistono, ma oltre una soglia si paga a utente o a richieste.</Card>
+  <p class="footnote">Esempi: <a href="https://www.sanity.io/" target="_blank" rel="noopener">Sanity</a>, <a href="https://www.contentful.com/" target="_blank" rel="noopener">Contentful</a>.</p>
+</Slide>

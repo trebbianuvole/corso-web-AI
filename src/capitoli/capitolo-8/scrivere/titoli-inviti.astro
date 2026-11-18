@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.5 Scrivere per il web" titolo="Titoli e inviti all'azione" lead="Ogni pagina ha un obiettivo: prenotare, chiamare, venire. Il titolo dice dove siete; il pulsante dice cosa fare dopo.">
+  <table class="compare mt-l">
+    <thead><tr><th>Pagina</th><th>Obiettivo</th><th>Invito all'azione</th></tr></thead>
+    <tbody>
+      <tr><td>Home</td><td data-label="Obiettivo">Far venire voglia di venire</td><td data-label="Invito">«Prenota un tavolo»</td></tr>
+      <tr><td>Menu</td><td data-label="Obiettivo">Far scegliere, rassicurare sugli allergeni</td><td data-label="Invito">«Prenota per stasera»</td></tr>
+      <tr><td>Dove siamo</td><td data-label="Obiettivo">Far arrivare</td><td data-label="Invito">«Apri in Mappe», «Chiama»</td></tr>
+      <tr><td>Eventi</td><td data-label="Obiettivo">Riempire le serate a tema</td><td data-label="Invito">«Prenota per venerdì»</td></tr>
+    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="Verbi, non etichette">«Prenota un tavolo» dice cosa succede. «Invia», «Clicca qui», «Scopri di più» no.</Card>
+</Slide>

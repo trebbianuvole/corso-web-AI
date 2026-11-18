@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="8.3 Formati e Keystatic Cloud" titolo="Markdoc e Markdown" lead="Markdown è il modo più diffuso di scrivere testo formattato con caratteri semplici: un cancelletto per il titolo, due asterischi per il grassetto. Markdoc lo estende.">
+  <Card slot="intro" variante="sky mt-m" titolo="La differenza">Markdoc aggiunge dei «tag» tra graffe per inserire componenti nel testo: un riquadro, un avviso, un pulsante. Il cliente li inserisce dal pannello senza vederli.</Card>
+  <p class="footnote" slot="intro">Il CLAUDE.md, il README e la scaletta di questo corso sono scritti in Markdown. Fonte: <a href="https://markdoc.dev/" target="_blank" rel="noopener">Markdoc</a>.</p>
+<pre class="code" aria-label="Un testo in Markdoc con un titolo, un grassetto e un tag avviso"><span class="k">## La nostra storia</span>
+
+Rina ha aperto la trattoria con
+<span class="s">**le ricette di sua nonna**</span>.
+
+<span class="m">&#123;% avviso tipo="info" %&#125;</span>
+Chiusi il lunedì.
+<span class="m">&#123;% /avviso %&#125;</span></pre>
+</Slide>

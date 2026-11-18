@@ -1,0 +1,19 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.2 Altri CMS da vicino" titolo="WordPress oggi" lead="Muove circa quattro siti su dieci, anche se la sua quota cala da qualche anno. Saperlo riconoscere serve: molti clienti ce l'hanno già.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Quando è ancora la scelta giusta</h3>
+      <ul class="mt-m"><li>Il cliente lo usa già e lo sa usare</li><li>Serve un plugin che fa esattamente quello che serve, come un negozio online semplice</li><li>Chi lo mantiene dopo di voi conosce solo WordPress</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Cosa costa</h3>
+      <ul class="mt-m"><li>Aggiornamenti continui di sistema, tema e plugin</li><li>Un bersaglio frequente per gli attacchi, proprio perché è diffuso</li><li>Hosting con database, da mantenere</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="La domanda da fare">Non «WordPress o Astro?», ma «chi lo terrà in vita tra due anni, e con quali competenze?» (capitolo 12).</Card>
+  <p class="footnote">Fonte: <a href="https://w3techs.com/technologies/overview/content_management" target="_blank" rel="noopener">W3Techs</a>, novembre 2026.</p>
+</Slide>

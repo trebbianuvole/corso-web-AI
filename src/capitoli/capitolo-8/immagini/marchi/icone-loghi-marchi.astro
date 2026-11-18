@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.6 Icone, loghi e marchi" titolo="Icone, loghi e marchi degli altri" lead="Il logo di WhatsApp sul pulsante, le icone dei social, il marchio dell'acqua minerale nella foto: tutti hanno un proprietario.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Le icone" titolo="Librerie con licenza">Esistono raccolte di icone libere, anche per uso commerciale. Controllate la licenza, come per le foto.</Card>
+    <Card tag="I loghi degli altri" titolo="Solo come rimando">Il logo di Instagram per dire «seguici su Instagram» di solito si può usare, seguendo le regole del proprietario: senza deformarlo, senza far credere a una collaborazione.</Card>
+    <Card tag="Il logo del cliente" titolo="Un marchio da proteggere">Se l'AI disegna un logo, controllate che non somigli troppo a uno esistente. Il marchio va poi registrato, se il cliente vuole proteggerlo.</Card>
+  </Grid>
+  <Card variante="peach mt-m" tag="Con l'AI" titolo="Niente imitazioni">«Fai un logo come quello di…» è il modo più veloce per avere un problema. Chiedete un'idea originale, partendo dalla storia del locale.</Card>
+</Slide>

@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.1 Contenuti e codice" titolo="Chi fa cosa" lead="Una divisione semplice evita molti guai: ognuno cambia la sua parte, con lo strumento adatto.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Lo sviluppatore, con Claude Code</span>
+      <h3>La struttura</h3>
+      <p>Le pagine, i componenti, l'aspetto, quali campi ha un piatto. Cambia di rado, con un ramo e una pull request.</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">Il cliente, dal pannello</span>
+      <h3>I contenuti</h3>
+      <p>Piatti, prezzi, orari, eventi, foto. Cambiano spesso, e li conosce meglio lui.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Il confine si decide prima">Cosa può cambiare il cliente, e cosa no? Il logo, i colori, l'ordine delle pagine di solito restano a voi. È la prima domanda del piano (8.4.1).</Card>
+</Slide>

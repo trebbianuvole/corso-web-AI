@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="8.2 I CMS" titolo="CMS e AI" lead="Con un CMS basato su file, i contenuti sono testo nel repository. Claude li legge e li modifica come il codice.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Il cliente</span>
+      <h3>Usa il pannello</h3>
+      <p>Cambia un prezzo, aggiunge un evento. Non sa nemmeno che esistono i file.</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">Voi</span>
+      <h3>Usate l'agente</h3>
+      <p>«Traduci in inglese tutte le descrizioni dei piatti.» «Controlla che ogni piatto abbia gli allergeni.» Un lavoro di un pomeriggio diventa un commit.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Ma i contenuti sono del cliente">Prima di far cambiare a Claude dei contenuti, chiedete al cliente. E controllate il diff: una descrizione «migliorata» può dire una cosa non vera.</Card>
+</Slide>

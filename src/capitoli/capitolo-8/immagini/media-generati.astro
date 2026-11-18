@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="8.6 Immagini e media" titolo="Immagini, video e voci generati" lead="L'AI genera in pochi secondi illustrazioni, foto, video, voci. A volte è proprio quello che serve; a volte inganna chi guarda.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Quando ha senso</h3>
+      <ul class="mt-m"><li>Illustrazioni, icone, sfondi decorativi</li><li>Bozze per mostrare un'idea al cliente (7.4.6)</li><li>La voce di un video informativo, dichiarata</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Quando inganna</h3>
+      <ul class="mt-m"><li>La «foto» del piatto che in cucina non esiste</li><li>Il locale più grande, più bello, più pieno del vero</li><li>Persone che sembrano clienti, e non lo sono</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Gli strumenti">Generatori di immagini, video e voci cambiano ogni mese: nomi e condizioni sono nella <a href="../schede/strumenti-design/" target="_blank" rel="noopener">scheda aggiornabile U.5</a>.</Card>
+</Slide>

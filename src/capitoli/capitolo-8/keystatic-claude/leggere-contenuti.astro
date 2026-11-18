@@ -1,0 +1,25 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="8.4 Keystatic con Claude Code" titolo="Leggere i contenuti nelle pagine" lead="La pagina del menu non ha più i piatti scritti dentro: li legge dai file di Keystatic e li passa al componente Piatto della 6.4.">
+  <Card slot="intro" variante="sky mt-m" titolo="Il componente non cambia">Piatto.astro è lo stesso della 6.4.3. Cambia solo da dove arrivano i dati: prima un elenco scritto a mano (6.5.6), ora i file che salva Rina.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://keystatic.com/docs/reader-api" target="_blank" rel="noopener">Keystatic, Reader API</a>. Astro offre anche un'altra strada, le content collections: Claude può proporla, va bene lo stesso.</p>
+<pre class="code" aria-label="La pagina menu.astro legge tutti i piatti con il Reader di Keystatic e li mostra con il componente Piatto"><span class="m">---</span>
+<span class="m">// src/pages/menu.astro</span>
+<span class="k">import</span> &#123; createReader &#125;
+  <span class="k">from</span> <span class="s">"@keystatic/core/reader"</span>;
+<span class="k">import</span> config <span class="k">from</span> <span class="s">"../../keystatic.config"</span>;
+<span class="k">import</span> Piatto <span class="k">from</span> <span class="s">"../components/Piatto.astro"</span>;
+
+<span class="k">const</span> reader = createReader(process.cwd(), config);
+<span class="k">const</span> piatti = <span class="k">await</span> reader.collections.piatti.all();
+<span class="m">---</span>
+&#123;piatti.map((&#123; entry &#125;) =&gt; (
+  &lt;Piatto
+    nome=&#123;entry.nome&#125;
+    descrizione=&#123;entry.descrizione&#125;
+    prezzo=&#123;entry.prezzo&#125;
+  /&gt;
+))&#125;</pre>
+</Slide>

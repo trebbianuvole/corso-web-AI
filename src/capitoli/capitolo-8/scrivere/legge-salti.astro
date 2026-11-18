@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.5 Scrivere per il web" titolo="Online si legge a salti" lead="Chi arriva sul sito cerca una cosa: l'orario, il telefono, se c'è parcheggio. Guarda i titoli, l'inizio delle righe, le parole in grassetto. Il resto lo salta.">
+  <div class="pd mt-l">
+    <figure class="pd-box"><figcaption>Da leggere</figcaption>
+      <div class="mini"><p>La nostra trattoria, nata dalla passione di Rina per la cucina di casa, vi accoglie in un ambiente familiare dal martedì alla domenica, sia a pranzo dalle 12 alle 15 sia a cena dalle 19 alle 23, e per prenotare potete chiamarci o scriverci su WhatsApp.</p></div>
+    </figure>
+    <figure class="pd-box"><figcaption>Da scorrere</figcaption>
+      <div class="mini mini-ariosa"><p class="m-tit">Orari</p><p>Martedì–domenica<br><b>12–15</b> e <b>19–23</b></p><p class="m-tit">Prenotazioni</p><p>Telefono o WhatsApp</p></div>
+    </figure>
+  </div>
+  <Card variante="sky mt-m" titolo="Le regole">La cosa importante all'inizio. Frasi brevi. Un'idea per paragrafo. Titoli che dicono cosa c'è sotto. Elenchi quando le cose sono elenchi.</Card>
+</Slide>

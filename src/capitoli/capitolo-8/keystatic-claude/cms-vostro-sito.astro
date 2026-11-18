@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="compito" split kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Il CMS nel vostro sito" lead="Portate Keystatic nel vostro progetto: almeno una collezione e un singolo, modificabili dal pannello online.">
+  <Card slot="intro" variante="sky mt-m" titolo="Da portare">Il link al pannello, una modifica fatta da un compagno nel ruolo del cliente, e il commit che l'ha registrata.</Card>
+  <Steps>
+    <Passo titolo="Il piano" inLinea>cosa cambia il cliente, cosa resta fisso (8.4.1)</Passo>
+    <Passo titolo="Lo schema" inLinea>su carta, poi in keystatic.config.ts</Passo>
+    <Passo titolo="Le pagine" inLinea>leggono i dati dai file</Passo>
+    <Passo titolo="Online" inLinea>in modalità GitHub o con Keystatic Cloud</Passo>
+    <Passo titolo="Il CLAUDE.md" inLinea>una riga: «i contenuti stanno in src/content e li cambia il cliente»</Passo>
+  </Steps>
+</Slide>

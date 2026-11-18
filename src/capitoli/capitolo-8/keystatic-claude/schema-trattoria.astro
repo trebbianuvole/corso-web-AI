@@ -1,0 +1,30 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="attivita" classe="compact" kicker="8.4 Keystatic con Claude Code" titolo="Progettare lo schema della trattoria" lead="Venti minuti, a coppie, prima su carta: quali campi servono a un piatto, agli orari, a un evento? Poi confrontate con questo.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Il file keystatic.config.ts della trattoria con la collezione piatti"><span class="m">// keystatic.config.ts</span>
+<span class="k">export default</span> config(&#123;
+  storage: &#123; kind: <span class="s">"local"</span> &#125;,          <span class="m">①</span>
+  collections: &#123;
+    piatti: collection(&#123;
+      label: <span class="s">"Piatti"</span>, slugField: <span class="s">"nome"</span>,
+      path: <span class="s">"src/content/piatti/*"</span>,   <span class="m">②</span>
+      schema: &#123;
+        nome: fields.slug(&#123; name: &#123; label: <span class="s">"Nome"</span> &#125; &#125;),
+        categoria: fields.select(&#123; <span class="m">/* primi… */</span> &#125;), <span class="m">③</span>
+        prezzo: fields.number(&#123; label: <span class="s">"Prezzo (€)"</span> &#125;),
+        descrizione: fields.text(&#123; label: <span class="s">"Descrizione"</span> &#125;),
+        allergeni: fields.multiselect(&#123; <span class="m">/* UE */</span> &#125;), <span class="m">④</span>
+      &#125;,
+    &#125;),
+  &#125;,
+&#125;);</pre>
+    <ol class="note-codice">
+      <li><b>Dove salva</b>: «local» mentre sviluppate, «github» online (8.4.5).</li>
+      <li><b>Dove finiscono i file</b>: uno per piatto.</li>
+      <li><b>Una scelta, non un testo libero</b>: così nessuno scrive «primo» o «Primi piatti».</li>
+      <li><b>Gli allergeni</b>: l'elenco del regolamento europeo, non inventato. Il ristorante deve informare i clienti.</li>
+    </ol>
+  </div>
+</Slide>

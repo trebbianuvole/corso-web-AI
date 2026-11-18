@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.1 Contenuti e codice" titolo="Il cliente vuole cambiare un prezzo" lead="Le tagliatelle passano da 12 a 13 euro. Con il sito del capitolo 6, Rina deve telefonarvi.">
+  <div class="chat mt-l">
+    <div class="bubble user">Ciao, mi cambi il prezzo delle tagliatelle? E da lunedì togliamo le polpette, aggiungiamo la zuppa di farro.</div>
+    <div class="bubble bot">Certo, appena riesco. Stasera?</div>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card variante="bad" titolo="Per lei">Dipende da voi per ogni virgola. Il sabato sera il menu online è sbagliato, e non può farci niente.</Card>
+    <Card variante="bad" titolo="Per voi">Ogni settimana un ramo, un commit, una pull request per cambiare un numero. Non è un lavoro, è un'interruzione.</Card>
+  </div>
+  <Card variante="sky mt-m" titolo="La soluzione">Separare i contenuti dal codice, e dare a Rina un modo semplice per cambiarli da sola.</Card>
+</Slide>

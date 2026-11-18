@@ -3,8 +3,8 @@
 // Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
 import Scheda from "../../layouts/Scheda.astro";
 ---
-<Scheda sigla="U.5" titolo="Strumenti di design con l'AI" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: gli strumenti che trasformano una descrizione o uno schizzo in schermate e prototipi.">
-  <p class="lead">Gli strumenti che, da una descrizione o da uno schizzo, propongono schermate e prototipi. Cambiano in fretta: qui i principali, con la data dell'ultimo controllo.</p>
+<Scheda sigla="U.5" titolo="Strumenti di design e media con l'AI" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: gli strumenti che trasformano una descrizione in schermate e prototipi, e i generatori di immagini, video e voci.">
+  <p class="lead">Gli strumenti che, da una descrizione o da uno schizzo, propongono schermate e prototipi, e quelli che generano immagini, video e voci. Cambiano in fretta: qui i principali, con la data dell'ultimo controllo.</p>
 
   <h2>Schermate e prototipi</h2>
   <table class="compare">
@@ -17,9 +17,22 @@ import Scheda from "../../layouts/Scheda.astro";
     </tbody>
   </table>
 
+  <h2>Immagini, video e voci</h2>
+  <table class="compare">
+    <thead><tr><th>Strumento</th><th>Cosa genera</th><th>Di chi è</th></tr></thead>
+    <tbody>
+      <tr><td>Nano Banana</td><td data-label="Cosa genera">Immagini, e modifiche di immagini, dentro Gemini</td><td data-label="Di chi è">Google</td></tr>
+      <tr><td>Firefly</td><td data-label="Cosa genera">Immagini, e anche musica e voci</td><td data-label="Di chi è">Adobe</td></tr>
+      <tr><td>Midjourney</td><td data-label="Cosa genera">Immagini, e brevi video a partire da un'immagine</td><td data-label="Di chi è">Midjourney</td></tr>
+      <tr><td>Veo</td><td data-label="Cosa genera">Video</td><td data-label="Di chi è">Google</td></tr>
+      <tr><td>ElevenLabs</td><td data-label="Cosa genera">Voci e audio</td><td data-label="Di chi è">ElevenLabs</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Prima di usarli per un cliente, leggete le condizioni: spesso l'uso commerciale è permesso solo nei piani a pagamento, e i piani gratuiti aggiungono filigrane. Quello che sembra vero va dichiarato come generato (8.6.5).</p>
+
   <h2>Come usarli nel corso</h2>
   <p>Per esplorare idee e mostrare direzioni al cliente (7.4.6). Poi il sito si costruisce in Astro, con il vostro design system e i vostri componenti: il codice prodotto da questi strumenti va adattato, non copiato così com'è.</p>
   <p>Immagini e illustrazioni generate: mai al posto delle foto vere del locale, mai con volti di persone reali senza consenso (5.4.5).</p>
 
-  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">Anthropic, Claude Design</a>; <a href="https://www.figma.com/make/" target="_blank" rel="noopener">Figma Make</a>; <a href="https://stitch.withgoogle.com/" target="_blank" rel="noopener">Google Stitch</a>; <a href="https://v0.app/" target="_blank" rel="noopener">v0</a>. Nel corso: slide <a href="../../capitolo-7/#7-4-5">7.4.5</a>.</p>
+  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">Anthropic, Claude Design</a>; <a href="https://www.figma.com/make/" target="_blank" rel="noopener">Figma Make</a>; <a href="https://stitch.withgoogle.com/" target="_blank" rel="noopener">Google Stitch</a>; <a href="https://v0.app/" target="_blank" rel="noopener">v0</a>; <a href="https://gemini.google/overview/image-generation/" target="_blank" rel="noopener">Gemini, immagini</a>; <a href="https://firefly.adobe.com/" target="_blank" rel="noopener">Adobe Firefly</a>; <a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney</a>; <a href="https://deepmind.google/models/veo/" target="_blank" rel="noopener">Veo</a>; <a href="https://elevenlabs.io/" target="_blank" rel="noopener">ElevenLabs</a>. Nel corso: slide <a href="../../capitolo-7/#7-4-5">7.4.5</a> e <a href="../../capitolo-8/#8-6-4">8.6.4</a>.</p>
 </Scheda>

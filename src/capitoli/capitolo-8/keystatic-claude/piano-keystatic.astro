@@ -1,0 +1,10 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="8.4 Keystatic con Claude Code" titolo="Il piano" lead="Prima di installare, si decide cosa diventa modificabile e cosa resta fisso. In plan mode, con il cliente in mente.">
+  <div class="chat mt-l">
+    <div class="bubble user">Vogliamo aggiungere Keystatic al sito della trattoria. Rina deve poter cambiare da sola: piatti (nome, categoria, prezzo, descrizione, allergeni), orari ed eventi. Logo, colori, pagine e testi della home restano fissi. Proponi il piano: schema, file da creare, pagine da modificare. Usa la documentazione aggiornata di Keystatic e non installare niente finché non approvo.</div>
+  </div>
+  <Card variante="sky mt-m" titolo="Cosa controllare nel piano">Che i campi siano quelli che servono a Rina, non di più. Che le pagine leggano i dati dai file, invece di averli scritti dentro. Che non compaiano librerie che non avete chiesto.</Card>
+</Slide>
