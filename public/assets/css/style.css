@@ -1554,3 +1554,80 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .imbuto b { font-family: var(--f-display); font-size: 1.2em; }
 .imbuto span { font-size: .85em; }
 @media (max-width: 640px) { .imbuto > div { width: 100% !important; } }
+
+/* ==========================================================
+   Noema Lab: home dei corsi, accesso, gestione utenti
+   ========================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Home: apertura più bassa, così l'elenco dei corsi si vede subito */
+.home-hero.breve { min-height: 62vh; }
+
+/* Home: elenco dei corsi, con il lucchetto al posto del numero */
+.lesson-list.corsi a { align-items: center; }
+.lesson-list.corsi .n { display: flex; font-size: 1.7em; }
+.nota-accesso { margin-top: 18px; color: var(--muted); font-size: .85em; }
+
+/* Barra in alto delle pagine riservate: chi è entrato, «Esci» */
+.barra-utente { justify-content: space-between; flex-wrap: wrap; }
+.barra-utente .utente { display: flex; align-items: center; gap: 8px 16px; flex-wrap: wrap; }
+.barra-utente form { margin: 0; }
+.barra-utente .btn { font-size: 14px; padding: 8px 14px; }
+
+/* Pagina di accesso */
+.accesso { max-width: 520px; margin: 0 auto; padding: clamp(40px, 10vh, 120px) var(--gutter) 80px; }
+.accesso h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+.accesso .lead { font-size: 1em; color: var(--muted); }
+.avviso {
+  margin-top: 24px;
+  padding: 12px 16px;
+  border-radius: var(--r-s);
+  background: var(--peach);
+  border-left: 4px solid var(--orange-deep);
+  font-size: .9em;
+}
+.avviso.ok { background: var(--sky); border-left-color: var(--navy); }
+.gia-dentro { margin-top: 16px; font-size: .85em; }
+
+/* Moduli */
+.modulo { display: grid; gap: 8px; margin-top: 28px; }
+.modulo label { font-weight: 700; font-size: .9em; margin-top: 10px; }
+.modulo input:not([type="checkbox"]), .modulo textarea {
+  width: 100%;
+  font: inherit;
+  font-size: .95em;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+.modulo textarea { font-family: var(--f-mono); font-size: .85em; resize: vertical; }
+.modulo .spunta { display: flex; gap: 10px; align-items: baseline; font-weight: 400; margin-top: 6px; }
+.modulo .spunta input { accent-color: var(--orange); width: 1.05em; height: 1.05em; flex: none; }
+.modulo fieldset { border: 1px solid var(--line); border-radius: var(--r-m); padding: 6px 18px 14px; margin: 14px 0 0; min-width: 0; }
+.modulo legend { font-weight: 700; font-size: .9em; padding: 0 6px; }
+.modulo .aiuto { font-size: .8em; color: var(--muted); }
+.modulo .btn { justify-self: start; margin-top: 16px; font-size: .95em; padding: 14px 22px; }
+.modulo .stato { min-height: 1.5em; font-size: .85em; color: var(--muted); }
+
+/* Gestione utenti */
+.gestione .compare td.mono { font-family: var(--f-mono); font-weight: 400; color: var(--ink); }
+.gestione .copy-wrap .code { overflow-wrap: anywhere; }
+.passi-vercel { margin-top: 18px; padding-left: 1.3em; }
+.passi-vercel li + li { margin-top: 10px; }
+.elenco { padding-left: 1.2em; margin-top: .8em; }
+.elenco li + li { margin-top: 6px; }
+.primo-avvio { margin-top: 2.5em; border-top: 1px solid var(--line); padding-top: 12px; }
+.primo-avvio summary { cursor: pointer; }
+.scheda .primo-avvio summary h2 { display: inline; margin: 0; }
+.segreto { margin-top: 12px; display: grid; gap: 10px; justify-items: start; }
+.segreto .copy-wrap { width: 100%; }
