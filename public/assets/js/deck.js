@@ -32,11 +32,23 @@
     chapterBtns.forEach(b => b.setAttribute("aria-current", b.dataset.chapter === ch ? "true" : "false"));
   }
 
+  // Durante lo scorrimento animato la posizione è a metà strada: se si
+  // preme di nuovo una freccia, si parte dalla slide di destinazione.
+  let target = null;
+  let timer = 0;
+  function base() {
+    return target !== null ? target : currentIndex();
+  }
+
   function go(i) {
     i = Math.max(0, Math.min(slides.length - 1, i));
+    target = reduce ? null : i;
+    clearTimeout(timer);
+    timer = setTimeout(() => { target = null; }, 900);
     slides[i].scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
     history.replaceState(null, "", "#" + slides[i].id);
   }
+  window.addEventListener("scrollend", () => { target = null; });
 
   function typing(el) {
     if (!el) return false;
@@ -48,8 +60,8 @@
     if (e.altKey || e.ctrlKey || e.metaKey || typing(document.activeElement)) return;
     if (document.querySelector("dialog[open]")) return; // una finestra aperta ha la precedenza
     const k = e.key;
-    if (k === "ArrowRight" || k === "PageDown" || (k === " " && !e.shiftKey)) { e.preventDefault(); go(currentIndex() + 1); }
-    else if (k === "ArrowLeft" || k === "PageUp" || (k === " " && e.shiftKey)) { e.preventDefault(); go(currentIndex() - 1); }
+    if (k === "ArrowRight" || k === "PageDown" || (k === " " && !e.shiftKey)) { e.preventDefault(); go(base() + 1); }
+    else if (k === "ArrowLeft" || k === "PageUp" || (k === " " && e.shiftKey)) { e.preventDefault(); go(base() - 1); }
     else if (k === "Home") { e.preventDefault(); go(0); }
     else if (k === "End") { e.preventDefault(); go(slides.length - 1); }
     else if (k === "f" || k === "F") { toggleFull(); }

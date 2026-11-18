@@ -26,7 +26,6 @@
 
     d.querySelectorAll("[data-chiudi]").forEach(b => b.addEventListener("click", () => d.close()));
     d.addEventListener("close", () => chiusa(d));
-    d.addEventListener("keydown", e => tasti(d, e));
 
     let ticking = false;
     contenitore(d).addEventListener("scroll", () => {
@@ -57,10 +56,21 @@
     d.querySelector(".approf-progress").style.width = ((i + 1) / slides.length * 100) + "%";
   }
 
+  // Come in deck.js: durante lo scorrimento animato si parte dalla destinazione
+  let destinazione = null;
+  let timer = 0;
+  function base(d) {
+    return destinazione !== null ? destinazione : indice(d);
+  }
+
   function vai(d, i, morbido) {
     const slides = slideDi(d);
     i = Math.max(0, Math.min(slides.length - 1, i));
-    contenitore(d).scrollTo({ top: slides[i].offsetTop, behavior: morbido && !reduce ? "smooth" : "auto" });
+    const animato = morbido && !reduce;
+    destinazione = animato ? i : null;
+    clearTimeout(timer);
+    timer = setTimeout(() => { destinazione = null; }, 900);
+    contenitore(d).scrollTo({ top: slides[i].offsetTop, behavior: animato ? "smooth" : "auto" });
     history.replaceState(null, "", "#" + slides[i].id);
     aggiorna(d);
   }
@@ -110,8 +120,8 @@
     // Spazio su un pulsante lo preme: non lo rubiamo
     const suPulsante = document.activeElement && document.activeElement.tagName === "BUTTON";
     const k = e.key;
-    if (k === "ArrowRight" || k === "PageDown" || (k === " " && !e.shiftKey && !suPulsante)) { e.preventDefault(); vai(d, indice(d) + 1, true); }
-    else if (k === "ArrowLeft" || k === "PageUp" || (k === " " && e.shiftKey && !suPulsante)) { e.preventDefault(); vai(d, indice(d) - 1, true); }
+    if (k === "ArrowRight" || k === "PageDown" || (k === " " && !e.shiftKey && !suPulsante)) { e.preventDefault(); vai(d, base(d) + 1, true); }
+    else if (k === "ArrowLeft" || k === "PageUp" || (k === " " && e.shiftKey && !suPulsante)) { e.preventDefault(); vai(d, base(d) - 1, true); }
     else if (k === "Home") { e.preventDefault(); vai(d, 0, true); }
     else if (k === "End") { e.preventDefault(); vai(d, slideDi(d).length - 1, true); }
     else if (k === "f" || k === "F") {
@@ -119,6 +129,10 @@
       else document.exitFullscreen?.();
     }
   }
+
+  // I tasti valgono per la finestra aperta, ovunque sia il focus:
+  // aprendo da un link (#1-1-a3) il focus può restare sulla pagina.
+  document.addEventListener("keydown", e => { if (aperta) tasti(aperta, e); });
 
   // I pulsanti blu-viola sulle slide della lezione
   document.querySelectorAll("[data-apri]").forEach(b => b.addEventListener("click", () => {
