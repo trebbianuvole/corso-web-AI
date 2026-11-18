@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.1 Dove vanno i dati" titolo="Addestramento: sì, no, dipende" lead="Le vostre conversazioni possono servire ad addestrare i modelli futuri. Quasi sempre si può dire di no, ma bisogna farlo.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Dipende" titolo="Account personali">Di solito c'è un interruttore nelle impostazioni. Spesso, all'inizio, è acceso.</Card>
+    <Card tag="Di norma no" titolo="Account di lavoro e API">I contratti per aziende e sviluppatori di solito escludono l'addestramento. Va controllato nel contratto.</Card>
+    <Card variante="peach" tag="Attenzione" titolo="Le eccezioni">Il pollice su o giù, le conversazioni segnalate per sicurezza: possono valere regole diverse.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Dove sono gli interruttori">Nomi e menu cambiano spesso: per Claude, ChatGPT e Gemini li trovate nella <a href="../schede/privacy-servizi/" target="_blank" rel="noopener">scheda aggiornabile U.4</a>.</Card>
+  <p class="footnote">Spegnere l'interruttore vale per le conversazioni future: quello che è già stato usato per addestrare non si toglie.</p>
+</Slide>

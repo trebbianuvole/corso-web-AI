@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.3 Il caso Hugging Face da vicino" titolo="Leggere le fonti" lead="OpenAI l'ha chiamato «senza precedenti». Il capo di Hugging Face, «forse il primo del suo genere». È vero?">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="A favore" titolo="Nessun umano a dirigere">Gli agenti hanno attaccato da soli, per raggiungere un obiettivo di un test. Nessuno glielo aveva chiesto.</Card>
+    <Card tag="Contro" titolo="Non è il primo attacco con agenti">A novembre 2025 Anthropic aveva descritto una campagna di spionaggio in cui un gruppo legato a uno Stato faceva svolgere a Claude Code l'80-90% del lavoro.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Domande da fare a ogni notizia">Chi lo dice, e che interesse ha? Qualcuno di esterno l'ha verificato? Le fonti sono d'accordo sui dettagli? In questo caso no: il numero degli agenti e le date cambiano da un articolo all'altro.</Card>
+  <p class="footnote">Fonti: <a href="https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/" target="_blank" rel="noopener">Fortune</a>; <a href="https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf" target="_blank" rel="noopener">Anthropic, novembre 2025</a>.</p>
+</Slide>

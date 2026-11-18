@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.7 Le regole" titolo="La legge italiana 132/2025" lead="La prima legge italiana sull'intelligenza artificiale, in vigore dal 10 ottobre 2025. Si aggiunge all'AI Act, non lo sostituisce.">
+  <Grid colonne={2} classe="mt-l">
+    <Card variante="peach" tag="Minori" titolo="Sotto i 14 anni, i genitori">Per usare servizi di AI e per il trattamento dei dati che ne deriva serve il consenso di chi ha la responsabilità genitoriale. Dai 14 anni si può dare il consenso da soli, se le informazioni sono chiare.</Card>
+    <Card tag="Professioni" titolo="Il cliente va informato">Chi svolge una professione intellettuale usa l'AI solo come supporto, e deve dire al cliente quali sistemi usa, in modo chiaro.</Card>
+    <Card tag="Reati" titolo="I deepfake">Il nuovo reato di diffusione di contenuti falsi generati con l'AI (5.4.5), e pene più alte per alcuni reati commessi con l'AI.</Card>
+    <Card tag="Diritto d'autore" titolo="L'ingegno umano">Protette le opere umane, anche fatte con l'aiuto dell'AI (5.5.2).</Card>
+  </Grid>
+  <p class="footnote">Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2025/09/25/25G00143/sg" target="_blank" rel="noopener">Legge 23 settembre 2025, n. 132, Gazzetta Ufficiale</a>. Dettagli nella 5.7.a3.</p>
+</Slide>

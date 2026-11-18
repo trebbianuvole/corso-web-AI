@@ -1,0 +1,14 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 Modelli aperti e locali" titolo="Hugging Face, il catalogo dei modelli" lead="Il posto dove si pubblicano e si scaricano i modelli aperti. Una specie di GitHub per l'AI.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Modelli" titolo="Milioni">Modelli di testo, immagini, voce, di tutte le taglie: più di 2 milioni di modelli pubblici già alla fine del 2025.</Card>
+    <Card tag="Dataset" titolo="I dati">Raccolte di dati per addestrare e per provare i modelli: più di 500.000 pubbliche.</Card>
+    <Card tag="Spaces" titolo="Le demo">Piccole applicazioni per provare un modello dal browser.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Come scegliere">Guardate chi l'ha pubblicato, la licenza, quanti lo scaricano e la scheda del modello. Chiunque può caricare un modello: anche uno che non funziona, o fatto apposta per fare danni.</Card>
+  <p class="footnote">Ritroviamo Hugging Face nella 5.3.3, come vittima di un attacco. Fonte: <a href="https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026" target="_blank" rel="noopener">Hugging Face, State of Open Source 2026</a>.</p>
+</Slide>

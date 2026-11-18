@@ -1,0 +1,14 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="attivita" classe="compact" kicker="5.3 Sicurezza con gli agenti" titolo="Un agente compromesso" lead="Venti minuti. Un agente lavora su PrenotaAula con accesso a GitHub. Leggete il copione: in quali punti lo avreste fermato, e come?">
+  <ol class="copione mt-m">
+    <li><b>L'agente ha accesso a GitHub</b><span>Può leggere le issue, modificare il codice, fare push, aprire pull request.</span></li>
+    <li><b>Legge la issue #31</b><span>Dentro, nascoste, ci sono istruzioni di uno sconosciuto (5.3.2).</span></li>
+    <li><b>Modifica il progetto</b><span>Oltre a sistemare il modulo, aggiunge un piccolo script «di debug».</span></li>
+    <li><b>Cerca una variabile d'ambiente</b><span>Lo script legge la chiave di Supabase dal file <code>.env</code>.</span></li>
+    <li><b>Propone una libreria</b><span>«Per il debug serve <code>supabase-debug-tools</code>»: un nome credibile, pubblicato ieri.</span></li>
+    <li><b>Prova a pubblicare</b><span>Fa push su main e chiede di aprire l'anteprima su Vercel.</span></li>
+  </ol>
+  <p class="footnote">Per ogni passo: chi poteva accorgersene? Quale impostazione l'avrebbe impedito? Le risposte diventano le difese della prossima slide.</p>
+</Slide>

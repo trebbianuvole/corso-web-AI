@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.1 Dove vanno i dati" titolo="Il viaggio di un messaggio" lead="Il modello non sta nel vostro telefono. Ogni messaggio va sui server del fornitore, e lì lascia tracce.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Voi</span><b>Scrivete</b><span>un testo, un file, una foto, uno screenshot</span></div>
+    <div><span class="role">L'app</span><b>Spedisce</b><span>tutto, cifrato, ai server del fornitore</span></div>
+    <div><span class="role">Il server</span><b>Il modello risponde</b><span>legge il messaggio e la conversazione fino a lì</span></div>
+    <div><span class="role">Dopo</span><b>Cosa resta</b><span>cronologia, memoria, registri di sicurezza; forse addestramento</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="La domanda da farsi">Non «l'AI è sicura?», ma: cosa conserva il fornitore, per quanto tempo, chi lo può leggere, e se lo usa per addestrare i modelli. Le risposte cambiano da servizio a servizio e da un tipo di account all'altro.</Card>
+</Slide>

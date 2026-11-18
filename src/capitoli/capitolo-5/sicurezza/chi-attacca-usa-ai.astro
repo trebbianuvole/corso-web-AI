@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.3 Sicurezza con gli agenti" titolo="Anche chi attacca usa l'AI" lead="Le truffe di sempre, fatte meglio e in grande quantità.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Phishing" titolo="Email senza errori">Scritte bene, in italiano perfetto, con dettagli presi dai vostri profili pubblici.</Card>
+    <Card tag="Voci clonate" titolo="«Sono io, mi serve un favore»">Bastano pochi secondi di una voce registrata per imitarla al telefono.</Card>
+    <Card tag="Video falsi" titolo="Il capo in videochiamata">Volti e voci finti che chiedono un bonifico urgente.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="La difesa è vecchia e funziona">Se una richiesta è urgente e riguarda soldi, password o dati: fermatevi e verificate con un altro canale. Richiamate voi, al numero che conoscete. In famiglia, una parola d'ordine.</Card>
+</Slide>

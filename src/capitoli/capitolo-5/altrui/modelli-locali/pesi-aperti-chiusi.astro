@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 Modelli aperti e locali" titolo="Pesi aperti e pesi chiusi" lead="Un modello è, alla fine, un enorme file di pesi (1.1.a1). La differenza è se quel file si può scaricare.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Pesi chiusi</th><th>Pesi aperti</th></tr></thead>
+    <tbody>
+      <tr><td>Esempi</td><td data-label="Pesi chiusi">Claude, GPT, Gemini</td><td data-label="Pesi aperti">Llama, Mistral, Qwen, GLM, Gemma</td></tr>
+      <tr><td>Come si usa</td><td data-label="Pesi chiusi">Solo attraverso il servizio del fornitore</td><td data-label="Pesi aperti">Si scarica e si fa girare dove si vuole</td></tr>
+      <tr><td>I dati</td><td data-label="Pesi chiusi">Vanno al fornitore</td><td data-label="Pesi aperti">Restano dove gira il modello</td></tr>
+      <tr><td>Le regole di sicurezza</td><td data-label="Pesi chiusi">Le decide e le aggiorna il fornitore</td><td data-label="Pesi aperti">Chi lo scarica può cambiarle o toglierle</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Aperto non vuol dire open source">Spesso si possono scaricare i pesi, ma non i dati e il codice con cui il modello è stato addestrato. E la licenza può porre limiti d'uso.</Card>
+</Slide>

@@ -1,0 +1,26 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.7 Le regole" titolo="Le parole da conoscere">
+  <Grid colonne={2} classe="mt-m">
+    <Defs>
+      <Def termine="Dato personale">un'informazione su una persona identificabile</Def>
+      <Def termine="Categorie particolari">salute, religione, opinioni politiche e altri dati delicati</Def>
+      <Def termine="Informativa">il testo che spiega cosa si fa con i dati</Def>
+      <Def termine="Anonimizzare">togliere ai dati tutto quello che permette di risalire alla persona</Def>
+      <Def termine="Pesi aperti">un modello che si può scaricare e far girare in proprio</Def>
+      <Def termine="Prompt injection">istruzioni nascoste in un contenuto che l'AI legge</Def>
+    </Defs>
+    <Defs>
+      <Def termine="Slopsquatting">registrare il nome di una libreria inventata dall'AI</Def>
+      <Def termine="Deepfake">immagine, video o voce falsi di una persona reale</Def>
+      <Def termine="Allineamento">far fare a un modello quello che intendiamo davvero</Def>
+      <Def termine="GDPR">il regolamento europeo sui dati personali</Def>
+      <Def termine="AI Act">il regolamento europeo sull'intelligenza artificiale</Def>
+      <Def termine="Legge 132/2025">la legge italiana sull'intelligenza artificiale</Def>
+    </Defs>
+  </Grid>
+</Slide>

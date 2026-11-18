@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.5 Responsabilità e diritti" titolo="Il lavoro: cosa cambia" lead="Non sappiamo quanti lavori spariranno. Sappiamo già che molti stanno cambiando forma.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Cala" titolo="Il lavoro ripetitivo">Le prime bozze, il codice standard, le traduzioni semplici, le immagini di repertorio.</Card>
+    <Card tag="Cresce" titolo="Il lavoro di giudizio">Capire cosa serve al cliente, dirigere l'AI, controllare, prendersi la responsabilità del risultato.</Card>
+    <Card variante="peach" tag="Si sposta" titolo="Chi entra nel mestiere">Chi comincia deve imparare in fretta a fare il lavoro di controllo che prima si imparava con gli anni.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Ne riparliamo alla fine">Nella 12.4 guardiamo i mestieri del web con l'AI, uno per uno.</Card>
+</Slide>

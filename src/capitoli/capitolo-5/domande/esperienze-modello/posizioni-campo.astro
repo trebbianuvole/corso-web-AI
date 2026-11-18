@@ -1,0 +1,14 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.6 Un modello può avere esperienze?" titolo="Le posizioni in campo" lead="Tre risposte, ognuna con buoni argomenti. Nessuna, per ora, è dimostrata.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="No" titolo="Solo calcoli">Un modello elabora numeri; le esperienze richiedono un corpo, una biologia, una storia. Come la stanza di Searle (5.6.a2).</Card>
+    <Card tag="Non ancora" titolo="Mancano dei pezzi">Ai modelli di oggi mancano cose che molte teorie della coscienza ritengono necessarie, come una memoria continua; ai sistemi futuri potrebbero non mancare.</Card>
+    <Card tag="Non lo sappiamo" titolo="Incertezza seria">Non abbiamo una teoria condivisa della coscienza: non possiamo escluderlo né affermarlo. Meglio studiare la domanda con cautela.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Attenzione a due errori opposti">Credere che il chatbot sia un amico che soffre (5.4.4), e deridere la domanda come se fosse sciocca. Si può prenderla sul serio senza dare per scontata una risposta.</Card>
+  <p class="footnote">Fonte: D. Chalmers, <a href="https://arxiv.org/abs/2303.07103" target="_blank" rel="noopener">«Could a Large Language Model be Conscious?»</a>, 2023.</p>
+</Slide>

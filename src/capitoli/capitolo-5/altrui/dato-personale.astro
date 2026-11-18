@@ -1,0 +1,11 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 I dati degli altri" titolo="Cos'è un dato personale" lead="Qualsiasi informazione che riguarda una persona identificata, o che si può identificare. Anche se il nome non c'è.">
+  <div class="chips mt-l" style="gap:10px">
+    <i>nome e cognome</i><i>email</i><i>numero di telefono</i><i>indirizzo</i><i>targa</i><i>foto di un volto</i><i>voce registrata</i><i>indirizzo IP</i><i>numero di prenotazione</i><i>«la docente di inglese della 3B»</i>
+  </div>
+  <Card variante="sky mt-m" titolo="Il trucco per capirlo">Se, mettendo insieme quell'informazione con altre, qualcuno può risalire alla persona, è un dato personale. «La docente di inglese della 3B» non ha nome, ma nella scuola tutti sanno chi è.</Card>
+  <p class="footnote">La definizione viene dal GDPR, articolo 4. Fonte: <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener">Regolamento (UE) 2016/679</a>.</p>
+</Slide>

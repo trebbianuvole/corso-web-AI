@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.4 Uso consapevole" titolo="Immagini e voci di persone reali" lead="Con l'AI si fa in pochi minuti una foto, un video o una voce falsi di una persona vera. Farlo è facile; diffonderlo può essere un reato.">
+  <div class="card peach mt-l">
+    <span class="tag">Codice penale, articolo 612-quater</span>
+    <h3>Diffusione di contenuti generati o alterati con l'AI</h3>
+    <p>Chi diffonde, senza il consenso della persona, immagini, video o voci falsificati con l'AI e capaci di ingannare, causandole un danno ingiusto, rischia da uno a cinque anni di reclusione.</p>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card titolo="Vale anche «per scherzo»">Il fotomontaggio del compagno di classe girato nel gruppo WhatsApp è il caso più comune.</Card>
+    <Card titolo="E nei siti">Niente volti e voci di persone reali senza il loro permesso scritto, nemmeno nelle immagini di prova.</Card>
+  </div>
+  <p class="footnote">Il reato è stato introdotto dalla legge 132/2025, in vigore dal 10 ottobre 2025. Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2025/09/25/25G00143/sg" target="_blank" rel="noopener">Gazzetta Ufficiale</a>. Per il testo preciso e i casi concreti, chiedete a un avvocato: qui è riassunto.</p>
+</Slide>

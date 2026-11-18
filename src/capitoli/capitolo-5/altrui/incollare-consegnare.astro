@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 I dati degli altri" titolo="Incollare è consegnare" lead="Quando incollate un testo in una chat, lo state consegnando a un'azienda. È come spedirlo per posta: non si torna indietro.">
+  <div class="chat mt-l">
+    <div class="bubble user">Riassumi queste email dei clienti e dimmi chi è più arrabbiato:<br><span class="muted">[incolla 40 email, con nomi, numeri d'ordine, indirizzi]</span></div>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card variante="bad" titolo="Cosa è successo">Nomi, ordini e indirizzi di quaranta persone sono ora su un server esterno. Nessuno di loro lo sa, né ha detto di sì.</Card>
+    <Card variante="good" titolo="Come si poteva fare">Togliere nomi e dati prima di incollare, oppure usare l'account di lavoro previsto dall'azienda per questo.</Card>
+  </div>
+</Slide>

@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="5.7 Le regole" titolo="Il GDPR in cinque idee" lead="Il regolamento europeo sulla protezione dei dati personali, in vigore dal 2018. Vale per chiunque tratti dati di persone nell'Unione: anche per il sito della trattoria.">
+  <Card slot="intro" variante="sky mt-m" titolo="Chi controlla">In Italia il Garante per la protezione dei dati personali. Le sanzioni possono arrivare a 20 milioni di euro o al 4% del fatturato mondiale.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener">Regolamento (UE) 2016/679</a>.</p>
+  <Steps>
+    <Passo titolo="Un motivo valido">per ogni uso dei dati: un contratto, un obbligo di legge, il consenso…</Passo>
+    <Passo titolo="Trasparenza">le persone devono sapere cosa fate dei loro dati: l'informativa</Passo>
+    <Passo titolo="Il minimo indispensabile">solo i dati che servono, solo per il tempo che serve</Passo>
+    <Passo titolo="I diritti delle persone">vedere i propri dati, correggerli, farli cancellare, opporsi</Passo>
+    <Passo titolo="Sicurezza">proteggere i dati; se c'è una violazione, avvisare il Garante entro 72 ore</Passo>
+  </Steps>
+</Slide>

@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="5.6 Domande aperte" titolo="Il tribunale dell'AI" lead="Quaranta minuti. Una delle quattro domande diventa un processo: accusa, difesa, giuria.">
+  <Card slot="intro" variante="sky mt-m" titolo="Le regole">Si attaccano gli argomenti, non le persone. Ogni affermazione di fatto va con la sua fonte. La giuria può dire «non abbiamo abbastanza elementi».</Card>
+  <Steps>
+    <Passo titolo="Scegliete la domanda" inLinea>e formulatela come un'accusa: «L'AI capisce quello che dice»</Passo>
+    <Passo titolo="Tre gruppi" inLinea>accusa, difesa, giuria</Passo>
+    <Passo titolo="Preparazione" inLinea>15 minuti, anche con l'AI: chiedetele gli argomenti della parte opposta</Passo>
+    <Passo titolo="Il processo" inLinea>5 minuti per parte, poi 3 di repliche</Passo>
+    <Passo titolo="Il verdetto" inLinea>la giuria spiega quale argomento l'ha convinta, e perché</Passo>
+  </Steps>
+</Slide>

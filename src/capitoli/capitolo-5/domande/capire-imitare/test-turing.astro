@@ -1,0 +1,21 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.6 Capire o imitare" titolo="Il test di Turing" lead="Nel 1950 Alan Turing propose di lasciar perdere la domanda «le macchine pensano?» e di farne un'altra: una macchina può farsi passare per una persona in una conversazione scritta?">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Il gioco</span>
+      <h3>Un giudice, due interlocutori</h3>
+      <p>Il giudice scrive a una persona e a una macchina, senza vederle. Se non riesce a capire chi è la macchina, la macchina ha superato il test.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Oggi</span>
+      <h3>Superato, e allora?</h3>
+      <p>In uno studio del 2025, in conversazioni di cinque minuti, un modello istruito a fingersi umano è stato scambiato per la persona il 73% delle volte. Per molti, però, questo dimostra solo che il test misura l'imitazione, non il capire.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="La domanda resta">Se una cosa si comporta in tutto come se capisse, c'è ancora differenza tra capire e sembrare di capire?</Card>
+  <p class="footnote">Fonte: A. M. Turing, <a href="https://academic.oup.com/mind/article/LIX/236/433/986238" target="_blank" rel="noopener">«Computing Machinery and Intelligence»</a>, Mind, 1950; Jones e Bergen, <a href="https://arxiv.org/abs/2503.23674" target="_blank" rel="noopener">«Large Language Models Pass the Turing Test»</a>, 2025.</p>
+</Slide>

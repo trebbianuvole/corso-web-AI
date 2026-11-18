@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 I dati degli altri" titolo="Nei progetti web" lead="Con Claude Code i dati arrivano all'AI anche senza incollarli: basta che stiano nella cartella del progetto.">
+  <Grid colonne={3} classe="mt-l">
+    <Card titolo="CLAUDE.md">Regole e contesto, mai password, chiavi o dati dei clienti.</Card>
+    <Card titolo="Screenshot">Un errore di PrenotaAula fotografato con l'elenco delle prenotazioni vere: coprite i nomi prima.</Card>
+    <Card variante="peach" titolo="Dati di prova">Per provare il sito servono dati finti: «Mario Rossi, aula 3». Fateli generare all'AI.</Card>
+    <Card titolo="Log">I registri degli errori spesso contengono email e indirizzi IP. Leggeteli prima di darli a Claude.</Card>
+    <Card titolo="Database">Lavorate su una copia con dati finti, non sul database vero.</Card>
+    <Card titolo=".env">Le chiavi stanno lì, fuori da Git (4.3.6) e lontane dalle chat.</Card>
+  </Grid>
+</Slide>

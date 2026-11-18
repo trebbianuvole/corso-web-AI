@@ -1,0 +1,13 @@
+---
+import Passo from "../../../../components/Passo.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Steps from "../../../../components/Steps.astro";
+---
+<Slide {...Astro.props} kicker="5.4 L'impronta dell'AI" titolo="Cosa può fare chi la usa" lead="Le scelte grosse le fanno le aziende e i governi. Ma anche l'uso quotidiano conta.">
+  <Steps classe="mt-l" stile="max-width:900px">
+    <Passo titolo="La taglia giusta" inLinea>un modello piccolo per i compiti semplici (1.4.2): consuma meno ed è più veloce</Passo>
+    <Passo titolo="Richieste chiare" inLinea>un buon prompt evita dieci tentativi</Passo>
+    <Passo titolo="Immagini e video solo quando servono" inLinea>costano molto più del testo</Passo>
+    <Passo titolo="Non per tutto" inLinea>una calcolatrice, una ricerca, un dizionario bastano spesso</Passo>
+  </Steps>
+</Slide>

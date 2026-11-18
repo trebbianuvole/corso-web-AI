@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.7 Le norme da vicino" titolo="Legge 132/2025: cosa prevede" lead="Una legge di principi e di deleghe al Governo. Le parti che toccano di più chi fa siti e usa l'AI.">
+  <table class="compare mt-m">
+    <thead><tr><th>Articolo</th><th>Cosa dice, in breve</th></tr></thead>
+    <tbody>
+      <tr><td>Art. 4</td><td data-label="Cosa dice">Sotto i 14 anni, per usare l'AI serve il consenso dei genitori. Informazioni chiare e accessibili per tutti.</td></tr>
+      <tr><td>Art. 13</td><td data-label="Cosa dice">Professioni intellettuali: l'AI solo come supporto; il cliente va informato dei sistemi usati. La responsabilità resta del professionista.</td></tr>
+      <tr><td>Art. 25</td><td data-label="Cosa dice">Diritto d'autore: protette le opere dell'ingegno umano, anche con l'aiuto dell'AI. Regole sull'estrazione di testi e dati per addestrare.</td></tr>
+      <tr><td>Art. 26</td><td data-label="Cosa dice">Codice penale: nuovo reato 612-quater sui deepfake; aggravante per alcuni reati commessi con l'AI.</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Ancora in costruzione">Molte parti richiedono decreti del Governo; il significato di alcune parole, come «ingegno umano», lo chiariranno i giudici.</Card>
+  <p class="footnote">Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2025/09/25/25G00143/sg" target="_blank" rel="noopener">Legge 23 settembre 2025, n. 132</a>. Sintesi a scopo didattico: per un caso concreto, il testo e un professionista.</p>
+</Slide>

@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 I dati degli altri" titolo="Dati che chiedono più attenzione" lead="Alcuni dati, se escono, fanno più male. La legge li protegge di più, e voi dovreste fare lo stesso.">
+  <div class="grid g2 mt-l">
+    <div class="card peach">
+      <h3>Le categorie particolari</h3>
+      <p>Salute, origine etnica, opinioni politiche, religione, vita e orientamento sessuale, iscrizione a un sindacato, dati genetici e biometrici.</p>
+    </div>
+    <div class="card">
+      <h3>Altri dati delicati</h3>
+      <p>I dati dei minori, quelli sui reati, i dati bancari e i documenti d'identità, le password.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="In pratica">Un certificato medico di uno studente, la foto di un documento, un elenco di alunni con i voti: non vanno in una chat di AI, anche se «serve solo un riassunto».</Card>
+  <p class="footnote">Le categorie particolari sono nell'articolo 9 del GDPR. Fonte: <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener">Regolamento (UE) 2016/679</a>.</p>
+</Slide>

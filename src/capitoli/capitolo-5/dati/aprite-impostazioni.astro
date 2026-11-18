@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="5.1 Dove vanno i dati" titolo="Aprite le impostazioni" lead="Dieci minuti, sul servizio di AI che usate di più. A coppie: uno cerca, l'altro scrive.">
+  <Card slot="intro" variante="sky mt-m" titolo="Aiuto">Per Claude, ChatGPT e Gemini la <a href="../schede/privacy-servizi/" target="_blank" rel="noopener">scheda U.4</a> dice dove guardare.</Card>
+  <Steps>
+    <Passo titolo="Addestramento" inLinea>l'interruttore è acceso o spento?</Passo>
+    <Passo titolo="Cronologia" inLinea>quante conversazioni ci sono? Da quanto tempo?</Passo>
+    <Passo titolo="Memoria" inLinea>cosa ricorda di voi? Vi sorprende qualcosa?</Passo>
+    <Passo titolo="Connettori" inLinea>cosa è collegato? Vi serve ancora?</Passo>
+    <Passo titolo="Decidete" inLinea>cambiate almeno un'impostazione, o spiegate perché no</Passo>
+  </Steps>
+</Slide>
