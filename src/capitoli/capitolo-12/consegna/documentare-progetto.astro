@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.2 La consegna professionale" titolo="Documentare" lead="Tre documenti, per tre lettori diversi. Stanno tutti nel repository, così cambiano insieme al codice.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Per le persone" titolo="README">Cos'è il progetto, come si installa e si avvia, dove sono le cose, chi contattare. Chi lo apre per la prima volta deve riuscire a far partire il sito.</Card>
+    <Card tag="Per l'AI" titolo="CLAUDE.md">Stack, comandi, regole, divieti, lo schema dei dati (10.2.5). Aggiornato a ogni decisione, non solo il primo giorno.</Card>
+    <Card variante="peach" tag="Per chi verrà" titolo="Le decisioni">Perché Supabase e non un altro, perché niente banner dei cookie. Una riga per decisione, con la data: il «perché» è la prima cosa che si dimentica.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Claude li scrive, voi li verificate">Claude produce un buon README in un minuto. Poi seguitelo alla lettera su un computer pulito: ogni passo che non funziona è un errore del documento.</Card>
+</Slide>

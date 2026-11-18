@@ -1,0 +1,23 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.3 Lavorare con gli agenti nel tempo" titolo="Più agenti in parallelo" lead="Nella 4.7.a1 ogni agente aveva la sua cartella, con i worktree. Ora lo stesso si fa anche nel cloud: tre sessioni, tre compiti, tre pull request.">
+  <div class="pipe p3 mt-l">
+    <div><span class="role">Agente 1</span><b>Il test che fallisce a volte</b><span>ramo <code>fix-test-prenota</code></span></div>
+    <div><span class="role">Agente 2</span><b>La documentazione</b><span>ramo <code>readme-aggiornato</code></span></div>
+    <div><span class="role">Agente 3</span><b>Gli avvisi delle dipendenze</b><span>ramo <code>aggiorna-dipendenze</code></span></div>
+  </div>
+  <div class="versus mt-m">
+    <div class="card good">
+      <h3>Funziona quando</h3>
+      <p>I compiti sono indipendenti, toccano file diversi, e ognuno ha criteri chiari.</p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Non funziona quando</h3>
+      <p>Due agenti cambiano lo stesso file, o uno aspetta il risultato dell'altro. E quando voi non riuscite a rivedere tre PR al giorno.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Il limite siete voi">Gli agenti scalano, la vostra attenzione no. Lanciatene quanti riuscite davvero a controllare.</Card>
+</Slide>

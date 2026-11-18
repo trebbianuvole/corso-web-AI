@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="attivita" kicker="12.5 Chiusura del corso" titolo="Il dibattito conclusivo" lead="Le quattro domande della 5.6.1, di nuovo. Adesso avete lavorato con un'AI per settimane: le vostre risposte sono cambiate?">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="1" titolo="Capisce o imita?">Quando Claude ha risolto un vostro problema difficile, vi è sembrato che capisse?</Card>
+    <Card tag="2" titolo="Chi è responsabile?">Se il vostro sito avesse un errore grave scritto dall'AI, di chi sarebbe la colpa?</Card>
+    <Card tag="3" titolo="Può essere pericolosa?">Cosa avete visto fare agli agenti che vi ha preoccupato, o rassicurato?</Card>
+    <Card tag="4" titolo="Può avere esperienze?">Avete cambiato idea, o no? Cosa vi servirebbe per cambiarla?</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Le regole del dibattito">Si parte da un'esperienza fatta nel corso, non da un'opinione sentita. Si può cambiare idea. Nessuno ha la risposta giusta, nemmeno il docente.</Card>
+</Slide>

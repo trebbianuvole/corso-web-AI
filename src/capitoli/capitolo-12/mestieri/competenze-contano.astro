@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="12.4 I mestieri del web con l'AI" titolo="Le competenze che contano di più" lead="Quattro verbi. Li avete esercitati in ogni capitolo, anche quando sembrava che si parlasse d'altro.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="1" titolo="Capire">Cosa serve davvero al cliente, come funziona il web sotto, cosa ha scritto l'AI (capitoli 2 e 6).</Card>
+    <Card tag="2" titolo="Verificare">Criteri, test, revisioni, fonti: non fidarsi di quello che sembra funzionare (capitolo 11).</Card>
+    <Card tag="3" titolo="Comunicare">Con il cliente, con la squadra, nelle issue e nelle PR, e con l'AI: un buon prompt è una buona richiesta (capitoli 3 e 4).</Card>
+    <Card variante="peach" tag="4" titolo="Dirigere">Scomporre il lavoro, dare istruzioni chiare, decidere cosa delegare, prendersi la responsabilità del risultato.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Quello che l'AI non vi toglie">Il giudizio. Un modello propone; voi sapete se la proposta va bene per quel cliente, quel giorno, con quei soldi.</Card>
+</Slide>

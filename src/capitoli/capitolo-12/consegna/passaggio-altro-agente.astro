@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="12.2 La consegna professionale" titolo="Il passaggio a un altro sviluppatore, o a un altro agente" lead="Chi verrà dopo di voi lavorerà quasi certamente con un agente. Il CLAUDE.md è la documentazione per la sua AI: se è buono, il nuovo agente parte già sapendo come lavorate.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <span class="tag">Senza</span>
+      <h3>L'agente indovina</h3>
+      <p>Legge il codice, deduce le regole, e sceglie le sue: un'altra libreria, un altro stile, magari un controllo dei permessi nel posto sbagliato.</p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card good">
+      <span class="tag">Con</span>
+      <h3>L'agente continua</h3>
+      <p>Sa quali comandi lanciare, cosa non toccare, dove stanno i dati, come si verifica. E il nuovo sviluppatore lo legge per primo anche lui.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="La prova del passaggio">Aprite una sessione nuova di Claude Code, senza dirgli niente, e chiedete: «Spiegami questo progetto e come aggiungeresti un campo al modulo di prenotazione». Se sbaglia, manca qualcosa nel CLAUDE.md.</Card>
+</Slide>

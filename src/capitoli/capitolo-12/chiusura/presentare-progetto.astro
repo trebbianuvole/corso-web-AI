@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="12.5 Chiusura del corso" titolo="Come si presenta un progetto" lead="Dieci minuti, sette punti, in quest'ordine. È la stessa struttura che userete con un cliente o a un colloquio.">
+  <Card slot="intro" variante="peach mt-m" titolo="La demo dal vivo">Sul sito pubblicato, non in locale, con i dati di prova pronti. E un piano B: un breve video, se la rete cade.</Card>
+  <Steps>
+    <Passo titolo="Il prodotto" inLinea>cos'è, in una frase</Passo>
+    <Passo titolo="Il problema" inLinea>per chi, e cosa risolve</Passo>
+    <Passo titolo="Le scelte" inLinea>le tre decisioni più importanti, e perché</Passo>
+    <Passo titolo="Lo stack" inLinea>quali strumenti e servizi, e cosa costano</Passo>
+    <Passo titolo="I limiti" inLinea>cosa non fa, cosa non è stato verificato</Passo>
+    <Passo titolo="Le verifiche" inLinea>come sapete che funziona: test, prove, revisioni</Passo>
+    <Passo titolo="La manutenzione" inLinea>come si aggiorna, chi lo fa</Passo>
+  </Steps>
+</Slide>

@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="12.2 La consegna professionale" titolo="Come il cliente aggiorna i contenuti" lead="Rina non vi chiamerà per cambiare il menu: lo fa lei, con Keystatic (8.3). Le serve un manuale breve, scritto per lei, non per voi.">
+  <Card slot="intro" variante="peach mt-m" titolo="La prova vera">Rina, da sola, sul suo telefono, cambia il prezzo di un piatto e aggiunge un evento. Voi guardate senza parlare (11.2.5). Dove si blocca, si corregge il manuale o il pannello.</Card>
+  <div class="card">
+    <span class="tag">Il manuale di Rina, una pagina</span>
+    <ol class="note-codice mt-m">
+      <li><b>Entrare:</b> l'indirizzo del pannello e con quale account.</li>
+      <li><b>Cambiare il menu:</b> piatti, prezzi, allergeni, con due screenshot.</li>
+      <li><b>Aggiungere un evento:</b> data, testo, foto, e quanto tempo prima compare sul sito.</li>
+      <li><b>Cosa non toccare:</b> le pagine che cambiano solo con voi.</li>
+      <li><b>Se qualcosa va storto:</b> chi chiamare, e che ogni modifica si può annullare (4.3.7).</li>
+    </ol>
+  </div>
+</Slide>

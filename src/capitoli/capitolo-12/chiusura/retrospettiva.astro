@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.5 Chiusura del corso" titolo="Retrospettiva" lead="Una retrospettiva è un incontro per guardare indietro e decidere cosa cambiare. Si fa alla fine di ogni progetto, anche quando è andato bene.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="good" tag="Ha funzionato" titolo="Da tenere">Cosa rifareste uguale nel prossimo progetto? Quale abitudine con l'AI vi ha fatto risparmiare più tempo?</Card>
+    <Card variante="bad" tag="Non ha funzionato" titolo="Da cambiare">Dove avete perso più tempo? Quando vi siete fidati troppo dell'AI, o troppo poco?</Card>
+    <Card variante="peach" tag="Prossima volta" titolo="Da provare">Una cosa nuova, concreta, che proverete nel prossimo progetto.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Anche sul corso">Le stesse tre domande valgono per queste lezioni. Le vostre risposte servono a migliorare il corso per chi viene dopo.</Card>
+</Slide>

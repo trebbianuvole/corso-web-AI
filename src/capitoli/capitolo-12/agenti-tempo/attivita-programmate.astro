@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.3 Lavorare con gli agenti nel tempo" titolo="Attività programmate" lead="Un'attività programmata è un compito che l'agente fa da solo, a orari fissi o quando succede qualcosa su GitHub. Come una sveglia, ma con un prompt.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Ogni lunedì" titolo="Le dipendenze">Controlla gli avvisi di sicurezza e apre una PR con gli aggiornamenti, test compresi (11.3.4).</Card>
+    <Card tag="Ogni notte" titolo="Il sito vero">Prova le pagine principali sul sito pubblicato e apre una issue se qualcosa non va.</Card>
+    <Card tag="A ogni PR" titolo="La prima revisione">Rilegge le modifiche con la checklist di sicurezza, prima che arrivi una persona.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Il prompt va scritto come un compito">Cosa controllare, cosa fare se trova un problema, cosa non fare mai: «apri una issue, non cambiare il codice di produzione». In Claude Code si crea con <code>/schedule</code>.</Card>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">Claude Code, attività programmate</a>, controllata il 18 novembre 2026: in anteprima, sui piani a pagamento.</p>
+</Slide>

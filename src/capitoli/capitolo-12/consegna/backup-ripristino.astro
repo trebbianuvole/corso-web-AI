@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.2 La consegna professionale" titolo="Backup e ripristino" lead="Alla consegna, il cliente deve sapere cosa è salvato, dove, ogni quanto, e come si torna indietro. Per iscritto.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Il codice" titolo="GitHub">Tutta la storia del sito. Una copia del repository anche fuori da GitHub, ogni tanto, non guasta.</Card>
+    <Card tag="I contenuti" titolo="Anche GitHub">Con Keystatic menu ed eventi sono file nel repository (8.3.4): li salva Git, con la storia di ogni modifica.</Card>
+    <Card variante="peach" tag="I dati" titolo="Il database">Le prenotazioni di PrenotaAula: backup di Supabase sul piano Pro, più una copia esportata dal cliente (10.2.7).</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Il ripristino si prova prima della consegna">Insieme al cliente, una volta, sul progetto di prova: «se domani sparisce tutto, facciamo così». Se nessuno l'ha mai provato, il backup è solo una speranza.</Card>
+</Slide>

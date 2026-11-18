@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="12.1 Il debito tecnico" titolo="Perché il vibe coding accumula debito" lead="Il codice arriva più in fretta di quanto riusciate a capirlo. Ogni pezzo che accettate senza capire è un piccolo debito.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Volume" titolo="Tanto codice, presto">Ogni richiesta aggiunge righe. Quasi nessuna ne toglie, se non lo chiedete.</Card>
+    <Card tag="Incoerenza" titolo="Dieci stili diversi">Ogni sessione risolve lo stesso problema in un modo nuovo: tre modi di mostrare un errore, due di leggere i dati.</Card>
+    <Card variante="peach" tag="Comprensione" titolo="Nessuno sa come funziona">Né voi, né l'agente della prossima sessione, che parte da zero e legge solo quello che trova.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Il segnale d'allarme">Quando ogni modifica piccola rompe qualcos'altro, e Claude ci mette sempre più tentativi per una cosa semplice, il debito è diventato troppo alto.</Card>
+</Slide>

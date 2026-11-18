@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.5 Chiusura del corso" titolo="Il portfolio" lead="Il progetto del corso è il primo pezzo del vostro portfolio. Chi lo guarda vuole sapere una cosa: cosa sapete fare voi, se l'AI ha scritto il codice?">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">L'AI ha fatto</span>
+      <h3>Dichiaratelo</h3>
+      <p>Scrivere gran parte del codice, proporre varianti di design, le prime bozze dei testi. Nasconderlo non serve: oggi si lavora così.</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">Voi avete fatto</span>
+      <h3>Raccontatelo</h3>
+      <p>Capito il problema, scelto lo stack, scritto i criteri, verificato, corretto gli errori dell'AI, consegnato. Con un esempio concreto per ognuno.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Cosa mettere">Il link al sito pubblicato e al repository, tre screenshot, e una pagina: il problema, le scelte, una cosa difficile e come l'avete risolta. I dati del cliente restano fuori.</Card>
+</Slide>

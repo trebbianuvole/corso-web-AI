@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.3 Lavorare con gli agenti nel tempo" titolo="Agenti in background e su GitHub" lead="Un agente in background lavora su un computer nel cloud, sul vostro repository, mentre voi fate altro. Alla fine vi lascia un ramo e una pull request da rivedere.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Nel cloud" titolo="Sessioni che continuano">Partono dal browser, dal telefono o dal terminale. Continuano anche a computer chiuso.</Card>
+    <Card tag="Su GitHub" titolo="Nelle issue e nelle PR">Si nomina Claude in una issue o in una pull request, e lui risponde, corregge, propone (4.6.a1).</Card>
+    <Card variante="peach" tag="Sulle PR" titolo="Correggere da solo">Può seguire una PR e sistemare i test che falliscono e i commenti di revisione.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Nomi, piani e prezzi cambiano spesso">Li trovate aggiornati nella <a href="../schede/prodotti-claude/" target="_blank" rel="noopener">scheda aggiornabile U.3</a>. Quello che non cambia: il risultato è una pull request, e la rivedete voi.</Card>
+</Slide>
