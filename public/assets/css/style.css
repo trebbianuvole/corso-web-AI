@@ -1050,3 +1050,29 @@ html:has(dialog[open]) { overflow: hidden; }
 .langs .card h3 + p { margin-top: .3em; }
 
 .card ul.defs { padding-left: 0; }
+
+/* ---------- La mappa del corso: «siete qui» (2.1.2 e copertine) ---------- */
+.siete-qui { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; max-width: 900px; }
+.siete-qui li { position: relative; padding: 10px 12px 12px; border-top: 4px solid var(--line); background: var(--card); border-radius: 0 0 var(--r-m) var(--r-m); font-size: .82em; }
+.siete-qui b { font-family: var(--f-display); display: block; font-size: 1.05em; }
+.siete-qui span { color: var(--muted); }
+.siete-qui small { display: block; margin-top: 6px; font-size: .85em; color: var(--ink); }
+.siete-qui em { display: inline-block; margin-top: 6px; font-style: normal; font-weight: 700; font-size: .78em; color: var(--orange-deep); }
+.siete-qui li.qui { border-top-color: var(--orange); background: var(--peach); }
+.siete-qui.completa { max-width: none; gap: 26px; }
+.siete-qui.completa li { font-size: .95em; padding: 16px 16px 18px; }
+.siete-qui.completa li:not(:last-child)::after { content: "→"; position: absolute; right: -13px; top: 16px; transform: translateX(50%); color: var(--orange); font-weight: 700; }
+@media (max-width: 760px) {
+  .siete-qui, .siete-qui.completa { grid-template-columns: 1fr; gap: 6px; }
+  .siete-qui li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; border-top: 0; border-left: 4px solid var(--line); border-radius: 0 var(--r-m) var(--r-m) 0; padding: 8px 12px; }
+  .siete-qui li.qui { border-left-color: var(--orange); }
+  .siete-qui small, .siete-qui em { margin-top: 0; }
+  .siete-qui.completa li { padding: 10px 14px; }
+  .siete-qui.completa li::after { display: none; }
+}
+.pipe.p3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 860px) { .pipe.p3 { grid-template-columns: 1fr; } }
+
+/* Una formula da ricordare, con le parti da riempire (2.6.2) */
+.formula { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 2.2rem); line-height: 1.4; }
+.formula mark { background: var(--peach); color: var(--ink); padding: .05em .3em; border-radius: 6px; }

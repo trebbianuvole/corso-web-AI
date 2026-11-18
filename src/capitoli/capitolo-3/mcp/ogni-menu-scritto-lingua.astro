@@ -1,0 +1,39 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.3 Il problema" titolo="Ogni menu è scritto in una lingua diversa">
+  <p class="lead" style="max-width:62ch">Gmail, Google Calendar, GitHub, Notion: ognuno ha la sua API, con regole sue. Perché un'AI possa usarli, qualcuno deve scrivere un collegamento per ogni coppia.</p>
+  <figure class="figure mt-m">
+    <svg class="diagram mcp-svg" viewBox="0 0 960 400" role="img" aria-labelledby="mcp-t mcp-d"><title id="mcp-t">Collegamenti senza e con MCP</title><desc id="mcp-d">A sinistra, tre app di AI collegate una per una a quattro servizi: dodici collegamenti. A destra, le stesse app e gli stessi servizi passano tutti da MCP: sette collegamenti.</desc>
+      <text x="230" y="28" class="th">Senza MCP</text>
+      <g>
+        <line x1="125" y1="110" x2="335" y2="80" class="ln"/><line x1="125" y1="110" x2="335" y2="160" class="ln"/><line x1="125" y1="110" x2="335" y2="240" class="ln"/><line x1="125" y1="110" x2="335" y2="320" class="ln"/>
+        <line x1="125" y1="200" x2="335" y2="80" class="ln"/><line x1="125" y1="200" x2="335" y2="160" class="ln"/><line x1="125" y1="200" x2="335" y2="240" class="ln"/><line x1="125" y1="200" x2="335" y2="320" class="ln"/>
+        <line x1="125" y1="290" x2="335" y2="80" class="ln"/><line x1="125" y1="290" x2="335" y2="160" class="ln"/><line x1="125" y1="290" x2="335" y2="240" class="ln"/><line x1="125" y1="290" x2="335" y2="320" class="ln"/>
+      </g>
+      <rect x="15" y="88" width="110" height="44" rx="10" class="app"/><text x="70" y="110" class="t">Claude</text>
+      <rect x="15" y="178" width="110" height="44" rx="10" class="app"/><text x="70" y="200" class="t">ChatGPT</text>
+      <rect x="15" y="268" width="110" height="44" rx="10" class="app"/><text x="70" y="290" class="t">Gemini</text>
+      <rect x="335" y="58" width="110" height="44" rx="10" class="svc"/><text x="390" y="80" class="t">Gmail</text>
+      <rect x="335" y="138" width="110" height="44" rx="10" class="svc"/><text x="390" y="160" class="t">Calendar</text>
+      <rect x="335" y="218" width="110" height="44" rx="10" class="svc"/><text x="390" y="240" class="t">GitHub</text>
+      <rect x="335" y="298" width="110" height="44" rx="10" class="svc"/><text x="390" y="320" class="t">Notion</text>
+      <text x="230" y="380" class="cap">3 app × 4 servizi = <tspan class="capb">12 collegamenti</tspan></text>
+
+      <line x1="480" y1="50" x2="480" y2="360" stroke="#e2d8c6" stroke-width="2" stroke-dasharray="4 6"/>
+
+      <text x="730" y="28" class="th">Con MCP</text>
+      <line x1="625" y1="110" x2="695" y2="200" class="ln-hot"/><line x1="625" y1="200" x2="692" y2="200" class="ln-hot"/><line x1="625" y1="290" x2="695" y2="200" class="ln-hot"/>
+      <line x1="765" y1="200" x2="835" y2="80" class="ln-hot"/><line x1="768" y1="200" x2="835" y2="160" class="ln-hot"/><line x1="768" y1="200" x2="835" y2="240" class="ln-hot"/><line x1="765" y1="200" x2="835" y2="320" class="ln-hot"/>
+      <rect x="515" y="88" width="110" height="44" rx="10" class="app"/><text x="570" y="110" class="t">Claude</text>
+      <rect x="515" y="178" width="110" height="44" rx="10" class="app"/><text x="570" y="200" class="t">ChatGPT</text>
+      <rect x="515" y="268" width="110" height="44" rx="10" class="app"/><text x="570" y="290" class="t">Gemini</text>
+      <circle cx="730" cy="200" r="38" class="hub"/><text x="730" y="201" class="tn">MCP</text>
+      <rect x="835" y="58" width="110" height="44" rx="10" class="svc"/><text x="890" y="80" class="t">Gmail</text>
+      <rect x="835" y="138" width="110" height="44" rx="10" class="svc"/><text x="890" y="160" class="t">Calendar</text>
+      <rect x="835" y="218" width="110" height="44" rx="10" class="svc"/><text x="890" y="240" class="t">GitHub</text>
+      <rect x="835" y="298" width="110" height="44" rx="10" class="svc"/><text x="890" y="320" class="t">Notion</text>
+      <text x="730" y="380" class="cap">3 + 4 = <tspan class="capb">7 collegamenti</tspan>, uno per ciascuno</text>
+    </svg>
+  </figure>
+</Slide>

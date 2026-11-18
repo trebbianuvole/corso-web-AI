@@ -1,0 +1,21 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="3.3 MCP in azione" titolo="Un ordine, passo per passo">
+  <Fragment slot="intro">
+  <Steps classe="mt-m">
+    <Passo titolo="Voi chiedete">in italiano, con parole vostre.</Passo>
+    <Passo titolo="Claude capisce">che serve il calendario, e chiede al server MCP cosa sa fare.</Passo>
+    <Passo titolo="Il server traduce">la richiesta nella chiamata API esatta.</Passo>
+    <Passo titolo="Google esegue">e risponde. Claude vi riferisce.</Passo>
+  </Steps>
+  </Fragment>
+  <figure class="figure chat" aria-label="Esempio di conversazione con un connettore">
+    <div class="bubble user">Fissami un'ora con Marta martedì pomeriggio, quando siamo libere tutte e due.</div>
+    <div class="bubble bot" style="font-family:var(--f-mono);font-size:.85em;background:var(--sky)">calendar.trova_orari_liberi(martedì, 14–18)<br>calendar.crea_evento("Con Marta", martedì 15:00)</div>
+    <div class="bubble bot">Fatto: martedì alle 15, un'ora. Ho mandato l'invito a Marta.</div>
+    <p class="chat-note">In mezzo, in azzurro, gli ordini che il cameriere passa alla cucina. Esempio semplificato.</p>
+  </figure>
+</Slide>

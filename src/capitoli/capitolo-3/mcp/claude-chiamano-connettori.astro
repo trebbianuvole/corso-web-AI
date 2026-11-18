@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.3 In Claude" titolo="In Claude si chiamano connettori">
+  <p class="lead" style="max-width:60ch">I connettori di cui parlavamo nel capitolo 1 sono server MCP già pronti. Si attivano dalle impostazioni, con un clic e il vostro accesso.</p>
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Posta e agenda" titolo="Gmail, Calendar">Cercare email, scrivere bozze, trovare un orario libero.</Card>
+    <Card tag="Documenti" titolo="Drive, Notion">Leggere i vostri file invece di copiarli in chat.</Card>
+    <Card variante="peach" tag="Codice" titolo="GitHub">Leggere un progetto, aprire modifiche, pubblicare.</Card>
+    <Card tag="E molti altri" titolo="Una lunga lista">Slack, Figma, Canva, servizi aziendali. E chi vuole può scriverne uno.</Card>
+  </Grid>
+</Slide>
