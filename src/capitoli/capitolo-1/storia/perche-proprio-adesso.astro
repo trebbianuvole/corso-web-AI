@@ -1,0 +1,11 @@
+---
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Breve storia" titolo="Perché proprio adesso?" lead="Le idee di base esistono da decenni. Dopo il 2010 sono arrivati, insieme, i tre ingredienti che mancavano.">
+  <Grid colonne={3} classe="trio mt-l">
+    <div class="card"><div class="big">Dati</div><h3 class="mt-m">Internet</h3><p>Miliardi di pagine, libri, codice e immagini da cui imparare.</p></div>
+    <div class="card"><div class="big">Calcolo</div><h3 class="mt-m">Schede grafiche (GPU)</h3><p>Nate per i videogiochi, sono perfette per i calcoli delle reti neurali.</p></div>
+    <div class="card"><div class="big">Algoritmi</div><h3 class="mt-m">Il Transformer</h3><p>Legge tutto il testo insieme e capisce quali parole contano per quali altre.</p></div>
+  </Grid>
+</Slide>

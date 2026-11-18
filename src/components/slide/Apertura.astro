@@ -1,0 +1,21 @@
+---
+// Apertura di sezione (X.Y.0): il numero grande e il titolo della sezione.
+interface Props {
+  id: string;
+  numero: string;
+  sezione: string;
+  titolo: string;
+  sottotitolo?: string;
+}
+const { id, numero, sezione, titolo, sottotitolo } = Astro.props;
+const num = numero.split(".").slice(0, 2).join(".");
+---
+<section class="slide chapter" data-chapter={sezione} id={id} data-numero={numero}>
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">{num}</div>
+    <div>
+      <h2 set:html={titolo} />
+      {sottotitolo && <p set:html={sottotitolo} />}
+    </div>
+  </div>
+</section>

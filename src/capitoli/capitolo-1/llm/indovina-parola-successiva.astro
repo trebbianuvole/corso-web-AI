@@ -1,0 +1,42 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="1.2 Gioco" titolo="Indovina la parola successiva">
+  <p class="lead" style="max-width:70ch">Leggete l'inizio della frase e proponete una parola. Poi vediamo cosa avrebbe scelto il modello.</p>
+
+  <div class="ng mt-m" id="gioco">
+    <div class="ng-rounds" role="group" aria-label="Frasi del gioco"></div>
+    <p class="ng-context" aria-live="polite"></p>
+
+    <div class="ng-body">
+      <div class="ng-panel">
+        <h3>Le parole della classe</h3>
+        <form class="ng-form" autocomplete="off">
+          <label class="sr" for="ng-input" style="position:absolute;left:-9999px">Proposta</label>
+          <input id="ng-input" type="text" placeholder="Scrivi una parola e premi Invio">
+          <button class="btn ghost" type="submit">Aggiungi</button>
+        </form>
+        <div class="ng-guesses"></div>
+
+        <div class="ng-actions">
+          <button class="btn" type="button" data-reveal>Mostra le probabilità</button>
+          <button class="btn orange" type="button" data-sample disabled>Fai scegliere al modello</button>
+          <button class="btn ghost" type="button" data-reset>Ricomincia</button>
+        </div>
+
+        <div class="ng-temp">
+          <label for="ng-temp">Temperatura <output>1,0</output></label>
+          <input id="ng-temp" type="range" min="0.1" max="2" step="0.1" value="1">
+          <div class="scale"><span>bassa: sceglie la più probabile</span><span>alta: più sorprese</span></div>
+        </div>
+      </div>
+
+      <div class="ng-panel">
+        <h3>Cosa pensa il modello</h3>
+        <div class="ng-bars"></div>
+        <p class="ng-lesson" hidden></p>
+      </div>
+    </div>
+    <p class="ng-disclaimer">Le probabilità sono illustrative, costruite a mano per il gioco, e mostrano solo le sei parole più probabili. Un modello vero ne considera decine di migliaia.</p>
+  </div>
+</Slide>

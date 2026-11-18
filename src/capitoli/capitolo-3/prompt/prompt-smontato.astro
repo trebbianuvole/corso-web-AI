@@ -1,0 +1,21 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Un esempio" titolo="Un prompt smontato">
+  <div class="anno mt-l">
+    <mark class="a1">Sto costruendo il sito della trattoria «Da Rina» a Torino, in HTML, CSS e JavaScript semplici, senza framework.</mark>
+    <mark class="a2">Crea la pagina del menu.</mark>
+    <mark class="a3">Ti allego il menu in PDF e la home già fatta, da usare come riferimento per lo stile.</mark>
+    <mark class="a4">Deve leggersi bene dal telefono, con caratteri grandi, e non deve usare librerie esterne.</mark>
+    <mark class="a5">Dammi un unico file menu.html e spiegami in tre righe cosa hai fatto.</mark>
+    <mark class="a6">Se qualcosa non è chiaro, chiedimelo prima di scrivere il codice.</mark>
+  </div>
+  <ul class="legend mt-m">
+    <li><i style="background:var(--sky)"></i>Contesto</li>
+    <li><i style="background:var(--peach)"></i>Obiettivo</li>
+    <li><i style="background:#ece3f5"></i>Materiale</li>
+    <li><i style="background:#f8eec2"></i>Vincoli</li>
+    <li><i style="background:#d7ecd7"></i>Formato</li>
+    <li><i style="background:#f3d4d4"></i>Domande</li>
+  </ul>
+</Slide>

@@ -1,0 +1,9 @@
+---
+// Una definizione: il termine in grassetto, la spiegazione nello slot.
+interface Props {
+  termine: string;
+}
+const { termine } = Astro.props;
+const testo = await Astro.slots.render("default");
+---
+<li><b set:html={termine} /> <Fragment set:html={testo} /></li>

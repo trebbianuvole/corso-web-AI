@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Guardare dentro" titolo="Ogni sito si può aprire e leggere" lead="Il codice del frontend arriva sul vostro computer, quindi potete guardarlo. È il modo migliore per imparare.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Tasto destro" titolo="Visualizza sorgente">Mostra l'HTML della pagina così come è arrivato dal server. Scorciatoia: <kbd>Ctrl</kbd> <kbd>U</kbd>.</Card>
+    <Card variante="peach" tag="Tasto destro" titolo="Ispeziona">Apre gli strumenti per sviluppatori: cliccate su un pezzo di pagina e vedete il suo HTML e il suo CSS. Si possono anche cambiare, per prova. Scorciatoia: <kbd>F12</kbd>.</Card>
+    <Card tag="Strumenti per sviluppatori" titolo="Console">La scheda dove compaiono gli errori di JavaScript. Quando qualcosa non va, uno screenshot della console aiuta molto Claude.</Card>
+  </Grid>
+  <p class="footnote">Le modifiche fatte con Ispeziona restano solo sul vostro schermo e spariscono ricaricando la pagina. Non rompete niente.</p>
+</Slide>

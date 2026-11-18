@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.4 Non solo siti" titolo="Oltre il web">
+  <p class="lead" style="max-width:62ch">Ogni tipo di progetto ha i suoi strumenti. Molti li riconoscerete: li usano le app che avete in tasca.</p>
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Telefono" titolo="App">Swift per iPhone, Kotlin per Android: due app separate. Oppure Flutter o React Native, un solo codice per tutti e due.</Card>
+    <Card tag="Computer" titolo="Programmi">C# per Windows, Swift per Mac. Con Electron si usa il web anche qui, per tutti e due: VS Code e Slack sono fatti così.</Card>
+    <Card tag="Dati e AI" titolo="Analisi e modelli">Python con Jupyter per esplorare i dati, pandas per le tabelle, PyTorch per addestrare reti neurali.</Card>
+    <Card tag="Giochi" titolo="Motori di gioco">Unity con C#, Unreal Engine con C++, Godot gratuito e aperto. Grafica, fisica e suoni sono già pronti.</Card>
+    <Card tag="Elettronica" titolo="Oggetti che si muovono">Arduino si programma in C++; Raspberry Pi è un piccolo computer, spesso usato con Python. Sensori, robot, domotica.</Card>
+    <Card tag="Lavoro d'ufficio" titolo="Automazioni">Piccoli script in Python, oppure strumenti senza codice come Zapier, Make e n8n che collegano un'app all'altra.</Card>
+  </Grid>
+</Slide>

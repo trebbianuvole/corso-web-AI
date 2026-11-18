@@ -1,0 +1,14 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="1.2 Allucinazioni" titolo="Come difendersi" lead="I modelli di oggi sbagliano molto meno di qualche anno fa, ma l'errore non sparirà: è il modo stesso in cui funzionano.">
+  <Steps>
+    <Passo titolo="Dategli il materiale">Un documento allegato batte la memoria del modello.</Passo>
+    <Passo titolo="Dategli il permesso di non sapere">«Se non sei sicuro, dimmelo» riduce le invenzioni.</Passo>
+    <Passo titolo="Chiedete le fonti, e apritele">Con la ricerca web attiva, ogni link si può controllare.</Passo>
+    <Passo titolo="Provate il codice">Nel vibe coding la verifica è semplice: il sito funziona o no.</Passo>
+    <Passo titolo="Diffidate delle risposte troppo comode">Se è esattamente ciò che speravate, controllate due volte.</Passo>
+  </Steps>
+</Slide>

@@ -1,0 +1,13 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="2.3 Responsive" titolo="Un sito, tanti schermi" lead="Un sito «responsive» si adatta allo schermo: le colonne diventano righe, i menu si chiudono, i caratteri restano leggibili.">
+  <Fragment slot="intro">
+  <p class="mt-m muted">Si lavora «mobile first»: prima il telefono, poi si aggiunge spazio per tablet e computer. A farlo è il CSS.</p>
+  </Fragment>
+  <div class="screens" aria-label="Lo stesso sito su telefono, tablet e computer">
+    <figure><div class="screen phone"><i class="h"></i><i class="img"></i><i></i><i></i><i></i><i></i></div><figcaption>Telefono: una colonna</figcaption></figure>
+    <figure><div class="screen tablet"><i class="h"></i><i class="img"></i><div class="cols"><i></i><i></i><i></i><i></i></div></div><figcaption>Tablet: due</figcaption></figure>
+    <figure><div class="screen desk"><i class="h" style="width:35%"></i><i class="img"></i><div class="cols"><i></i><i></i><i></i></div></div><figcaption>Computer: tre</figcaption></figure>
+  </div>
+</Slide>

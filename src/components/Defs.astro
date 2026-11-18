@@ -1,0 +1,8 @@
+---
+// Elenco di definizioni; ogni voce è un <Def>.
+interface Props {
+  classe?: string;
+}
+const { classe } = Astro.props;
+---
+<ul class:list={["defs", classe]}><slot /></ul>

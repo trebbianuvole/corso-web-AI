@@ -1,0 +1,10 @@
+# Dipendenze e build
+node_modules/
+dist/
+.astro/
+
+# Vercel
+.vercel/
+
+# Sistema
+.DS_Store

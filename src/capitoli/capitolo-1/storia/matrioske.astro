@@ -1,0 +1,34 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} interno="split venn-split">
+  <figure class="figure"><svg class="diagram venn" viewBox="0 0 640 470" role="img" aria-labelledby="v-t v-d"><title id="v-t">AI, machine learning, deep learning e LLM</title><desc id="v-d">Quattro insiemi uno dentro l'altro: l'intelligenza artificiale contiene il machine learning, che contiene il deep learning, che contiene gli LLM.</desc>
+<ellipse cx="320" cy="240" rx="310" ry="222" class="v1"/>
+<ellipse cx="345" cy="282" rx="248" ry="170" class="v2"/>
+<ellipse cx="370" cy="322" rx="182" ry="121" class="v3"/>
+<ellipse cx="395" cy="360" rx="112" ry="72" class="v4"/>
+<text x="320" y="56" text-anchor="middle" class="vt">Intelligenza artificiale</text>
+<text x="320" y="80" text-anchor="middle" class="vs">regole scritte a mano, sistemi esperti, Deep Blue</text>
+<text x="345" y="145" text-anchor="middle" class="vt">Machine learning</text>
+<text x="345" y="168" text-anchor="middle" class="vs">filtri antispam, consigli di Netflix</text>
+<text x="370" y="232" text-anchor="middle" class="vt">Deep learning</text>
+<text x="370" y="255" text-anchor="middle" class="vs">riconoscimento di volti, traduttori</text>
+<text x="395" y="355" text-anchor="middle" class="vt light">LLM</text>
+<text x="395" y="378" text-anchor="middle" class="vs light">ChatGPT, Claude, Gemini</text>
+</svg></figure>
+  <div>
+    <p class="kicker">1.1 Breve storia</p>
+    <h2>Una dentro l'altra, come le matrioske</h2>
+    <p class="lead">Ogni parola è un caso particolare della precedente.</p>
+    <Defs classe="mt-m">
+      <Def termine="AI">qualunque programma che svolge compiti «intelligenti»</Def>
+      <Def termine="Machine learning">l'AI che impara dagli esempi</Def>
+      <Def termine="Deep learning">il machine learning fatto con reti neurali profonde</Def>
+      <Def termine="LLM">il deep learning applicato al linguaggio, con i Transformer</Def>
+    </Defs>
+    <Card variante="sky mt-m" titolo="E l'AI generativa?">Non è un altro cerchio dentro: è un modo di usare questi modelli. Invece di classificare, producono qualcosa di nuovo. Gli LLM generano testo; altri modelli generano immagini, musica, video.</Card>
+  </div>
+</Slide>

@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.4 Claude" titolo="Le parole da conoscere">
+  <Grid colonne={2} classe="mt-l">
+    <Card titolo="Chatbot">Risponde alle domande. Il lavoro lo fate voi: copiate, incollate, provate.</Card>
+    <Card variante="peach" titolo="Agente">Riceve un obiettivo e lo porta a termine da solo, in più passaggi: cerca, legge file, scrive codice, lo prova, corregge.</Card>
+    <Card titolo="Artifact">Una pagina, un'app o un documento creato da Claude, che si apre, si modifica e si condivide con un link.</Card>
+    <Card titolo="Skill">Un pacchetto di istruzioni, ed eventualmente script, che Claude carica solo quando serve. Come una ricetta di famiglia per un compito preciso.</Card>
+  </Grid>
+  <p class="footnote">Poi ci sono i connettori, che collegano Claude ad altre app come Gmail o GitHub. Li vedremo in un capitolo successivo.</p>
+</Slide>

@@ -1,0 +1,19 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.2 Agenti" titolo="Workflow o agente?">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Workflow</span>
+      <h3>La ricetta seguita alla lettera</h3>
+      <p class="mt-m">I passi li decide prima chi lo costruisce, e sono sempre gli stessi. Ogni email in arrivo viene riassunta e archiviata. Prevedibile, veloce, economico.</p>
+    </div>
+    <div class="vs" aria-hidden="true">vs</div>
+    <div class="card peach">
+      <span class="tag">Agente</span>
+      <h3>Il cuoco che sceglie</h3>
+      <p class="mt-m">Decide i passi strada facendo, in base a quello che trova. Utile quando non si può sapere prima cosa servirà. Più flessibile, ma più lento, più costoso e meno prevedibile.</p>
+    </div>
+  </div>
+  <p class="footnote">Il consiglio di Anthropic: cercate sempre la soluzione più semplice che funziona. Spesso basta un buon prompt; l'agente serve quando i passi non si conoscono in anticipo.</p>
+</Slide>

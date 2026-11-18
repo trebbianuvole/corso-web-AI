@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="2.4 Scegliere" titolo="Come si sceglie lo stack" lead="Lo «stack» è l'insieme degli strumenti di un progetto, uno sopra l'altro come una pila di piatti.">
+  <Fragment slot="intro">
+  <Card variante="sky mt-m" titolo="Il nostro stack">HTML, CSS e JavaScript semplici, scritti con Claude, conservati su GitHub, pubblicati con Vercel. Niente framework: si legge tutto, si capisce tutto.</Card>
+  </Fragment>
+  <Steps>
+    <Passo titolo="Semplice quanto basta">Non serve una cucina industriale per fare un panino.</Passo>
+    <Passo titolo="Conosciuto dall'AI">Gli strumenti più diffusi hanno più esempi nei dati di addestramento: meno errori.</Passo>
+    <Passo titolo="Che sapete controllare">Se non capite cosa fa, non potete accorgervi quando sbaglia.</Passo>
+    <Passo titolo="Che costa quanto potete spendere">Oggi e tra un anno, quando i piani gratuiti cambiano.</Passo>
+    <Passo titolo="Che si pubblica facilmente">Un sito che resta sul vostro computer non lo vede nessuno.</Passo>
+  </Steps>
+</Slide>

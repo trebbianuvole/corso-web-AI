@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.2 Agenti" titolo="Gli agenti, ovunque">
+  <p class="lead" style="max-width:62ch">Dal 2025 è la direzione di tutto il settore: dalla chat che risponde all'AI a cui si affida un lavoro.</p>
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="peach" tag="Dentro un progetto" titolo="Agenti per il codice">Leggono il progetto, scrivono, eseguono i test, propongono modifiche. Claude Code, OpenAI Codex, GitHub Copilot, Gemini CLI.</Card>
+    <Card tag="Davanti a uno schermo" titolo="Agenti che usano il computer">Guardano lo schermo e cliccano come fareste voi, anche dove non c'è un'API. Claude in Chrome, l'agente di ChatGPT, la modalità agente di Gemini.</Card>
+    <Card tag="Tra tante fonti" titolo="Agenti di ricerca">Fanno decine di ricerche, leggono le fonti, confrontano e scrivono un rapporto. La ricerca approfondita di Claude, ChatGPT e Gemini.</Card>
+  </Grid>
+</Slide>

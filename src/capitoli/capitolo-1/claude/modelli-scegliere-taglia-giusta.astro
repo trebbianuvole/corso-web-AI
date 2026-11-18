@@ -1,0 +1,12 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.4 Claude" titolo="I modelli: scegliere la taglia giusta" lead="Più grande non vuol dire sempre migliore: i modelli grandi sono più lenti e consumano più in fretta i limiti d'uso.">
+  <div class="models mt-l">
+    <div class="model"><h3>Haiku 5.5</h3><p>Il più veloce. Per compiti semplici e ripetitivi.</p><div class="meter" aria-label="potenza 1 su 4"><i class="on"></i><i></i><i></i><i></i></div></div>
+    <div class="model"><h3>Sonnet 5.5</h3><p>L'equilibrio tra velocità e intelligenza. Il punto di partenza.</p><div class="meter" aria-label="potenza 2 su 4"><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+    <div class="model"><h3>Opus 5.5</h3><p>Per lavori lunghi e complessi, come scrivere e sistemare un intero progetto.</p><div class="meter" aria-label="potenza 3 su 4"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+    <div class="model"><h3>Fable 5.1</h3><p>Il ragionamento più impegnativo e i compiti più lunghi.</p><div class="meter" aria-label="potenza 4 su 4"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+  </div>
+  <div class="models-axis"><span>più veloce, consuma meno</span><span>più capace, più lento</span></div>
+</Slide>

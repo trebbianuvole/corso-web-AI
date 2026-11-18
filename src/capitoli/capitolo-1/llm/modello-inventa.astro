@@ -1,0 +1,20 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="1.2 Allucinazioni" titolo="Quando il modello inventa" lead="Il modello produce testo plausibile, non testo verificato. Quando non sa, di solito non lo dice: inventa con la stessa sicurezza con cui dice il vero.">
+  <Fragment slot="intro">
+  <p class="footnote">Conversazione costruita come esempio.</p>
+  </Fragment>
+  <figure class="figure chat" aria-label="Esempio di conversazione con un'allucinazione">
+    <div class="bubble user">Mi consigli tre articoli scientifici sul turismo a Torino, con il link?</div>
+    <div class="bubble bot">
+      Certo! Ecco tre fonti utili:
+      <ol>
+        <li>Rossi, M. (2021). <i>Il turismo urbano a Torino dopo le Olimpiadi</i>. Rivista di Geografia Urbana, 14(2). <span class="flag-bad">rivista inesistente</span></li>
+        <li>Bianchi, L. (2019). <i>Musei e flussi turistici in Piemonte</i>. <u>www.studi-turismo.it/bianchi2019</u> <span class="flag-bad">link inventato</span></li>
+        <li>OECD (2020). <i>Tourism Trends and Policies 2020</i>. <span class="flag-ok">esiste davvero</span></li>
+      </ol>
+    </div>
+    <p class="chat-note">Il vero e il falso arrivano mescolati, con lo stesso tono sicuro.</p>
+  </figure>
+</Slide>

@@ -1,0 +1,24 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="3.3 Claude Code" titolo="Come lavora" lead="Riceve un obiettivo e procede da solo, un passo dopo l'altro: legge, decide, modifica, controlla. Prima delle azioni delicate chiede il permesso.">
+  <Fragment slot="intro">
+  <p class="footnote">Esempio semplificato.</p>
+  </Fragment>
+  <div class="term" role="img" aria-label="Esempio di sessione di Claude Code">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; Aggiungi alla home un pulsante «Prenota su
+  WhatsApp» sotto gli orari</span>
+
+<span class="dot">●</span> Leggo index.html e style.css
+<span class="dot">●</span> Gli orari sono nella sezione #orari.
+  Il numero di telefono è già nel piè di pagina:
+  uso quello.
+<span class="dot">●</span> Modifico index.html   <span class="ok">+6 righe</span>
+<span class="dot">●</span> Modifico style.css    <span class="ok">+14 righe</span>
+<span class="dot">●</span> Apro la pagina per controllare: il pulsante
+  si vede, il link apre WhatsApp.
+
+<span class="dim">Salvo le modifiche con un commit? (sì / no)</span></pre>
+  </div>
+</Slide>

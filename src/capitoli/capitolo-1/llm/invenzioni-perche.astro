@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Allucinazioni" titolo="Perché succede">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Come funziona" titolo="Sceglie il plausibile">Ogni parola è la più probabile, non la più vera. Un titolo credibile e un titolo reale, per il modello, si somigliano molto.</Card>
+    <Card tag="Come è addestrato" titolo="Premia chi risponde">Addestramento e test spesso premiano una risposta sicura più di un «non lo so». Il modello impara a tirare a indovinare.</Card>
+    <Card tag="Cosa sa" titolo="Buchi di conoscenza">Fatti rari, persone poco note, notizie successive all'addestramento: dove i dati sono pochi, riempie con l'immaginazione.</Card>
+    <Card variante="peach" tag="Come chiediamo" titolo="Premesse sbagliate">Se la domanda dà per scontato qualcosa di falso, come il Nobel per la matematica, il modello tende ad assecondarla.</Card>
+  </Grid>
+</Slide>

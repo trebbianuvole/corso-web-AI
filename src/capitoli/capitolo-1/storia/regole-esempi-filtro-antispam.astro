@@ -1,0 +1,25 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Breve storia" titolo="Regole o esempi? Il filtro antispam">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">AI simbolica</span>
+      <h3>Scrivo io le regole</h3>
+      <pre class="code" style="margin-top:14px">se il testo contiene "hai vinto"
+   oppure "clicca subito"
+allora → spam</pre>
+      <p class="mt-m">Funziona finché gli spammer non cambiano parole. Ogni nuovo trucco richiede una regola nuova.</p>
+    </div>
+    <div class="vs" aria-hidden="true">vs</div>
+    <div class="card peach">
+      <span class="tag">Machine learning</span>
+      <h3>Gli do gli esempi</h3>
+      <div class="tokens" style="margin-top:14px">
+        <span class="tok">10.000 email «spam»</span>
+        <span class="tok">10.000 email «normali»</span>
+      </div>
+      <p class="mt-m">Il programma trova da solo i segnali che distinguono le due pile, anche quelli a cui nessuno avrebbe pensato. Il deep learning fa lo stesso con molti più dati e molti più «strati».</p>
+    </div>
+  </div>
+</Slide>

@@ -1,0 +1,19 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Com'è fatto un sito" titolo="Statico o dinamico?">
+  <div class="versus mt-l">
+    <div class="card peach">
+      <span class="tag">Sito statico</span>
+      <h3>Il menu stampato</h3>
+      <p class="mt-m">Le pagine sono file già pronti, uguali per chi le apre. Veloce, economico, sicuro, facile da pubblicare. Questo sito del corso è statico.</p>
+    </div>
+    <div class="vs" aria-hidden="true">vs</div>
+    <div class="card">
+      <span class="tag">Sito dinamico</span>
+      <h3>Il piatto cucinato al momento</h3>
+      <p class="mt-m">Ogni pagina viene preparata dal server per chi la chiede, pescando dal database. Instagram, Amazon, l'home banking: ognuno vede la sua.</p>
+    </div>
+  </div>
+  <p class="footnote">Si può partire statici e aggiungere pezzi dinamici dopo, quando servono: è un buon MVP.</p>
+</Slide>

@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come funziona un LLM" titolo="I token: i mattoncini del testo" lead="Il modello non legge lettere né parole intere, ma token: pezzi di parola. Ogni modello taglia il testo a modo suo.">
+  <div class="card mt-l">
+    <div class="tokens tok-big">
+      <span class="tok">Gli</span><span class="tok"> stud</span><span class="tok">enti</span><span class="tok"> proget</span><span class="tok">tano</span><span class="tok"> un</span><span class="tok"> sito</span><span class="tok"> web</span><span class="tok">.</span>
+    </div>
+    <p class="footnote" style="margin-top:14px">Divisione indicativa: 6 parole, 9 token.</p>
+  </div>
+  <Grid colonne={3} classe="mt-m">
+    <Card titolo="Si paga a token">Costi e limiti d'uso si misurano in token, sia in entrata sia in uscita.</Card>
+    <Card titolo="L'italiano costa di più">Le lingue meno presenti nei dati vengono spezzate in più pezzi rispetto all'inglese.</Card>
+    <Card titolo="Per questo sbaglia a contare">Chiedere «quante r ci sono in ramarro» è difficile: il modello non vede le singole lettere.</Card>
+  </Grid>
+</Slide>

@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.3 Claude Code" titolo="Claude Code: un agente dentro il progetto">
+  <p class="lead" style="max-width:62ch">In chat, Claude vi dà il codice e voi lo copiate nei file. Claude Code invece lavora direttamente nella cartella del progetto: legge i file, li modifica, esegue comandi, prova, salva le versioni.</p>
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Per chi programma" titolo="Terminale">La versione originale: si scrive in una finestra di comandi.</Card>
+    <Card tag="Dentro l'editor" titolo="VS Code, JetBrains">Un'estensione: le modifiche si vedono evidenziate nei file.</Card>
+    <Card variante="peach" tag="Il più semplice" titolo="App desktop">Nell'app Claude per Windows e Mac, con anteprima delle modifiche.</Card>
+    <Card tag="Senza installare" titolo="Web e telefono">Su claude.ai/code, lavorando su un progetto salvato su GitHub.</Card>
+  </Grid>
+  <p class="footnote">Claude Code è incluso negli abbonamenti a pagamento di Claude, da Pro in su.</p>
+</Slide>

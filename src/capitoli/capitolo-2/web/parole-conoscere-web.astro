@@ -1,0 +1,27 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Ripasso" titolo="Le parole da conoscere">
+  <Grid colonne={2} classe="mt-l">
+    <Defs>
+      <Def termine="Browser">il programma che apre i siti</Def>
+      <Def termine="Server">il computer che li conserva e li manda</Def>
+      <Def termine="URL">l'indirizzo completo di una pagina</Def>
+      <Def termine="Dominio">il nome del sito, come <code>darina.it</code></Def>
+      <Def termine="DNS">la rubrica che traduce i nomi in indirizzi</Def>
+      <Def termine="HTTP/HTTPS">la lingua con cui browser e server si parlano</Def>
+      <Def termine="CMS">il pannello per gestire i contenuti senza codice</Def>
+    </Defs>
+    <Defs>
+      <Def termine="Hosting">il servizio che tiene il sito online</Def>
+      <Def termine="Frontend">la parte che vedete, nel browser</Def>
+      <Def termine="Backend">la parte nascosta, sul server</Def>
+      <Def termine="Database">l'archivio ordinato dei dati</Def>
+      <Def termine="Responsive">che si adatta a ogni schermo</Def>
+      <Def termine="Statico / dinamico">pagine pronte o preparate al momento</Def>
+    </Defs>
+  </Grid>
+</Slide>

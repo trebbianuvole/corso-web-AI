@@ -1,0 +1,17 @@
+---
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.1 Organizzare un progetto" titolo="La differenza la fa il brief">
+  <Grid colonne={2} classe="brief mt-l">
+    <div class="card bad">
+      <h3>Così Claude tira a indovinare</h3>
+      <blockquote>Fammi un sito per un ristorante.</blockquote>
+      <p class="mt-m">Colori, pagine, testi e stile li sceglie lui. Il risultato sarà generico.</p>
+    </div>
+    <div class="card good">
+      <h3>Così Claude sa cosa fare</h3>
+      <blockquote>Sito per la trattoria «Da Rina» a Torino, cucina piemontese. Pubblico: famiglie e turisti, quasi tutti da telefono. Tre pagine: home con foto e orari, menu (allego il PDF), prenotazioni via WhatsApp. Stile caldo e semplice, come il sito che allego come esempio.</blockquote>
+    </div>
+  </Grid>
+</Slide>

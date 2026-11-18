@@ -1,0 +1,41 @@
+---
+// Una slide. Numero, id e sezione li passa il layout del capitolo:
+// nei file delle slide basta scrivere <Slide {...Astro.props} …>.
+// kicker, titolo e lead accettano HTML semplice (<em>, <br>, «»).
+interface Props {
+  id: string;
+  numero: string;
+  sezione: string;
+  kicker?: string;
+  titolo?: string;
+  titoloStile?: string;
+  lead?: string;
+  /** due colonne: a sinistra kicker, titolo, lead e lo slot "intro" */
+  split?: boolean;
+  /** classi in più sulla <section>, es. "compact" */
+  classe?: string;
+  /** classi in più su .slide-inner */
+  interno?: string;
+}
+const { id, numero, sezione, kicker, titolo, titoloStile, lead, split = false, classe, interno } = Astro.props;
+const haTesta = kicker || titolo || lead;
+---
+<section class:list={["slide", classe]} data-chapter={sezione} id={id} data-numero={numero}>
+  <div class:list={["slide-inner", { split }, interno]}>
+    {split ? (
+      <div>
+        {kicker && <p class="kicker" set:html={kicker} />}
+        {titolo && <h2 style={titoloStile} set:html={titolo} />}
+        {lead && <p class="lead" set:html={lead} />}
+        <slot name="intro" />
+      </div>
+    ) : haTesta && (
+      <Fragment>
+        {kicker && <p class="kicker" set:html={kicker} />}
+        {titolo && <h2 style={titoloStile} set:html={titolo} />}
+        {lead && <p class="lead" set:html={lead} />}
+      </Fragment>
+    )}
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="3.3 Vibe coding" titolo="Il ciclo di lavoro" lead="Si gira in tondo, a piccoli passi. Ogni giro aggiunge una cosa sola e la verifica.">
+  <Fragment slot="intro">
+  <p class="mt-m muted">Il passo che non si salta mai è «provate». È lì che si vede se il codice fa davvero quello che dovrebbe.</p>
+  </Fragment>
+  <figure class="figure">
+    <svg class="diagram loop-svg" viewBox="0 0 560 460" role="img" aria-labelledby="loop-t loop-d"><title id="loop-t">Il ciclo del vibe coding</title><desc id="loop-d">Quattro passi in cerchio: descrivete cosa volete, Claude scrive il codice, provate il risultato, dite cosa non va. Poi si ricomincia.</desc>
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#df5f26"/></marker></defs>
+      <path d="M387.1 111.1 A160 160 0 0 1 433.8 185.9" class="arc" marker-end="url(#ah)"/>
+      <path d="M433.8 274.1 A160 160 0 0 1 387.1 348.9" class="arc" marker-end="url(#ah)"/>
+      <path d="M172.9 348.9 A160 160 0 0 1 126.2 274.1" class="arc" marker-end="url(#ah)"/>
+      <path d="M126.2 185.9 A160 160 0 0 1 172.9 111.1" class="arc" marker-end="url(#ah)"/>
+      <rect x="185" y="35" width="190" height="70" rx="14" class="nd"/><text x="280" y="64" class="t">Descrivete</text><text x="280" y="88" class="s">un passo, chiaro</text>
+      <rect x="345" y="195" width="190" height="70" rx="14" class="nd"/><text x="440" y="224" class="t">Claude scrive</text><text x="440" y="248" class="s">e spiega cosa ha fatto</text>
+      <rect x="185" y="355" width="190" height="70" rx="14" class="nd hot"/><text x="280" y="384" class="t">Provate</text><text x="280" y="408" class="s">telefono e computer</text>
+      <rect x="25" y="195" width="190" height="70" rx="14" class="nd"/><text x="120" y="224" class="t">Dite cosa non va</text><text x="120" y="248" class="s">con precisione</text>
+      <text x="280" y="238" class="ctr">un giro,</text><text x="280" y="268" class="ctr">una cosa</text>
+    </svg>
+  </figure>
+</Slide>

@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.2 POC" titolo="Prima di tutto: si può fare?">
+  <p class="lead" style="max-width:62ch">Proof of Concept, prova di fattibilità. Un esperimento piccolo e veloce per verificare che la parte più rischiosa dell'idea funzioni davvero, prima di costruirci sopra.</p>
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Cos'è" titolo="Una domanda sola">Risponde a «tecnicamente funziona?». Non deve essere bello e non è per i clienti. Quasi sempre, finita la prova, si butta: quello che resta è la risposta.</Card>
+    <Card variante="peach" tag="Un esempio" titolo="Il POC della trattoria">La domanda: il link a WhatsApp con il messaggio già scritto si apre bene sia da iPhone sia da Android? La prova: una pagina con un solo pulsante, fatta con Claude in dieci minuti, aperta da tre telefoni.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Con l'AI un POC costa pochissimo">Un artifact di Claude è già un POC: in pochi minuti vedete se un'idea sta in piedi. Usatelo per le parti che vi preoccupano, come una mappa, un pagamento o un'API, prima di metterle nel progetto vero.</Card>
+</Slide>

@@ -1,0 +1,18 @@
+---
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Quando qualcosa non va" titolo="Come si segnala un problema">
+  <Grid colonne={2} classe="brief mt-l">
+    <div class="card bad">
+      <h3>Così Claude tira a indovinare</h3>
+      <blockquote>Non funziona, sistemalo.</blockquote>
+      <p class="mt-m">Cosa non funziona? Dove? Da quando? Claude cambierà qualcosa a caso, e forse romperà altro.</p>
+    </div>
+    <div class="card good">
+      <h3>Così Claude trova il problema</h3>
+      <blockquote>Nella pagina delle prenotazioni, se premo «Invia» dal telefono non succede niente; dal computer funziona. Mi aspetto che si apra WhatsApp con il messaggio già scritto. Ti allego lo screenshot della console con l'errore. Prima spiegami la causa, poi correggi.</blockquote>
+    </div>
+  </Grid>
+  <p class="footnote">Le quattro cose da dire sempre: cosa fate, cosa succede, cosa vi aspettavate, cosa vedete di strano.</p>
+</Slide>

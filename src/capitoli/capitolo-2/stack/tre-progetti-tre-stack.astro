@@ -1,0 +1,42 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.4 Esempi" titolo="Tre progetti, tre stack">
+  <p class="lead" style="max-width:62ch">Stesso ristorante, tre idee diverse. Cambia l'oggetto, cambia lo stack, e cambia quanto lavoro c'è.</p>
+  <Grid colonne={3} classe="mt-l">
+    <div class="card peach">
+      <span class="tag">Sito</span>
+      <h3>Il sito della trattoria</h3>
+      <Defs classe="mt-m">
+        <Def termine="Interfaccia">HTML, CSS, JavaScript</Def>
+        <Def termine="Dati">nessuno: tutto è nelle pagine</Def>
+        <Def termine="Online">GitHub e Vercel</Def>
+      </Defs>
+      <p class="mt-m">Si fa in pochi giorni. Si paga solo il dominio.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Web app</span>
+      <h3>Le prenotazioni online</h3>
+      <Defs classe="mt-m">
+        <Def termine="Interfaccia">Next.js e Tailwind</Def>
+        <Def termine="Dati">Supabase: clienti e tavoli</Def>
+        <Def termine="Online">Vercel</Def>
+      </Defs>
+      <p class="mt-m">Settimane. Arrivano account, dati personali, privacy.</p>
+    </div>
+    <div class="card">
+      <span class="tag">App per telefono</span>
+      <h3>L'app con la tessera fedeltà</h3>
+      <Defs classe="mt-m">
+        <Def termine="Interfaccia">Flutter, per iPhone e Android</Def>
+        <Def termine="Dati">Firebase: clienti e punti</Def>
+        <Def termine="Online">App Store e Google Play</Def>
+      </Defs>
+      <p class="mt-m">Mesi. Due store, due revisioni, account sviluppatore a pagamento.</p>
+    </div>
+  </Grid>
+  <p class="footnote">Stack d'esempio: per ognuno ce ne sono altri altrettanto validi.</p>
+</Slide>

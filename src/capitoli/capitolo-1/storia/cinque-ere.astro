@@ -1,0 +1,55 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Breve storia" titolo="Cinque ere, una dopo l'altra">
+  <div class="eras mt-l">
+    <a class="era" href="https://it.wikipedia.org/wiki/Intelligenza_artificiale_simbolica" target="_blank" rel="noopener"><span class="years">1956 – anni '80</span><h3>AI simbolica</h3><p>Le regole le scrive una persona: «se succede questo, fai quello».</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+    <a class="era" href="https://it.wikipedia.org/wiki/Apprendimento_automatico" target="_blank" rel="noopener"><span class="years">anni '90 – 2000</span><h3>Machine learning</h3><p>Il programma impara le regole da solo, guardando tanti esempi.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+    <a class="era" href="https://it.wikipedia.org/wiki/Apprendimento_profondo" target="_blank" rel="noopener"><span class="years">dal 2012</span><h3>Deep learning</h3><p>Reti neurali con molti strati, tanti dati e schede grafiche.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+    <a class="era" href="https://it.wikipedia.org/wiki/Trasformatore_(informatica)" target="_blank" rel="noopener"><span class="years">2017</span><h3>Transformer</h3><p>L'architettura che sta dentro tutti gli LLM di oggi.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+    <a class="era" href="https://it.wikipedia.org/wiki/Intelligenza_artificiale_generativa" target="_blank" rel="noopener"><span class="years">dal 2022</span><h3>AI generativa</h3><p>Modelli che producono testo, codice, immagini, audio.</p><svg class="ext" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a>
+  </div>
+  <ul class="milestones mt-l">
+    <li><a href="https://it.wikipedia.org/wiki/Conferenza_di_Dartmouth" target="_blank" rel="noopener"><b>1956</b><span>A Dartmouth nasce il termine «intelligenza artificiale»</span></a></li>
+    <li><a href="https://it.wikipedia.org/wiki/ELIZA_(chatterbot)" target="_blank" rel="noopener"><b>1966</b><span>ELIZA, il primo chatbot, simula uno psicoterapeuta</span></a></li>
+    <li><a href="https://it.wikipedia.org/wiki/Deep_Blue" target="_blank" rel="noopener"><b>1997</b><span>Deep Blue di IBM batte Kasparov a scacchi</span></a></li>
+    <li><a href="https://it.wikipedia.org/wiki/AlexNet" target="_blank" rel="noopener"><b>2012</b><span>AlexNet riconosce le immagini molto meglio di tutti</span></a></li>
+    <li><a href="https://it.wikipedia.org/wiki/AlphaGo_contro_Lee_Se-dol" target="_blank" rel="noopener"><b>2016</b><span>AlphaGo batte Lee Sedol a Go</span></a></li>
+    <li class="hot"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener"><b>2017</b><span>Google pubblica l'articolo sul Transformer</span></a></li>
+    <li class="hot"><a href="https://it.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener"><b>2022</b><span>Esce ChatGPT: 100 milioni di utenti in due mesi</span></a></li>
+    <li class="hot"><a href="https://it.wikipedia.org/wiki/Agente_intelligente" target="_blank" rel="noopener"><b>2025</b><span>Gli agenti: l'AI che lavora da sola su più passaggi</span></a></li>
+    <li class="more"><button class="btn orange snake-open" type="button" data-dialog="dal-2017" aria-haspopup="dialog">Dal 2017 a oggi <span aria-hidden="true">→</span></button></li>
+  </ul>
+  <p class="footnote">Ogni riquadro è un link: apre la voce di Wikipedia o l'articolo originale. Il pulsante arancione mostra da vicino gli ultimi anni.</p>
+
+  <dialog class="snake-dialog" id="dal-2017" aria-labelledby="dal-2017-t">
+    <div class="snake-box">
+    <div class="snake-head">
+      <div>
+        <p class="kicker">1.1 Breve storia</p>
+        <h2 id="dal-2017-t">Dal 2017 a oggi, in undici tappe</h2>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Chiudi" title="Chiudi (Esc)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
+      </button>
+    </div>
+    <div class="snake">
+      <svg class="snake-path" aria-hidden="true"><path/></svg>
+      <ol class="snake-list">
+        <li class="hot"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener"><span class="dot"></span><time>Giugno 2017</time><b>Il Transformer</b><span class="txt">Ricercatori di Google descrivono l'architettura che oggi sta dentro tutti gli LLM.</span></a></li>
+        <li><a href="https://it.wikipedia.org/wiki/GPT-3" target="_blank" rel="noopener"><span class="dot"></span><time>Maggio 2020</time><b>GPT-3</b><span class="txt">175 miliardi di pesi. Impara un compito nuovo da pochi esempi scritti nella richiesta.</span></a></li>
+        <li><a href="https://it.wikipedia.org/wiki/AlphaFold" target="_blank" rel="noopener"><span class="dot"></span><time>Novembre 2020</time><b>AlphaFold 2</b><span class="txt">DeepMind prevede la forma delle proteine. Nel 2024 la scoperta vale il Nobel per la chimica.</span></a></li>
+        <li class="hot"><a href="https://it.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener"><span class="dot"></span><time>Novembre 2022</time><b>ChatGPT</b><span class="txt">Chiunque può parlare con un LLM. In due mesi lo usano 100 milioni di persone.</span></a></li>
+        <li><a href="https://it.wikipedia.org/wiki/GPT-4" target="_blank" rel="noopener"><span class="dot"></span><time>Marzo 2023</time><b>GPT-4 e il primo Claude</b><span class="txt">Escono lo stesso giorno, il 14 marzo. La corsa ora ha più concorrenti.</span></a></li>
+        <li><a href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener"><span class="dot"></span><time>Settembre 2024</time><b>I modelli che ragionano</b><span class="txt">OpenAI o1 «pensa» per passaggi prima di rispondere. Sbaglia molto meno in matematica e nel codice.</span></a></li>
+        <li><a href="https://it.wikipedia.org/wiki/DeepSeek" target="_blank" rel="noopener"><span class="dot"></span><time>Gennaio 2025</time><b>DeepSeek R1</b><span class="txt">Dalla Cina un modello che ragiona, gratuito e scaricabile. Le azioni di Nvidia crollano.</span></a></li>
+        <li class="hot"><a href="https://www.anthropic.com/news/claude-3-7-sonnet" target="_blank" rel="noopener"><span class="dot"></span><time>Febbraio 2025</time><b>Gli agenti per il codice</b><span class="txt">Esce Claude Code, che lavora dentro il progetto. Nello stesso mese nasce la parola «vibe coding».</span></a></li>
+        <li><a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" target="_blank" rel="noopener"><span class="dot"></span><time>Luglio 2025</time><b>Oro alle Olimpiadi di matematica</b><span class="txt">Modelli di Google DeepMind e OpenAI risolvono 5 problemi su 6.</span></a></li>
+        <li><a href="https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models" target="_blank" rel="noopener"><span class="dot"></span><time>Luglio 2026</time><b>Un agente esce dalla gabbia</b><span class="txt">Durante un test, modelli di OpenAI escono dall'ambiente isolato ed entrano nei server di Hugging Face per cercare le risposte. Ne riparleremo con la sicurezza.</span></a></li>
+        <li class="finale"><a href="https://fortune.com/2026/07/21/ai-solves-jacobian-conjecture-levant-alpoge-claude-fable-5/" target="_blank" rel="noopener"><span class="dot"></span><time>Luglio 2026</time><b>Cade la congettura Jacobiana</b><span class="txt">Con Claude Fable 5, il matematico Levent Alpöge trova un controesempio a un problema aperto dal 1939.</span></a></li>
+      </ol>
+    </div>
+    <p class="footnote">Ogni tappa è un link alla fonte. Le tappe arancioni sono le stesse della slide. Gli ultimi risultati in matematica sono nella 1.3.</p>
+    </div>
+  </dialog>
+</Slide>

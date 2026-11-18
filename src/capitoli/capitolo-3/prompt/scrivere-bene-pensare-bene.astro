@@ -1,0 +1,24 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Scrivere bene" titolo="Scrivere bene è pensare bene">
+  <p class="lead" style="max-width:60ch">Per parlare con l'AI non serve trasformarsi in robot. Un prompt scritto in buon italiano non aiuta solo il modello: aiuta soprattutto voi.</p>
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="La vostra lingua" titolo="Restare umani">Ogni giorno scriverete molti prompt. Se sono tutti telegrafici, è quella la lingua che allenate. Scrivere frasi vere tiene in esercizio la vostra.</Card>
+    <Card tag="Tra qualche mese" titolo="Rileggersi e capire">Un prompt chiaro si capisce anche dopo settimane: cosa avevate chiesto e perché. Una lista di parole chiave, a distanza di mesi, non dice più niente.</Card>
+    <Card variante="peach" tag="Mentre scrivete" titolo="Le idee arrivano scrivendo">Cercare la parola giusta obbliga a chiarire cosa volete. Spesso è proprio lì che spunta il dettaglio mancante, il caso particolare, la modifica migliore.</Card>
+  </Grid>
+  <Grid colonne={2} classe="brief mt-m">
+    <div class="card bad">
+      <h3>Telegrafico</h3>
+      <blockquote>pagina menu, mobile, font grandi, no librerie, stile home</blockquote>
+    </div>
+    <div class="card good">
+      <h3>Scritto</h3>
+      <blockquote>Vorrei la pagina del menu. Molti la apriranno dal telefono quando sono già seduti al tavolo: caratteri grandi e prezzi ben visibili. Stile come la home, niente librerie esterne.</blockquote>
+    </div>
+  </Grid>
+  <p class="footnote">Scrivendo per esteso è venuta un'idea nuova: chi legge il menu è già al tavolo, quindi contano i prezzi. Scrivere bene non vuol dire scrivere tanto: frasi chiare, senza giri di parole.</p>
+</Slide>

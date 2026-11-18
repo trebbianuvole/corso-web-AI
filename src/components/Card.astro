@@ -1,0 +1,12 @@
+---
+// Una scheda: etichetta facoltativa, titolo e testo (nello slot).
+// variante: "peach", "sky", "good", "bad"… (le classi di style.css)
+interface Props {
+  variante?: string;
+  tag?: string;
+  titolo: string;
+}
+const { variante, tag, titolo } = Astro.props;
+const testo = Astro.slots.has("default") ? await Astro.slots.render("default") : "";
+---
+<div class:list={["card", variante]}>{tag && <span class="tag" set:html={tag} />}<h3 set:html={titolo} />{testo && <p set:html={testo} />}</div>

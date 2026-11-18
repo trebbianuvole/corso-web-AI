@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.3 Com'è fatto un sito" titolo="Frontend, backend, database" lead="Torniamo al ristorante. Ogni sito complesso ha tre zone.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="La sala" titolo="Frontend">Quello che vedete e toccate, nel browser. HTML, CSS, JavaScript. È la parte che costruiremo noi.</Card>
+    <Card tag="La cucina" titolo="Backend">Il codice che gira sul server e che il cliente non vede: controlla le password, calcola, prepara le risposte.</Card>
+    <Card tag="La dispensa" titolo="Database">Dove i dati restano conservati e ordinati: utenti, prenotazioni, prodotti, messaggi.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Ci serve un backend?">Per il sito della trattoria no: le pagine sono uguali per tutti e la prenotazione passa da WhatsApp. Il backend serve quando il sito deve ricordarsi qualcosa di ogni utente.</Card>
+</Slide>

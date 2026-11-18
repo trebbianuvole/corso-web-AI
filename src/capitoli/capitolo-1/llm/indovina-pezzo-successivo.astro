@@ -1,0 +1,17 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="1.2 Come funziona un LLM" titolo="Fa una cosa sola: indovina il pezzo successivo" lead="Guarda tutto il testo che ha davanti, calcola quale pezzo è più probabile che venga dopo, lo aggiunge. Poi ricomincia. Parola dopo parola, nasce una risposta.">
+  <div class="card">
+    <div class="tokens tok-big">
+      <span class="tok">Il</span><span class="tok"> gatto</span><span class="tok"> dorme</span><span class="tok"> sul</span><span class="tok" style="outline:3px solid var(--orange);background:var(--card)"> ?</span>
+    </div>
+    <div class="ng-bars mt-m" aria-label="Esempio di probabilità">
+      <div class="ng-row top"><span class="w">divano</span><span class="track"><span class="fill" style="width:41%"></span></span><span class="pct">41%</span><span></span></div>
+      <div class="ng-row"><span class="w">letto</span><span class="track"><span class="fill" style="width:27%"></span></span><span class="pct">27%</span><span></span></div>
+      <div class="ng-row"><span class="w">tetto</span><span class="track"><span class="fill" style="width:12%"></span></span><span class="pct">12%</span><span></span></div>
+      <div class="ng-row"><span class="w">tappeto</span><span class="track"><span class="fill" style="width:8%"></span></span><span class="pct">8%</span><span></span></div>
+    </div>
+    <p class="footnote" style="margin-top:14px">Numeri di esempio.</p>
+  </div>
+</Slide>

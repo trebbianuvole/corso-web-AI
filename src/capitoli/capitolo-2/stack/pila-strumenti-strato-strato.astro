@@ -1,0 +1,14 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.4 Lo stack" titolo="Una pila di strumenti, strato per strato">
+  <p class="lead" style="max-width:62ch">«Stack» in inglese vuol dire pila. Gli strumenti di un progetto stanno uno sopra l'altro, come i piatti: ogni strato fa un lavoro e ha i suoi strumenti tipici.</p>
+  <div class="pila mt-l">
+    <div class="top"><b>Interfaccia</b><span>Quello che si vede e si tocca. Il frontend.</span><span class="chips"><i>HTML</i><i>CSS</i><i>JavaScript</i><i>React</i></span></div>
+    <div><b>Logica</b><span>Regole, calcoli, controlli sulle password. Il backend.</span><span class="chips"><i>Node.js</i><i>Python</i><i>PHP</i><i>Java</i></span></div>
+    <div><b>Dati</b><span>Dove le informazioni restano conservate. Il database.</span><span class="chips"><i>PostgreSQL</i><i>MySQL</i><i>MongoDB</i></span></div>
+    <div><b>Infrastruttura</b><span>I computer su cui gira tutto: hosting e cloud.</span><span class="chips"><i>Vercel</i><i>Netlify</i><i>AWS</i><i>Google Cloud</i></span></div>
+    <div class="base"><b>Attrezzi di lavoro</b><span>Dove si scrive, si prova e si conserva il codice.</span><span class="chips"><i>VS Code</i><i>Git</i><i>GitHub</i><i>Claude Code</i></span></div>
+  </div>
+  <p class="footnote">Il sito della trattoria usa solo tre strati: interfaccia, infrastruttura, attrezzi. Niente backend, niente database.</p>
+</Slide>
