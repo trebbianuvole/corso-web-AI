@@ -2,6 +2,7 @@
 // La home: titolo animato ed elenco dei capitoli, generato dai dati dei capitoli.
 import Pagina from "../layouts/Pagina.astro";
 import { capitoli } from "../lib/capitoli";
+import { conVersione } from "../lib/versione";
 
 const TOTALE = 12; // capitoli previsti dal corso
 const pronti = new Map(capitoli.map(c => [c.numero, c]));
@@ -41,5 +42,5 @@ const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
   Sito costruito con Claude, pubblicato da GitHub con Vercel.
 </footer>
 
-<script is:inline src="assets/js/home.js"></script>
+<script is:inline src={conVersione("assets/js/home.js")}></script>
 </Pagina>

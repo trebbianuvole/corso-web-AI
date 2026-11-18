@@ -5,6 +5,7 @@ import Pagina from "./Pagina.astro";
 import type { Capitolo } from "../lib/numerazione.mjs";
 import { slideDel, approfondimentiDel, rimandiDel } from "../lib/capitoli";
 import Approfondimento from "../components/slide/Approfondimento.astro";
+import { conVersione } from "../lib/versione";
 
 interface Props {
   cap: Capitolo;
@@ -63,7 +64,7 @@ const codiceRimandi = Object.keys(rimandi).length
 <div class="hint" role="status">Usa <kbd>←</kbd> <kbd>→</kbd> per le slide, <kbd>F</kbd> per lo schermo intero</div>
 
 {codiceRimandi && <script is:inline set:html={codiceRimandi} />}
-<script is:inline src="../assets/js/deck.js"></script>
-{gruppi.length > 0 && <script is:inline src="../assets/js/approfondimenti.js"></script>}
-{cap.script.map(s => <script is:inline src={`../assets/js/${s}`}></script>)}
+<script is:inline src={`../${conVersione("assets/js/deck.js")}`}></script>
+{gruppi.length > 0 && <script is:inline src={`../${conVersione("assets/js/approfondimenti.js")}`}></script>}
+{cap.script.map(s => <script is:inline src={`../${conVersione(`assets/js/${s}`)}`}></script>)}
 </Pagina>
