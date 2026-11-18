@@ -1,0 +1,14 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="checklist" kicker="6.1 Il banco di lavoro" titolo="Cosa serve" lead="Cinque cose, tutte gratuite tranne una. Spuntatele prima della prossima lezione.">
+  <ul class="checklist mt-l">
+    <li><div><strong>Gli account</strong><span>GitHub (4.5.2) e Vercel, entrati con GitHub. Per Claude Code serve un piano a pagamento: Pro o superiore.</span></div></li>
+    <li><div><strong>VS Code</strong><span>L'editor dove leggerete il codice e il diff.</span></div></li>
+    <li><div><strong>Git</strong><span>Su Windows, Git for Windows: porta anche il terminale Git Bash e l'accesso a GitHub dal browser.</span></div></li>
+    <li><div><strong>Node.js</strong><span>La versione LTS, la più stabile. Serve ad Astro e a Keystatic.</span></div></li>
+    <li><div><strong>Claude Code</strong><span>Nel terminale, in VS Code o nell'app desktop.</span></div></li>
+    <li><div><strong>Il repository del compito 4.8.4</strong><span>Clonato sul vostro computer, con il documento di progetto.</span></div></li>
+  </ul>
+  <p class="footnote">Il piano gratuito di claude.ai non comprende Claude Code. Fonte: <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">Claude Code, installazione</a>, controllata il 18 novembre 2026.</p>
+</Slide>

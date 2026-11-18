@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.1 Il banco di lavoro" titolo="VS Code in dieci minuti" lead="Non scriverete tutto voi, ma leggerete molto. Bastano cinque zone.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="1 · Sinistra" titolo="I file">L'albero delle cartelle del progetto. File → Apri cartella.</Card>
+    <Card tag="2 · Al centro" titolo="L'editor">Il file aperto, con i colori che distinguono le parti del codice.</Card>
+    <Card tag="3 · Sinistra" titolo="Git">I file cambiati; cliccandone uno vedete il diff (4.7.4).</Card>
+    <Card tag="4 · In basso" titolo="Il terminale">Terminale → Nuovo terminale: si apre già nella cartella del progetto.</Card>
+    <Card tag="5 · Estensioni" titolo="Astro e Claude Code">L'estensione ufficiale di Astro colora i file <code>.astro</code>; quella di Claude Code porta l'agente dentro l'editor.</Card>
+    <Card variante="peach" tag="Il trucco" titolo="Ctrl+P">Scrivete un pezzo del nome di un file e lo aprite al volo. Sul Mac, Cmd+P.</Card>
+  </Grid>
+</Slide>

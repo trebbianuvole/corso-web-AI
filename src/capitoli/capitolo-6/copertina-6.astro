@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 6" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Costruire con l'AI" lead="Dal CLAUDE.md a un sito in Astro, online, costruito una funzionalità alla volta.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Il banco di lavoro" inLinea>gli strumenti installati e un progetto vuoto</Passo>
+    <Passo titolo="Il CLAUDE.md e la prima sessione" inLinea>dare il contesto, lavorare a passi</Passo>
+    <Passo titolo="I componenti" inLinea>i mattoni di un sito in Astro</Passo>
+    <Passo titolo="Una funzionalità alla volta" inLinea>dalla storia al commit</Passo>
+    <Passo titolo="Pubblicare, e quando si rompe" inLinea>online con Vercel; come uscire dai guai</Passo>
+  </Steps>
+  <SieteQui capitolo={6} classe="mt-m" />
+</Slide>

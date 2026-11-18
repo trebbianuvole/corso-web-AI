@@ -1,0 +1,27 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.1 Il banco di lavoro" titolo="Node.js e npm: perché servono" lead="Il sito finito è HTML, CSS e JavaScript. Ma per costruirlo Astro ha bisogno di un programma che giri sul vostro computer: Node.js.">
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="Node.js">fa girare JavaScript fuori dal browser. Astro è scritto così.</Def>
+    <Def termine="npm">arriva con Node: scarica le librerie del progetto, elencate in <code>package.json</code>, nella cartella <code>node_modules</code>.</Def>
+    <Def termine="LTS">«supporto a lungo termine»: la versione stabile da usare. Astro vuole almeno la 22.23.4, e solo versioni pari.</Def>
+  </Defs>
+  <div>
+    <div class="term" role="img" aria-label="Controllo delle versioni di Node e npm, poi npm install e npm run dev">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; node -v</span>
+v26.13.1
+<span class="u">&gt; npm install</span>
+added 184 packages in 4s
+<span class="u">&gt; npm run dev</span>
+ astro  ready in 312 ms
+┃ Local    <span class="ok">http://localhost:4321/</span></pre>
+    </div>
+    <Card variante="sky mt-m" titolo="Su questo computer">Preparando questo capitolo Node mancava: l'abbiamo installato con <code>winget install OpenJS.NodeJS.LTS</code>, e la build del sito è partita.</Card>
+  </div>
+  <p class="footnote" slot="intro">Fonte: <a href="https://docs.astro.build/en/install-and-setup/" target="_blank" rel="noopener">Astro, installazione</a>.</p>
+</Slide>

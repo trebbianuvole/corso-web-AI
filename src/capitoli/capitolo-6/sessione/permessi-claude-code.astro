@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="6.3 La prima sessione" titolo="I permessi" lead="Quanto può fare Claude senza chiedere lo decidete voi, con le modalità. Shift+Tab passa dall'una all'altra.">
+  <table class="compare mt-m">
+    <thead><tr><th>Modalità</th><th>Cosa fa da solo</th><th>Quando</th></tr></thead>
+    <tbody>
+      <tr><td>Manuale</td><td data-label="Cosa fa da solo">Solo leggere: ogni modifica e ogni comando chiedono il permesso</td><td data-label="Quando">All'inizio, per imparare</td></tr>
+      <tr><td>Accetta modifiche</td><td data-label="Cosa fa da solo">Modifica i file del progetto; i comandi chiedono</td><td data-label="Quando">Lavoro normale, con i commit come rete</td></tr>
+      <tr><td>Plan</td><td data-label="Cosa fa da solo">Legge e propone; non modifica finché non approvate</td><td data-label="Quando">Prima di ogni lavoro nuovo</td></tr>
+      <tr><td>Auto</td><td data-label="Cosa fa da solo">Quasi tutto, con un controllo automatico di sicurezza</td><td data-label="Quando">Lavori lunghi, quando vi fidate del piano</td></tr>
+    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="Mai a occhi chiusi">C'è anche una modalità che salta tutti i controlli: la documentazione la consiglia solo in ambienti isolati. Sul vostro computer, no.</Card>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener">Claude Code, modalità dei permessi</a>, controllata il 18 novembre 2026.</p>
+</Slide>

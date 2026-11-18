@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.3 La prima sessione" titolo="Un passo alla volta" lead="Ogni passo finisce con un commit. Così la storia del progetto è una fila di punti sicuri a cui tornare.">
+  <div class="term mt-l" role="img" aria-label="La storia del sito della trattoria dopo la prima sessione: cinque commit piccoli">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git log --oneline</span>
+<span class="dot">b71e0c4</span> Aggiunge la pagina Dove siamo con la mappa
+<span class="dot">5a2d9e1</span> Aggiunge il piè di pagina con orari e telefono
+<span class="dot">9f13a7b</span> Crea il layout comune con il menu di navigazione
+<span class="dot">c48e2f0</span> Crea la home con nome, frase e orari
+<span class="dot">1d0b6aa</span> Crea il progetto Astro vuoto</pre>
+  </div>
+  <Card variante="sky mt-m" titolo="Ditelo a Claude">«Quando un passo è finito e la build passa, fai un commit con un messaggio chiaro, poi fermati e aspetta.» Si può scrivere anche nel CLAUDE.md.</Card>
+</Slide>

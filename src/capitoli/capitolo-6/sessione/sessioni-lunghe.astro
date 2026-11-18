@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.3 La prima sessione" titolo="Le sessioni lunghe" lead="La memoria di lavoro (1.2.3) si riempie. Quando è piena, Claude riassume da solo; ma una sessione piena di cose vecchie lavora peggio.">
+  <Card slot="intro" variante="sky mt-m" titolo="La regola pratica">Un lavoro, una sessione. Finito un passo e fatto il commit, se il prossimo lavoro è diverso, /clear e si riparte. Il CLAUDE.md si ricarica da solo.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://code.claude.com/docs/en/commands" target="_blank" rel="noopener">Claude Code, i comandi</a>.</p>
+  <Defs>
+    <Def termine="/context">mostra quanto è pieno il contesto, e di cosa.</Def>
+    <Def termine="/compact">riassume la conversazione fin qui e libera spazio. Si può dire su cosa concentrarsi: «/compact tieni le decisioni sul menu».</Def>
+    <Def termine="/clear">conversazione nuova, contesto vuoto. Per un lavoro diverso.</Def>
+    <Def termine="/rewind">torna a un punto precedente della sessione (4.7.2).</Def>
+  </Defs>
+</Slide>

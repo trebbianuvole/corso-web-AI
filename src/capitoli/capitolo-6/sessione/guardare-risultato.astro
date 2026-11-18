@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.3 La prima sessione" titolo="Guardare il risultato" lead="«Ho finito» è quello che dice Claude. Se è vero, lo decidete voi, in tre posti.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="1" titolo="Nel browser">La pagina su localhost: si vede? Dal telefono? I testi sono quelli giusti, o inventati?</Card>
+    <Card tag="2" titolo="Nel diff">Quali file ha toccato? Ce ne sono che non c'entrano (4.7.4)?</Card>
+    <Card tag="3" titolo="Nel terminale">La build passa? Ci sono avvisi in rosso o in giallo?</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Se non vi convince">Ditelo in modo preciso: «il titolo è troppo grande sul telefono», non «non mi piace». E se è tutto da rifare, tornate indietro (4.3.7) invece di aggiustare.</Card>
+</Slide>

@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.2 Il CLAUDE.md" titolo="Cosa non ci va" lead="Il CLAUDE.md si carica in ogni sessione e occupa spazio nel contesto. Più è lungo, meno viene seguito: la documentazione consiglia di restare sotto le 200 righe.">
+  <Grid colonne={2} classe="mt-l">
+    <Card variante="bad" titolo="Segreti">Chiavi, password, dati dei clienti: il file è nel repository, lo leggono tutti (5.2.5).</Card>
+    <Card variante="bad" titolo="Quello che si vede dal codice">L'elenco di ogni file, il contenuto di ogni componente: Claude lo legge da solo quando serve.</Card>
+    <Card variante="bad" titolo="Il diario del lavoro">«Ieri abbiamo sistemato il menu»: va nei commit e nelle pull request, non qui.</Card>
+    <Card variante="bad" titolo="Regole vaghe">«Scrivi codice di qualità» non aiuta. «Ogni pagina usa il layout Base.astro» sì.</Card>
+  </Grid>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code, come ricorda il progetto</a>.</p>
+</Slide>

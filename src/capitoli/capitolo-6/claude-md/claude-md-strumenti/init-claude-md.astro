@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.2 CLAUDE.md: strumenti in più" titolo="Farlo scrivere a Claude con /init" lead="In un progetto che esiste già, il comando /init fa leggere il codice a Claude e gli fa scrivere una prima versione del CLAUDE.md.">
+  <Card slot="intro" variante="peach mt-m" titolo="Poi tocca a voi">/init trova i comandi e le cartelle. Non sa perché esiste il sito, per chi è, cosa non si deve fare: quella parte la scrivete voi, dal documento di progetto.</Card>
+  <p class="footnote" slot="intro">Se un CLAUDE.md c'è già, /init propone miglioramenti invece di sovrascriverlo. Fonte: <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code, come ricorda il progetto</a>.</p>
+  <div class="term" role="img" aria-label="Il comando /init dentro una sessione di Claude Code">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; /init</span>
+
+<span class="dot">●</span> Leggo package.json, astro.config.mjs, src/
+<span class="dot">●</span> Trovo i comandi: dev, build, preview
+<span class="dot">●</span> Trovo le cartelle: pages, components, layouts
+<span class="dot">●</span> Scrivo CLAUDE.md   <span class="ok">+38 righe</span></pre>
+  </div>
+</Slide>

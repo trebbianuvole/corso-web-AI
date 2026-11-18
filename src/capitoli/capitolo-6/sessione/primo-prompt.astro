@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="6.3 La prima sessione" titolo="Il primo prompt" lead="Il CLAUDE.md c'è già: il prompt dice solo cosa fare adesso, e come si capisce che è finito.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>Troppo</h3>
+      <p>«Fai il sito della trattoria.» Claude inventa testi, pagine, colori, e voi non sapete da dove cominciare a controllare.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card good">
+      <h3>Un passo</h3>
+      <p>«Crea la home: nome della trattoria, una frase, orari e indirizzo presi da DOCUMENTO.md. Niente immagini per ora. Hai finito quando <code>npm run build</code> passa e la pagina si legge bene dal telefono.»</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Gli ingredienti della 3.1.2">Il contesto sta già nel CLAUDE.md; nel prompt restano obiettivo, materiale, vincoli e formato. In più, il criterio di fine: «hai finito quando…» (6.5.2).</Card>
+</Slide>
