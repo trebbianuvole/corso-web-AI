@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="7.4 Il design con l'AI" titolo="Dare un'identità" lead="Un'identità non si descrive con aggettivi («moderno, elegante»): si mostra e si delimita.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="1" titolo="Riferimenti">Due o tre siti che vi piacciono, e cosa vi piace di ciascuno.</Card>
+    <Card tag="2" titolo="Materiale vero">Le foto del locale, il logo, il menu cartaceo, l'insegna.</Card>
+    <Card tag="3" titolo="Una palette">Tre o quattro colori presi da lì: le tovaglie, i muri, il legno.</Card>
+    <Card variante="peach" tag="4" titolo="I divieti">«Niente gradienti, niente emoji, niente frasi da agenzia, niente testi inventati.»</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Un esempio vale mille aggettivi">È la mossa della 3.1.4. «Come il menu cartaceo: carta color crema, titoli in un carattere con le grazie, un solo colore rosso mattone.»</Card>
+</Slide>

@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="7.6 Accessibilità" titolo="Far controllare l'accessibilità a Claude" lead="Claude è bravo a leggere il codice con gli occhi delle regole. Ma non usa il sito come una persona.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Cosa trova bene</h3>
+      <ul class="mt-m"><li>Immagini senza testo alternativo</li><li>Campi senza etichetta</li><li>Titoli fuori ordine</li><li>Contrasti sotto la soglia, se gli date i colori</li><li>Pulsanti che non si raggiungono con la tastiera</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Cosa gli sfugge</h3>
+      <ul class="mt-m"><li>Se un testo alternativo è utile o vuoto di senso</li><li>Se la pagina si capisce davvero, ascoltata</li><li>Problemi che si vedono solo usando il sito</li><li>A volte dichiara «tutto a posto» senza aver controllato</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Il prompt">«Controlla l'accessibilità della home secondo WCAG 2.2 livello AA. Per ogni problema: dove sta, quale regola, come si corregge. Non correggere ancora.»</Card>
+</Slide>

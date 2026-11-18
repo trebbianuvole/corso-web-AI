@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="7.4 Il design con l'AI" titolo="Dallo schizzo al codice" lead="Claude legge le immagini (1.2.8). Uno schizzo a matita su carta, fotografato col telefono, dice più di dieci righe di descrizione.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Voi</span>
+      <h3>La foto dello schizzo</h3>
+      <p>I rettangoli della 6.4.5, con i nomi dei componenti e qualche freccia: «questo va in alto», «questo solo sul telefono».</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Claude</span>
+      <h3>Il codice</h3>
+      <p>«Realizza questa pagina in Astro con i componenti che ci sono già e le variabili del design system. Dove lo schizzo non è chiaro, chiedimi.»</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Lo schizzo decide la struttura">Le proporzioni precise e i colori li decide il design system. Così lo schizzo può restare brutto: basta che sia chiaro.</Card>
+</Slide>
