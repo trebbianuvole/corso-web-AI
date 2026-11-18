@@ -1,0 +1,18 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="12.5 Chiusura del corso" titolo="La rubrica di valutazione" lead="Otto criteri, gli stessi per tutti i progetti. Usatela prima della consegna: fate valutare il progetto a Claude, criterio per criterio, poi decidete voi cosa sistemare.">
+  <table class="compare mt-m">
+    <thead><tr><th>Criterio</th><th>La domanda</th></tr></thead>
+    <tbody>
+      <tr><td>Funzionalità</td><td data-label="La domanda">Fa quello che promette, anche nei casi limite?</td></tr>
+      <tr><td>UX e UI</td><td data-label="La domanda">Una persona nuova arriva in fondo senza aiuto? È coerente e curato?</td></tr>
+      <tr><td>Qualità tecnica</td><td data-label="La domanda">Il codice è ordinato, senza debito nascosto? La build passa?</td></tr>
+      <tr><td>Sicurezza</td><td data-label="La domanda">Chiavi al sicuro, permessi nel posto giusto, dipendenze aggiornate?</td></tr>
+      <tr><td>Accessibilità</td><td data-label="La domanda">Si usa con la tastiera, sul telefono, con il testo ingrandito?</td></tr>
+      <tr><td>Affidabilità</td><td data-label="La domanda">Ci sono test? Gli errori sono gestiti? C'è un backup?</td></tr>
+      <tr><td>Autonomia</td><td data-label="La domanda">Sapete spiegare ogni scelta, anche quelle che ha fatto l'AI?</td></tr>
+      <tr><td>Documentazione</td><td data-label="La domanda">README, CLAUDE.md e manuale permettono a un altro di continuare?</td></tr>
+    </tbody>
+  </table>
+</Slide>

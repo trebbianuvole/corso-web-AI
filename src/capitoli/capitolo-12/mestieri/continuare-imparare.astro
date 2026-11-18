@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.4 I mestieri del web con l'AI" titolo="Continuare a imparare" lead="Metà degli strumenti di questo corso fra un anno avrà un nome diverso. Il metodo no. Qualche abitudine per restare aggiornati senza inseguire ogni novità.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Costruire" titolo="Un progetto vostro">Il modo più veloce di imparare resta fare: un sito per un'associazione, un'app per la vostra classe.</Card>
+    <Card tag="Leggere" titolo="Le fonti prime">La documentazione ufficiale e i blog di chi fa gli strumenti, prima dei video «dieci trucchi».</Card>
+    <Card tag="Chiedere" titolo="L'AI come insegnante">«Spiegami questo codice riga per riga», «fammi tre domande per vedere se ho capito».</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Questo sito resta">Dopo il corso diventa materiale di consultazione. Le schede aggiornabili hanno la data dell'ultimo controllo: quando la data è vecchia, è il momento di ricontrollare voi.</Card>
+</Slide>

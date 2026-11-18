@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.4 I mestieri del web con l'AI" titolo="Cosa cambia con l'AI" lead="Nella 5.5.4 avevamo visto che cala il lavoro ripetitivo e cresce quello di giudizio. Mestiere per mestiere, nel web.">
+  <table class="compare mt-l">
+    <thead><tr><th>Mestiere</th><th>L'AI fa sempre di più…</th><th>…e resta a voi</th></tr></thead>
+    <tbody>
+      <tr><td>Web designer</td><td data-label="L'AI fa">varianti di schermate, immagini, prototipi</td><td data-label="Resta a voi">capire le persone, scegliere, tenere coerente il design (7)</td></tr>
+      <tr><td>Sviluppatore</td><td data-label="L'AI fa">codice, test, documentazione</td><td data-label="Resta a voi">progettare, verificare, rispondere della sicurezza (10, 11)</td></tr>
+      <tr><td>Contenuti e SEO</td><td data-label="L'AI fa">bozze, traduzioni, varianti</td><td data-label="Resta a voi">la voce del cliente, i fatti veri, farsi trovare (8, 9)</td></tr>
+      <tr><td>Chi gestisce il progetto</td><td data-label="L'AI fa">riassunti, piani, issue</td><td data-label="Resta a voi">parlare con il cliente, decidere le priorità, consegnare (2, 12)</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Nessuno sa come sarà fra cinque anni">Chi vi dà numeri sicuri sta indovinando. Quello che vediamo oggi: chi sa dirigere e verificare l'AI può portare a termine da solo progetti che prima chiedevano più persone.</Card>
+</Slide>

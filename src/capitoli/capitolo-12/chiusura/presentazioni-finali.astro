@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="12.5 Chiusura del corso" titolo="Presentazioni finali" lead="Ogni gruppo presenta il suo progetto con la struttura della 12.5.2. Gli altri ascoltano con la rubrica in mano.">
+  <Card slot="intro" variante="sky mt-m" titolo="Per chi ascolta">Una cosa riuscita e una domanda, per ogni progetto. Domande vere: «come avete verificato che…», «perché avete scelto…».</Card>
+  <Steps>
+    <Passo titolo="Dieci minuti" inLinea>presentazione e demo dal vivo</Passo>
+    <Passo titolo="Cinque minuti" inLinea>domande della classe e del docente</Passo>
+    <Passo titolo="La rubrica" inLinea>compilata da un altro gruppo e dal docente</Passo>
+    <Passo titolo="Il repository" inLinea>consegnato con README, CLAUDE.md e manuale</Passo>
+  </Steps>
+</Slide>

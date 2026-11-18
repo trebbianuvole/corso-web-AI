@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="12.3 Lavorare con gli agenti nel tempo" titolo="Restare al comando" lead="Più gli agenti lavorano da soli, più conta decidere prima cosa possono fare. Voi siete responsabili di quello che fanno a nome vostro (5.3.1).">
+  <div class="versus mt-l">
+    <div class="card good">
+      <span class="tag">Da delegare</span>
+      <h3>Il lavoro che si verifica</h3>
+      <ul class="mt-m"><li>Test, documentazione, aggiornamenti</li><li>Prime bozze di funzioni con criteri chiari</li><li>Revisioni e segnalazioni</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <span class="tag">Da tenere</span>
+      <h3>Le decisioni e le porte</h3>
+      <ul class="mt-m"><li>Il merge su main e la pubblicazione</li><li>Lo schema dei dati, i permessi, le chiavi</li><li>Tutto quello che riguarda soldi e dati delle persone</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Tre regole che reggono nel tempo">Ogni agente lavora su un ramo, mai su main. Ogni risultato è una PR che una persona legge. I permessi dell'agente sono i minimi per il suo compito.</Card>
+</Slide>
