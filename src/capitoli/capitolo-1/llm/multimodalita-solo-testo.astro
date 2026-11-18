@@ -1,0 +1,12 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come funziona un LLM" titolo="Multimodalità: non solo testo" lead="I modelli di oggi leggono immagini, documenti e audio, e oltre al testo producono codice, grafici e file.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Foto" titolo="Uno schizzo su carta">Disegnate a mano la pagina che volete, fotografatela, e chiedete l'HTML.</Card>
+    <Card tag="Screenshot" titolo="Un errore sullo schermo">Invece di descriverlo, lo mostrate. Il modello legge il messaggio e propone la correzione.</Card>
+    <Card tag="Documento" titolo="Un PDF o un menu">Il menu del ristorante diventa la pagina del menu del sito, già impaginata.</Card>
+  </Grid>
+</Slide>

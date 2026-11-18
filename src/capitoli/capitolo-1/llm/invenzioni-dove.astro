@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Allucinazioni" titolo="Dove si nascondono">
+  <Grid colonne={3} classe="mt-l">
+    <Card titolo="Fonti e citazioni">Libri, articoli, sentenze e link che non esistono, con autori e date credibili.</Card>
+    <Card titolo="Codice">Funzioni e librerie inventate. C'è chi registra apposta quei nomi inventati per far scaricare codice malevolo.</Card>
+    <Card titolo="Numeri e dettagli">Date, prezzi, statistiche, biografie: più il dettaglio è preciso e raro, più è a rischio.</Card>
+  </Grid>
+  <a class="card case mt-m" href="https://en.wikipedia.org/wiki/Mata_v._Avianca,_Inc." target="_blank" rel="noopener">
+    <span class="tag">Un caso vero, New York 2023</span>
+    <h3>Gli avvocati e le sentenze inventate</h3>
+    <p>Due avvocati presentano in tribunale un atto scritto con ChatGPT. Cita sentenze che non sono mai esistite, complete di citazioni. Il giudice se ne accorge: multa da 5.000 dollari e una pessima figura.</p>
+  </a>
+</Slide>

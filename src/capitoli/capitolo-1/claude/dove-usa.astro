@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.4 Claude" titolo="Dove si usa">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Web e telefono" titolo="Claude">Su claude.ai e nell'app. Si chatta, si allegano file, si ottengono documenti, grafici e pagine pronte.</Card>
+    <Card variante="peach" tag="Sul vostro computer" titolo="Claude Desktop">Lo stesso Claude, ma può lavorare sulle cartelle del PC, usare il browser e portare avanti attività lunghe.</Card>
+    <Card tag="Per programmare" titolo="Claude Code">Un agente che lavora dentro un progetto di codice: legge i file, li modifica, esegue comandi, pubblica su GitHub.</Card>
+  </Grid>
+  <div class="card sky mt-m">
+    <h3>E Cowork?</h3>
+    <p>Era la modalità in cui Claude lavora in autonomia su file e attività. Ora chat e Cowork sono una cosa sola: è Claude a decidere se rispondere al volo o mettersi al lavoro. La novità arriva per gradi, quindi su qualche account potreste ancora vedere le due voci separate.</p>
+  </div>
+</Slide>

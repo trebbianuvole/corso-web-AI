@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Gli strumenti per creare siti e app" lead="Lo stesso modello può stare dentro strumenti molto diversi. Cambia quanto controllo avete voi.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Chat" titolo="Chiedi e copi">ChatGPT, Claude, Gemini. Ottimi per capire, progettare, scrivere pezzi di codice.</Card>
+    <Card tag="Costruttori visuali" titolo="Descrivi e guardi">Lovable, Bolt, v0, Replit. Scrivete cosa volete, l'app compare. Comodi, ma vi nascondono molto.</Card>
+    <Card tag="Assistenti nell'editor" titolo="Scrivi con un aiuto">GitHub Copilot, Cursor. Suggeriscono e modificano codice mentre lavorate.</Card>
+    <Card variante="peach" tag="Agenti di programmazione" titolo="Delega il lavoro">Claude Code, Codex di OpenAI. Ricevono un obiettivo, leggono il progetto, scrivono, provano, correggono.</Card>
+  </Grid>
+</Slide>

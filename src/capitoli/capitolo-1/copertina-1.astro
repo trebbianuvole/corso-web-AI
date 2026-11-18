@@ -1,0 +1,13 @@
+---
+import Passo from "../../components/Passo.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} kicker="Capitolo 1" titoloStile="font-size:clamp(2.6rem,6vw,5.6rem);max-width:15ch" titolo="Capire l'AI e orientarsi negli strumenti" lead="Cosa sa fare l'AI, come funziona a grandi linee e come si usa per costruire qualcosa di vero.">
+  <Steps classe="mt-l" stile="max-width:720px">
+    <Passo titolo="Breve storia" inLinea>da regole scritte a mano a modelli che scrivono</Passo>
+    <Passo titolo="Come funziona un LLM" inLinea>token, contesto, probabilità, allucinazioni</Passo>
+    <Passo titolo="Il mercato oggi" inLinea>chi fa cosa e cosa sta succedendo</Passo>
+    <Passo titolo="Claude" inLinea>l'app, i modelli, agenti, skill e artifact</Passo>
+  </Steps>
+</Slide>

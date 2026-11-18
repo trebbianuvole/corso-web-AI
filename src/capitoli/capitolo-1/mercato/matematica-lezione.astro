@@ -1,0 +1,11 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="1.3 Cosa sta succedendo" titolo="Cosa ci insegna la matematica" lead="La matematica è il campo dove un risultato si può controllare in modo definitivo. Ed è lì che i modelli sono migliorati più in fretta.">
+  <div class="stack">
+    <Card variante="peach" titolo="Produrre è diventato facile">Un modello scrive una dimostrazione, o un sito, in pochi minuti.</Card>
+    <Card titolo="Verificare resta il lavoro vero">I matematici usano Lean per controllare. Noi controlleremo il codice provandolo, leggendolo, mettendolo online.</Card>
+    <Card titolo="Il dibattito è aperto">Tra i matematici c'è chi parla di età dell'oro e chi teme di perdere la comprensione di ciò che si dimostra.</Card>
+  </div>
+</Slide>

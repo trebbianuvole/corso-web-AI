@@ -1,0 +1,11 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="1.2 Come funziona un LLM" titolo="Il contesto: la memoria di lavoro" lead="È tutto quello che il modello vede in quel momento: le vostre istruzioni, la conversazione, i file allegati, la sua risposta.">
+  <div class="stack">
+    <Card variante="peach" titolo="Grande, ma non infinito">I modelli Claude di oggi arrivano a un milione di token: più di mille pagine di testo.</Card>
+    <Card titolo="Quello che non c'è, non esiste">Se un'informazione non è nel contesto il modello non la conosce, o la tira a indovinare. Una nuova chat parte da zero.</Card>
+    <Card titolo="Più materiale, risposte migliori">Allegare il documento giusto vale più di dieci domande ben scritte.</Card>
+  </div>
+</Slide>
