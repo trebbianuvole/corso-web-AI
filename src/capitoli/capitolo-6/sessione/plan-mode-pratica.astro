@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="6.3 La prima sessione" titolo="Plan mode in pratica" lead="In plan mode Claude legge, esplora e propone, ma non modifica niente finché non approvate il piano.">
+  <Card slot="intro" variante="sky mt-m" titolo="Come si attiva">Shift+Tab finché in basso compare «plan mode on». Oppure si scrive <code>/plan</code> prima della richiesta.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener">Claude Code, modalità dei permessi</a>.</p>
+  <Steps>
+    <Passo titolo="Chiedete in plan mode">l'obiettivo, non i dettagli</Passo>
+    <Passo titolo="Leggete il piano">file da creare, scelte, domande aperte</Passo>
+    <Passo titolo="Correggete">«niente libreria per le date», «prima solo la home»</Passo>
+    <Passo titolo="Approvate">e solo allora Claude scrive</Passo>
+  </Steps>
+</Slide>

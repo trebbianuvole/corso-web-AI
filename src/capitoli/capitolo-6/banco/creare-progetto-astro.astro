@@ -1,0 +1,12 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="6.1 Il banco di lavoro" titolo="Creare il progetto Astro" lead="Nel repository del 4.8.4, con Claude in plan mode: prima vi dice cosa farà, poi lo fa.">
+  <Card slot="intro" variante="sky mt-m" titolo="Il comando che userà">Astro si crea con <code>npm create astro@latest</code>. Se Claude propone qualcosa di diverso, chiedetegli perché.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://docs.astro.build/en/install-and-setup/" target="_blank" rel="noopener">Astro, installazione</a>.</p>
+  <div class="chat">
+    <div class="bubble user">Siamo nel repository del sito della trattoria Da Rina. C'è già DOCUMENTO.md con il progetto. Crea qui un progetto Astro vuoto, senza esempi, con TypeScript. Non scrivere ancora pagine: voglio solo che <code>npm run dev</code> funzioni. Prima mostrami il piano.</div>
+    <div class="bubble bot"><b>Piano</b><ol><li>Creo il progetto con <code>npm create astro@latest</code>, modello vuoto</li><li>Installo le dipendenze</li><li>Avvio <code>npm run dev</code> e controllo la pagina</li><li>Aggiungo <code>node_modules</code> e <code>dist</code> al <code>.gitignore</code></li></ol>Procedo?</div>
+  </div>
+</Slide>

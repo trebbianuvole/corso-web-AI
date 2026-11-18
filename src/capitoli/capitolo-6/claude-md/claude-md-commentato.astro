@@ -1,0 +1,36 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="esempio" classe="compact" kicker="6.2 Il CLAUDE.md" titolo="Un CLAUDE.md commentato" lead="Quello della trattoria Da Rina. Corto: ogni riga c'è perché serve.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Il CLAUDE.md della trattoria Da Rina"><span class="k"># Trattoria Da Rina: sito</span>
+Sito della trattoria: menu, orari, dove siamo,
+prenotazioni per telefono e WhatsApp.     <span class="m">①</span>
+
+<span class="k">## Stack</span>                                   <span class="m">②</span>
+Astro, solo pagine statiche. Keystatic per
+menu e orari (dopo). GitHub e Vercel.
+
+<span class="k">## Comandi</span>                                 <span class="m">③</span>
+- npm run dev: sito in locale
+- npm run build: deve passare prima di ogni commit
+
+<span class="k">## Regole</span>                                  <span class="m">④</span>
+- Testi in italiano, tono caldo e semplice
+- Un componente per ogni pezzo che si ripete
+- Niente librerie nuove senza chiedere
+- Prima di finire: npm run build e controllo
+  dal telefono
+
+<span class="k">## Mai</span>                                     <span class="m">⑤</span>
+- Mai chiavi o password nei file
+- Mai inventare piatti, prezzi o orari</pre>
+    <ol class="note-codice">
+      <li><b>Cos'è il progetto</b> in due righe: il contesto per ogni decisione.</li>
+      <li><b>Lo stack</b>, così non propone React o WordPress.</li>
+      <li><b>I comandi</b> per provare: li userà da solo.</li>
+      <li><b>Le regole</b> del gruppo: stile, struttura, verifiche.</li>
+      <li><b>I divieti</b>, scritti chiari. Gli errori costosi vanno qui.</li>
+    </ol>
+  </div>
+</Slide>

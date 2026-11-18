@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.4 Componenti interattivi" titolo="React, Vue, Svelte dentro Astro" lead="Astro può ospitare componenti scritti con altri framework (2.4.4). Si aggiungono con un comando, e convivono nella stessa pagina.">
+  <Card slot="intro" variante="peach mt-m" tag="Con l'AI" titolo="Serve davvero?">L'AI conosce molto bene React e tende a proporlo anche quando non serve. Per un pulsante o un menu a tendina basta Astro con un po' di JavaScript. Un framework in più è più codice da capire e da aggiornare.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://docs.astro.build/en/guides/framework-components/" target="_blank" rel="noopener">Astro, componenti di altri framework</a>.</p>
+  <div class="term" role="img" aria-label="Il comando npx astro add react aggiunge React al progetto">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; npx astro add react</span>
+<span class="dim">  Astro installa React e aggiorna da solo
+  astro.config.mjs</span>
+
+<span class="dim"># poi, in una pagina:</span>
+&lt;Prenotazioni <span class="dot">client:load</span> /&gt;</pre>
+  </div>
+</Slide>

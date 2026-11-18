@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="compito" split kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Il vostro MVP online" lead="La versione più piccola del vostro progetto che funziona davvero (2.2), pubblicata su Vercel.">
+  <Card slot="intro" variante="sky mt-m" titolo="Da portare">Il link al sito online, il link al repository, e il vostro CLAUDE.md. Una frase: cosa avete imparato a chiedere meglio a Claude.</Card>
+  <Steps>
+    <Passo titolo="Il CLAUDE.md" inLinea>dal documento di progetto (6.2)</Passo>
+    <Passo titolo="Il layout e i componenti" inLinea>che si ripetono (6.4)</Passo>
+    <Passo titolo="Le funzionalità dell'MVP" inLinea>una alla volta, ognuna con la sua pull request (6.5)</Passo>
+    <Passo titolo="Online su Vercel" inLinea>con l'anteprima controllata dal telefono (6.6)</Passo>
+  </Steps>
+</Slide>

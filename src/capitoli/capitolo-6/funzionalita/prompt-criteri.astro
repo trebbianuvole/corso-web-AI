@@ -1,0 +1,10 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="6.5 Una funzionalità alla volta" titolo="Il prompt con i criteri di accettazione" lead="I criteri della 2.6 diventano la fine del prompt. Così Claude sa quando fermarsi, e voi sapete cosa controllare.">
+  <div class="chat mt-l">
+    <div class="bubble user">Crea la pagina Menu usando il componente Piatto, con cinque piatti presi da DOCUMENTO.md, divisi in primi, secondi e dolci.<br><br><b>Hai finito quando:</b><br>– la pagina usa il layout Base;<br>– sul telefono i piatti sono uno sotto l'altro, senza scorrimento orizzontale;<br>– i prezzi hanno il simbolo dell'euro;<br>– <code>npm run build</code> passa.<br>Poi fai un commit e fermati.</div>
+  </div>
+  <Card variante="sky mt-m" titolo="Chiedete la prova">«Per ogni criterio, dimmi come l'hai verificato.» Se per uno risponde «dovrebbe funzionare», quello va controllato a mano.</Card>
+</Slide>

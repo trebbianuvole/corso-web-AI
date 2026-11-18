@@ -1,0 +1,34 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="demo" classe="compact" kicker="6.5 Una funzionalità alla volta" titolo="Un refactoring" lead="Stesso risultato sullo schermo, codice migliore. Il prompt: «Semplifica la pagina del menu senza cambiare niente di quello che si vede. Poi dimmi come l'hai verificato.»">
+  <div class="grid g2 mt-m">
+    <div style="min-width:0">
+      <p class="kicker">Prima: menu.astro, un blocco per piatto</p>
+<pre class="code" aria-label="Prima: tre blocchi HTML quasi uguali, uno per piatto">&lt;article class="piatto"&gt;
+  &lt;h3&gt;Tagliatelle al ragù&lt;/h3&gt;
+  &lt;p&gt;Fatte a mano&lt;/p&gt;
+  &lt;p class="prezzo"&gt;12 €&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class="piatto"&gt;
+  &lt;h3&gt;Polpette al sugo&lt;/h3&gt;
+  &lt;p&gt;La ricetta di Rina&lt;/p&gt;
+  &lt;p class="prezzo"&gt;10 €&lt;/p&gt;
+&lt;/article&gt;
+<span class="m">&lt;!-- ...e così per ogni piatto --&gt;</span></pre>
+    </div>
+    <div style="min-width:0">
+      <p class="kicker">Dopo: i dati in un elenco, un componente</p>
+<pre class="code" aria-label="Dopo: un elenco di piatti e un ciclo che usa il componente Piatto"><span class="m">---</span>
+<span class="k">const</span> piatti = [
+  &#123; nome: <span class="s">"Tagliatelle al ragù"</span>,
+    descrizione: <span class="s">"Fatte a mano"</span>, prezzo: 12 &#125;,
+  &#123; nome: <span class="s">"Polpette al sugo"</span>,
+    descrizione: <span class="s">"La ricetta di Rina"</span>, prezzo: 10 &#125;,
+];
+<span class="m">---</span>
+&#123;piatti.map((p) =&gt; &lt;Piatto &#123;...p&#125; /&gt;)&#125;</pre>
+      <p class="footnote">Un piatto nuovo è una riga nell'elenco. E quell'elenco è proprio quello che, nel capitolo 8, arriverà da Keystatic.</p>
+    </div>
+  </div>
+</Slide>

@@ -1,0 +1,18 @@
+---
+import Card from "../../../../components/Card.astro";
+import Def from "../../../../components/Def.astro";
+import Defs from "../../../../components/Defs.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.4 Componenti interattivi" titolo="Isole interattive" lead="Per default Astro manda al browser solo HTML e CSS: niente JavaScript. Se un componente deve reagire ai clic, lo si accende da solo, come un'isola in una pagina statica.">
+  <Card slot="intro" variante="sky mt-m" titolo="Perché è un vantaggio">La pagina del menu resta leggera e velocissima; solo il calendario delle prenotazioni porta con sé il suo JavaScript.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://docs.astro.build/en/concepts/islands/" target="_blank" rel="noopener">Astro, le isole</a>.</p>
+  <div>
+<pre class="code" aria-label="Un componente Calendario attivato nel browser con client:visible">&lt;Calendario <span class="k">client:visible</span> /&gt;</pre>
+    <Defs classe="mt-m">
+      <Def termine="client:load">si accende subito, appena la pagina carica</Def>
+      <Def termine="client:visible">si accende quando arriva sullo schermo</Def>
+      <Def termine="client:idle">si accende quando il browser ha finito il resto</Def>
+    </Defs>
+  </div>
+</Slide>

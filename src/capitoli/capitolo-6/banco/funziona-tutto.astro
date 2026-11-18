@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="6.1 Il banco di lavoro" titolo="Funziona tutto?" lead="Trenta minuti, a coppie. Chi finisce prima aiuta gli altri: è il modo più veloce per tutta la classe.">
+  <Card slot="intro" variante="sky mt-m" titolo="Se qualcosa non va">Copiate l'errore esatto e chiedete a Claude, nella chat del browser, cosa significa (6.7.3). Poi chiamate il docente.</Card>
+  <Steps>
+    <Passo titolo="node -v e git --version" inLinea>rispondono con un numero</Passo>
+    <Passo titolo="claude --version" inLinea>idem</Passo>
+    <Passo titolo="Il progetto Astro" inLinea>creato nel vostro repository (6.1.5)</Passo>
+    <Passo titolo="npm run dev" inLinea>la pagina si apre su localhost:4321</Passo>
+    <Passo titolo="Un commit e un push" inLinea>«Crea il progetto Astro vuoto»</Passo>
+  </Steps>
+</Slide>

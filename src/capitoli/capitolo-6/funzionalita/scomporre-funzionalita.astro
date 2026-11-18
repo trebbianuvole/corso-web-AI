@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="6.5 Una funzionalità alla volta" titolo="Scomporre una funzionalità" lead="«Come cliente voglio vedere il menu del giorno dal telefono» (2.6.2). È una storia, non un compito: va divisa in passi che si possono provare uno per uno.">
+  <Card slot="intro" variante="sky mt-m" titolo="Un passo è giusto se">si fa in una sessione, si prova da solo, e finisce con un commit. Se non riuscite a dire come provarlo, è troppo grande.</Card>
+  <Steps>
+    <Passo titolo="Il componente Piatto" inLinea>con nome, descrizione, prezzo</Passo>
+    <Passo titolo="La pagina Menu" inLinea>con cinque piatti scritti a mano</Passo>
+    <Passo titolo="Le sezioni" inLinea>primi, secondi, dolci</Passo>
+    <Passo titolo="Il telefono" inLinea>si legge bene su uno schermo stretto</Passo>
+    <Passo titolo="Il collegamento" inLinea>dal menu di navigazione e dalla home</Passo>
+  </Steps>
+</Slide>

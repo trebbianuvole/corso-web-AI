@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.2 Il CLAUDE.md" titolo="Dal documento di progetto al CLAUDE.md" lead="Ogni sessione di Claude parte da zero (1.2.3). Il CLAUDE.md è il contesto della 3.1.9, scritto una volta e caricato da solo ogni volta.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Per le persone</span>
+      <h3>Il documento di progetto</h3>
+      <p>Perché esiste il sito, per chi, cosa deve fare. Lo leggono il cliente e la squadra.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Per l'agente</span>
+      <h3>Il CLAUDE.md</h3>
+      <p>Lo stesso progetto, detto come istruzioni: stack, comandi, cartelle, regole, cose da non fare mai.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Dove sta">Nella cartella principale del progetto, dentro Git, insieme al codice. Così ogni persona e ogni agente della squadra legge le stesse regole.</Card>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code, come ricorda il progetto</a>.</p>
+</Slide>

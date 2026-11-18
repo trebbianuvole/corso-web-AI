@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" tipo="con-ai" kicker="6.2 Il CLAUDE.md" titolo="Il CLAUDE.md cresce con il progetto" lead="Non si scrive perfetto il primo giorno. Si aggiorna quando si scopre che manca qualcosa.">
+  <div class="chat mt-l">
+    <div class="bubble user">Di nuovo hai messo il prezzo senza il simbolo dell'euro. È la seconda volta.</div>
+    <div class="bubble bot">Hai ragione, correggo. Vuoi che aggiunga una regola al CLAUDE.md, così non succede più?</div>
+    <div class="bubble user">Sì: «I prezzi si scrivono così: 12 €, con lo spazio».</div>
+  </div>
+  <Card variante="sky mt-m" titolo="La regola delle due volte">Quando Claude sbaglia due volte la stessa cosa, non ripetete la correzione: aggiungete una regola. E quando una regola non serve più, toglietela.</Card>
+  <p class="footnote">Il CLAUDE.md si modifica come ogni file, con un commit. Questo stesso sito ha un CLAUDE.md, aggiornato a ogni capitolo.</p>
+</Slide>

@@ -1,0 +1,23 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="6.1 Il banco di lavoro" titolo="Installare Claude Code" lead="Un comando nel terminale, poi l'accesso dal browser con il vostro account Claude.">
+  <Card slot="intro" variante="sky mt-m" titolo="Senza terminale">C'è anche l'app desktop di Claude, con la scheda Code: stesso agente, con le finestre.</Card>
+  <Card slot="intro" variante="peach mt-m" titolo="Comandi da internet">Questi comandi scaricano ed eseguono un programma. Copiateli solo dalla pagina ufficiale, mai da un sito qualsiasi.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">Claude Code, installazione</a>, controllata il 18 novembre 2026. I comandi possono cambiare: in caso di dubbio vale la pagina ufficiale.</p>
+  <div class="term" role="img" aria-label="I comandi di installazione per Windows e per Mac e Linux, la verifica della versione e l'avvio">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="dim"># Windows, in PowerShell</span>
+<span class="u">&gt; irm https://claude.ai/install.ps1 | iex</span>
+
+<span class="dim"># Mac e Linux</span>
+<span class="u">$ curl -fsSL https://claude.ai/install.sh | bash</span>
+
+<span class="dim"># poi, in un terminale nuovo</span>
+<span class="u">&gt; claude --version</span>
+<span class="u">&gt; cd sito-rina</span>
+<span class="u">&gt; claude</span>
+<span class="dim">  si apre il browser per l'accesso</span></pre>
+  </div>
+</Slide>

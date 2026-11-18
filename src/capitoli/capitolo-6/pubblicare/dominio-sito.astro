@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="6.6 Pubblicare" titolo="Il dominio" lead="trattoriadarina.vercel.app funziona, ma il cliente vorrà il suo nome: trattoriadarina.it. Il dominio è l'insegna della 2.3.">
+  <Card slot="intro" variante="peach mt-m" titolo="Di chi è il dominio">Si registra a nome del cliente, con un suo account, e si paga ogni anno. Se lo intestate a voi, il cliente dipende da voi per sempre (12.2.1).</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://vercel.com/docs/domains/working-with-domains/add-a-domain" target="_blank" rel="noopener">Vercel, aggiungere un dominio</a>.</p>
+  <Steps>
+    <Passo titolo="Comprate il dominio">da un registrar, o direttamente da Vercel</Passo>
+    <Passo titolo="Aggiungetelo al progetto">Settings → Domains in Vercel</Passo>
+    <Passo titolo="Collegate i DNS">Vercel dice quali record impostare dal registrar</Passo>
+    <Passo titolo="Aspettate">da pochi minuti a qualche ora; il certificato per https arriva da solo</Passo>
+  </Steps>
+</Slide>

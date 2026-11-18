@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.2 CLAUDE.md: strumenti in più" titolo="Skill di progetto e documentazione aggiornata" lead="Il CLAUDE.md dice le regole. Per sapere come funziona la versione di oggi di una libreria, servono altre fonti.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Documentazione" titolo="Il server MCP di Astro">Astro offre un server MCP (3.3) che dà a Claude la documentazione ufficiale aggiornata. Si collega con un comando: <code>claude mcp add --transport http astro-docs https://mcp.docs.astro.build/mcp</code></Card>
+    <Card tag="Procedure" titolo="Le skill di progetto">Istruzioni per un lavoro preciso, che Claude carica solo quando serve (3.2): «come si aggiunge un piatto al menu», «come si pubblica».</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Perché serve">La data di taglio: una libreria uscita o cambiata dopo l'addestramento il modello non la conosce, o la ricorda com'era. Con la documentazione giusta in mano sbaglia molto meno (6.7.6).</Card>
+  <p class="footnote">Fonti: <a href="https://docs.astro.build/en/guides/build-with-ai/" target="_blank" rel="noopener">Astro, costruire con gli strumenti di AI</a>; <a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener">Claude Code, le skill</a>.</p>
+</Slide>

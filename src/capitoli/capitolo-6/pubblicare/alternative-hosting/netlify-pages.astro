@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="6.6 Le alternative a Vercel" titolo="Le alternative: Netlify, GitHub Pages" lead="Un sito Astro statico è una cartella di file: si può pubblicare quasi ovunque. Le differenze stanno nella comodità.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Vercel</th><th>Netlify</th><th>GitHub Pages</th></tr></thead>
+    <tbody>
+      <tr><td>Build da GitHub</td><td data-label="Vercel">Sì, automatica</td><td data-label="Netlify">Sì, automatica</td><td data-label="GitHub Pages">Con una GitHub Action (4.6.a1)</td></tr>
+      <tr><td>Anteprime per pull request</td><td data-label="Vercel">Sì</td><td data-label="Netlify">Sì</td><td data-label="GitHub Pages">No, da costruire a mano</td></tr>
+      <tr><td>Parti dinamiche</td><td data-label="Vercel">Sì</td><td data-label="Netlify">Sì</td><td data-label="GitHub Pages">No, solo file</td></tr>
+      <tr><td>Piano gratuito</td><td data-label="Vercel">Solo uso non commerciale</td><td data-label="Netlify">Sì, con limiti</td><td data-label="GitHub Pages">Sì, da repository pubblici</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Come si sceglie">Per il corso usiamo Vercel. Per un cliente, confrontate prezzi e condizioni del momento: cambiano spesso, e conviene leggerli prima, non dopo.</Card>
+  <p class="footnote">Fonti: <a href="https://docs.astro.build/en/guides/deploy/" target="_blank" rel="noopener">Astro, guide alla pubblicazione</a>; <a href="https://www.netlify.com/pricing/" target="_blank" rel="noopener">Netlify, prezzi</a>; per GitHub Pages, la 4.5.a3.</p>
+</Slide>

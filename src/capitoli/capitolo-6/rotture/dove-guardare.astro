@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="6.7 Quando qualcosa si rompe" titolo="Dove guardare" lead="Un errore lascia sempre un messaggio da qualche parte. Il primo lavoro è trovarlo.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Sul computer" titolo="Il terminale">Dove gira <code>npm run dev</code> o <code>npm run build</code>. Gli errori di costruzione del sito sono qui, in rosso.</Card>
+    <Card tag="Nel browser" titolo="La console">F12, scheda Console. Gli errori del JavaScript che gira nella pagina, e le risorse che non si caricano.</Card>
+    <Card tag="Online" titolo="I log di Vercel">Nella pagina del deploy: se in locale funziona e online no, la risposta è lì.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E prima ancora">Cosa è cambiato dall'ultima volta che funzionava? <code>git diff</code> e <code>git log</code> (4.3.4) restringono subito il campo.</Card>
+</Slide>
