@@ -1,0 +1,35 @@
+---
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="demo" classe="compact" kicker="1.1 Le reti neurali da vicino" titolo="Una rete minuscola che impara" lead="Punti blu e punti rosa: la rete deve dividere il foglio in due zone. A ogni giro guarda dove sbaglia e sposta un po' i pesi.">
+  <div class="rm mt-m" data-rete>
+    <div class="rm-stage">
+      <canvas width="480" height="480" role="img" aria-label="Il foglio con i punti blu e rosa e le due zone colorate decise dalla rete. I numeri sotto i pulsanti dicono quanti punti sono nella zona giusta."></canvas>
+    </div>
+    <div class="rm-side">
+      <fieldset class="rm-forme">
+        <legend>Come sono messi i punti</legend>
+        <label><input type="radio" name="rm-forma" value="nuvole" checked> Due gruppi</label>
+        <label><input type="radio" name="rm-forma" value="cerchio"> Un cerchio</label>
+        <label><input type="radio" name="rm-forma" value="angoli"> Quattro angoli</label>
+      </fieldset>
+      <div class="rm-actions">
+        <button class="btn orange" type="button" data-avvia>Avvia</button>
+        <button class="btn ghost" type="button" data-giro>Un giro</button>
+        <button class="btn ghost" type="button" data-punti>Nuovi punti</button>
+        <button class="btn ghost" type="button" data-ricomincia>Ricomincia</button>
+      </div>
+      <dl class="rm-stats">
+        <div><dt>Giri</dt><dd data-giri>0</dd></div>
+        <div><dt>Punti nella zona giusta</dt><dd data-giusti>–</dd></div>
+      </dl>
+      <p class="rm-note" data-nota aria-live="polite"></p>
+      <ul class="legend rm-legend">
+        <li><span class="rm-dot blu" aria-hidden="true"></span> punto blu (tondo)</li>
+        <li><span class="rm-dot rosa" aria-hidden="true"></span> punto rosa (quadrato)</li>
+        <li><span class="rm-dot errore" aria-hidden="true"></span> nella zona sbagliata</li>
+      </ul>
+    </div>
+  </div>
+  <p class="footnote">La rete ha 2 ingressi (le coordinate del punto), uno strato nascosto di 8 neuroni e un'uscita: in tutto 33 pesi. Si addestra qui, nel vostro browser, con la discesa della slide precedente.</p>
+</Slide>

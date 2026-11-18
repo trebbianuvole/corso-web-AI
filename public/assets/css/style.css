@@ -1076,3 +1076,279 @@ html:has(dialog[open]) { overflow: hidden; }
 /* Una formula da ricordare, con le parti da riempire (2.6.2) */
 .formula { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 2.2rem); line-height: 1.4; }
 .formula mark { background: var(--peach); color: var(--ink); padding: .05em .3em; border-radius: 6px; }
+
+/* ==========================================================
+   Approfondimenti: finestra a tutto schermo, tema blu e rosa
+   ========================================================== */
+
+/* Il tema: stesse variabili, colori diversi. Stessi caratteri e componenti. */
+.tema-approf {
+  --paper: #eef2fc;
+  --paper-2: #e1e7f8;
+  --card: #fbfcff;
+  --ink: #1a2040;
+  --muted: #4c5374;
+  --line: #d2daf1;
+  --orange: #c42f72;       /* l'accento diventa rosa */
+  --orange-deep: #9c1f58;
+  --peach: #fadbe9;        /* superfici rosa chiaro */
+  --sky: #dae3fb;          /* superfici blu chiaro */
+  color: var(--ink);
+  background: var(--paper);
+}
+.tema-approf .diagram .w { stroke: #c4cdeb; }
+.tema-approf .btn:hover { background: #2c3459; }
+
+/* Il pulsante blu-viola sulla slide di partenza */
+.approf-apri-riga { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.approf-apri {
+  display: inline-flex;
+  align-items: center;
+  gap: .6em;
+  font: 700 .85em/1.2 var(--f-body);
+  color: #fff;
+  background: #4b3fd1;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 20px 11px 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(75, 63, 209, .25);
+  transition: background-color .2s ease, transform .2s ease;
+}
+.approf-apri:hover { background: #3a2fb3; transform: translateY(-1px); }
+.approf-apri:focus-visible { outline-color: #4b3fd1; }
+.approf-apri-segno {
+  display: grid;
+  place-items: center;
+  width: 1.6em; height: 1.6em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .2);
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+/* La finestra */
+dialog.approf {
+  --rail: clamp(92px, 9vw, 140px);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: inherit;
+  overflow: hidden;
+}
+dialog.approf[open] { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); }
+dialog.approf::backdrop { background: transparent; }
+
+/* La lezione, stretta in una barra: si clicca per tornare */
+.approf-rail {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 26px 12px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: var(--paper-2);
+  color: var(--ink);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color .2s ease;
+}
+.approf-rail:hover { background: #e8dcc5; }
+.approf-rail:focus-visible { outline-offset: -6px; }
+.rail-num {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--orange);
+}
+.rail-tit { font-size: .62em; line-height: 1.3; color: var(--muted); }
+.rail-back { margin-top: auto; font-size: .62em; font-weight: 700; color: var(--orange-deep); }
+
+/* Le slide dell'approfondimento */
+.approf-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  box-shadow: -14px 0 40px rgba(26, 32, 64, .16);
+}
+.approf-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: var(--topbar);
+  padding: 0 var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 15px;
+}
+.approf-back { padding: 9px 14px; }
+.approf-titolo {
+  min-width: 0;
+  margin-right: auto;
+  font-family: var(--f-display);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.approf-titolo:focus { outline: none; }
+.approf-eti { color: var(--orange-deep); font-weight: 600; margin-right: .35em; }
+.approf-counter { font-family: var(--f-mono); color: var(--muted); font-size: 13px; white-space: nowrap; }
+.approf-progress {
+  position: absolute;
+  left: 0; bottom: -1px;
+  height: 3px;
+  width: 0;
+  background: var(--orange);
+  transition: width .35s ease;
+}
+.approf-slides { position: relative; overflow-y: auto; overscroll-behavior: contain; }
+.approf .slide { min-height: 100%; padding-top: 40px; }
+.approf .slide.compact { padding-top: 20px; }
+
+/* L'apertura: la lezione si stringe a sinistra mentre arrivano le slide */
+dialog.approf.entra[open] .approf-rail { animation: approf-stringi .5s cubic-bezier(.3, .7, .2, 1) both; }
+dialog.approf.entra[open] .approf-rail > * { animation: approf-compari .3s ease .35s both; }
+dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezier(.3, .7, .2, 1) both; }
+@keyframes approf-stringi { from { width: 100vw; } to { width: var(--rail); } }
+@keyframes approf-compari { from { opacity: 0; } }
+@keyframes approf-arriva { from { transform: translateX(100%); } }
+
+/* Telefono: la barra della lezione diventa una striscia in alto */
+@media (max-width: 720px) {
+  dialog.approf[open] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .approf-rail {
+    flex-direction: row;
+    gap: 12px;
+    padding: 8px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+  .rail-num { font-size: 1.5rem; -webkit-text-stroke-width: 1.2px; }
+  .rail-tit { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .72em; }
+  .rail-back { margin: 0; font-size: .72em; white-space: nowrap; }
+  .approf-back { display: none; }
+  .approf-main { box-shadow: none; }
+  dialog.approf.entra[open] .approf-rail { animation: approf-compari .3s ease both; }
+  dialog.approf.entra[open] .approf-main { animation: approf-sali .4s cubic-bezier(.3, .7, .2, 1) both; }
+  @keyframes approf-sali { from { transform: translateY(100%); } }
+}
+
+/* ---------- Etichette per tipo di contenuto ---------- */
+.etichetta {
+  display: inline-block;
+  margin-right: .7em;
+  padding: .28em .62em;
+  border-radius: 999px;
+  font: 700 .74em/1 var(--f-body);
+  letter-spacing: .02em;
+  vertical-align: .12em;
+  color: var(--navy);
+  background: var(--sky);
+}
+.etichetta.et-demo, .etichetta.et-attivita, .etichetta.et-compito { color: var(--orange-deep); background: var(--peach); }
+.etichetta.et-con-ai { color: #fff; background: var(--navy); }
+.etichetta.et-checklist { color: var(--ink); background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+
+/* ---------- Approfondimento «Le reti neurali da vicino» (1.1.a1–a8) ---------- */
+.diagram .num { font-family: var(--f-mono); font-size: 17px; fill: var(--ink); }
+.diagram .big { font-family: var(--f-display); font-weight: 700; font-size: 22px; fill: var(--ink); }
+.diagram .box-hot { fill: var(--peach); stroke: var(--orange); stroke-width: 2; }
+.diagram .axis { stroke: var(--muted); stroke-width: 1.5; }
+.diagram .axis.dash { stroke-dasharray: 4 5; opacity: .6; }
+.diagram .curve { fill: none; stroke: var(--orange); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.diagram .valle { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; }
+.diagram .tappa { fill: var(--card); stroke: var(--orange); stroke-width: 3; }
+.diagram .tappa-fine { fill: var(--orange); }
+.diagram .pt { fill: var(--ink); }
+.diagram .pt-nuovo { fill: var(--orange); stroke: var(--card); stroke-width: 2; }
+.diagram .mappa { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.diagram .zona { fill: var(--sky); }
+.diagram .freccia { stroke: var(--orange); stroke-width: 3; stroke-linecap: round; }
+
+/* La scala dei pesi (1.1.a7): barre in scala logaritmica */
+.scala { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.scala li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: baseline; }
+.scala b { font-family: var(--f-display); font-size: .95em; }
+.scala .val { font-family: var(--f-mono); font-size: .78em; color: var(--orange-deep); text-align: right; }
+.scala .bar { grid-column: 1 / -1; grid-row: 2; height: 12px; width: var(--l); border-radius: 999px; background: var(--orange); }
+.scala small { grid-column: 1 / -1; font-size: .72em; color: var(--muted); }
+
+/* La demo della rete minuscola (1.1.a5) */
+.rm { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(18px, 3vw, 40px); align-items: start; }
+.rm-stage canvas {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 58vh);
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: var(--r-m);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.rm-forme { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .88em; }
+.rm-forme legend { padding: 0; margin-bottom: 8px; font-family: var(--f-display); font-weight: 700; }
+.rm-forme label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.rm-forme input { accent-color: var(--orange); width: 1.05em; height: 1.05em; }
+.rm-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.rm-stats { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 18px 0 0; }
+.rm-stats dt { font-size: .72em; color: var(--muted); }
+.rm-stats dd { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: 1.6em; }
+.rm-note { font-size: .82em; color: var(--muted); margin-top: 10px; min-height: 3em; }
+.rm-legend { margin-top: 12px; }
+.rm-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.rm-dot { display: inline-block; width: 12px; height: 12px; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--line); }
+.rm-dot.blu { background: #3d66d6; border-radius: 50%; }
+.rm-dot.rosa { background: #d6407f; }
+.rm-dot.errore { border-radius: 50%; width: 16px; height: 16px; background: transparent; border: 2.5px solid #1a2040; box-shadow: none; }
+@media (max-width: 860px) { .rm { grid-template-columns: 1fr; } .rm-stage canvas { max-width: 100%; } }
+.versus > .card.good { border-left: 4px solid var(--orange); }
+.versus > .card.bad { border-left: 4px solid var(--line); }
+
+/* ==========================================================
+   Schede di consultazione (pagine normali, non slide)
+   ========================================================== */
+.scheda-top { display: flex; align-items: center; gap: 16px; padding: 14px var(--gutter); border-bottom: 1px solid var(--line); font-size: 15px; }
+.scheda-top .home-link { font-family: var(--f-display); font-weight: 700; color: var(--ink); text-decoration: none; }
+.scheda-top .home-link span { color: var(--orange); }
+.scheda { max-width: 960px; margin: 0 auto; padding: clamp(28px, 5vw, 64px) var(--gutter) 80px; }
+.scheda h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); max-width: 18ch; }
+.scheda .lead { margin-top: .6em; }
+.scheda h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); margin-top: 2em; }
+.scheda p + p, .scheda h2 + p, .scheda h2 + .compare, .scheda p + .compare { margin-top: .8em; }
+.aggiornato {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  margin-top: 18px;
+  padding: .35em .8em;
+  border-radius: 999px;
+  background: var(--sky);
+  color: var(--navy);
+  font-size: .8em;
+  font-weight: 700;
+}
+.scheda-fonti { margin-top: 2.5em; }
+.diagram .err { stroke: var(--orange-deep); stroke-width: 2; stroke-dasharray: 4 4; }

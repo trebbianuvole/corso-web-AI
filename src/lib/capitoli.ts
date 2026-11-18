@@ -1,6 +1,6 @@
 // Carica i capitoli e le loro slide per le pagine di Astro.
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { mappaSlide, numera, rimandi, nonRegistrati, type Capitolo } from "./numerazione.mjs";
+import { mappaSlide, numera, approfondimenti, rimandi, nonRegistrati, type Capitolo } from "./numerazione.mjs";
 import registro from "../indirizzi.json";
 
 // I dati di ogni capitolo: src/capitoli/capitolo-N/capitolo.ts
@@ -33,12 +33,31 @@ if (mancanti.length) {
   console.warn(msg);
 }
 
+function componenteDi(cap: Capitolo, nome: string) {
+  const c = componenti.get(nome);
+  if (!c) throw new Error(`Il capitolo ${cap.numero} elenca la slide «${nome}», ma non esiste nessun file ${nome}.astro in src/capitoli/.`);
+  return c.Componente;
+}
+
+// Le slide del percorso principale. A quelle da cui si apre un
+// approfondimento il layout passa i pulsanti da disegnare.
 export function slideDel(cap: Capitolo) {
-  return numera(cap).map(p => {
-    const c = componenti.get(p.nome);
-    if (!c) throw new Error(`Il capitolo ${cap.numero} elenca la slide «${p.nome}», ma non esiste nessun file ${p.nome}.astro in src/capitoli/.`);
-    return { ...p, Componente: c.Componente };
-  });
+  const gruppi = approfondimenti(cap);
+  return numera(cap).map(p => ({
+    ...p,
+    Componente: componenteDi(cap, p.nome),
+    approfondimenti: gruppi
+      .filter(g => g.da === p.nome)
+      .map(g => ({ chiave: g.chiave, pulsante: g.pulsante })),
+  }));
+}
+
+// Gli approfondimenti del capitolo, ognuno con le sue slide.
+export function approfondimentiDel(cap: Capitolo) {
+  return approfondimenti(cap).map(g => ({
+    ...g,
+    posti: g.posti.map(p => ({ ...p, Componente: componenteDi(cap, p.nome) })),
+  }));
 }
 
 export function rimandiDel(cap: Capitolo) {

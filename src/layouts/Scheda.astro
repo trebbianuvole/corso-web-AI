@@ -1,0 +1,36 @@
+---
+// Una scheda di consultazione: pagina normale (non a slide) con titolo,
+// la data dell'ultimo controllo e il contenuto nello slot.
+// Le schede aggiornabili raccolgono quello che invecchia (modelli,
+// prodotti, prezzi, strumenti): le slide le richiamano con un link
+// senza ripeterne i dati.
+import Pagina from "./Pagina.astro";
+
+interface Props {
+  titolo: string;
+  descrizione: string;
+  /** es. "U.2" */
+  sigla: string;
+  /** data dell'ultimo controllo, AAAA-MM-GG */
+  aggiornato?: string;
+}
+const { titolo, descrizione, sigla, aggiornato } = Astro.props;
+
+const MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+function inItaliano(iso: string) {
+  const [a, m, g] = iso.split("-").map(Number);
+  return `${g} ${MESI[m - 1]} ${a}`;
+}
+---
+<Pagina titolo={`${titolo} · scheda ${sigla}`} descrizione={descrizione} radice="../../">
+<header class="scheda-top">
+  <a class="home-link" href="../../">Corso <span>AI</span></a>
+  <span class="muted">Scheda {sigla}</span>
+</header>
+<main class="scheda">
+  <p class="kicker">{aggiornato ? "Scheda aggiornabile" : "Scheda"} {sigla}</p>
+  <h1>{titolo}</h1>
+  {aggiornato && <p class="aggiornato"><time datetime={aggiornato}>Aggiornato al {inItaliano(aggiornato)}</time></p>}
+  <slot />
+</main>
+</Pagina>

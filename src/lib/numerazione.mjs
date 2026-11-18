@@ -3,13 +3,26 @@
 // sia lo script `npm run indirizzi`.
 
 /**
- * @typedef {{ chiave: string, num: string, nome: string, slide: string[] }} Sezione
+ * Un approfondimento: un gruppo di slide che si apre da una slide della sezione.
+ * @typedef {{
+ *   chiave: string,
+ *   titolo: string,
+ *   pulsante: string,
+ *   da: string,
+ *   slide: string[]
+ * }} Approfondimento
+ *   chiave: nome della finestra, unico nel capitolo (es. "reti-neurali");
+ *   titolo: es. "Le reti neurali da vicino";
+ *   pulsante: completa «Approfondisci: …» (es. "le reti neurali");
+ *   da: nome della slide da cui si apre, nella stessa sezione.
+ * @typedef {{ chiave: string, num: string, nome: string, slide: string[], approfondimenti?: Approfondimento[] }} Sezione
  * @typedef {{
  *   slug: string, numero: number, titolo: string, descrizione: string,
  *   home: { titolo: string, desc: string },
  *   script: string[], copertina: string, sezioni: Sezione[]
  * }} Capitolo
- * @typedef {{ nome: string, numero: string, id: string, sezione: string, capitolo: string }} Posto
+ * @typedef {{ nome: string, numero: string, id: string, sezione: string, capitolo: string, gruppo?: string }} Posto
+ * @typedef {Approfondimento & { num: string, sezione: string, idDa: string, posti: Posto[] }} Gruppo
  */
 
 /**
@@ -30,7 +43,40 @@ export function numera(cap) {
 }
 
 /**
- * Tutte le slide del corso, indicizzate per nome.
+ * Gli approfondimenti di un capitolo, con le slide numerate.
+ * Dentro una sezione la numerazione prosegue da un gruppo all'altro:
+ * 1.1.a1 … 1.1.a8, e un secondo gruppo della 1.1 comincia da 1.1.a9.
+ * Id: "1-1-a1".
+ * @param {Capitolo} cap
+ * @returns {Gruppo[]}
+ */
+export function approfondimenti(cap) {
+  /** @type {Gruppo[]} */
+  const gruppi = [];
+  const chiavi = new Set();
+  for (const sez of cap.sezioni) {
+    let n = 0;
+    for (const g of sez.approfondimenti || []) {
+      if (chiavi.has(g.chiave)) {
+        throw new Error(`Nel ${cap.slug} due approfondimenti si chiamano «${g.chiave}».`);
+      }
+      chiavi.add(g.chiave);
+      const pos = sez.slide.indexOf(g.da);
+      if (pos < 0) {
+        throw new Error(`L'approfondimento «${g.chiave}» si apre da «${g.da}», che non è una slide della sezione ${sez.num}.`);
+      }
+      const posti = g.slide.map(nome => {
+        const numero = `${sez.num}.a${++n}`;
+        return { nome, numero, id: numero.replace(/\./g, "-"), sezione: sez.chiave, capitolo: cap.slug, gruppo: g.chiave };
+      });
+      gruppi.push({ ...g, num: sez.num, sezione: sez.chiave, idDa: `${sez.num}.${pos}`.replace(/\./g, "-"), posti });
+    }
+  }
+  return gruppi;
+}
+
+/**
+ * Tutte le slide del corso, approfondimenti compresi, indicizzate per nome.
  * Un nome ripetuto blocca la build: i nomi devono essere unici in tutto il corso.
  * @param {Capitolo[]} capitoli
  * @returns {Map<string, Posto>}
@@ -38,7 +84,8 @@ export function numera(cap) {
 export function mappaSlide(capitoli) {
   const mappa = new Map();
   for (const cap of capitoli) {
-    for (const p of numera(cap)) {
+    const tutte = [...numera(cap), ...approfondimenti(cap).flatMap(g => g.posti)];
+    for (const p of tutte) {
       if (mappa.has(p.nome)) {
         const altro = mappa.get(p.nome);
         throw new Error(`La slide «${p.nome}» compare due volte (${altro.capitolo} ${altro.numero} e ${p.capitolo} ${p.numero}). Ogni slide va elencata una volta sola.`);

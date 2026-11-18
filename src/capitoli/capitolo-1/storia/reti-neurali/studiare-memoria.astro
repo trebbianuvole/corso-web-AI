@@ -1,0 +1,31 @@
+---
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Studiare o imparare a memoria" lead="Una parte degli esempi non si usa per addestrare: si tiene da parte, come le domande dell'esame che lo studente non ha mai visto.">
+  <div class="versus mt-l">
+    <figure class="figure card good">
+      <svg class="diagram" viewBox="0 0 300 190" role="img" aria-labelledby="fit-t fit-d"><title id="fit-t">Ha capito la regola</title><desc id="fit-d">Una linea morbida passa in mezzo ai punti di addestramento. Il punto nuovo, mai visto, cade vicino alla linea.</desc>
+<line x1="20" y1="175" x2="290" y2="175" class="axis"/>
+<path d="M20 160 C 100 125, 190 70, 285 40" class="curve"/>
+<circle cx="30" cy="150" r="5" class="pt"/><circle cx="60" cy="140" r="5" class="pt"/><circle cx="90" cy="118" r="5" class="pt"/><circle cx="120" cy="115" r="5" class="pt"/><circle cx="150" cy="90" r="5" class="pt"/><circle cx="180" cy="86" r="5" class="pt"/><circle cx="210" cy="62" r="5" class="pt"/><circle cx="240" cy="62" r="5" class="pt"/><circle cx="270" cy="40" r="5" class="pt"/>
+<line x1="165" y1="79" x2="165" y2="89" class="err"/>
+<rect x="159" y="73" width="12" height="12" transform="rotate(45 165 79)" class="pt-nuovo"/>
+</svg>
+      <h3 class="mt-m">Ha capito la regola</h3>
+      <p>Sbaglia un po' anche sugli esempi che conosce, ma con quelli nuovi se la cava.</p>
+    </figure>
+    <span class="vs" aria-hidden="true">o</span>
+    <figure class="figure card bad">
+      <svg class="diagram" viewBox="0 0 300 190" role="img" aria-labelledby="ovf-t ovf-d"><title id="ovf-t">Ha imparato a memoria</title><desc id="ovf-d">Una linea a zig-zag tocca esattamente ogni punto di addestramento. Il punto nuovo cade lontano dalla linea.</desc>
+<line x1="20" y1="175" x2="290" y2="175" class="axis"/>
+<polyline points="20,170 30,150 45,100 60,140 75,168 90,118 105,72 120,115 135,140 150,90 165,170 180,86 195,110 210,62 225,24 240,62 255,90 270,40 285,20" class="curve"/>
+<circle cx="30" cy="150" r="5" class="pt"/><circle cx="60" cy="140" r="5" class="pt"/><circle cx="90" cy="118" r="5" class="pt"/><circle cx="120" cy="115" r="5" class="pt"/><circle cx="150" cy="90" r="5" class="pt"/><circle cx="180" cy="86" r="5" class="pt"/><circle cx="210" cy="62" r="5" class="pt"/><circle cx="240" cy="62" r="5" class="pt"/><circle cx="270" cy="40" r="5" class="pt"/>
+<line x1="165" y1="79" x2="165" y2="168" class="err"/>
+<rect x="159" y="73" width="12" height="12" transform="rotate(45 165 79)" class="pt-nuovo"/>
+</svg>
+      <h3 class="mt-m">Ha imparato a memoria</h3>
+      <p>Perfetta sugli esempi di addestramento, persa davanti a uno nuovo. Si chiama <em>overfitting</em>.</p>
+    </figure>
+  </div>
+  <p class="footnote">I punti tondi sono gli esempi di addestramento, il rombo è un esempio di prova; il tratteggio è l'errore sul rombo. Per approfondire: <a href="https://it.wikipedia.org/wiki/Overfitting" target="_blank" rel="noopener">Overfitting su Wikipedia</a>.</p>
+</Slide>
