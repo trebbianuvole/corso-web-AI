@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="11.2 Test con l'AI" titolo="Un secondo agente che rilegge" lead="Chi ha scritto il codice ne è convinto, anche se è un'AI. Un secondo agente, che parte senza la sua conversazione, legge solo il risultato e trova quello che al primo sfugge.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Come</span>
+      <h3>Occhi nuovi</h3>
+      <ul class="mt-m"><li>Una sessione nuova di Claude Code, o un subagent (3.2.7)</li><li>Gli date il diff della pull request, i criteri e il CLAUDE.md</li><li>Non gli dite che «funziona già»</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">Cosa chiedere</span>
+      <h3>Un compito preciso</h3>
+      <ul class="mt-m"><li>«Quali criteri non sono coperti da un test?»</li><li>«Dove si controllano i permessi?»</li><li>«Cosa succede se la rete cade a metà?»</li><li>«Elenca i problemi in ordine di gravità»</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Due AI non fanno una persona">Il revisore AI trova molto, ma può sbagliare nello stesso modo del primo. La pull request la approva comunque una persona che l'ha letta.</Card>
+</Slide>

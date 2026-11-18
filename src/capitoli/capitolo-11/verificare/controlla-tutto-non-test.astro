@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="11.1 Verificare è il lavoro vero" titolo="«Controlla che tutto funzioni» non è un test" lead="Un test dice cosa fare, cosa deve succedere, e come si capisce se è successo. Se non si può sbagliare, non è un test.">
+  <table class="compare mt-l">
+    <thead><tr><th>Così no</th><th>Così sì</th></tr></thead>
+    <tbody>
+      <tr><td>«Controlla che la prenotazione funzioni»</td><td data-label="Così sì">Una docente prenota l'Aula 3 giovedì 10–11: la vede in «Le mie prenotazioni» e l'aula non è più tra le libere.</td></tr>
+      <tr><td>«Verifica i permessi»</td><td data-label="Così sì">Uno studente prova ad annullare la prenotazione di una docente: riceve «Non hai il permesso» e la riga resta.</td></tr>
+      <tr><td>«Assicurati che sia veloce»</td><td data-label="Così sì">La home, sul telefono, ha un punteggio Prestazioni di Lighthouse di almeno 90.</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Con l'AI è ancora più importante">A una richiesta vaga Claude risponde «ho controllato, funziona tutto», spesso senza aver provato niente. A una richiesta precisa deve dire cosa ha fatto e cosa ha visto.</Card>
+</Slide>

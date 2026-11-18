@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="11.4 Privacy e prestazioni" titolo="I servizi esterni che raccolgono dati" lead="Quando una pagina carica qualcosa da un altro sito, il browser gli manda almeno l'indirizzo IP del visitatore. Spesso l'AI li aggiunge senza dirlo.">
+  <table class="compare mt-m">
+    <thead><tr><th>Cosa</th><th>Cosa succede</th><th>L'alternativa</th></tr></thead>
+    <tbody>
+      <tr><td>Google Fonts</td><td data-label="Cosa succede">Ogni visita passa da Google. Nel 2022 un tribunale tedesco ha condannato un sito per questo</td><td data-label="L'alternativa">Caratteri scaricati e serviti dal proprio sito</td></tr>
+      <tr><td>Mappa di Google</td><td data-label="Cosa succede">Si carica subito, con i cookie di Google</td><td data-label="L'alternativa">Un'immagine con il link «Apri in Maps»</td></tr>
+      <tr><td>Video di YouTube</td><td data-label="Cosa succede">Il lettore si carica con i cookie, anche senza play</td><td data-label="L'alternativa">Privacy avanzata (<code>youtube-nocookie.com</code>) o anteprima che carica al clic</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Da chiedere a Claude">«Elenca le risorse caricate da altri domini: per ognuna, manda dati a terzi? Come farne a meno?» Anche questo sito usa Google Fonts: per un corso va bene, per un cliente va pesato.</Card>
+  <p class="footnote">Fonti: <a href="https://www.cybersecurity360.it/legal/privacy-dati-personali/google-fonts-un-nuovo-problema-per-i-siti-delle-pa-e-delle-scuole-ecco-come-risolverlo/" target="_blank" rel="noopener">Cybersecurity360, Google Fonts</a> (Tribunale di Monaco di Baviera, 3 O 17493/20, gennaio 2022); <a href="https://support.google.com/youtube/answer/171780" target="_blank" rel="noopener">YouTube, incorporare i video</a>.</p>
+</Slide>

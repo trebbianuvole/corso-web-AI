@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="11.3 La sicurezza del codice generato" titolo="Pensare come chi attacca" lead="Voi usate l'app come è stata pensata. Chi attacca la usa come non è stata pensata: cambia i numeri negli indirizzi, manda richieste a mano, scrive codice nei campi di testo.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Domanda 1" titolo="Cosa c'è di prezioso?">In PrenotaAula: nomi ed email delle persone, le chiavi dei servizi, la possibilità di cancellare le prenotazioni altrui.</Card>
+    <Card tag="Domanda 2" titolo="Da dove si entra?">Ogni modulo, ogni indirizzo, ogni funzione su Vercel, la chiave pubblica di Supabase che tutti vedono.</Card>
+    <Card variante="peach" tag="Domanda 3" titolo="E se mento?">Se dico di essere un'altra persona, se cambio <code>aula_id</code> nella richiesta, se mando mille richieste in un minuto?</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Si prova solo sulle proprie cose">Sul vostro progetto di prova, sì. Sui siti degli altri, anche «solo per vedere», può essere un reato: l'accesso abusivo a un sistema informatico.</Card>
+</Slide>

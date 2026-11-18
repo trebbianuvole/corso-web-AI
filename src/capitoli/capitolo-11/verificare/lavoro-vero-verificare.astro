@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="11.1 Verificare è il lavoro vero" titolo="Verificare è il lavoro vero" lead="Nella 1.3.6 i matematici facevano controllare le dimostrazioni a un programma. Per il codice vale lo stesso: l'AI produce, voi dimostrate che va bene.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Prima dell'AI</span>
+      <h3>Scrivere era la parte lenta</h3>
+      <p>Si scriveva poco codice, riga per riga, e mentre lo si scriveva lo si capiva.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Con l'AI</span>
+      <h3>Controllare è la parte lenta</h3>
+      <p>Arrivano cento righe in un minuto, scritte da qualcuno che non le ha provate. Il tempo che risparmiate lì va speso qui.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="«Me l'ha detto Claude che funziona»">Non è una prova. Una prova è qualcosa che anche un altro può ripetere: un test che passa, un passaggio provato a mano e scritto nella pull request.</Card>
+</Slide>

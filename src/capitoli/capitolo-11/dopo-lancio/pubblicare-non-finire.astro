@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="11.5 Dopo il lancio" titolo="Pubblicare non è finire" lead="Un sito si pubblica una volta. Una webapp si tiene in vita: ogni settimana qualcosa cambia, si rompe o va aggiornato.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Prima settimana" titolo="Guardare">I log ogni giorno, le prime segnalazioni degli utenti, le pagine dove si abbandona.</Card>
+    <Card tag="Ogni mese" titolo="Aggiornare">Le dipendenze (11.3.4), i prezzi e i limiti dei servizi, le chiavi in scadenza.</Card>
+    <Card tag="Sempre" titolo="Correggere con calma">Ogni errore diventa una issue, poi un ramo, un test che lo riproduce e una pull request.</Card>
+    <Card variante="peach" tag="Ogni tanto" titolo="Provare i backup">Ripristinarli nel progetto di prova, per sapere che funzionano (10.2.7).</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Chi lo fa?">Va deciso prima della consegna, e scritto: voi, il cliente, o nessuno. «Nessuno» è una risposta possibile, ma il cliente deve saperlo (12.2).</Card>
+</Slide>

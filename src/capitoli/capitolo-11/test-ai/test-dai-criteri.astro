@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="11.2 Test con l'AI" titolo="Test ricavati dai criteri di accettazione" lead="I criteri della 2.6.6 erano già scritti come prove. Ogni criterio diventa almeno un test: uno per il caso felice, uno per quello che deve fallire.">
+  <Card slot="intro" variante="sky mt-m" titolo="Il criterio viene prima">Se un test non corrisponde a nessun criterio, chiedetevi perché c'è. Se un criterio non ha un test, manca qualcosa.</Card>
+  <div style="min-width:0">
+    <div class="card">
+      <span class="tag">Criterio</span>
+      <p>Dato che l'Aula 3 è prenotata giovedì 10–11, quando un'altra docente prova a prenotarla giovedì 10:30–11:30, allora vede «Aula già occupata» e la prenotazione non viene salvata.</p>
+    </div>
+    <ol class="note-codice mt-m">
+      <li><b>Test 1:</b> prenotare un'aula libera riesce, e la prenotazione compare.</li>
+      <li><b>Test 2:</b> prenotare un orario che si accavalla mostra il messaggio giusto.</li>
+      <li><b>Test 3:</b> dopo il tentativo fallito, nel database c'è ancora una sola prenotazione.</li>
+    </ol>
+  </div>
+</Slide>

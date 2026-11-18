@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="11.2 Test con l'AI" titolo="Claude prova nel browser" lead="Collegato al browser, Claude Code apre il sito, clicca, compila i moduli, legge gli errori in console e vi racconta cosa ha visto. Come un collega che prova al posto vostro.">
+  <Fragment slot="intro">
+    <Card variante="peach mt-m" titolo="Attenzione: è il vostro browser">Con l'estensione per Chrome, Claude usa le vostre sessioni aperte. Per provare l'app usate account di prova e il progetto di prova, non quelli veri.</Card>
+    <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/chrome" target="_blank" rel="noopener">Claude Code con Chrome</a>, controllata il 18 novembre 2026. Si attiva con <code>claude --chrome</code> o con il comando <code>/chrome</code>.</p>
+  </Fragment>
+  <figure class="figure chat" aria-label="Esempio di richiesta a Claude di provare l'app nel browser">
+    <div class="bubble user">Apri localhost:4321 da telefono (375 px). Con l'account docente di prova, prenota l'Aula 3 per giovedì 10–11, poi prova a prenotarla di nuovo 10:30–11:30. Dimmi cosa vedi a ogni passo e se ci sono errori in console.</div>
+    <div class="bubble bot">Prima prenotazione: «Prenotata», compare nell'elenco. Seconda: il messaggio dice «Aula già occupata», corretto. Però sul telefono il pulsante «Prenota» resta attivo durante l'attesa: con un doppio clic partono due richieste.</div>
+    <p class="chat-note">Conversazione costruita come esempio.</p>
+  </figure>
+</Slide>

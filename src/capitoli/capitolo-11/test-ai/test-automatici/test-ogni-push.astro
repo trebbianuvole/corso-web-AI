@@ -1,0 +1,22 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="11.2 Test automatici da vicino" titolo="Test che girano a ogni push" lead="Con GitHub Actions (4.6.a1) i test partono da soli a ogni push e a ogni pull request. Se uno fallisce, la PR lo mostra in rosso prima del merge.">
+  <Fragment slot="intro">
+    <Card variante="sky mt-m" titolo="Insieme alla protezione di main">Con la regola «i controlli devono passare» (4.6.a2), una PR con un test rosso non si può unire. Nemmeno se l'ha scritta un agente di fretta.</Card>
+    <p class="footnote">Fonte: <a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" target="_blank" rel="noopener">GitHub Actions, costi</a>, controllata il 18 novembre 2026: gratis per i repository pubblici; per i privati il piano gratuito include 12 dollari di consumi al mese, circa 2.000 minuti.</p>
+  </Fragment>
+<pre class="code" aria-label="Un file di GitHub Actions che installa le dipendenze e lancia i test Playwright"><span class="m"># .github/workflows/test.yml</span>
+<span class="k">name:</span> Test
+<span class="k">on:</span> [push, pull_request]
+<span class="k">jobs:</span>
+  <span class="k">test:</span>
+    <span class="k">runs-on:</span> ubuntu-latest
+    <span class="k">steps:</span>
+      - <span class="k">uses:</span> actions/checkout@v7
+      - <span class="k">uses:</span> actions/setup-node@v7
+      - <span class="k">run:</span> npm ci
+      - <span class="k">run:</span> npx playwright install --with-deps
+      - <span class="k">run:</span> npx playwright test</pre>
+</Slide>

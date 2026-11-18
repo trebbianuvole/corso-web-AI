@@ -1,0 +1,15 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="checklist" classe="compact" kicker="11.6 Prima del lancio" titolo="La checklist di pubblicazione">
+  <ul class="checklist mt-m">
+    <li><div><strong>Funziona</strong><span>Tutti i criteri provati, i test passano, anche nei casi limite.</span></div></li>
+    <li><div><strong>Si usa</strong><span>Almeno tre persone hanno fatto il compito principale senza aiuto.</span></div></li>
+    <li><div><strong>Si legge ovunque</strong><span>Telefono, tastiera, testo ingrandito, contrasto (7.6).</span></div></li>
+    <li><div><strong>È sicuro</strong><span>Nessuna chiave segreta nel browser o nel repository, regole sulle righe provate con due utenti, dipendenze senza avvisi.</span></div></li>
+    <li><div><strong>Rispetta la privacy</strong><span>Informativa pubblicata, niente servizi esterni non necessari, banner solo se serve.</span></div></li>
+    <li><div><strong>È veloce</strong><span>Lighthouse sul telefono, sulla versione pubblicata.</span></div></li>
+    <li><div><strong>Si trova</strong><span>Title, description, sitemap, Search Console (9.2).</span></div></li>
+    <li><div><strong>È del cliente</strong><span>Dominio, Vercel, Supabase e chiavi intestati a lui, backup provato, chi fa la manutenzione è scritto (12.2).</span></div></li>
+  </ul>
+</Slide>
