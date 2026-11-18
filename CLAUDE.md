@@ -76,7 +76,8 @@ docs/scaletta-corso.md            la scaletta del corso
 - Se una slide registrata viene eliminata, la build si ferma. Nel registro va indicata la slide che la sostituisce: non si cancellano voci dal registro.
 
 ### CSS e JavaScript
-- Gli script sono file classici in `public/assets/js/`, caricati con `<script is:inline src="../assets/js/…">`. Gli script in più di un capitolo si elencano in `script` dentro `capitolo.ts`.
+- Gli script sono file classici in `public/assets/js/`, caricati dai layout con `<script is:inline>`. Gli script in più di un capitolo si elencano in `script` dentro `capitolo.ts`.
+- **Cache.** Ogni link a un CSS o a un JS di `public/assets/` passa da `conVersione()` (`src/lib/versione.ts`), che aggiunge `?v=` con l'impronta del contenuto: quando il file cambia, cambia l'indirizzo, e nessun browser usa una copia vecchia. Senza, Vercel li manda con una cache di un anno e chi ha già visitato il sito vede l'HTML nuovo con CSS e JS vecchi. `vercel.json` chiede inoltre di non tenere in cache `/assets/`.
 - `deck.js` gestisce la navigazione:
   - frecce, PagGiù/PagSu, Spazio, Home/Fine;
   - F per lo schermo intero;
