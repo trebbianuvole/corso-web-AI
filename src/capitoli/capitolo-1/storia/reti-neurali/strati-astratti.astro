@@ -1,0 +1,13 @@
+---
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Gli strati" lead="Una rete che riconosce le foto lavora a strati. Ogni strato prende quello che ha trovato il precedente e vede qualcosa di più astratto.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Ingresso</span><b>Pixel</b><span>solo numeri: quanto è chiaro ogni puntino dell'immagine</span></div>
+    <div><span class="role">Primi strati</span><b>Bordi</b><span>linee, angoli, passaggi dal chiaro allo scuro</span></div>
+    <div><span class="role">Strati di mezzo</span><b>Forme</b><span>un occhio, un orecchio a punta, una ruota</span></div>
+    <div><span class="role">Ultimi strati</span><b>Oggetti</b><span>«è un gatto», con una probabilità</span></div>
+  </div>
+  <p class="lead mt-l">Nessuno dice alla rete cosa cercare in ogni strato. Lo scopre da sola, durante l'addestramento.</p>
+  <p class="footnote">È una semplificazione, ma si può vedere davvero: nel 2013 Zeiler e Fergus hanno mostrato a cosa reagiscono gli strati di una rete per le immagini. Fonte: <a href="https://arxiv.org/abs/1311.2901" target="_blank" rel="noopener">Visualizing and Understanding Convolutional Networks</a>.</p>
+</Slide>

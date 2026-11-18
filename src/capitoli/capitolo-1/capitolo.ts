@@ -12,7 +12,7 @@ const capitolo: Capitolo = {
     titolo: "Capire l'AI e orientarsi negli strumenti",
     desc: "Storia, come funziona un LLM, il mercato, Claude.",
   },
-  script: ["next-word.js", "timeline.js"],
+  script: ["next-word.js", "timeline.js", "rete-minuscola.js"],
   copertina: "copertina-1",
   sezioni: [
     {
@@ -26,6 +26,24 @@ const capitolo: Capitolo = {
         "reti-neurali-motore-deep",
         "matrioske",
         "perche-proprio-adesso",
+      ],
+      approfondimenti: [
+        {
+          chiave: "reti-neurali",
+          titolo: "Le reti neurali da vicino",
+          pulsante: "le reti neurali",
+          da: "reti-neurali-motore-deep",
+          slide: [
+            "neurone-artificiale",
+            "soglia-curva",
+            "strati-astratti",
+            "come-impara",
+            "rete-minuscola-impara",
+            "studiare-memoria",
+            "quanto-grandi",
+            "parole-numeri",
+          ],
+        },
       ],
     },
     {

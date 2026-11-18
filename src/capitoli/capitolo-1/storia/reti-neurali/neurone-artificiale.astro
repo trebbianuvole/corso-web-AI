@@ -1,0 +1,36 @@
+---
+import Def from "../../../../components/Def.astro";
+import Defs from "../../../../components/Defs.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Un neurone artificiale" lead="Un neurone prende una decisione semplice. Proviamo con una domanda: «oggi vado al mare?»" split>
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="Ingressi">i fatti: c'è il sole? fa caldo? vengono gli amici? 1 vuol dire sì, 0 vuol dire no.</Def>
+    <Def termine="Pesi">quanto conta ogni fatto. Per voi gli amici contano più del caldo.</Def>
+    <Def termine="Somma">ogni ingresso per il suo peso, tutto sommato.</Def>
+    <Def termine="Soglia">se la somma arriva alla soglia, la risposta è sì.</Def>
+  </Defs>
+  <figure class="figure"><svg class="diagram" viewBox="0 0 560 340" role="img" aria-labelledby="neu-t neu-d"><title id="neu-t">Un neurone che decide se andare al mare</title><desc id="neu-d">Tre ingressi: sole vale 1 con peso 3, caldo vale 1 con peso 2, amici vale 0 con peso 4. La somma è 3 più 2 più 0, cioè 5. La soglia è 4: 5 la supera, quindi la risposta è sì, al mare.</desc>
+<line x1="96" y1="70" x2="290" y2="170" class="w-hot"/>
+<line x1="96" y1="170" x2="290" y2="170" class="w-hot"/>
+<line x1="96" y1="270" x2="290" y2="170" class="w"/>
+<text x="180" y="100" class="num">× 3</text>
+<text x="180" y="160" class="num">× 2</text>
+<text x="180" y="246" class="num">× 4</text>
+<circle cx="70" cy="70" r="26" class="n-in"/><text x="70" y="76" class="num" text-anchor="middle">1</text>
+<circle cx="70" cy="170" r="26" class="n-in"/><text x="70" y="176" class="num" text-anchor="middle">1</text>
+<circle cx="70" cy="270" r="26" class="n"/><text x="70" y="276" class="num" text-anchor="middle">0</text>
+<text x="70" y="32" class="lbl" text-anchor="middle">sole</text>
+<text x="70" y="132" class="lbl" text-anchor="middle">caldo</text>
+<text x="70" y="318" class="lbl" text-anchor="middle">amici</text>
+<circle cx="320" cy="170" r="48" class="n"/>
+<text x="320" y="162" class="lbl" text-anchor="middle">somma</text>
+<text x="320" y="190" class="big" text-anchor="middle">5</text>
+<line x1="370" y1="170" x2="420" y2="170" class="arrow"/>
+<rect x="424" y="128" width="124" height="84" rx="14" class="box-hot"/>
+<text x="486" y="160" class="lbl" text-anchor="middle">5 ≥ soglia 4</text>
+<text x="486" y="192" class="big" text-anchor="middle">Sì, al mare</text>
+<text x="320" y="262" class="lbl" text-anchor="middle">3 + 2 + 0 = 5</text>
+</svg></figure>
+  <p class="footnote" slot="intro">Il primo neurone artificiale che imparava da solo è il perceptron di Frank Rosenblatt, presentato nel 1958: i pesi erano manopole girate da piccoli motori. Fonte: <a href="https://it.wikipedia.org/wiki/Percettrone" target="_blank" rel="noopener">Percettrone su Wikipedia</a>.</p>
+</Slide>

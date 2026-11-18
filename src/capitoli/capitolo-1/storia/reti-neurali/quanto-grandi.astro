@@ -1,0 +1,15 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Quanto sono grandi" lead="La nostra demo ha 33 pesi. I modelli di oggi ne hanno centinaia di miliardi." split>
+  <Card variante="sky mt-m" titolo="Perché servono le GPU" slot="intro">Una rete fa soprattutto moltiplicazioni: ingressi per pesi, tutte insieme. Le schede grafiche, nate per i videogiochi, fanno migliaia di calcoli così nello stesso momento.</Card>
+  <ul class="scala" aria-label="Numero di pesi di alcune reti, su una scala in cui ogni tacca vale dieci volte la precedente">
+    <li style="--l:12%"><b>La demo della slide 1.1.a5</b><span class="bar"></span><span class="val">33 pesi</span></li>
+    <li style="--l:40%"><b>LeNet-5, 1998</b><span class="bar"></span><span class="val">circa 60 mila</span><small>leggeva le cifre scritte a mano sugli assegni</small></li>
+    <li style="--l:65%"><b>AlexNet, 2012</b><span class="bar"></span><span class="val">circa 60 milioni</span><small>addestrata in 5-6 giorni su due schede grafiche da gioco</small></li>
+    <li style="--l:93%"><b>GPT-3, 2020</b><span class="bar"></span><span class="val">175 miliardi</span></li>
+    <li style="--l:97%"><b>Llama 3.1, 2024</b><span class="bar"></span><span class="val">405 miliardi</span><small>all'uscita il più grande modello aperto, addestrato su oltre 16 mila GPU</small></li>
+  </ul>
+  <p class="footnote" slot="intro">Le barre sono in scala logaritmica: ogni passo vale dieci volte il precedente, altrimenti le prime righe sarebbero invisibili. Per i modelli più recenti di Anthropic, OpenAI e Google i numeri non sono pubblici. Fonti: <a href="http://yann.lecun.com/exdb/lenet/" target="_blank" rel="noopener">LeNet</a>, <a href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html" target="_blank" rel="noopener">AlexNet</a>, <a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener">GPT-3</a>, <a href="https://ai.meta.com/blog/meta-llama-3-1/" target="_blank" rel="noopener">Llama 3.1</a>.</p>
+</Slide>
