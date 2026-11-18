@@ -1324,8 +1324,6 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .rm-dot.rosa { background: #d6407f; }
 .rm-dot.errore { border-radius: 50%; width: 16px; height: 16px; background: transparent; border: 2.5px solid #1a2040; box-shadow: none; }
 @media (max-width: 860px) { .rm { grid-template-columns: 1fr; } .rm-stage canvas { max-width: 100%; } }
-.versus > .card.good { border-left: 4px solid var(--orange); }
-.versus > .card.bad { border-left: 4px solid var(--line); }
 
 /* ==========================================================
    Schede di consultazione (pagine normali, non slide)
@@ -1352,3 +1350,32 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 }
 .scheda-fonti { margin-top: 2.5em; }
 .diagram .err { stroke: var(--orange-deep); stroke-width: 2; stroke-dasharray: 4 4; }
+
+/* ==========================================================
+   Capitolo 4: Git e GitHub
+   ========================================================== */
+
+/* Schede «così sì / così no» anche fuori da .versus */
+.card.good { border-left: 4px solid var(--orange); }
+.card.bad { border-left: 4px solid var(--line); }
+
+/* Righe tolte e aggiunte nei terminali e nei blocchi di codice */
+.term .rem, .code .rem { color: #f19a9a; }
+.code .add { color: #9ad59a; }
+
+/* Disegni: i tre posti di Git, push e pull, i rami */
+.diagram .posto { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.diagram .posto-hot { fill: var(--peach); stroke: var(--orange); stroke-width: 2; }
+.diagram .punta { fill: var(--orange); }
+.diagram .g-main { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+.diagram .g-ramo { fill: none; stroke: var(--orange); stroke-width: 4; stroke-linecap: round; }
+.diagram .g-nodo { fill: var(--card); stroke: var(--ink); stroke-width: 3; }
+.diagram .g-nodo-hot { fill: var(--card); stroke: var(--orange); stroke-width: 3; }
+.diagram .g-nodo-unione { fill: var(--orange); stroke: var(--orange-deep); stroke-width: 3; }
+
+/* La bacheca di GitHub Projects (4.5.a2) */
+.bacheca { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.bacheca > div { background: var(--paper-2); border-radius: var(--r-m); padding: 14px; display: grid; gap: 10px; align-content: start; }
+.bacheca h3 { font-size: 1em; }
+.bacheca .card { padding: 12px 14px; font-size: .82em; color: var(--ink); }
+@media (max-width: 760px) { .bacheca { grid-template-columns: 1fr; } }
