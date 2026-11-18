@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="8.5 Scrivere per il web" titolo="L'AI scrive, voi decidete" lead="Una bozza dall'AI fa risparmiare tempo. Ma ogni testo che va online passa da due controlli: è vero? Suona come il cliente?">
+  <div class="versus mt-l">
+    <div class="card">
+      <h3>Controllare i fatti</h3>
+      <ul class="mt-m"><li>Date, numeri, prezzi, orari</li><li>Premi, recensioni, «dal 1950»: spesso inventati</li><li>Allergeni e ingredienti: lì un errore fa male davvero</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <h3>Togliere i tic dell'AI</h3>
+      <ul class="mt-m"><li>«Un viaggio tra i sapori», «un'esperienza unica»</li><li>Le liste di tre aggettivi</li><li>«Non solo… ma anche…»</li><li>Il punto esclamativo a ogni frase</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="L'ultima parola è del cliente">Rina legge ogni testo prima che vada online. Non per cortesia: è lei che risponde di quello che c'è scritto (5.5.1).</Card>
+</Slide>

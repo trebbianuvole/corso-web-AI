@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="8.4 Keystatic con Claude Code" titolo="Cosa sbaglia l'AI con Keystatic" lead="Keystatic è giovane e cambia: il modello ne conosce poco, e spesso una versione vecchia. Gli errori sono sempre gli stessi.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Versioni" titolo="Configurazioni superate">Opzioni che non esistono più, o pacchetti con un altro nome.</Card>
+    <Card tag="Invenzioni" titolo="Campi che non esistono">Un <code>fields.price</code> o un <code>fields.currency</code> che sembrano plausibili, ma Keystatic non li ha.</Card>
+    <Card tag="Mescolanze" titolo="Pezzi di altri CMS">Sintassi di Decap o di Tina dentro la configurazione di Keystatic.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="La difesa è la 6.7.6">Date a Claude la documentazione attuale: il link alla pagina giusta di keystatic.com, o chiedetegli di leggerla prima di scrivere. E se la build si lamenta di un campo sconosciuto, il primo sospetto è un'invenzione.</Card>
+</Slide>

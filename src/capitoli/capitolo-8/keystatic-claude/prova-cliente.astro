@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="8.4 Keystatic con Claude Code" titolo="La prova del cliente" lead="Quindici minuti, a coppie. Uno fa lo sviluppatore, l'altro fa Rina: non ha mai visto il pannello e non sa cos'è Git.">
+  <Card slot="intro" variante="sky mt-m" titolo="Lo sviluppatore non parla">Guarda e prende appunti. Ogni volta che «Rina» si blocca o chiede aiuto, è un'idea per migliorare il pannello: un'etichetta più chiara, un campo in meno.</Card>
+  <Steps>
+    <Passo titolo="Cambia il prezzo delle tagliatelle" inLinea>dal telefono</Passo>
+    <Passo titolo="Aggiungi la zuppa di farro" inLinea>con i suoi allergeni</Passo>
+    <Passo titolo="Togli le polpette" inLinea>dal menu</Passo>
+    <Passo titolo="Il sito si aggiorna?" inLinea>controllate dopo un paio di minuti</Passo>
+    <Passo titolo="La storia" inLinea>su GitHub: i tre commit ci sono?</Passo>
+  </Steps>
+</Slide>

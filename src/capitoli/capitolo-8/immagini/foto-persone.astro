@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.6 Immagini e media" titolo="Le foto di persone" lead="Il volto di una persona riconoscibile è un dato personale (5.2.1), e in Italia l'immagine di una persona non si pubblica senza il suo consenso.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Lo staff" titolo="Consenso scritto">Anche i camerieri e Rina stessa: un foglio firmato per l'uso sul sito e sui social.</Card>
+    <Card tag="I clienti" titolo="Ancora più attenzione">La sala piena il sabato sera: chi è riconoscibile deve aver detto sì. Se no, si inquadrano le mani, i piatti, le spalle.</Card>
+    <Card variante="peach" tag="I minori" titolo="Meglio di no">Per i bambini serve il consenso dei genitori. Nel dubbio, non si pubblicano.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E se qualcuno cambia idea">Il consenso si può ritirare: la foto va tolta. Con Keystatic è una modifica di due minuti; con le foto sparse nel codice, molto di più.</Card>
+  <p class="footnote">Le regole stanno nel codice civile (articolo 10), nella legge sul diritto d'autore (articolo 96) e nel GDPR. Sintesi a scopo didattico.</p>
+</Slide>

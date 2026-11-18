@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="8.6 Immagini e media" titolo="Dove trovarle, e con quale licenza" lead="Un'immagine trovata su Google non è libera: ha un autore e una licenza. Usarla senza permesso viola il diritto d'autore.">
+  <table class="compare mt-m">
+    <thead><tr><th>Fonte</th><th>Cosa si può fare</th></tr></thead>
+    <tbody>
+      <tr><td>Le foto del cliente</td><td data-label="Cosa si può fare">La scelta migliore: vere, e sue. Fatevi dire per iscritto che può darvele.</td></tr>
+      <tr><td>Unsplash, Pexels</td><td data-label="Cosa si può fare">Uso anche commerciale, senza citare l'autore. Non si possono rivendere così come sono.</td></tr>
+      <tr><td>Creative Commons</td><td data-label="Cosa si può fare">Dipende dalla sigla: BY chiede di citare l'autore, NC vieta l'uso commerciale, ND vieta le modifiche.</td></tr>    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="Per un ristorante">Foto di repertorio di piatti che non sono i suoi ingannano il cliente. Meglio poche foto vere fatte bene col telefono.</Card>
+  <p class="footnote">Fonti: <a href="https://unsplash.com/license" target="_blank" rel="noopener">licenza Unsplash</a>; <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">licenza Pexels</a>; <a href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank" rel="noopener">Creative Commons</a>. Controllate sempre la licenza della singola immagine.</p>
+</Slide>

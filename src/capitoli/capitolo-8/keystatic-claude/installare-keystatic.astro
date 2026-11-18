@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="8.4 Keystatic con Claude Code" titolo="Installare" lead="Tre passi. Claude li sa fare, ma è bene riconoscerli: se ne propone altri, chiedete perché.">
+  <Card slot="intro" variante="sky mt-m" titolo="Perché React e Markdoc">Il pannello di Keystatic è fatto con React; Markdoc serve per i testi lunghi formattati (8.3.a1). Si aggiungono come integrazioni di Astro (6.4.a2).</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://keystatic.com/docs/installation-astro" target="_blank" rel="noopener">Keystatic, installazione con Astro</a>, controllata il 18 novembre 2026.</p>
+  <div class="term" role="img" aria-label="I comandi per installare Keystatic in un progetto Astro e l'indirizzo del pannello">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="dim"># 1. le integrazioni di Astro</span>
+<span class="u">&gt; npx astro add react markdoc</span>
+
+<span class="dim"># 2. i pacchetti di Keystatic</span>
+<span class="u">&gt; npm install @keystatic/core @keystatic/astro</span>
+
+<span class="dim"># 3. keystatic() in astro.config.mjs,
+#    e lo schema in keystatic.config.ts</span>
+
+<span class="u">&gt; npm run dev</span>
+<span class="ok">http://127.0.0.1:4321/keystatic</span></pre>
+  </div>
+</Slide>

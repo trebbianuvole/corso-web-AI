@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="8.6 Immagini e media" titolo="Formati e peso" lead="Una foto fatta col telefono pesa diversi megabyte. Sul sito ne bastano poche centinaia di kilobyte. Il resto rallenta la pagina, soprattutto sul telefono.">
+  <Card slot="intro" variante="sky mt-m" titolo="Astro lo fa per voi">Il componente <code>&lt;Image&gt;</code> ridimensiona l'immagine e la converte in WebP, un formato leggero. E pretende il testo alternativo (7.6.2): senza, la build si ferma.</Card>
+  <p class="footnote" slot="intro">Le immagini nella cartella <code>public/</code> non vengono ottimizzate: vanno in <code>src/</code>. Fonte: <a href="https://docs.astro.build/en/guides/images/" target="_blank" rel="noopener">Astro, le immagini</a>.</p>
+  <div>
+    <table class="compare">
+      <thead><tr><th>Formato</th><th>Per cosa</th></tr></thead>
+      <tbody>
+        <tr><td>JPEG</td><td data-label="Per cosa">Foto, il classico</td></tr>
+        <tr><td>WebP, AVIF</td><td data-label="Per cosa">Foto più leggere, a parità di qualità</td></tr>
+        <tr><td>PNG</td><td data-label="Per cosa">Grafiche con trasparenze</td></tr>
+        <tr><td>SVG</td><td data-label="Per cosa">Loghi e icone: disegni, nitidi a ogni dimensione</td></tr>
+      </tbody>
+    </table>
+<pre class="code mt-m" aria-label="Il componente Image di Astro con una foto e il testo alternativo">&lt;Image src=&#123;foto&#125; alt=<span class="s">"Il tavolo sotto il pergolato"</span> /&gt;</pre>
+  </div>
+</Slide>

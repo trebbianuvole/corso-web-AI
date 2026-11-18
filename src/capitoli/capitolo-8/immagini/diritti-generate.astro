@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="8.6 Immagini e media" titolo="Diritti e trasparenza delle immagini generate" lead="Due domande diverse: di chi è l'immagine? E bisogna dire che è generata?">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Di chi è" titolo="Forse di nessuno">Il diritto d'autore protegge le opere dell'ingegno umano (5.5.2). Un'immagine generata con un solo prompt può non essere protetta: altri potrebbero riusarla. E le condizioni del generatore possono porre limiti.</Card>
+    <Card tag="Va detto" titolo="La trasparenza">Dal 2 agosto 2026 l'AI Act chiede che immagini, audio e video generati che sembrano veri, i cosiddetti deepfake, siano dichiarati in modo visibile da chi li pubblica (5.7.3).</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="E mai persone vere">Un volto o una voce di una persona reale, generati senza il suo consenso, possono essere un reato (5.4.5).</Card>
+  <p class="footnote">Sintesi a scopo didattico. Fonti: <a href="https://digital-strategy.ec.europa.eu/it/faqs/transparency-obligations-under-article-50-ai-act" target="_blank" rel="noopener">Commissione europea, obblighi di trasparenza dell'articolo 50</a>; legge 132/2025, articolo 25.</p>
+</Slide>

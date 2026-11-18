@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="8.4 Keystatic con Claude Code" titolo="Online con la modalità GitHub" lead="Per far funzionare il pannello sul sito vero servono tre cose in più. È la parte più delicata: conviene farla con calma, un passo alla volta.">
+  <Card slot="intro" variante="peach mt-m" titolo="Il sito non è più tutto statico">Il pannello ha bisogno di una piccola parte che gira sul server, per parlare con GitHub. Le pagine della trattoria restano statiche; solo /keystatic no.</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://keystatic.com/docs/github-mode" target="_blank" rel="noopener">Keystatic, modalità GitHub</a>; <a href="https://docs.astro.build/en/guides/integrations-guide/vercel/" target="_blank" rel="noopener">Astro, adattatore Vercel</a>.</p>
+  <Steps>
+    <Passo titolo="L'adattatore di Vercel">con <code>npx astro add vercel</code>, per la parte che gira sul server</Passo>
+    <Passo titolo="storage: github">nello schema, con il nome del repository</Passo>
+    <Passo titolo="L'app GitHub">la crea Keystatic, al primo accesso a /keystatic, e scrive quattro variabili nel file <code>.env</code></Passo>
+    <Passo titolo="Le variabili su Vercel">copiate nelle impostazioni del progetto, mai nel repository (4.3.6)</Passo>
+    <Passo titolo="L'accesso di Rina">un account GitHub con permesso di scrittura, oppure Keystatic Cloud (8.3.a2)</Passo>
+  </Steps>
+</Slide>

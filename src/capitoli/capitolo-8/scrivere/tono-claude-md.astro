@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="8.5 Scrivere per il web" titolo="Il tono, scritto nel CLAUDE.md" lead="Il tono è il modo di parlare del locale: caldo o elegante, «tu» o «voi», scherzoso o sobrio. Se non è scritto, l'AI usa il suo, che è quello di tutti.">
+  <Card slot="intro" variante="sky mt-m" titolo="Gli esempi contano più delle regole">Due o tre frasi scritte da Rina, o prese dal menu cartaceo, insegnano il tono meglio di una lista di aggettivi (3.1.4).</Card>
+<pre class="code" aria-label="La sezione Tono del CLAUDE.md della trattoria, con regole ed esempi"><span class="k">## Tono dei testi</span>
+- Caldo e semplice, come Rina parla ai clienti.
+- Si dà del «voi».
+- Frasi corte. Niente superlativi
+  («unico», «indimenticabile», «eccellenza»).
+- Mai inventare: piatti, prezzi, storie,
+  premi. Se manca un'informazione, chiedi.
+
+<span class="k">Esempi giusti:</span>
+- «Le tagliatelle le tiriamo a mano
+  ogni mattina.»
+- «Il lunedì siamo chiusi: si riposa
+  anche il forno.»</pre>
+</Slide>
