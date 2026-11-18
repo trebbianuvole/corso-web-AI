@@ -1,0 +1,25 @@
+---
+// Scheda aggiornabile U.5: strumenti di design con l'AI.
+// Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
+import Scheda from "../../layouts/Scheda.astro";
+---
+<Scheda sigla="U.5" titolo="Strumenti di design con l'AI" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: gli strumenti che trasformano una descrizione o uno schizzo in schermate e prototipi.">
+  <p class="lead">Gli strumenti che, da una descrizione o da uno schizzo, propongono schermate e prototipi. Cambiano in fretta: qui i principali, con la data dell'ultimo controllo.</p>
+
+  <h2>Schermate e prototipi</h2>
+  <table class="compare">
+    <thead><tr><th>Strumento</th><th>Cosa fa</th><th>Di chi è</th></tr></thead>
+    <tbody>
+      <tr><td>Claude Design</td><td data-label="Cosa fa">Prototipi, presentazioni e materiali visivi a partire da una conversazione; esporta in vari formati</td><td data-label="Di chi è">Anthropic, da aprile 2026, in anteprima per i piani a pagamento</td></tr>
+      <tr><td>Figma Make</td><td data-label="Cosa fa">Prototipi da un testo, dentro Figma, usando anche i componenti e gli stili del progetto</td><td data-label="Di chi è">Figma</td></tr>
+      <tr><td>Stitch</td><td data-label="Cosa fa">Schermate da un testo o da uno schizzo, più varianti da confrontare</td><td data-label="Di chi è">Google</td></tr>
+      <tr><td>v0</td><td data-label="Cosa fa">Interfacce già in codice, soprattutto React</td><td data-label="Di chi è">Vercel</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Come usarli nel corso</h2>
+  <p>Per esplorare idee e mostrare direzioni al cliente (7.4.6). Poi il sito si costruisce in Astro, con il vostro design system e i vostri componenti: il codice prodotto da questi strumenti va adattato, non copiato così com'è.</p>
+  <p>Immagini e illustrazioni generate: mai al posto delle foto vere del locale, mai con volti di persone reali senza consenso (5.4.5).</p>
+
+  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">Anthropic, Claude Design</a>; <a href="https://www.figma.com/make/" target="_blank" rel="noopener">Figma Make</a>; <a href="https://stitch.withgoogle.com/" target="_blank" rel="noopener">Google Stitch</a>; <a href="https://v0.app/" target="_blank" rel="noopener">v0</a>. Nel corso: slide <a href="../../capitolo-7/#7-4-5">7.4.5</a>.</p>
+</Scheda>
