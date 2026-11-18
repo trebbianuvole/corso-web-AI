@@ -1512,3 +1512,21 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 /* Campioni di colore (7.3.2) */
 .campioni { display: flex; gap: 8px; }
 .campioni span { width: 48px; height: 48px; border-radius: 10px; border: 1px solid var(--line); }
+
+/* ==========================================================
+   Capitolo 8: contenuti e CMS
+   ========================================================== */
+
+/* Il pannello di Keystatic, disegnato (8.3.1) */
+.pannello { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr); max-width: 860px; margin-left: auto; margin-right: auto; border: 1px solid var(--line); border-radius: var(--r-m); overflow: hidden; background: #fff; color: #222; font-size: .82em; }
+.pn-lato { background: #f3f3f5; border-right: 1px solid #e3e3e8; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.pn-lato b { font-family: var(--f-display); margin-bottom: 8px; }
+.pn-lato span { padding: 6px 10px; border-radius: 6px; color: #444; }
+.pn-lato .pn-sel { background: #fff; color: #111; font-weight: 700; box-shadow: 0 0 0 1px #dcdce2; }
+.pn-corpo { padding: 18px 22px; display: grid; gap: 10px; }
+.pn-tit { font-family: var(--f-display); font-weight: 700; font-size: 1.3em; }
+.pn-corpo label { display: grid; gap: 4px; font-weight: 700; font-size: .9em; color: #333; }
+.pn-campo { font-weight: 400; border: 1px solid #cfcfd6; border-radius: 6px; padding: 7px 10px; background: #fff; color: #222; }
+.pn-campo.pn-hot { border-color: var(--orange); box-shadow: 0 0 0 2px var(--peach); }
+.pn-salva { justify-self: start; background: #222; color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: 700; margin-top: 4px; }
+@media (max-width: 640px) { .pannello { grid-template-columns: 1fr; } .pn-lato { border-right: 0; border-bottom: 1px solid #e3e3e8; display: flex; flex-wrap: wrap; } .pn-lato b { width: 100%; margin-bottom: 0; } }
