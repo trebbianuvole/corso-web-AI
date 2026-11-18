@@ -1,0 +1,29 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.4 Rami" titolo="Creare e cambiare ramo" lead="Cambiando ramo cambiano anche i file nella cartella: Git vi mostra la versione di quel ramo.">
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="git switch -c nome">crea un ramo nuovo e ci entra.</Def>
+    <Def termine="git switch nome">passa a un ramo che esiste già.</Def>
+    <Def termine="git branch">elenca i rami; l'asterisco segna quello in cui siete.</Def>
+  </Defs>
+  <p class="footnote" slot="intro">Nelle guide più vecchie trovate <code>git checkout</code>: fa le stesse cose, e altre ancora. Fonte: <a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a>.</p>
+  <div>
+    <div class="term" role="img" aria-label="Si crea il ramo orari-dicembre, si elencano i rami, si torna su main">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git switch -c orari-dicembre</span>
+Switched to a new branch 'orari-dicembre'
+
+<span class="u">&gt; git branch</span>
+  main
+<span class="dot">* orari-dicembre</span>
+
+<span class="u">&gt; git switch main</span>
+Switched to branch 'main'</pre>
+    </div>
+    <Card variante="peach mt-m" titolo="Prima di cambiare ramo">Fate un commit di quello che state facendo. Se no Git si rifiuta, o si porta dietro le modifiche nell'altro ramo.</Card>
+  </div>
+</Slide>

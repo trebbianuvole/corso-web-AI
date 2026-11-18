@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.1 Perché serve" titolo="Cosa risolvono Git e GitHub" lead="Un progetto solo, con dentro tutta la sua storia. E un posto dove tutti trovano la stessa versione.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="La storia" titolo="Chi, cosa, quando, perché">Ogni modifica viene salvata con il nome di chi l'ha fatta, la data e una frase che spiega il motivo.</Card>
+    <Card tag="Il ritorno indietro" titolo="Qualsiasi punto">Si può tornare a come era il progetto venerdì, o annullare una sola modifica sbagliata.</Card>
+    <Card tag="Il lavoro in parallelo" titolo="Ognuno sulla sua copia">Ognuno lavora sulla sua parte, poi le modifiche si uniscono. Se due toccano la stessa riga, Git lo segnala.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Lo standard">Git è lo strumento che usa quasi tutto il mondo del software. Gli strumenti di AI per programmare lo danno per scontato: Claude Code salva il lavoro con Git e lo pubblica su GitHub.</Card>
+</Slide>

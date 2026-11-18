@@ -1,0 +1,18 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 I comandi da maneggiare con cura" titolo="<code>git push --force</code>" lead="Sostituisce la storia su GitHub con la vostra. Se nel frattempo un collega ha caricato dei commit, spariscono.">
+  <div class="term mt-l" role="img" aria-label="GitHub rifiuta un push perché il ramo online ha commit che il computer non ha; la soluzione giusta è git pull">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git push</span>
+<span class="rem"> ! [rejected]        main -&gt; main (fetch first)</span>
+<span class="dim">hint: Updates were rejected because the remote contains work
+hint: that you do not have locally.</span></pre>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card variante="bad" titolo="La tentazione">Aggiungere <code>--force</code> per far passare il push. Il lavoro del collega viene cancellato da GitHub.</Card>
+    <Card variante="good" titolo="La cosa giusta">Prima <code>git pull</code>, che scarica e unisce il suo lavoro; poi di nuovo <code>git push</code>.</Card>
+  </div>
+  <p class="footnote">Se proprio serve, <code>--force-with-lease</code> forza solo se nessun altro ha cambiato il ramo nel frattempo. Su <code>main</code> mai: si può vietare con le regole del repository (4.6.a2). Fonte: <a href="https://git-scm.com/docs/git-push" target="_blank" rel="noopener">git push</a>.</p>
+</Slide>

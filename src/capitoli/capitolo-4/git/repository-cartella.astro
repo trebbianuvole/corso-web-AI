@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.3 Git" titolo="Il repository" lead="Una cartella di progetto che Git tiene d'occhio. Dentro c'è una cartella nascosta, .git, dove sta tutta la storia.">
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="git init">trasforma la cartella in cui siete in un repository.</Def>
+    <Def termine="git clone indirizzo">scarica un repository che esiste già, con tutta la sua storia.</Def>
+  </Defs>
+  <div>
+    <div class="term" role="img" aria-label="Il comando git init crea un repository vuoto nella cartella sito-rina">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="dim">sito-rina&gt;</span> <span class="u">git init</span>
+Initialized empty Git repository in
+C:/Users/anna/sito-rina/.git/</pre>
+    </div>
+    <Card variante="peach mt-m" titolo="Non toccate .git">Se cancellate quella cartella, i file restano ma la storia è persa.</Card>
+  </div>
+</Slide>

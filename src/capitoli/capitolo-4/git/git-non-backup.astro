@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 Git" titolo="Git non è un backup" lead="Git salva la storia dei file del progetto. Tutto il resto, se si perde, è perso.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Cosa salva</h3>
+      <ul class="mt-m"><li>il codice e i testi del progetto</li><li>la storia di ogni modifica</li><li>le immagini che stanno nella cartella del progetto</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Cosa non salva</h3>
+      <ul class="mt-m"><li>il database: le prenotazioni di PrenotaAula</li><li>gli account e le password degli utenti</li><li>i file esclusi, come <code>.env</code> con le chiavi</li><li>le impostazioni di Vercel e Supabase</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="E se il computer si rompe?">Senza GitHub la storia è solo lì. Il backup dei dati è un lavoro a parte: lo riprendiamo in 10.2.7 e nella consegna al cliente (12.2).</Card>
+</Slide>

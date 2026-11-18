@@ -1,0 +1,23 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.1 Perché serve" titolo="Il problema: chi ha la versione giusta?" lead="Tre persone lavorano al sito della trattoria e si passano i file per email. Dopo un mese la cartella è questa.">
+  <div slot="intro" class="stack mt-m">
+    <Card titolo="Quale è online?">Nessuno lo sa con certezza.</Card>
+    <Card titolo="Cosa ha cambiato Marco?">Bisogna aprire due file e confrontarli a occhio.</Card>
+    <Card variante="peach" titolo="Come torno a venerdì?">Se nessuno ha fatto una copia, non si torna.</Card>
+  </div>
+  <div class="term" role="img" aria-label="Una cartella con otto copie degli stessi file, con nomi diversi">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; ls sito-rina</span>
+index.html
+index-vecchio.html
+index-DEF.html
+index-DEF-v2.html
+index-DEF-v2-Marco.html
+index-DEF-v2-buono-NON-TOCCARE.html
+menu-nuovo-FINALE.pdf
+menu-nuovo-FINALE-giusto.pdf</pre>
+  </div>
+</Slide>

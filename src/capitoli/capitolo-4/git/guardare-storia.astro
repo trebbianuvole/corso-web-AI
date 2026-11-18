@@ -1,0 +1,24 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.3 Git" titolo="Guardare la storia" lead="Tre comandi per sapere a che punto siete. Non cambiano niente: si possono lanciare tutte le volte che volete.">
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="git status">cosa è cambiato dall'ultima foto, e cosa è pronto per la prossima.</Def>
+    <Def termine="git log">la fila delle foto, dalla più recente.</Def>
+    <Def termine="git diff">le righe cambiate: in rosso quelle tolte, in verde quelle aggiunte.</Def>
+  </Defs>
+  <div class="term" role="img" aria-label="git status mostra un file modificato; git diff mostra il titolo della home cambiato">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git status</span>
+On branch main
+Changes not staged for commit:
+  <span class="dot">modified:   src/pages/index.astro</span>
+
+<span class="u">&gt; git diff</span>
+<span class="dim">@@ src/pages/index.astro @@</span>
+<span class="rem">-  &lt;h1&gt;Trattoria Da Rina&lt;/h1&gt;</span>
+<span class="ok">+  &lt;h1&gt;Da Rina, cucina di casa&lt;/h1&gt;</span></pre>
+  </div>
+</Slide>

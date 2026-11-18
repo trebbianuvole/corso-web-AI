@@ -1,0 +1,19 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 I comandi da maneggiare con cura" titolo="<code>git reset --hard</code>" lead="Riporta il ramo a un commit e butta via tutto quello che è venuto dopo: le modifiche non salvate e i commit successivi.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>Quando fa danni</h3>
+      <p>Il lavoro non salvato sparisce senza cestino. I commit tolti spariscono dalla storia del ramo, e se erano già su GitHub i colleghi si ritrovano con una storia diversa dalla vostra.</p>
+    </div>
+    <span class="vs" aria-hidden="true">o</span>
+    <div class="card good">
+      <h3>Quando si usa</h3>
+      <p>Su un ramo solo vostro, non ancora condiviso, per buttare un esperimento andato male e ripartire pulito.</p>
+    </div>
+  </div>
+  <Card variante="peach mt-m" tag="Con l'AI" titolo="Se un agente lo propone, fermatevi">Chiedete perché, e se non basta <code>git restore</code> o <code>git revert</code>. Quasi sempre basta.</Card>
+  <p class="footnote">Fonte: <a href="https://git-scm.com/docs/git-reset" target="_blank" rel="noopener">git reset</a>. Se il danno è fatto, la 4.3.a3 spiega come ritrovare i commit.</p>
+</Slide>

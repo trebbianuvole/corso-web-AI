@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.4 Rami" titolo="Il ramo main e i branch" lead="La storia non è per forza una fila sola. Da un punto qualsiasi può partire un ramo, una storia parallela.">
+  <figure class="figure mt-l"><svg class="diagram" viewBox="0 0 900 220" role="img" aria-labelledby="mb-t mb-d"><title id="mb-t">Il ramo main e un branch</title><desc id="mb-d">Il ramo main ha quattro commit in fila. Dal secondo parte il ramo orari-dicembre, con due commit suoi. Main non vede quei due commit.</desc>
+<line x1="60" y1="70" x2="840" y2="70" class="g-main"/>
+<path d="M300 70 C 360 70, 380 160, 440 160 L 680 160" class="g-ramo"/>
+<circle cx="100" cy="70" r="16" class="g-nodo"/>
+<circle cx="300" cy="70" r="16" class="g-nodo"/>
+<circle cx="560" cy="70" r="16" class="g-nodo"/>
+<circle cx="800" cy="70" r="16" class="g-nodo"/>
+<circle cx="500" cy="160" r="16" class="g-nodo-hot"/>
+<circle cx="680" cy="160" r="16" class="g-nodo-hot"/>
+<text x="40" y="35" class="big">main</text>
+<text x="500" y="205" class="lbl" text-anchor="middle">orari-dicembre</text></svg></figure>
+  <Grid colonne={2} classe="mt-m">
+    <Card titolo="main">La versione buona, quella che va online. Nessuno ci lavora sopra direttamente.</Card>
+    <Card variante="peach" titolo="Un branch">Una storia parallela per una modifica: gli orari di dicembre, una pagina nuova. Main non cambia finché non lo decidete.</Card>
+  </Grid>
+</Slide>

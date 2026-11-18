@@ -1,0 +1,19 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.3 I comandi da maneggiare con cura" titolo="Ritrovare un commit perso" lead="Git tiene un diario di dove siete stati: ogni commit, ogni cambio di ramo, ogni reset. Si chiama reflog.">
+  <Card slot="intro" variante="sky mt-m" titolo="Solo sul vostro computer">Il diario non va su GitHub e non dura per sempre: di norma Git conserva le voci per 90 giorni, 30 per i commit che nessun ramo raggiunge più.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://git-scm.com/docs/git-reflog" target="_blank" rel="noopener">git reflog</a>.</p>
+  <div class="term" role="img" aria-label="git reflog mostra il commit perso prima del reset; git switch -c lo recupera in un ramo nuovo">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git reflog</span>
+<span class="dot">a1b2c3d</span> HEAD@&#123;0&#125;: reset: moving to a1b2c3d
+<span class="dot">e4f91a2</span> HEAD@&#123;1&#125;: commit: Aggiunge gli orari di dicembre
+<span class="dot">7c03b8d</span> HEAD@&#123;2&#125;: commit: Corregge il numero di telefono
+
+<span class="dim"># il commit perso è e4f91a2: lo recupero in un ramo</span>
+<span class="u">&gt; git switch -c recupero e4f91a2</span>
+Switched to a new branch 'recupero'</pre>
+  </div>
+</Slide>

@@ -1,0 +1,25 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 Git" titolo="Dal file alla storia, in tre posti" lead="Una modifica fa tre tappe. Quella di mezzo serve a scegliere cosa mettere in ogni fotografia.">
+  <figure class="figure mt-l"><svg class="diagram" viewBox="0 0 900 250" role="img" aria-labelledby="tp-t tp-d"><title id="tp-t">I tre posti di Git</title><desc id="tp-d">Prima la cartella di lavoro, dove modificate i file. Con git add le modifiche scelte passano all'area di preparazione. Con git commit diventano una fotografia nella storia del repository.</desc>
+<defs><marker id="tp-punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="punta"/></marker></defs>
+<rect x="10" y="30" width="240" height="170" rx="18" class="posto"/>
+<rect x="330" y="30" width="240" height="170" rx="18" class="posto"/>
+<rect x="650" y="30" width="240" height="170" rx="18" class="posto-hot"/>
+<text x="130" y="80" class="big" text-anchor="middle">Cartella di lavoro</text>
+<text x="130" y="115" class="lbl" text-anchor="middle">i file come li vedete</text>
+<text x="130" y="138" class="lbl" text-anchor="middle">e li modificate</text>
+<text x="450" y="80" class="big" text-anchor="middle">Area di preparazione</text>
+<text x="450" y="115" class="lbl" text-anchor="middle">le modifiche scelte</text>
+<text x="450" y="138" class="lbl" text-anchor="middle">per la prossima foto</text>
+<text x="770" y="80" class="big" text-anchor="middle">Repository</text>
+<text x="770" y="115" class="lbl" text-anchor="middle">la storia:</text>
+<text x="770" y="138" class="lbl" text-anchor="middle">le foto già scattate</text>
+<line x1="256" y1="115" x2="322" y2="115" class="freccia" marker-end="url(#tp-punta)"/>
+<line x1="576" y1="115" x2="642" y2="115" class="freccia" marker-end="url(#tp-punta)"/>
+<text x="290" y="235" class="num" text-anchor="middle">git add</text>
+<text x="610" y="235" class="num" text-anchor="middle">git commit</text>
+</svg></figure>
+  <p class="footnote">In inglese: working directory, staging area, repository. Nelle guide trovate anche «index» al posto di staging area.</p>
+</Slide>

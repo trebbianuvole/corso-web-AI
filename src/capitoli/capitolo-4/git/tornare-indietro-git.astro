@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 Git" titolo="Tornare indietro" lead="Due comandi per due situazioni diverse: la modifica non è ancora salvata, oppure è già in un commit.">
+  <Grid colonne={2} classe="mt-l">
+    <div class="card">
+      <span class="tag">Non ancora salvata</span>
+      <h3><code>git restore index.astro</code></h3>
+      <p>Butta le modifiche a quel file e lo riporta com'era all'ultimo commit. Quelle modifiche si perdono: non c'è cestino.</p>
+    </div>
+    <div class="card peach">
+      <span class="tag">Già in un commit</span>
+      <h3><code>git revert 7c03b8d</code></h3>
+      <p>Crea un commit nuovo che fa il contrario di quello indicato. La storia resta intera: è il modo sicuro, anche quando il lavoro è già su GitHub.</p>
+    </div>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Nel dubbio, revert">Non cancella niente: se avete sbagliato anche il revert, si annulla con un altro revert.</Card>
+  <p class="footnote">Fonti: <a href="https://git-scm.com/docs/git-restore" target="_blank" rel="noopener">git restore</a>, <a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a>.</p>
+</Slide>
