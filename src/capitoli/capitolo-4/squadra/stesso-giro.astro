@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="4.6 In squadra" titolo="Ogni modifica segue lo stesso giro" lead="Piccola o grande, ogni modifica fa lo stesso percorso. Così main funziona sempre, e si sa sempre chi ha fatto cosa.">
+  <Card slot="intro" variante="sky mt-m" titolo="Anche da soli">Il giro funziona anche se lavorate da soli con un agente: il revisore siete voi.</Card>
+  <Steps>
+    <Passo titolo="Issue" inLinea>cosa fare, e quando è fatto</Passo>
+    <Passo titolo="Ramo" inLinea>uno per issue, partendo da main aggiornato</Passo>
+    <Passo titolo="Commit" inLinea>piccoli, con messaggi chiari</Passo>
+    <Passo titolo="Pull request" inLinea>la proposta, con l'anteprima</Passo>
+    <Passo titolo="Revisione" inLinea>qualcuno legge e prova</Passo>
+    <Passo titolo="Merge" inLinea>entra in main, e va online</Passo>
+  </Steps>
+</Slide>

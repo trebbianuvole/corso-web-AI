@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.5 GitHub" titolo="Le pull request" lead="Una proposta: «in questo ramo ho fatto queste modifiche, le uniamo a main?». Il merge avviene solo quando qualcuno è d'accordo.">
+  <Card slot="intro" variante="sky mt-m" titolo="Su questo sito">Ogni modifica è passata da una pull request. La <a href="https://github.com/trebbianuvole/corso-web-AI/pull/4" target="_blank" rel="noopener">#4</a> ha aggiunto gli approfondimenti; Vercel ne ha preparato un'anteprima da controllare prima del merge.</Card>
+  <Defs>
+    <Def termine="La descrizione">cosa cambia e perché. Con «Closes #12» la issue si chiude da sola al merge.</Def>
+    <Def termine="I commit">la storia del ramo, uno per uno.</Def>
+    <Def termine="I file cambiati">il diff, file per file, riga per riga.</Def>
+    <Def termine="I commenti">domande e richieste, anche su una riga precisa.</Def>
+    <Def termine="I controlli">le verifiche automatiche: la build, i test, l'anteprima di Vercel.</Def>
+  </Defs>
+</Slide>

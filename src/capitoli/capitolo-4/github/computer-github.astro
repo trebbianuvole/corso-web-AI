@@ -1,0 +1,26 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.5 GitHub" titolo="Dal vostro computer a GitHub" lead="Push manda i vostri commit su GitHub. Pull scarica quelli degli altri.">
+  <Card slot="intro" variante="sky mt-m" titolo="L'accesso, la prima volta">Al primo push Git apre il browser e vi chiede di entrare in GitHub: su Windows ci pensa Git Credential Manager, che arriva insieme a Git. In alternativa: «Accedi con GitHub» in VS Code, o il programma <code>gh</code> con <code>gh auth login</code>.</Card>
+  <p class="footnote" slot="intro">Preparando questo capitolo è successo proprio così: <code>gh auth login</code> ha mostrato un codice di otto caratteri, confermato su github.com. Fonti: <a href="https://github.com/git-ecosystem/git-credential-manager" target="_blank" rel="noopener">Git Credential Manager</a>, <a href="https://cli.github.com/manual/gh_auth_login" target="_blank" rel="noopener">gh auth login</a>.</p>
+  <div>
+    <figure class="figure"><svg class="diagram" viewBox="0 0 560 170" role="img" aria-labelledby="pp-t pp-d"><title id="pp-t">Push e pull</title><desc id="pp-d">Dal computer a GitHub i commit viaggiano con push; da GitHub al computer con pull.</desc>
+<defs><marker id="pp-punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="punta"/></marker></defs>
+<rect x="10" y="30" width="170" height="110" rx="16" class="posto"/>
+<rect x="380" y="30" width="170" height="110" rx="16" class="posto-hot"/>
+<text x="95" y="92" class="big" text-anchor="middle">Computer</text>
+<text x="465" y="92" class="big" text-anchor="middle">GitHub</text>
+<line x1="190" y1="65" x2="370" y2="65" class="freccia" marker-end="url(#pp-punta)"/>
+<line x1="370" y1="110" x2="190" y2="110" class="freccia" marker-end="url(#pp-punta)"/>
+<text x="280" y="55" class="num" text-anchor="middle">git push</text>
+<text x="280" y="135" class="num" text-anchor="middle">git pull</text>
+</svg></figure>
+    <div class="term mt-m" role="img" aria-label="Si collega il repository locale a GitHub e si fa il primo push">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git remote add origin https://github.com/anna/sito-rina.git</span>
+<span class="u">&gt; git push -u origin main</span></pre>
+    </div>
+  </div>
+</Slide>

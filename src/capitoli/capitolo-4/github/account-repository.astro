@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="4.5 GitHub" titolo="Account e repository" lead="Un account gratuito basta per tutto il corso.">
+  <Card slot="intro" variante="sky mt-m" titolo="Il piano gratuito">Repository pubblici e privati senza limiti di numero, con collaboratori senza limiti. Alcune funzioni, come Pages e le regole sui rami, sono gratuite solo per i repository pubblici.</Card>
+  <p class="footnote" slot="intro">Fonte: <a href="https://github.com/pricing" target="_blank" rel="noopener">GitHub, piani e prezzi</a>, controllata il 18 novembre 2026.</p>
+  <Steps>
+    <Passo titolo="Create l'account">su github.com, con un nome che userete anche nel lavoro</Passo>
+    <Passo titolo="New repository">il pulsante verde in alto, o il «+»</Passo>
+    <Passo titolo="Nome e descrizione">corti e chiari: <code>sito-trattoria-rina</code></Passo>
+    <Passo titolo="Pubblico o privato">vedi la prossima slide</Passo>
+    <Passo titolo="L'indirizzo">github.com/vostro-nome/sito-trattoria-rina</Passo>
+  </Steps>
+</Slide>

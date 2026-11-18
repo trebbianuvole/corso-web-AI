@@ -1,0 +1,28 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="4.8 Tirare le fila" titolo="Le parole da conoscere">
+  <Grid colonne={2} classe="mt-m">
+    <Defs>
+      <Def termine="Repository">la cartella del progetto con tutta la sua storia</Def>
+      <Def termine="Commit">una fotografia del progetto, con un messaggio</Def>
+      <Def termine="Diff">le righe aggiunte e tolte tra due versioni</Def>
+      <Def termine=".gitignore">l'elenco di quello che Git non deve salvare</Def>
+      <Def termine="Branch">un ramo: una storia parallela per una modifica</Def>
+      <Def termine="Merge">l'unione di un ramo in un altro</Def>
+      <Def termine="Conflitto">due modifiche alla stessa riga: decidete voi</Def>
+    </Defs>
+    <Defs>
+      <Def termine="Push e pull">mandare i commit su GitHub, e scaricarli</Def>
+      <Def termine="Clone">la copia di un repository, con la storia</Def>
+      <Def termine="Issue">una scheda per una cosa da fare</Def>
+      <Def termine="Pull request">la proposta di unire un ramo a main</Def>
+      <Def termine="Code review">la lettura del codice da parte di un altro</Def>
+      <Def termine="Tag e release">un'etichetta su una versione, con le note</Def>
+      <Def termine="Worktree">una seconda cartella dello stesso repository</Def>
+    </Defs>
+  </Grid>
+</Slide>

@@ -1,0 +1,11 @@
+---
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.5 Accessi e strumenti di GitHub" titolo="Projects: la bacheca" lead="Projects mette le issue in una bacheca a colonne, o in una tabella. Si vede a colpo d'occhio chi fa cosa. È compreso nel piano gratuito.">
+  <div class="bacheca mt-l" role="img" aria-label="Una bacheca con tre colonne: da fare, in corso, fatto, con le issue di PrenotaAula">
+    <div><h3>Da fare</h3><p class="card"><b>#15</b> Pagina di aiuto per i docenti</p><p class="card"><b>#16</b> Esporta le prenotazioni della settimana</p></div>
+    <div><h3>In corso</h3><p class="card peach"><b>#12</b> Filtro per data · Anna</p><p class="card peach"><b>#14</b> Tabella delle prenotazioni · Luca</p></div>
+    <div><h3>Fatto</h3><p class="card"><b>#11</b> Accesso con l'email della scuola</p><p class="card"><b>#13</b> Elenco delle aule</p></div>
+  </div>
+  <p class="footnote">Quando la pull request di una issue viene unita, la scheda può spostarsi da sola in «Fatto». Fonte: <a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" target="_blank" rel="noopener">GitHub Projects</a>.</p>
+</Slide>

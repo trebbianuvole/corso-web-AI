@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="4.7 Git e l'AI" titolo="Leggere il diff prima di approvare" lead="Non serve capire ogni riga. Serve accorgersi di quello che non vi aspettavate.">
+  <div slot="intro" class="card mt-m">
+    <h3>Cosa cercare</h3>
+    <ul class="mt-m"><li>File che non c'entrano con la richiesta</li><li>Righe tolte che non avevate chiesto di togliere</li><li>Chiavi, password, indirizzi email</li><li>Tante modifiche per una richiesta piccola</li></ul>
+  </div>
+  <div>
+<pre class="code" aria-label="Un diff: cambia il titolo della pagina menu, ma viene anche aggiunta per sbaglio una chiave di Supabase"><span class="m">src/pages/menu.astro</span>
+<span class="rem">- &lt;h1&gt;Il menu&lt;/h1&gt;</span>
+<span class="add">+ &lt;h1&gt;Il menu di dicembre&lt;/h1&gt;</span>
+
+<span class="m">src/lib/db.js</span>
+<span class="add">+ const KEY = "sb_secret_4f9a…";</span>
+<span class="k">  ↑ questa no: una chiave nel codice</span></pre>
+    <Card variante="sky mt-m" titolo="Dove leggerlo">Nel pannello Git di VS Code, nella scheda «Files changed» della pull request, o chiedendo a Claude: «riassumimi il diff file per file».</Card>
+  </div>
+</Slide>

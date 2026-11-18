@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.5 Accessi e strumenti di GitHub" titolo="Pages: siti statici gratuiti" lead="GitHub può pubblicare un sito statico direttamente da un repository, all'indirizzo nome.github.io/repository.">
+  <Grid colonne={2} classe="mt-l">
+    <Card titolo="Cosa offre">Hosting gratuito per siti di soli file: HTML, CSS, JavaScript, immagini. Un sito Astro si pubblica con una GitHub Action (4.6.a1).</Card>
+    <Card titolo="I limiti">Nel piano gratuito, solo da repository pubblici. Sito fino a 1 GB, circa 100 GB di traffico al mese. Niente parti dinamiche lato server.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Perché nel corso usiamo Vercel">Fa la build da solo, prepara un'anteprima per ogni pull request e regge anche le parti dinamiche che serviranno a PrenotaAula. Pages resta un'ottima scelta per un portfolio o la documentazione di un progetto.</Card>
+  <p class="footnote">Fonti: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits" target="_blank" rel="noopener">limiti di GitHub Pages</a>, <a href="https://github.com/pricing" target="_blank" rel="noopener">piani di GitHub</a>, controllate il 18 novembre 2026; <a href="https://docs.astro.build/en/guides/deploy/github/" target="_blank" rel="noopener">Astro su GitHub Pages</a>.</p>
+</Slide>

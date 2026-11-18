@@ -1,0 +1,20 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.6 Automazioni su GitHub" titolo="GitHub Actions" lead="Piccoli programmi che GitHub fa girare da solo a ogni push o pull request: la build, i test, i controlli.">
+  <Card slot="intro" variante="sky mt-m" titolo="Quanto costano">Gratuite nei repository pubblici. Nei privati, il piano gratuito comprende 2.000 minuti al mese.</Card>
+  <Card slot="intro" variante="peach mt-m" tag="Con l'AI" titolo="Claude scrive e usa le Actions">Può scrivere il file per voi; e con la Claude Code GitHub Action risponde quando lo nominate con @claude in una issue o in una pull request.</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://github.com/pricing" target="_blank" rel="noopener">piani di GitHub</a>, controllata il 18 novembre 2026; <a href="https://code.claude.com/docs/en/github-actions" target="_blank" rel="noopener">Claude Code GitHub Actions</a>.</p>
+<pre class="code" aria-label="Un file di GitHub Actions che a ogni pull request installa le dipendenze e fa la build del sito"><span class="m"># .github/workflows/controlli.yml</span>
+<span class="k">name:</span> Controlli
+<span class="k">on:</span> [pull_request]
+<span class="k">jobs:</span>
+  <span class="k">build:</span>
+    <span class="k">runs-on:</span> ubuntu-latest
+    <span class="k">steps:</span>
+      - <span class="k">uses:</span> actions/checkout@v4
+      - <span class="k">uses:</span> actions/setup-node@v4
+      - <span class="k">run:</span> npm ci
+      - <span class="k">run:</span> npm run build</pre>
+</Slide>

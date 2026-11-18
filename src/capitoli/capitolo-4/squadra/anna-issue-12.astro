@@ -1,0 +1,27 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="esempio" split classe="compact" kicker="4.6 In squadra" titolo="Anna lavora alla issue #12" lead="Il filtro per data della 4.5.5, dall'inizio alla fine.">
+  <ol class="steps mt-m" slot="intro">
+    <li><div><strong>Parte da main aggiornato</strong> <span>così ha anche il lavoro di Luca di ieri</span></div></li>
+    <li><div><strong>Apre un ramo</strong> <span>con il nome della modifica</span></div></li>
+    <li><div><strong>Lavora con Claude Code</strong> <span>«lavora alla issue #12», e controlla il diff</span></div></li>
+    <li><div><strong>Commit e push</strong> <span>il ramo arriva su GitHub</span></div></li>
+    <li><div><strong>Apre la pull request</strong> <span>Vercel prepara l'anteprima</span></div></li>
+    <li><div><strong>La docente prova e approva</strong> <span>merge: la issue si chiude da sola</span></div></li>
+  </ol>
+  <div class="term" role="img" aria-label="I comandi di Anna: pull, switch -c filtro-data, add, commit con il riferimento alla issue, push, gh pr create">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git switch main</span>
+<span class="u">&gt; git pull</span>
+<span class="u">&gt; git switch -c filtro-data</span>
+
+<span class="dim"># ... Claude Code modifica 3 file, Anna rilegge ...</span>
+
+<span class="u">&gt; git add .</span>
+<span class="u">&gt; git commit -m "Aggiunge il filtro per data alla lista delle aule"</span>
+<span class="u">&gt; git push -u origin filtro-data</span>
+<span class="u">&gt; gh pr create --title "Filtro per data" --body "Closes #12"</span>
+<span class="ok">https://github.com/scuola/prenotaula/pull/18</span></pre>
+  </div>
+</Slide>

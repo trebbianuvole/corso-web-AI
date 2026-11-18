@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="4.7 Git e l'AI" titolo="Claude fa commit e apre pull request" lead="Claude Code conosce Git: crea rami, scrive i messaggi, fa push e apre la pull request con la descrizione. A voi resta la parte che conta: decidere.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Come autore" titolo="Il lavoro, già impacchettato">«Fai un commit per ogni passo e apri una pull request che spieghi le scelte.» La #4 di questo sito è nata così.</Card>
+    <Card tag="Come secondo revisore" titolo="Un altro paio d'occhi">«Rivedi questa pull request: cerca errori e casi dimenticati.» Su GitHub, con la Claude Code GitHub Action, basta scrivere @claude in un commento.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Chi approva siete voi">Claude può scrivere e rivedere, ma il merge su main è una decisione vostra. Se la scrive lui e la rivede lui, non l'ha rivista nessuno.</Card>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/github-actions" target="_blank" rel="noopener">Claude Code GitHub Actions</a>.</p>
+</Slide>

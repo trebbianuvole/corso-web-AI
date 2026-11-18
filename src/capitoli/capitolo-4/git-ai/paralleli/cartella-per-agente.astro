@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.7 Più agenti in parallelo" titolo="Una cartella per agente: i worktree" lead="Due agenti nella stessa cartella si pestano i piedi. Un worktree è una seconda cartella dello stesso repository, su un altro ramo, con la stessa storia.">
+  <Card slot="intro" variante="sky mt-m" titolo="Con Claude Code">Con <code>claude --worktree menu-nuovo</code> Claude crea da solo la cartella, sotto <code>.claude/worktrees/</code>, e un ramo nuovo. L'app desktop dà a ogni sessione il suo worktree.</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://code.claude.com/docs/en/worktrees" target="_blank" rel="noopener">Claude Code, sessioni parallele con i worktree</a>; <a href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener">git worktree</a>.</p>
+  <div class="term" role="img" aria-label="Con git worktree add si crea la cartella sito-rina-menu sul ramo menu-nuovo; git worktree list mostra le due cartelle">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git worktree add ../sito-rina-menu -b menu-nuovo</span>
+Preparing worktree (new branch 'menu-nuovo')
+
+<span class="u">&gt; git worktree list</span>
+C:/Users/anna/sito-rina        e4f91a2 [main]
+C:/Users/anna/sito-rina-menu   e4f91a2 [menu-nuovo]</pre>
+  </div>
+</Slide>

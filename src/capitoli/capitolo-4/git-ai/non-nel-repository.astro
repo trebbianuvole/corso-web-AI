@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="checklist" kicker="4.7 Git e l'AI" titolo="Cosa non deve finire nel repository" lead="Gli agenti salvano quello che trovano nella cartella. Controllate prima del commit.">
+  <ul class="checklist mt-l">
+    <li><div><strong>Chiavi e password</strong><span>Nel file <code>.env</code>, che è nel <code>.gitignore</code>.</span></div></li>
+    <li><div><strong>Dati personali</strong><span>Elenchi di clienti, prenotazioni vere, email.</span></div></li>
+    <li><div><strong>File enormi</strong><span>Video, esportazioni del database, archivi zip.</span></div></li>
+    <li><div><strong>Cartelle generate</strong><span><code>node_modules</code>, <code>dist</code>: si rifanno.</span></div></li>
+  </ul>
+  <Card variante="peach mt-m" titolo="Se una chiave è finita in un commit">Cambiatela subito nel servizio da cui viene. Toglierla con un nuovo commit non basta: resta nella storia, e chi ha il repository la può leggere.</Card>
+</Slide>

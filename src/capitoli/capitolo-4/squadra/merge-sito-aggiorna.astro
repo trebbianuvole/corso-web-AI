@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.6 In squadra" titolo="Dopo il merge, il sito si aggiorna da solo" lead="Vercel è collegato al repository: guarda ogni ramo e ogni pull request, e pubblica senza che nessuno carichi file a mano.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Pull request</span><b>Anteprima</b><span>un indirizzo di prova solo per quella modifica</span></div>
+    <div><span class="role">Revisione</span><b>Si prova</b><span>sull'anteprima, anche dal telefono</span></div>
+    <div><span class="role">Merge su main</span><b>Build</b><span>Vercel costruisce la nuova versione</span></div>
+    <div><span class="role">Produzione</span><b>Online</b><span>il sito vero si aggiorna, di solito in un paio di minuti</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="L'alternativa senza Vercel">Una GitHub Action costruisce il sito e lo pubblica su GitHub Pages (4.5.a3): funziona, ma le anteprime per ogni pull request vanno costruite a mano.</Card>
+  <p class="footnote">Fonte: <a href="https://vercel.com/docs/deployments/environments" target="_blank" rel="noopener">Vercel, ambienti di anteprima e produzione</a>.</p>
+</Slide>

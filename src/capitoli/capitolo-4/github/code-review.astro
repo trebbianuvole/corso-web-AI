@@ -1,0 +1,19 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.5 GitHub" titolo="La code review" lead="Qualcuno che non ha scritto il codice lo legge prima che entri. Trova gli errori quando costano poco.">
+  <Grid colonne={2} classe="mt-l">
+    <div class="card">
+      <h3>Cosa guarda chi rivede</h3>
+      <ul class="mt-m"><li>Fa quello che chiede la issue?</li><li>Si capisce, o servono spiegazioni?</li><li>Rompe qualcos'altro?</li><li>Ci sono chiavi, password o dati personali?</li></ul>
+    </div>
+    <div class="card">
+      <h3>Come risponde</h3>
+      <ul class="mt-m"><li><b>Approve:</b> va bene così</li><li><b>Request changes:</b> va sistemato prima</li><li><b>Comment:</b> una domanda o un'idea</li></ul>
+    </div>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Si rivede il codice, non la persona">«Questa funzione non gestisce il giorno vuoto» aiuta. «Hai sbagliato tutto» no.</Card>
+  <p class="footnote">Fonte: <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews" target="_blank" rel="noopener">GitHub, le revisioni delle pull request</a>.</p>
+</Slide>

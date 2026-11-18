@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.6 In squadra" titolo="Il progetto PrenotaAula" lead="La web app per prenotare le aule della scuola, dal capitolo 2. Ora la costruisce una piccola squadra, ognuno con il suo agente.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Interfaccia" titolo="Anna">le pagine che vedono i docenti</Card>
+    <Card tag="Dati" titolo="Luca">le aule e le prenotazioni, con Supabase</Card>
+    <Card tag="Contenuti e prove" titolo="Sara">i testi, e controlla che tutto funzioni</Card>
+    <Card variante="peach" tag="Revisione" titolo="La docente">approva le pull request e decide cosa entra</Card>
+  </Grid>
+  <div class="grid g3 mt-m">
+    <Card variante="sky" titolo="Un repository">prenotaula, su GitHub</Card>
+    <Card variante="sky" titolo="main protetto">si entra solo con una pull request approvata</Card>
+    <Card variante="sky" titolo="Vercel collegato">un'anteprima per ogni pull request</Card>
+  </div>
+</Slide>
