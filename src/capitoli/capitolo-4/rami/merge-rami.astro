@@ -1,0 +1,27 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.4 Rami" titolo="Il merge" lead="Quando il lavoro nel ramo è pronto, lo si unisce a main. I commit del ramo entrano nella storia principale.">
+  <figure class="figure mt-l"><svg class="diagram" viewBox="0 0 900 220" role="img" aria-labelledby="mg-t mg-d"><title id="mg-t">Il merge di un ramo in main</title><desc id="mg-d">Il ramo orari-dicembre, con i suoi due commit, si ricongiunge a main in un commit di unione.</desc>
+<line x1="60" y1="70" x2="840" y2="70" class="g-main"/>
+<path d="M300 70 C 360 70, 380 160, 440 160 L 600 160 C 660 160, 680 70, 740 70" class="g-ramo"/>
+<circle cx="100" cy="70" r="16" class="g-nodo"/>
+<circle cx="300" cy="70" r="16" class="g-nodo"/>
+<circle cx="500" cy="70" r="16" class="g-nodo"/>
+<circle cx="460" cy="160" r="16" class="g-nodo-hot"/>
+<circle cx="600" cy="160" r="16" class="g-nodo-hot"/>
+<circle cx="740" cy="70" r="22" class="g-nodo-unione"/>
+<text x="40" y="35" class="big">main</text>
+<text x="530" y="205" class="lbl" text-anchor="middle">orari-dicembre</text>
+<text x="740" y="35" class="lbl" text-anchor="middle">merge</text>
+</svg></figure>
+  <div class="grid g2 mt-m">
+    <div class="term" role="img" aria-label="Da main si unisce il ramo orari-dicembre">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git switch main</span>
+<span class="u">&gt; git merge orari-dicembre</span></pre>
+    </div>
+    <Card variante="sky" titolo="In squadra si fa su GitHub">Quasi sempre il merge passa da una pull request (4.5.6): prima qualcuno controlla, poi si unisce con un clic.</Card>
+  </div>
+</Slide>

@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.6 In squadra" titolo="Se qualcosa va storto" lead="I quattro intoppi più comuni, e la mossa giusta per ognuno.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Il sito online è rotto" titolo="Si torna alla versione di prima">Un revert del merge, con una nuova pull request. Nell'attesa, su Vercel si rimette online la pubblicazione precedente.</Card>
+    <Card tag="Il push viene rifiutato" titolo="Prima pull, poi push">Qualcuno ha caricato prima di voi. <code>git pull</code> unisce il suo lavoro; poi il push passa.</Card>
+    <Card tag="Ho lavorato su main per sbaglio" titolo="Spostate il lavoro in un ramo"><code>git switch -c nome-ramo</code>: le modifiche non salvate vengono con voi.</Card>
+    <Card tag="Conflitto nella pull request" titolo="Aggiornate il ramo">Portate main dentro il vostro ramo e risolvete il conflitto come nella 4.4.5.</Card>
+  </Grid>
+  <p class="footnote">Fonte: <a href="https://vercel.com/docs/instant-rollback" target="_blank" rel="noopener">Vercel, Instant Rollback</a>.</p>
+</Slide>

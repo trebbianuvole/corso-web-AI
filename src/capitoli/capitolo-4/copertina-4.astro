@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 4" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Git e GitHub" lead="La storia di un progetto e il lavoro in squadra: la rete di sicurezza per lavorare con gli agenti.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Perché serve" inLinea>e il terminale in due minuti</Passo>
+    <Passo titolo="Git sul vostro computer" inLinea>commit, storia, tornare indietro</Passo>
+    <Passo titolo="Rami" inLinea>lavorare senza toccare la versione che funziona</Passo>
+    <Passo titolo="GitHub e la squadra" inLinea>issue, pull request, revisione, PrenotaAula</Passo>
+    <Passo titolo="Git e l'AI" inLinea>lasciar lavorare un agente senza paura</Passo>
+  </Steps>
+  <SieteQui capitolo={4} classe="mt-m" />
+</Slide>

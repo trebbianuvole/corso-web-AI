@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="4.2 Il terminale" titolo="Primo giro nel terminale" lead="Dieci minuti. Create una cartella per gli esercizi di Git e ritrovatela.">
+  <Card slot="intro" variante="sky mt-m" titolo="Alla fine">Aprite Esplora file e cercate la cartella <code>corso-git</code>. È la stessa cosa, vista in due modi.</Card>
+  <Steps>
+    <Passo titolo="Aprite il terminale">PowerShell su Windows, Terminale sul Mac</Passo>
+    <Passo titolo="pwd">dove vi trovate?</Passo>
+    <Passo titolo="mkdir corso-git">crea una cartella nuova</Passo>
+    <Passo titolo="cd corso-git">entrateci</Passo>
+    <Passo titolo="ls">è vuota: non risponde niente</Passo>
+    <Passo titolo="cd .. e poi ls">tornate su: la cartella c'è</Passo>
+  </Steps>
+</Slide>

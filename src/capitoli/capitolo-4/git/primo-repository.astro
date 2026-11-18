@@ -1,0 +1,17 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="4.3 Git" titolo="Il primo repository" lead="Venti minuti, nella cartella corso-git della 4.2.4. Alla fine avrete una storia con due fotografie.">
+  <p class="footnote" slot="intro">La prima volta Git vuole sapere chi siete:<br><code>git config --global user.name "Nome Cognome"</code><br><code>git config --global user.email "voi@esempio.it"</code></p>
+  <Steps>
+    <Passo titolo="git init" inLinea>nella cartella corso-git</Passo>
+    <Passo titolo="Create note.txt" inLinea>con una riga, in VS Code o nel Blocco note</Passo>
+    <Passo titolo="git status" inLinea>il file c'è, ma Git non lo segue ancora</Passo>
+    <Passo titolo="git add note.txt" inLinea>lo mettete nell'area di preparazione</Passo>
+    <Passo titolo='git commit -m "Primo commit: note del corso"' inLinea>la prima foto</Passo>
+    <Passo titolo="Cambiate una riga, poi git diff" inLinea>vedete la differenza</Passo>
+    <Passo titolo="Secondo commit e git log --oneline" inLinea>la storia con due foto</Passo>
+  </Steps>
+</Slide>

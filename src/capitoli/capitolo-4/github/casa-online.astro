@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.5 GitHub" titolo="GitHub è la casa online del progetto" lead="Sul vostro computer c'è la vostra copia. Su GitHub c'è quella di riferimento, che tutti vedono uguale.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Sicurezza" titolo="Una copia online">Se il computer si rompe, la storia è salva.</Card>
+    <Card tag="Squadra" titolo="Un punto comune">Tutti partono dalla stessa versione e ci rimandano il loro lavoro.</Card>
+    <Card tag="Discussione" titolo="Issue e pull request">Cosa fare, chi lo fa, cosa entra e perché.</Card>
+    <Card variante="peach" tag="Collegamenti" titolo="Vercel e Claude">Vercel pubblica da lì; Claude ci legge e ci lavora.</Card>
+  </Grid>
+</Slide>

@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Passo from "../../../../components/Passo.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Steps from "../../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="4.6 Automazioni su GitHub" titolo="Proteggere main" lead="Le regole del repository fanno rispettare il giro della 4.6.1 anche a chi ha fretta. E anche agli agenti.">
+  <Card slot="intro" variante="sky mt-m" titolo="Dove si impostano">Settings → Rules → Rulesets. Nel piano gratuito valgono per i repository pubblici; per i privati serve un piano a pagamento.</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" target="_blank" rel="noopener">GitHub, i rulesets</a>; <a href="https://github.com/pricing" target="_blank" rel="noopener">piani di GitHub</a>, controllata il 18 novembre 2026.</p>
+  <Steps>
+    <Passo titolo="Niente push diretti" inLinea>su main si entra solo con una pull request</Passo>
+    <Passo titolo="Almeno un'approvazione" inLinea>di una persona diversa da chi ha scritto</Passo>
+    <Passo titolo="I controlli devono passare" inLinea>build, test, anteprima</Passo>
+    <Passo titolo="Vietato il push --force" inLinea>la storia di main non si riscrive</Passo>
+  </Steps>
+</Slide>

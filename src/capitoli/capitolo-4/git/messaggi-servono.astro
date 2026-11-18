@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 Git" titolo="Messaggi che servono" lead="Il messaggio lo leggerete tra tre mesi, quando cercherete dove si è rotto qualcosa. Deve completare la frase «Questo commit…».">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>Così no</h3>
+      <ul class="mt-m"><li><code>modifiche</code></li><li><code>fix</code></li><li><code>aaa</code></li><li><code>ultima versione giusta</code></li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card good">
+      <h3>Così sì</h3>
+      <ul class="mt-m"><li><code>Aggiunge gli orari di dicembre alla home</code></li><li><code>Corregge il numero di telefono nel piè di pagina</code></li><li><code>Toglie la pagina eventi, non più usata</code></li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Un commit, una modifica">Se nel messaggio vi viene una «e», forse sono due commit. Claude Code scrive buoni messaggi, ma controllate che dicano quello che è successo davvero.</Card>
+</Slide>

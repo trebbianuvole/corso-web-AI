@@ -1,0 +1,15 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.2 Il terminale" titolo="Tre comandi per orientarsi" lead="Ogni comando lavora nella cartella in cui siete. Per questo, prima di tutto, bisogna sapere dove si è.">
+  <table class="compare mt-l">
+    <thead><tr><th>Comando</th><th>Cosa fa</th><th>In Esplora file</th></tr></thead>
+    <tbody>
+      <tr><td><code>pwd</code></td><td data-label="Cosa fa">Dove sono?</td><td data-label="In Esplora file">La barra dell'indirizzo</td></tr>
+      <tr><td><code>ls</code></td><td data-label="Cosa fa">Cosa c'è qui?</td><td data-label="In Esplora file">Il contenuto della cartella</td></tr>
+      <tr><td><code>cd sito-rina</code></td><td data-label="Cosa fa">Entra nella cartella sito-rina</td><td data-label="In Esplora file">Doppio clic sulla cartella</td></tr>
+      <tr><td><code>cd ..</code></td><td data-label="Cosa fa">Torna alla cartella di sopra</td><td data-label="In Esplora file">La freccia verso l'alto</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote">Due trucchi: il tasto Tab completa i nomi di file e cartelle; la freccia su richiama i comandi già scritti. Su Windows, PowerShell capisce anche <code>pwd</code>, <code>ls</code> e <code>cd</code>.</p>
+</Slide>

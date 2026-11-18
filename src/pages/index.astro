@@ -3,17 +3,17 @@
 import Pagina from "../layouts/Pagina.astro";
 import { capitoli } from "../lib/capitoli";
 
-const TOTALE = 7; // capitoli previsti dal corso
+const TOTALE = 12; // capitoli previsti dal corso
 const pronti = new Map(capitoli.map(c => [c.numero, c]));
 const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
 ---
-<Pagina titolo="Costruire siti web con l'AI" descrizione="Materiali del corso ENGIM di uso dell'AI e vibe coding: sette capitoli per progettare e pubblicare un sito con l'intelligenza artificiale.">
+<Pagina titolo="Costruire siti web con l'AI" descrizione="Materiali del corso ENGIM di uso dell'AI e vibe coding: dodici capitoli per progettare e pubblicare un sito con l'intelligenza artificiale.">
 <main>
   <section class="home-hero">
     <p class="eyebrow">Corso ENGIM di sviluppo web</p>
     <h1 class="gen-title" id="gen-title" aria-label="Costruire siti web con l'AI">Costruire siti web con l'AI</h1>
     <div class="gen-candidates" id="gen-candidates" aria-hidden="true"></div>
-    <p class="sub">Uso dell'intelligenza artificiale e vibe coding: sette capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.</p>
+    <p class="sub">Uso dell'intelligenza artificiale e vibe coding: dodici capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.</p>
   </section>
 
   <section class="lessons" aria-labelledby="capitoli">

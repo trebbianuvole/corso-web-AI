@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.3 Git" titolo="Cosa non salvare: il .gitignore" lead="Un file di testo con l'elenco di quello che Git deve ignorare. Si mette nella cartella principale del progetto.">
+  <Card slot="intro" variante="peach mt-m" titolo="Attenzione">Il <code>.gitignore</code> non toglie un file già salvato in un commit. Se una chiave finisce nella storia, va cambiata (4.7.6).</Card>
+  <div>
+<pre class="code" aria-label="Il contenuto di un file .gitignore">node_modules/
+dist/
+.env
+.DS_Store</pre>
+    <Defs classe="mt-m">
+      <Def termine="node_modules/">le librerie scaricate: si rigenerano con <code>npm install</code>.</Def>
+      <Def termine="dist/">il sito costruito: lo rifà la build.</Def>
+      <Def termine=".env">chiavi e password. Mai nel repository.</Def>
+      <Def termine=".DS_Store">un file che il Mac crea da solo.</Def>
+    </Defs>
+  </div>
+</Slide>

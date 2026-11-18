@@ -1,0 +1,20 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.1 Perché serve" titolo="Git non è GitHub" lead="Due nomi simili per due cose diverse. Come la fotocamera del telefono e l'album condiviso online.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Sul vostro computer</span>
+      <h3>Git</h3>
+      <p>Un programma gratuito. Salva la storia del progetto in una cartella nascosta, <code>.git</code>. Funziona anche senza internet.</p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card peach">
+      <span class="tag">Online</span>
+      <h3>GitHub</h3>
+      <p>Un servizio che conserva i progetti Git su internet. Aggiunge il lavoro in squadra: issue, pull request, revisioni, collegamenti come Vercel.</p>
+    </div>
+  </div>
+  <p class="lead mt-l">Si può usare Git senza GitHub. Non si può usare GitHub senza Git.</p>
+  <p class="footnote">GitHub non è l'unico: esistono anche GitLab, Bitbucket e Codeberg, che funzionano in modo simile. Nel corso usiamo GitHub perché è il più diffuso e perché Vercel e Claude ci lavorano direttamente.</p>
+</Slide>

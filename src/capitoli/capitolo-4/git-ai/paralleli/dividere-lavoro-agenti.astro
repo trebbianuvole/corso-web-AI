@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.7 Più agenti in parallelo" titolo="Dividere il lavoro senza pestarsi i piedi" lead="Tre agenti sul sito della trattoria, ognuno con il suo compito, il suo ramo e la sua pull request.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Agente 1 · ramo menu" titolo="La pagina del menu">tocca solo le pagine e i componenti del menu</Card>
+    <Card tag="Agente 2 · ramo prenota" titolo="Il modulo per prenotare">tocca solo il modulo e la sua pagina</Card>
+    <Card tag="Agente 3 · ramo test" titolo="I controlli">scrive i test, senza modificare le pagine</Card>
+  </Grid>
+  <div class="grid g2 mt-m">
+    <Card variante="sky" titolo="Le regole">File diversi per compiti diversi. Un CLAUDE.md comune con le regole del progetto. Si unisce una pull request alla volta, controllando.</Card>
+    <Card variante="peach" titolo="Il collo di bottiglia siete voi">Tre agenti fanno tre diff da leggere. Se non riuscite a rivederli, gli agenti sono troppi.</Card>
+  </div>
+</Slide>

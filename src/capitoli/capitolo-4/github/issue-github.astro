@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="4.5 GitHub" titolo="Le issue" lead="Una scheda per ogni cosa da fare: un problema, un'idea, una richiesta. Ha un numero, si discute, si assegna a qualcuno, si chiude.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>«Il calendario non va»</h3>
+      <p>Quale calendario? Cosa succede? Cosa dovrebbe succedere? Chi la legge deve indovinare.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card good">
+      <h3>#12 Filtro per data nella pagina delle aule</h3>
+      <p><b>Cosa:</b> scegliendo un giorno, si vedono solo le aule libere quel giorno.<br><b>Perché:</b> oggi i docenti scorrono tutto l'elenco.<br><b>Fatto quando:</b> il filtro funziona anche dal telefono; senza data si vedono tutte le aule.</p>
+    </div>
+  </div>
+  <Card variante="peach mt-m" tag="Con l'AI" titolo="Una buona issue è anche un buon prompt">Contesto, obiettivo, criteri di accettazione (2.6): sono gli stessi ingredienti. A Claude Code potete dire «lavora alla issue #12».</Card>
+</Slide>

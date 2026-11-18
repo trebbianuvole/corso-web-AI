@@ -1,0 +1,15 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} kicker="4.8 Tirare le fila" titolo="Sei regole d'oro per lavorare in squadra" lead="Valgono con i colleghi e con gli agenti.">
+  <Steps classe="mt-l" stile="max-width:900px">
+    <Passo titolo="Commit piccoli e frequenti" inLinea>una modifica per commit</Passo>
+    <Passo titolo="Messaggi che spiegano" inLinea>«Questo commit…»</Passo>
+    <Passo titolo="main funziona sempre" inLinea>si lavora nei rami</Passo>
+    <Passo titolo="Ogni modifica passa da una pull request" inLinea>e qualcuno la legge</Passo>
+    <Passo titolo="Pull prima di cominciare" inLinea>si parte dalla versione più recente</Passo>
+    <Passo titolo="Niente segreti nel repository" inLinea>chiavi e password nel .env</Passo>
+  </Steps>
+</Slide>

@@ -34,6 +34,8 @@ src/
 public/assets/
   css/style.css               stile unico per tutto il sito
   js/deck.js                  navigazione a slide (frecce, F per schermo intero)
+  js/approfondimenti.js       le finestre degli approfondimenti (capitoli che ne hanno)
+  js/rete-minuscola.js        demo "una rete minuscola che impara" (1.1.a5)
   js/next-word.js             gioco "indovina la parola successiva" (capitolo 1)
   js/timeline.js              serpentina "Dal 2017 a oggi" (capitolo 1)
   js/layers.js                demo "HTML, CSS, JavaScript" (capitolo 2) e pulsanti Copia (capitolo 3)

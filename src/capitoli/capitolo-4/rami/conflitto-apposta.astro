@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="4.4 Rami" titolo="Un conflitto apposta" lead="Quindici minuti, nel repository corso-git. Meglio incontrare il primo conflitto qui che su un progetto vero.">
+  <Card slot="intro" variante="sky mt-m" titolo="Poi rifatelo con Claude">Create un secondo conflitto e chiedete a Claude di spiegarvelo prima di risolverlo. La sua spiegazione corrisponde a quello che avete fatto?</Card>
+  <Steps>
+    <Passo titolo="git switch -c prova" inLinea>un ramo nuovo</Passo>
+    <Passo titolo="Cambiate la prima riga di note.txt" inLinea>e fate un commit</Passo>
+    <Passo titolo="git switch main" inLinea>la riga è tornata com'era</Passo>
+    <Passo titolo="Cambiate la stessa riga in un altro modo" inLinea>e fate un commit</Passo>
+    <Passo titolo="git merge prova" inLinea>ecco il conflitto</Passo>
+    <Passo titolo="Risolvetelo" inLinea>scegliete, togliete i segni, add e commit</Passo>
+  </Steps>
+</Slide>

@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="4.2 Il terminale" titolo="Se il terminale fa paura" lead="Git si usa anche con i pulsanti. I comandi però conviene riconoscerli, perché li userà l'agente.">
+  <Grid colonne={2} classe="mt-l">
+    <Card tag="Nell'editor" titolo="VS Code">Ha il terminale dentro e un pannello per Git sul lato: si vedono i file cambiati, si scrive il messaggio, si salva con un clic.</Card>
+    <Card tag="Un programma a parte" titolo="GitHub Desktop">Git con le finestre: commit, rami e invio a GitHub con i pulsanti. Gratuito, per Windows e Mac.</Card>
+  </Grid>
+  <Card variante="peach mt-m" tag="Con l'AI" titolo="Claude Code scrive i comandi, voi li capite">Claude Code lancia i comandi per voi e chiede il permesso per quelli delicati. Prima di dire sì, dovete sapere cosa fanno: <code>rm -rf</code> cancella senza passare dal cestino. Se un comando non vi è chiaro, chiedete: «spiegami cosa fa prima di eseguirlo».</Card>
+  <p class="footnote">Fonti: <a href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank" rel="noopener">Git in VS Code</a>, <a href="https://desktop.github.com/" target="_blank" rel="noopener">GitHub Desktop</a>.</p>
+</Slide>

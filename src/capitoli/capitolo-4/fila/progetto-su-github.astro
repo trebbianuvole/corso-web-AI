@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="compito" split kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Il vostro progetto su GitHub" lead="Portate il progetto su cui lavorate dal capitolo 2 dentro un repository, e fate fare a una modifica tutto il giro.">
+  <Card slot="intro" variante="sky mt-m" titolo="Da portare">Il link al repository e quello della pull request unita.</Card>
+  <Steps>
+    <Passo titolo="Un repository" inLinea>pubblico o privato, con un README di poche righe</Passo>
+    <Passo titolo="Il documento del progetto" inLinea>quello della 3.4.11, come primo commit</Passo>
+    <Passo titolo="Tre issue" inLinea>le prime tre funzionalità, con i criteri di accettazione (2.6)</Passo>
+    <Passo titolo="Un ramo e una pull request" inLinea>per una modifica piccola, anche fatta con Claude</Passo>
+    <Passo titolo="Una revisione" inLinea>da un compagno, poi il merge</Passo>
+  </Steps>
+</Slide>

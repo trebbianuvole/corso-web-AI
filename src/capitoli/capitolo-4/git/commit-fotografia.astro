@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.3 Git" titolo="Il commit, una fotografia del progetto" lead="Quando decidete che un lavoro è a buon punto, scattate una foto di tutto il progetto. La storia è la fila delle foto.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="Cosa" titolo="Le modifiche">quali file sono cambiati, riga per riga</Card>
+    <Card tag="Chi" titolo="L'autore">nome ed email di chi l'ha fatto</Card>
+    <Card tag="Quando" titolo="La data">giorno e ora</Card>
+    <Card variante="peach" tag="Perché" titolo="Il messaggio">una frase scritta da voi</Card>
+  </Grid>
+  <div class="term mt-m" role="img" aria-label="La storia di tre commit: ognuno ha un codice, come a1b2c3d, e un messaggio">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git log --oneline</span>
+<span class="dot">e4f91a2</span> Aggiunge gli orari di dicembre alla home
+<span class="dot">7c03b8d</span> Corregge il numero di telefono nel piè di pagina
+<span class="dot">a1b2c3d</span> Prima versione del sito della trattoria</pre>
+  </div>
+  <p class="footnote">Ogni commit ha un codice unico, come <code>a1b2c3d</code>: serve per ritrovarlo e per tornarci.</p>
+</Slide>

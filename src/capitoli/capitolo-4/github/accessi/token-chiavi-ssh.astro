@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="4.5 Accessi e strumenti di GitHub" titolo="Token e chiavi SSH" lead="Tre modi per dimostrare a GitHub che siete voi quando fate push. Per cominciare basta il primo.">
+  <table class="compare mt-l">
+    <thead><tr><th>Modo</th><th>Come funziona</th><th>Quando</th></tr></thead>
+    <tbody>
+      <tr><td>Accesso dal browser</td><td data-label="Come funziona">Git Credential Manager, VS Code o <code>gh</code> aprono github.com e salvano l'accesso nel computer</td><td data-label="Quando">Per iniziare, sul vostro computer</td></tr>
+      <tr><td>Token personale</td><td data-label="Come funziona">Una password speciale, con permessi limitati e una scadenza. GitHub consiglia quelli «fine-grained», limitati a certi repository</td><td data-label="Quando">Script e programmi che lavorano al posto vostro</td></tr>
+      <tr><td>Chiave SSH</td><td data-label="Come funziona">Una coppia di chiavi: la pubblica va su GitHub, la privata resta sul computer. Niente password a ogni push</td><td data-label="Quando">Chi usa molto il terminale, o un server</td></tr>
+    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="Sono come password">Token e chiavi private non si scrivono in chat, non si mettono nel repository e non si danno a un'AI.</Card>
+  <p class="footnote">Fonte: <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" target="_blank" rel="noopener">GitHub, l'autenticazione</a>.</p>
+</Slide>

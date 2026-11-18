@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="4.7 Git e l'AI" titolo="La rete di sicurezza dell'agente" lead="Prima di ogni lavoro grosso, il progetto deve essere «pulito»: tutto salvato in un commit. Così qualunque cosa faccia l'agente, sapete da dove ripartire.">
+  <Card slot="intro" variante="peach mt-m" titolo="La regola">Mai chiedere un lavoro grosso a un agente con modifiche non salvate: si mescolano alle sue, e non si separano più.</Card>
+  <div class="term" role="img" aria-label="Prima del lavoro git status dice che è tutto salvato; dopo, git diff --stat mostra i file cambiati dall'agente; se non va bene, git restore li riporta indietro">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; git status</span>
+nothing to commit, working tree clean
+
+<span class="dim"># ... Claude Code lavora ...</span>
+
+<span class="u">&gt; git diff --stat</span>
+ src/pages/menu.astro       | <span class="ok">42 ++++++++</span><span class="rem">--</span>
+ src/components/Piatto.astro | <span class="ok">18 ++++</span>
+ public/assets/css/style.css | <span class="rem">57 ----------</span>
+
+<span class="dim"># 57 righe di CSS tolte? Non le avevo chieste.</span>
+<span class="u">&gt; git restore public/assets/css/style.css</span></pre>
+  </div>
+</Slide>

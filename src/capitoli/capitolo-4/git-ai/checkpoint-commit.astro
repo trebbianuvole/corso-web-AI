@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" classe="compact" kicker="4.7 Git e l'AI" titolo="Checkpoint o commit?" lead="Claude Code salva da solo un punto di ritorno prima di ogni vostra richiesta. Comodo, ma non è Git.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Checkpoint di Claude Code</th><th>Commit di Git</th></tr></thead>
+    <tbody>
+      <tr><td>Chi lo crea</td><td data-label="Checkpoint">Claude Code, da solo, prima di ogni richiesta</td><td data-label="Commit">Voi, quando decidete</td></tr>
+      <tr><td>Come si torna</td><td data-label="Checkpoint"><code>/rewind</code>, o Esc due volte</td><td data-label="Commit"><code>git restore</code>, <code>git revert</code></td></tr>
+      <tr><td>Cosa segue</td><td data-label="Checkpoint">Le modifiche fatte da Claude con i suoi strumenti di modifica. Non sempre quelle fatte con comandi da terminale, né le vostre a mano</td><td data-label="Commit">Tutto il progetto</td></tr>
+      <tr><td>Quanto dura</td><td data-label="Checkpoint">Le ultime richieste di quella sessione, sul vostro computer</td><td data-label="Commit">Per sempre, anche su GitHub</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Si usano insieme">Il checkpoint per annullare in fretta l'ultima richiesta; il commit per la storia vera. La documentazione di Claude Code lo dice chiaramente: i checkpoint non sostituiscono Git.</Card>
+  <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/checkpointing" target="_blank" rel="noopener">Claude Code, checkpointing</a>.</p>
+</Slide>

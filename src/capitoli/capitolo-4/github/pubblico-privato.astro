@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.5 GitHub" titolo="Pubblico o privato" lead="Non è una scelta per sempre: un repository si può rendere pubblico o privato in qualsiasi momento.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Pubblico</th><th>Privato</th></tr></thead>
+    <tbody>
+      <tr><td>Chi vede il codice</td><td data-label="Pubblico">Chiunque</td><td data-label="Privato">Solo chi invitate</td></tr>
+      <tr><td>Quando ha senso</td><td data-label="Pubblico">Portfolio, progetti di studio, progetti aperti</td><td data-label="Privato">Lavori per clienti, progetti non ancora pronti</td></tr>
+      <tr><td>Nel piano gratuito</td><td data-label="Pubblico">Tutte le funzioni</td><td data-label="Privato">Alcune funzioni in meno</td></tr>
+    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="In tutti e due i casi">Mai chiavi e password nel repository. Un privato può diventare pubblico, e la storia si porta dietro tutto quello che c'è stato.</Card>
+</Slide>

@@ -1,0 +1,21 @@
+---
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="4.2 Il terminale" titolo="Cos'è il terminale" lead="Un programma dove date ordini al computer scrivendo. Fa le stesse cose di Esplora file, senza finestre e senza icone.">
+  <Defs classe="mt-m" slot="intro">
+    <Def termine="Il prompt">la riga che aspetta un comando. Di solito mostra la cartella in cui siete.</Def>
+    <Def termine="Il comando">una parola, a volte seguita da altre: <code>git status</code>.</Def>
+    <Def termine="La risposta">quello che il computer scrive sotto. Se non scrive niente, spesso è andato tutto bene.</Def>
+  </Defs>
+  <p class="footnote" slot="intro">Su Windows si chiama PowerShell o Terminale, sul Mac Terminale. In VS Code è nel menu Terminale.</p>
+  <div class="term" role="img" aria-label="Un terminale con il prompt, il comando git status e la risposta">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="dim">C:\Users\anna\sito-rina&gt;</span> <span class="u">git status</span>
+On branch main
+nothing to commit, working tree clean
+
+<span class="dim">C:\Users\anna\sito-rina&gt;</span> <span class="dot">▌</span></pre>
+  </div>
+</Slide>

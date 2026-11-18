@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="4.1 Perché serve" titolo="Perché con un agente serve ancora di più" lead="Un agente può modificare decine di file in un minuto. Se sbaglia, come rimettete tutto com'era?">
+  <Card slot="intro" variante="peach mt-m" titolo="La rete di sicurezza">Potete lasciar lavorare un agente proprio perché sapete tornare indietro. Senza Git, ogni richiesta è un salto nel vuoto.</Card>
+  <p class="footnote" slot="intro">Lo vedremo da vicino nella sezione 4.7.</p>
+  <Steps>
+    <Passo titolo="Prima, un commit">salvate il punto di partenza</Passo>
+    <Passo titolo="L'agente lavora">modifica, crea, cancella file</Passo>
+    <Passo titolo="Guardate cosa ha cambiato">Git vi mostra ogni riga toccata</Passo>
+    <Passo titolo="Decidete">va bene: un nuovo commit. Non va: si torna al punto di partenza</Passo>
+  </Steps>
+</Slide>

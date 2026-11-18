@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="4.4 Rami" titolo="I conflitti: due mani sulla stessa riga" lead="Anna e Luca, in due rami diversi, cambiano la stessa riga degli orari. Al momento del merge Git non sa quale tenere.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Ramo di Anna</span>
+      <p><code>Aperto dalle 12 alle 14.30</code></p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card">
+      <span class="tag">Ramo di Luca</span>
+      <p><code>Aperto dalle 12 alle 15, anche la domenica</code></p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Non è un errore">Se due persone toccano righe diverse, Git unisce da solo. Il conflitto nasce solo sulla stessa riga, ed è Git che chiede a voi di decidere.</Card>
+</Slide>

@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="4.4 Rami" titolo="Risolvere un conflitto" lead="Git scrive tutte e due le versioni nel file, separate da segni. Tocca a voi lasciare quella giusta.">
+  <Steps classe="mt-m" slot="intro">
+    <Passo titolo="Aprite il file" inLinea>VS Code evidenzia il conflitto</Passo>
+    <Passo titolo="Scegliete" inLinea>una versione, l'altra, o un misto</Passo>
+    <Passo titolo="Togliete i segni" inLinea><code>&lt;&lt;&lt;</code>, <code>===</code>, <code>&gt;&gt;&gt;</code></Passo>
+    <Passo titolo="git add e git commit" inLinea>il merge è finito</Passo>
+  </Steps>
+  <div>
+<pre class="code" aria-label="Un conflitto nel file: tra i segni ci sono la versione di main e quella del ramo di Luca"><span class="m">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+Aperto dalle 12 alle 14.30
+<span class="m">=======</span>
+Aperto dalle 12 alle 15, anche la domenica
+<span class="m">&gt;&gt;&gt;&gt;&gt;&gt;&gt; orari-luca</span></pre>
+    <Card variante="peach mt-m" tag="Con l'AI" titolo="Prima spiegare, poi risolvere">«Spiegami questo conflitto: cosa voleva fare ciascun ramo? Proponi una soluzione, ma non applicarla.» L'AI tende a tenere una versione e buttare l'altra: controllate che non si perda niente.</Card>
+  </div>
+</Slide>
