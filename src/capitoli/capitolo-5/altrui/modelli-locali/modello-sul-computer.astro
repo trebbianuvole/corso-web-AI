@@ -1,0 +1,18 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 Modelli aperti e locali" titolo="Far girare un modello sul proprio computer" lead="Programmi come Ollama e LM Studio scaricano un modello aperto e lo fanno funzionare anche senza internet.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Cosa serve</h3>
+      <ul class="mt-m"><li>Memoria: almeno 16 GB per stare comodi; un modello piccolo, compresso, occupa 5-6 GB</li><li>Una scheda grafica aiuta molto, ma non è obbligatoria</li><li>Qualche gigabyte di spazio per ogni modello</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Cosa si perde</h3>
+      <ul class="mt-m"><li>Capacità: i modelli che girano su un portatile sono molto meno bravi dei migliori online</li><li>Velocità, se manca la scheda grafica</li><li>Comodità: aggiornamenti e sicurezza sono affar vostro</li></ul>
+    </div>
+  </div>
+  <p class="footnote">I numeri sono indicativi e dipendono dal modello e da quanto è compresso. Fonti: <a href="https://ollama.com/" target="_blank" rel="noopener">Ollama</a>, <a href="https://lmstudio.ai/docs/app/system-requirements" target="_blank" rel="noopener">LM Studio, requisiti di sistema</a>.</p>
+</Slide>

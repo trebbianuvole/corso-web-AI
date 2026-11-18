@@ -1,0 +1,14 @@
+---
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} kicker="5.2 I dati degli altri" titolo="Le regole pratiche" lead="Cinque domande prima di incollare qualcosa che riguarda altre persone.">
+  <Steps classe="mt-l" stile="max-width:900px">
+    <Passo titolo="Serve davvero?" inLinea>spesso basta descrivere il caso, senza i dati</Passo>
+    <Passo titolo="Posso togliere i nomi?" inLinea>«Cliente A», «Studente 3», date e numeri cambiati</Passo>
+    <Passo titolo="Su quale account?" inLinea>quello di lavoro, se l'azienda ne ha uno; mai quello personale</Passo>
+    <Passo titolo="Cosa conserva il servizio?" inLinea>addestramento e cronologia (5.1)</Passo>
+    <Passo titolo="Se uscisse, chi ci rimette?" inLinea>se la risposta vi mette a disagio, non incollate</Passo>
+  </Steps>
+</Slide>

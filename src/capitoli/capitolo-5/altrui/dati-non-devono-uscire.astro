@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.2 I dati degli altri" titolo="Quando i dati non devono uscire" lead="Uno studio medico, un avvocato, un ufficio del personale: certi dati non devono lasciare l'edificio. Si può usare l'AI lo stesso?">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Il modello è altrove</span>
+      <h3>Servizio online</h3>
+      <p>Claude, ChatGPT, Gemini. I modelli più capaci, ma i dati viaggiano fino ai server del fornitore.</p>
+    </div>
+    <span class="vs" aria-hidden="true">o</span>
+    <div class="card peach">
+      <span class="tag">Il modello è qui</span>
+      <h3>Modello in locale</h3>
+      <p>Un modello aperto scaricato e fatto girare su un computer dell'ufficio. I dati non escono, ma il modello è meno capace e serve un computer adatto.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Una via di mezzo">Contratti aziendali con garanzie scritte su dove stanno i dati e chi li vede. Per molte aziende è la scelta più pratica.</Card>
+</Slide>

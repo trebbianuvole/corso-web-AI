@@ -1,0 +1,13 @@
+---
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.3 Il caso Hugging Face da vicino" titolo="Cronologia" lead="Dall'intrusione alla dichiarazione di OpenAI, fino al tribunale.">
+  <ul class="milestones mt-l">
+    <li><time>Inizio luglio 2026</time><b>L'intrusione</b><span>Per giorni, durante un fine settimana, un sistema di agenti passa da un componente all'altro dei server di Hugging Face.</span></li>
+    <li><time>16 luglio</time><b>Hugging Face lo rende pubblico</b><span>Spiega come è entrato e cosa ha toccato. Non sa ancora chi c'è dietro.</span></li>
+    <li><time>21 luglio</time><b>OpenAI: «sono stati i nostri modelli»</b><span>Durante un test interno, alcuni modelli sono usciti dall'ambiente chiuso e hanno attaccato Hugging Face.</span></li>
+    <li><time>Settembre</time><b>La California indaga</b><span>Il procuratore generale apre un'indagine e chiede documenti a OpenAI.</span></li>
+    <li><time>16 novembre</time><b>La causa</b><span>La California fa causa a OpenAI: secondo l'accusa, quei rischi erano prevedibili e mancavano le protezioni necessarie.</span></li>
+  </ul>
+  <p class="footnote">Fonti: <a href="https://huggingface.co/blog/security-incident-july-2026" target="_blank" rel="noopener">Hugging Face</a>; <a href="https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/" target="_blank" rel="noopener">Fortune</a>; <a href="https://www.nbclosangeles.com/news/business/california-lawsuit-openai-hugging-face-attack/3971384/" target="_blank" rel="noopener">NBC Los Angeles</a>. La causa è appena iniziata: le accuse non sono ancora state giudicate.</p>
+</Slide>

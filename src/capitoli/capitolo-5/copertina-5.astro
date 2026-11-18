@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 5" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Usare l'AI con giudizio" lead="Cosa succede ai dati che date all'AI, come la si usa senza farsi male e senza fare male, e quali regole valgono.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Dove vanno i dati" inLinea>i vostri e quelli degli altri</Passo>
+    <Passo titolo="Sicurezza con gli agenti" inLinea>quando l'AI agisce al posto vostro</Passo>
+    <Passo titolo="Uso consapevole" inLinea>fidarsi, controllare, dichiarare</Passo>
+    <Passo titolo="Responsabilità e diritti" inLinea>chi risponde, di chi è il risultato</Passo>
+    <Passo titolo="Domande aperte e regole" inLinea>il dibattito, il GDPR, l'AI Act, la legge italiana</Passo>
+  </Steps>
+  <SieteQui capitolo={5} classe="mt-m" />
+</Slide>
