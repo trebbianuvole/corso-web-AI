@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="9.3 La ricerca con l'AI" titolo="Farsi citare" lead="Un'AI cita le fonti che capisce bene e di cui si fida. Non ci sono trucchi segreti: chiarezza, dati in un formato standard, coerenza.">
+  <div slot="intro" class="card mt-m">
+    <ul><li><b>Risposte chiare</b> alle domande vere: orari, prezzi, come arrivare, se c'è il menu senza glutine</li><li><b>Dati strutturati</b>: le informazioni principali in un formato che le macchine leggono senza indovinare</li><li><b>Dati verificabili</b>: uguali sul sito, su Google, sui social (9.2.2)</li></ul>
+  </div>
+  <div>
+<pre class="code" aria-label="Dati strutturati JSON-LD di tipo Restaurant per la trattoria">&lt;script type="application/ld+json"&gt;
+&#123;
+  <span class="k">"@context"</span>: <span class="s">"https://schema.org"</span>,
+  <span class="k">"@type"</span>: <span class="s">"Restaurant"</span>,
+  <span class="k">"name"</span>: <span class="s">"Trattoria Da Rina"</span>,
+  <span class="k">"servesCuisine"</span>: <span class="s">"Italiana"</span>,
+  <span class="k">"telephone"</span>: <span class="s">"+39 000 000 0000"</span>,
+  <span class="k">"openingHours"</span>: <span class="s">"Tu-Su 12:00-15:00"</span>
+&#125;
+&lt;/script&gt;</pre>
+    <p class="footnote">Dati finti. Il vocabolario è schema.org, usato da Google e da molti altri. Fonte: <a href="https://schema.org/Restaurant" target="_blank" rel="noopener">schema.org/Restaurant</a>; <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">Google, dati strutturati</a>.</p>
+  </div>
+</Slide>

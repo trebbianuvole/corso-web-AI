@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="9.1 Come funziona la ricerca" titolo="Cosa conta" lead="Le regole esatte non sono pubbliche e cambiano spesso. I principi, invece, sono stabili.">
+  <Grid colonne={4} classe="mt-l">
+    <Card tag="1" titolo="Pertinenza">La pagina parla davvero di quello che si cerca?</Card>
+    <Card tag="2" titolo="Qualità">È utile, scritta da qualcuno che sa, affidabile?</Card>
+    <Card tag="3" titolo="Esperienza">Si apre veloce, si legge dal telefono, non è piena di pubblicità?</Card>
+    <Card variante="peach" tag="4" titolo="Vicinanza">Per «trattoria vicino a me» conta dove siete: il profilo su Google Maps pesa più del sito (9.2.4).</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="La buona notizia">Quello che serve a Google è quello che serve alle persone: un sito chiaro, veloce, vero. Il capitolo 7 era già metà del lavoro.</Card>
+</Slide>

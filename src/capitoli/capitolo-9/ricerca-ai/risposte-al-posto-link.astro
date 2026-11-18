@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="9.3 La ricerca con l'AI" titolo="Le risposte al posto dei link" lead="Google mette in cima un riassunto scritto dall'AI; ChatGPT, Claude, Perplexity rispondono direttamente, con qualche fonte citata. Molti non cliccano più.">
+  <div class="chat mt-l">
+    <div class="bubble user">Dove mangio delle buone tagliatelle fatte a mano, vicino a Porta Palazzo, aperto il martedì sera?</div>
+    <div class="bubble bot">Ti segnalo la Trattoria Da Rina: tagliatelle tirate a mano ogni mattina, aperta dal martedì alla domenica anche a cena. <u>trattoriadarina.it</u></div>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card titolo="Meno clic">Secondo uno studio del 2026, quando compare il riassunto dell'AI il primo risultato riceve in media il 58% di clic in meno.</Card>
+    <Card variante="peach" titolo="Ma chi clicca è pronto">Chi arriva dalla risposta di un'AI ha già scelto: vuole prenotare, chiamare, sapere la strada. Il sito deve renderlo facile (9.4.2).</Card>
+  </div>
+  <p class="footnote">Esempio inventato. Fonte del dato: <a href="https://ahrefs.com/blog/ai-overviews-reduce-clicks/" target="_blank" rel="noopener">Ahrefs</a>, 2026; altri studi danno cali diversi, ma tutti nella stessa direzione.</p>
+</Slide>

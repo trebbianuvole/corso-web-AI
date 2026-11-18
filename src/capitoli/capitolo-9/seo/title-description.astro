@@ -1,0 +1,23 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="9.2 SEO di base" titolo="Title e description" lead="Il titolo e la breve descrizione che compaiono nei risultati di ricerca. Ogni pagina ha i suoi: li passate al layout come props (6.4.4).">
+  <div slot="intro" class="risultato mt-m" role="img" aria-label="Un risultato di ricerca: il titolo Menu · Trattoria Da Rina, l'indirizzo e la descrizione">
+    <span class="r-url">trattoriadarina.it › menu</span>
+    <span class="r-tit">Menu · Trattoria Da Rina</span>
+    <span class="r-desc">Tagliatelle tirate a mano, ragù della casa e dolci di Rina. Aperti dal martedì alla domenica, a pranzo e a cena.</span>
+  </div>
+  <div>
+<pre class="code" aria-label="La pagina menu passa titolo e descrizione al layout Base, che li mette nel head"><span class="m">&lt;!-- src/pages/menu.astro --&gt;</span>
+&lt;Base
+  titolo=<span class="s">"Menu"</span>
+  descrizione=<span class="s">"Tagliatelle tirate a mano, ragù…"</span>
+&gt;
+
+<span class="m">&lt;!-- nel layout Base.astro --&gt;</span>
+&lt;title&gt;&#123;titolo&#125; · Trattoria Da Rina&lt;/title&gt;
+&lt;meta name="description" content=&#123;descrizione&#125; /&gt;</pre>
+    <Card variante="sky mt-m" titolo="Per le pagine di Keystatic">Gli eventi e i piatti possono avere due campi in più nello schema (8.3.3): titolo per Google e descrizione. Così li scrive Rina, e non restano vuoti.</Card>
+  </div>
+</Slide>

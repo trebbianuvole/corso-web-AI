@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="9.2 SEO di base" titolo="Claude come revisore SEO" lead="Claude legge il codice di tutte le pagine in un minuto: è un buon controllore. Ma sulla SEO circolano molti miti, e l'AI li ha letti tutti.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Cosa chiedere</h3>
+      <ul class="mt-m"><li>«Ogni pagina ha title e description diversi?»</li><li>«Ci sono immagini senza testo alternativo, titoli fuori ordine, link rotti?»</li><li>«La sitemap comprende tutte le pagine?»</li><li>«Indirizzo e orari sono uguali dappertutto?»</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Cosa non credere</h3>
+      <ul class="mt-m"><li>«Con queste modifiche sarete primi su Google»</li><li>Volumi di ricerca e posizioni: non li vede, li stima o li inventa</li><li>«Ripetete la parola chiave venti volte»</li><li>Trucchi di anni fa che oggi penalizzano</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="I dati veri">Ricerche, clic e posizioni li dà Search Console. Chiedete a Claude di leggere quei numeri, non di immaginarli.</Card>
+</Slide>

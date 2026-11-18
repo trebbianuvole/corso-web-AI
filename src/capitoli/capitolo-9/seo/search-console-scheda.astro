@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="9.2 SEO di base" titolo="Google Search Console e la scheda dell'attività" lead="Due strumenti gratuiti di Google. Il secondo, per un ristorante, conta più di tutto il resto del capitolo.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Per voi</span>
+      <h3>Search Console</h3>
+      <p>Dice se Google ha letto le pagine, con quali ricerche il sito compare, quante volte e con quanti clic, e quali errori trova. Si collega al dominio e le si dà la sitemap.</p>
+    </div>
+    <span class="vs" aria-hidden="true">+</span>
+    <div class="card peach">
+      <span class="tag">Per il cliente</span>
+      <h3>Profilo dell'attività su Google</h3>
+      <p>La scheda della trattoria su Google e su Maps: orari, foto, telefono, recensioni, link al sito. È lì che si guarda prima di uscire di casa.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Intestato al cliente">Come il dominio (6.6.3): il profilo è di Rina, con il suo account. Voi lo collegate al sito e le insegnate a tenerlo aggiornato.</Card>
+  <p class="footnote">Fonti: <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a>; <a href="https://www.google.com/business/" target="_blank" rel="noopener">Profilo dell'attività su Google</a>.</p>
+</Slide>

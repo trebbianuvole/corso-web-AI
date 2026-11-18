@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="9.3 La ricerca con l'AI" titolo="Cosa non fare" lead="Con l'AI si possono produrre mille pagine in un'ora. È proprio quello che i motori hanno imparato a riconoscere e a punire.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="bad" titolo="Pagine generate in massa">«Trattoria a Torino», «Trattoria a Moncalieri», «Trattoria a Rivoli»… cento pagine quasi uguali per cento parole chiave.</Card>
+    <Card variante="bad" titolo="Recensioni false">Scritte dall'AI e pubblicate come se fossero di clienti. Ingannano le persone, e sono vietate.</Card>
+    <Card variante="bad" titolo="Testi per i robot">Parole chiave ripetute, testo nascosto, frasi che nessuna persona scriverebbe.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="La regola di Google, in breve">Conta se il contenuto è utile alle persone, non se l'ha scritto una persona o un'AI. Il contenuto prodotto in massa per manipolare la classifica è spam, con o senza AI.</Card>
+  <p class="footnote">Fonte: <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener">Google Search Central, norme contro lo spam</a>.</p>
+</Slide>

@@ -1530,3 +1530,27 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .pn-campo.pn-hot { border-color: var(--orange); box-shadow: 0 0 0 2px var(--peach); }
 .pn-salva { justify-self: start; background: #222; color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: 700; margin-top: 4px; }
 @media (max-width: 640px) { .pannello { grid-template-columns: 1fr; } .pn-lato { border-right: 0; border-bottom: 1px solid #e3e3e8; display: flex; flex-wrap: wrap; } .pn-lato b { width: 100%; margin-bottom: 0; } }
+
+/* ==========================================================
+   Capitolo 9: farsi trovare
+   ========================================================== */
+
+/* Un risultato di ricerca disegnato (9.2.1) */
+.risultato { display: grid; gap: 3px; background: #fff; color: #202124; border: 1px solid var(--line); border-radius: var(--r-m); padding: 16px 18px; font-family: Arial, "Segoe UI", sans-serif; font-size: .82em; }
+.risultato .r-url { color: #4d5156; font-size: .9em; }
+.risultato .r-tit { color: #1a0dab; font-size: 1.3em; }
+.risultato .r-desc { color: #4d5156; line-height: 1.45; }
+
+/* L'anteprima di un link in chat (9.4.1) */
+.anteprima { display: grid; gap: 4px; max-width: 340px; background: #fff; color: #111; border: 1px solid var(--line); border-radius: var(--r-m); overflow: hidden; font-size: .82em; padding-bottom: 12px; }
+.anteprima .ap-img { display: grid; place-items: center; height: 120px; background: linear-gradient(135deg, #e8c39e, #b9461a); color: #fff; font-family: var(--f-mono); font-size: .8em; margin-bottom: 6px; }
+.anteprima b, .anteprima span:not(.ap-img) { padding: 0 14px; }
+.anteprima .ap-url { color: #666; font-size: .9em; }
+
+/* L'imbuto della conversione (9.4.2) */
+.imbuto { display: grid; gap: 8px; justify-items: center; }
+.imbuto > div { width: var(--w); display: flex; justify-content: center; align-items: baseline; gap: 10px; padding: 12px 16px; border-radius: var(--r-s); background: var(--peach); text-align: center; flex-wrap: wrap; }
+.imbuto > div:last-child { background: var(--orange-deep); color: #fff; }
+.imbuto b { font-family: var(--f-display); font-size: 1.2em; }
+.imbuto span { font-size: .85em; }
+@media (max-width: 640px) { .imbuto > div { width: 100% !important; } }
