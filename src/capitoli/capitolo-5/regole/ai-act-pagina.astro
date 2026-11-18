@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.7 Le regole" titolo="L'AI Act in una pagina" lead="Il regolamento europeo sull'AI. Non vieta l'AI: chiede più regole dove i rischi per le persone sono più alti.">
+  <div class="rischi mt-l">
+    <div class="r4"><b>Inaccettabile: vietato</b><span>Punteggio sociale delle persone, manipolazione, riconoscimento delle emozioni a scuola e al lavoro.</span></div>
+    <div class="r3"><b>Alto rischio: regole severe</b><span>AI che decide su scuola, lavoro, credito, servizi pubblici: controlli, documenti, supervisione umana.</span></div>
+    <div class="r2"><b>Trasparenza</b><span>Chi parla con un chatbot deve saperlo; immagini, audio e video generati vanno segnalati.</span></div>
+    <div class="r1"><b>Rischio minimo: niente di speciale</b><span>Il correttore, il filtro antispam, la maggior parte degli usi quotidiani.</span></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Per i vostri siti">Il caso più comune è la trasparenza: un chatbot sul sito della trattoria deve dire che è un'AI. Le date di applicazione sono nella 5.7.a2.</Card>
+  <p class="footnote">Fonte: <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noopener">Regolamento (UE) 2024/1689</a>, come modificato nel 2026 dal pacchetto «Digital Omnibus».</p>
+</Slide>

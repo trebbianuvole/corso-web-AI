@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Passo from "../../../../components/Passo.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Steps from "../../../../components/Steps.astro";
+---
+<Slide {...Astro.props} split kicker="5.3 Il caso Hugging Face da vicino" titolo="I filtri che fermano chi difende" lead="Per capire l'attacco, la squadra di Hugging Face doveva analizzare più di 17.000 azioni dell'aggressore, con comandi e codice d'attacco veri.">
+  <Card slot="intro" variante="peach mt-m" titolo="La lezione">Le protezioni dei modelli non distinguono sempre chi attacca da chi si difende. E avere un modello che gira in casa può servire proprio quando i dati non devono uscire (5.2.6).</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://huggingface.co/blog/security-incident-july-2026" target="_blank" rel="noopener">Hugging Face</a>; <a href="https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/" target="_blank" rel="noopener">Fortune</a>.</p>
+  <Steps>
+    <Passo titolo="I modelli commerciali rifiutano">i filtri di sicurezza vedono comandi d'attacco e si bloccano</Passo>
+    <Passo titolo="Un modello aperto, in casa">GLM-5.2, fatto girare sui server di Hugging Face: i dati dell'attacco non escono</Passo>
+    <Passo titolo="L'analisi">ricostruita la cronologia, trovate le tracce, separato il danno vero dalle azioni di disturbo</Passo>
+    <Passo titolo="Dopo">OpenAI dà a Hugging Face una versione del suo modello con meno blocchi, per la difesa informatica</Passo>
+  </Steps>
+</Slide>

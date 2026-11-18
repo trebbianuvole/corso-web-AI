@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.4 L'impronta dell'AI" titolo="Energia, acqua, chip" lead="I modelli girano in data center che consumano elettricità, acqua per raffreddarsi e chip fatti con materiali rari. Quanto? Dipende da chi fa il conto.">
+  <div class="grid g3 mt-l">
+    <div class="card"><span class="tag">Tutti i data center del mondo, 2024</span><h3>circa 415 TWh</h3><p>l'1,5% dell'elettricità mondiale. L'AI è una parte, in crescita.</p></div>
+    <div class="card"><span class="tag">Previsione per il 2030</span><h3>circa 945 TWh</h3><p>poco meno del 3% dell'elettricità mondiale</p></div>
+    <div class="card peach"><span class="tag">Una domanda a Gemini, secondo Google</span><h3>0,24 Wh e 0,26 ml d'acqua</h3><p>secondo Google, come meno di nove secondi di televisione, e circa cinque gocce</p></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Perché i numeri sono discussi">Il dato di Google non è stato verificato da esterni e non conta l'addestramento, le immagini, i video, l'acqua usata per produrre l'elettricità. Le stime per domanda sono piccole; moltiplicate per miliardi di domande al giorno, non lo sono.</Card>
+  <p class="footnote">Fonti: <a href="https://www.iea.org/reports/energy-and-ai/executive-summary" target="_blank" rel="noopener">IEA, Energy and AI</a>, 2025; <a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference" target="_blank" rel="noopener">Google, agosto 2025</a>.</p>
+</Slide>

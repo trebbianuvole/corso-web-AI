@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="5.7 Le regole" titolo="Il patto d'aula" lead="Trenta minuti. Scrivete insieme le regole sull'uso dell'AI che varranno per questo corso. Poche, chiare, firmate da tutti.">
+  <Card slot="intro" variante="sky mt-m" titolo="Il risultato">Una pagina, al massimo dieci regole. Il docente la tiene e la si rilegge a metà corso: funziona? Va cambiata?</Card>
+  <Steps>
+    <Passo titolo="Cosa si può fare con l'AI" inLinea>nei compiti, nei progetti, nelle verifiche</Passo>
+    <Passo titolo="Cosa va dichiarato" inLinea>e come: una frase, un file, un commit</Passo>
+    <Passo titolo="Quali dati non si usano" inLinea>quelli dei compagni, dei clienti dei progetti</Passo>
+    <Passo titolo="Cosa si fa se qualcosa va storto" inLinea>un errore, un dato uscito, un dubbio</Passo>
+  </Steps>
+</Slide>

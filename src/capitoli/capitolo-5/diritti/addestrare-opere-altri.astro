@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.5 Responsabilità e diritti" titolo="Addestrare sulle opere degli altri" lead="I modelli hanno imparato da libri, articoli, immagini, codice scritti da altri. Si poteva? I tribunali stanno ancora decidendo.">
+  <ul class="milestones mt-l">
+    <li><time>Giugno 2025, Stati Uniti</time><b>Autori contro Anthropic</b><span>Il giudice: addestrare su libri acquistati è lecito, tenere libri piratati no. Poi un accordo da 1,5 miliardi di dollari.</span></li>
+    <li><time>Novembre 2025, Germania</time><b>GEMA contro OpenAI</b><span>Il tribunale di Monaco dà ragione agli autori di canzoni: testi memorizzati e ripetuti dal modello. OpenAI ha fatto appello.</span></li>
+    <li><time>Novembre 2025, Regno Unito</time><b>Getty contro Stability AI</b><span>Il tribunale respinge quasi tutte le richieste di Getty. Ci sarà un appello.</span></li>
+    <li><time>Ancora aperta</time><b>New York Times contro OpenAI</b><span>La causa più seguita, negli Stati Uniti, non ha ancora una sentenza.</span></li>
+  </ul>
+  <Card variante="sky mt-m" titolo="Per chi pubblica">In Europa chi non vuole che i propri contenuti servano ad addestrare può dirlo in modo leggibile dalle macchine (il cosiddetto «opt-out»). Ne riparleremo con i crawler delle AI, nella 9.3.3.</Card>
+  <p class="footnote">Fonti: <a href="https://pressgazette.co.uk/media_law/ai-legal-rulings/" target="_blank" rel="noopener">Press Gazette, le sentenze sull'AI</a>; situazione al 18 novembre 2026.</p>
+</Slide>

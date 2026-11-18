@@ -1,0 +1,12 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.4 Uso consapevole" titolo="Se non so farlo, non so controllarlo" lead="L'AI vi fa risparmiare tempo su quello che sapete fare. Su quello che non sapete fare, vi fa solo credere di averlo fatto.">
+  <Grid colonne={2} classe="mt-l">
+    <Card variante="good" titolo="Delegare">Una cosa che sapreste fare, ma che richiede tempo: la riconoscete giusta o sbagliata quando la vedete.</Card>
+    <Card variante="bad" titolo="Abdicare">Una cosa che non sapete fare: non avete modo di accorgervi degli errori, e la firmate lo stesso.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Per questo il corso spiega il web, Git, i dati">Non per farvi scrivere tutto a mano, ma per darvi gli occhi per controllare. Quando non sapete, usate l'AI per imparare: «spiegami», non «fallo tu».</Card>
+</Slide>

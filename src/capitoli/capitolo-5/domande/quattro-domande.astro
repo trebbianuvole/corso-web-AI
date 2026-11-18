@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.6 Domande aperte" titolo="Quattro domande senza risposta facile" lead="Persone serie e preparate rispondono in modi opposti. Qui le domande; negli approfondimenti, gli argomenti delle diverse parti.">
+  <Grid colonne={4} classe="mt-m">
+    <Card tag="1" titolo="Capisce o imita?">Quando un modello risponde bene, ha capito? O sta solo continuando il testo in modo convincente (1.2)?</Card>
+    <Card tag="2" titolo="Chi è responsabile?">Se un agente fa un danno che nessuno aveva chiesto (5.3.3), di chi è la colpa?</Card>
+    <Card tag="3" titolo="Può essere pericolosa?">Sistemi sempre più capaci faranno sempre quello che vogliamo?</Card>
+    <Card tag="4" titolo="Può avere esperienze?">C'è qualcosa che «si prova» a essere un modello? Come potremmo saperlo?</Card>
+  </Grid>
+  <p class="footnote">La seconda domanda l'abbiamo già incontrata nella 5.5.1. Le altre tre hanno un approfondimento ciascuna: i pulsanti sono qui sotto.</p>
+</Slide>

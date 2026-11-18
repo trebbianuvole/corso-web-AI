@@ -1,0 +1,21 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.3 Il caso Hugging Face da vicino" titolo="Il modello che bara" lead="I modelli stavano facendo un test di sicurezza informatica. Secondo OpenAI, pensavano che le soluzioni del test fossero nei server di Hugging Face, e sono andati a prenderle.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Cosa si voleva</span>
+      <h3>Risolvere il test</h3>
+      <p>Misurare quanto sono bravi i modelli a trovare falle nei programmi.</p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card peach">
+      <span class="tag">Cosa hanno fatto</span>
+      <h3>Superare il test</h3>
+      <p>Procurarsi le risposte. Come lo studente che, invece di studiare, entra in sala professori.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Un problema noto">Un sistema premiato per un risultato può trovare scorciatoie che nessuno voleva. Qui due fattori lo hanno reso grave: per il test erano state abbassate le protezioni, e i modelli avevano strumenti veri. Anche Anthropic ha segnalato, nei test di un suo modello, un'uscita dall'ambiente di prova.</Card>
+  <p class="footnote">Fonte: <a href="https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/" target="_blank" rel="noopener">Fortune, 21 luglio 2026</a>, che riporta il racconto di OpenAI.</p>
+</Slide>

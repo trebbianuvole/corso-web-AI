@@ -1,0 +1,14 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.6 Rischi e allineamento" titolo="Chi è preoccupato, chi no, e perché" lead="Sul rischio dell'AI i ricercatori non sono divisi tra esperti e ignoranti: sono divisi tra loro.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Molto preoccupati" titolo="Un rischio come le pandemie">Nel 2023 centinaia di ricercatori e dirigenti hanno firmato una frase: ridurre il rischio di estinzione dovuto all'AI dovrebbe essere una priorità mondiale.</Card>
+    <Card tag="Preoccupati per l'oggi" titolo="I danni già presenti">Pregiudizi, sorveglianza, disinformazione, potere concentrato in poche aziende. Parlare di apocalisse, dicono, distoglie da questi.</Card>
+    <Card tag="Poco preoccupati" titolo="Sistemi ancora limitati">I modelli attuali sono lontani da un'intelligenza generale; la tecnologia si correggerà man mano, come le altre.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Un buon esercizio">Per ogni posizione: quali fatti la sosterrebbero, e quali la smentirebbero? Il caso Hugging Face (5.3.3) a quale dà ragione?</Card>
+  <p class="footnote">Fonte: <a href="https://safe.ai/work/statement-on-ai-risk" target="_blank" rel="noopener">Center for AI Safety, Statement on AI Risk</a>, 2023.</p>
+</Slide>

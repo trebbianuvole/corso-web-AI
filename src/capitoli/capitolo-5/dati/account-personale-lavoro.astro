@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.1 Dove vanno i dati" titolo="Account personale e account di lavoro" lead="Lo stesso Claude, con due contratti diversi. Per i dati del lavoro conta il contratto, non il modello.">
+  <table class="compare mt-l">
+    <thead><tr><th></th><th>Account personale</th><th>Account di lavoro</th></tr></thead>
+    <tbody>
+      <tr><td>Chi lo paga</td><td data-label="Personale">Voi, o nessuno</td><td data-label="Lavoro">L'azienda o la scuola</td></tr>
+      <tr><td>Addestramento</td><td data-label="Personale">Lo decidete voi nelle impostazioni</td><td data-label="Lavoro">Di norma escluso dal contratto</td></tr>
+      <tr><td>Chi controlla</td><td data-label="Personale">Voi</td><td data-label="Lavoro">Gli amministratori: accessi, regole, a volte la cronologia</td></tr>
+      <tr><td>Dati dei clienti</td><td data-label="Personale">No</td><td data-label="Lavoro">Solo se l'azienda lo permette, e nei limiti delle sue regole</td></tr>
+    </tbody>
+  </table>
+  <Card variante="peach mt-m" titolo="L'errore più comune">Incollare un documento di lavoro nel proprio account personale «perché è più comodo». I dati escono dall'azienda, senza che nessuno lo sappia.</Card>
+</Slide>

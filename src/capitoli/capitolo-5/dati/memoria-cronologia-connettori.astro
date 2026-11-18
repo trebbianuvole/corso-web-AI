@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.1 Dove vanno i dati" titolo="Memoria, cronologia, connettori" lead="Tre funzioni comode, che fanno arrivare all'AI più dati di quelli che scrivete.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Resta" titolo="La cronologia">Le conversazioni restano salvate finché non le cancellate. Esistono chat temporanee, o «incognito», che non si salvano.</Card>
+    <Card tag="Si ricorda" titolo="La memoria">L'AI ricorda cose di voi tra una chat e l'altra. Si può vedere cosa ricorda, correggerla, spegnerla.</Card>
+    <Card variante="peach" tag="Legge" titolo="I connettori">Gmail, Drive, GitHub (3.3): l'AI legge direttamente i vostri dati. Collegate solo quello che serve, quando serve.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Una buona abitudine">Ogni tanto aprite le impostazioni e guardate cosa è acceso. Le funzioni nuove spesso arrivano già attive.</Card>
+</Slide>

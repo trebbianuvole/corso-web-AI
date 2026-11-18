@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="5.3 Sicurezza con gli agenti" titolo="Librerie che non esistono" lead="Quando scrive codice, l'AI a volte inventa il nome di una libreria. Chi attacca registra quel nome e ci mette dentro codice malevolo.">
+  <div class="grid g3 mt-l">
+    <div class="card"><span class="tag">Lo studio</span><h3>576.000 programmi</h3><p>generati da 16 modelli diversi, in Python e JavaScript</p></div>
+    <div class="card"><span class="tag">Modelli commerciali</span><h3>almeno 5,2%</h3><p>delle librerie suggerite non esisteva</p></div>
+    <div class="card peach"><span class="tag">Modelli aperti</span><h3>21,7%</h3><p>delle librerie suggerite non esisteva</p></div>
+  </div>
+  <Card variante="sky mt-m" titolo="Prima di installare">La libreria esiste da tempo? Chi la pubblica? Quanti la scaricano? Il nome è scritto giusto? Se Claude propone una dipendenza nuova, chiedetegli perché serve e se si può fare senza.</Card>
+  <p class="footnote">Fonte: Spracklen e altri, <a href="https://www.usenix.org/conference/usenixsecurity25/presentation/spracklen" target="_blank" rel="noopener">«We Have a Package for You!»</a>, USENIX Security 2025. L'attacco ha preso il nome di «slopsquatting».</p>
+</Slide>

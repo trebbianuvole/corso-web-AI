@@ -1,0 +1,12 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.4 Uso consapevole" titolo="Sicuro di sé non vuol dire giusto" lead="Un modello scrive con lo stesso tono quando ha ragione e quando inventa (1.2). Il tono non è un indizio.">
+  <div class="chat mt-l">
+    <div class="bubble user">In che anno è stata fondata la trattoria Da Rina?</div>
+    <div class="bubble bot">La trattoria Da Rina è stata fondata nel 1968 da Rina Bianchi, che la gestì fino al 1995. <span class="flag-bad">inventato</span></div>
+  </div>
+  <Card variante="peach mt-m" titolo="Più è sicuro, più controllate">Date, numeri, nomi, citazioni, leggi, versioni dei programmi: sono le cose che l'AI sbaglia con più convinzione. Chiedete la fonte, e apritela.</Card>
+  <p class="footnote">Esempio inventato apposta: la trattoria Da Rina è il caso del corso, e nessun modello può sapere quando è stata fondata.</p>
+</Slide>

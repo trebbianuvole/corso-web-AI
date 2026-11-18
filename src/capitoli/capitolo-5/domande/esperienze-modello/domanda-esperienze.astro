@@ -1,0 +1,12 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.6 Un modello può avere esperienze?" titolo="La domanda e perché se ne discute" lead="Non si chiede se il modello è intelligente, ma se c'è «qualcuno» lì dentro: se prova qualcosa, se può stare bene o male.">
+  <div class="grid g2 mt-l">
+    <Card titolo="Perché è difficile rispondere">Non esiste un test della coscienza nemmeno per gli animali. E un modello addestrato su testi umani dirà di provare emozioni anche se non le prova: le sue parole non bastano come prova.</Card>
+    <Card titolo="Perché se ne parla ora">I modelli parlano di sé in modo convincente, e diventano più capaci ogni anno. Se ci fosse anche una piccola probabilità, dicono alcuni, varrebbe la pena di prenderla sul serio.</Card>
+  </div>
+  <Card variante="sky mt-m" titolo="Un caso concreto">Nel 2025 Anthropic, l'azienda che fa Claude, ha avviato un programma di ricerca sul possibile «benessere dei modelli», dichiarando di non sapere se i suoi modelli abbiano esperienze.</Card>
+  <p class="footnote">Fonte: <a href="https://www.anthropic.com/research/exploring-model-welfare" target="_blank" rel="noopener">Anthropic, Exploring model welfare</a>, aprile 2025.</p>
+</Slide>

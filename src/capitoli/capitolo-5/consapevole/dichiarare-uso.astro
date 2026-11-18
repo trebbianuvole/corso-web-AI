@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.4 Uso consapevole" titolo="Dichiarare l'uso" lead="Usare l'AI non è barare. Nasconderlo, a volte sì.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="A scuola" titolo="Il docente deve saperlo">Se e come si può usare lo decide chi valuta. Nel dubbio, chiedete e dichiarate.</Card>
+    <Card tag="Al lavoro" titolo="Il cliente può chiederlo">Molti contratti ormai lo prevedono. E il cliente ha diritto di sapere se i suoi dati passano da un'AI.</Card>
+    <Card tag="In pubblico" titolo="Contenuti generati">Immagini, video e voci realistici fatti con l'AI vanno segnalati come tali (5.7.3).</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Una frase basta">«Il testo è mio; ho usato Claude per correggere la grammatica e per una prima struttura.» Chiaro, onesto, verificabile.</Card>
+</Slide>

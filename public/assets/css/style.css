@@ -1379,3 +1379,35 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .bacheca h3 { font-size: 1em; }
 .bacheca .card { padding: 12px 14px; font-size: .82em; color: var(--ink); }
 @media (max-width: 760px) { .bacheca { grid-template-columns: 1fr; } }
+
+/* ==========================================================
+   Capitolo 5: usare l'AI con giudizio
+   ========================================================== */
+
+/* Date nelle cronologie */
+.milestones time { display: block; font-size: .72em; font-weight: 700; color: var(--orange-deep); margin-bottom: 2px; }
+
+/* Casi da smistare (5.2.7): due colonne numerate */
+.casi { margin: 0; padding-left: 1.4em; columns: 2; column-gap: 40px; font-size: .9em; }
+.casi li { break-inside: avoid; padding: 3px 0; }
+@media (max-width: 760px) { .casi { columns: 1; } }
+
+/* Il copione della simulazione (5.3.4) */
+.copione { list-style: none; padding: 0; margin: 0; counter-reset: c; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.copione li { counter-increment: c; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-m); padding: 14px 16px 16px; position: relative; }
+.copione li::before { content: counter(c); font-family: var(--f-display); font-weight: 800; font-size: 1.3em; color: var(--orange); display: block; }
+.copione b { font-family: var(--f-display); display: block; }
+.copione span { font-size: .82em; color: var(--muted); }
+@media (max-width: 860px) { .copione { grid-template-columns: 1fr; } }
+
+/* I livelli di rischio dell'AI Act (5.7.3) */
+.rischi { display: grid; gap: 8px; }
+.rischi > div { display: grid; grid-template-columns: minmax(0, 15em) 1fr; gap: 16px; align-items: center; padding: 12px 18px; border-radius: var(--r-m); background: var(--card); border: 1px solid var(--line); }
+.rischi b { font-family: var(--f-display); }
+.rischi span { font-size: .88em; color: var(--muted); }
+.rischi .r4 { background: var(--orange-deep); border-color: transparent; color: #fff; margin: 0 12%; }
+.rischi .r4 span { color: #fff; }
+.rischi .r3 { background: var(--peach); border-color: transparent; margin: 0 8%; }
+.rischi .r3 span { color: var(--ink); }
+.rischi .r2 { margin: 0 4%; }
+@media (max-width: 760px) { .rischi > div { grid-template-columns: 1fr; gap: 4px; margin: 0 !important; } }

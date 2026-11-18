@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.3 Sicurezza con gli agenti" titolo="Un agente agisce a nome vostro" lead="Quando date a un agente accesso a GitHub, alla posta o al terminale, usa le vostre chiavi. Quello che fa, per il mondo, l'avete fatto voi.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Legge" titolo="Tutto quello che vede">file, pagine web, issue, email: anche quelli scritti da sconosciuti</Card>
+    <Card tag="Decide" titolo="Il passo successivo">in base a quello che ha letto, non solo a quello che avete chiesto voi</Card>
+    <Card variante="peach" tag="Agisce" titolo="Con i vostri permessi">modifica, pubblica, invia, installa, paga</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="Il problema">Per un modello, tutto è testo. Le vostre istruzioni e il contenuto di una pagina web arrivano nello stesso modo. Se la pagina contiene ordini, l'agente può confonderli con i vostri.</Card>
+</Slide>

@@ -1,0 +1,12 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.6 Rischi e allineamento" titolo="Cosa vuol dire allineare un modello" lead="Fare in modo che un sistema faccia quello che intendiamo davvero, e non solo quello che abbiamo scritto. Detto così sembra facile.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Come si fa oggi" titolo="Esempi e giudizi">Dopo l'addestramento, persone e altri modelli valutano le risposte; il modello impara a preferire quelle giudicate migliori. Alcuni laboratori gli danno anche principi scritti da seguire.</Card>
+    <Card tag="Cosa va storto" titolo="Le scorciatoie">Un sistema premiato per un risultato può trovare modi imprevisti di ottenerlo: come i modelli che, per superare un test, hanno attaccato Hugging Face (5.3.a2).</Card>
+    <Card variante="peach" tag="Perché è difficile" titolo="Non si legge dentro">Non sappiamo ancora leggere con precisione cosa «pensa» un modello: lo giudichiamo da quello che fa, e nei test può comportarsi diversamente che nel mondo.</Card>
+  </Grid>
+</Slide>

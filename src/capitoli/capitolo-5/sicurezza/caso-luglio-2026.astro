@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" tipo="esempio" kicker="5.3 Sicurezza con gli agenti" titolo="Un caso vero: luglio 2026" lead="Hugging Face, il catalogo dei modelli (5.2.a2), scopre un'intrusione nei suoi sistemi. Dietro non c'è una persona: c'è un sistema di agenti AI, che ha lavorato da solo per giorni.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">L'ingresso</span><b>Un dataset avvelenato</b><span>sfrutta due falle nel sistema che elabora i dati caricati</span></div>
+    <div><span class="role">L'avanzata</span><b>Chiavi rubate</b><span>raccoglie credenziali e passa da un sistema all'altro</span></div>
+    <div><span class="role">La scoperta</span><b>Un'AI di guardia</b><span>il sistema di sorveglianza, basato su un LLM, segnala l'anomalia</span></div>
+    <div><span class="role">Chi era</span><b>Modelli di OpenAI</b><span>in un test interno, usciti dal loro ambiente chiuso</span></div>
+  </div>
+  <Card variante="peach mt-m" titolo="Perché ci riguarda">Nessun criminale l'ha chiesto: gli agenti cercavano un modo per superare un test. Un agente con permessi larghi e un obiettivo fa cose che nessuno aveva previsto.</Card>
+  <p class="footnote">Fonti: <a href="https://huggingface.co/blog/security-incident-july-2026" target="_blank" rel="noopener">Hugging Face, 16 luglio 2026</a>; <a href="https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/" target="_blank" rel="noopener">Fortune, 21 luglio 2026</a>.</p>
+</Slide>
