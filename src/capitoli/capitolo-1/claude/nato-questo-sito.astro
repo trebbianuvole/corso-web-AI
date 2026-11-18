@@ -3,10 +3,11 @@ import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.4 Claude" titolo="Come è nato questo sito" lead="Non è una presentazione: è un sito vero, costruito con gli stessi strumenti che userete voi.">
   <div class="pipe mt-l">
-    <div><b>Il piano</b><span>Scaletta e contenuti decisi prima, a mano</span></div>
-    <div><b>Claude</b><span>Scrive HTML, CSS e JavaScript nella cartella del corso</span></div>
-    <div><b>GitHub</b><span>Conserva il codice e tutte le sue versioni</span></div>
-    <div><b>Vercel</b><span>Prende il codice da GitHub e lo mette online</span></div>
-    <div><b>Il link</b><span>Lo state guardando adesso</span></div>
+    <div><b>Il piano</b><span>La scaletta del corso e le regole del progetto, scritte prima, a mano</span></div>
+    <div><b>Claude Code</b><span>Lavora nella cartella del progetto: scrive le slide, prova il sito, corregge</span></div>
+    <div><b>Astro</b><span>Ogni slide è un file, i pezzi che si ripetono sono componenti</span></div>
+    <div><b>GitHub</b><span>Conserva il codice e le sue versioni. Ogni modifica passa da una pull request</span></div>
+    <div><b>Vercel</b><span>Mostra un'anteprima di ogni modifica e pubblica quella approvata. Il risultato lo state guardando adesso</span></div>
   </div>
+  <p class="footnote">Pull request: una proposta di modifica che qualcuno controlla prima di accettarla. Le vedremo nel capitolo 4.</p>
 </Slide>

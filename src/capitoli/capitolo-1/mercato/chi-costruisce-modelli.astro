@@ -2,14 +2,14 @@
 import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Chi costruisce i modelli">
+<Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Chi costruisce i modelli" lead="Pochi laboratori costruiscono i modelli più potenti. Ognuno ha la sua famiglia di modelli e almeno un prodotto per il pubblico.">
   <Grid colonne={3} classe="mt-l">
-    <div class="card vendor"><h3>OpenAI <span class="flag">Stati Uniti</span></h3><p class="product">ChatGPT</p><p>Famiglia GPT-6: l'ultimo è GPT-6.1 Terra, uscito a fine ottobre.</p></div>
-    <div class="card vendor"><h3>Google <span class="flag">Stati Uniti</span></h3><p class="product">Gemini</p><p>Gemini 4 Argon, disponibile da metà ottobre. Integrato in Android, Gmail, Docs.</p></div>
-    <div class="card vendor peach"><h3>Anthropic <span class="flag">Stati Uniti</span></h3><p class="product">Claude</p><p>Haiku, Sonnet e Opus 5.5, più Fable 5.1 in cima alla gamma. Forte soprattutto sul codice.</p></div>
-    <div class="card vendor"><h3>Mistral <span class="flag">Francia</span></h3><p class="product">Le Chat</p><p>Il principale laboratorio europeo. Mistral Large 4 è in anteprima.</p></div>
+    <div class="card vendor"><h3>OpenAI <span class="flag">Stati Uniti</span></h3><p class="product">ChatGPT</p><p>Modelli GPT. Il prodotto che ha fatto conoscere l'AI a tutti, a fine 2022.</p></div>
+    <div class="card vendor"><h3>Google <span class="flag">Stati Uniti</span></h3><p class="product">Gemini</p><p>Modelli Gemini, integrati in Android, Gmail, Docs e nella ricerca.</p></div>
+    <div class="card vendor peach"><h3>Anthropic <span class="flag">Stati Uniti</span></h3><p class="product">Claude</p><p>Modelli Claude in più taglie. Forte soprattutto sul codice: lo usiamo nel corso.</p></div>
+    <div class="card vendor"><h3>Mistral <span class="flag">Francia</span></h3><p class="product">Le Chat</p><p>Il principale laboratorio europeo.</p></div>
     <div class="card vendor"><h3>xAI e Meta <span class="flag">Stati Uniti</span></h3><p class="product">Grok, Meta AI</p><p>Grok dentro X; Meta AI dentro WhatsApp, Instagram e Facebook.</p></div>
     <div class="card vendor"><h3>DeepSeek, Qwen, Kimi <span class="flag">Cina</span></h3><p class="product">Modelli aperti</p><p>Molti modelli cinesi si possono scaricare e far girare in proprio.</p></div>
   </Grid>
-  <p class="footnote">Situazione a inizio novembre 2026. Nomi e versioni cambiano ogni poche settimane.</p>
+  <p class="footnote">Aggiornato al 18 novembre 2026. Nomi e versioni dei modelli cambiano ogni poche settimane: li raccoglierà una scheda aggiornabile, con la data dell'ultimo controllo.</p>
 </Slide>
