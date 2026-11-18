@@ -5,12 +5,12 @@ import Slide from "../../../components/slide/Slide.astro";
   <table class="compare mt-l">
     <thead><tr><th></th><th>Chat</th><th>Claude Code</th></tr></thead>
     <tbody>
-      <tr><td>Dove sta il codice</td><td>Nella conversazione</td><td>Nei file del progetto</td></tr>
-      <tr><td>Chi copia e incolla</td><td>Voi</td><td>Nessuno: scrive direttamente nei file</td></tr>
-      <tr><td>Cosa vede</td><td>Solo quello che allegate</td><td>Tutti i file del progetto</td></tr>
-      <tr><td>Può provare il codice</td><td>Poco</td><td>Sì: lo esegue, legge gli errori, corregge</td></tr>
-      <tr><td>Versioni</td><td>Da gestire a mano</td><td>Salva con git e pubblica su GitHub</td></tr>
-      <tr><td>Ideale per</td><td>Capire, progettare, pezzi piccoli</td><td>Costruire e mantenere un progetto vero</td></tr>
+      <tr><td>Dove sta il codice</td><td data-label="Chat">Nella conversazione</td><td data-label="Claude Code">Nei file del progetto</td></tr>
+      <tr><td>Chi copia e incolla</td><td data-label="Chat">Voi</td><td data-label="Claude Code">Nessuno: scrive direttamente nei file</td></tr>
+      <tr><td>Cosa vede</td><td data-label="Chat">Solo quello che allegate</td><td data-label="Claude Code">Tutti i file del progetto</td></tr>
+      <tr><td>Può provare il codice</td><td data-label="Chat">Poco</td><td data-label="Claude Code">Sì: lo esegue, legge gli errori, corregge</td></tr>
+      <tr><td>Versioni</td><td data-label="Chat">Da gestire a mano</td><td data-label="Claude Code">Salva con git e pubblica su GitHub</td></tr>
+      <tr><td>Ideale per</td><td data-label="Chat">Capire, progettare, pezzi piccoli</td><td data-label="Claude Code">Costruire e mantenere un progetto vero</td></tr>
     </tbody>
   </table>
 </Slide>

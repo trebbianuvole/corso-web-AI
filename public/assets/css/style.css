@@ -931,6 +931,16 @@ a.card.case:hover p { color: var(--ink); }
 .compare thead th:last-child { color: var(--orange-deep); }
 .compare td:first-child { font-family: var(--f-display); font-weight: 600; }
 .compare td:nth-child(2) { color: var(--muted); }
+/* Sul telefono ogni riga diventa una scheda; ogni cella mostra il nome della colonna (data-label) */
+@media (max-width: 640px) {
+  .compare, .compare tbody, .compare tr, .compare td { display: block; width: 100%; }
+  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .compare tr { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-m); padding: 8px 14px; margin-bottom: 10px; }
+  .compare td { border: 0; padding: 4px 0; }
+  .compare td:first-child { font-size: 1.05em; padding-bottom: 6px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+  .compare td:nth-child(2) { color: var(--ink); }
+  .compare td[data-label]::before { content: attr(data-label) ": "; font-weight: 700; color: var(--orange-deep); }
+}
 
 /* Copia */
 .copy-wrap { position: relative; }
