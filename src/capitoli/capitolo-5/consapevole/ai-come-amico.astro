@@ -1,0 +1,19 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="5.4 Uso consapevole" titolo="L'AI come amico" lead="Molti parlano con un chatbot di cose personali: solitudine, ansia, una lite. Non c'è niente di strano. Ma è utile sapere cosa può dare e cosa no.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Cosa può dare</h3>
+      <ul class="mt-m"><li>Ascolto a qualsiasi ora, senza giudizio</li><li>Un modo per mettere in ordine i pensieri</li><li>Informazioni, da verificare</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card bad">
+      <h3>Cosa non può dare</h3>
+      <ul class="mt-m"><li>Non vi conosce davvero e non si ricorda di voi come un amico</li><li>Tende a darvi ragione</li><li>Non si accorge se state male sul serio, e non può aiutarvi di persona</li></ul>
+    </div>
+  </div>
+  <Card variante="peach mt-m" titolo="Se state male davvero">Parlatene con una persona: un amico, un familiare, un docente, il medico. In Italia <a href="https://www.telefonoamico.it/" target="_blank" rel="noopener">Telefono Amico</a> risponde allo 02 2327 2327; in un'emergenza, il 112.</Card>
+  <p class="footnote">Negli Stati Uniti, nel 2025, il 72% degli adolescenti aveva provato almeno una volta un «AI companion». Fonte: <a href="https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions" target="_blank" rel="noopener">Common Sense Media</a>. In Italia il Garante della privacy ha sanzionato per 5 milioni di euro l'app Replika, anche per la mancata verifica dell'età: <a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10132048" target="_blank" rel="noopener">Garante, 2025</a>.</p>
+</Slide>

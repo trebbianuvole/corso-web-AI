@@ -1,0 +1,13 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.5 Responsabilità e diritti" titolo="Chi risponde se l'AI sbaglia?" lead="L'AI non è una persona: non firma, non paga, non va in tribunale. Rispondono le persone e le aziende intorno a lei.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Chi la costruisce" titolo="Il fornitore del modello">Deve rispettare le regole sulla sicurezza e sulla trasparenza dei modelli (5.7.3).</Card>
+    <Card tag="Chi la vende" titolo="Chi la mette in un prodotto">Risponde del prodotto che offre, come per qualsiasi altro servizio.</Card>
+    <Card variante="peach" tag="Chi la usa" titolo="Voi">Il sito che consegnate, il testo che pubblicate, il codice che mettete online: sono vostri, con i loro errori.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="In pratica">«L'ha scritto l'AI» non è una difesa. Il menu con l'allergene sbagliato, il modulo che perde i dati delle prenotazioni: ne rispondete voi verso il cliente. Per questo si controlla (capitolo 11).</Card>
+</Slide>

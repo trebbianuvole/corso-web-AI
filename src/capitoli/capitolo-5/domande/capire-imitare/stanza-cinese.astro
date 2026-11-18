@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.6 Capire o imitare" titolo="La stanza cinese" lead="Nel 1980 il filosofo John Searle immaginò una persona chiusa in una stanza, che non sa il cinese, con un enorme manuale di regole.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="1" titolo="Entrano domande">Fogli scritti in cinese, da sotto la porta.</Card>
+    <Card tag="2" titolo="Il manuale">«Se vedi questi simboli, scrivi questi altri.» La persona esegue, senza capire niente.</Card>
+    <Card tag="3" titolo="Escono risposte">Perfette. Da fuori, sembra che nella stanza qualcuno sappia il cinese.</Card>
+  </Grid>
+  <div class="grid g2 mt-m">
+    <Card variante="peach" titolo="Searle">Manipolare simboli seguendo regole non basta per capire. Un computer fa proprio questo.</Card>
+    <Card variante="sky" titolo="Chi risponde">Forse non capisce la persona, ma il sistema intero: persona, manuale e stanza insieme. E il nostro cervello, in fondo, cosa fa?</Card>
+  </div>
+  <p class="footnote">Fonte: <a href="https://plato.stanford.edu/entries/chinese-room/" target="_blank" rel="noopener">Stanford Encyclopedia of Philosophy, The Chinese Room Argument</a>.</p>
+</Slide>

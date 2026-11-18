@@ -1,0 +1,15 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="5.5 Responsabilità e diritti" titolo="Di chi è il codice? Di chi sono le immagini?" lead="Il diritto d'autore protegge le opere dell'ingegno umano. Quello che l'AI genera da sola, senza un vero contributo creativo di una persona, rischia di non essere di nessuno.">
+  <div class="card mt-l">
+    <span class="tag">Legge sul diritto d'autore, articolo 1, come modificato nel 2025</span>
+    <p>Sono protette le opere dell'ingegno umano di carattere creativo, anche quando sono create con l'aiuto dell'AI, purché siano il risultato del lavoro intellettuale dell'autore.</p>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card titolo="Più contributo, più tutela">Il progetto, le scelte, i testi scritti da voi, le modifiche, la selezione: è lì che sta il lavoro intellettuale. Conviene tenerne traccia, e Git lo fa (4.3).</Card>
+    <Card variante="peach" titolo="Cosa dire al cliente">Quali parti sono generate con l'AI, che i diritti su quelle parti possono essere deboli, e che il sito gli viene ceduto con tutto quello che potete cedere.</Card>
+  </div>
+  <p class="footnote">La modifica è dell'articolo 25 della legge 132/2025. Il significato preciso di «lavoro intellettuale dell'autore» lo chiariranno i giudici. Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2025/09/25/25G00143/sg" target="_blank" rel="noopener">Gazzetta Ufficiale</a>.</p>
+</Slide>
