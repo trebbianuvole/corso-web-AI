@@ -1,0 +1,21 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="10.7 Un modello AI dentro la webapp" titolo="Cosa si può fare" lead="Un assistente che capisce richieste scritte come vengono, e trova un'aula libera. Al posto di sei menu a tendina, una frase.">
+  <Fragment slot="intro">
+    <Card variante="peach mt-m" titolo="Cosa non fa">Non prenota da solo. Propone, e la docente conferma con un pulsante normale: la prenotazione passa dagli stessi controlli di sempre (10.4).</Card>
+    <Card variante="sky mt-m" titolo="Serve davvero?">Se il modulo con tre campi funziona bene, l'assistente è un costo in più. Ha senso quando le richieste sono varie e scritte a parole.</Card>
+  </Fragment>
+  <figure class="figure chat" aria-label="Esempio di conversazione con l'assistente di PrenotaAula">
+    <div class="bubble user">Mi serve un'aula con il proiettore per una ventina di ragazzi, giovedì mattina, due ore.</div>
+    <div class="bubble bot">Giovedì 26 novembre ho trovato:
+      <ol>
+        <li>Aula 1, 24 posti, dalle 9 alle 11</li>
+        <li>Laboratorio, 16 posti: troppo piccolo per venti</li>
+      </ol>
+      Vuoi che prepari la prenotazione dell'Aula 1? La confermi tu.
+    </div>
+    <p class="chat-note">Conversazione costruita come esempio.</p>
+  </figure>
+</Slide>

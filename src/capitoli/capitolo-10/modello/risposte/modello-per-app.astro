@@ -1,0 +1,15 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="10.7 Risposte strutturate e scelta del modello" titolo="Scegliere il modello per un'app" lead="Nella 1.3.4 sceglievate il modello per lavorare voi. In un'app lo sceglie il codice, per migliaia di richieste: contano anche costo e velocità.">
+  <table class="compare mt-l">
+    <thead><tr><th>Il lavoro</th><th>In PrenotaAula</th><th>Il modello</th></tr></thead>
+    <tbody>
+      <tr><td>Estrarre, classificare, rispondere usando i dati che gli date</td><td data-label="In PrenotaAula">Trovare un'aula, leggere l'email del docente</td><td data-label="Il modello">Il più piccolo: Haiku</td></tr>
+      <tr><td>Ragionare su più passi, scrivere testi curati</td><td data-label="In PrenotaAula">Proporre l'orario delle aule di una settimana intera</td><td data-label="Il modello">Quello di mezzo: Sonnet</td></tr>
+      <tr><td>Problemi difficili, poche volte</td><td data-label="In PrenotaAula">Raramente serve in un'app così</td><td data-label="Il modello">Il più capace: Opus</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Decidete con una prova, non a sensazione">Venti domande vere degli utenti, risposte giuste scritte da voi, due modelli a confronto. Si parte dal più piccolo, si sale solo se sbaglia. Nel codice si cambia una riga. I modelli attuali sono nella <a href="../schede/modelli-claude/" target="_blank" rel="noopener">scheda U.2</a>, i prezzi nella <a href="../schede/costi-piani/" target="_blank" rel="noopener">U.6</a>.</Card>
+</Slide>

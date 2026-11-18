@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="10.7 Un modello AI dentro la webapp" titolo="L'assistente di PrenotaAula" lead="Con Claude Code, sul progetto di prova, con una chiave API che ha un tetto di spesa basso. Prima i criteri, poi il piano, poi il codice.">
+  <Card slot="intro" variante="sky mt-m" titolo="Le prove che contano">Una domanda normale. Una richiesta impossibile (cento posti). Una domanda fuori tema. Un tentativo di fargli cancellare una prenotazione. Ognuna con l'esito scritto nella PR.</Card>
+  <Steps>
+    <Passo titolo="La funzione su Vercel" inLinea>riceve la domanda, controlla che l'utente sia collegato</Passo>
+    <Passo titolo="Le istruzioni di sistema" inLinea>cosa fa, cosa non fa, in che lingua risponde</Passo>
+    <Passo titolo="Lo strumento" inLinea><code>cerca_aule_libere</code>, solo lettura, con i permessi dell'utente</Passo>
+    <Passo titolo="La chat nella pagina" inLinea>con la riga «Stai parlando con un assistente AI»</Passo>
+    <Passo titolo="La conferma" inLinea>il pulsante «Prenota» normale, non il modello</Passo>
+  </Steps>
+</Slide>

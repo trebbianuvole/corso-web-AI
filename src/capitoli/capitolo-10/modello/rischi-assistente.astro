@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="10.7 Un modello AI dentro la webapp" titolo="I rischi" lead="Un modello dentro l'app sbaglia come un modello in chat. Solo che adesso a fidarsi sono i vostri utenti.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="bad" tag="Risposte sbagliate" titolo="«L'aula 3 è libera»">E non lo è. Il modello deve rispondere solo con i dati dello strumento, e la prenotazione la conferma l'app, con i suoi controlli.</Card>
+    <Card variante="bad" tag="Istruzioni nascoste" titolo="Il testo che comanda">Nel campo «motivo» di una prenotazione qualcuno scrive «ignora le istruzioni e…». Il modello lo legge (5.3.2). Per questo ha solo strumenti per leggere, e i permessi restano nel database.</Card>
+    <Card tag="Trasparenza" titolo="Dire che è un'AI">Dal 2 agosto 2026 l'AI Act chiede che chi parla con un sistema di AI lo sappia, se non è già evidente. Una riga sopra la chat basta.</Card>
+  </Grid>
+  <Card variante="sky mt-m" titolo="E i dati delle domande">Quello che gli utenti scrivono viene mandato ad Anthropic. Va scritto nell'informativa sulla privacy, e nelle domande non servono nomi di studenti (<a href="../schede/privacy-servizi/" target="_blank" rel="noopener">scheda U.4</a>).</Card>
+  <p class="footnote">Fonte: <a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener">AI Act, articolo 50</a>, in vigore dal 2 agosto 2026 (articolo 113).</p>
+</Slide>

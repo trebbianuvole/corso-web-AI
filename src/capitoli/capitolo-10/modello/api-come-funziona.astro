@@ -1,0 +1,29 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="esempio" classe="compact" kicker="10.7 Un modello AI dentro la webapp" titolo="Come funziona" lead="L'app manda un messaggio al modello attraverso l'API: come voi in chat, ma dal codice. La chiamata parte dalla funzione su Vercel (10.6.3), mai dal browser.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Una chiamata all'API di Claude con l'SDK per TypeScript"><span class="k">import</span> Anthropic <span class="k">from</span> <span class="s">'@anthropic-ai/sdk'</span>
+<span class="k">const</span> client = <span class="k">new</span> Anthropic()         <span class="m">①</span>
+
+<span class="k">const</span> risposta = <span class="k">await</span> client.messages.create(&#123;
+  model: <span class="s">'claude-haiku-5-5'</span>,           <span class="m">②</span>
+  max_tokens: <span class="m">1024</span>,
+  system: <span class="s">`Sei l'assistente di PrenotaAula.</span>   <span class="m">③</span>
+<span class="s">    Rispondi in italiano, in breve.</span>
+<span class="s">    Parli solo di aule e prenotazioni.`</span>,
+  messages: [                              <span class="m">④</span>
+    &#123; role: <span class="s">'user'</span>, content: domanda &#125;,
+  ],
+&#125;)</pre>
+    <ol class="note-codice">
+      <li><b>Il collegamento:</b> legge da solo la chiave <code>ANTHROPIC_API_KEY</code> dalle variabili d'ambiente.</li>
+      <li><b>Il modello:</b> per trovare aule basta il più piccolo ed economico (10.7.a2).</li>
+      <li><b>Le istruzioni di sistema:</b> valgono per tutta la conversazione, l'utente non le vede. Sono il CLAUDE.md dell'assistente.</li>
+      <li><b>La conversazione:</b> l'API non ricorda niente. Ogni volta si rimanda tutto, dall'inizio.</li>
+    </ol>
+  </div>
+  <Card variante="sky mt-m" titolo="La chiave è vostra, e i soldi pure">Si crea nella Console di Claude, si paga a consumo (10.7.4), va su Vercel come segreta.</Card>
+  <p class="footnote">Fonte: <a href="https://platform.claude.com/docs/en/api/messages" target="_blank" rel="noopener">Claude, API Messages</a>, controllata il 18 novembre 2026.</p>
+</Slide>

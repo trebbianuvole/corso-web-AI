@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.7 Un modello AI dentro la webapp" titolo="Costi e limiti" lead="L'API si paga a token (1.2): quelli che mandate e, più cari, quelli che il modello scrive. Ogni domanda di un utente è una piccola spesa vostra.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Il conto" titolo="Una domanda, frazioni di centesimo">Con il modello più piccolo, una domanda con istruzioni e risultati della ricerca costa meno di un decimo di centesimo. Mille domande al mese: meno di un euro. I prezzi aggiornati sono nella <a href="../schede/costi-piani/" target="_blank" rel="noopener">scheda U.6</a>.</Card>
+    <Card tag="Nella Console" titolo="Un tetto di spesa">Un limite mensile per l'organizzazione e per ogni spazio di lavoro, con avvisi quando ci si avvicina. Raggiunto il tetto, l'API si ferma.</Card>
+    <Card tag="Nell'app" titolo="Limiti vostri">Risposte corte (<code>max_tokens</code>), un numero massimo di domande per utente al giorno, solo utenti collegati.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Il rischio vero non è la domanda normale">È lo script che ne manda diecimila in una notte, o la chiave finita su GitHub. Il tetto di spesa trasforma un disastro in una brutta sorpresa.</Card>
+  <p class="footnote">Fonti: <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Claude, prezzi dell'API</a>; <a href="https://platform.claude.com/docs/en/api/rate-limits" target="_blank" rel="noopener">limiti di spesa e di frequenza</a>, controllate il 18 novembre 2026. Il conto: 2.000 token mandati e 300 scritti, ai prezzi di Claude Haiku 5.5.</p>
+</Slide>

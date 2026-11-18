@@ -1,0 +1,17 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="10.6 I pagamenti online" titolo="I pagamenti online" lead="Se un giorno PrenotaAula fa pagare l'affitto di una sala: i numeri delle carte non devono mai passare dalla vostra app. Se ne occupa un servizio di pagamento, come Stripe.">
+  <div class="pipe p4 mt-l">
+    <div><span class="role">Vostra funzione</span><b>Crea la sessione</b><span>con la chiave segreta: cosa si paga e quanto</span></div>
+    <div><span class="role">Stripe</span><b>La pagina di pagamento</b><span>la persona inserisce la carta lì, non da voi</span></div>
+    <div><span class="role">Stripe</span><b>Vi avvisa</b><span>un messaggio automatico (webhook) dice «pagato»</span></div>
+    <div><span class="role">Database</span><b>Segnate «pagata»</b><span>solo dopo l'avviso, non perché il browser lo dice</span></div>
+  </div>
+  <div class="grid g2 mt-m">
+    <Card variante="sky" titolo="Prima, la modalità di prova">Chiavi di prova e carte finte pubblicate da Stripe: si prova tutto senza muovere soldi. Le chiavi vere solo alla fine, intestate al cliente.</Card>
+    <Card titolo="Quanto costa">Nessun canone. Una commissione su ogni pagamento: in Italia, per le carte europee standard, 1,5% più 0,25 €.</Card>
+  </div>
+  <p class="footnote">Fonti: <a href="https://docs.stripe.com/payments/checkout" target="_blank" rel="noopener">Stripe Checkout</a>; <a href="https://stripe.com/it/pricing" target="_blank" rel="noopener">Stripe, tariffe in Italia</a>, controllate il 18 novembre 2026.</p>
+</Slide>
