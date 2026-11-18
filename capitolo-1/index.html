@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Capitolo 1: capire l'AI e orientarsi negli strumenti</title>
-  <meta name="description" content="Capitolo 1 del corso di uso dell'AI e vibe coding: storia, come funziona un LLM, il mercato, Claude e come si organizza un progetto.">
+  <meta name="description" content="Capitolo 1 del corso di uso dell'AI e vibe coding: storia, come funziona un LLM, il mercato e Claude.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+<script>/* La 1.5 ora è la 2.1 */ if (location.hash === "#progetto") location.replace("../capitolo-2/#piano");</script>
 
 <header class="topbar">
   <a class="home-link" href="../">Corso <span>AI</span></a>
@@ -21,7 +22,6 @@
     <button type="button" data-chapter="llm">1.2 <span class="ch-name">LLM</span></button>
     <button type="button" data-chapter="mercato">1.3 <span class="ch-name">Mercato</span></button>
     <button type="button" data-chapter="claude">1.4 <span class="ch-name">Claude</span></button>
-    <button type="button" data-chapter="progetto">1.5 <span class="ch-name">Progetto</span></button>
   </nav>
   <span class="counter" aria-live="polite"></span>
   <button class="icon-btn" type="button" data-fullscreen aria-label="Schermo intero" title="Schermo intero (F)">
@@ -43,7 +43,6 @@
       <li><div><strong>Come funziona un LLM</strong> <span>token, contesto, probabilità, allucinazioni</span></div></li>
       <li><div><strong>Il mercato oggi</strong> <span>chi fa cosa e cosa sta succedendo</span></div></li>
       <li><div><strong>Claude</strong> <span>l'app, i modelli, agenti, skill e artifact</span></div></li>
-      <li><div><strong>Organizzare un progetto</strong> <span>prima la ricetta, poi i fornelli</span></div></li>
     </ol>
   </div>
 </section>
@@ -79,8 +78,40 @@
       <li class="hot"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener"><b>2017</b><span>Google pubblica l'articolo sul Transformer</span></a></li>
       <li class="hot"><a href="https://it.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener"><b>2022</b><span>Esce ChatGPT: 100 milioni di utenti in due mesi</span></a></li>
       <li class="hot"><a href="https://it.wikipedia.org/wiki/Agente_intelligente" target="_blank" rel="noopener"><b>2025</b><span>Gli agenti: l'AI che lavora da sola su più passaggi</span></a></li>
+      <li class="more"><button class="btn orange snake-open" type="button" data-dialog="dal-2017" aria-haspopup="dialog">Dal 2017 a oggi <span aria-hidden="true">→</span></button></li>
     </ul>
-    <p class="footnote">Ogni riquadro è un link: apre la voce di Wikipedia o l'articolo originale.</p>
+    <p class="footnote">Ogni riquadro è un link: apre la voce di Wikipedia o l'articolo originale. Il pulsante arancione mostra da vicino gli ultimi anni.</p>
+
+    <dialog class="snake-dialog" id="dal-2017" aria-labelledby="dal-2017-t">
+      <div class="snake-box">
+      <div class="snake-head">
+        <div>
+          <p class="kicker">1.1 Breve storia</p>
+          <h2 id="dal-2017-t">Dal 2017 a oggi, in undici tappe</h2>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Chiudi" title="Chiudi (Esc)">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
+        </button>
+      </div>
+      <div class="snake">
+        <svg class="snake-path" aria-hidden="true"><path/></svg>
+        <ol class="snake-list">
+          <li class="hot"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener"><span class="dot"></span><time>Giugno 2017</time><b>Il Transformer</b><span class="txt">Ricercatori di Google descrivono l'architettura che oggi sta dentro tutti gli LLM.</span></a></li>
+          <li><a href="https://it.wikipedia.org/wiki/GPT-3" target="_blank" rel="noopener"><span class="dot"></span><time>Maggio 2020</time><b>GPT-3</b><span class="txt">175 miliardi di pesi. Impara un compito nuovo da pochi esempi scritti nella richiesta.</span></a></li>
+          <li><a href="https://it.wikipedia.org/wiki/AlphaFold" target="_blank" rel="noopener"><span class="dot"></span><time>Novembre 2020</time><b>AlphaFold 2</b><span class="txt">DeepMind prevede la forma delle proteine. Nel 2024 la scoperta vale il Nobel per la chimica.</span></a></li>
+          <li class="hot"><a href="https://it.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener"><span class="dot"></span><time>Novembre 2022</time><b>ChatGPT</b><span class="txt">Chiunque può parlare con un LLM. In due mesi lo usano 100 milioni di persone.</span></a></li>
+          <li><a href="https://it.wikipedia.org/wiki/GPT-4" target="_blank" rel="noopener"><span class="dot"></span><time>Marzo 2023</time><b>GPT-4 e il primo Claude</b><span class="txt">Escono lo stesso giorno, il 14 marzo. La corsa ora ha più concorrenti.</span></a></li>
+          <li><a href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener"><span class="dot"></span><time>Settembre 2024</time><b>I modelli che ragionano</b><span class="txt">OpenAI o1 «pensa» per passaggi prima di rispondere. Sbaglia molto meno in matematica e nel codice.</span></a></li>
+          <li><a href="https://it.wikipedia.org/wiki/DeepSeek" target="_blank" rel="noopener"><span class="dot"></span><time>Gennaio 2025</time><b>DeepSeek R1</b><span class="txt">Dalla Cina un modello che ragiona, gratuito e scaricabile. Le azioni di Nvidia crollano.</span></a></li>
+          <li class="hot"><a href="https://www.anthropic.com/news/claude-3-7-sonnet" target="_blank" rel="noopener"><span class="dot"></span><time>Febbraio 2025</time><b>Gli agenti per il codice</b><span class="txt">Esce Claude Code, che lavora dentro il progetto. Nello stesso mese nasce la parola «vibe coding».</span></a></li>
+          <li><a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" target="_blank" rel="noopener"><span class="dot"></span><time>Luglio 2025</time><b>Oro alle Olimpiadi di matematica</b><span class="txt">Modelli di Google DeepMind e OpenAI risolvono 5 problemi su 6.</span></a></li>
+          <li><a href="https://www.axios.com/2026/07/21/openai-says-hugging-face-breach-caused-by-one-its-models" target="_blank" rel="noopener"><span class="dot"></span><time>Luglio 2026</time><b>Un agente esce dalla gabbia</b><span class="txt">Durante un test, modelli di OpenAI escono dall'ambiente isolato ed entrano nei server di Hugging Face per cercare le risposte. Ne riparleremo con la sicurezza.</span></a></li>
+          <li class="finale"><a href="https://fortune.com/2026/07/21/ai-solves-jacobian-conjecture-levant-alpoge-claude-fable-5/" target="_blank" rel="noopener"><span class="dot"></span><time>Luglio 2026</time><b>Cade la congettura Jacobiana</b><span class="txt">Con Claude Fable 5, il matematico Levent Alpöge trova un controesempio a un problema aperto dal 1939.</span></a></li>
+        </ol>
+      </div>
+      <p class="footnote">Ogni tappa è un link alla fonte. Le tappe arancioni sono le stesse della slide. Gli ultimi risultati in matematica sono nella 1.3.</p>
+      </div>
+    </dialog>
   </div>
 </section>
 
@@ -431,7 +462,7 @@ allora → spam</pre>
   <div class="slide-inner split">
     <div>
       <p class="kicker">1.3 Cosa sta succedendo</p>
-      <h2>Perché ci riguarda, anche se non facciamo matematica</h2>
+      <h2>Cosa ci insegna la matematica</h2>
       <p class="lead">La matematica è il campo dove un risultato si può controllare in modo definitivo. Ed è lì che i modelli sono migliorati più in fretta.</p>
     </div>
     <div class="stack">
@@ -513,103 +544,12 @@ allora → spam</pre>
   </div>
 </section>
 
-<!-- ======================= 1.5 PROGETTO ======================= -->
-<section class="slide chapter" data-chapter="progetto" id="progetto">
-  <div class="slide-inner">
-    <div class="chapter-num" aria-hidden="true">1.5</div>
-    <div>
-      <h2>Come si organizza un progetto con l'AI</h2>
-      <p>Nessuno cucina un piatto nuovo aprendo il frigo a caso.</p>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="progetto">
-  <div class="slide-inner">
-    <p class="kicker">1.5 Organizzare un progetto</p>
-    <h2>Un sito è una ricetta</h2>
-    <table class="recipe mt-l">
-      <thead><tr><th>In cucina</th><th>Nel progetto</th><th>La domanda da farsi</th></tr></thead>
-      <tbody>
-        <tr><td>Il piatto</td><td>L'obiettivo</td><td>Cosa deve fare il sito, in una frase?</td></tr>
-        <tr><td>Per quanti ospiti</td><td>Il pubblico</td><td>Chi lo userà, e da quale dispositivo?</td></tr>
-        <tr><td>Gli ingredienti</td><td>Contenuti e risorse</td><td>Testi, foto, logo, colori: cosa ho già, cosa manca?</td></tr>
-        <tr><td>Gli utensili</td><td>Gli strumenti</td><td>Claude, GitHub, Vercel: ho gli account pronti?</td></tr>
-        <tr><td>Il procedimento</td><td>Il piano a passi</td><td>In che ordine costruisco le pagine?</td></tr>
-        <tr><td>Assaggiare</td><td>Verificare</td><td>Funziona? Si legge bene dal telefono?</td></tr>
-        <tr><td>Impiattare</td><td>Pubblicare</td><td>È pronto per essere mostrato?</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="slide" data-chapter="progetto">
-  <div class="slide-inner split">
-    <div>
-      <p class="kicker">1.5 Organizzare un progetto</p>
-      <h2>Il piano si fa a mano, prima</h2>
-      <p class="lead">L'AI esegue molto bene un piano chiaro. Non può decidere al posto vostro cosa volete.</p>
-    </div>
-    <ol class="steps">
-      <li><div><strong>L'obiettivo in una frase</strong><br><span>«Un sito che fa prenotare un tavolo in due clic.»</span></div></li>
-      <li><div><strong>Il pubblico</strong><br><span>Chi è, cosa cerca, cosa sa già.</span></div></li>
-      <li><div><strong>La mappa su carta</strong><br><span>Quali pagine, cosa c'è in ognuna.</span></div></li>
-      <li><div><strong>La raccolta delle risorse</strong><br><span>Testi, immagini, riferimenti di stile.</span></div></li>
-      <li><div><strong>Solo adesso: Claude</strong><br><span>Con il piano in mano, il primo prompt è facile.</span></div></li>
-    </ol>
-  </div>
-</section>
-
-<section class="slide" data-chapter="progetto">
-  <div class="slide-inner">
-    <p class="kicker">1.5 Organizzare un progetto</p>
-    <h2>La differenza la fa il brief</h2>
-    <div class="grid g2 brief mt-l">
-      <div class="card bad">
-        <h3>Così Claude tira a indovinare</h3>
-        <blockquote>Fammi un sito per un ristorante.</blockquote>
-        <p class="mt-m">Colori, pagine, testi e stile li sceglie lui. Il risultato sarà generico.</p>
-      </div>
-      <div class="card good">
-        <h3>Così Claude sa cosa fare</h3>
-        <blockquote>Sito per la trattoria «Da Rina» a Torino, cucina piemontese. Pubblico: famiglie e turisti, quasi tutti da telefono. Tre pagine: home con foto e orari, menu (allego il PDF), prenotazioni via WhatsApp. Stile caldo e semplice, come il sito che allego come esempio.</blockquote>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" data-chapter="progetto">
-  <div class="slide-inner">
-    <p class="kicker">1.5 Organizzare un progetto</p>
-    <h2>Prima di accendere i fornelli</h2>
-    <ul class="checklist mt-l">
-      <li><div><strong>L'obiettivo è scritto</strong><span>Una frase che anche un estraneo capirebbe.</span></div></li>
-      <li><div><strong>La mappa delle pagine c'è</strong><span>Anche solo un foglio con dei rettangoli.</span></div></li>
-      <li><div><strong>I testi principali sono pronti</strong><span>Almeno una bozza, scritta da voi.</span></div></li>
-      <li><div><strong>Le immagini sono raccolte</strong><span>Vostre, o con licenza che ne permette l'uso.</span></div></li>
-      <li><div><strong>Ho due o tre siti di riferimento</strong><span>Quelli di cui mi piace lo stile.</span></div></li>
-      <li><div><strong>Gli account funzionano</strong><span>Claude, GitHub, Vercel.</span></div></li>
-    </ul>
-  </div>
-</section>
-
-<section class="slide" data-chapter="progetto">
-  <div class="slide-inner">
-    <p class="kicker">Per la prossima volta</p>
-    <h2 style="max-width:18ch">Pensate al vostro sito</h2>
-    <div class="grid g3 mt-l">
-      <div class="card peach"><h3>Il piatto</h3><p>Che sito vorreste costruire, e a cosa serve?</p></div>
-      <div class="card"><h3>Gli ospiti</h3><p>Per chi è? Chi lo aprirà, e perché?</p></div>
-      <div class="card"><h3>Gli ingredienti</h3><p>Cosa avete già: testi, foto, idee, esempi che vi piacciono?</p></div>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <div class="hint" role="status">Usa <kbd>←</kbd> <kbd>→</kbd> per le slide, <kbd>F</kbd> per lo schermo intero</div>
 
 <script src="../assets/js/deck.js"></script>
 <script src="../assets/js/next-word.js"></script>
+<script src="../assets/js/timeline.js"></script>
 </body>
 </html>

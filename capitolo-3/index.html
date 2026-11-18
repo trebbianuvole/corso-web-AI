@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capitolo 3: parlare con l'AI e farla lavorare</title>
+  <meta name="description" content="Capitolo 3 del corso di uso dell'AI e vibe coding: prompt engineering, agenti e skill, vibe coding e Claude Code.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="home-link" href="../">Corso <span>AI</span></a>
+  <nav class="chapters" aria-label="Sezioni del capitolo">
+    <button type="button" data-chapter="intro">Cap. 3</button>
+    <button type="button" data-chapter="prompt">3.1 <span class="ch-name">Prompt</span></button>
+    <button type="button" data-chapter="agenti">3.2 <span class="ch-name">Agenti</span></button>
+    <button type="button" data-chapter="code">3.3 <span class="ch-name">Claude Code</span></button>
+  </nav>
+  <span class="counter" aria-live="polite"></span>
+  <button class="icon-btn" type="button" data-fullscreen aria-label="Schermo intero" title="Schermo intero (F)">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1.5 5.5v-4h4M10.5 1.5h4v4M14.5 10.5v4h-4M5.5 14.5h-4v-4"/></svg>
+  </button>
+  <span class="progress" aria-hidden="true"></span>
+</header>
+
+<main>
+
+<!-- ======================= COPERTINA ======================= -->
+<section class="slide" data-chapter="intro" id="inizio">
+  <div class="slide-inner">
+    <p class="kicker">Capitolo 3</p>
+    <h2 style="font-size:clamp(2.6rem,6vw,5.6rem);max-width:16ch">Parlare con l'AI e farla lavorare</h2>
+    <p class="lead">Come si chiede bene, cosa vuol dire affidare un lavoro a un agente, e lo strumento con cui costruiremo il sito.</p>
+    <ol class="steps mt-l" style="max-width:760px">
+      <li><div><strong>Prompt engineering</strong> <span>come si scrive una richiesta che funziona</span></div></li>
+      <li><div><strong>Gli agenti</strong> <span>cosa sono, in Claude, e la differenza con le skill</span></div></li>
+      <li><div><strong>Vibe coding e Claude Code</strong> <span>programmare parlando, ma con giudizio</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= 3.1 PROMPT ======================= -->
+<section class="slide chapter" data-chapter="prompt" id="prompt">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">3.1</div>
+    <div>
+      <h2>Prompt engineering</h2>
+      <p>Come si scrive una richiesta che l'AI capisce senza tirare a indovinare.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.1 Perché conta</p>
+      <h2>Claude sa solo quello che gli dite</h2>
+      <p class="lead">Ricordate il contesto del capitolo 1: quello che non è scritto, per il modello non esiste. Tutto ciò che date per scontato, lui lo indovina.</p>
+    </div>
+    <div class="stack">
+      <div class="card"><h3>Come un collega nuovo</h3><p>Bravissimo, velocissimo, ma arrivato stamattina. Non conosce il progetto, il cliente, i vostri gusti.</p></div>
+      <div class="card peach"><h3>Il test del biglietto</h3><p>Se deste lo stesso messaggio a una persona competente che non sa niente del progetto, saprebbe cosa fare?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner">
+    <p class="kicker">3.1 Gli ingredienti</p>
+    <h2>Sei ingredienti di un buon prompt</h2>
+    <p class="lead">Non servono tutti ogni volta. Ma quando il risultato è deludente, di solito ne manca uno.</p>
+    <div class="grid g3 mt-l">
+      <div class="card"><span class="tag">1</span><h3>Contesto</h3><p>Chi siete, che progetto è, a che punto siete.</p></div>
+      <div class="card peach"><span class="tag">2</span><h3>Obiettivo</h3><p>Cosa volete ottenere, in una frase chiara.</p></div>
+      <div class="card"><span class="tag">3</span><h3>Materiale</h3><p>File, testi, screenshot, esempi da imitare: allegateli.</p></div>
+      <div class="card"><span class="tag">4</span><h3>Vincoli</h3><p>Cosa deve rispettare: dispositivi, stile, strumenti, lunghezza.</p></div>
+      <div class="card"><span class="tag">5</span><h3>Formato</h3><p>Come volete la risposta: un file, una lista, tre proposte.</p></div>
+      <div class="card"><span class="tag">6</span><h3>Via libera alle domande</h3><p>«Se manca qualcosa, chiedimelo prima di iniziare.»</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner">
+    <p class="kicker">3.1 Un esempio</p>
+    <h2>Un prompt smontato</h2>
+    <div class="anno mt-l">
+      <mark class="a1">Sto costruendo il sito della trattoria «Da Rina» a Torino, in HTML, CSS e JavaScript semplici, senza framework.</mark>
+      <mark class="a2">Crea la pagina del menu.</mark>
+      <mark class="a3">Ti allego il menu in PDF e la home già fatta, da usare come riferimento per lo stile.</mark>
+      <mark class="a4">Deve leggersi bene dal telefono, con caratteri grandi, e non deve usare librerie esterne.</mark>
+      <mark class="a5">Dammi un unico file menu.html e spiegami in tre righe cosa hai fatto.</mark>
+      <mark class="a6">Se qualcosa non è chiaro, chiedimelo prima di scrivere il codice.</mark>
+    </div>
+    <ul class="legend mt-m">
+      <li><i style="background:var(--sky)"></i>Contesto</li>
+      <li><i style="background:var(--peach)"></i>Obiettivo</li>
+      <li><i style="background:#ece3f5"></i>Materiale</li>
+      <li><i style="background:#f8eec2"></i>Vincoli</li>
+      <li><i style="background:#d7ecd7"></i>Formato</li>
+      <li><i style="background:#f3d4d4"></i>Domande</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.1 Tecniche</p>
+      <h2>Cinque mosse che funzionano</h2>
+      <p class="lead">Valgono con Claude, con ChatGPT, con qualunque modello.</p>
+    </div>
+    <ol class="steps">
+      <li><div><strong>Fatevi intervistare</strong><br><span>«Prima di iniziare, fammi le domande che ti servono.»</span></div></li>
+      <li><div><strong>Prima il piano, poi il codice</strong><br><span>«Dimmi come lo faresti, senza scrivere niente.» Correggete il piano, poi partite.</span></div></li>
+      <li><div><strong>Un esempio vale mille aggettivi</strong><br><span>Invece di «moderno ed elegante», allegate un sito che vi piace.</span></div></li>
+      <li><div><strong>Dite cosa fare, non solo cosa evitare</strong><br><span>«Usa frasi brevi» funziona meglio di «non essere prolisso».</span></div></li>
+      <li><div><strong>Chiedete il perché</strong><br><span>«Spiegami cosa hai cambiato.» Così imparate, e vi accorgete degli errori.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner">
+    <p class="kicker">3.1 Quando qualcosa non va</p>
+    <h2>Come si segnala un problema</h2>
+    <div class="grid g2 brief mt-l">
+      <div class="card bad">
+        <h3>Così Claude tira a indovinare</h3>
+        <blockquote>Non funziona, sistemalo.</blockquote>
+        <p class="mt-m">Cosa non funziona? Dove? Da quando? Claude cambierà qualcosa a caso, e forse romperà altro.</p>
+      </div>
+      <div class="card good">
+        <h3>Così Claude trova il problema</h3>
+        <blockquote>Nella pagina delle prenotazioni, se premo «Invia» dal telefono non succede niente; dal computer funziona. Mi aspetto che si apra WhatsApp con il messaggio già scritto. Ti allego lo screenshot della console con l'errore. Prima spiegami la causa, poi correggi.</blockquote>
+      </div>
+    </div>
+    <p class="footnote">Le quattro cose da dire sempre: cosa fate, cosa succede, cosa vi aspettavate, cosa vedete di strano.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.1 Iterare</p>
+      <h2>Il primo risultato è una bozza</h2>
+      <p class="lead">Nessuno fa centro al primo colpo, nemmeno l'AI. Si migliora a piccoli passi, guardando ogni volta il risultato.</p>
+    </div>
+    <figure class="figure chat" aria-label="Esempio di richieste di modifica">
+      <div class="bubble user">Bella. Ora ingrandisci solo il titolo e lascia il resto com'è.</div>
+      <div class="bubble bot">Fatto: titolo da 32 a 48 pixel, nient'altro cambiato.</div>
+      <div class="bubble user">Il pulsante arancione si legge poco: rendi la scritta più scura.</div>
+      <div class="bubble bot">Ho scurito il testo; ora il contrasto rispetta le linee guida di accessibilità.</div>
+      <p class="chat-note">Una modifica per messaggio, detta con precisione: «solo», «lascia il resto».</p>
+    </figure>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner">
+    <p class="kicker">3.1 Errori comuni</p>
+    <h2>Gli sbagli che fanno tutti</h2>
+    <div class="grid g4 mt-l">
+      <div class="card"><h3>Troppo vago</h3><p>«Fallo più bello.» Più bello come? Dite cosa non vi convince.</p></div>
+      <div class="card"><h3>Tutto insieme</h3><p>Dieci richieste in un messaggio: metà verranno fatte male. Una alla volta.</p></div>
+      <div class="card peach"><h3>Chat infinite</h3><p>Il contesto si riempie e il modello si confonde. Fatevi fare un riassunto e aprite una chat nuova.</p></div>
+      <div class="card"><h3>Urlare</h3><p>Maiuscole, punti esclamativi, insulti non aiutano. Spiegare meglio sì.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner">
+    <p class="kicker">3.1 Da tenere</p>
+    <h2>Un modello da copiare</h2>
+    <p class="lead">Riempite le parti tra parentesi quadre. Funziona per quasi ogni richiesta di codice.</p>
+    <div class="copy-wrap mt-l">
+<pre class="code" id="tpl-prompt">Sto lavorando a [che progetto è, per chi è].
+Lo stack è [linguaggi e strumenti].
+
+Voglio [obiettivo in una frase].
+
+Ti allego [file, screenshot, esempi].
+
+Rispetta questi vincoli:
+- [dispositivo, stile, cosa non toccare]
+
+Dammi [formato della risposta].
+Prima di iniziare, fammi le domande che ti servono.</pre>
+      <button class="btn" type="button" data-copy="#tpl-prompt">Copia</button>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="prompt">
+  <div class="slide-inner">
+    <p class="kicker">3.1 Scrivere bene</p>
+    <h2>Scrivere bene è pensare bene</h2>
+    <p class="lead" style="max-width:60ch">Per parlare con l'AI non serve trasformarsi in robot. Un prompt scritto in buon italiano non aiuta solo il modello: aiuta soprattutto voi.</p>
+    <div class="grid g3 mt-l">
+      <div class="card"><span class="tag">La vostra lingua</span><h3>Restare umani</h3><p>Ogni giorno scriverete molti prompt. Se sono tutti telegrafici, è quella la lingua che allenate. Scrivere frasi vere tiene in esercizio la vostra.</p></div>
+      <div class="card"><span class="tag">Tra qualche mese</span><h3>Rileggersi e capire</h3><p>Un prompt chiaro si capisce anche dopo settimane: cosa avevate chiesto e perché. Una lista di parole chiave, a distanza di mesi, non dice più niente.</p></div>
+      <div class="card peach"><span class="tag">Mentre scrivete</span><h3>Le idee arrivano scrivendo</h3><p>Cercare la parola giusta obbliga a chiarire cosa volete. Spesso è proprio lì che spunta il dettaglio mancante, il caso particolare, la modifica migliore.</p></div>
+    </div>
+    <div class="grid g2 brief mt-m">
+      <div class="card bad">
+        <h3>Telegrafico</h3>
+        <blockquote>pagina menu, mobile, font grandi, no librerie, stile home</blockquote>
+      </div>
+      <div class="card good">
+        <h3>Scritto</h3>
+        <blockquote>Vorrei la pagina del menu. Molti la apriranno dal telefono quando sono già seduti al tavolo: caratteri grandi e prezzi ben visibili. Stile come la home, niente librerie esterne.</blockquote>
+      </div>
+    </div>
+    <p class="footnote">Scrivendo per esteso è venuta un'idea nuova: chi legge il menu è già al tavolo, quindi contano i prezzi. Scrivere bene non vuol dire scrivere tanto: frasi chiare, senza giri di parole.</p>
+  </div>
+</section>
+
+<!-- ======================= 3.2 AGENTI ======================= -->
+<section class="slide chapter" data-chapter="agenti" id="agenti">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">3.2</div>
+    <div>
+      <h2>Gli agenti</h2>
+      <p>Cosa vuol dire che un'AI «lavora da sola», come lo fa Claude, e perché un agente non è una skill.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Agenti</p>
+    <h2>Dal chatbot all'agente</h2>
+    <p class="lead" style="max-width:62ch">Nel capitolo 1 li abbiamo solo nominati. La differenza sta in una cosa: chi decide i passi.</p>
+    <div class="grid g3 mt-l">
+      <div class="card"><span class="tag">Risponde</span><h3>Chatbot</h3><p>Voi chiedete, lui risponde. Ogni passo lo decidete voi, e il lavoro lo fate voi: copiare, incollare, provare.</p></div>
+      <div class="card"><span class="tag">Usa uno strumento</span><h3>Assistente con strumenti</h3><p>Può cercare sul web o leggere un file quando serve per rispondere. Ma lavora un messaggio alla volta, sulla vostra richiesta.</p></div>
+      <div class="card peach"><span class="tag">Porta a termine</span><h3>Agente</h3><p>Gli date un obiettivo. Decide lui i passi, usa gli strumenti, guarda cosa succede e continua finché il lavoro non è finito.</p></div>
+    </div>
+    <p class="footnote">Per Anthropic, l'azienda di Claude, un agente è un modello che usa strumenti in un ciclo, guardando ogni volta il risultato. Fonte: <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective agents</a> (2024).</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.2 Agenti</p>
+      <h2>Com'è fatto un agente</h2>
+      <ul class="defs mt-m">
+        <li><b>Il modello</b> il cervello: ragiona e decide la prossima mossa</li>
+        <li><b>Gli strumenti</b> le mani: cercare, leggere e scrivere file, eseguire codice, usare il browser, i server MCP</li>
+        <li><b>Il ciclo</b> pensa, agisce, guarda il risultato, ricomincia</li>
+        <li><b>L'obiettivo</b> e quando fermarsi: «il modulo si invia anche dal telefono»</li>
+      </ul>
+    </div>
+    <div class="term" role="img" aria-label="Esempio del ciclo di un agente">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">Obiettivo: il modulo delle prenotazioni
+non si invia. Trova il problema e risolvilo.</span>
+
+<span class="dim">pensa</span>    Forse è il JavaScript. Leggo form.js.
+<span class="dot">agisce</span>   legge form.js
+<span class="dim">guarda</span>   Alla riga 12 il campo si chiama
+         «telefono», nell'HTML «tel».
+<span class="dot">agisce</span>   corregge il nome
+<span class="dot">agisce</span>   apre la pagina e prova il modulo
+<span class="dim">guarda</span>   Inviato. <span class="ok">Obiettivo raggiunto.</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Agenti</p>
+    <h2>Workflow o agente?</h2>
+    <div class="versus mt-l">
+      <div class="card">
+        <span class="tag">Workflow</span>
+        <h3>La ricetta seguita alla lettera</h3>
+        <p class="mt-m">I passi li decide prima chi lo costruisce, e sono sempre gli stessi. Ogni email in arrivo viene riassunta e archiviata. Prevedibile, veloce, economico.</p>
+      </div>
+      <div class="vs" aria-hidden="true">vs</div>
+      <div class="card peach">
+        <span class="tag">Agente</span>
+        <h3>Il cuoco che sceglie</h3>
+        <p class="mt-m">Decide i passi strada facendo, in base a quello che trova. Utile quando non si può sapere prima cosa servirà. Più flessibile, ma più lento, più costoso e meno prevedibile.</p>
+      </div>
+    </div>
+    <p class="footnote">Il consiglio di Anthropic: cercate sempre la soluzione più semplice che funziona. Spesso basta un buon prompt; l'agente serve quando i passi non si conoscono in anticipo.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Agenti</p>
+    <h2>Gli agenti, ovunque</h2>
+    <p class="lead" style="max-width:62ch">Dal 2025 è la direzione di tutto il settore: dalla chat che risponde all'AI a cui si affida un lavoro.</p>
+    <div class="grid g3 mt-l">
+      <div class="card peach"><span class="tag">Dentro un progetto</span><h3>Agenti per il codice</h3><p>Leggono il progetto, scrivono, eseguono i test, propongono modifiche. Claude Code, OpenAI Codex, GitHub Copilot, Gemini CLI.</p></div>
+      <div class="card"><span class="tag">Davanti a uno schermo</span><h3>Agenti che usano il computer</h3><p>Guardano lo schermo e cliccano come fareste voi, anche dove non c'è un'API. Claude in Chrome, l'agente di ChatGPT, la modalità agente di Gemini.</p></div>
+      <div class="card"><span class="tag">Tra tante fonti</span><h3>Agenti di ricerca</h3><p>Fanno decine di ricerche, leggono le fonti, confrontano e scrivono un rapporto. La ricerca approfondita di Claude, ChatGPT e Gemini.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Agenti in Claude</p>
+    <h2>Gli agenti di Claude</h2>
+    <div class="grid g3 mt-l">
+      <div class="card peach"><span class="tag">Il codice</span><h3>Claude Code</h3><p>Lavora nella cartella del progetto: legge, scrive, prova, salva le versioni. Lo vediamo nella 3.3.</p></div>
+      <div class="card"><span class="tag">Il lavoro lungo</span><h3>L'app Claude</h3><p>Ricerche, documenti, analisi, presentazioni: compiti in più passaggi, portati fino al risultato finito mentre voi fate altro.</p></div>
+      <div class="card"><span class="tag">Il browser</span><h3>Claude in Chrome</h3><p>Usa il vostro Chrome: apre pagine, compila moduli, clicca. Chiede conferma prima delle azioni importanti.</p></div>
+      <div class="card"><span class="tag">Il lavoro diviso</span><h3>Subagent</h3><p>Un agente può affidare pezzi di lavoro ad altri agenti, che lavorano in parallelo e gli riportano solo il risultato.</p></div>
+      <div class="card"><span class="tag">Il team</span><h3>Claude Tag</h3><p>Un agente che vive negli strumenti del team, per ora Slack: più persone gli chiedono cose, e lui può proporre lavoro da solo.</p></div>
+      <div class="card"><span class="tag">Per chi programma</span><h3>Claude Agent SDK</h3><p>Il motore di Claude Code messo a disposizione per costruire i propri agenti.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Agenti e skill</p>
+    <h2>Chi lavora e cosa sa</h2>
+    <p class="lead" style="max-width:62ch">Confonderli è normale: si chiamano perfino «Agent Skills». Ma sono due cose diverse, e servono l'una all'altra.</p>
+    <div class="versus mt-l">
+      <div class="card peach">
+        <span class="tag">Agente</span>
+        <h3>Il cuoco</h3>
+        <p class="mt-m">Lavora: ha un obiettivo, decide, usa gli attrezzi, assaggia e corregge. Ha una sua memoria di lavoro, il contesto.</p>
+      </div>
+      <div class="vs" aria-hidden="true">+</div>
+      <div class="card">
+        <span class="tag">Skill</span>
+        <h3>La ricetta nel ricettario</h3>
+        <p class="mt-m">Spiega come si fa bene un compito preciso: istruzioni, a volte script ed esempi, in una cartella. Da sola non fa niente: la apre un agente quando serve.</p>
+      </div>
+    </div>
+    <p class="footnote">Claude tiene a mente solo il nome e la descrizione di ogni skill, e apre la ricetta intera solo quando il compito la richiede. Per questo se ne possono installare tante senza appesantirlo.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Agenti e skill</p>
+    <h2>Skill, subagent, MCP: a cosa serve cosa</h2>
+    <table class="compare c4 mt-l">
+      <thead><tr><th></th><th>Skill</th><th>Subagent</th><th>Server MCP</th></tr></thead>
+      <tbody>
+        <tr><td>Cos'è</td><td>Istruzioni e script in una cartella</td><td>Un altro agente, con compito e memoria suoi</td><td>Un collegamento a un servizio esterno</td></tr>
+        <tr><td>Cosa aggiunge</td><td>Sa come si fa</td><td>Più braccia, in parallelo</td><td>Dati e azioni di altre app</td></tr>
+        <tr><td>In cucina</td><td>La ricetta</td><td>L'aiuto cuoco</td><td>Il cameriere della 2.5</td></tr>
+        <tr><td>Quando serve</td><td>Rispiegate sempre le stesse cose</td><td>Un lavoro lungo, divisibile in pezzi</td><td>Serve un'app: Gmail, GitHub, Drive</td></tr>
+        <tr><td>Esempio</td><td>«Come prepariamo un foglio Excel in azienda»</td><td>«Cerca in tutti i file dove usiamo l'arancione»</td><td>«Leggi le segnalazioni aperte su GitHub»</td></tr>
+      </tbody>
+    </table>
+    <p class="footnote">Si combinano: un agente usa le skill, chiama i subagent e passa dai server MCP. Nella 3.3 li ritroviamo tutti in Claude Code.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="agenti">
+  <div class="slide-inner">
+    <p class="kicker">3.2 Lavorare con un agente</p>
+    <h2>Affidare un lavoro, senza perdere il controllo</h2>
+    <p class="lead" style="max-width:62ch">Un agente può sbagliare all'inizio e continuare per dieci passi, sicuro di sé. Gli errori si sommano.</p>
+    <div class="grid g4 mt-l">
+      <div class="card peach"><h3>Obiettivo chiaro</h3><p>Cosa deve ottenere, e come si capisce che ha finito.</p></div>
+      <div class="card"><h3>Permessi giusti</h3><p>Cosa può toccare, e cosa no. Il minimo che serve.</p></div>
+      <div class="card"><h3>Controlli a metà</h3><p>Prima il piano, poi il lavoro. E un modo per tornare indietro.</p></div>
+      <div class="card"><h3>Verifica finale</h3><p>«Ho finito» non vuol dire «funziona». Provate voi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 3.3 VIBE CODING E CLAUDE CODE ======================= -->
+<section class="slide chapter" data-chapter="code" id="claude-code">
+  <div class="slide-inner">
+    <div class="chapter-num" aria-hidden="true">3.3</div>
+    <div>
+      <h2>Vibe coding e Claude Code</h2>
+      <p>Programmare parlando. Cosa vuol dire, quando funziona, e lo strumento con cui lo faremo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.3 Vibe coding</p>
+      <h2>Da dove viene la parola</h2>
+      <p class="lead">Il 2 febbraio 2025 Andrej Karpathy, tra i fondatori di OpenAI, descrive su X un nuovo modo di programmare: si parla con l'AI, si accettano le sue modifiche senza leggerle, si va avanti a sensazione.</p>
+      <p class="footnote">Il <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener">post originale</a> di Karpathy.</p>
+    </div>
+    <div class="stack">
+      <div class="card peach"><p class="quote" style="font-size:clamp(1.2rem,1.9vw,1.7rem)">«Ci si abbandona alle vibrazioni e ci si dimentica che il codice esiste.»</p><p class="mt-m">Così, più o meno, la sua definizione.</p></div>
+      <div class="card"><h3>Parola dell'anno</h3><p>Nel 2025 il dizionario Collins sceglie «vibe coding» come parola dell'anno. Oggi si usa per qualunque modo di programmare con l'AI.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Vibe coding</p>
+    <h2>Uno spettro, non un interruttore</h2>
+    <p class="lead" style="max-width:60ch">Tra «non guardo il codice» e «scrivo tutto io» ci sono molte vie di mezzo. Conta quanto capite e controllate.</p>
+    <div class="spectrum mt-l" style="margin-top:72px !important">
+      <span class="pin">Noi, in questo corso</span>
+      <div class="rail" aria-hidden="true"></div>
+      <div class="ends">
+        <div><b>Vibe coding puro</b><span>Accetto tutto, provo, se funziona va bene. Del codice non so niente.</span></div>
+        <div><b>Vibe coding con giudizio</b><span>Decido io il piano, provo sempre, leggo abbastanza da capire cosa succede.</span></div>
+        <div><b>Programmazione assistita</b><span>Scrivo e rivedo ogni riga; l'AI mi fa risparmiare tempo.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Vibe coding</p>
+    <h2>Quando sì, quando con cautela</h2>
+    <div class="versus mt-l">
+      <div class="card peach">
+        <span class="tag">Va benissimo</span>
+        <h3>Se sbaglia, poco male</h3>
+        <ul class="mt-m"><li>Prototipi per far vedere un'idea</li><li>Siti personali e di presentazione</li><li>Piccoli strumenti per voi</li><li>Imparare: si vede subito l'effetto di ogni riga</li></ul>
+      </div>
+      <div class="vs" aria-hidden="true">vs</div>
+      <div class="card">
+        <span class="tag">Serve chi sa leggere il codice</span>
+        <h3>Se sbaglia, qualcuno ci rimette</h3>
+        <ul class="mt-m"><li>Dati personali di altre persone</li><li>Pagamenti e soldi</li><li>Password e account</li><li>Programmi da cui dipende un lavoro</li></ul>
+      </div>
+    </div>
+    <p class="footnote">Il codice che «funziona» può comunque avere buchi di sicurezza che non si vedono usandolo.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.3 Vibe coding</p>
+      <h2>Il ciclo di lavoro</h2>
+      <p class="lead">Si gira in tondo, a piccoli passi. Ogni giro aggiunge una cosa sola e la verifica.</p>
+      <p class="mt-m muted">Il passo che non si salta mai è «provate». È lì che si vede se il codice fa davvero quello che dovrebbe.</p>
+    </div>
+    <figure class="figure">
+      <svg class="diagram loop-svg" viewBox="0 0 560 460" role="img" aria-labelledby="loop-t loop-d"><title id="loop-t">Il ciclo del vibe coding</title><desc id="loop-d">Quattro passi in cerchio: descrivete cosa volete, Claude scrive il codice, provate il risultato, dite cosa non va. Poi si ricomincia.</desc>
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#df5f26"/></marker></defs>
+        <path d="M387.1 111.1 A160 160 0 0 1 433.8 185.9" class="arc" marker-end="url(#ah)"/>
+        <path d="M433.8 274.1 A160 160 0 0 1 387.1 348.9" class="arc" marker-end="url(#ah)"/>
+        <path d="M172.9 348.9 A160 160 0 0 1 126.2 274.1" class="arc" marker-end="url(#ah)"/>
+        <path d="M126.2 185.9 A160 160 0 0 1 172.9 111.1" class="arc" marker-end="url(#ah)"/>
+        <rect x="185" y="35" width="190" height="70" rx="14" class="nd"/><text x="280" y="64" class="t">Descrivete</text><text x="280" y="88" class="s">un passo, chiaro</text>
+        <rect x="345" y="195" width="190" height="70" rx="14" class="nd"/><text x="440" y="224" class="t">Claude scrive</text><text x="440" y="248" class="s">e spiega cosa ha fatto</text>
+        <rect x="185" y="355" width="190" height="70" rx="14" class="nd hot"/><text x="280" y="384" class="t">Provate</text><text x="280" y="408" class="s">telefono e computer</text>
+        <rect x="25" y="195" width="190" height="70" rx="14" class="nd"/><text x="120" y="224" class="t">Dite cosa non va</text><text x="120" y="248" class="s">con precisione</text>
+        <text x="280" y="238" class="ctr">un giro,</text><text x="280" y="268" class="ctr">una cosa</text>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Claude Code</p>
+    <h2>Claude Code: un agente dentro il progetto</h2>
+    <p class="lead" style="max-width:62ch">In chat, Claude vi dà il codice e voi lo copiate nei file. Claude Code invece lavora direttamente nella cartella del progetto: legge i file, li modifica, esegue comandi, prova, salva le versioni.</p>
+    <div class="grid g4 mt-l">
+      <div class="card"><span class="tag">Per chi programma</span><h3>Terminale</h3><p>La versione originale: si scrive in una finestra di comandi.</p></div>
+      <div class="card"><span class="tag">Dentro l'editor</span><h3>VS Code, JetBrains</h3><p>Un'estensione: le modifiche si vedono evidenziate nei file.</p></div>
+      <div class="card peach"><span class="tag">Il più semplice</span><h3>App desktop</h3><p>Nell'app Claude per Windows e Mac, con anteprima delle modifiche.</p></div>
+      <div class="card"><span class="tag">Senza installare</span><h3>Web e telefono</h3><p>Su claude.ai/code, lavorando su un progetto salvato su GitHub.</p></div>
+    </div>
+    <p class="footnote">Claude Code è incluso negli abbonamenti a pagamento di Claude, da Pro in su.</p>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Claude Code</p>
+    <h2>Chat o Claude Code?</h2>
+    <table class="compare mt-l">
+      <thead><tr><th></th><th>Chat</th><th>Claude Code</th></tr></thead>
+      <tbody>
+        <tr><td>Dove sta il codice</td><td>Nella conversazione</td><td>Nei file del progetto</td></tr>
+        <tr><td>Chi copia e incolla</td><td>Voi</td><td>Nessuno: scrive direttamente nei file</td></tr>
+        <tr><td>Cosa vede</td><td>Solo quello che allegate</td><td>Tutti i file del progetto</td></tr>
+        <tr><td>Può provare il codice</td><td>Poco</td><td>Sì: lo esegue, legge gli errori, corregge</td></tr>
+        <tr><td>Versioni</td><td>Da gestire a mano</td><td>Salva con git e pubblica su GitHub</td></tr>
+        <tr><td>Ideale per</td><td>Capire, progettare, pezzi piccoli</td><td>Costruire e mantenere un progetto vero</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner split">
+    <div>
+      <p class="kicker">3.3 Claude Code</p>
+      <h2>Come lavora</h2>
+      <p class="lead">Riceve un obiettivo e procede da solo, un passo dopo l'altro: legge, decide, modifica, controlla. Prima delle azioni delicate chiede il permesso.</p>
+      <p class="footnote">Esempio semplificato.</p>
+    </div>
+    <div class="term" role="img" aria-label="Esempio di sessione di Claude Code">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">&gt; Aggiungi alla home un pulsante «Prenota su
+  WhatsApp» sotto gli orari</span>
+
+<span class="dot">●</span> Leggo index.html e style.css
+<span class="dot">●</span> Gli orari sono nella sezione #orari.
+  Il numero di telefono è già nel piè di pagina:
+  uso quello.
+<span class="dot">●</span> Modifico index.html   <span class="ok">+6 righe</span>
+<span class="dot">●</span> Modifico style.css    <span class="ok">+14 righe</span>
+<span class="dot">●</span> Apro la pagina per controllare: il pulsante
+  si vede, il link apre WhatsApp.
+
+<span class="dim">Salvo le modifiche con un commit? (sì / no)</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Claude Code</p>
+    <h2>Gli strumenti da conoscere</h2>
+    <div class="grid g3 mt-l">
+      <div class="card peach"><span class="tag">La memoria del progetto</span><h3>CLAUDE.md</h3><p>Il documento di progetto della 2.2. Claude lo legge all'inizio di ogni sessione: obiettivo, stack, regole.</p></div>
+      <div class="card"><span class="tag">Prima pensa, poi tocca</span><h3>Plan mode</h3><p>Claude esplora e propone un piano senza modificare niente. Voi lo correggete, poi si parte. Si attiva con <kbd>Shift</kbd> <kbd>Tab</kbd>.</p></div>
+      <div class="card"><span class="tag">Chi decide</span><h3>Permessi</h3><p>Potete fargli chiedere conferma prima di ogni modifica o comando, oppure lasciarlo più libero.</p></div>
+      <div class="card"><span class="tag">Tornare indietro</span><h3>Checkpoint</h3><p>Se una modifica non piace, si riavvolge la sessione al punto prima, con <code>/rewind</code>.</p></div>
+      <div class="card"><span class="tag">Aiutanti</span><h3>Subagent</h3><p>Claude può affidare pezzi di lavoro, come cercare nei file, ad altri agenti che lavorano in parallelo.</p></div>
+      <div class="card"><span class="tag">Già visti</span><h3>Skill e MCP</h3><p>Le skill della 3.2 e i server MCP della 2.5 funzionano anche qui.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Mettere tutto insieme</p>
+    <h2>Dal piano al sito online</h2>
+    <p class="lead">Tutto quello che abbiamo visto nei capitoli 2 e 3, in ordine.</p>
+    <div class="pipe mt-l">
+      <div><b>Il piano</b><span>obiettivo, MVP, pubblico, stack, scritti nel CLAUDE.md</span></div>
+      <div><b>Plan mode</b><span>Claude propone come procedere, voi approvate</span></div>
+      <div><b>Un passo alla volta</b><span>un prompt chiaro per ogni funzione</span></div>
+      <div><b>Provare</b><span>nel browser, dal telefono, con la console aperta</span></div>
+      <div><b>Salvare e pubblicare</b><span>commit su GitHub, Vercel mette online</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">3.3 Regole d'oro</p>
+    <h2>Le regole del vibe coder con giudizio</h2>
+    <ul class="checklist mt-l">
+      <li><div><strong>Salvate spesso</strong><span>Ogni volta che qualcosa funziona, un commit. Così si torna sempre indietro.</span></div></li>
+      <li><div><strong>Una cosa alla volta</strong><span>Piccoli passi, ognuno provato prima del successivo.</span></div></li>
+      <li><div><strong>Provate sempre</strong><span>Dal computer e dal telefono. «Sembra giusto» non basta.</span></div></li>
+      <li><div><strong>Chiedete di spiegare</strong><span>Se non capite una modifica, fatevela raccontare.</span></div></li>
+      <li><div><strong>Leggete prima di approvare</strong><span>Soprattutto i comandi che cancellano o pubblicano.</span></div></li>
+      <li><div><strong>Niente segreti nel codice</strong><span>Password e chiavi API non vanno nei file né in chat.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide" data-chapter="code">
+  <div class="slide-inner">
+    <p class="kicker">Per la prossima volta</p>
+    <h2 style="max-width:20ch">Scrivete il documento del vostro progetto</h2>
+    <p class="lead">Partite da quello che avete pensato nella 2.1 e aggiungete le scelte del capitolo 2. Sarà il CLAUDE.md del vostro sito.</p>
+    <div class="grid g4 mt-l">
+      <div class="card peach"><h3>Obiettivo e MVP</h3><p>Cosa fa il sito, e qual è la versione più piccola che funziona?</p></div>
+      <div class="card"><h3>Pubblico</h3><p>Chi lo usa, da quale dispositivo, con quali esigenze?</p></div>
+      <div class="card"><h3>Stack</h3><p>Sito statico in HTML, CSS e JavaScript? Serve un backend?</p></div>
+      <div class="card"><h3>Regole</h3><p>Tono, stile, lingua, cose da non fare mai.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="hint" role="status">Usa <kbd>←</kbd> <kbd>→</kbd> per le slide, <kbd>F</kbd> per lo schermo intero</div>
+
+<script src="../assets/js/deck.js"></script>
+<script src="../assets/js/layers.js"></script>
+</body>
+</html>

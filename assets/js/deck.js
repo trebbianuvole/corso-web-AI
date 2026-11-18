@@ -44,6 +44,7 @@
 
   document.addEventListener("keydown", e => {
     if (e.altKey || e.ctrlKey || e.metaKey || typing(document.activeElement)) return;
+    if (document.querySelector("dialog[open]")) return; // una finestra aperta ha la precedenza
     const k = e.key;
     if (k === "ArrowRight" || k === "PageDown" || (k === " " && !e.shiftKey)) { e.preventDefault(); go(currentIndex() + 1); }
     else if (k === "ArrowLeft" || k === "PageUp" || (k === " " && e.shiftKey)) { e.preventDefault(); go(currentIndex() - 1); }
