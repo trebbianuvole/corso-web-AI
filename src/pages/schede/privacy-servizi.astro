@@ -1,0 +1,33 @@
+---
+// Scheda aggiornabile U.4: impostazioni sulla privacy dei principali servizi di AI.
+// Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
+import Scheda from "../../layouts/Scheda.astro";
+---
+<Scheda sigla="U.4" titolo="Le impostazioni sulla privacy" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: dove si spegne l'uso delle conversazioni per l'addestramento in Claude, ChatGPT e Gemini, e cosa resta comunque.">
+  <p class="lead">Dove si decide se le vostre conversazioni servono ad addestrare i modelli, negli account personali dei tre servizi più usati. Per gli account di lavoro valgono i contratti dell'azienda.</p>
+
+  <h2>Addestramento</h2>
+  <table class="compare">
+    <thead><tr><th>Servizio</th><th>Dove si spegne</th><th>Cosa resta comunque</th></tr></thead>
+    <tbody>
+      <tr><td>Claude</td><td data-label="Dove si spegne">Impostazioni → Privacy → «Model Improvement»</td><td data-label="Cosa resta">Le conversazioni segnalate per sicurezza; quelle su cui date un pollice su o giù, conservate fino a 5 anni e utilizzabili per l'addestramento</td></tr>
+      <tr><td>ChatGPT</td><td data-label="Dove si spegne">Impostazioni → Controlli dei dati → «Migliora il modello per tutti» (in inglese «Improve the model for everyone»)</td><td data-label="Cosa resta">Le conversazioni restano nella cronologia; con il pollice su o giù, la conversazione può essere usata anche se avete spento l'opzione</td></tr>
+      <tr><td>Gemini</td><td data-label="Dove si spegne">Nelle impostazioni dell'attività, l'opzione che usa i contenuti delle chat per addestrare i modelli («Chat content» in inglese). È separata da quella della cronologia</td><td data-label="Cosa resta">Una parte delle chat viene letta da revisori umani; quelle lette restano fino a 3 anni, anche se le cancellate</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Chat che non si salvano</h2>
+  <table class="compare">
+    <thead><tr><th>Servizio</th><th>Come si chiama</th><th>Cosa succede</th></tr></thead>
+    <tbody>
+      <tr><td>Claude</td><td data-label="Come si chiama">Chat in incognito</td><td data-label="Cosa succede">Non usata per migliorare i modelli, anche con «Model Improvement» acceso</td></tr>
+      <tr><td>ChatGPT</td><td data-label="Come si chiama">Chat temporanea</td><td data-label="Cosa succede">Non compare nella cronologia, non crea memorie, non addestra; cancellata dopo 30 giorni</td></tr>
+      <tr><td>Gemini</td><td data-label="Come si chiama">Cronologia disattivata</td><td data-label="Cosa succede">Le chat nuove non compaiono nella cronologia, ma Google le conserva per circa due mesi</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Da ricordare</h2>
+  <p>Spegnere l'addestramento vale per le conversazioni future. I nomi dei menu cambiano spesso, anche da un'app all'altra dello stesso servizio: se non trovate la voce, cercate «privacy» o «dati» nelle impostazioni.</p>
+
+  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic</a>; <a href="https://help.openai.com/en/articles/7730893" target="_blank" rel="noopener">OpenAI, controlli dei dati</a> e <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">uso dei dati</a>; <a href="https://support.google.com/gemini/answer/13594961?hl=it" target="_blank" rel="noopener">Google, privacy delle app Gemini</a>. Nel corso: slide <a href="../../capitolo-5/#5-1-2">5.1.2</a> e <a href="../../capitolo-5/#5-1-5">5.1.5</a>.</p>
+</Scheda>
