@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="12.2 La consegna professionale" titolo="Di chi sono le chiavi" lead="Ogni servizio va intestato al cliente, con i suoi account. Meglio dall'inizio; se no, si trasferisce. Voi restate, se serve, come collaboratori.">
+  <table class="compare mt-m">
+    <thead><tr><th>Servizio</th><th>Come passa al cliente</th></tr></thead>
+    <tbody>
+      <tr><td>Repository GitHub</td><td data-label="Come passa">Settings › Transfer; il cliente accetta entro un giorno. Passano issue, PR e storia</td></tr>
+      <tr><td>Progetto Vercel</td><td data-label="Come passa">Settings › General › Transfer, senza interruzioni. Passano domini e variabili</td></tr>
+      <tr><td>Progetto Supabase</td><td data-label="Come passa">Dalle impostazioni, verso l'organizzazione del cliente, dopo aver staccato GitHub</td></tr>
+      <tr><td>Dominio</td><td data-label="Come passa">Registrato a nome del cliente. Per cambiare intestatario o registrar di un .it serve il codice AuthInfo</td></tr>
+      <tr><td>Chiavi API, Stripe, Keystatic</td><td data-label="Come passa">Create dal cliente; quelle fatte con i vostri account si revocano</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="E le password?">Mai per email o in chat. Il cliente crea i suoi account e vi invita: così può togliervi l'accesso quando vuole.</Card>
+  <p class="footnote">Fonti: <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository" target="_blank" rel="noopener">GitHub</a>; <a href="https://vercel.com/docs/projects/transferring-projects" target="_blank" rel="noopener">Vercel</a>; <a href="https://supabase.com/docs/guides/platform/project-transfer" target="_blank" rel="noopener">Supabase</a>; <a href="https://www.nic.it/en/manage-your-it" target="_blank" rel="noopener">Registro .it</a>, controllate il 18 novembre 2026.</p>
+</Slide>

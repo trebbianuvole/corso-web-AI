@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 12" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Gestire e consegnare il prodotto" lead="Un prodotto vive più a lungo del corso in cui è nato. Come lo si tiene in ordine, come lo si consegna, e cosa vi portate via.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Il debito tecnico" inLinea>le scorciatoie si pagano dopo</Passo>
+    <Passo titolo="La consegna professionale" inLinea>chiavi, contenuti, backup, documenti</Passo>
+    <Passo titolo="Gli agenti nel tempo" inLinea>in background, in parallelo, programmati</Passo>
+    <Passo titolo="I mestieri del web" inLinea>cosa cambia, cosa conta</Passo>
+    <Passo titolo="La chiusura del corso" inLinea>portfolio, presentazioni, dibattito</Passo>
+  </Steps>
+  <SieteQui capitolo={12} classe="mt-m" />
+</Slide>

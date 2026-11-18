@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" split kicker="12.1 Il debito tecnico" titolo="Ripagare il debito" lead="Un po' alla volta, come un mutuo: un refactoring guidato ogni tanto, mai tutto insieme. Lo stesso comportamento, codice migliore (6.5.6).">
+  <Card slot="intro" variante="peach mt-m" titolo="«Rifai tutto da capo» no">Un agente che riscrive l'intera app in una volta produce un debito nuovo, più grande. Un pezzo, un ramo, una PR.</Card>
+  <Steps>
+    <Passo titolo="Prima i test" inLinea>che fissano il comportamento di oggi: dopo devono passare uguali</Passo>
+    <Passo titolo="Un obiettivo piccolo" inLinea>«un solo modo di mostrare gli errori, in un componente»</Passo>
+    <Passo titolo="Il piano" inLinea>Claude elenca i file che tocca; voi lo leggete prima</Passo>
+    <Passo titolo="Il diff" inLinea>deve togliere più righe di quante ne aggiunge, o quasi</Passo>
+    <Passo titolo="Il CLAUDE.md" inLinea>la regola nuova va scritta, così la prossima sessione la segue</Passo>
+  </Steps>
+</Slide>
