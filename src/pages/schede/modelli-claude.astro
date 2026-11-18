@@ -1,0 +1,25 @@
+---
+// Scheda aggiornabile U.2: i modelli di Claude.
+// Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
+import Scheda from "../../layouts/Scheda.astro";
+---
+<Scheda sigla="U.2" titolo="I modelli di Claude" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: i modelli di Claude disponibili oggi e come scegliere quello giusto.">
+  <p class="lead">Quali modelli offre oggi Anthropic e a cosa serve ciascuno. I nomi cambiano spesso: per questo stanno qui e non nelle slide.</p>
+
+  <h2>I modelli di oggi</h2>
+  <table class="compare">
+    <thead><tr><th>Modello</th><th>A cosa serve</th><th>Velocità</th></tr></thead>
+    <tbody>
+      <tr><td>Haiku 5.5</td><td data-label="A cosa serve">Compiti semplici e ripetuti in grande quantità: classificare, estrarre dati, smistare richieste.</td><td data-label="Velocità">La più alta</td></tr>
+      <tr><td>Sonnet 5.5</td><td data-label="A cosa serve">L'equilibrio tra velocità e intelligenza. Il punto di partenza per la maggior parte dei lavori.</td><td data-label="Velocità">Alta</td></tr>
+      <tr><td>Opus 5.5</td><td data-label="A cosa serve">Lavori lunghi e complessi, come scrivere e sistemare un intero progetto con un agente.</td><td data-label="Velocità">Media</td></tr>
+      <tr><td>Fable 5.2</td><td data-label="A cosa serve">Il ragionamento più impegnativo e i compiti più lunghi, quando Opus non basta.</td><td data-label="Velocità">Media</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Tutti leggono testo e immagini, rispondono in testo, parlano molte lingue e sanno usare strumenti. Esiste anche Mythos 5.2, riservato a organizzazioni verificate.</p>
+
+  <h2>Come si sceglie</h2>
+  <p>Partite da Sonnet. Passate a Opus o Fable se il lavoro è lungo o difficile e il risultato non vi convince; tornate a Haiku se il compito è semplice e lo ripetete tante volte. Più grande non vuol dire sempre migliore: i modelli grandi sono più lenti e consumano prima i limiti d'uso.</p>
+
+  <p class="footnote scheda-fonti">Fonte: <a href="https://platform.claude.com/docs/en/about-claude/models/overview" target="_blank" rel="noopener">Anthropic, panoramica dei modelli</a>, controllata il 18 novembre 2026. Nel corso: slide <a href="../../capitolo-1/#1-4-2">1.4.2 «I modelli: scegliere la taglia giusta»</a>.</p>
+</Scheda>
