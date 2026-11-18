@@ -1,0 +1,22 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="con-ai" kicker="10.4 Chi sei e cosa puoi fare" titolo="L'errore classico del codice generato" lead="Il controllo fatto solo nel browser. Il pulsante «Annulla» compare solo sulle proprie prenotazioni, e l'app sembra a posto.">
+  <div class="versus mt-l">
+    <div class="card bad">
+      <h3>Solo nel browser</h3>
+<pre class="code mt-m" aria-label="Codice che nasconde il pulsante Annulla nel browser"><span class="k">if</span> (p.utente_id === io.id) &#123;
+  mostraPulsanteAnnulla(p)
+&#125;</pre>
+      <p class="mt-m">Il browser è di chi lo usa. Chiunque, dagli strumenti per sviluppatori, può mandare la richiesta «cancella la prenotazione 57» senza passare dal pulsante.</p>
+    </div>
+    <span class="vs" aria-hidden="true">≠</span>
+    <div class="card good">
+      <h3>Anche nel database</h3>
+      <p>Il pulsante nascosto va bene, per comodità. Ma la regola vera è quella della 10.4.4: anche se la richiesta arriva, il database risponde no.</p>
+      <p class="mt-m">Il browser rende l'app <b>comoda</b>. Il server, o il database, la rende <b>sicura</b>.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Cosa chiedere a Claude">«Per ogni operazione, dimmi dove viene controllato il permesso. Se la risposta è solo nel browser, aggiungi la regola nel database e mostrami come provarla con un secondo utente.»</Card>
+</Slide>

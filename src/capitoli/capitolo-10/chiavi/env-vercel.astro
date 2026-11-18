@@ -1,0 +1,19 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} split kicker="10.6 API esterne e chiavi" titolo="Il file .env e le variabili su Vercel" lead="Le chiavi non si scrivono nel codice. Stanno in un file che non va su GitHub e, online, nelle impostazioni del progetto su Vercel.">
+  <Card slot="intro" variante="peach mt-m" titolo="Il prefisso conta">In Astro solo le variabili che cominciano con <code>PUBLIC_</code> arrivano al browser. Una chiave segreta con quel prefisso è una chiave pubblicata.</Card>
+  <p class="footnote" slot="intro">Fonti: <a href="https://docs.astro.build/en/guides/environment-variables/" target="_blank" rel="noopener">Astro, variabili d'ambiente</a>; <a href="https://vercel.com/docs/environment-variables" target="_blank" rel="noopener">Vercel, variabili d'ambiente</a>, controllate il 18 novembre 2026.</p>
+  <div style="min-width:0">
+<pre class="code" aria-label="Un file .env con due chiavi pubbliche e una segreta, e la riga del .gitignore"><span class="m"># .env (sul vostro computer)</span>
+PUBLIC_SUPABASE_URL=https://….supabase.co
+PUBLIC_SUPABASE_KEY=sb_publishable_…
+SUPABASE_SECRET_KEY=sb_secret_…
+ANTHROPIC_API_KEY=…
+
+<span class="m"># .gitignore (4.3.6)</span>
+.env</pre>
+    <Card variante="sky mt-m" titolo="Su Vercel">Settings › Environment Variables: stessi nomi, valori diversi per l'anteprima (il progetto Supabase di prova) e per la produzione (quello vero). Dopo una modifica serve un nuovo deploy.</Card>
+  </div>
+</Slide>

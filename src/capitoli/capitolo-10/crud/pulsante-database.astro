@@ -1,0 +1,30 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="esempio" classe="compact" kicker="10.3 Le quattro operazioni" titolo="Dal pulsante al database" lead="Le cinque tappe della 2.3.8, ora in codice vero. Questo è quello che Claude scrive quando gli chiedete «il pulsante Prenota».">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Il codice JavaScript che salva una prenotazione su Supabase e gestisce la risposta"><span class="k">import</span> &#123; createClient &#125; <span class="k">from</span> <span class="s">'@supabase/supabase-js'</span>
+<span class="k">const</span> supabase = createClient(URL, CHIAVE_PUBBLICA) <span class="m">①</span>
+
+<span class="k">async function</span> prenota(aulaId, inizio, fine) &#123;
+  <span class="k">const</span> &#123; data, error &#125; = <span class="k">await</span> supabase   <span class="m">②</span>
+    .from(<span class="s">'prenotazioni'</span>)
+    .insert(&#123; aula_id: aulaId,
+              periodo: <span class="s">`[$&#123;inizio&#125;,$&#123;fine&#125;)`</span> &#125;)
+    .select()
+
+  <span class="k">if</span> (error) &#123;                                 <span class="m">③</span>
+    mostra(<span class="s">'Aula già occupata in quell\'orario'</span>)
+    <span class="k">return</span>
+  &#125;
+  mostra(<span class="s">'Prenotata'</span>)                         <span class="m">④</span>
+&#125;</pre>
+    <ol class="note-codice">
+      <li><b>Il collegamento</b> a Supabase, con la chiave che può stare nel browser (10.6.1).</li>
+      <li><b>La richiesta:</b> inserisci una riga in <code>prenotazioni</code> e restituiscila. Chi prenota lo sa Supabase, dall'accesso (10.4).</li>
+      <li><b>Il no:</b> il vincolo della 10.2.4 ha rifiutato la riga. Qui un messaggio vero per la persona (10.5.2).</li>
+      <li><b>Il sì:</b> la prenotazione è salvata e la vedono tutti.</li>
+    </ol>
+  </div>
+  <p class="footnote">Semplificato per la lezione: un'app vera distingue gli errori (aula occupata, rete assente, permesso negato). Fonte: <a href="https://supabase.com/docs/reference/javascript/insert" target="_blank" rel="noopener">Supabase, insert in JavaScript</a>.</p>
+</Slide>

@@ -1,0 +1,27 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.4 Chi sei e cosa puoi fare" titolo="I permessi sulle righe" lead="In Supabase l'autorizzazione si scrive nel database, tabella per tabella: Row Level Security, sicurezza a livello di riga. Ogni richiesta passa da qui, da qualunque parte arrivi.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Le regole di Row Level Security per la tabella prenotazioni"><span class="k">alter table</span> prenotazioni
+  <span class="k">enable row level security</span>;              <span class="m">①</span>
+
+<span class="k">create policy</span> <span class="s">"Chi è collegato vede"</span>     <span class="m">②</span>
+<span class="k">on</span> prenotazioni <span class="k">for select</span>
+<span class="k">to</span> authenticated
+<span class="k">using</span> ( true );
+
+<span class="k">create policy</span> <span class="s">"Annulli solo le tue"</span>      <span class="m">③</span>
+<span class="k">on</span> prenotazioni <span class="k">for delete</span>
+<span class="k">to</span> authenticated
+<span class="k">using</span> ( (<span class="k">select</span> auth.uid()) = utente_id );</pre>
+    <ol class="note-codice">
+      <li><b>Si accende la protezione.</b> Da qui in poi, senza una regola, non passa niente: nessuna riga letta, nessuna cancellata.</li>
+      <li><b>Leggere:</b> chi ha fatto l'accesso vede le prenotazioni. Chi non è entrato, nessuna.</li>
+      <li><b>Cancellare:</b> solo le righe in cui <code>utente_id</code> è proprio chi fa la richiesta. <code>auth.uid()</code> lo dice Supabase, non il browser.</li>
+    </ol>
+  </div>
+  <Card variante="sky mt-m" titolo="Come si verifica">Due account di prova, due browser. Con il primo prenotate; con il secondo provate a vedere, modificare e annullare. Ogni «no» della tabella dei ruoli va provato davvero.</Card>
+  <p class="footnote">Fonte: <a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener">Supabase, Row Level Security</a>, controllata il 18 novembre 2026.</p>
+</Slide>

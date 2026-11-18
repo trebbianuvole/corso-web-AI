@@ -1,0 +1,18 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="10.1 Dal sito alla webapp" titolo="Quando non serve" lead="Una webapp va costruita, protetta e mantenuta per anni. Prima di proporla, chiedetevi se basta qualcosa di più semplice.">
+  <div class="versus mt-l">
+    <div class="card good">
+      <h3>Basta un sito</h3>
+      <ul class="mt-m"><li>Prenotazioni per telefono o WhatsApp</li><li>Un modulo che manda una mail</li><li>Menu e orari cambiati da Rina con Keystatic</li><li>Un calendario condiviso, o un servizio di prenotazioni che esiste già</li></ul>
+    </div>
+    <span class="vs" aria-hidden="true">o</span>
+    <div class="card">
+      <h3>Serve una webapp</h3>
+      <ul class="mt-m"><li>Le persone hanno un account e ruoli diversi</li><li>I dati cambiano spesso e si incrociano</li><li>Ci sono regole da far rispettare: due prenotazioni non si sovrappongono</li><li>Nessun servizio pronto fa quello che serve</li></ul>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="La domanda per il cliente">«Cosa fate oggi, con carta, telefono o fogli di calcolo?» Se un servizio pronto copre l'ottanta per cento, spesso conviene quello.</Card>
+</Slide>

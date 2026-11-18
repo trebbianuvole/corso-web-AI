@@ -1,0 +1,16 @@
+---
+import Passo from "../../components/Passo.astro";
+import SieteQui from "../../components/SieteQui.astro";
+import Slide from "../../components/slide/Slide.astro";
+import Steps from "../../components/Steps.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="Capitolo 10" titoloStile="font-size:clamp(2.4rem,5.4vw,5rem);max-width:16ch" titolo="Sviluppare una webapp con l'AI" lead="Da Da Rina a PrenotaAula: dal sito che si legge al programma che si usa. Arrivano utenti, dati e permessi, ed è qui che l'AI rischia di più.">
+  <Steps classe="mt-m" stile="max-width:820px">
+    <Passo titolo="Progettare i dati" inLinea>tabelle, chiavi, vincoli, Supabase</Passo>
+    <Passo titolo="Chi sei e cosa puoi fare" inLinea>accesso e permessi sulle righe</Passo>
+    <Passo titolo="Chiavi e piccoli backend" inLinea>quello che non deve arrivare al browser</Passo>
+    <Passo titolo="Un modello AI dentro l'app" inLinea>l'assistente di PrenotaAula</Passo>
+    <Passo titolo="Quanto costa" inLinea>la mappa dei costi</Passo>
+  </Steps>
+  <SieteQui capitolo={10} classe="mt-m" />
+</Slide>

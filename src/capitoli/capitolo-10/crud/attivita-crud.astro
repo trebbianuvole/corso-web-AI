@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="attivita" split kicker="10.3 Le quattro operazioni" titolo="Il CRUD delle prenotazioni" lead="Con Claude Code e il progetto Supabase di prova. Non si parte dal codice: si parte dai criteri di accettazione (2.6.6).">
+  <Card slot="intro" variante="sky mt-m" titolo="Fatto vuol dire">Tutti i criteri provati a mano, uno per uno, e scritti nella pull request con l'esito. Se un criterio non passa, non è fatto.</Card>
+  <Steps>
+    <Passo titolo="Criteri" inLinea>per ognuna delle quattro operazioni, con almeno un caso che deve fallire</Passo>
+    <Passo titolo="Piano" inLinea>Claude propone file e passi, voi lo leggete prima che scriva</Passo>
+    <Passo titolo="Creare e leggere" inLinea>prenotare un'aula, vedere le proprie prenotazioni</Passo>
+    <Passo titolo="Modificare e annullare" inLinea>solo le proprie, con conferma prima di annullare</Passo>
+    <Passo titolo="Il caso che deve fallire" inLinea>due prenotazioni sovrapposte: il messaggio è giusto?</Passo>
+  </Steps>
+</Slide>

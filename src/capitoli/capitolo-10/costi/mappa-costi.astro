@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.8 Quanto costa" titolo="La mappa dei costi" lead="Ogni pezzo dello stack ha un piano gratuito e un piano a pagamento. Il passaggio dall'uno all'altro arriva prima di quanto sembra: appena il progetto è di un cliente.">
+  <table class="compare mt-l">
+    <thead><tr><th>Pezzo</th><th>Gratis va bene per…</th><th>Si paga quando…</th></tr></thead>
+    <tbody>
+      <tr><td>Vercel</td><td data-label="Gratis">il progetto del corso</td><td data-label="Si paga">è il sito di un'attività: uso commerciale</td></tr>
+      <tr><td>Supabase</td><td data-label="Gratis">provare e imparare</td><td data-label="Si paga">servono i backup e niente pause</td></tr>
+      <tr><td>Keystatic Cloud</td><td data-label="Gratis">fino a tre persone che modificano</td><td data-label="Si paga">sono di più, o servono le immagini nel cloud</td></tr>
+      <tr><td>Dominio</td><td data-label="Gratis">mai: si paga ogni anno</td><td data-label="Si paga">sempre, e soprattutto al rinnovo</td></tr>
+      <tr><td>API di Claude</td><td data-label="Gratis">mai: si paga a consumo</td><td data-label="Si paga">a ogni domanda, con un tetto di spesa</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="I numeri sono nella scheda U.6">I prezzi cambiano ogni pochi mesi: stanno nella <a href="../schede/costi-piani/" target="_blank" rel="noopener">scheda aggiornabile U.6</a>, con la data dell'ultimo controllo. Il cliente paga i suoi servizi, intestati a lui (12.2).</Card>
+</Slide>

@@ -1,0 +1,27 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.7 Un modello AI dentro la webapp" titolo="Dare strumenti al modello" lead="Il modello non sa quali aule sono libere. Gli date uno strumento: una funzione che può chiedervi di eseguire. Come gli agenti della 3.2, ma con un attrezzo solo, scelto da voi.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="La definizione dello strumento cerca_aule_libere passata all'API di Claude">tools: [&#123;
+  name: <span class="s">'cerca_aule_libere'</span>,              <span class="m">①</span>
+  description: <span class="s">'Trova aule libere in un orario'</span>,
+  input_schema: &#123;                         <span class="m">②</span>
+    type: <span class="s">'object'</span>,
+    properties: &#123;
+      inizio: &#123; type: <span class="s">'string'</span>, format: <span class="s">'date-time'</span> &#125;,
+      fine:   &#123; type: <span class="s">'string'</span>, format: <span class="s">'date-time'</span> &#125;,
+      posti:  &#123; type: <span class="s">'integer'</span> &#125;,
+    &#125;,
+    required: [<span class="s">'inizio'</span>, <span class="s">'fine'</span>],
+  &#125;,
+&#125;]</pre>
+    <ol class="note-codice">
+      <li><b>Nome e descrizione:</b> il modello li legge per decidere quando usarlo.</li>
+      <li><b>Lo schema:</b> quali dati vi deve passare, e di che tipo.</li>
+      <li><b>Poi il modello chiede</b> «cerca giovedì 9–11, 20 posti», senza toccare il database. <b>Il vostro codice esegue</b>, con i permessi dell'utente, e gli rimanda il risultato.</li>
+      <li><b>Solo strumenti per leggere:</b> «cerca» sì, «cancella» no. Ogni strumento che scrive è un potere dato a chi sa convincere il modello (10.7.5).</li>
+    </ol>
+  </div>
+  <p class="footnote">Fonte: <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" target="_blank" rel="noopener">Claude, uso degli strumenti</a>, controllata il 18 novembre 2026.</p>
+</Slide>

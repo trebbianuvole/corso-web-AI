@@ -1,0 +1,14 @@
+---
+import Card from "../../../components/Card.astro";
+import Grid from "../../../components/Grid.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="10.2 Progettare i dati" titolo="Le cose di cui parla l'app" lead="Prima delle tabelle, i nomi. Rileggete le storie utente (2.6.2): i sostantivi che tornano sono le cose da salvare.">
+  <Grid colonne={3} classe="mt-l">
+    <Card tag="Chi" titolo="Utenti">Nome, email, ruolo: studente, docente o segreteria.</Card>
+    <Card tag="Cosa" titolo="Aule">Nome, piano, posti, se c'è il proiettore.</Card>
+    <Card variante="peach" tag="Quando" titolo="Prenotazioni">Chi prenota, quale aula, da che ora a che ora, per cosa.</Card>
+  </Grid>
+  <p class="mt-m">«Come <b>docente</b> voglio prenotare un'<b>aula</b> libera per giovedì alle 10»: tre sostantivi, tre cose. Le storie più rare ne aggiungono altre, come i giorni di chiusura della scuola.</p>
+  <Card variante="sky mt-m" titolo="E cosa non salvare">Solo quello che l'app usa davvero. Niente data di nascita o telefono «perché non si sa mai»: meno dati, meno rischi (GDPR, 5.7).</Card>
+</Slide>

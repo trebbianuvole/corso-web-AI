@@ -1,0 +1,20 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="10.4 Chi sei e cosa puoi fare" titolo="Autenticazione e autorizzazione" lead="Due parole lunghe e simili per due controlli diversi. Servono entrambi, a ogni richiesta.">
+  <div class="versus mt-l">
+    <div class="card">
+      <span class="tag">Autenticazione</span>
+      <h3>Chi sei?</h3>
+      <p>Email e password, un codice, «Accedi con Google». Alla fine il server sa che dall'altra parte c'è la prof.ssa Bianchi.</p>
+    </div>
+    <span class="vs" aria-hidden="true">→</span>
+    <div class="card peach">
+      <span class="tag">Autorizzazione</span>
+      <h3>Cosa puoi fare?</h3>
+      <p>La prof.ssa Bianchi può prenotare un'aula e annullare le sue prenotazioni. Non quelle del collega.</p>
+    </div>
+  </div>
+  <Card variante="sky mt-m" titolo="Come all'ingresso di un teatro">Il documento dice chi siete; il biglietto dice dove potete sedervi. Un documento valido non vi fa entrare in platea con il biglietto del loggione.</Card>
+</Slide>

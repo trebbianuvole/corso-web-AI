@@ -1,0 +1,16 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} tipo="concetto" kicker="10.3 Le quattro operazioni" titolo="CRUD" lead="Create, Read, Update, Delete: creare, leggere, modificare, cancellare. Ognuna ha una domanda da farsi prima di scriverla.">
+  <table class="compare mt-l">
+    <thead><tr><th>Operazione</th><th>In PrenotaAula</th><th>La domanda da farsi</th></tr></thead>
+    <tbody>
+      <tr><td><b>Creare</b> <code>insert</code></td><td data-label="In PrenotaAula">Prenotare l'aula 3 per giovedì</td><td data-label="La domanda">E se intanto l'ha presa un altro?</td></tr>
+      <tr><td><b>Leggere</b> <code>select</code></td><td data-label="In PrenotaAula">Vedere le aule libere, le mie prenotazioni</td><td data-label="La domanda">Chi può vedere cosa?</td></tr>
+      <tr><td><b>Modificare</b> <code>update</code></td><td data-label="In PrenotaAula">Spostare la prenotazione alle 11</td><td data-label="La domanda">Solo la mia, o anche quelle degli altri?</td></tr>
+      <tr><td><b>Cancellare</b> <code>delete</code></td><td data-label="In PrenotaAula">Annullare la prenotazione</td><td data-label="La domanda">Si può tornare indietro? Chi lo viene a sapere?</td></tr>
+    </tbody>
+  </table>
+  <Card variante="sky mt-m" titolo="Cancellare o segnare come annullata?">Spesso conviene non cancellare la riga ma segnarla «annullata»: resta la storia, e un errore si ripara. È una scelta da scrivere nei criteri, prima del codice.</Card>
+</Slide>

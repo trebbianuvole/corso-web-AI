@@ -1,0 +1,52 @@
+---
+// Scheda aggiornabile U.6: costi e piani gratuiti dei servizi usati nel corso.
+// Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
+import Scheda from "../../layouts/Scheda.astro";
+---
+<Scheda sigla="U.6" titolo="Costi e piani gratuiti" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: quanto costano Vercel, Supabase, Keystatic Cloud, il dominio, l'API di Claude e i pagamenti online, e cosa permettono i piani gratuiti.">
+  <p class="lead">Quanto costano i servizi dello stack del corso, e fin dove arrivano i piani gratuiti. I prezzi cambiano spesso: qui ci sono quelli dell'ultimo controllo. Prima di fare un preventivo, ricontrollateli sui siti dei servizi.</p>
+
+  <h2>Pubblicare e gestire i contenuti</h2>
+  <table class="compare">
+    <thead><tr><th>Servizio</th><th>Gratis</th><th>A pagamento</th></tr></thead>
+    <tbody>
+      <tr><td>Vercel</td><td data-label="Gratis">Piano Hobby, solo per uso personale e non commerciale, con limiti d'uso fissi</td><td data-label="A pagamento">Piano Pro: 20 dollari al mese per sviluppatore, con 20 dollari di consumi inclusi</td></tr>
+      <tr><td>GitHub</td><td data-label="Gratis">Repository pubblici e privati senza limiti di numero</td><td data-label="A pagamento">Serve solo per funzioni da squadra più grande</td></tr>
+      <tr><td>Keystatic Cloud</td><td data-label="Gratis">Squadre e progetti senza limiti, al massimo 3 utenti per squadra</td><td data-label="A pagamento">Pro: da 10 dollari al mese per squadra, 5 dollari per ogni utente oltre il terzo; aggiunge lo spazio per le immagini</td></tr>
+      <tr><td>Dominio</td><td data-label="Gratis">No: il sottodominio <code>.vercel.app</code> è gratuito</td><td data-label="A pagamento">Spesso pochi euro il primo anno, poi in genere 10–20 euro l'anno: guardate il prezzo di rinnovo</td></tr>
+    </tbody>
+  </table>
+
+  <h2>La webapp: dati e accessi</h2>
+  <table class="compare">
+    <thead><tr><th>Servizio</th><th>Gratis</th><th>A pagamento</th></tr></thead>
+    <tbody>
+      <tr><td>Supabase</td><td data-label="Gratis">2 progetti attivi, 500 MB di database, 1 GB di file, 50.000 utenti attivi al mese. Pausa dopo una settimana senza attività, nessun backup automatico</td><td data-label="A pagamento">Pro: da 25 dollari al mese, con un backup al giorno conservato 7 giorni</td></tr>
+    </tbody>
+  </table>
+
+  <h2>L'API di Claude</h2>
+  <p>Non ha un piano gratuito e non è compresa negli abbonamenti a Claude: si caricano crediti nella Console e si paga a consumo, per milione di token.</p>
+  <table class="compare">
+    <thead><tr><th>Modello</th><th>Token mandati</th><th>Token scritti</th></tr></thead>
+    <tbody>
+      <tr><td>Haiku 5.5</td><td data-label="Token mandati">0,10 dollari</td><td data-label="Token scritti">0,50 dollari</td></tr>
+      <tr><td>Sonnet 5.5</td><td data-label="Token mandati">2 dollari</td><td data-label="Token scritti">10 dollari</td></tr>
+      <tr><td>Opus 5.5</td><td data-label="Token mandati">4 dollari</td><td data-label="Token scritti">20 dollari</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Per Haiku 5.5, i prezzi valgono per richieste fino a 100.000 token; oltre, costano di più. Nella Console si imposta un tetto di spesa mensile, per l'organizzazione e per ogni spazio di lavoro.</p>
+
+  <h2>I pagamenti online</h2>
+  <table class="compare">
+    <thead><tr><th>Servizio</th><th>Canone</th><th>Commissione per pagamento, in Italia</th></tr></thead>
+    <tbody>
+      <tr><td>Stripe</td><td data-label="Canone">Nessuno</td><td data-label="Commissione">Carte europee standard 1,5% + 0,25 €; carte europee premium 2,8% + 0,25 €; carte extraeuropee 3,15% + 0,25 €</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Chi paga cosa</h2>
+  <p>I servizi del sito o della webapp di un cliente si intestano al cliente, con i suoi account e i suoi metodi di pagamento: dominio, Vercel Pro, Supabase, le chiavi dell'API, Stripe. Voi lo aiutate a scegliere e a impostare i tetti di spesa; nella consegna (12.2) scrivete cosa paga, a chi e quando si rinnova.</p>
+
+  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://vercel.com/pricing" target="_blank" rel="noopener">Vercel, prezzi</a> e <a href="https://vercel.com/docs/plans/hobby" target="_blank" rel="noopener">piano Hobby</a>; <a href="https://github.com/pricing" target="_blank" rel="noopener">GitHub, prezzi</a>; <a href="https://keystatic.com/docs/cloud" target="_blank" rel="noopener">Keystatic Cloud</a>; <a href="https://www.hostinger.com/it/tutorial/quanto-costa-un-dominio/" target="_blank" rel="noopener">Hostinger, quanto costa un dominio</a>; <a href="https://supabase.com/pricing" target="_blank" rel="noopener">Supabase, prezzi</a> e <a href="https://supabase.com/docs/guides/platform/backups" target="_blank" rel="noopener">backup</a>; <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Claude, prezzi dell'API</a>; <a href="https://stripe.com/it/pricing" target="_blank" rel="noopener">Stripe, tariffe</a>. Nel corso: slide <a href="../../capitolo-10/#10-7-4">10.7.4</a> e <a href="../../capitolo-10/#10-8-1">10.8.1</a>.</p>
+</Scheda>

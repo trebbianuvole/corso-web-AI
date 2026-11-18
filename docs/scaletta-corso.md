@@ -763,7 +763,7 @@ Etichette:
 - 10.7.0 Apertura
 - 10.7.1 **Cosa si può fare.** Un assistente che trova un'aula libera.
 - 10.7.2 **Come funziona.** L'API del modello, la chiave sul server, le istruzioni di sistema.
-- 10.7.3 **Dare strumenti al modello.** Interrogare il database in modo controllato (3.2.a1).
+- 10.7.3 **Dare strumenti al modello.** Interrogare il database in modo controllato (3.2).
 - 10.7.4 **Costi e limiti.** Token, tetti di spesa.
 - 10.7.5 **I rischi.** Risposte sbagliate, istruzioni nascoste (5.3.2), dire che è un'AI.
 - 10.7.6 **[Attività] L'assistente di PrenotaAula.**

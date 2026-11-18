@@ -1,0 +1,24 @@
+---
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.6 API esterne e chiavi" titolo="Un piccolo backend senza server" lead="Con una chiave segreta, il codice deve girare fuori dal browser. Una funzione serverless è un pezzetto di backend che Vercel accende solo quando serve.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Una funzione di Vercel che legge una chiave segreta e risponde al browser"><span class="m">// api/assistente.ts: gira su Vercel, non nel browser</span>
+<span class="k">export default</span> &#123;
+  <span class="k">async</span> fetch(request: Request) &#123;              <span class="m">①</span>
+    <span class="k">const</span> &#123; domanda &#125; = <span class="k">await</span> request.json()
+    <span class="k">const</span> chiave = process.env.ANTHROPIC_API_KEY  <span class="m">②</span>
+
+    <span class="k">const</span> risposta = <span class="k">await</span> chiedi(domanda, chiave) <span class="m">③</span>
+    <span class="k">return</span> Response.json(&#123; risposta &#125;)           <span class="m">④</span>
+  &#125;,
+&#125;</pre>
+    <ol class="note-codice">
+      <li><b>Un file nella cartella <code>api/</code></b> diventa un indirizzo: <code>/api/assistente</code>. Il browser gli manda la domanda.</li>
+      <li><b>La chiave</b> arriva dalle variabili di Vercel (10.6.2). Non passa mai dal browser.</li>
+      <li><b>Il lavoro:</b> qui la chiamata al modello (10.7.2). Si controlla anche chi sta chiedendo.</li>
+      <li><b>La risposta</b> torna al browser, senza la chiave.</li>
+    </ol>
+  </div>
+  <p class="footnote">Fonte: <a href="https://vercel.com/docs/functions" target="_blank" rel="noopener">Vercel Functions</a>, controllata il 18 novembre 2026. «Senza server» vuol dire senza un server vostro: lo gestisce Vercel. Con Astro si può usare anche l'adattatore per Vercel.</p>
+</Slide>

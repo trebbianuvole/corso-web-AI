@@ -1,0 +1,17 @@
+---
+import Card from "../../../components/Card.astro";
+import Passo from "../../../components/Passo.astro";
+import Slide from "../../../components/slide/Slide.astro";
+import Steps from "../../../components/Steps.astro";
+---
+<Slide {...Astro.props} tipo="compito" split kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Una funzione con i dati" lead="Aggiungete al vostro progetto una funzione che salva e legge dati veri, con l'accesso e i permessi giusti. Piccola, ma fatta per bene.">
+  <Card slot="intro" variante="sky mt-m" titolo="Da portare">Il link all'anteprima su Vercel, la pull request con i criteri provati, e due screenshot: lo stesso dato visto da due utenti diversi.</Card>
+  <Steps>
+    <Passo titolo="Lo schema" inLinea>scritto nel CLAUDE.md, con almeno un vincolo</Passo>
+    <Passo titolo="Le migrazioni" inLinea>nel repository, su un progetto Supabase di prova</Passo>
+    <Passo titolo="L'accesso" inLinea>con Supabase Auth, niente fatto in casa</Passo>
+    <Passo titolo="Le regole sulle righe" inLinea>provate con due account</Passo>
+    <Passo titolo="Le chiavi" inLinea>in <code>.env</code> e su Vercel, nessuna nel repository</Passo>
+    <Passo titolo="I casi limite" inLinea>almeno tre, con il messaggio per la persona</Passo>
+  </Steps>
+</Slide>

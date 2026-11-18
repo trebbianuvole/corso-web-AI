@@ -1,0 +1,28 @@
+---
+import Card from "../../../components/Card.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.2 Progettare i dati" titolo="Vincoli: due prenotazioni non si sovrappongono" lead="Un vincolo è una regola che il database fa rispettare da solo, qualunque cosa faccia il codice. È l'ultima difesa, e la più affidabile.">
+  <div class="annotato mt-m">
+<pre class="code" aria-label="Il vincolo SQL che impedisce due prenotazioni sovrapposte nella stessa aula"><span class="k">create extension</span> btree_gist;              <span class="m">①</span>
+
+<span class="k">create table</span> prenotazioni (
+  id      bigserial primary key,
+  aula_id bigint <span class="k">not null references</span> aule(id),  <span class="m">②</span>
+  utente_id uuid <span class="k">not null default</span> auth.uid(),
+  periodo tstzrange <span class="k">not null</span>,                <span class="m">③</span>
+  <span class="k">exclude using gist</span> (                          <span class="m">④</span>
+    aula_id <span class="k">with</span> =,
+    periodo <span class="k">with</span> &amp;&amp;
+  )
+);</pre>
+    <ol class="note-codice">
+      <li><b>Un'estensione</b> di PostgreSQL che serve a combinare i due controlli del punto 4.</li>
+      <li><b>Obbligatoria</b> (<code>not null</code>) e <b>collegata</b> a un'aula che esiste.</li>
+      <li><b>Un intervallo di tempo</b>, da un istante a un altro, con il fuso orario.</li>
+      <li><b>Il vincolo:</b> rifiuta una riga se esiste già una prenotazione con la stessa aula (<code>=</code>) e un periodo che si accavalla (<code>&amp;&amp;</code>).</li>
+    </ol>
+  </div>
+  <Card variante="sky mt-m" titolo="Perché nel database e non solo nel codice">Se due docenti premono «Prenota» nello stesso istante, il controllo «l'aula è libera?» può dare sì a entrambe. Il vincolo no: la seconda riceve un errore.</Card>
+  <p class="footnote">Fonte: <a href="https://www.postgresql.org/docs/current/rangetypes.html#RANGETYPES-CONSTRAINT" target="_blank" rel="noopener">PostgreSQL, tipi intervallo e vincoli di esclusione</a>. Supabase usa PostgreSQL.</p>
+</Slide>

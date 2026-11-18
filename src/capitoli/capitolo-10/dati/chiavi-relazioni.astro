@@ -1,0 +1,35 @@
+---
+import Card from "../../../components/Card.astro";
+import Def from "../../../components/Def.astro";
+import Defs from "../../../components/Defs.astro";
+import Slide from "../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="10.2 Progettare i dati" titolo="Chiavi e relazioni" lead="Una prenotazione non ricopia il nome dell'aula e della docente: punta alle loro righe, con un numero.">
+  <figure class="figure mt-m"><svg class="diagram" viewBox="0 0 900 270" role="img" aria-labelledby="kr-t kr-d"><title id="kr-t">Le tre tabelle di PrenotaAula e i loro collegamenti</title><desc id="kr-d">La tabella prenotazioni ha le colonne id, utente_id, aula_id, inizio e fine. utente_id punta all'id della tabella utenti, aula_id punta all'id della tabella aule.</desc>
+<defs><marker id="kr-punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="punta"/></marker></defs>
+<rect x="10" y="20" width="230" height="150" rx="16" class="posto"/>
+<text x="125" y="55" class="big" text-anchor="middle">utenti</text>
+<text x="34" y="92" class="num">id</text><text x="90" y="92" class="lbl">chiave primaria</text>
+<text x="34" y="122" class="num">nome</text>
+<text x="34" y="150" class="num">ruolo</text>
+<rect x="335" y="20" width="230" height="230" rx="16" class="posto-hot"/>
+<text x="450" y="55" class="big" text-anchor="middle">prenotazioni</text>
+<text x="359" y="92" class="num">id</text>
+<text x="359" y="124" class="num">utente_id</text>
+<text x="359" y="156" class="num">aula_id</text>
+<text x="359" y="188" class="num">inizio</text>
+<text x="359" y="220" class="num">fine</text>
+<rect x="660" y="20" width="230" height="150" rx="16" class="posto"/>
+<text x="775" y="55" class="big" text-anchor="middle">aule</text>
+<text x="684" y="92" class="num">id</text><text x="730" y="92" class="lbl">chiave primaria</text>
+<text x="684" y="122" class="num">nome</text>
+<text x="684" y="150" class="num">posti</text>
+<path d="M352 119 C 300 119, 290 87, 248 87" class="freccia" fill="none" marker-end="url(#kr-punta)"/>
+<path d="M500 151 C 610 151, 600 87, 652 87" class="freccia" fill="none" marker-end="url(#kr-punta)"/>
+</svg></figure>
+  <Defs classe="mt-m">
+    <Def termine="Chiave primaria">il numero che identifica una riga, unico e che non cambia: <code>id</code></Def>
+    <Def termine="Chiave esterna">una colonna che punta alla chiave primaria di un'altra tabella: <code>aula_id</code></Def>
+  </Defs>
+  <Card variante="sky mt-m" titolo="Perché conviene">Se l'aula 3 diventa «Aula Magna», si cambia una riga sola. E il database rifiuta una prenotazione per un'aula che non esiste.</Card>
+</Slide>
