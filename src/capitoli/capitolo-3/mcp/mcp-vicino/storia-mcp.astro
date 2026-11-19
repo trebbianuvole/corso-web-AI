@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.3 MCP da vicino" titolo="La storia di MCP" lead="Le date le abbiamo viste nella 3.3.3. Qui: da dove è partito, e quanto è cresciuto in due anni." split>
+  <Card variante="sky mt-m" titolo="Il problema di partenza" slot="intro">Ogni volta che si voleva collegare un modello a una fonte di dati nuova, serviva un'integrazione scritta apposta. È il problema N×M della 3.3.2, visto da chi costruiva Claude.</Card>
+  <ul class="news">
+    <li><time>Novembre 2024</time><p>Anthropic pubblica MCP con i primi server già pronti: Google Drive, Slack, GitHub, Git, Postgres e Puppeteer, per guidare un browser.</p></li>
+    <li><time>Dicembre 2025</time><p>Più di 10.000 server MCP pubblici attivi, quasi 100 milioni di download al mese delle librerie per Python e TypeScript. Nella directory di Claude, più di 75 connettori.</p></li>
+    <li><time>Luglio 2026</time><p>La nuova versione delle regole rende ogni richiesta indipendente dalle altre: più facile far girare un server per moltissime persone insieme. Le librerie principali arrivano a circa mezzo miliardo di download al mese.</p></li>
+  </ul>
+  <p class="footnote" slot="intro">Fonti: <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic, novembre 2024</a>; <a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" target="_blank" rel="noopener">Anthropic, dicembre 2025</a>; <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">blog di MCP, luglio 2026</a>.</p>
+</Slide>

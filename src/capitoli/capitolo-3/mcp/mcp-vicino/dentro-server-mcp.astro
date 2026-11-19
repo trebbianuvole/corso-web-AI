@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="3.3 MCP da vicino" titolo="Cosa c'è dentro un server MCP" lead="Un server MCP può offrire tre cose. La differenza è chi decide di usarle: il modello, l'app o voi.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="peach" tag="Le sceglie il modello" titolo="Strumenti">Azioni da eseguire: cercare, creare, modificare. Per il calendario: <code>trova_orari_liberi</code>, <code>crea_evento</code>.</Card>
+    <Card variante="sky" tag="Le sceglie l'app" titolo="Risorse">Dati da leggere e mettere nel contesto: un file, una tabella, gli appuntamenti di oggi.</Card>
+    <Card tag="Li scegliete voi" titolo="Prompt pronti">Istruzioni già scritte, che si richiamano da un menu o con la barra: per esempio <code>/riassumi-settimana</code>.</Card>
+  </Grid>
+  <Card variante="bad mt-m" titolo="Le descrizioni entrano nel contesto">Ogni strumento ha una descrizione, scritta da chi ha fatto il server, e il modello la legge per decidere. Un server poco affidabile può nasconderci istruzioni: per questo si collegano solo server di cui vi fidate (5.3).</Card>
+  <p class="footnote">Esempi di nomi inventati per il corso. Fonte: <a href="https://modelcontextprotocol.io/specification/2026-07-28/server" target="_blank" rel="noopener">specifica di MCP, versione 2026-07-28</a>.</p>
+  <Voce termine="Risorsa (MCP)">dati che un server MCP mette a disposizione da leggere, come un file o una tabella. Li sceglie l'app, non il modello.</Voce>
+</Slide>

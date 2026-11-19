@@ -32,6 +32,18 @@ const capitolo: Capitolo = {
         "serve-contesto",
         "scrivere-bene-pensare-bene",
       ],
+      approfondimenti: [
+        {
+          chiave: "contesto-vicino",
+          titolo: "Il contesto da vicino",
+          pulsante: "il contesto da vicino",
+          da: "serve-contesto",
+          slide: [
+            "istruzioni-sistema-messaggi",
+            "contesto-troppo",
+          ],
+        },
+      ],
     },
     {
       chiave: "agenti",
@@ -48,6 +60,19 @@ const capitolo: Capitolo = {
         "skill-subagent-mcp-serve",
         "affidare-lavoro-senza-perdere",
       ],
+      approfondimenti: [
+        {
+          chiave: "strumenti-modello",
+          titolo: "Come un modello usa gli strumenti",
+          pulsante: "come un modello usa gli strumenti",
+          da: "agente-com-e-fatto",
+          slide: [
+            "modello-non-clicca",
+            "ciclo-dal-vivo",
+            "errori-si-sommano",
+          ],
+        },
+      ],
     },
     {
       chiave: "mcp",
@@ -61,6 +86,19 @@ const capitolo: Capitolo = {
         "ordine-passo-passo",
         "claude-chiamano-connettori",
         "cameriere-ha-chiavi-cucina",
+      ],
+      approfondimenti: [
+        {
+          chiave: "mcp-vicino",
+          titolo: "MCP da vicino",
+          pulsante: "MCP da vicino",
+          da: "mcp-modo-comune-servire",
+          slide: [
+            "storia-mcp",
+            "dentro-server-mcp",
+            "server-locali-remoti",
+          ],
+        },
       ],
     },
     {

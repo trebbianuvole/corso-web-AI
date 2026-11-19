@@ -1,0 +1,26 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} classe="compact" kicker="3.2 Come un modello usa gli strumenti" titolo="Un ciclo dal vivo" lead="Nella 3.2.2 abbiamo visto il racconto di un agente. Ecco cosa si scambiano davvero, sotto, il modello e il programma: richieste di strumenti e risultati, uno dopo l'altro." split>
+  <Card variante="sky mt-m" titolo="Ogni risultato resta nel contesto" slot="intro">Anche l'errore di 40 righe e il file letto per intero. Per questo le sessioni lunghe si riempiono (3.1.a2).</Card>
+  <Card variante="good mt-m" titolo="Ha verificato da solo" slot="intro">Il modello si è accorto dell'errore leggendo il risultato della build. Senza la build, avrebbe detto «fatto» con il nome sbagliato.</Card>
+  <div class="term" role="img" aria-label="Lo scambio tra modello e programma: il modello chiede di leggere un file, di modificarlo, di lanciare la build; il programma risponde con il contenuto, una conferma, poi un errore; il modello corregge e la build passa.">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="u">utente</span>     Aggiungi la pagina Contatti al menu.
+<span class="dot">modello →</span>  leggi_file("src/layouts/Base.astro")
+<span class="dim">← risultato</span> …&lt;a href="/menu/"&gt;Menu&lt;/a&gt;…
+<span class="dot">modello →</span>  modifica_file("src/layouts/Base.astro",
+             aggiungi: &lt;a href="/contatti/"&gt;)
+<span class="dim">← risultato</span> modifica fatta
+<span class="dot">modello →</span>  esegui("npm run build")
+<span class="dim">← risultato</span> <span class="rem">errore: la pagina /contatti/ non esiste</span>
+<span class="dot">modello →</span>  leggi_cartella("src/pages")
+<span class="dim">← risultato</span> index.astro  menu.astro  contatti-orari.astro
+<span class="dot">modello →</span>  modifica_file(…, "/contatti-orari/")
+<span class="dot">modello →</span>  esegui("npm run build")
+<span class="dim">← risultato</span> <span class="ok">build completata</span>
+<span class="dim">modello</span>    Fatto: il link porta a /contatti-orari/.</pre>
+  </div>
+  <p class="footnote" slot="intro">Esempio costruito per il corso, con nomi di strumenti semplificati: ogni programma ha i suoi.</p>
+</Slide>
