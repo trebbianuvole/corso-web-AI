@@ -1,0 +1,47 @@
+---
+// «Per saperne di più»: le fonti del corso, capitolo per capitolo.
+// Generata dai link esterni scritti nelle slide (src/lib/consultazione.ts):
+// per aggiungere una fonte la si scrive nella .footnote della slide, non qui.
+import Pagina from "../../layouts/Pagina.astro";
+import { fontiPerCapitolo } from "../../lib/consultazione";
+
+const totale = new Set(fontiPerCapitolo.flatMap(c => c.sezioni.flatMap(s => s.slide.flatMap(x => x.fonti.map(f => f.url))))).size;
+---
+<Pagina titolo="Le fonti del corso · Costruire siti web con l'AI" descrizione="Per saperne di più: tutte le fonti citate nelle slide del corso, capitolo per capitolo, con il rimando alla slide." radice="../">
+<header class="scheda-top">
+  <a class="home-link" href="../">Corso <span>AI</span></a>
+  <a class="muted" href="../schede/">Tutte le schede</a>
+</header>
+<main class="scheda">
+  <p class="kicker">Per saperne di più</p>
+  <h1>Le fonti, capitolo per capitolo</h1>
+  <p class="lead">Gli articoli, i documenti e le pagine ufficiali citati nelle slide: {totale} link in tutto. Accanto a ogni gruppo, la slide in cui compaiono. I link si aprono in una nuova scheda.</p>
+
+  <nav aria-label="Capitoli">
+    <ul class="lettere">
+      {fontiPerCapitolo.filter(c => c.sezioni.length).map(c => <li><a href={`#fonti-${c.numero}`} aria-label={`Capitolo ${c.numero}`}>{c.numero}</a></li>)}
+    </ul>
+  </nav>
+
+  {fontiPerCapitolo.filter(c => c.sezioni.length).map(c => (
+    <section class="fonti-capitolo" aria-labelledby={`fonti-${c.numero}`}>
+      <h2 id={`fonti-${c.numero}`}>{c.numero}. {c.titolo}</h2>
+      {c.sezioni.map(sez => (
+        <>
+          <h3 class="fonti-sezione">{sez.num} {sez.nome}</h3>
+          <ul class="fonti-slide">
+            {sez.slide.map(({ slide, fonti }) => (
+              <li>
+                <a href={`../${slide.indirizzo}`}>{slide.numero} «{slide.titolo}»</a>
+                <ul>
+                  {fonti.map(f => <li><a href={f.url} target="_blank" rel="noopener">{f.testo}</a> <span class="sito">{f.sito}</span></li>)}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </section>
+  ))}
+</main>
+</Pagina>
