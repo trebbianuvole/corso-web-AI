@@ -1,0 +1,43 @@
+---
+// Scheda operativa S.10: la checklist di accessibilità.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.10" descrizione="Scheda del corso: la checklist di accessibilità da usare su ogni pagina, con le prove a mano e il controllo con l'AI.">
+  <p class="lead">Accessibile vuol dire usabile da chiunque, comunque lo usi. Sei regole coprono la maggior parte dei problemi; le prove a mano trovano il resto.</p>
+
+  <h2>Le basi, pagina per pagina</h2>
+  <Checklist>
+    <Punto nota="Almeno 4,5 a 1 per il testo normale, 3 a 1 per quello grande.">Contrasto sufficiente</Punto>
+    <Punto nota="Ogni immagine che dice qualcosa ha una descrizione utile; quelle decorative hanno alt vuoto.">Testi alternativi</Punto>
+    <Punto nota="Con Tab si arriva a ogni link e pulsante, e si vede dove si è.">Tutto si usa con la tastiera</Punto>
+    <Punto nota="Un h1 per pagina, poi h2 e h3 senza salti.">Titoli in ordine</Punto>
+    <Punto nota="Ogni campo dice cosa chiede, anche quando ci si è dentro.">Etichette nei moduli</Punto>
+    <Punto nota="«Leggi il menu», non «clicca qui».">Link che si capiscono</Punto>
+    <Punto nota="WCAG 2.2 chiede almeno 24 per 24 pixel, salvo eccezioni.">Pulsanti grandi abbastanza da toccare</Punto>
+    <Punto nota="Sul telefono niente scorre di lato.">Nessuno scorrimento orizzontale</Punto>
+  </Checklist>
+
+  <h2>Le prove a mano</h2>
+  <Checklist>
+    <Punto nota="F12 → Lighthouse → Accessibilità; oppure WAVE. Trovano una parte dei problemi.">Uno strumento automatico</Punto>
+    <Punto nota="Mettete via il mouse e usate la funzione principale con Tab e Invio.">La prova della tastiera</Punto>
+    <Punto nota="Ctrl e + finché il testo raddoppia: niente si sovrappone, niente scompare.">Lo zoom al 200%</Punto>
+    <Punto nota="Assistente vocale su Windows, VoiceOver su Mac e iPhone: due minuti sulla home.">Il lettore di schermo</Punto>
+    <Punto nota="375, 768 e 1280 pixel; e il link dell'anteprima su un telefono vero.">Schermi diversi</Punto>
+  </Checklist>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li>Claude trova bene immagini senza testo alternativo, campi senza etichetta, titoli fuori ordine, contrasti sotto soglia (se gli date i colori).</li>
+    <li>Non sa dire se un testo alternativo è utile, se la pagina si capisce ascoltata, né cosa succede usando il sito. A volte dichiara «tutto a posto» senza aver controllato.</li>
+    <li>Il prompt: «Controlla l'accessibilità della home secondo WCAG 2.2 livello AA. Per ogni problema: dove sta, quale regola, come si corregge. Non correggere ancora.» Ogni problema diventa una issue; dopo la correzione, rifate il controllo che l'aveva trovato.</li>
+  </ul>
+
+  <h2>La legge, in breve</h2>
+  <p>In Italia l'accessibilità è obbligatoria per le pubbliche amministrazioni, per le grandi aziende e, dal 28 giugno 2025, per molti servizi ai consumatori (European Accessibility Act); le microimprese sono escluse per i servizi. Per un cliente vero, verificate il suo caso.</p>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" target="_blank" rel="noopener">W3C, le novità di WCAG 2.2</a>; <a href="https://developer.chrome.com/docs/lighthouse/overview" target="_blank" rel="noopener">Lighthouse</a>; <a href="https://wave.webaim.org/" target="_blank" rel="noopener">WAVE</a>; <a href="https://www.agid.gov.it/it/notizie/eaa-consultazione-linee-guida-agid-accessibilita-dei-servizi" target="_blank" rel="noopener">AgID</a>; <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32019L0882" target="_blank" rel="noopener">Direttiva (UE) 2019/882</a>. Nel corso: <RimandoSlide slide="sito-per-tutti" />, <RimandoSlide slide="basi-accessibilita" />, <RimandoSlide slide="come-si-prova" />, <RimandoSlide slide="claude-accessibilita" />, <RimandoSlide slide="legge-accessibilita" />, <RimandoSlide slide="tre-controlli" />, <RimandoSlide slide="tanti-schermi" />.</p>
+</Scheda>

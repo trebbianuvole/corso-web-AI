@@ -1,0 +1,52 @@
+---
+// Scheda operativa S.11: la checklist SEO.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.11" descrizione="Scheda del corso: la checklist per farsi trovare sui motori di ricerca e nelle risposte delle AI, e per condividere e misurare il sito.">
+  <p class="lead">Quello che serve a Google è quello che serve alle persone: un sito chiaro, veloce, vero. Questa lista si ripassa prima di pubblicare e ogni volta che si aggiunge una pagina.</p>
+
+  <h2>Ogni pagina</h2>
+  <Checklist>
+    <Punto nota="Diversi in ogni pagina, passati al layout come props.">Title e description</Punto>
+    <Punto nota="Un h1 che dice di cosa parla la pagina, poi h2 e h3 in ordine.">Titoli chiari</Punto>
+    <Punto nota="«Trattoria a Torino con pasta fatta in casa», non «esperienza gastronomica autentica».">Testi con le parole che la gente cerca</Punto>
+    <Punto nota="/menu e /dove-siamo, non /pagina?id=37.">Indirizzi leggibili</Punto>
+    <Punto nota="tagliatelle-al-ragu.webp, con un testo alternativo che descrive.">Immagini con nomi e descrizioni</Punto>
+    <Punto nota="og:title, og:description, og:image: l'anteprima su WhatsApp e sui social.">Anteprima per la condivisione</Punto>
+  </Checklist>
+
+  <h2>Il sito</h2>
+  <Checklist>
+    <Punto nota="In Astro la crea l'integrazione sitemap.">sitemap.xml</Punto>
+    <Punto nota="Dice ai crawler dove possono entrare, compresi quelli delle AI.">robots.txt, con una scelta sui crawler delle AI</Punto>
+    <Punto nota="Collegata al dominio, con la sitemap inviata.">Google Search Console</Punto>
+    <Punto nota="È del cliente, con il suo account: orari, foto, telefono, link al sito.">Profilo dell'attività su Google</Punto>
+    <Punto nota="Indirizzo, telefono, orari identici su sito, Google Maps e social.">Dati coerenti dappertutto</Punto>
+    <Punto nota="Le informazioni principali in formato schema.org, per esempio Restaurant.">Dati strutturati</Punto>
+    <Punto nota="Lighthouse: veloce anche dal telefono.">Velocità</Punto>
+  </Checklist>
+
+  <h2>Misurare</h2>
+  <Checklist>
+    <Punto nota="Per una trattoria basta uno strumento senza cookie; scritto nell'informativa.">Statistiche rispettose della privacy</Punto>
+    <Punto nota="Prenotazioni, chiamate, messaggi: le visite non sono l'obiettivo.">Sapete quale azione conta</Punto>
+  </Checklist>
+
+  <h2>Cosa non fare</h2>
+  <ul>
+    <li>Cento pagine quasi uguali per cento parole chiave.</li>
+    <li>Recensioni scritte dall'AI e pubblicate come se fossero di clienti.</li>
+    <li>Parole chiave ripetute, testo nascosto. Il contenuto prodotto in massa per manipolare la classifica è spam, con o senza AI.</li>
+  </ul>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li>Claude è un buon revisore: title e description diversi, immagini senza testo alternativo, link rotti, sitemap completa, dati coerenti. Il prompt è nella <a href="../prompt/">scheda S.4</a>.</li>
+    <li>Non credete a promesse di posizioni né a volumi di ricerca: non li vede, li stima o li inventa. I numeri veri li dà Search Console.</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://docs.astro.build/en/guides/integrations-guide/sitemap/" target="_blank" rel="noopener">Astro, integrazione sitemap</a>; <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a>; <a href="https://www.google.com/business/" target="_blank" rel="noopener">Profilo dell'attività su Google</a>; <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">Google, dati strutturati</a>; <a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener">Garante, linee guida sui cookie</a>. Nel corso: <RimandoSlide slide="title-description" />, <RimandoSlide slide="titoli-testi-indirizzi" />, <RimandoSlide slide="sitemap-robots" />, <RimandoSlide slide="search-console-scheda" />, <RimandoSlide slide="claude-revisore-seo" />, <RimandoSlide slide="farsi-citare" />, <RimandoSlide slide="crawler-ai" />, <RimandoSlide slide="cosa-non-fare-ricerca" />, <RimandoSlide slide="anteprime-social" />, <RimandoSlide slide="statistiche-privacy" />, <RimandoSlide slide="sito-si-trova" />.</p>
+</Scheda>
