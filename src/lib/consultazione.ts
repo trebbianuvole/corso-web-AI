@@ -71,8 +71,13 @@ export interface VoceGlossario {
 
 const confronto = new Intl.Collator("it", { sensitivity: "base", numeric: true });
 
+/** Il termine senza i segni iniziali: «.env» si ordina sotto la E, «/clear» sotto la C. */
+function chiaveOrdine(termine: string) {
+  return soloTesto(termine).replace(/^[^\p{L}\p{N}]+/u, "");
+}
+
 function lettera(termine: string) {
-  const t = soloTesto(termine).replace(/^[^\p{L}\p{N}]+/u, "");
+  const t = chiaveOrdine(termine);
   const c = t.charAt(0).normalize("NFD").replace(/\p{M}/gu, "").toUpperCase();
   return /[A-Z]/.test(c) ? c : "#";
 }
@@ -102,7 +107,7 @@ function voci(): VoceGlossario[] {
       }
     }
   }
-  return [...trovate.values()].sort((a, b) => confronto.compare(soloTesto(a.termine), soloTesto(b.termine)));
+  return [...trovate.values()].sort((a, b) => confronto.compare(chiaveOrdine(a.termine), chiaveOrdine(b.termine)));
 }
 
 export const glossario = voci();

@@ -1622,3 +1622,5 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
   .scheda a { color: inherit; }
   .term, .code { background: #fff !important; color: #000 !important; border: 1px solid #999; }
 }
+.cerca[hidden], .glossario > div[hidden], [data-lettera][hidden] { display: none; }
+.glossario dd::first-letter { text-transform: uppercase; }
