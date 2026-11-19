@@ -1,0 +1,24 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Il contesto da vicino" titolo="Quando il contesto è troppo" lead="Più contesto non vuol dire sempre risposte migliori. Un modello trova meglio quello che sta all'inizio e alla fine; quello che sta nel mezzo rischia di perdersi." split>
+  <figure class="figure mt-m" slot="intro"><svg class="diagram" viewBox="0 0 520 250" role="img" aria-labelledby="mz-t mz-d"><title id="mz-t">Perso nel mezzo</title><desc id="mz-d">Un grafico a forma di U: la capacità di usare un'informazione è alta quando sta all'inizio o alla fine del contesto, più bassa quando sta nel mezzo.</desc>
+<line x1="50" y1="200" x2="490" y2="200" class="axis"/>
+<line x1="50" y1="30" x2="50" y2="200" class="axis"/>
+<path d="M60 50 C 140 175, 380 175, 480 70" class="curve"/>
+<text x="60" y="226" class="lbl">inizio</text>
+<text x="270" y="226" text-anchor="middle" class="lbl">mezzo</text>
+<text x="480" y="226" text-anchor="end" class="lbl">fine</text>
+<text x="40" y="40" text-anchor="end" class="lbl" transform="rotate(-90 40 40)">la trova</text>
+<text x="270" y="190" text-anchor="middle" class="lbl">qui si perde più spesso</text>
+</svg></figure>
+  <div class="stack">
+    <Card variante="bad" titolo="Le sessioni lunghe">In Claude Code, quando il contesto si riempie, la conversazione viene riassunta da sola. Il riassunto tiene le richieste e il codice importante, ma le istruzioni date all'inizio si possono perdere.</Card>
+    <Card variante="good" titolo="Cosa fare">Le regole che devono valere sempre vanno nel <code>CLAUDE.md</code>, non in chat. Un lavoro nuovo, una sessione nuova. Con <code>/compact</code> riassumete voi, dicendo su cosa concentrarsi; con <code>/context</code> vedete cosa occupa spazio.</Card>
+    <Card variante="sky" titolo="Ricordate l'attenzione">Ogni token guarda tutti gli altri (1.2.a2): un contesto pieno di cose inutili costa di più e distrae.</Card>
+  </div>
+  <p class="footnote" slot="intro">Curva disegnata a mano, a partire dai risultati di <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener">Liu e altri, «Lost in the Middle», 2023</a>. Su Claude Code: <a href="https://code.claude.com/docs/en/how-claude-code-works" target="_blank" rel="noopener">come funziona Claude Code</a>.</p>
+  <Voce termine="Compattazione">il riassunto automatico che Claude Code fa della conversazione quando il contesto si riempie. Le istruzioni date all'inizio si possono perdere: le regole vanno nel CLAUDE.md.</Voce>
+</Slide>

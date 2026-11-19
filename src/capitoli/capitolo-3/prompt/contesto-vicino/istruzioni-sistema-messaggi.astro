@@ -1,0 +1,25 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="3.1 Il contesto da vicino" titolo="Istruzioni di sistema e messaggi" lead="Una conversazione con un modello è un elenco di messaggi, ognuno con un ruolo. In cima c'è un messaggio che voi di solito non vedete: le istruzioni di sistema." split>
+  <Card variante="peach mt-m" titolo="Il modello non ricorda" slot="intro">A ogni vostro messaggio l'app gli rimanda tutto l'elenco, dall'inizio. Quello che non è nell'elenco, per il modello non esiste: è il contesto di 1.2.3.</Card>
+  <Card variante="sky mt-m" titolo="In Claude Code" slot="intro">Le istruzioni di sistema le scrive Claude Code, e ci aggiunge il vostro <code>CLAUDE.md</code> (6.2). Per questo le regole scritte lì valgono in ogni sessione.</Card>
+  <div class="term" role="img" aria-label="Una conversazione vista come la riceve il modello: istruzioni di sistema, poi messaggi alterni dell'utente e dell'assistente.">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre><span class="dot">sistema</span>     Sei l'assistente del sito della
+            trattoria Da Rina. Rispondi in
+            italiano, in modo breve. Non
+            inventare prezzi: se non li sai,
+            dillo.
+
+<span class="u">utente</span>      Che giorni siete chiusi?
+<span class="dim">assistente</span>  Il lunedì, tutto il giorno.
+<span class="u">utente</span>      E quanto costa il menu del pranzo?
+<span class="dim">assistente</span>  <span class="ok">…qui il modello scrive la risposta,
+            leggendo tutto quello che sta sopra.</span></pre>
+  </div>
+  <p class="footnote" slot="intro">Esempio costruito per il corso. Lo stesso schema (sistema, utente, assistente) si usa quando si chiama un modello tramite API: capitolo 10. Fonte: <a href="https://platform.claude.com/docs/en/api/messages" target="_blank" rel="noopener">documentazione dell'API Messages di Anthropic</a>.</p>
+  <Voce termine="Istruzioni di sistema">il messaggio in cima a una conversazione con un modello, scritto da chi costruisce l'app: dice al modello chi è, come rispondere, cosa non fare. In inglese <em>system prompt</em>.</Voce>
+</Slide>
