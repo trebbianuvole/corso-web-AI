@@ -1,0 +1,52 @@
+---
+// Scheda operativa S.2: i comandi del terminale usati nel corso.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+---
+<Scheda sigla="S.2" descrizione="Scheda del corso: i comandi del terminale per orientarsi e per lavorare al progetto, su Mac, Linux e Windows.">
+  <p class="lead">Pochi comandi bastano. Ogni comando lavora nella cartella in cui siete: prima di tutto, sapete dove siete.</p>
+
+  <h2>Orientarsi</h2>
+  <p>Su Windows si usa PowerShell, che capisce gli stessi nomi del Mac per questi comandi.</p>
+  <table class="compare">
+    <thead><tr><th>Comando</th><th>Cosa fa</th><th>In Esplora file</th></tr></thead>
+    <tbody>
+      <tr><td><code>pwd</code></td><td data-label="Cosa fa">Dove sono?</td><td data-label="In Esplora file">La barra dell'indirizzo</td></tr>
+      <tr><td><code>ls</code></td><td data-label="Cosa fa">Cosa c'è qui?</td><td data-label="In Esplora file">Il contenuto della cartella</td></tr>
+      <tr><td><code>cd sito-rina</code></td><td data-label="Cosa fa">Entra nella cartella <code>sito-rina</code></td><td data-label="In Esplora file">Doppio clic sulla cartella</td></tr>
+      <tr><td><code>cd ..</code></td><td data-label="Cosa fa">Torna alla cartella di sopra</td><td data-label="In Esplora file">La freccia verso l'alto</td></tr>
+      <tr><td><code>mkdir corso-git</code></td><td data-label="Cosa fa">Crea una cartella nuova</td><td data-label="In Esplora file">Nuova cartella</td></tr>
+      <tr><td><code>clear</code></td><td data-label="Cosa fa">Pulisce lo schermo (su Windows anche <code>cls</code>)</td><td data-label="In Esplora file">—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Tasti che fanno risparmiare tempo</h2>
+  <ul>
+    <li><kbd>Tab</kbd> completa i nomi di file e cartelle.</li>
+    <li><kbd>↑</kbd> richiama i comandi già scritti.</li>
+    <li><kbd>Ctrl</kbd>+<kbd>C</kbd> ferma il comando in corso, per esempio <code>npm run dev</code>.</li>
+  </ul>
+
+  <h2>I comandi del progetto</h2>
+  <table class="compare">
+    <thead><tr><th>Comando</th><th>Cosa fa</th></tr></thead>
+    <tbody>
+      <tr><td><code>node -v</code>, <code>git --version</code>, <code>claude --version</code></td><td data-label="Cosa fa">Controllano che gli strumenti siano installati: rispondono con un numero.</td></tr>
+      <tr><td><code>npm create astro@latest</code></td><td data-label="Cosa fa">Crea un progetto Astro nuovo.</td></tr>
+      <tr><td><code>npm install</code></td><td data-label="Cosa fa">Scarica le librerie elencate in <code>package.json</code> nella cartella <code>node_modules</code>.</td></tr>
+      <tr><td><code>npm run dev</code></td><td data-label="Cosa fa">Apre il sito in locale, su <code>localhost:4321</code>, e lo aggiorna a ogni modifica.</td></tr>
+      <tr><td><code>npm run build</code></td><td data-label="Cosa fa">Costruisce il sito finale nella cartella <code>dist</code>. Se si ferma con un errore, online non andrebbe.</td></tr>
+      <tr><td><code>claude</code></td><td data-label="Cosa fa">Avvia Claude Code nella cartella in cui siete.</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">I comandi per installare Node.js e Claude Code cambiano nel tempo: copiateli solo dalle pagine ufficiali (<RimandoSlide slide="installare-claude-code" breve />).</p>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li>Claude Code lancia i comandi per voi e chiede il permesso per quelli delicati. Prima di dire sì, sapete cosa fanno.</li>
+    <li><code>rm -rf</code> cancella senza passare dal cestino: non si approva mai senza aver capito cosa cancella.</li>
+    <li>Se un comando non vi è chiaro: «spiegami cosa fa prima di eseguirlo».</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_aliases" target="_blank" rel="noopener">PowerShell, gli alias dei comandi</a>; <a href="https://docs.astro.build/en/install-and-setup/" target="_blank" rel="noopener">Astro, installazione</a>; <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">Claude Code, installazione</a>. Nel corso: <RimandoSlide slide="cos-e-terminale" />, <RimandoSlide slide="tre-comandi-orientarsi" />, <RimandoSlide slide="terminale-paura" />, <RimandoSlide slide="node-npm" />, <RimandoSlide slide="funziona-tutto" />.</p>
+</Scheda>
