@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="11.4 Privacy e prestazioni" titolo="Velocità" lead="Lighthouse, già dentro Chrome (7.6.3), misura anche la velocità. Google ne guarda tre aspetti, i Core Web Vitals, con una soglia per ciascuno.">
@@ -11,4 +12,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </Grid>
   <Card variante="sky mt-m" titolo="Le correzioni più comuni">Immagini troppo grandi (formato WebP e misure giuste), larghezza e altezza scritte sulle immagini, meno JavaScript e meno servizi esterni. Astro aiuta già molto: si parte bene.</Card>
   <p class="footnote">Si misura sul telefono, con la versione pubblicata, anche da <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>. Fonti: <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev, Core Web Vitals</a>; <a href="https://developer.chrome.com/docs/lighthouse/overview" target="_blank" rel="noopener">Lighthouse</a>, controllate il 18 novembre 2026.</p>
+  <Voce termine="Core Web Vitals">le tre misure di velocità e stabilità di una pagina che guarda Google, ciascuna con la sua soglia.</Voce>
 </Slide>

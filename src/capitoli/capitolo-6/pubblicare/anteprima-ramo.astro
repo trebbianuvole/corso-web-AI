@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="6.6 Pubblicare" titolo="Un'anteprima per ogni ramo" lead="Ogni ramo e ogni pull request ricevono un indirizzo di prova tutto loro. Il sito vero non cambia finché non fate il merge.">
@@ -10,4 +11,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </Grid>
   <Card variante="sky mt-m" titolo="Le anteprime sono protette">Di norma, per aprire un'anteprima bisogna entrare con un account Vercel che ha accesso al progetto. Per mostrarla a un esterno, Vercel permette di creare un link da condividere.</Card>
   <p class="footnote">Le anteprime non compaiono nei motori di ricerca. Fonte: <a href="https://vercel.com/docs/deployments/environments" target="_blank" rel="noopener">Vercel, ambienti</a>.</p>
+  <Voce termine="Anteprima">l'indirizzo di prova che Vercel crea per ogni ramo e pull request: il sito vero, non ancora pubblicato.</Voce>
 </Slide>

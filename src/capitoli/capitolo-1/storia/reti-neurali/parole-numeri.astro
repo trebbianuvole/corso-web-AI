@@ -1,5 +1,6 @@
 ---
 import Card from "../../../../components/Card.astro";
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Le parole diventano numeri" lead="Una rete sa fare solo calcoli. Allora ogni parola diventa un elenco di numeri: le sue coordinate su una mappa." split>
@@ -23,4 +24,5 @@ import Slide from "../../../../components/slide/Slide.astro";
 <text x="255" y="356" class="num" text-anchor="middle">re − uomo + donna ≈ regina</text>
 </svg></figure>
   <p class="footnote" slot="intro">Qui le coordinate sono due, per poterle disegnare; nei modelli veri sono centinaia o migliaia. L'esempio del re e della regina viene da uno studio del 2013 di Mikolov, Yih e Zweig. Fonte: <a href="https://aclanthology.org/N13-1090/" target="_blank" rel="noopener">Linguistic Regularities in Continuous Space Word Representations</a>.</p>
+  <Voce termine="Embedding">il modo in cui una rete trasforma una parola in una lista di numeri: le parole usate in frasi simili finiscono vicine.</Voce>
 </Slide>

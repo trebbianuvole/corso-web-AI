@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="3.4 Claude Code" titolo="Claude Code: un agente dentro il progetto">
@@ -12,4 +13,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card tag="Senza installare" titolo="Web e telefono">Su claude.ai/code, lavorando su un progetto salvato su GitHub.</Card>
   </Grid>
   <p class="footnote">Claude Code è incluso negli abbonamenti a pagamento di Claude, da Pro in su.</p>
+  <Voce termine="Claude Code">l'agente di Claude che lavora dentro la cartella del progetto: legge i file, li modifica, esegue comandi, prova, salva le versioni.</Voce>
 </Slide>

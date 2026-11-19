@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="7.1 UX e UI" titolo="UX e UI non sono la stessa cosa" lead="Due parole che si sentono sempre insieme. Una riguarda com'è vissuto il prodotto, l'altra come appare.">
@@ -17,4 +18,6 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
   </div>
   <Card variante="sky mt-m" titolo="Un sito bello può essere scomodo">E uno semplice può essere comodissimo. Si parte dalla UX: cosa deve riuscire a fare chi arriva (2.6). La UI viene dopo, e la serve.</Card>
+  <Voce termine="UX"><i>User experience</i>: com'è vissuto il prodotto. Si trova quello che si cerca? Si riesce a prenotare dal telefono?</Voce>
+  <Voce termine="UI"><i>User interface</i>: come appare il prodotto: colori, caratteri, spazi, pulsanti.</Voce>
 </Slide>

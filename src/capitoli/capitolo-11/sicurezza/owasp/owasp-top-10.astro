@@ -1,5 +1,6 @@
 ---
 import Card from "../../../../components/Card.astro";
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="11.3 La OWASP Top 10" titolo="La OWASP Top 10" lead="OWASP è una fondazione senza scopo di lucro che studia la sicurezza delle applicazioni web. Ogni qualche anno pubblica i dieci rischi più diffusi: l'ultima edizione è del 2025.">
@@ -17,4 +18,5 @@ import Slide from "../../../../components/slide/Slide.astro";
   </ol>
   <Card variante="sky mt-m" titolo="Come usarla con Claude">«Controlla il progetto rispetto alla OWASP Top 10:2025, una voce alla volta: per ognuna, c'è un rischio? Dove?»</Card>
   <p class="footnote">Fonte: <a href="https://top10.owasp.org/2025/0x00_2025-Introduction" target="_blank" rel="noopener">OWASP Top 10:2025</a>, nell'ordine ufficiale (A01–A10). Nomi tradotti e semplificati per la lezione.</p>
+  <Voce termine="OWASP Top 10">l'elenco dei dieci rischi di sicurezza più diffusi nelle applicazioni web, pubblicato dalla fondazione OWASP.</Voce>
 </Slide>

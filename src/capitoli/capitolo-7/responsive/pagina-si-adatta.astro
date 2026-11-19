@@ -5,8 +5,8 @@ import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="7.5 Responsive" titolo="Come si adatta una pagina" lead="Tre strumenti del CSS. Non serve saperli scrivere a memoria: serve riconoscerli, e chiederli per nome.">
   <Defs classe="mt-m" slot="intro">
-    <Def termine="Misure fluide">percentuali e larghezze massime invece di pixel fissi: la pagina si allarga e si stringe da sola.</Def>
-    <Def termine="Griglie che vanno a capo">«tante colonne quante ne stanno, larghe almeno 250 pixel».</Def>
+    <Def termine="Misure fluide" glossario={false}>percentuali e larghezze massime invece di pixel fissi: la pagina si allarga e si stringe da sola.</Def>
+    <Def termine="Griglie che vanno a capo" glossario={false}>«tante colonne quante ne stanno, larghe almeno 250 pixel».</Def>
     <Def termine="Media query">regole che valgono solo sopra o sotto una certa larghezza.</Def>
   </Defs>
 <pre class="code" aria-label="Una griglia di piatti che va a capo da sola, e una media query per gli schermi larghi"><span class="m">/* i piatti: quante colonne ci stanno */</span>

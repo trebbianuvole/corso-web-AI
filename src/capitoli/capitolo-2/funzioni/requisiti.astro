@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.6 Requisiti" titolo="Requisiti funzionali e non funzionali" lead="Un requisito è una cosa che il prodotto deve avere. Alcuni dicono cosa fa, altri come deve farlo.">
@@ -16,4 +17,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
   </div>
   <p class="footnote">L'AI tende a curare i primi e a dimenticare i secondi, se non li scrivete.</p>
+  <Voce termine="Requisito">una cosa che il prodotto deve avere. I requisiti funzionali dicono cosa fa; quelli non funzionali come deve farlo (veloce, sicuro, accessibile).</Voce>
 </Slide>

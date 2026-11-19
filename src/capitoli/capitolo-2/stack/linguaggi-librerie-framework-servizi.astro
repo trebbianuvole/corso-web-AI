@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.4 Le parole" titolo="Linguaggi, librerie, framework, servizi" lead="Quattro parole che sentirete sempre. In cucina sarebbero queste.">
@@ -10,4 +11,6 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card variante="peach" tag="Una cucina già attrezzata" titolo="Framework">Una struttura completa con le sue regole: dove va ogni cosa e come si fa. Velocizza molto, ma va imparata. React, Astro, WordPress.</Card>
     <Card tag="Un fornitore esterno" titolo="Servizio">Qualcosa che gira altrove e si usa via internet: chi ospita il sito, chi gestisce i pagamenti, le mappe di Google.</Card>
   </Grid>
+  <Voce termine="Libreria">codice scritto da altri per un compito preciso, da prendere e usare: una mappa, un calendario, un'animazione.</Voce>
+  <Voce termine="Framework">una struttura completa con le sue regole: dove va ogni cosa e come si fa. Velocizza molto, ma va imparata. Astro è un framework.</Voce>
 </Slide>

@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="10.4 Chi sei e cosa puoi fare" titolo="Ruoli" lead="Invece di decidere persona per persona, si decide per ruolo. Una tabella così va scritta prima del codice, e approvata dal cliente.">
@@ -14,4 +15,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </tbody>
   </table>
   <Card variante="sky mt-m" titolo="Il ruolo lo decide la scuola, non l'utente">Nessuno sceglie da solo di essere «segreteria» al momento della registrazione. Il ruolo lo assegna chi ha già quel potere.</Card>
+  <Voce termine="Ruolo">un gruppo di utenti con gli stessi permessi: studente, docente, segreteria.</Voce>
 </Slide>

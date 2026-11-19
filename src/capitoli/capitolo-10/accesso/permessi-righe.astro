@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="10.4 Chi sei e cosa puoi fare" titolo="I permessi sulle righe" lead="In Supabase l'autorizzazione si scrive nel database, tabella per tabella: Row Level Security, sicurezza a livello di riga. Ogni richiesta passa da qui, da qualunque parte arrivi.">
@@ -24,4 +25,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Come si verifica">Due account di prova, due browser. Con il primo prenotate; con il secondo provate a vedere, modificare e annullare. Ogni «no» della tabella dei ruoli va provato davvero.</Card>
   <p class="footnote">Fonte: <a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener">Supabase, Row Level Security</a>, controllata il 18 novembre 2026.</p>
+  <Voce termine="Row Level Security">in Supabase, i permessi scritti nel database, riga per riga: ogni richiesta passa da lì, da qualunque parte arrivi.</Voce>
 </Slide>

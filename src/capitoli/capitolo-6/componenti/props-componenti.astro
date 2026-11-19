@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="6.4 I componenti" titolo="Le props" lead="Le props sono i dati che passate a un componente. Lo stesso componente, con props diverse, disegna piatti diversi.">
@@ -26,4 +27,5 @@ import Slide from "../../../components/slide/Slide.astro";
 /&gt;</pre>
   </div>
   <p class="lead mt-m">Il componente dice <em>come</em> si mostra un piatto. La pagina dice <em>quali</em> piatti. Nel capitolo 8 i piatti arriveranno da Keystatic, e la pagina non cambierà.</p>
+  <Voce termine="Props">i dati che passate a un componente. Lo stesso componente, con props diverse, disegna piatti diversi.</Voce>
 </Slide>

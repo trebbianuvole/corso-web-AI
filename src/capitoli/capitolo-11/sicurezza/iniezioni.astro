@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="11.3 La sicurezza del codice generato" titolo="Le iniezioni" lead="Un'iniezione succede quando un testo scritto dall'utente viene preso per un comando. È la stessa idea delle istruzioni nascoste per l'AI (5.3.2), ma con il database o con la pagina.">
@@ -19,4 +20,5 @@ import Slide from "../../../components/slide/Slide.astro";
       <ul class="mt-m"><li>Mai incollare a mano il testo dell'utente nell'SQL: <code>supabase.from(…).eq(…)</code> lo tratta già come dato</li><li>Nella pagina, mostrare il testo come testo: Astro lo fa da solo, <code>set:html</code> no</li><li>Chiedere a Claude: «dove un testo dell'utente finisce in SQL o HTML senza protezione?»</li></ul>
     </div>
   </div>
+  <Voce termine="Iniezione">quando un testo scritto da un utente viene preso per un comando, dal database o dalla pagina.</Voce>
 </Slide>

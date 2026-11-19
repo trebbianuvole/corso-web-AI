@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="concetto" kicker="10.3 Le quattro operazioni" titolo="CRUD" lead="Create, Read, Update, Delete: creare, leggere, modificare, cancellare. Ognuna ha una domanda da farsi prima di scriverla.">
@@ -13,4 +14,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </tbody>
   </table>
   <Card variante="sky mt-m" titolo="Cancellare o segnare come annullata?">Spesso conviene non cancellare la riga ma segnarla «annullata»: resta la storia, e un errore si ripara. È una scelta da scrivere nei criteri, prima del codice.</Card>
+  <Voce termine="CRUD"><i>Create, Read, Update, Delete</i>: creare, leggere, modificare, cancellare. Le quattro operazioni sui dati di ogni webapp.</Voce>
 </Slide>

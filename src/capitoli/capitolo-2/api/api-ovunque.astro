@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.5 API" titolo="Le API sono ovunque, e le loro chiavi" lead="Molti siti non fanno tutto da soli: chiedono pezzi di lavoro ad altri servizi, tramite le loro API.">
@@ -11,4 +12,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card titolo="Il meteo, i treni">Le app di viaggio chiedono orari e ritardi alle API delle ferrovie.</Card>
   </Grid>
   <Card variante="sky mt-m" titolo="Le chiavi dell'API">Per usare molte API serve una chiave: un codice segreto che dice chi siete e chi paga. È come una carta di credito: non va mai scritta nel codice pubblico né incollata in chat.</Card>
+  <Voce termine="Chiave API">una lunga stringa che dice a un servizio chi lo sta usando, e a chi mandare il conto. Va tenuta segreta.</Voce>
 </Slide>

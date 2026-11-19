@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Studiare o imparare a memoria" lead="Una parte degli esempi non si usa per addestrare: si tiene da parte, come le domande dell'esame che lo studente non ha mai visto.">
@@ -28,4 +29,5 @@ import Slide from "../../../../components/slide/Slide.astro";
     </figure>
   </div>
   <p class="footnote">I punti tondi sono gli esempi di addestramento, il rombo è un esempio di prova; il tratteggio è l'errore sul rombo. Per approfondire: <a href="https://it.wikipedia.org/wiki/Overfitting" target="_blank" rel="noopener">Overfitting su Wikipedia</a>.</p>
+  <Voce termine="Overfitting">quando un modello impara a memoria gli esempi di addestramento invece della regola: perfetto su quelli, perso davanti a un caso nuovo.</Voce>
 </Slide>

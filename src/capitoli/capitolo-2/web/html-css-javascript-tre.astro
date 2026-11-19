@@ -1,5 +1,6 @@
 ---
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.3 I tre linguaggi" titolo="HTML, CSS, JavaScript: tre lavori diversi" lead="Ogni pagina web è fatta di tre strati. Pensate a una casa.">
@@ -29,4 +30,7 @@ import Slide from "../../../components/slide/Slide.astro";
 &#125;;</pre>
     </div>
   </Grid>
+  <Voce termine="HTML">il linguaggio che dice cosa c'è nella pagina: titoli, paragrafi, immagini, pulsanti. I muri della casa.</Voce>
+  <Voce termine="CSS">il linguaggio che dice come appare la pagina: colori, caratteri, spazi, posizione. L'arredamento.</Voce>
+  <Voce termine="JavaScript">il linguaggio che dice cosa succede quando fate qualcosa: un clic, un tocco, un modulo inviato. L'impianto elettrico.</Voce>
 </Slide>

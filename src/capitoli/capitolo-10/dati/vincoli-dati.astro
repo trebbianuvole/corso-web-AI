@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="10.2 Progettare i dati" titolo="Vincoli: due prenotazioni non si sovrappongono" lead="Un vincolo è una regola che il database fa rispettare da solo, qualunque cosa faccia il codice. È l'ultima difesa, e la più affidabile.">
@@ -25,4 +26,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Perché nel database e non solo nel codice">Se due docenti premono «Prenota» nello stesso istante, il controllo «l'aula è libera?» può dare sì a entrambe. Il vincolo no: la seconda riceve un errore.</Card>
   <p class="footnote">Fonte: <a href="https://www.postgresql.org/docs/current/rangetypes.html#RANGETYPES-CONSTRAINT" target="_blank" rel="noopener">PostgreSQL, tipi intervallo e vincoli di esclusione</a>. Supabase usa PostgreSQL.</p>
+  <Voce termine="Vincolo">una regola che il database fa rispettare da solo, qualunque cosa faccia il codice: per esempio, due prenotazioni non si sovrappongono.</Voce>
 </Slide>

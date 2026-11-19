@@ -6,9 +6,9 @@ import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="4.6 In squadra" titolo="Release e tag" lead="Un tag è un'etichetta fissa su un commit: «questa è la versione 1.0». Una release è il tag più le note su cosa è cambiato.">
   <Defs classe="mt-m" slot="intro">
-    <Def termine="1.0 → 1.1">piccole novità, niente si rompe</Def>
-    <Def termine="1.1 → 1.1.1">solo correzioni</Def>
-    <Def termine="1.x → 2.0">un cambiamento grosso</Def>
+    <Def termine="1.0 → 1.1" glossario={false}>piccole novità, niente si rompe</Def>
+    <Def termine="1.1 → 1.1.1" glossario={false}>solo correzioni</Def>
+    <Def termine="1.x → 2.0" glossario={false}>un cambiamento grosso</Def>
   </Defs>
   <div>
     <div class="term" role="img" aria-label="Si crea il tag v1.0 e lo si manda su GitHub">

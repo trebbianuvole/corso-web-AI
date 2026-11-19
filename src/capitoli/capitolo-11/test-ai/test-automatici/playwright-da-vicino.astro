@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="11.2 Test automatici da vicino" titolo="Playwright da vicino" lead="Playwright è uno strumento gratuito che apre un browser vero, senza finestra, e fa quello che gli scrivete. Il test del criterio della 11.2.1, in codice.">
@@ -24,4 +25,5 @@ test(<span class="s">'aula già occupata'</span>, <span class="k">async</span> (
     </ol>
   </div>
   <p class="footnote">Si installa con <code>npm init playwright@latest</code> e si lancia con <code>npx playwright test</code>. Fonti: <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener">Playwright, installazione</a>; <a href="https://playwright.dev/docs/writing-tests" target="_blank" rel="noopener">scrivere i test</a>, controllate il 18 novembre 2026.</p>
+  <Voce termine="Playwright">uno strumento che apre un browser e usa il sito come una persona: clicca, scrive, controlla che compaia quello che deve.</Voce>
 </Slide>

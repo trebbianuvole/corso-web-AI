@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="3.3 MCP" titolo="MCP: un modo comune di servire ai tavoli">
@@ -10,4 +11,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <li><time>Luglio 2026</time><p>Esce una nuova versione delle regole, pensata per i server online usati da tantissime persone insieme.</p></li>
   </ul>
   <p class="footnote">Fonti: <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic, 2024</a>, <a href="https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/" target="_blank" rel="noopener">blog di MCP, dicembre 2025</a>, <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">luglio 2026</a>.</p>
+  <Voce termine="MCP"><i>Model Context Protocol</i>: un modo comune con cui le AI si collegano a servizi esterni. Ogni servizio scrive il suo server MCP una volta, e ogni AI compatibile lo può usare.</Voce>
 </Slide>

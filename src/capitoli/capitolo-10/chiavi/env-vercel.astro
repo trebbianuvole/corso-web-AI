@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="10.6 API esterne e chiavi" titolo="Il file .env e le variabili su Vercel" lead="Le chiavi non si scrivono nel codice. Stanno in un file che non va su GitHub e, online, nelle impostazioni del progetto su Vercel.">
@@ -16,4 +17,5 @@ ANTHROPIC_API_KEY=…
 .env</pre>
     <Card variante="sky mt-m" titolo="Su Vercel">Settings › Environment Variables: stessi nomi, valori diversi per l'anteprima (il progetto Supabase di prova) e per la produzione (quello vero). Dopo una modifica serve un nuovo deploy.</Card>
   </div>
+  <Voce termine="Variabile d'ambiente">un valore, come una chiave, che il programma legge dall'esterno invece che dal codice: in locale dal file <code>.env</code>, online dalle impostazioni di Vercel.</Voce>
 </Slide>

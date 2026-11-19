@@ -1,5 +1,6 @@
 ---
 import Card from "../../../../components/Card.astro";
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="4.6 Automazioni su GitHub" titolo="GitHub Actions" lead="Piccoli programmi che GitHub fa girare da solo a ogni push o pull request: la build, i test, i controlli.">
@@ -17,4 +18,5 @@ import Slide from "../../../../components/slide/Slide.astro";
       - <span class="k">uses:</span> actions/setup-node@v7
       - <span class="k">run:</span> npm ci
       - <span class="k">run:</span> npm run build</pre>
+  <Voce termine="GitHub Actions">piccoli programmi che GitHub fa girare da solo a ogni push o pull request: la build, i test, i controlli.</Voce>
 </Slide>
