@@ -7,10 +7,13 @@
  *   slug: string,
  *   titolo: string,
  *   descrizione: string,
+ *   logo?: { src: string, alt: string, larghezza: number, altezza: number },
  *   percorsi: RegExp[]
  * }} Corso
  *   slug: indirizzo della pagina del corso (/slug/) e nome usato nell'elenco
  *         degli utenti per dare l'accesso;
+ *   logo: il logo dell'ente, mostrato nella home accanto al nome del corso
+ *         (src relativo alla home);
  *   percorsi: gli indirizzi del sito che fanno parte del corso.
  */
 
@@ -20,6 +23,7 @@ export const corsi = [
     slug: "sviluppo-web-ai",
     titolo: "Corso ENGIM: sviluppo web con l'AI",
     descrizione: "Uso dell'intelligenza artificiale e vibe coding: dodici capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.",
+    logo: { src: "assets/img/engim.png", alt: "ENGIM", larghezza: 460, altezza: 177 },
     percorsi: [
       /^\/sviluppo-web-ai(\/|$)/,
       /^\/capitolo-\d+(\/|$)/,

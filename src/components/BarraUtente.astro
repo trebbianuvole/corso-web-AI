@@ -12,7 +12,7 @@ interface Props {
 const { radice } = Astro.props;
 ---
 <header class="scheda-top barra-utente">
-  <a class="home-link" href={radice}>Noema <span>Lab</span></a>
+  <a class="home-link" href={radice}><img class="logo-noema" src={`${radice}assets/img/noema-lab.webp`} alt="" width="512" height="512">Noema <span>Lab</span></a>
   <span class="utente">
     <span class="muted" data-utente hidden>Entrati come <b></b></span>
     <a href={`${radice}gestione/utenti/`} data-solo-admin hidden>Gestione utenti</a>
