@@ -1,0 +1,35 @@
+---
+// Indice delle pagine di consultazione, generato da src/lib/schede.ts.
+import Pagina from "../../layouts/Pagina.astro";
+import { schede } from "../../lib/schede";
+
+const operative = schede.filter(s => s.tipo === "operativa");
+const aggiornabili = schede.filter(s => s.tipo === "aggiornabile");
+---
+<Pagina titolo="Schede di consultazione · Costruire siti web con l'AI" descrizione="Le schede del corso da tenere a portata di mano: glossario, comandi, modelli di prompt e di CLAUDE.md, checklist, rubrica, schede aggiornabili e fonti." radice="../">
+<header class="scheda-top">
+  <a class="home-link" href="../">Corso <span>AI</span></a>
+  <span class="muted">Schede</span>
+</header>
+<main class="scheda">
+  <p class="kicker">Da consultare</p>
+  <h1>Le schede del corso</h1>
+  <p class="lead">Quello che serve tenere a portata di mano mentre lavorate: le parole, i comandi, i modelli da copiare, le checklist. Le slide dicono il perché; le schede sono la versione pratica, anche da stampare.</p>
+
+  <h2>Schede operative</h2>
+  <ul class="indice-schede">
+    {operative.map(s => <li><a href={`${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+  </ul>
+
+  <h2>Schede aggiornabili</h2>
+  <p>Modelli, prodotti, prezzi e strumenti cambiano ogni poche settimane. Queste schede riportano la data dell'ultimo controllo.</p>
+  <ul class="indice-schede">
+    {aggiornabili.map(s => <li><a href={`${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+  </ul>
+
+  <h2>Per saperne di più</h2>
+  <ul class="indice-schede">
+    <li><a href="../fonti/"><span class="sigla">Fonti</span><span class="t">Le fonti, capitolo per capitolo</span><span class="b">Tutti i link citati nelle slide, con il rimando alla slide.</span></a></li>
+  </ul>
+</main>
+</Pagina>

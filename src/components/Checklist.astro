@@ -1,0 +1,12 @@
+---
+// Una checklist da usare e da stampare: ogni <Punto> ha una casella vera,
+// che si spunta con il mouse o con la tastiera (Tab e Spazio).
+// Le spunte non si salvano: ricaricando la pagina si riparte da zero.
+interface Props {
+  classe?: string;
+  /** una colonna sola, per le voci lunghe */
+  unaColonna?: boolean;
+}
+const { classe, unaColonna = false } = Astro.props;
+---
+<ul class:list={["checklist", "checklist-scheda", { "una-colonna": unaColonna }, classe]}><slot /></ul>

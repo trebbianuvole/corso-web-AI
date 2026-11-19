@@ -1,0 +1,10 @@
+---
+// Una voce del glossario (scheda S.1) per un termine spiegato nel testo
+// della slide o in una Card. Nella slide non disegna niente: la pagina
+// /schede/glossario/ legge il termine e la definizione dal sorgente.
+//   <Voce termine="Token">Il pezzo di testo su cui lavora un modello…</Voce>
+// I <Def> entrano nel glossario da soli; per escluderne uno: glossario={false}.
+interface Props {
+  termine: string;
+}
+---
