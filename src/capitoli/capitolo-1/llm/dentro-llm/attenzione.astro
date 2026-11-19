@@ -1,0 +1,39 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Dentro un LLM" titolo="L'attenzione" lead="Per capire una parola bisogna guardare le altre. In ogni strato, ogni token decide quanto guardare ciascuno degli altri token." split>
+  <Card variante="sky mt-m" titolo="Tanti sguardi insieme" slot="intro">In ogni strato ci sono più «teste» di attenzione, e ognuna guarda cose diverse: chi fa l'azione, il tempo del verbo, di che cosa si parla.</Card>
+  <Card variante="peach mt-m" titolo="Perché il contesto costa" slot="intro">Ogni token guarda tutti gli altri. Se il testo raddoppia, il lavoro più che raddoppia: per questo il contesto ha un limite (1.2.3).</Card>
+  <div>
+<figure class="figure"><svg class="diagram" viewBox="0 0 600 440" role="img" aria-labelledby="att-t att-d"><title id="att-t">L'attenzione sulla parola «pesca»</title><desc id="att-d">Due frasi. In «Ho mangiato una pesca matura» la parola pesca guarda soprattutto mangiato e matura: è un frutto. In «Domenica vado a pesca sul lago» guarda soprattutto lago e vado: è l'attività del pescare. Gli archi più spessi indicano dove guarda di più.</desc>
+<rect x="322" y="142" width="96" height="40" rx="10" class="box-hot"/>
+<path d="M370 140 Q 210 -2 50 140" class="arco" style="stroke-width:1.5"/>
+<path d="M370 140 Q 265 36 160 140" class="arco" style="stroke-width:7"/>
+<path d="M370 140 Q 320 75 270 140" class="arco" style="stroke-width:1.5"/>
+<path d="M370 140 Q 435 64 500 140" class="arco" style="stroke-width:6"/>
+<text x="50" y="170" text-anchor="middle" class="big">Ho</text>
+<text x="160" y="170" text-anchor="middle" class="big">mangiato</text>
+<text x="270" y="170" text-anchor="middle" class="big">una</text>
+<text x="370" y="170" text-anchor="middle" class="big">pesca</text>
+<text x="500" y="170" text-anchor="middle" class="big">matura</text>
+<text x="370" y="204" text-anchor="middle" class="lbl">qui vuol dire: un frutto</text>
+<rect x="292" y="362" width="96" height="40" rx="10" class="box-hot"/>
+<path d="M340 360 Q 202 234 65 360" class="arco" style="stroke-width:2"/>
+<path d="M340 360 Q 262 276 185 360" class="arco" style="stroke-width:5"/>
+<path d="M340 360 Q 300 302 260 360" class="arco" style="stroke-width:1.5"/>
+<path d="M340 360 Q 390 295 440 360" class="arco" style="stroke-width:1.5"/>
+<path d="M340 360 Q 440 260 540 360" class="arco" style="stroke-width:7"/>
+<text x="65" y="390" text-anchor="middle" class="big">Domenica</text>
+<text x="185" y="390" text-anchor="middle" class="big">vado</text>
+<text x="260" y="390" text-anchor="middle" class="big">a</text>
+<text x="340" y="390" text-anchor="middle" class="big">pesca</text>
+<text x="440" y="390" text-anchor="middle" class="big">sul</text>
+<text x="540" y="390" text-anchor="middle" class="big">lago</text>
+<text x="340" y="424" text-anchor="middle" class="lbl">qui vuol dire: andare a pescare</text>
+</svg></figure>
+  </div>
+  <p class="footnote" slot="intro">Gli spessori sono disegnati a mano per l'esempio. In un modello vero l'attenzione si calcola con i numeri degli embedding, su migliaia di token e in decine di strati.</p>
+  <Voce termine="Attenzione">il meccanismo con cui, dentro un Transformer, ogni token guarda gli altri e decide quali contano per capire il suo significato.</Voce>
+</Slide>

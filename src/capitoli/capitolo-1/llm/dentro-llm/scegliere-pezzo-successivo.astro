@@ -1,0 +1,30 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} tipo="demo" classe="compact" kicker="1.2 Dentro un LLM" titolo="Scegliere il pezzo successivo" lead="Il modello non prende sempre la parola più probabile: pesca, come con un dado truccato. La temperatura decide quanto è truccato il dado.">
+  <div class="tp mt-m" data-temperatura>
+    <div>
+      <p class="tp-frase" aria-live="polite">Oggi a pranzo mangio un piatto di <span class="ng-blank" data-scelta>…</span></p>
+      <div class="ng-temp">
+        <label for="tp-temp">Temperatura <output data-valore>1,0</output></label>
+        <input id="tp-temp" type="range" min="0.1" max="2" step="0.1" value="1">
+        <div class="scale"><span>bassa: quasi sempre la stessa</span><span>alta: più sorprese</span></div>
+      </div>
+      <div class="ng-actions">
+        <button class="btn orange" type="button" data-una>Scegli una parola</button>
+        <button class="btn ghost" type="button" data-venti>Scegli 20 volte</button>
+        <button class="btn ghost" type="button" data-azzera>Azzera</button>
+      </div>
+      <Card variante="sky mt-m" titolo="Perché la stessa domanda dà risposte diverse">A ogni pezzo il modello pesca di nuovo. Una scelta diversa all'inizio porta la risposta da un'altra parte. Per questo vale la pena rigenerare una risposta deludente.</Card>
+    </div>
+    <div>
+      <div class="ng-bars-head" aria-hidden="true"><span>parola</span><span>probabilità</span><span></span><span>uscite</span></div>
+      <div class="ng-bars" data-barre></div>
+      <p class="tp-totale" data-totale>Ancora nessuna scelta.</p>
+    </div>
+  </div>
+  <p class="footnote">Parole e percentuali sono un esempio costruito a mano: un modello vero sceglie tra decine di migliaia di token. Nelle app come Claude la temperatura la decide il produttore; chi usa il modello tramite API (capitolo 10) può cambiarla.</p>
+  <Voce termine="Temperatura">l'impostazione che decide quanto il modello rischia nello scegliere il pezzo successivo: bassa, sceglie quasi sempre il più probabile; alta, escono anche pezzi poco probabili.</Voce>
+</Slide>

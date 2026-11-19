@@ -1726,3 +1726,12 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .cattura { margin: 0; }
 .cattura img { display: block; width: 100%; max-width: 560px; height: auto; max-height: 62vh; object-fit: contain; object-position: left top; border: 1px solid var(--line); border-radius: var(--r-m); background: #fff; box-shadow: 0 6px 24px rgba(31, 35, 48, .08); }
 .cattura figcaption { margin-top: 10px; max-width: 560px; font-size: .8em; color: var(--muted); }
+
+/* Approfondimento «Dentro un LLM» (1.2.a2–a3) */
+.diagram .arco { fill: none; stroke: var(--orange); stroke-linecap: round; opacity: .8; }
+.tp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(18px, 3vw, 40px); align-items: start; }
+@media (max-width: 860px) { .tp { grid-template-columns: minmax(0, 1fr); } }
+.tp-frase { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.3rem, 2.6vw, 2.2rem); line-height: 1.25; }
+.tp-totale { font-size: .82em; color: var(--muted); margin-top: 12px; min-height: 1.5em; }
+.tema-approf .ng-row .fill { background: #b9c4e8; }
+.tema-approf .ng-row.top .fill { background: var(--orange); }
