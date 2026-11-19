@@ -622,13 +622,6 @@ kbd {
 .lesson-list .soon .title { font-weight: 600; }
 @media (max-width: 640px) { .lesson-list a, .lesson-list .soon { grid-template-columns: 3em 1fr; } .lesson-list .go { grid-column: 2; } }
 
-.site-foot {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 24px var(--gutter) 40px;
-  font-size: .75em;
-  color: var(--muted);
-}
 
 /* Utility in fondo, così vincono sui margini dei componenti */
 .mt-l { margin-top: clamp(28px, 4vh, 48px) !important; }

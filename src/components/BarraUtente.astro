@@ -14,7 +14,7 @@ const { radice } = Astro.props;
 <header class="scheda-top barra-utente">
   <a class="home-link" href={radice}><img class="logo-noema" src={`${radice}assets/img/noema-lab.webp`} alt="" width="512" height="512">Noema <span>Lab</span></a>
   <span class="utente">
-    <span class="muted" data-utente hidden>Entrati come <b></b></span>
+    <span class="muted" data-utente hidden><span class="sr-only">Accesso fatto come </span><b></b></span>
     <a href={`${radice}gestione/utenti/`} data-solo-admin hidden>Gestione utenti</a>
     <form method="post" action="/esci/">
       <button class="btn ghost" type="submit">Esci</button>

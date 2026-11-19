@@ -2,6 +2,7 @@
 // Indice delle pagine di consultazione, generato da src/lib/schede.ts.
 import Pagina from "../../layouts/Pagina.astro";
 import { schede } from "../../lib/schede";
+import { conVersione } from "../../lib/versione";
 
 const operative = schede.filter(s => s.tipo === "operativa");
 const aggiornabili = schede.filter(s => s.tipo === "aggiornabile");
@@ -21,15 +22,19 @@ const aggiornabili = schede.filter(s => s.tipo === "aggiornabile");
     {operative.map(s => <li><a href={`${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
   </ul>
 
-  <h2>Schede aggiornabili</h2>
-  <p>Modelli, prodotti, prezzi e strumenti cambiano ogni poche settimane. Queste schede riportano la data dell'ultimo controllo.</p>
-  <ul class="indice-schede">
-    {aggiornabili.map(s => <li><a href={`${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
-  </ul>
+  <!-- Le schede aggiornabili le vede in elenco solo l'admin (sessione.js) -->
+  <div data-solo-admin hidden>
+    <h2>Schede aggiornabili</h2>
+    <p>Modelli, prodotti, prezzi e strumenti cambiano ogni poche settimane. Queste schede riportano la data dell'ultimo controllo.</p>
+    <ul class="indice-schede">
+      {aggiornabili.map(s => <li><a href={`${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+    </ul>
+  </div>
 
   <h2>Per saperne di più</h2>
   <ul class="indice-schede">
     <li><a href="../fonti/"><span class="sigla">Fonti</span><span class="t">Le fonti, capitolo per capitolo</span><span class="b">Tutti i link citati nelle slide, con il rimando alla slide.</span></a></li>
   </ul>
 </main>
+<script is:inline src={`../${conVersione("assets/js/sessione.js")}`}></script>
 </Pagina>

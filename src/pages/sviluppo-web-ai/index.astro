@@ -66,17 +66,16 @@ const passi = [
     <ul class="indice-schede">
       {operative.map(s => <li><a href={`../schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
     </ul>
-    <h3>Schede aggiornabili</h3>
-    <p class="muted">Modelli, prodotti, prezzi e strumenti: con la data dell'ultimo controllo.</p>
-    <ul class="indice-schede">
-      {aggiornabili.map(s => <li><a href={`../schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
-    </ul>
+    <!-- Le schede aggiornabili le vede in elenco solo l'admin (sessione.js) -->
+    <div data-solo-admin hidden>
+      <h3>Schede aggiornabili</h3>
+      <p class="muted">Modelli, prodotti, prezzi e strumenti: con la data dell'ultimo controllo.</p>
+      <ul class="indice-schede">
+        {aggiornabili.map(s => <li><a href={`../schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+      </ul>
+    </div>
   </section>
 </main>
-
-<footer class="site-foot">
-  Sito costruito con Claude, pubblicato da GitHub con Vercel.
-</footer>
 
 <script is:inline src={`../${conVersione("assets/js/home.js")}`}></script>
 </Pagina>
