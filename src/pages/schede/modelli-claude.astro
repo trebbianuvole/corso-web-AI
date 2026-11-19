@@ -2,6 +2,7 @@
 // Scheda aggiornabile U.2: i modelli di Claude.
 // Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
 import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
 ---
 <Scheda sigla="U.2" titolo="I modelli di Claude" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: i modelli di Claude disponibili oggi e come scegliere quello giusto.">
   <p class="lead">Quali modelli offre oggi Anthropic e a cosa serve ciascuno. I nomi cambiano spesso: per questo stanno qui e non nelle slide.</p>
@@ -21,5 +22,5 @@ import Scheda from "../../layouts/Scheda.astro";
   <h2>Come si sceglie</h2>
   <p>Partite da Sonnet. Passate a Opus o Fable se il lavoro è lungo o difficile e il risultato non vi convince; tornate a Haiku se il compito è semplice e lo ripetete tante volte. Più grande non vuol dire sempre migliore: i modelli grandi sono più lenti e consumano prima i limiti d'uso.</p>
 
-  <p class="footnote scheda-fonti">Fonte: <a href="https://platform.claude.com/docs/en/about-claude/models/overview" target="_blank" rel="noopener">Anthropic, panoramica dei modelli</a>, controllata il 18 novembre 2026. Nel corso: slide <a href="../../capitolo-1/#1-4-2">1.4.2 «I modelli: scegliere la taglia giusta»</a>.</p>
+  <p class="footnote scheda-fonti">Fonte: <a href="https://platform.claude.com/docs/en/about-claude/models/overview" target="_blank" rel="noopener">Anthropic, panoramica dei modelli</a>, controllata il 18 novembre 2026. Nel corso: slide <RimandoSlide slide="modelli-scegliere-taglia-giusta" />.</p>
 </Scheda>

@@ -1,0 +1,10 @@
+---
+// Una voce di <Checklist>: il testo principale nello slot,
+// la spiegazione facoltativa in «nota».
+interface Props {
+  nota?: string;
+}
+const { nota } = Astro.props;
+const testo = await Astro.slots.render("default");
+---
+<li><label><input type="checkbox"> <span class="punto-testo"><Fragment set:html={testo} />{nota && <span set:html={nota} />}</span></label></li>

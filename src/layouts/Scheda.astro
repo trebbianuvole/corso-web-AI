@@ -4,17 +4,28 @@
 // Le schede aggiornabili raccolgono quello che invecchia (modelli,
 // prodotti, prezzi, strumenti): le slide le richiamano con un link
 // senza ripeterne i dati.
+// Titolo e posizione vengono da src/lib/schede.ts, cercati per sigla.
 import Pagina from "./Pagina.astro";
+import { schede, scheda } from "../lib/schede";
+import { conVersione } from "../lib/versione";
 
 interface Props {
-  titolo: string;
-  descrizione: string;
-  /** es. "U.2" */
+  /** es. "U.2"; deve stare in src/lib/schede.ts */
   sigla: string;
+  descrizione: string;
+  /** se manca, quello di schede.ts */
+  titolo?: string;
   /** data dell'ultimo controllo, AAAA-MM-GG */
   aggiornato?: string;
+  /** script di public/assets/js/ da caricare, es. ["glossario.js"] */
+  script?: string[];
 }
-const { titolo, descrizione, sigla, aggiornato } = Astro.props;
+const { sigla, descrizione, aggiornato, script = [] } = Astro.props;
+const info = scheda(sigla);
+const titolo = Astro.props.titolo ?? info.titolo;
+const i = schede.indexOf(info);
+const prima = schede[i - 1];
+const dopo = schede[i + 1];
 
 const MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
 function inItaliano(iso: string) {
@@ -25,7 +36,7 @@ function inItaliano(iso: string) {
 <Pagina titolo={`${titolo} · scheda ${sigla}`} descrizione={descrizione} radice="../../">
 <header class="scheda-top">
   <a class="home-link" href="../../sviluppo-web-ai/">Corso <span>AI</span></a>
-  <span class="muted">Scheda {sigla}</span>
+  <a class="muted" href="../">Tutte le schede</a>
 </header>
 <main class="scheda">
   <p class="kicker">{aggiornato ? "Scheda aggiornabile" : "Scheda"} {sigla}</p>
@@ -33,4 +44,9 @@ function inItaliano(iso: string) {
   {aggiornato && <p class="aggiornato"><time datetime={aggiornato}>Aggiornato al {inItaliano(aggiornato)}</time></p>}
   <slot />
 </main>
+<nav class="scheda-nav" aria-label="Altre schede">
+  {prima ? <a href={`../${prima.nome}/`}><span>← {prima.sigla}</span>{prima.titolo}</a> : <span />}
+  {dopo && <a class="dopo" href={`../${dopo.nome}/`}><span>{dopo.sigla} →</span>{dopo.titolo}</a>}
+</nav>
+{script.map(s => <script is:inline src={`../../${conVersione(`assets/js/${s}`)}`}></script>)}
 </Pagina>

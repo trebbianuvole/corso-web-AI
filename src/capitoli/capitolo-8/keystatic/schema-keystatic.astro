@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="8.3 Keystatic" titolo="Lo schema" lead="Lo schema dice quali contenuti esistono e com'è fatto ciascuno. Lo scrivete voi, una volta, in un file del progetto.">
@@ -18,4 +19,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Lo schema è un contratto">Il cliente può scrivere solo nei campi previsti: non può rompere la pagina mettendo un prezzo dove va un titolo. E Claude, leggendo lo schema, sa com'è fatto ogni contenuto.</Card>
   <p class="footnote">Fonte: <a href="https://keystatic.com/docs/collections" target="_blank" rel="noopener">Keystatic, collezioni</a> e <a href="https://keystatic.com/docs/singletons" target="_blank" rel="noopener">singoli</a>.</p>
+  <Voce termine="Schema">in Keystatic, il file che dice quali contenuti esistono e com'è fatto ciascuno: collezioni (tanti elementi uguali) e singoli (una pagina sola).</Voce>
 </Slide>

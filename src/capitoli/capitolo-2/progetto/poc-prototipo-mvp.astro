@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.2 POC e MVP" titolo="POC, prototipo, MVP">
@@ -13,4 +14,6 @@ import Slide from "../../../components/slide/Slide.astro";
       <tr><td>Dopo</td><td data-label="POC">Si butta, resta la risposta</td><td data-label="Prototipo">Si butta, o si rifà per bene</td><td data-label="MVP">Cresce, versione dopo versione</td></tr>
     </tbody>
   </table>
+  <Voce termine="POC"><i>Proof of concept</i>, prova di fattibilità: il minimo per rispondere a «si può fare?». Serve a voi.</Voce>
+  <Voce termine="Prototipo">una versione che sembra vera, ma dietro spesso è finta: serve a far vedere al cliente come sarà.</Voce>
 </Slide>

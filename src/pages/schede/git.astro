@@ -1,0 +1,80 @@
+---
+// Scheda operativa S.3: i comandi di Git e i problemi tipici.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+---
+<Scheda sigla="S.3" descrizione="Scheda del corso: i comandi di Git di tutti i giorni, i rami, il lavoro con GitHub e cosa fare quando qualcosa va storto.">
+  <p class="lead">I comandi che userete voi, e quelli che userà l'agente: anche se non li scrivete, dovete riconoscerli.</p>
+
+  <h2>La prima volta</h2>
+  <pre class="code">git config --global user.name "Nome Cognome"
+git config --global user.email "voi@esempio.it"</pre>
+
+  <h2>Il giro di tutti i giorni</h2>
+  <table class="compare">
+    <thead><tr><th>Comando</th><th>Cosa fa</th></tr></thead>
+    <tbody>
+      <tr><td><code>git init</code></td><td data-label="Cosa fa">Trasforma la cartella in cui siete in un repository.</td></tr>
+      <tr><td><code>git clone indirizzo</code></td><td data-label="Cosa fa">Scarica un repository che esiste già, con tutta la sua storia.</td></tr>
+      <tr><td><code>git status</code></td><td data-label="Cosa fa">Cosa è cambiato dall'ultimo commit, e cosa è pronto per il prossimo.</td></tr>
+      <tr><td><code>git diff</code></td><td data-label="Cosa fa">Le righe cambiate: tolte e aggiunte.</td></tr>
+      <tr><td><code>git add file</code></td><td data-label="Cosa fa">Mette le modifiche scelte nell'area di preparazione.</td></tr>
+      <tr><td><code>git commit -m "Aggiunge gli orari di dicembre"</code></td><td data-label="Cosa fa">Scatta la fotografia, con il messaggio.</td></tr>
+      <tr><td><code>git log --oneline</code></td><td data-label="Cosa fa">La storia, un commit per riga, dal più recente.</td></tr>
+      <tr><td><code>git pull</code></td><td data-label="Cosa fa">Scarica e unisce i commit degli altri da GitHub.</td></tr>
+      <tr><td><code>git push</code></td><td data-label="Cosa fa">Manda i vostri commit su GitHub.</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Un buon messaggio completa la frase «Questo commit…». Se dentro c'è una «e», forse sono due commit.</p>
+
+  <h2>I rami</h2>
+  <table class="compare">
+    <thead><tr><th>Comando</th><th>Cosa fa</th></tr></thead>
+    <tbody>
+      <tr><td><code>git branch</code></td><td data-label="Cosa fa">Elenca i rami; l'asterisco segna quello in cui siete.</td></tr>
+      <tr><td><code>git switch -c nome-ramo</code></td><td data-label="Cosa fa">Crea un ramo nuovo e ci entra.</td></tr>
+      <tr><td><code>git switch nome-ramo</code></td><td data-label="Cosa fa">Passa a un ramo che esiste già.</td></tr>
+      <tr><td><code>git merge nome-ramo</code></td><td data-label="Cosa fa">Unisce quel ramo al ramo in cui siete. Di solito si fa con una pull request su GitHub.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Il giro in squadra</h2>
+  <ol>
+    <li>Una issue: cosa fare, e quando è fatto.</li>
+    <li>Un ramo per issue, partendo da <code>main</code> aggiornato (<code>git switch main</code>, <code>git pull</code>, <code>git switch -c …</code>).</li>
+    <li>Commit piccoli, con messaggi chiari.</li>
+    <li>Una pull request, con l'anteprima di Vercel.</li>
+    <li>Qualcuno legge e prova; poi il merge, e il sito va online.</li>
+  </ol>
+
+  <h2>Quando qualcosa va storto</h2>
+  <table class="compare">
+    <thead><tr><th>Problema</th><th>La mossa giusta</th></tr></thead>
+    <tbody>
+      <tr><td>Ho rovinato un file e non ho ancora fatto il commit</td><td data-label="La mossa giusta"><code>git restore file</code>: torna com'era all'ultimo commit. Le modifiche si perdono.</td></tr>
+      <tr><td>L'errore è già in un commit, magari già su GitHub</td><td data-label="La mossa giusta"><code>git revert codice</code>: un commit nuovo che fa il contrario. La storia resta intera.</td></tr>
+      <tr><td>Il push viene rifiutato</td><td data-label="La mossa giusta">Qualcuno ha caricato prima di voi: <code>git pull</code>, poi di nuovo <code>git push</code>.</td></tr>
+      <tr><td>Ho lavorato su <code>main</code> invece che in un ramo</td><td data-label="La mossa giusta"><code>git switch -c nome-ramo</code>: le modifiche non salvate vengono con voi.</td></tr>
+      <tr><td>Un conflitto</td><td data-label="La mossa giusta">Nel file ci sono le due versioni tra <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>: lasciate quella giusta, togliete i segni, fate il commit.</td></tr>
+      <tr><td>Un merge ha rotto il sito</td><td data-label="La mossa giusta">Un revert del merge, con una nuova pull request; nell'attesa, su Vercel si rimette online la pubblicazione precedente.</td></tr>
+      <tr><td>Ho perso un commit</td><td data-label="La mossa giusta"><code>git reflog</code> mostra dove siete stati; <code>git switch -c recupero codice</code> lo riporta in un ramo.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Da maneggiare con cura</h2>
+  <ul>
+    <li><code>git reset --hard</code> butta via le modifiche non salvate e i commit successivi. Solo su un ramo vostro, non condiviso.</li>
+    <li><code>git push --force</code> sostituisce la storia su GitHub e può cancellare il lavoro dei colleghi. Su <code>main</code> mai; se serve davvero, <code>--force-with-lease</code>.</li>
+  </ul>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li>Un ramo per ogni esperimento dell'agente; leggete il diff prima di approvare.</li>
+    <li>I checkpoint di Claude Code (<code>/rewind</code>) non sostituiscono i commit.</li>
+    <li>Se Claude propone <code>reset --hard</code> o <code>push --force</code>, chiedete perché, e se non bastano <code>restore</code> o <code>revert</code>.</li>
+    <li>Per un conflitto: «Spiegami questo conflitto: cosa voleva fare ciascun ramo? Proponi una soluzione, ma non applicarla.»</li>
+    <li>Chiavi e password stanno nel <code>.env</code>, che è nel <code>.gitignore</code>: mai nel repository.</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti: la documentazione di Git per <a href="https://git-scm.com/docs/git-restore" target="_blank" rel="noopener">git restore</a>, <a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a>, <a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a>, <a href="https://git-scm.com/docs/git-reset" target="_blank" rel="noopener">git reset</a>, <a href="https://git-scm.com/docs/git-push" target="_blank" rel="noopener">git push</a>, <a href="https://git-scm.com/docs/git-reflog" target="_blank" rel="noopener">git reflog</a>; <a href="https://vercel.com/docs/instant-rollback" target="_blank" rel="noopener">Vercel, Instant Rollback</a>. Nel corso: <RimandoSlide slide="primo-repository" />, <RimandoSlide slide="tornare-indietro-git" />, <RimandoSlide slide="risolvere-conflitto" />, <RimandoSlide slide="stesso-giro" />, <RimandoSlide slide="qualcosa-va-storto" />, <RimandoSlide slide="checkpoint-commit" />, <RimandoSlide slide="parole-git" />.</p>
+</Scheda>

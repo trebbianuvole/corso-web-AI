@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="10.7 Un modello AI dentro la webapp" titolo="Dare strumenti al modello" lead="Il modello non sa quali aule sono libere. Gli date uno strumento: una funzione che può chiedervi di eseguire. Come gli agenti della 3.2, ma con un attrezzo solo, scelto da voi.">
@@ -24,4 +25,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </ol>
   </div>
   <p class="footnote">Fonte: <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" target="_blank" rel="noopener">Claude, uso degli strumenti</a>, controllata il 18 novembre 2026.</p>
+  <Voce termine="Strumento (tool)">una funzione che un modello AI può chiedere al vostro programma di eseguire, per esempio «cerca le aule libere».</Voce>
 </Slide>

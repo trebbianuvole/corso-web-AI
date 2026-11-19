@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="con-ai" classe="compact" kicker="4.7 Git e l'AI" titolo="Checkpoint o commit?" lead="Claude Code salva da solo un punto di ritorno prima di ogni vostra richiesta. Comodo, ma non è Git.">
@@ -14,4 +15,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </table>
   <Card variante="sky mt-m" titolo="Si usano insieme">Il checkpoint per annullare in fretta l'ultima richiesta; il commit per la storia vera. La documentazione di Claude Code lo dice chiaramente: i checkpoint non sostituiscono Git.</Card>
   <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/checkpointing" target="_blank" rel="noopener">Claude Code, checkpointing</a>.</p>
+  <Voce termine="Checkpoint">il punto di ritorno che Claude Code salva da solo prima di ogni richiesta. Si torna indietro con <code>/rewind</code>, ma non sostituisce un commit di Git.</Voce>
 </Slide>

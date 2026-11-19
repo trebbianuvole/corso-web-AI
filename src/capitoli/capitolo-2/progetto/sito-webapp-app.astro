@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.2 Cosa costruiamo" titolo="Sito, web app o app? Anche Mac o solo Windows?" lead="Prima di scegliere gli strumenti bisogna sapere che tipo di oggetto stiamo facendo.">
@@ -12,4 +13,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </Grid>
   <Card variante="sky mt-m" titolo="Da qui, due strade">Il corso segue un sito, quello della trattoria «Da Rina», e una web app, PrenotaAula, per prenotare le aule di una scuola. Tutti e due si aprono nel browser: la domanda «Mac o Windows?» non ci tocca.</Card>
   <p class="footnote">Gli strumenti adatti a ciascuno li vediamo nella 2.4, dedicata allo stack.</p>
+  <Voce termine="Webapp">un'applicazione che si usa nel browser: gli utenti entrano con un account, inseriscono dati, li modificano. Come PrenotaAula.</Voce>
 </Slide>

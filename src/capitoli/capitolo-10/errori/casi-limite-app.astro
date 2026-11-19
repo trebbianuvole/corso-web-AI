@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="concetto" kicker="10.5 Quando le cose vanno storte" titolo="I casi limite" lead="Le situazioni rare, ai bordi, che nessuno prova nella demo. In una webapp con cento utenti, una cosa rara succede ogni settimana.">
@@ -11,4 +12,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card tag="Permessi" titolo="L'utente non autorizzato">Uno studente prova a prenotare, o la sessione è scaduta. Cosa vede?</Card>
   </Grid>
   <Card variante="sky mt-m" titolo="E poi i dati strani">Un orario di fine prima dell'inizio, una prenotazione di dieci ore, un'aula chiusa per lavori, il 31 febbraio. Ognuno di questi è un criterio di accettazione.</Card>
+  <Voce termine="Caso limite">una situazione rara, ai bordi, che nessuno prova nella demo: due persone prenotano la stessa aula nello stesso secondo.</Voce>
 </Slide>

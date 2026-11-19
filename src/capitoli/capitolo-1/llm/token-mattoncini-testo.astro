@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.2 Come funziona un LLM" titolo="I token: i mattoncini del testo" lead="Il modello non legge lettere né parole intere, ma token: pezzi di parola. Ogni modello taglia il testo a modo suo.">
@@ -15,4 +16,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card titolo="L'italiano costa di più">Le lingue meno presenti nei dati vengono spezzate in più pezzi rispetto all'inglese.</Card>
     <Card titolo="Per questo sbaglia a contare">Chiedere «quante r ci sono in ramarro» è difficile: il modello non vede le singole lettere.</Card>
   </Grid>
+  <Voce termine="Token">il pezzo di testo su cui lavora un modello: una parola, un pezzo di parola, un segno. Costi e limiti si misurano in token.</Voce>
 </Slide>

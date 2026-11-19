@@ -2,6 +2,7 @@
 // Scheda aggiornabile U.3: i prodotti e gli agenti di Claude.
 // Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
 import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
 ---
 <Scheda sigla="U.3" titolo="I prodotti e gli agenti di Claude" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: le app di Claude, Claude Code e i suoi agenti nel cloud, su GitHub e programmati.">
   <p class="lead">Dove si usa Claude e cosa sanno fare i suoi agenti. Nomi e funzioni cambiano spesso: qui ci sono quelli dell'ultimo controllo. I modelli sono nella <a href="../modelli-claude/">scheda U.2</a>, i costi nella <a href="../costi-piani/">U.6</a>.</p>
@@ -41,5 +42,5 @@ import Scheda from "../../layouts/Scheda.astro";
   </table>
   <p class="muted">Le sessioni nel cloud e le attività programmate richiedono un piano a pagamento e consumano gli stessi limiti d'uso del resto di Claude.</p>
 
-  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://claude.com/product/overview" target="_blank" rel="noopener">Claude, i prodotti</a>; <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code, panoramica</a>; <a href="https://code.claude.com/docs/en/claude-code-on-the-web" target="_blank" rel="noopener">Claude Code nel cloud</a>; <a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">attività programmate</a>; <a href="https://code.claude.com/docs/en/chrome" target="_blank" rel="noopener">Claude Code con Chrome</a>; <a href="https://code.claude.com/docs/en/github-actions" target="_blank" rel="noopener">GitHub Actions</a>. Nel corso: slide <a href="../../capitolo-3/#3-2-5">3.2.5</a> e <a href="../../capitolo-12/#12-3-1">12.3.1</a>.</p>
+  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://claude.com/product/overview" target="_blank" rel="noopener">Claude, i prodotti</a>; <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code, panoramica</a>; <a href="https://code.claude.com/docs/en/claude-code-on-the-web" target="_blank" rel="noopener">Claude Code nel cloud</a>; <a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">attività programmate</a>; <a href="https://code.claude.com/docs/en/chrome" target="_blank" rel="noopener">Claude Code con Chrome</a>; <a href="https://code.claude.com/docs/en/github-actions" target="_blank" rel="noopener">GitHub Actions</a>. Nel corso: slide <RimandoSlide slide="agenti-claude" breve /> e <RimandoSlide slide="agenti-background-github" breve />.</p>
 </Scheda>

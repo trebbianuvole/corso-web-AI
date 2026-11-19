@@ -1,0 +1,77 @@
+---
+// Scheda operativa S.4: i modelli di prompt del corso, da copiare.
+// I prompt vengono dalle slide: se cambiano lì, aggiornateli anche qui.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Copiabile from "../../components/Copiabile.astro";
+---
+<Scheda sigla="S.4" script={["layers.js"]} descrizione="Scheda del corso: i sei ingredienti di un buon prompt e i prompt pronti per i momenti del progetto, da copiare e adattare.">
+  <p class="lead">Le parti tra parentesi quadre sono da riempire. Ogni prompt funziona meglio se il contesto del progetto sta già nel CLAUDE.md (<a href="../claude-md/">S.5</a>).</p>
+
+  <h2>I sei ingredienti</h2>
+  <ol>
+    <li><b>Contesto:</b> chi siete, che progetto è, a che punto siete.</li>
+    <li><b>Obiettivo:</b> cosa volete ottenere, in una frase chiara.</li>
+    <li><b>Materiale:</b> file, testi, screenshot, esempi da imitare. Allegateli.</li>
+    <li><b>Vincoli:</b> dispositivi, stile, strumenti, lunghezza, cosa non toccare.</li>
+    <li><b>Formato:</b> come volete la risposta: un file, una lista, tre proposte.</li>
+    <li><b>Domande:</b> «Se manca qualcosa, chiedimelo prima di iniziare.»</li>
+  </ol>
+
+  <h2>Il modello di base</h2>
+  <Copiabile id="p-base">Sto lavorando a [che progetto è, per chi è].
+Lo stack è [linguaggi e strumenti].
+
+Voglio [obiettivo in una frase].
+
+Ti allego [file, screenshot, esempi].
+
+Rispetta questi vincoli:
+- [dispositivo, stile, cosa non toccare]
+
+Dammi [formato della risposta].
+Prima di iniziare, fammi le domande che ti servono.</Copiabile>
+
+  <h2>Progettare: le domande che avete dimenticato</h2>
+  <Copiabile id="p-analista">Sto progettando [nome del progetto]. La storia è: «Come [chi] voglio [cosa] per [perché]». Fammi le domande che ho dimenticato, poi proponi i criteri di accettazione.</Copiabile>
+
+  <h2>Un passo, con il criterio di fine</h2>
+  <Copiabile id="p-criteri">Crea [la pagina o il componente] usando [componenti e dati, per esempio da DOCUMENTO.md].
+Hai finito quando:
+- [criterio controllabile]
+- [criterio controllabile]
+- npm run build passa.
+Poi fai un commit e fermati. Per ogni criterio, dimmi come l'hai verificato.</Copiabile>
+
+  <h2>Prima i casi limite, poi il codice</h2>
+  <Copiabile id="p-casi">Prima di scrivere codice per [la funzione]: elencami i casi limite e, per ognuno, cosa dovrebbe vedere l'utente. Niente codice finché non approvo.</Copiabile>
+
+  <h2>Segnalare un problema</h2>
+  <Copiabile id="p-errore">Dopo [l'ultima modifica], [cosa fate] e succede [cosa succede]. Mi aspettavo [cosa]. Ecco l'errore completo: [errore copiato, non riassunto]. Prima funzionava; ho cambiato solo [cosa]. Spiegami la causa prima di correggere.</Copiabile>
+
+  <h2>Un conflitto di Git</h2>
+  <Copiabile id="p-conflitto">Spiegami questo conflitto: cosa voleva fare ciascun ramo? Proponi una soluzione, ma non applicarla.</Copiabile>
+
+  <h2>Controlli</h2>
+  <h3>Accessibilità</h3>
+  <Copiabile id="p-access">Controlla l'accessibilità della [pagina] secondo WCAG 2.2 livello AA. Per ogni problema: dove sta, quale regola, come si corregge. Non correggere ancora.</Copiabile>
+  <h3>SEO</h3>
+  <Copiabile id="p-seo">Controlla il sito: ogni pagina ha title e description diversi? Ci sono immagini senza testo alternativo, titoli fuori ordine, link rotti? La sitemap comprende tutte le pagine? Indirizzo e orari sono uguali dappertutto? Elenca i problemi, senza correggere.</Copiabile>
+  <h3>Test</h3>
+  <Copiabile id="p-test">Scrivi un test per ogni criterio di accettazione. Poi rompi il codice in un punto e mostrami quale test fallisce. Non modificare i test per farli passare senza chiedermelo.</Copiabile>
+  <h3>Sicurezza</h3>
+  <Copiabile id="p-sicurezza">Fai una revisione di sicurezza di [progetto]. Per ogni operazione sui dati dimmi dove si controlla chi sei e cosa puoi fare. Cerca chiavi segrete in file che arrivano al browser o nel repository, tabelle senza regole sulle righe, testo dell'utente che finisce in SQL o HTML. Elenca i problemi per gravità, con file e riga. Non correggere niente finché non te lo dico.</Copiabile>
+  <h3>Un secondo agente che rilegge</h3>
+  <Copiabile id="p-revisore">Rileggi questa pull request: [diff], con i criteri [criteri] e il CLAUDE.md. Quali criteri non sono coperti da un test? Dove si controllano i permessi? Cosa succede se la rete cade a metà? Elenca i problemi in ordine di gravità.</Copiabile>
+
+  <h2>Cinque mosse che funzionano sempre</h2>
+  <ul>
+    <li>«Prima di iniziare, fammi le domande che ti servono.»</li>
+    <li>«Dimmi come lo faresti, senza scrivere niente.» Correggete il piano, poi partite.</li>
+    <li>Un esempio vale più di un aggettivo: invece di «moderno», allegate un sito che vi piace.</li>
+    <li>Dite cosa fare, non cosa non fare: «usa frasi brevi».</li>
+    <li>«Spiegami cosa hai cambiato.»</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Nel corso: <RimandoSlide slide="sei-ingredienti-buon-prompt" />, <RimandoSlide slide="cinque-mosse-funzionano" />, <RimandoSlide slide="modello-copiare" />, <RimandoSlide slide="claude-analista" />, <RimandoSlide slide="prompt-criteri" />, <RimandoSlide slide="casi-limite-prima" />, <RimandoSlide slide="spiegarlo-claude" />, <RimandoSlide slide="claude-accessibilita" />, <RimandoSlide slide="claude-revisore-seo" />, <RimandoSlide slide="claude-scrive-test" />, <RimandoSlide slide="secondo-agente-rilegge" />, <RimandoSlide slide="revisione-sicurezza" />.</p>
+</Scheda>

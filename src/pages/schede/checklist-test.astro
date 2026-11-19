@@ -1,0 +1,45 @@
+---
+// Scheda operativa S.12: la checklist di test.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.12" descrizione="Scheda del corso: la checklist per verificare un prodotto fatto con l'AI, dai criteri di accettazione ai test automatici e alle prove con le persone.">
+  <p class="lead">Verificare è il lavoro vero. Un prodotto passa tre livelli di prova: fa quello che deve, le persone lo sanno usare, e regge le cose che non si vedono.</p>
+
+  <h2>Funziona</h2>
+  <Checklist>
+    <Punto nota="Uno per il caso felice, uno per quello che deve fallire.">Ogni criterio di accettazione ha almeno un test</Punto>
+    <Punto nota="Se un test non corrisponde a nessun criterio, chiedetevi perché c'è.">Ogni test corrisponde a un criterio</Punto>
+    <Punto nota="Cosa fare, cosa deve succedere, come si capisce: se non può fallire, non è un test.">I test sono precisi</Punto>
+    <Punto nota="Rompete il codice in un punto: almeno un test deve diventare rosso.">I test controllano davvero</Punto>
+    <Punto nota="Due richieste nello stesso secondo, campi vuoti, due schede aperte.">I casi limite sono provati</Punto>
+    <Punto nota="Con GitHub Actions, e la regola che una PR rossa non si unisce.">I test girano a ogni push</Punto>
+  </Checklist>
+
+  <h2>Si usa</h2>
+  <Checklist>
+    <Punto nota="Non del gruppo: un compagno di un'altra classe, un docente.">Tre persone nuove provano il compito principale</Punto>
+    <Punto nota="Niente «clicca lì»: dove esitano, dove sbagliano, cosa dicono.">Voi state zitti e prendete nota</Punto>
+    <Punto nota="Telefono, tastiera, testo ingrandito: scheda S.10.">Si usa su ogni schermo</Punto>
+  </Checklist>
+
+  <h2>Regge</h2>
+  <Checklist>
+    <Punto nota="Un utente prova a fare quello che non deve: scheda S.9.">Permessi e sicurezza</Punto>
+    <Punto nota="Informativa, servizi esterni, cookie.">Privacy</Punto>
+    <Punto nota="Lighthouse sul telefono, sulla versione pubblicata.">Velocità</Punto>
+  </Checklist>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li>Se chiedete «funziona?», Claude controlla il primo livello. Gli altri due vanno chiesti per nome.</li>
+    <li>A una richiesta vaga risponde «ho controllato, funziona tutto», spesso senza aver provato. A una precisa deve dire cosa ha fatto e cosa ha visto.</li>
+    <li>Attenzione ai test che controllano poco (la pagina si apre, ma la prenotazione non è salvata) e all'agente che cambia il test finché passa.</li>
+    <li>Con <code>claude --chrome</code> Claude prova nel browser e legge la console: usate account e progetto di prova.</li>
+    <li>Un secondo agente, senza la conversazione del primo, rilegge la pull request. Il prompt è nella <a href="../prompt/">scheda S.4</a>.</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://code.claude.com/docs/en/chrome" target="_blank" rel="noopener">Claude Code con Chrome</a>; <a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" target="_blank" rel="noopener">GitHub Actions, costi</a>. Nel corso: <RimandoSlide slide="tre-livelli-test" />, <RimandoSlide slide="controlla-tutto-non-test" />, <RimandoSlide slide="test-dai-criteri" />, <RimandoSlide slide="claude-scrive-test" />, <RimandoSlide slide="claude-prova-browser" />, <RimandoSlide slide="secondo-agente-rilegge" />, <RimandoSlide slide="prove-con-persone" />, <RimandoSlide slide="test-ogni-push" />.</p>
+</Scheda>

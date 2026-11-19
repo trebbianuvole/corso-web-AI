@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="concetto" kicker="10.6 API esterne e chiavi" titolo="Chiavi pubbliche e segrete" lead="Una chiave è una lunga stringa che dice al servizio chi lo sta usando. Supabase ve ne dà due, con poteri molto diversi.">
@@ -18,4 +19,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Lo stesso vale per tutti i servizi">L'API di Claude, i pagamenti, le email: le loro chiavi sono tutte segrete, e costano soldi a chi le perde. Nei progetti più vecchi le due chiavi di Supabase si chiamano <code>anon</code> e <code>service_role</code>.</Card>
   <p class="footnote">Fonte: <a href="https://supabase.com/docs/guides/api/api-keys" target="_blank" rel="noopener">Supabase, chiavi API</a>, controllata il 18 novembre 2026.</p>
+  <Voce termine="Chiave segreta">una chiave che dà pieni poteri su un servizio: non va mai nel codice della pagina né su GitHub. Quella pubblica, invece, può stare nella pagina.</Voce>
 </Slide>

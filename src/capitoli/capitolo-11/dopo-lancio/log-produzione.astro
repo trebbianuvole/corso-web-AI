@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="11.5 Dopo il lancio" titolo="Log ed errori in produzione" lead="Un log è il diario dell'app: ogni richiesta, ogni errore, con l'ora. Quando un utente dice «non funziona», è lì che si guarda.">
@@ -18,4 +19,6 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Un'ora passa in fretta">Con log che durano così poco, l'errore di ieri sera stamattina non c'è più. Fatevi mandare subito l'ora esatta e cosa stava facendo l'utente, o usate un servizio che conservi gli errori più a lungo.</Card>
   <p class="footnote">Fonti: <a href="https://vercel.com/docs/logs/runtime" target="_blank" rel="noopener">Vercel, log</a>; <a href="https://supabase.com/docs/guides/telemetry/logs" target="_blank" rel="noopener">Supabase, log</a> e <a href="https://supabase.com/pricing" target="_blank" rel="noopener">prezzi</a>, controllate il 18 novembre 2026.</p>
+  <Voce termine="Log">il diario di un'app: ogni richiesta, ogni errore, con l'ora. Quando qualcosa non funziona, si guarda lì.</Voce>
+  <Voce termine="Produzione">il sito o l'app veri, quelli che usano le persone. Il contrario dell'ambiente di prova.</Voce>
 </Slide>

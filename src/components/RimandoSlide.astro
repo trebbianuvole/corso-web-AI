@@ -1,0 +1,17 @@
+---
+// Rimando a una slide dal nome del file: «1.4.2 Titolo della slide».
+// Numero, indirizzo e titolo si calcolano: se la slide si sposta, il link la segue.
+// La build si ferma se la slide non esiste.
+import { infoSlide } from "../lib/consultazione";
+
+interface Props {
+  slide: string;
+  /** percorso relativo verso la radice del sito (default: da /schede/<nome>/) */
+  radice?: string;
+  /** solo il numero, senza titolo */
+  breve?: boolean;
+}
+const { slide, radice = "../../", breve = false } = Astro.props;
+const s = infoSlide(slide);
+---
+<a href={`${radice}${s.indirizzo}`}>{breve ? s.numero : `${s.numero} «${s.titolo}»`}</a>

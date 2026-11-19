@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="concetto" classe="compact" kicker="12.1 Il debito tecnico" titolo="Le scorciatoie di oggi sono il lavoro di domani" lead="Il debito tecnico è tutto quello che avete fatto «per ora», sapendo che non andava bene. Non si vede da fuori: si sente ogni volta che bisogna cambiare qualcosa.">
@@ -13,4 +14,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </tbody>
   </table>
   <Card variante="sky mt-m" titolo="Non tutto il debito è sbagliato">Per una demo da mostrare domani, una scorciatoia può essere la scelta giusta. L'importante è saperlo, e scriverlo da qualche parte: una issue, una riga nel README.</Card>
+  <Voce termine="Debito tecnico">tutto quello che avete fatto «per ora», sapendo che non andava bene. Non si vede da fuori, ma rende più cara ogni modifica successiva.</Voce>
 </Slide>

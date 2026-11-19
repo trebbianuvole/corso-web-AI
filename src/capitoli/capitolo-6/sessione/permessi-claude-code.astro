@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="6.3 La prima sessione" titolo="I permessi" lead="Quanto può fare Claude senza chiedere lo decidete voi, con le modalità. Shift+Tab passa dall'una all'altra.">
@@ -14,4 +15,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </table>
   <Card variante="peach mt-m" titolo="Mai a occhi chiusi">C'è anche una modalità che salta tutti i controlli: la documentazione la consiglia solo in ambienti isolati. Sul vostro computer, no.</Card>
   <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener">Claude Code, modalità dei permessi</a>, controllata il 18 novembre 2026.</p>
+  <Voce termine="Modalità dei permessi">in Claude Code, quanto può fare l'agente senza chiedere: solo leggere, modificare i file, eseguire comandi. Si cambia con Shift+Tab.</Voce>
 </Slide>

@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="concetto" kicker="10.4 Chi sei e cosa puoi fare" titolo="Autenticazione e autorizzazione" lead="Due parole lunghe e simili per due controlli diversi. Servono entrambi, a ogni richiesta.">
@@ -17,4 +18,6 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
   </div>
   <Card variante="sky mt-m" titolo="Come all'ingresso di un teatro">Il documento dice chi siete; il biglietto dice dove potete sedervi. Un documento valido non vi fa entrare in platea con il biglietto del loggione.</Card>
+  <Voce termine="Autenticazione">il controllo «chi sei?»: email e password, un codice, «Accedi con Google».</Voce>
+  <Voce termine="Autorizzazione">il controllo «cosa puoi fare?»: dopo aver capito chi siete, l'app decide cosa vi è permesso.</Voce>
 </Slide>

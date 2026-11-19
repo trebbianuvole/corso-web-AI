@@ -25,6 +25,7 @@ export const corsi = [
       /^\/capitolo-\d+(\/|$)/,
       /^\/lezione-\d+(\/|$)/,
       /^\/schede(\/|$)/,
+      /^\/fonti(\/|$)/,
     ],
   },
 ];

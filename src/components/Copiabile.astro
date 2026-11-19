@@ -1,0 +1,16 @@
+---
+// Un blocco di testo da copiare con un pulsante (prompt, CLAUDE.md, configurazioni).
+// Il pulsante funziona con layers.js: nelle schede, script={["layers.js"]}.
+// Nel testo le graffe si scrivono &#123; e &#125;.
+interface Props {
+  /** id unico nella pagina */
+  id: string;
+  etichetta?: string;
+}
+const { id, etichetta = "Copia" } = Astro.props;
+const testo = await Astro.slots.render("default");
+---
+<div class="copy-wrap mt-m">
+<pre class="code" id={id}><Fragment set:html={testo.trim()} /></pre>
+  <button class="btn" type="button" data-copy={`#${id}`} aria-label={`${etichetta}: copia il testo negli appunti`}>Copia</button>
+</div>

@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="7.3 Il design system" titolo="Cos'è un design system" lead="L'insieme delle scelte visive di un prodotto, con un nome per ciascuna. Non si sceglie il colore pagina per pagina: si sceglie una volta.">
@@ -11,4 +12,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card variante="peach" tag="Componenti" titolo="Con le varianti">pulsante principale e secondario, scheda normale ed evidenziata</Card>
   </Grid>
   <Card variante="sky mt-m" titolo="Questo sito ne ha uno">Le schede che vedete (normale, arancio, azzurra), i pulsanti, i titoli: sono sempre gli stessi componenti, con le stesse variabili di colore. Il prossimo esempio viene da qui.</Card>
+  <Voce termine="Design system">l'insieme delle scelte visive di un prodotto, con un nome per ciascuna: colori, caratteri, spazi, componenti. Si sceglie una volta, non pagina per pagina.</Voce>
 </Slide>

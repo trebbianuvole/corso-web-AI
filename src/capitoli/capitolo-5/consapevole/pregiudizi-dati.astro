@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="5.4 Uso consapevole" titolo="I pregiudizi nei dati" lead="Un modello impara dagli esempi (1.1). Se gli esempi sono sbilanciati, lo sono anche le risposte. E le ripete in grande.">
@@ -10,4 +11,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </Grid>
   <Card variante="peach mt-m" tag="Con l'AI" titolo="Nel vostro lavoro">Chiedete immagini «di un medico», «di un'insegnante», «di una famiglia»: guardate chi compare e chi no. Nei siti, scegliete voi le immagini con attenzione.</Card>
   <p class="footnote">Fonti: Buolamwini e Gebru, <a href="https://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank" rel="noopener">«Gender Shades»</a>, 2018; <a href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G" target="_blank" rel="noopener">Reuters, 2018</a>.</p>
+  <Voce termine="Pregiudizi (bias)">squilibri negli esempi da cui un modello impara, che si ritrovano nelle risposte, ripetuti in grande.</Voce>
 </Slide>

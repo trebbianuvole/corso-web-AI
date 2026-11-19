@@ -1,0 +1,47 @@
+---
+// Scheda operativa S.9: la checklist di sicurezza.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.9" descrizione="Scheda del corso: la checklist di sicurezza per lavorare con gli agenti e per controllare il codice generato dall'AI.">
+  <p class="lead">Gli errori di sicurezza non si vedono provando l'app: tutto funziona. Per questo si controllano con una lista, a ogni progetto.</p>
+
+  <h2>Lavorare con gli agenti</h2>
+  <Checklist>
+    <Punto nota="E non può fare push su main: lo vietano le regole del repository.">L'agente vede solo il repository su cui lavora</Punto>
+    <Punto nota="Pagine web, issue, email, documenti: possono contenere istruzioni nascoste.">I contenuti scritti da estranei sono sospetti</Punto>
+    <Punto nota="In sviluppo si usano chiavi di prova, con pochi poteri.">Le chiavi vere non stanno dove lavora l'agente</Punto>
+    <Punto nota="Esiste da tempo? Chi la pubblica? Quanti la scaricano? Il nome è giusto?">Ogni dipendenza nuova è verificata</Punto>
+    <Punto nota="Pubblicare, cancellare, inviare, pagare.">Prima delle azioni delicate l'agente si ferma e chiede</Punto>
+    <Punto nota="Prima di approvare ogni modifica.">Leggete il diff</Punto>
+  </Checklist>
+
+  <h2>Il repository</h2>
+  <Checklist>
+    <Punto nota="E .env è nel .gitignore.">Chiavi e password stanno solo nel .env</Punto>
+    <Punto nota="Elenchi di clienti, prenotazioni vere, email.">Nessun dato personale</Punto>
+    <Punto nota="Video, esportazioni del database, archivi.">Nessun file enorme</Punto>
+    <Punto nota="Toglierla con un commit non basta: resta nella storia.">Se una chiave è finita su GitHub, la cambiate subito nel servizio</Punto>
+  </Checklist>
+
+  <h2>Il codice generato</h2>
+  <Checklist>
+    <Punto nota="Nessuna chiave segreta in un file che arriva al browser, né con il prefisso PUBLIC_.">Chiavi segrete solo sul server</Punto>
+    <Punto nota="Il pulsante nascosto va bene, ma il database deve rispondere no.">I permessi si controllano nel database, non solo nel browser</Punto>
+    <Punto nota="Nessuna tabella senza regole sulle righe, nessuna regola che fa passare tutti.">Row Level Security su ogni tabella</Punto>
+    <Punto nota="Mai incollato a mano nell'SQL; nella pagina, niente set:html sul testo degli utenti.">Il testo degli utenti resta testo</Punto>
+    <Punto nota="Supabase Auth, non un sistema di login scritto dall'AI.">L'accesso usa un servizio fatto apposta</Punto>
+    <Punto nota="npm audit e gli avvisi di Dependabot; si aggiorna su un ramo, con build e test.">Le dipendenze sono aggiornate</Punto>
+  </Checklist>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li><code>/security-review</code> in Claude Code rilegge le modifiche del ramo: è un buon inizio, non un certificato. Ogni segnalazione si verifica.</li>
+    <li>«Per ogni operazione sui dati dimmi dove si controlla chi sei e cosa puoi fare.» Il prompt completo è nella <a href="../prompt/">scheda S.4</a>.</li>
+    <li>Le chiavi non si scrivono in chat, né si danno all'agente «solo per un attimo».</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://top10.owasp.org/2025/0x00_2025-Introduction" target="_blank" rel="noopener">OWASP Top 10, edizione 2025</a>; <a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener">Supabase, Row Level Security</a>; <a href="https://docs.npmjs.com/cli/commands/npm-audit" target="_blank" rel="noopener">npm audit</a>. Nel corso: <RimandoSlide slide="difese-agenti" />, <RimandoSlide slide="librerie-inesistenti" />, <RimandoSlide slide="non-nel-repository" />, <RimandoSlide slide="chiavi-pubbliche-segrete" />, <RimandoSlide slide="controllo-nel-browser" />, <RimandoSlide slide="errori-sicurezza-ai" />, <RimandoSlide slide="iniezioni" />, <RimandoSlide slide="aggiornare-dipendenze" />, <RimandoSlide slide="revisione-sicurezza" />.</p>
+</Scheda>

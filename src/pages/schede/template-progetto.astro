@@ -1,0 +1,88 @@
+---
+// Scheda operativa S.7: i template di progetto (brief, storie utente
+// e criteri di accettazione, requisiti, documento di progetto).
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Copiabile from "../../components/Copiabile.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.7" script={["layers.js"]} descrizione="Scheda del corso: i template da compilare prima di chiedere codice all'AI: brief, storie utente con criteri di accettazione, requisiti e documento di progetto.">
+  <p class="lead">Il piano si fa a mano, prima. Questi template sono da copiare in un file del progetto e riempire: diventano il contesto che l'AI legge, e poi il CLAUDE.md.</p>
+
+  <h2>Prima di accendere i fornelli</h2>
+  <Checklist>
+    <Punto nota="Una frase che anche un estraneo capirebbe.">L'obiettivo è scritto</Punto>
+    <Punto nota="Anche solo un foglio con dei rettangoli.">La mappa delle pagine c'è</Punto>
+    <Punto nota="Almeno una bozza, scritta da voi.">I testi principali sono pronti</Punto>
+    <Punto nota="Vostre, o con una licenza che ne permette l'uso.">Le immagini sono raccolte</Punto>
+    <Punto nota="Quelli di cui vi piace lo stile.">Avete due o tre siti di riferimento</Punto>
+    <Punto nota="Claude, GitHub, Vercel.">Gli account funzionano</Punto>
+  </Checklist>
+
+  <h2>Il brief</h2>
+  <Copiabile id="t-brief">Progetto: [nome], per [chi], a [dove].
+Obiettivo: [cosa deve ottenere il sito, in una frase].
+Pubblico: [chi lo usa, da quale dispositivo].
+Pagine: [elenco, con cosa c'è in ognuna].
+Contenuti: [testi, foto, menu, documenti: allegati].
+Stile: [due o tre aggettivi] e [siti di riferimento, allegati].
+Cosa non deve fare: [vincoli].</Copiabile>
+
+  <h2>Le domande che tutti dimenticano</h2>
+  <ul>
+    <li><b>Dati personali.</b> Se il sito raccoglie nomi, email o telefoni serve un'informativa.</li>
+    <li><b>Diritti.</b> Foto e testi presi da internet hanno un autore.</li>
+    <li><b>Dominio.</b> Che indirizzo avrà il sito? Chi lo paga, a nome di chi?</li>
+    <li><b>Costi.</b> Cosa succede se il sito ha successo e si supera il piano gratuito?</li>
+    <li><b>Aggiornamenti.</b> Tra sei mesi, chi modifica gli orari, e come?</li>
+    <li><b>Chiavi.</b> Password e codici di accesso non vanno mai nel codice.</li>
+  </ul>
+
+  <h2>Storie utente e criteri di accettazione</h2>
+  <p>Una storia per ogni cosa che una persona vuole fare; sotto, le frasi che dicono quando è finita. Ogni criterio è vero o falso, non «funziona bene».</p>
+  <Copiabile id="t-storia">Storia: Come [chi] voglio [cosa] per [perché].
+
+Criteri di accettazione:
+1. Dato che [situazione di partenza],
+   quando [l'azione],
+   allora [il risultato che si vede].
+2. Dato che [un caso limite],
+   quando [l'azione],
+   allora [cosa vede l'utente, e cosa non succede].</Copiabile>
+  <p class="muted">Esempio: «Dato che l'aula 3 è già prenotata, quando un'altra persona prova a prenotarla, allora vede “Aula già occupata” e non viene salvato niente.»</p>
+
+  <h2>I requisiti</h2>
+  <Copiabile id="t-requisiti">Requisiti funzionali (cosa fa):
+- [Chi] può [fare cosa]
+- ...
+
+Requisiti non funzionali (come deve farlo):
+- Veloce: [per esempio, si apre in pochi secondi anche dal telefono]
+- Accessibile: [si usa da tastiera e con un lettore di schermo]
+- Sicuro: [chi può entrare, cosa può vedere]</Copiabile>
+  <p class="muted">L'AI tende a curare i primi e a dimenticare i secondi, se non li scrivete.</p>
+
+  <h2>Il documento di progetto</h2>
+  <Copiabile id="t-documento"># [Nome del progetto]
+
+## Obiettivo
+[Cosa fa, e qual è la versione più piccola che funziona.]
+
+## Pubblico
+[Chi lo usa, da quale dispositivo, con quali esigenze.]
+
+## Funzionalità
+- [Storia utente] — finita quando: [criteri]
+
+## Criteri di accettazione
+- [Frasi controllabili]
+
+## Stack
+Astro e Keystatic, GitHub e Vercel. [Serve anche Supabase?]
+
+## Regole
+- [Tono, lingua, cose da non fare mai.]</Copiabile>
+
+  <p class="footnote scheda-fonti">Nel corso: <RimandoSlide slide="differenza-fa-brief" />, <RimandoSlide slide="prima-accendere-fornelli" />, <RimandoSlide slide="domande-tutti-dimenticano" />, <RimandoSlide slide="storie-utente" />, <RimandoSlide slide="requisiti" />, <RimandoSlide slide="criteri-accettazione" />, <RimandoSlide slide="tutto-iscritto-file" />, <RimandoSlide slide="scrivete-documento-vostro-progetto" />. Il passo successivo: il CLAUDE.md, <a href="../claude-md/">scheda S.5</a>.</p>
+</Scheda>

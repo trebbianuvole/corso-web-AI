@@ -87,6 +87,8 @@ test("classificazione degli indirizzi", () => {
   assert.deepEqual(classifica("/sviluppo-web-ai"), { tipo: "corso", corso: "sviluppo-web-ai" });
   assert.deepEqual(classifica("/lezione-1/"), { tipo: "corso", corso: "sviluppo-web-ai" });
   assert.deepEqual(classifica("/schede/modelli-claude/"), { tipo: "corso", corso: "sviluppo-web-ai" });
+  assert.deepEqual(classifica("/schede/"), { tipo: "corso", corso: "sviluppo-web-ai" });
+  assert.deepEqual(classifica("/fonti/"), { tipo: "corso", corso: "sviluppo-web-ai" });
   assert.equal(tipo("/pagina-che-non-esiste"), "riservato");
   assert.equal(tipo("/capitolone/"), "riservato");
 });

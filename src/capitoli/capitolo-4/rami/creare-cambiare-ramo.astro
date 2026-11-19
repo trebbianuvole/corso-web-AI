@@ -6,9 +6,9 @@ import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="4.4 Rami" titolo="Creare e cambiare ramo" lead="Cambiando ramo cambiano anche i file nella cartella: Git vi mostra la versione di quel ramo.">
   <Defs classe="mt-m" slot="intro">
-    <Def termine="git switch -c nome">crea un ramo nuovo e ci entra.</Def>
-    <Def termine="git switch nome">passa a un ramo che esiste già.</Def>
-    <Def termine="git branch">elenca i rami; l'asterisco segna quello in cui siete.</Def>
+    <Def termine="git switch -c nome" glossario={false}>crea un ramo nuovo e ci entra.</Def>
+    <Def termine="git switch nome" glossario={false}>passa a un ramo che esiste già.</Def>
+    <Def termine="git branch" glossario={false}>elenca i rami; l'asterisco segna quello in cui siete.</Def>
   </Defs>
   <p class="footnote" slot="intro">Nelle guide più vecchie trovate <code>git checkout</code>: fa le stesse cose, e altre ancora. Fonte: <a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a>.</p>
   <div>

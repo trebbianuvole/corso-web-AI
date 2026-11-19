@@ -880,32 +880,34 @@ Etichette:
 
 ## Pagine di consultazione
 
+Realizzate; indice in `/schede/`, richiamate dalla home e dalle slide collegate.
+
 **Schede operative:**
-- S.1 Glossario unico, con rimando alle slide
-- S.2 Comandi del terminale
-- S.3 Comandi di Git e problemi tipici
-- S.4 Modelli di prompt
-- S.5 CLAUDE.md di partenza (sito Astro + Keystatic, webapp con Supabase)
-- S.6 Schema Keystatic di partenza
-- S.7 Template: brief, storie utente e criteri di accettazione, requisiti
-- S.8 Checklist dei dati: «si può incollare?»
-- S.9 Checklist di sicurezza
-- S.10 Checklist di accessibilità
-- S.11 Checklist SEO
-- S.12 Checklist di test
-- S.13 Checklist di pubblicazione
-- S.14 Checklist di consegna
-- S.15 Rubrica di valutazione
+- S.1 Glossario unico, con rimando alle slide: `/schede/glossario/`, generato dalle voci scritte nelle slide
+- S.2 Comandi del terminale: `/schede/terminale/`
+- S.3 Comandi di Git e problemi tipici: `/schede/git/`
+- S.4 Modelli di prompt: `/schede/prompt/`
+- S.5 CLAUDE.md di partenza (sito Astro + Keystatic, webapp con Supabase): `/schede/claude-md/`
+- S.6 Schema Keystatic di partenza: `/schede/schema-keystatic/`
+- S.7 Template: brief, storie utente e criteri di accettazione, requisiti: `/schede/template-progetto/`
+- S.8 Checklist dei dati: «si può incollare?»: `/schede/si-puo-incollare/`
+- S.9 Checklist di sicurezza: `/schede/checklist-sicurezza/`
+- S.10 Checklist di accessibilità: `/schede/checklist-accessibilita/`
+- S.11 Checklist SEO: `/schede/checklist-seo/`
+- S.12 Checklist di test: `/schede/checklist-test/`
+- S.13 Checklist di pubblicazione: `/schede/checklist-pubblicazione/`
+- S.14 Checklist di consegna: `/schede/checklist-consegna/`
+- S.15 Rubrica di valutazione: `/schede/rubrica/` (i quattro livelli sono una proposta da rivedere)
 
 **Schede aggiornabili,** ognuna con la data dell'ultimo controllo:
-- U.1 I laboratori e i loro modelli
-- U.2 I modelli di Claude
-- U.3 I prodotti e gli agenti di Claude
-- U.4 Impostazioni sulla privacy dei principali servizi
-- U.5 Strumenti di design e generazione di media
-- U.6 Costi e piani gratuiti
+- U.1 I laboratori e i loro modelli: `/schede/laboratori-modelli/`
+- U.2 I modelli di Claude: `/schede/modelli-claude/`
+- U.3 I prodotti e gli agenti di Claude: `/schede/prodotti-claude/`
+- U.4 Impostazioni sulla privacy dei principali servizi: `/schede/privacy-servizi/`
+- U.5 Strumenti di design e generazione di media: `/schede/strumenti-design/`
+- U.6 Costi e piani gratuiti: `/schede/costi-piani/`
 
-**Per saperne di più:** le fonti, capitolo per capitolo.
+**Per saperne di più:** le fonti, capitolo per capitolo: `/fonti/`, generata dai link delle slide.
 
 ## Cosa non ho accolto dei commenti, e perché
 

@@ -1,0 +1,45 @@
+---
+// Scheda S.1: il glossario, generato dalle slide.
+// Le voci vengono dai <Def> e dai <Voce> nei file delle slide
+// (src/lib/consultazione.ts): per aggiungere una parola si scrive
+// la voce nella slide che la spiega, non qui.
+import Scheda from "../../layouts/Scheda.astro";
+import { glossario, soloTesto } from "../../lib/consultazione";
+
+const lettere = [...new Set(glossario.map(v => v.lettera))];
+const perLettera = lettere.map(l => ({ l, voci: glossario.filter(v => v.lettera === l) }));
+const ancora = (l: string) => (l === "#" ? "simboli" : `lettera-${l.toLowerCase()}`);
+---
+<Scheda sigla="S.1" script={["glossario.js"]} descrizione="Il glossario del corso: tutte le parole spiegate nelle slide, in ordine alfabetico, con il rimando alla slide che le spiega.">
+  <p class="lead">Le parole del corso in ordine alfabetico. Ogni voce rimanda alla slide che la spiega, dove trovate anche l'esempio. Le voci sono {glossario.length}.</p>
+
+  <div class="cerca" hidden data-cerca>
+    <label for="cerca-glossario">Cerca una parola</label>
+    <input id="cerca-glossario" type="search" autocomplete="off" aria-describedby="cerca-esito">
+    <span id="cerca-esito" class="muted" aria-live="polite"></span>
+  </div>
+
+  <nav aria-label="Lettere">
+    <ul class="lettere">
+      {lettere.map(l => <li><a href={`#${ancora(l)}`}>{l}</a></li>)}
+    </ul>
+  </nav>
+
+  {perLettera.map(({ l, voci }) => (
+    <section data-lettera>
+      <h2 class="glossario-lettera" id={ancora(l)}>{l === "#" ? "Simboli e numeri" : l}</h2>
+      <dl class="glossario">
+        {voci.map(v => (
+          <div data-voce={soloTesto(v.termine).toLowerCase()}>
+            <dt set:html={v.termine} />
+            <dd>
+              <Fragment set:html={v.definizione} />
+              <span class="dove">Nel corso: {v.slide.map((s, i) => <>{i > 0 && ", "}<a href={`../../${s.indirizzo}`}>{s.numero} «{s.titolo}»</a></>)}</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  ))}
+  <p class="glossario-vuoto muted" hidden data-vuoto>Nessuna voce contiene questa parola. Provate con una parte della parola, o cercatela nelle <a href="../../fonti/">fonti</a>.</p>
+</Scheda>

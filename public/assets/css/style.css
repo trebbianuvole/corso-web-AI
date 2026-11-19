@@ -1556,6 +1556,80 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 @media (max-width: 640px) { .imbuto > div { width: 100% !important; } }
 
 /* ==========================================================
+   Pagine di consultazione: indice, navigazione, checklist, glossario, fonti
+   ========================================================== */
+.scheda-top a.muted { margin-left: auto; color: var(--muted); }
+.scheda h3 { font-size: 1.15rem; margin-top: 1.6em; }
+.scheda ul:not([class]), .scheda ol:not([class]) { margin-top: .6em; padding-left: 1.3em; }
+.scheda ul:not([class]) li + li, .scheda ol:not([class]) li + li { margin-top: .35em; }
+.scheda h2 + ul, .scheda h2 + .checklist, .scheda p + .checklist, .scheda h3 + .checklist, .scheda h3 + p { margin-top: .8em; }
+.scheda .nel-corso { margin-top: 2.5em; }
+.scheda pre.code { overflow-x: auto; }
+
+.indice-schede { list-style: none; padding: 0; margin: 1em 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.indice-schede a { display: grid; grid-template-columns: 3.4em 1fr; align-content: start; gap: 2px 12px; height: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-s); color: var(--ink); text-decoration: none; }
+.indice-schede a:hover, .indice-schede a:focus-visible { border-color: var(--orange); }
+.indice-schede .sigla { grid-row: span 2; font-family: var(--f-display); font-weight: 800; color: var(--orange-deep); }
+.indice-schede .t { font-family: var(--f-display); font-weight: 700; }
+.indice-schede .b { color: var(--muted); font-size: .88em; }
+@media (max-width: 640px) { .indice-schede { grid-template-columns: 1fr; } }
+
+.scheda-nav { max-width: 960px; margin: 0 auto; padding: 0 var(--gutter) 64px; display: flex; justify-content: space-between; gap: 16px; }
+.scheda-nav a { display: flex; flex-direction: column; max-width: 45%; color: var(--ink); text-decoration: none; font-weight: 700; }
+.scheda-nav a span { color: var(--orange-deep); font-family: var(--f-display); }
+.scheda-nav a.dopo { text-align: right; margin-left: auto; }
+.scheda-nav a:hover { text-decoration: underline; }
+
+/* Checklist con caselle vere */
+.checklist-scheda.una-colonna { grid-template-columns: 1fr; }
+.checklist-scheda li::before { content: none; }
+.checklist-scheda label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; width: 100%; }
+.checklist-scheda input { flex: none; width: 20px; height: 20px; margin: .15em 0 0; accent-color: var(--orange-deep); }
+.checklist-scheda .punto-testo > span { color: var(--muted); font-size: .88em; display: block; margin-top: 2px; }
+.checklist-scheda li:has(input:checked) { border-color: var(--orange); background: var(--peach); }
+
+/* Glossario */
+.lettere { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.4em; padding: 0; list-style: none; }
+.lettere a { display: inline-grid; place-items: center; min-width: 2.2em; height: 2.2em; border: 1px solid var(--line); border-radius: var(--r-s); background: var(--card); font-family: var(--f-display); font-weight: 700; text-decoration: none; }
+.cerca { margin-top: 1.4em; display: flex; flex-direction: column; gap: 6px; max-width: 420px; }
+.cerca label { font-weight: 700; }
+.cerca input { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r-s); background: var(--card); color: var(--ink); }
+.cerca input:focus-visible { outline: 3px solid var(--orange); outline-offset: 1px; }
+.glossario-lettera { margin-top: 2em; border-bottom: 2px solid var(--ink); font-size: clamp(1.4rem, 2.4vw, 2rem); }
+.glossario { margin: 0; }
+.glossario > div { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.glossario dt { font-family: var(--f-display); font-weight: 700; font-size: 1.1em; }
+.glossario dd { margin: 4px 0 0; }
+.glossario .dove { display: block; margin-top: 4px; font-size: .85em; color: var(--muted); }
+.glossario-vuoto { margin-top: 1.4em; }
+
+/* Fonti */
+.fonti-capitolo { margin-top: 2.4em; }
+.fonti-sezione { margin-top: 1.2em; font-size: 1.1rem; }
+.fonti-slide { list-style: none; padding: 0; margin: .5em 0 0; }
+.fonti-slide > li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.fonti-slide ul { margin: 4px 0 0; padding-left: 1.2em; }
+.fonti-slide .sito { color: var(--muted); font-size: .85em; }
+
+/* Stampa: solo il contenuto, senza barre e colori di fondo */
+@media print {
+  body { background: #fff; }
+  .scheda-top, .scheda-nav, .cerca, .lettere, .copy-wrap .btn { display: none !important; }
+  .scheda { max-width: none; padding: 0; }
+  .scheda h1 { font-size: 2rem; }
+  .card, .checklist li, .indice-schede a { background: #fff !important; break-inside: avoid; }
+  .checklist-scheda { grid-template-columns: 1fr; }
+  .scheda a { color: inherit; }
+  .term, .code { background: #fff !important; color: #000 !important; border: 1px solid #999; }
+}
+.cerca[hidden], .glossario > div[hidden], [data-lettera][hidden] { display: none; }
+.glossario dd::first-letter { text-transform: uppercase; }
+.consulta h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin-top: 1.8em; }
+.consulta-intro { margin-bottom: 4px; }
+.consulta .indice-schede.in-evidenza a { background: var(--peach); border-color: transparent; }
+.consulta .indice-schede.in-evidenza a:hover, .consulta .indice-schede.in-evidenza a:focus-visible { border-color: var(--orange); }
+
+/* ==========================================================
    Noema Lab: home dei corsi, accesso, gestione utenti
    ========================================================== */
 .sr-only {
@@ -1631,3 +1705,8 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .scheda .primo-avvio summary h2 { display: inline; margin: 0; }
 .segreto { margin-top: 12px; display: grid; gap: 10px; justify-items: start; }
 .segreto .copy-wrap { width: 100%; }
+
+/* Una cattura dello schermo dentro una slide (es. 4.4.4) */
+.cattura { margin: 0; }
+.cattura img { display: block; width: 100%; max-width: 560px; height: auto; max-height: 62vh; object-fit: contain; object-position: left top; border: 1px solid var(--line); border-radius: var(--r-m); background: #fff; box-shadow: 0 6px 24px rgba(31, 35, 48, .08); }
+.cattura figcaption { margin-top: 10px; max-width: 560px; font-size: .8em; color: var(--muted); }

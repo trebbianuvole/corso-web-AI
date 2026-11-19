@@ -1,7 +1,9 @@
 ---
 // Una definizione: il termine in grassetto, la spiegazione nello slot.
+// Entra da sola nel glossario (scheda S.1); glossario={false} la esclude.
 interface Props {
   termine: string;
+  glossario?: boolean;
 }
 const { termine } = Astro.props;
 const testo = await Astro.slots.render("default");

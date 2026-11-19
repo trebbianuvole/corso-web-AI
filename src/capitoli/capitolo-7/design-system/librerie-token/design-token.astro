@@ -1,5 +1,6 @@
 ---
 import Card from "../../../../components/Card.astro";
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="7.3 Librerie e design token" titolo="I design token" lead="Un token è una scelta di design con un nome che non dipende dallo strumento: lo stesso «colore accento» vale nel CSS, nell'app, nel file di Figma.">
@@ -13,4 +14,5 @@ import Slide from "../../../../components/slide/Slide.astro";
   </table>
   <Card variante="sky mt-m" titolo="Perché tre livelli">Per cambiare l'accento del sito si tocca una riga sola. È quello che fa il tema degli approfondimenti: cambia il significato, i componenti restano uguali.</Card>
   <p class="footnote">Esiste anche un formato standard per scambiare i token tra strumenti. Fonte: <a href="https://www.designtokens.org/" target="_blank" rel="noopener">Design Tokens Community Group</a>.</p>
+  <Voce termine="Design token">una scelta di design con un nome che non dipende dallo strumento: lo stesso «colore accento» vale nel CSS, nell'app, nel file di design.</Voce>
 </Slide>

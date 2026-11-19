@@ -1,6 +1,7 @@
 ---
 import Card from "../../../../components/Card.astro";
 import Passo from "../../../../components/Passo.astro";
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 import Steps from "../../../../components/Steps.astro";
 ---
@@ -28,4 +29,6 @@ import Steps from "../../../../components/Steps.astro";
     <Card variante="sky mt-m" titolo="Passi piccoli, ma tanti">Si chiama discesa del gradiente. La lunghezza del passo la sceglie chi addestra: troppo lungo e si salta il fondo, troppo corto e non si arriva mai.</Card>
   </div>
   <p class="footnote" slot="intro">Per approfondire: <a href="https://it.wikipedia.org/wiki/Discesa_del_gradiente" target="_blank" rel="noopener">Discesa del gradiente su Wikipedia</a>.</p>
+  <Voce termine="Addestramento">la fase in cui un modello impara: si mostrano milioni di esempi e si correggono i pesi finché le risposte diventano giuste.</Voce>
+  <Voce termine="Discesa del gradiente">il metodo con cui una rete corregge i pesi: a piccoli passi, sempre nella direzione che riduce l'errore.</Voce>
 </Slide>

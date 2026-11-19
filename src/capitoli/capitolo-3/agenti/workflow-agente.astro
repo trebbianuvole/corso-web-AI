@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="3.2 Agenti" titolo="Workflow o agente?">
@@ -16,4 +17,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
   </div>
   <p class="footnote">Il consiglio di Anthropic: cercate sempre la soluzione più semplice che funziona. Spesso basta un buon prompt; l'agente serve quando i passi non si conoscono in anticipo.</p>
+  <Voce termine="Workflow">una sequenza di passi decisa prima da chi la costruisce, sempre uguale. Prevedibile ed economica; l'agente invece decide i passi strada facendo.</Voce>
 </Slide>

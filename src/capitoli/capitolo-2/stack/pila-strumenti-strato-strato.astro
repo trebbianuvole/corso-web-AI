@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.4 Lo stack" titolo="Una pila di strumenti, strato per strato">
@@ -11,4 +12,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <div class="base"><b>Attrezzi di lavoro</b><span>Dove si scrive, si prova e si conserva il codice.</span><span class="chips"><i>VS Code</i><i>Git</i><i>GitHub</i><i>Claude Code</i></span></div>
   </div>
   <p class="footnote">Il sito della trattoria usa soprattutto tre strati: interfaccia, infrastruttura, attrezzi. Niente database: con Keystatic i contenuti stanno in file dentro il progetto.</p>
+  <Voce termine="Stack">gli strumenti di un progetto, uno sopra l'altro come una pila: interfaccia, logica, dati, infrastruttura. Nel corso: Astro, Keystatic, GitHub, Vercel, e Supabase per la webapp.</Voce>
 </Slide>

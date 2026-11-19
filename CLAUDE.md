@@ -32,18 +32,22 @@ src/pages/[capitolo]/index.astro  una pagina per capitolo (getStaticPaths)
 src/pages/lezione-N/              vecchi indirizzi, rimandano a capitolo-N conservando il #
 src/layouts/Pagina.astro          <head> comune (titolo, descrizione, font, style.css)
 src/layouts/Capitolo.astro        barra in alto generata dalle sezioni, slide, approfondimenti, hint, script, rimandi
-src/layouts/Scheda.astro          pagina di consultazione, con «Aggiornato al…» per le schede aggiornabili
+src/layouts/Scheda.astro          pagina di consultazione, con «Aggiornato al…» per le schede aggiornabili e le schede vicine
 src/components/slide/Slide.astro  slide normale (con etichetta e pulsante dell'approfondimento)
 src/components/slide/Apertura.astro  apertura di sezione (X.Y.0)
 src/components/slide/Approfondimento.astro  la finestra di un approfondimento
-src/components/                   Card, Grid, Steps + Passo, Defs + Def, SieteQui (la mappa del corso), BarraUtente (chi è entrato, «Esci»)
+src/components/                   Card, Grid, Steps + Passo, Defs + Def, SieteQui (la mappa del corso), BarraUtente (chi è entrato, «Esci»);
+                                  Voce (glossario), RimandoSlide, Checklist + Punto, Copiabile (schede)
 src/capitoli/capitolo-N/capitolo.ts   dati del capitolo e ordine di sezioni e slide
 src/capitoli/capitolo-N/copertina-N.astro
 src/capitoli/capitolo-N/<chiave-sezione>/<nome-slide>.astro   una slide per file
 src/capitoli/capitolo-N/<chiave-sezione>/<chiave-approfondimento>/<nome-slide>.astro   slide di un approfondimento
-src/pages/schede/<nome>.astro     schede di consultazione: /schede/<nome>/
+src/pages/schede/<nome>.astro     schede di consultazione: /schede/<nome>/; indice in /schede/
+src/pages/fonti/index.astro       «Per saperne di più»: le fonti, generate dalle slide
 src/lib/numerazione.mjs           numerazione e rimandi (JS puro, usato anche da scripts/)
 src/lib/capitoli.ts               carica capitoli e slide per le pagine
+src/lib/consultazione.ts          titoli delle slide, glossario e fonti, letti dal sorgente delle slide
+src/lib/schede.ts                 elenco di tutte le schede (pagina del corso, indice, navigazione)
 src/lib/corsi.mjs                 i corsi e gli indirizzi che appartengono a ciascuno
 src/lib/accesso.mjs               la logica del middleware: utenti, password, sessioni, permessi
 middleware.ts                     aggancia src/lib/accesso.mjs al Routing Middleware di Vercel
@@ -51,7 +55,8 @@ test/                             test dell'accesso (npm test)
 scripts/prova-accesso.mjs         server di prova dell'accesso (npm run prova-accesso)
 src/indirizzi.json                registro degli id pubblicati
 public/assets/css/style.css       un solo foglio di stile, variabili in :root
-public/assets/js/                 deck.js (navigazione), approfondimenti.js, next-word.js, timeline.js, layers.js, rete-minuscola.js, home.js (titolo animato, passi in data-passi), accedi.js, sessione.js, utenti.js
+public/assets/img/                immagini delle slide (catture dello schermo), con .cattura per mostrarle
+public/assets/js/                 deck.js (navigazione), approfondimenti.js, next-word.js, timeline.js, layers.js (anche i pulsanti Copia), rete-minuscola.js, glossario.js, home.js (titolo animato, passi in data-passi), accedi.js, sessione.js, utenti.js
 docs/scaletta-corso.md            la scaletta del corso
 ```
 
@@ -68,7 +73,8 @@ docs/scaletta-corso.md            la scaletta del corso
   - Il prop `approfondimenti` lo passa il layout: non si scrive a mano.
   - Il contenuto va nello slot ed è HTML normale.
   - kicker, titolo e lead accettano HTML semplice.
-- **Fonti e note** vanno nella `.footnote`, con i link che si aprono in una nuova scheda.
+- **Fonti e note** vanno nella `.footnote`, con i link che si aprono in una nuova scheda. Tutti i link esterni delle slide finiscono da soli nella pagina `/fonti/`.
+- **Glossario.** Ogni `<Def>` entra nella scheda S.1; quelli che non sono termini si escludono con `glossario={false}`. Un termine spiegato nel testo o in una `Card` si segna, nel file della slide, con `<Voce termine="…">definizione breve</Voce>` (non si vede nella slide). Quando una slide nuova spiega un termine, aggiungete la voce.
 - **Graffe.** In un file `.astro` le `{ }` sono espressioni: nel testo e nei blocchi di codice si scrivono `&#123;` e `&#125;`.
 - **Componenti CSS già pronti** (in `style.css`):
   - griglie e schede: `.grid` con `g2`/`g3`/`g4` (componente `Grid`), `.card` con le varianti `peach`, `sky`, `good`, `bad` (componente `Card`), `.tag`;
@@ -133,10 +139,15 @@ Nella scaletta sono numerati `X.Y.a1`, `X.Y.a2`…; ogni gruppo indica la slide 
 - **Telefono:** sotto i 720 px la barra laterale diventa una striscia in alto.
 - **Dove stanno:** fanno parte della pagina del capitolo (statici, nessun caricamento dal server), organizzati in componenti e file separati come le altre slide.
 
-## Etichette e schede aggiornabili
+## Etichette e pagine di consultazione
 
 - **Etichette per tipo di contenuto:** concetto, esempio, demo, attività, compito, «Con l'AI», checklist. Si mettono con il prop `tipo` di `Slide`; sono discrete e coerenti con lo stile.
-- **Schede aggiornabili:** pagine con i contenuti che invecchiano (modelli, prodotti, prezzi, strumenti), con il layout `Scheda.astro` e il prop `aggiornato="AAAA-MM-GG"`, che mostra «Aggiornato al GG mese AAAA». Stanno in `src/pages/schede/`: U.2 `/schede/modelli-claude/`, U.3 `/schede/prodotti-claude/`, U.4 `/schede/privacy-servizi/`, U.5 `/schede/strumenti-design/`, U.6 `/schede/costi-piani/`. Le slide le richiamano con un link senza ripeterne i dati. Quando si aggiorna una scheda si aggiorna anche la data.
+- **Le schede** stanno in `src/pages/schede/` con il layout `Scheda.astro`, e ciascuna ha una riga in `src/lib/schede.ts`. Indice: `/schede/`; la pagina del corso (`/sviluppo-web-ai/`) le elenca nella sezione «Da consultare». `/schede/` e `/fonti/` sono tra i `percorsi` del corso in `src/lib/corsi.mjs`: una pagina di consultazione nuova fuori da queste cartelle va aggiunta lì.
+  - Operative: S.1 `/schede/glossario/` (generato), S.2 `terminale`, S.3 `git`, S.4 `prompt`, S.5 `claude-md`, S.6 `schema-keystatic`, S.7 `template-progetto`, S.8 `si-puo-incollare`, S.9 `checklist-sicurezza`, S.10 `checklist-accessibilita`, S.11 `checklist-seo`, S.12 `checklist-test`, S.13 `checklist-pubblicazione`, S.14 `checklist-consegna`, S.15 `rubrica`.
+  - Aggiornabili, con il prop `aggiornato="AAAA-MM-GG"` che mostra «Aggiornato al GG mese AAAA»: U.1 `laboratori-modelli`, U.2 `modelli-claude`, U.3 `prodotti-claude`, U.4 `privacy-servizi`, U.5 `strumenti-design`, U.6 `costi-piani`. Quando si aggiorna una scheda si aggiorna anche la data.
+  - Le fonti: `/fonti/`, generata dai link delle slide.
+- Le slide richiamano le schede con un link nella `.footnote` (`../schede/<nome>/`, nuova scheda), senza ripeterne i dati. Le schede richiamano le slide con `<RimandoSlide slide="nome-file" />`, mai con un `#id` scritto a mano: così il link segue la slide e la build si ferma se la slide non c'è più.
+- Le schede operative riprendono le slide: se cambia un prompt, una checklist o un comando in una slide, aggiornate anche la scheda.
 
 ## Regole sui contenuti
 

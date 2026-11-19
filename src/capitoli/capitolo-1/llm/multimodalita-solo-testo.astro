@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.2 Come funziona un LLM" titolo="Multimodalità: non solo testo" lead="I modelli di oggi leggono immagini, documenti e audio, e oltre al testo producono codice, grafici e file.">
@@ -9,4 +10,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card tag="Screenshot" titolo="Un errore sullo schermo">Invece di descriverlo, lo mostrate. Il modello legge il messaggio e propone la correzione.</Card>
     <Card tag="Documento" titolo="Un PDF o un menu">Il menu del ristorante diventa la pagina del menu del sito, già impaginata.</Card>
   </Grid>
+  <Voce termine="Multimodale">un modello che non legge solo testo, ma anche immagini, documenti, a volte audio.</Voce>
 </Slide>

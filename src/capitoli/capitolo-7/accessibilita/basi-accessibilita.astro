@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="checklist" kicker="7.6 Accessibilità" titolo="Le basi" lead="Sei regole coprono la maggior parte dei problemi di un sito come quello della trattoria.">
@@ -10,5 +11,7 @@ import Slide from "../../../components/slide/Slide.astro";
     <li><div><strong>Etichette nei moduli</strong><span>Ogni campo dice cosa chiede, anche quando ci si è dentro.</span></div></li>
     <li><div><strong>Link che si capiscono</strong><span>«Leggi il menu», non «clicca qui». E i pulsanti grandi abbastanza da toccare.</span></div></li>
   </ul>
-  <p class="footnote">Per la dimensione dei pulsanti WCAG 2.2 chiede almeno 24 per 24 pixel, salvo eccezioni. Fonte: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" target="_blank" rel="noopener">W3C</a>.</p>
+  <p class="footnote">Per la dimensione dei pulsanti WCAG 2.2 chiede almeno 24 per 24 pixel, salvo eccezioni. Fonte: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" target="_blank" rel="noopener">W3C</a>. La checklist da stampare, con le prove a mano: <a href="../schede/checklist-accessibilita/" target="_blank" rel="noopener">scheda S.10</a>.</p>
+  <Voce termine="Testo alternativo">la descrizione di un'immagine nell'attributo <code>alt</code>, letta da chi non la vede.</Voce>
+  <Voce termine="Contrasto">la differenza di luminosità tra testo e sfondo: almeno 4,5 a 1 per il testo normale.</Voce>
 </Slide>

@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="6.2 Il CLAUDE.md" titolo="Dal documento di progetto al CLAUDE.md" lead="Ogni sessione di Claude parte da zero (1.2.3). Il CLAUDE.md è il contesto della 3.1.9, scritto una volta e caricato da solo ogni volta.">
@@ -18,4 +19,5 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Dove sta">Nella cartella principale del progetto, dentro Git, insieme al codice. Così ogni persona e ogni agente della squadra legge le stesse regole.</Card>
   <p class="footnote">Fonte: <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code, come ricorda il progetto</a>.</p>
+  <Voce termine="CLAUDE.md">il file con le regole del progetto per Claude Code: cos'è il progetto, lo stack, i comandi, le convenzioni. Si carica da solo a ogni sessione.</Voce>
 </Slide>

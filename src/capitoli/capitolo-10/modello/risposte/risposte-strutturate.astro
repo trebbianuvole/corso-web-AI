@@ -1,5 +1,6 @@
 ---
 import Card from "../../../../components/Card.astro";
+import Voce from "../../../../components/Voce.astro";
 import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="10.7 Risposte strutturate e scelta del modello" titolo="Risposte strutturate" lead="A volte dal modello non volete una frase, ma dati da usare nel codice. Gli date uno schema JSON, e la risposta lo rispetta.">
@@ -30,4 +31,5 @@ import Slide from "../../../../components/slide/Slide.astro";
 &#123; <span class="s">"aula"</span>: <span class="s">"Laboratorio"</span>, <span class="s">"giorno"</span>: <span class="s">"2026-11-24"</span>,
   <span class="s">"dalle"</span>: <span class="s">"14:00"</span>, <span class="s">"alle"</span>: <span class="s">"16:00"</span> &#125;</pre>
   </div>
+  <Voce termine="Risposta strutturata">una risposta del modello in un formato fisso, descritto da uno schema JSON, da usare direttamente nel codice.</Voce>
 </Slide>

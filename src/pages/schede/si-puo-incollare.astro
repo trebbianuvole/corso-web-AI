@@ -1,0 +1,47 @@
+---
+// Scheda operativa S.8: la checklist dei dati, «si può incollare?».
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.8" descrizione="Scheda del corso: la checklist da usare prima di dare un dato a un'AI, in chat o nella cartella di un progetto.">
+  <p class="lead">Incollare è consegnare: quando un testo finisce in una chat, l'avete spedito a un'azienda, e non si torna indietro. Prima di farlo, cinque domande.</p>
+
+  <h2>Le cinque domande</h2>
+  <Checklist unaColonna>
+    <Punto nota="Spesso basta descrivere il caso, senza i dati.">Serve davvero?</Punto>
+    <Punto nota="«Cliente A», «Studente 3», date e numeri cambiati.">Posso togliere i nomi?</Punto>
+    <Punto nota="Quello di lavoro, se l'azienda o la scuola ne hanno uno; mai quello personale per i dati di lavoro.">Su quale account?</Punto>
+    <Punto nota="Addestramento, cronologia, memoria: lo dicono le impostazioni (scheda U.4).">Cosa conserva il servizio?</Punto>
+    <Punto nota="Se la risposta vi mette a disagio, non incollate.">Se uscisse, chi ci rimette?</Punto>
+  </Checklist>
+
+  <h2>Tre risposte possibili</h2>
+  <ul>
+    <li><b>Sì:</b> il menu della trattoria, una vostra lettera, il codice del sito su un account di lavoro.</li>
+    <li><b>Sì, ma prima tolgo qualcosa:</b> un errore del sito con dati di clienti dentro, recensioni con i nomi, uno screenshot con prenotazioni vere.</li>
+    <li><b>No:</b> il file <code>.env</code>, documenti d'identità, dati sanitari, le email di altri, il registro di classe.</li>
+  </ul>
+
+  <h2>Nei progetti web, con Claude Code</h2>
+  <p>I dati arrivano all'AI anche senza incollarli: basta che stiano nella cartella del progetto.</p>
+  <Checklist>
+    <Punto nota="Regole e contesto, mai password, chiavi o dati dei clienti.">Il CLAUDE.md è pulito</Punto>
+    <Punto nota="Nel .env, fuori da Git e lontane dalle chat.">Le chiavi non sono nei file del progetto</Punto>
+    <Punto nota="«Mario Rossi, aula 3»: fateli generare all'AI.">Per provare si usano dati finti</Punto>
+    <Punto nota="Si lavora su una copia, non sul database vero.">Il database di prova è separato</Punto>
+    <Punto nota="Prima di mandarli a Claude coprite nomi ed email.">Screenshot e log sono controllati</Punto>
+  </Checklist>
+
+  <h2>Le impostazioni, una volta ogni tanto</h2>
+  <Checklist>
+    <Punto nota="Lo decidete voi sull'account personale.">Addestramento</Punto>
+    <Punto nota="Le chat restano finché non le cancellate; esistono chat temporanee.">Cronologia</Punto>
+    <Punto nota="Cosa ricorda di voi l'AI tra una chat e l'altra.">Memoria</Punto>
+    <Punto nota="Collegate solo quello che serve, quando serve.">Connettori</Punto>
+  </Checklist>
+  <p>Dove si trovano, servizio per servizio: <a href="../privacy-servizi/">scheda U.4</a>.</p>
+
+  <p class="footnote scheda-fonti">Nel corso: <RimandoSlide slide="account-personale-lavoro" />, <RimandoSlide slide="memoria-cronologia-connettori" />, <RimandoSlide slide="incollare-consegnare" />, <RimandoSlide slide="regole-pratiche-dati" />, <RimandoSlide slide="progetti-web-dati" />, <RimandoSlide slide="si-puo-incollare" />, <RimandoSlide slide="cosa-devo-fare" />.</p>
+</Scheda>

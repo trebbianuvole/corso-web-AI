@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.4 Claude" titolo="Le parole da conoscere">
@@ -11,4 +12,8 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card titolo="Skill">Un pacchetto di istruzioni, ed eventualmente script, che Claude carica solo quando serve. Come una ricetta di famiglia per un compito preciso.</Card>
   </Grid>
   <p class="footnote">Poi ci sono i connettori, che collegano Claude ad altre app come Gmail o GitHub. Li vedremo in un capitolo successivo.</p>
+  <Voce termine="Chatbot">un programma che risponde alle domande. Ogni passo lo decidete voi, e il lavoro lo fate voi.</Voce>
+  <Voce termine="Agente">un'AI che riceve un obiettivo e lo porta a termine da sola, in più passaggi: cerca, legge file, scrive codice, lo prova, corregge.</Voce>
+  <Voce termine="Artifact">una pagina, un'app o un documento creato da Claude, che si apre, si modifica e si condivide con un link.</Voce>
+  <Voce termine="Skill">un pacchetto di istruzioni, ed eventualmente script, che Claude carica solo quando serve per un compito preciso.</Voce>
 </Slide>

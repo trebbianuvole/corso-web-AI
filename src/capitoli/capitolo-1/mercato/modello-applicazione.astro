@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.3 Il mercato" titolo="Modello e applicazione non sono la stessa cosa" lead="Claude, ChatGPT e Gemini sono applicazioni, cioè prodotti. Dentro lavorano dei modelli, e spesso potete scegliere quale.">
@@ -17,4 +18,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
   </div>
   <Card variante="sky mt-m" titolo="Perché vi interessa">Quando qualcuno dice «ChatGPT ha sbagliato» o «Claude è più bravo», chiedetevi: quale modello, dentro quale applicazione, con quali impostazioni?</Card>
+  <Voce termine="Modello e applicazione">il modello è il motore che scrive le risposte, con un nome e una versione; l'applicazione è quello che aprite e usate (la chat, l'app, i file). Lo stesso modello può stare in applicazioni diverse.</Voce>
 </Slide>

@@ -6,8 +6,8 @@ import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="4.3 Git" titolo="Il repository" lead="Una cartella di progetto che Git tiene d'occhio. Dentro c'è una cartella nascosta, .git, dove sta tutta la storia.">
   <Defs classe="mt-m" slot="intro">
-    <Def termine="git init">trasforma la cartella in cui siete in un repository.</Def>
-    <Def termine="git clone indirizzo">scarica un repository che esiste già, con tutta la sua storia.</Def>
+    <Def termine="git init" glossario={false}>trasforma la cartella in cui siete in un repository.</Def>
+    <Def termine="git clone indirizzo" glossario={false}>scarica un repository che esiste già, con tutta la sua storia.</Def>
   </Defs>
   <div>
     <div class="term" role="img" aria-label="Il comando git init crea un repository vuoto nella cartella sito-rina">

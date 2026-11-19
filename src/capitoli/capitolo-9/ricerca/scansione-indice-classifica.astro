@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="9.1 Come funziona la ricerca" titolo="Scansione, indice, classifica" lead="Tre lavori diversi, fatti da programmi diversi, in momenti diversi.">
@@ -10,4 +11,6 @@ import Slide from "../../../components/slide/Slide.astro";
   </div>
   <Card variante="sky mt-m" titolo="Cosa vuol dire per voi">Se il crawler non trova la pagina, non entra nell'indice; se non è nell'indice, non compare in nessuna classifica. Il primo lavoro è farsi leggere.</Card>
   <p class="footnote">Fonte: <a href="https://developers.google.com/search/docs/fundamentals/how-search-works" target="_blank" rel="noopener">Google Search Central, come funziona la Ricerca</a>.</p>
+  <Voce termine="Crawler">il programma che visita le pagine del web seguendo i link, per conto di un motore di ricerca o di un'azienda di AI.</Voce>
+  <Voce termine="Indicizzazione">quando un motore di ricerca salva una pagina nel suo archivio. Una pagina non indicizzata non compare nei risultati.</Voce>
 </Slide>

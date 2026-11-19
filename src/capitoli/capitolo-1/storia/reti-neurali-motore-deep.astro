@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.1 Breve storia" titolo="Le reti neurali, il motore del deep learning">
@@ -12,4 +13,6 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
   </div>
   <p class="footnote">L'idea si ispira, molto alla lontana, ai neuroni del cervello. Per approfondire: <a href="https://it.wikipedia.org/wiki/Rete_neurale_artificiale" target="_blank" rel="noopener">Rete neurale artificiale su Wikipedia</a>.</p>
+  <Voce termine="Rete neurale">un programma fatto di tanti «neuroni» semplici, disposti in strati: ognuno moltiplica i numeri che riceve per dei pesi, li somma e passa il risultato avanti. Impara correggendo i pesi un poco alla volta.</Voce>
+  <Voce termine="Peso">il numero che dice quanto conta un ingresso per un neurone. Addestrare una rete vuol dire trovare i pesi giusti.</Voce>
 </Slide>

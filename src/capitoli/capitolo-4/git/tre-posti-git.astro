@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="4.3 Git" titolo="Dal file alla storia, in tre posti" lead="Una modifica fa tre tappe. Quella di mezzo serve a scegliere cosa mettere in ogni fotografia.">
@@ -22,4 +23,5 @@ import Slide from "../../../components/slide/Slide.astro";
 <text x="610" y="235" class="num" text-anchor="middle">git commit</text>
 </svg></figure>
   <p class="footnote">In inglese: working directory, staging area, repository. Nelle guide trovate anche «index» al posto di staging area.</p>
+  <Voce termine="Area di preparazione">in Git, il posto di mezzo tra i file modificati e la storia: con <code>git add</code> scegliete cosa mettere nella prossima fotografia.</Voce>
 </Slide>

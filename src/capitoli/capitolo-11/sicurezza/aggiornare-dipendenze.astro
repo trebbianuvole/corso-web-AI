@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" split kicker="11.3 La sicurezza del codice generato" titolo="Aggiornare le dipendenze" lead="Le dipendenze sono le librerie degli altri dentro il vostro progetto, elencate in package.json. Ogni settimana in qualcuna si scopre una falla.">
@@ -20,4 +21,5 @@ import Slide from "../../../components/slide/Slide.astro";
 
 <span class="u">&gt; npm run build</span>      <span class="dim"># e poi i test</span></pre>
   </div>
+  <Voce termine="Dipendenza">una libreria di altri usata dal vostro progetto, elencata in <code>package.json</code>. Va tenuta aggiornata.</Voce>
 </Slide>

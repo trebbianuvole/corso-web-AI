@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="3.2 Agenti e skill" titolo="Skill, subagent, MCP: a cosa serve cosa">
@@ -13,4 +14,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </tbody>
   </table>
   <p class="footnote">Si combinano: un agente usa le skill, chiama i subagent e passa dai server MCP. I server MCP li vediamo nella 3.3; nella 3.4 li ritroviamo tutti in Claude Code.</p>
+  <Voce termine="Subagent">un altro agente, con un compito e una memoria suoi, a cui l'agente principale affida un pezzo di lavoro.</Voce>
 </Slide>

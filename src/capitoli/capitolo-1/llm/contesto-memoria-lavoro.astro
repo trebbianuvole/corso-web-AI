@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="1.2 Come funziona un LLM" titolo="Il contesto: la memoria di lavoro" lead="È tutto quello che il modello vede in quel momento: le vostre istruzioni, la conversazione, i file allegati, la sua risposta.">
@@ -8,4 +9,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card titolo="Quello che non c'è, non esiste">Se un'informazione non è nel contesto il modello non la conosce, o la tira a indovinare. Una nuova chat parte da zero.</Card>
     <Card titolo="Più materiale, risposte migliori">Allegare il documento giusto vale più di dieci domande ben scritte.</Card>
   </div>
+  <Voce termine="Contesto">tutto quello che il modello ha davanti in una conversazione: messaggi, file, istruzioni. È la sua memoria di lavoro: quello che non c'è, non lo conosce.</Voce>
 </Slide>

@@ -1,5 +1,6 @@
 ---
 import Card from "../../../components/Card.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} classe="compact" kicker="2.5 I dati" titolo="I formati dei dati" lead="Gli stessi dati si possono scrivere in modi diversi. Sono tutti file di testo: si aprono e si leggono, senza paura.">
@@ -21,4 +22,5 @@ fatta in casa.
 **12 euro**</pre><p class="mt-m"><code>##</code> fa un titolo, <code>**</code> il grassetto.</p></div>
   </div>
   <Card variante="sky mt-m" titolo="Li ritroverete in Keystatic">Keystatic salva i contenuti proprio così: i dati in YAML o JSON, i testi in Markdown. Nel capitolo 8 aprirete questi file e capirete cosa c'è dentro.</Card>
+  <Voce termine="JSON">un formato di testo per i dati, fatto di nomi e valori tra parentesi graffe. Le API rispondono quasi sempre così.</Voce>
 </Slide>

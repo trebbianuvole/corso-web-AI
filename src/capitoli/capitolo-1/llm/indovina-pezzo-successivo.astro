@@ -1,4 +1,5 @@
 ---
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} split kicker="1.2 Come funziona un LLM" titolo="Fa una cosa sola: indovina il pezzo successivo" lead="Guarda tutto il testo che ha davanti, calcola quale pezzo è più probabile che venga dopo, lo aggiunge. Poi ricomincia. Parola dopo parola, nasce una risposta.">
@@ -14,4 +15,5 @@ import Slide from "../../../components/slide/Slide.astro";
     </div>
     <p class="footnote" style="margin-top:14px">Numeri di esempio.</p>
   </div>
+  <Voce termine="Modello linguistico">un modello che, dato un testo, calcola quale pezzo è più probabile che venga dopo. Ripetuto pezzo dopo pezzo, scrive.</Voce>
 </Slide>

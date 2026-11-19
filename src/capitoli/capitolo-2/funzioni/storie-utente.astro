@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="2.6 Le storie" titolo="Utenti e casi d'uso" lead="Ogni funzione nasce da una persona che vuole fare qualcosa. Si scrive in una frase sola, sempre uguale.">
@@ -10,4 +11,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card variante="peach" tag="PrenotaAula" titolo="La web app">«Come docente voglio prenotare un'aula libera per fare lezione senza sorprese.»<br>«Come segreteria voglio vedere le prenotazioni della settimana per organizzare le pulizie.»</Card>
   </Grid>
   <p class="footnote">In inglese si chiamano <i>user stories</i>, storie utente. Il «perché» non è un dettaglio: dice cosa conta davvero.</p>
+  <Voce termine="Storia utente">una funzione scritta dal punto di vista di chi la usa, in una frase: «Come [chi] voglio [cosa] per [perché]».</Voce>
 </Slide>

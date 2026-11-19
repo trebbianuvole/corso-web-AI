@@ -1,6 +1,7 @@
 ---
 import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
+import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} tipo="concetto" kicker="11.1 Verificare è il lavoro vero" titolo="Tre livelli di test" lead="Tre domande diverse, che si fanno con strumenti diversi. Un prodotto le passa tutte e tre, non solo la prima.">
@@ -10,4 +11,5 @@ import Slide from "../../../components/slide/Slide.astro";
     <Card variante="peach" tag="3" titolo="È sicuro, veloce, accessibile?">Le cose che l'utente non vede finché non vanno storte. Si prova con controlli e strumenti appositi (11.3, 11.4, 7.6).</Card>
   </Grid>
   <Card variante="sky mt-m" titolo="L'AI tende a fermarsi al primo">Se le chiedete «funziona?», controlla il primo livello. Gli altri due vanno chiesti per nome.</Card>
+  <Voce termine="Test">un controllo, a mano o automatico, che un pezzo del prodotto faccia quello che deve. Un test automatico si può rifare in pochi secondi a ogni modifica.</Voce>
 </Slide>

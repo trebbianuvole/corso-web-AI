@@ -5,10 +5,10 @@ import Slide from "../../../../components/slide/Slide.astro";
 ---
 <Slide {...Astro.props} kicker="1.1 Le reti neurali da vicino" titolo="Un neurone artificiale" lead="Un neurone prende una decisione semplice. Proviamo con una domanda: «oggi vado al mare?»" split>
   <Defs classe="mt-m" slot="intro">
-    <Def termine="Ingressi">i fatti: c'è il sole? fa caldo? vengono gli amici? 1 vuol dire sì, 0 vuol dire no.</Def>
-    <Def termine="Pesi">quanto conta ogni fatto. Per voi gli amici contano più del caldo.</Def>
-    <Def termine="Somma">ogni ingresso per il suo peso, tutto sommato.</Def>
-    <Def termine="Soglia">se la somma arriva alla soglia, la risposta è sì.</Def>
+    <Def termine="Ingressi" glossario={false}>i fatti: c'è il sole? fa caldo? vengono gli amici? 1 vuol dire sì, 0 vuol dire no.</Def>
+    <Def termine="Pesi" glossario={false}>quanto conta ogni fatto. Per voi gli amici contano più del caldo.</Def>
+    <Def termine="Somma" glossario={false}>ogni ingresso per il suo peso, tutto sommato.</Def>
+    <Def termine="Soglia" glossario={false}>se la somma arriva alla soglia, la risposta è sì.</Def>
   </Defs>
   <figure class="figure"><svg class="diagram" viewBox="0 0 560 340" role="img" aria-labelledby="neu-t neu-d"><title id="neu-t">Un neurone che decide se andare al mare</title><desc id="neu-d">Tre ingressi: sole vale 1 con peso 3, caldo vale 1 con peso 2, amici vale 0 con peso 4. La somma è 3 più 2 più 0, cioè 5. La soglia è 4: 5 la supera, quindi la risposta è sì, al mare.</desc>
 <line x1="96" y1="70" x2="290" y2="170" class="w-hot"/>
