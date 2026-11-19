@@ -1,0 +1,20 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.2 Come un modello usa gli strumenti" titolo="Perché gli errori si sommano" lead="Un agente fa dieci passi di fila. Se ogni passo riesce quasi sempre, quante volte arriva in fondo senza nemmeno un errore?" split>
+  <Card variante="peach mt-m" titolo="Il conto" slot="intro">Si moltiplica: 0,9 × 0,9 × … dieci volte. Ogni passo «quasi sicuro» toglie un po' di sicurezza a tutto il lavoro.</Card>
+  <div>
+    <div class="ng-bars-head" aria-hidden="true"><span>ogni passo</span><span>tutti e dieci i passi riusciti</span><span></span><span></span></div>
+    <div class="ng-bars">
+      <div class="ng-row"><span class="w">al 90%</span><span class="track"><span class="fill" style="width:35%"></span></span><span class="pct">35%</span><span></span></div>
+      <div class="ng-row"><span class="w">al 95%</span><span class="track"><span class="fill" style="width:60%"></span></span><span class="pct">60%</span><span></span></div>
+      <div class="ng-row top"><span class="w">al 99%</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="pct">90%</span><span></span></div>
+    </div>
+    <div class="grid g2 mt-l">
+      <Card variante="good" titolo="Passi piccoli">Meno passi per ogni lavoro, meno occasioni di sbagliare. Un compito alla volta (3.4.4).</Card>
+      <Card variante="good" titolo="Verifiche in mezzo">Build, test, una prova nel browser: se un passo sbaglia, l'errore si ferma lì invece di passare ai successivi.</Card>
+    </div>
+  </div>
+  <p class="footnote" slot="intro">Conto semplificato: suppone che i passi sbaglino indipendentemente l'uno dall'altro. Nella realtà un agente può anche accorgersi di un errore e correggerlo, come nella slide precedente.</p>
+</Slide>
