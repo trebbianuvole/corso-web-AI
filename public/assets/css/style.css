@@ -1645,9 +1645,32 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 /* Home: apertura più bassa, così l'elenco dei corsi si vede subito */
 .home-hero.breve { min-height: 62vh; }
 
-/* Home: elenco dei corsi, con il lucchetto al posto del numero */
-.lesson-list.corsi a { align-items: center; }
-.lesson-list.corsi .n { display: flex; font-size: 1.7em; }
+/* Il logo di Noema Lab: il fiore nel tondo nero.
+   Nella home è alto come la N del titolo e poggia sulla sua stessa riga;
+   nelle barre in alto accompagna il nome. */
+.marchio-home {
+  display: flex;
+  align-items: baseline;
+  gap: .14em;
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 9vw, 8.5rem);
+  margin-top: .25em;
+}
+.marchio-home .logo-noema { flex: none; width: var(--altezza-n, .67em); height: var(--altezza-n, .67em); }
+.marchio-home .gen-title { font-size: 1em; margin-top: 0; }
+.home-link { display: inline-flex; align-items: center; white-space: pre; }
+.home-link .logo-noema { width: 1.6em; height: 1.6em; margin-right: 8px; }
+
+/* Home: elenco dei corsi, con il logo dell'ente al posto del numero
+   e il lucchetto nel pulsante «Entra» */
+.lesson-list.corsi { --colonna-logo: 7.5em; }
+.lesson-list.corsi a { align-items: center; grid-template-columns: var(--colonna-logo) 1fr auto; }
+.lesson-list.corsi .logo-ente img { display: block; width: 100%; height: auto; }
+.lesson-list.corsi .go { display: inline-flex; align-items: center; gap: .4em; }
+@media (max-width: 640px) {
+  .lesson-list.corsi { --colonna-logo: 5.5em; }
+  .lesson-list.corsi a { grid-template-columns: var(--colonna-logo) 1fr; }
+}
 .nota-accesso { margin-top: 18px; color: var(--muted); font-size: .85em; }
 
 /* Barra in alto delle pagine riservate: chi è entrato, «Esci» */

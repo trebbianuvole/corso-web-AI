@@ -15,7 +15,10 @@ const passi = [
 <main>
   <section class="home-hero breve">
     <p class="eyebrow">Formazione sull'intelligenza artificiale</p>
-    <h1 class="gen-title" id="gen-title" aria-label="Noema Lab" data-passi={JSON.stringify(passi)}>Noema Lab</h1>
+    <div class="marchio-home">
+      <img class="logo-noema" src="assets/img/noema-lab.webp" alt="" width="512" height="512">
+      <h1 class="gen-title" id="gen-title" aria-label="Noema Lab" data-passi={JSON.stringify(passi)}>Noema Lab</h1>
+    </div>
     <div class="gen-candidates" id="gen-candidates" aria-hidden="true"></div>
     <p class="sub">Corsi per capire come funziona l'intelligenza artificiale e per lavorarci insieme, con giudizio.</p>
   </section>
@@ -26,11 +29,11 @@ const passi = [
       {corsi.map(c => (
         <li>
           <a href={`${c.slug}/`}>
-            <span class="n" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            <span class="n logo-ente">
+              {c.logo && <img src={c.logo.src} alt={c.logo.alt} width={c.logo.larghezza} height={c.logo.altezza}>}
             </span>
             <span class="title">{c.titolo}<span class="desc">{c.descrizione}</span></span>
-            <span class="go">Entra<span class="sr-only"> nel corso (accesso riservato)</span></span>
+            <span class="go"><svg aria-hidden="true" viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Entra<span class="sr-only"> nel corso (accesso riservato)</span></span>
           </a>
         </li>
       ))}
@@ -38,10 +41,6 @@ const passi = [
     <p class="nota-accesso">I corsi sono riservati agli iscritti: nome utente e password li consegna il docente.</p>
   </section>
 </main>
-
-<footer class="site-foot">
-  Noema Lab. Sito costruito con Claude, pubblicato da GitHub con Vercel.
-</footer>
 
 <script is:inline src={conVersione("assets/js/home.js")}></script>
 </Pagina>
