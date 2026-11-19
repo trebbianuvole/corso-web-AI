@@ -1,0 +1,13 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 L'AI e la matematica, da vicino" titolo="I problemi di Erdős (gennaio 2026)" lead="Paul Erdős, matematico ungherese, ha lasciato centinaia di problemi aperti. Oggi sono raccolti in un sito, ciascuno con il suo stato: aperto, risolto, smentito." split>
+  <Card variante="peach mt-m" titolo="Cosa è successo" slot="intro">Secondo l'archivio tenuto dal matematico Terence Tao, GPT-5.2 ha dato soluzioni complete e corrette ai problemi 205 e 652, per cui non si conoscevano soluzioni, e ad altri tre.</Card>
+  <div class="stack">
+    <Card variante="good" titolo="Chi ha controllato">I matematici, uno per uno. Per il problema 397 la dimostrazione è stata anche tradotta in Lean, un linguaggio che il computer sa controllare (1.3.a5).</Card>
+    <Card variante="bad" titolo="Un passo falso, qualche mese prima">A ottobre 2025 dirigenti di OpenAI avevano annunciato che GPT-5 aveva «risolto» dieci problemi. In realtà aveva trovato articoli che li avevano già risolti. Gli annunci sono stati ritirati.</Card>
+    <Card variante="sky" titolo="La cautela di Tao">Sono i problemi «più facili da cogliere»: risolvibili con tecniche note, forse rimasti aperti solo perché nessuno ci aveva provato davvero.</Card>
+  </div>
+  <p class="footnote" slot="intro">Fonti: <a href="https://www.renyi.hu/en/news/we-are-midst-historic-moment-erdos-problems-solved-chatgpt" target="_blank" rel="noopener">Istituto Rényi, 23 gennaio 2026</a>; <a href="https://the-decoder.com/terence-tao-says-gpt-5-2-pro-cracked-an-erdos-problem-but-warns-the-win-says-more-about-speed-than-difficulty/" target="_blank" rel="noopener">The Decoder, su Tao e il problema 397</a>; <a href="https://the-decoder.com/leading-openai-researcher-announced-a-gpt-5-math-breakthrough-that-never-happened/" target="_blank" rel="noopener">The Decoder, ottobre 2025</a>.</p>
+</Slide>

@@ -1,0 +1,15 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.3 L'AI e la matematica, da vicino" titolo="La congettura Jacobiana (luglio 2026)" lead="Una congettura è un'affermazione che tutti credono vera ma che nessuno ha dimostrato. Questa l'aveva proposta Ott-Heinrich Keller nel 1939. Ed era falsa." split>
+  <Card variante="sky mt-m" titolo="La domanda, in parole semplici" slot="intro">Prendete una trasformazione dello spazio fatta di polinomi. Se, vista da vicino, in ogni punto si può disfare, allora si può disfare anche tutta intera? Quasi tutti pensavano di sì.</Card>
+  <div class="stack">
+    <Card variante="peach" titolo="Il controesempio">Levent Alpöge, matematico che lavora ad Anthropic, ha trovato con Claude Fable 5 una trasformazione in tre variabili che manda tre punti diversi nello stesso punto. Quindi non si può disfare: la congettura è falsa.</Card>
+    <Card variante="good" titolo="La verifica">Controllare un controesempio è facile: basta fare i conti. Il risultato era già controllato in Lean quando è stato annunciato, e altri l'hanno ricontrollato per conto loro.</Card>
+    <Card variante="bad" titolo="Chi ha fatto cosa">Il problema l'aveva suggerito un altro matematico, Akhil Mathew. La ricerca l'ha impostata Alpöge; quanto abbia fatto il modello da solo non è stato raccontato nei dettagli.</Card>
+  </div>
+  <p class="footnote" slot="intro">Fonti: <a href="https://fortune.com/2026/07/21/ai-solves-jacobian-conjecture-levant-alpoge-claude-fable-5/" target="_blank" rel="noopener">Fortune, 21 luglio 2026</a>; <a href="https://sciencedaily.com/releases/2026/08/260804034634.htm" target="_blank" rel="noopener">ScienceDaily, agosto 2026</a>; <a href="https://github.com/KitaKen1/jacobian-conjecture-counterexample-lean" target="_blank" rel="noopener">una verifica indipendente in Lean</a>.</p>
+  <Voce termine="Congettura">un'affermazione matematica che si crede vera ma che nessuno ha ancora dimostrato. Se qualcuno trova un caso in cui non vale (un controesempio), è falsa.</Voce>
+</Slide>
