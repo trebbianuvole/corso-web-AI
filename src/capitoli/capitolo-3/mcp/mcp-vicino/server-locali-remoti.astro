@@ -1,0 +1,12 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="3.3 MCP da vicino" titolo="Server locali e remoti" lead="Un server MCP può girare sul vostro computer o stare su internet. Cambia come si collega, e cosa può toccare." split>
+  <Card variante="bad mt-m" titolo="Prima di collegarlo" slot="intro">Chiedetevi chi l'ha scritto, cosa può leggere e cosa può cambiare. Un server che legge pagine web o email può portare dentro istruzioni nascoste (5.3).</Card>
+  <div class="stack">
+    <Card variante="peach" tag="Locale" titolo="Sul vostro computer">Claude Code lo avvia come un programma e ci parla direttamente. Lavora con i vostri file e i vostri permessi.<br><code>claude mcp add --transport stdio nome -- comando</code></Card>
+    <Card variante="sky" tag="Remoto" titolo="Su internet">Ha un indirizzo web, come un sito. Di solito si entra con il proprio account del servizio. I connettori di claude.ai sono di questo tipo.<br><code>claude mcp add --transport http nome https://…</code></Card>
+  </div>
+  <p class="footnote" slot="intro">Fonti: <a href="https://modelcontextprotocol.io/specification/2026-07-28/basic/transports" target="_blank" rel="noopener">specifica di MCP, i trasporti</a>; <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">Claude Code, MCP</a>.</p>
+</Slide>
