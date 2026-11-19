@@ -2,6 +2,7 @@
 // Scheda aggiornabile U.4: impostazioni sulla privacy dei principali servizi di AI.
 // Quando cambia qualcosa: aggiornate i dati e la data in «aggiornato».
 import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
 ---
 <Scheda sigla="U.4" titolo="Le impostazioni sulla privacy" aggiornato="2026-11-18" descrizione="Scheda aggiornabile del corso: dove si spegne l'uso delle conversazioni per l'addestramento in Claude, ChatGPT e Gemini, e cosa resta comunque.">
   <p class="lead">Dove si decide se le vostre conversazioni servono ad addestrare i modelli, negli account personali dei tre servizi più usati. Per gli account di lavoro valgono i contratti dell'azienda.</p>
@@ -29,5 +30,5 @@ import Scheda from "../../layouts/Scheda.astro";
   <h2>Da ricordare</h2>
   <p>Spegnere l'addestramento vale per le conversazioni future. I nomi dei menu cambiano spesso, anche da un'app all'altra dello stesso servizio: se non trovate la voce, cercate «privacy» o «dati» nelle impostazioni.</p>
 
-  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic</a>; <a href="https://help.openai.com/en/articles/7730893" target="_blank" rel="noopener">OpenAI, controlli dei dati</a> e <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">uso dei dati</a>; <a href="https://support.google.com/gemini/answer/13594961?hl=it" target="_blank" rel="noopener">Google, privacy delle app Gemini</a>. Nel corso: slide <a href="../../capitolo-5/#5-1-2">5.1.2</a> e <a href="../../capitolo-5/#5-1-5">5.1.5</a>.</p>
+  <p class="footnote scheda-fonti">Fonti, controllate il 18 novembre 2026: <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic</a>; <a href="https://help.openai.com/en/articles/7730893" target="_blank" rel="noopener">OpenAI, controlli dei dati</a> e <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">uso dei dati</a>; <a href="https://support.google.com/gemini/answer/13594961?hl=it" target="_blank" rel="noopener">Google, privacy delle app Gemini</a>. Nel corso: slide <RimandoSlide slide="addestramento-dipende" breve /> e <RimandoSlide slide="aprite-impostazioni" breve />.</p>
 </Scheda>
