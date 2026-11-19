@@ -69,10 +69,11 @@ docs/scaletta-corso.md            la scaletta del corso
 
   Il layout passa a ogni slide `id`, `numero` e `sezione` (il `data-chapter` che la collega al pulsante nella barra in alto). Per questo ogni file di slide comincia con `<Slide {...Astro.props} …>` o `<Apertura {...Astro.props} …>`.
 - **Il componente `Slide`.**
-  - Props: `kicker` (numero e nome della sezione, es. `2.4 Lo stack`), `titolo` (l'`<h2>`), `titoloStile`, `lead`, `split` (due colonne: a sinistra kicker, titolo, lead e lo slot `intro`), `classe` (classi della `<section>`, es. `compact`), `interno` (classi di `.slide-inner`) e `tipo` (l'etichetta accanto al kicker: `concetto`, `esempio`, `demo`, `attivita`, `compito`, `con-ai`, `checklist`).
+  - Props: `kicker` (vedi sotto), `titolo` (l'`<h2>`), `titoloStile`, `lead`, `split` (due colonne: a sinistra kicker, titolo, lead e lo slot `intro`), `classe` (classi della `<section>`, es. `compact`), `interno` (classi di `.slide-inner`) e `tipo` (l'etichetta accanto al kicker: `concetto`, `esempio`, `demo`, `attivita`, `compito`, `con-ai`, `checklist`).
   - Il prop `approfondimenti` lo passa il layout: non si scrive a mano.
   - Il contenuto va nello slot ed è HTML normale.
   - kicker, titolo e lead accettano HTML semplice.
+- **Il kicker** è il numero e il nome della sezione, es. `2.4 Lo stack`. Se il nome della sezione è lungo si usa la forma breve, sempre la stessa in tutta la sezione (es. `3.4 Vibe coding` per «Vibe coding e Claude Code»). Se la slide appartiene a un argomento più piccolo dentro la sezione, il suo nome segue dopo un punto in mezzo con gli spazi: `2.2 Dal piano al progetto · POC`. Non si ripete come argomento quello che dice già l'etichetta (`tipo`), per esempio «Con l'AI» o «Attività». Fanno eccezione la copertina (`Capitolo N`), il compito per la volta dopo (`Per la prossima volta`) e gli approfondimenti (`X.Y <titolo dell'approfondimento>`).
 - **Fonti e note** vanno nella `.footnote`, con i link che si aprono in una nuova scheda. Tutti i link esterni delle slide finiscono da soli nella pagina `/fonti/`.
 - **Glossario.** Ogni `<Def>` entra nella scheda S.1; quelli che non sono termini si escludono con `glossario={false}`. Un termine spiegato nel testo o in una `Card` si segna, nel file della slide, con `<Voce termine="…">definizione breve</Voce>` (non si vede nella slide). Quando una slide nuova spiega un termine, aggiungete la voce.
 - **Graffe.** In un file `.astro` le `{ }` sono espressioni: nel testo e nei blocchi di codice si scrivono `&#123;` e `&#125;`.
