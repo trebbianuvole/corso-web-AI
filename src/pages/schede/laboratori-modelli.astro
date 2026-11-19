@@ -1,0 +1,31 @@
+---
+// Scheda aggiornabile U.1: i laboratori e i loro modelli.
+// Quando cambia qualcosa: aggiornate i dati, le fonti e la data in «aggiornato».
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+---
+<Scheda sigla="U.1" aggiornato="2026-11-19" descrizione="Scheda aggiornabile del corso: chi costruisce i modelli di AI più usati, con quali famiglie di modelli e quali prodotti per il pubblico.">
+  <p class="lead">Pochi laboratori costruiscono i modelli più potenti. Le versioni cambiano ogni poche settimane: qui trovate la famiglia di modelli più recente di ciascuno al giorno del controllo, e il prodotto con cui la usate.</p>
+
+  <h2>I laboratori</h2>
+  <table class="compare">
+    <thead><tr><th>Laboratorio</th><th>Modelli più recenti</th><th>Prodotto per il pubblico</th><th>Pesi</th></tr></thead>
+    <tbody>
+      <tr><td>Anthropic <span class="muted">(Stati Uniti)</span></td><td data-label="Modelli">Claude: Haiku, Sonnet e Opus 5.5, Fable 5.2</td><td data-label="Prodotto">Claude, Claude Code</td><td data-label="Pesi">Chiusi</td></tr>
+      <tr><td>OpenAI <span class="muted">(Stati Uniti)</span></td><td data-label="Modelli">GPT-6, in più taglie (Astra, Sol, Luna); le versioni 6.1 e 6.2 escono a tappe</td><td data-label="Prodotto">ChatGPT, Codex</td><td data-label="Pesi">Chiusi</td></tr>
+      <tr><td>Google <span class="muted">(Stati Uniti)</span></td><td data-label="Modelli">Gemini 4, in più modelli (Argon, Carbon, Hydrogen, Neon)</td><td data-label="Prodotto">Gemini, dentro Android, Gmail, Docs e la ricerca</td><td data-label="Pesi">Chiusi</td></tr>
+      <tr><td>xAI <span class="muted">(Stati Uniti)</span></td><td data-label="Modelli">Grok 4.7</td><td data-label="Prodotto">Grok, anche dentro X</td><td data-label="Pesi">Chiusi</td></tr>
+      <tr><td>Meta <span class="muted">(Stati Uniti)</span></td><td data-label="Modelli">Muse Spark</td><td data-label="Prodotto">Meta AI, dentro WhatsApp, Instagram e Facebook</td><td data-label="Pesi">Chiusi</td></tr>
+      <tr><td>Mistral <span class="muted">(Francia)</span></td><td data-label="Modelli">Mistral Medium 3.5</td><td data-label="Prodotto">Vibe (prima si chiamava Le Chat)</td><td data-label="Pesi">Aperti</td></tr>
+      <tr><td>DeepSeek <span class="muted">(Cina)</span></td><td data-label="Modelli">DeepSeek V4 (Pro) e V4.1 (Flash)</td><td data-label="Prodotto">DeepSeek</td><td data-label="Pesi">Aperti</td></tr>
+      <tr><td>Alibaba <span class="muted">(Cina)</span></td><td data-label="Modelli">Qwen3.8</td><td data-label="Prodotto">Qwen</td><td data-label="Pesi">Aperti, alcuni con licenze proprie</td></tr>
+      <tr><td>Moonshot AI <span class="muted">(Cina)</span></td><td data-label="Modelli">Kimi K3 e K3.1</td><td data-label="Prodotto">Kimi</td><td data-label="Pesi">Aperti, con licenza propria</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">«Pesi aperti» vuol dire che il modello si può scaricare e far girare in proprio (<RimandoSlide slide="pesi-aperti-chiusi" breve />). Aperto non vuol dire libero da regole: ogni modello ha la sua licenza, da leggere prima di usarlo in un lavoro.</p>
+
+  <h2>Come leggere questa tabella</h2>
+  <p>I nomi delle versioni servono a capire se un articolo o un video è recente, non a scegliere. Per scegliere contano le prove sul vostro lavoro (<RimandoSlide slide="scegliere-modello" breve />) e le classifiche lette con giudizio (<RimandoSlide slide="classifiche-limiti" breve />). I modelli di Claude, quelli che usiamo nel corso, hanno la loro scheda: <a href="../modelli-claude/">U.2</a>.</p>
+
+  <p class="footnote scheda-fonti">Fonti, controllate il 19 novembre 2026: <a href="https://openai.com/index/gpt-6-for-everyone/" target="_blank" rel="noopener">OpenAI, GPT-6 per tutti</a> e <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">note di rilascio di ChatGPT</a>; <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/" target="_blank" rel="noopener">Google, i modelli Gemini</a>; <a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener">xAI, Grok 4.7</a>; <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener">Meta, Muse Spark</a>; <a href="https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/" target="_blank" rel="noopener">Mistral Medium 3.5</a> e <a href="https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" target="_blank" rel="noopener">Le Chat diventa Vibe</a>; <a href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener">DeepSeek, registro delle versioni</a>; <a href="https://qwen.ai/blog?id=qwen3.8" target="_blank" rel="noopener">Qwen3.8</a>; <a href="https://huggingface.co/moonshotai" target="_blank" rel="noopener">Moonshot AI su Hugging Face</a>; <a href="https://platform.claude.com/docs/en/about-claude/models/overview" target="_blank" rel="noopener">Anthropic, i modelli</a>. Nel corso: slide <RimandoSlide slide="chi-costruisce-modelli" />.</p>
+</Scheda>
