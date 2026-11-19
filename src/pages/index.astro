@@ -3,15 +3,18 @@
 import Pagina from "../layouts/Pagina.astro";
 import { capitoli } from "../lib/capitoli";
 import { conVersione } from "../lib/versione";
+import { schede } from "../lib/schede";
 
 const TOTALE = 12; // capitoli previsti dal corso
 const pronti = new Map(capitoli.map(c => [c.numero, c]));
 const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
+const operative = schede.filter(s => s.tipo === "operativa" && s.sigla !== "S.1");
+const aggiornabili = schede.filter(s => s.tipo === "aggiornabile");
 ---
 <Pagina titolo="Costruire siti web con l'AI" descrizione="Materiali del corso ENGIM di uso dell'AI e vibe coding: dodici capitoli per progettare e pubblicare un sito con l'intelligenza artificiale.">
 <main>
   <section class="home-hero">
-    <p class="eyebrow">Corso ENGIM di sviluppo web</p>
+    <p class="eyebrow">Corso ENGIM sull'AI e sul vibe coding</p>
     <h1 class="gen-title" id="gen-title" aria-label="Costruire siti web con l'AI">Costruire siti web con l'AI</h1>
     <div class="gen-candidates" id="gen-candidates" aria-hidden="true"></div>
     <p class="sub">Uso dell'intelligenza artificiale e vibe coding: dodici capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.</p>
@@ -35,6 +38,24 @@ const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
         );
       })}
     </ol>
+  </section>
+
+  <section class="lessons consulta" aria-labelledby="consultare">
+    <h2 id="consultare">Da consultare</h2>
+    <p class="muted consulta-intro">Le schede da tenere a portata di mano mentre lavorate, anche da stampare. <a href="schede/">Tutte le schede</a></p>
+    <ul class="indice-schede in-evidenza">
+      <li><a href="schede/glossario/"><span class="sigla">S.1</span><span class="t">Glossario</span><span class="b">Tutte le parole del corso, con il rimando alla slide che le spiega.</span></a></li>
+      <li><a href="fonti/"><span class="sigla">Fonti</span><span class="t">Per saperne di più</span><span class="b">Le fonti citate nelle slide, capitolo per capitolo.</span></a></li>
+    </ul>
+    <h3>Schede operative</h3>
+    <ul class="indice-schede">
+      {operative.map(s => <li><a href={`schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+    </ul>
+    <h3>Schede aggiornabili</h3>
+    <p class="muted">Modelli, prodotti, prezzi e strumenti: con la data dell'ultimo controllo.</p>
+    <ul class="indice-schede">
+      {aggiornabili.map(s => <li><a href={`schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+    </ul>
   </section>
 </main>
 

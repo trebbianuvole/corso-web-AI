@@ -1567,7 +1567,7 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .scheda pre.code { overflow-x: auto; }
 
 .indice-schede { list-style: none; padding: 0; margin: 1em 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.indice-schede a { display: grid; grid-template-columns: 3.4em 1fr; gap: 2px 12px; height: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-s); color: var(--ink); text-decoration: none; }
+.indice-schede a { display: grid; grid-template-columns: 3.4em 1fr; align-content: start; gap: 2px 12px; height: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-s); color: var(--ink); text-decoration: none; }
 .indice-schede a:hover, .indice-schede a:focus-visible { border-color: var(--orange); }
 .indice-schede .sigla { grid-row: span 2; font-family: var(--f-display); font-weight: 800; color: var(--orange-deep); }
 .indice-schede .t { font-family: var(--f-display); font-weight: 700; }
@@ -1624,3 +1624,7 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 }
 .cerca[hidden], .glossario > div[hidden], [data-lettera][hidden] { display: none; }
 .glossario dd::first-letter { text-transform: uppercase; }
+.consulta h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin-top: 1.8em; }
+.consulta-intro { margin-bottom: 4px; }
+.consulta .indice-schede.in-evidenza a { background: var(--peach); border-color: transparent; }
+.consulta .indice-schede.in-evidenza a:hover, .consulta .indice-schede.in-evidenza a:focus-visible { border-color: var(--orange); }
