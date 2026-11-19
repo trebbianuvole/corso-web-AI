@@ -40,6 +40,8 @@ Etichette:
 - Il resto dello schermo lo occupano le slide dell'approfondimento, con colori sul blu e sul rosa al posto dell'arancione e del beige.
 - Dalla barra a sinistra si torna al punto esatto della lezione.
 
+**Il quiz di fine capitolo** (realizzato per tutti i capitoli): ogni capitolo si chiude con una slide «Quiz finale», fuori dalla numerazione (indirizzo `capitolo-N/#quiz`, pulsante «Quiz» nella barra in alto), che porta alla pagina del quiz. I dettagli sono in «I quiz dei capitoli», in fondo.
+
 ---
 
 ## Capitolo 1 — Capire l'AI e orientarsi negli strumenti
@@ -908,6 +910,31 @@ Realizzate; indice in `/schede/`, richiamate dalla home e dalle slide collegate.
 - U.6 Costi e piani gratuiti: `/schede/costi-piani/`
 
 **Per saperne di più:** le fonti, capitolo per capitolo: `/fonti/`, generata dai link delle slide.
+
+## I quiz dei capitoli
+
+Realizzati; uno per capitolo, in `/capitolo-N/quiz/`. Le domande stanno in `src/capitoli/capitolo-N/quiz.ts`.
+
+- **Come si svolge.**
+  - 20 domande a risposta multipla, 5 opzioni (A–E), una sola giusta.
+  - Una domanda alla volta: si può saltare una domanda, tornare indietro, cambiare la risposta o lasciarla in bianco fino alla consegna.
+  - Le risposte restano nel browser finché non si rifà il quiz.
+- **Punteggio in centesimi.**
+  - +5 per ogni risposta giusta, −1 per ogni sbagliata, 0 per ogni domanda lasciata vuota.
+  - Il massimo è 100; il minimo è −20, e si mostra così com'è.
+- **Dopo la consegna,** per ogni domanda:
+  - la risposta giusta e quella data;
+  - una spiegazione breve: perché è giusta e dov'era la trappola;
+  - il link alla slide da ripassare.
+- **Su cosa vertono.**
+  - Circa 16-17 domande sul percorso principale, distribuite su tutte le sezioni.
+  - 2-4 sugli approfondimenti, nei capitoli che ne hanno.
+  - Solo quello che dicono le slide, e niente che invecchia: versioni, prezzi, prodotti e interfacce stanno nelle schede aggiornabili.
+- **Come sono scritte.**
+  - Non banali, con qualche trabocchetto leale: casi concreti (Da Rina, PrenotaAula), concetti vicini da distinguere, «quale **non**…», affermazioni quasi giuste.
+  - Opzioni di lunghezza simile.
+  - Ogni lettera è quella giusta 4 volte per capitolo.
+- **Non è una prova sicura.** Il sito è statico: le risposte stanno nella pagina, codificate ma leggibili da chi le cerca. Serve per l'autoverifica, o come prova in aula sotto gli occhi del docente.
 
 ## Cosa non ho accolto dei commenti, e perché
 

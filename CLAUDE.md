@@ -29,10 +29,12 @@ src/pages/sviluppo-web-ai/        pagina del corso; l'elenco dei capitoli viene 
 src/pages/accedi/                 pagina di accesso (il modulo lo riceve il middleware)
 src/pages/gestione/utenti/        genera password e righe per la variabile UTENTI (solo account con *)
 src/pages/[capitolo]/index.astro  una pagina per capitolo (getStaticPaths)
+src/pages/[capitolo]/quiz.astro   il quiz di fine capitolo: /capitolo-N/quiz/
 src/pages/lezione-N/              vecchi indirizzi, rimandano a capitolo-N conservando il #
 src/layouts/Pagina.astro          <head> comune (titolo, descrizione, font, style.css)
 src/layouts/Capitolo.astro        barra in alto generata dalle sezioni, slide, approfondimenti, hint, script, rimandi
 src/layouts/Scheda.astro          pagina di consultazione, con «Aggiornato al…» per le schede aggiornabili e le schede vicine
+src/layouts/Quiz.astro            la pagina del quiz di un capitolo
 src/components/slide/Slide.astro  slide normale (con etichetta e pulsante dell'approfondimento)
 src/components/slide/Apertura.astro  apertura di sezione (X.Y.0)
 src/components/slide/Approfondimento.astro  la finestra di un approfondimento
@@ -40,6 +42,7 @@ src/components/                   Card, Grid, Steps + Passo, Defs + Def, SieteQu
                                   Voce (glossario), RimandoSlide, Checklist + Punto, Copiabile (schede)
 src/capitoli/capitolo-N/capitolo.ts   dati del capitolo e ordine di sezioni e slide
 src/capitoli/capitolo-N/copertina-N.astro
+src/capitoli/capitolo-N/quiz.ts   le 20 domande del quiz di fine capitolo
 src/capitoli/capitolo-N/<chiave-sezione>/<nome-slide>.astro   una slide per file
 src/capitoli/capitolo-N/<chiave-sezione>/<chiave-approfondimento>/<nome-slide>.astro   slide di un approfondimento
 src/pages/schede/<nome>.astro     schede di consultazione: /schede/<nome>/; indice in /schede/
@@ -48,6 +51,7 @@ src/lib/numerazione.mjs           numerazione e rimandi (JS puro, usato anche da
 src/lib/capitoli.ts               carica capitoli e slide per le pagine
 src/lib/consultazione.ts          titoli delle slide, glossario e fonti, letti dal sorgente delle slide
 src/lib/schede.ts                 elenco di tutte le schede (pagina del corso, indice, navigazione)
+src/lib/quiz.ts                   carica e controlla i quiz dei capitoli; punti per giusta, sbagliata e vuota
 src/lib/corsi.mjs                 i corsi e gli indirizzi che appartengono a ciascuno
 src/lib/accesso.mjs               la logica del middleware: utenti, password, sessioni, permessi
 middleware.ts                     aggancia src/lib/accesso.mjs al Routing Middleware di Vercel
@@ -56,7 +60,7 @@ scripts/prova-accesso.mjs         server di prova dell'accesso (npm run prova-ac
 src/indirizzi.json                registro degli id pubblicati
 public/assets/css/style.css       un solo foglio di stile, variabili in :root
 public/assets/img/                immagini delle slide (catture dello schermo), con .cattura per mostrarle
-public/assets/js/                 deck.js (navigazione), approfondimenti.js, next-word.js, timeline.js, layers.js (anche i pulsanti Copia), rete-minuscola.js, glossario.js, home.js (titolo animato, passi in data-passi), accedi.js, sessione.js, utenti.js
+public/assets/js/                 deck.js (navigazione), approfondimenti.js, next-word.js, timeline.js, layers.js (anche i pulsanti Copia), rete-minuscola.js, glossario.js, home.js (titolo animato, passi in data-passi), accedi.js, sessione.js, utenti.js, quiz.js
 docs/scaletta-corso.md            la scaletta del corso
 ```
 
@@ -73,7 +77,7 @@ docs/scaletta-corso.md            la scaletta del corso
   - Il prop `approfondimenti` lo passa il layout: non si scrive a mano.
   - Il contenuto va nello slot ed è HTML normale.
   - kicker, titolo e lead accettano HTML semplice.
-- **Il kicker** è il numero e il nome della sezione, es. `2.4 Lo stack`. Se il nome della sezione è lungo si usa la forma breve, sempre la stessa in tutta la sezione (es. `3.4 Vibe coding` per «Vibe coding e Claude Code»). Se la slide appartiene a un argomento più piccolo dentro la sezione, il suo nome segue dopo un punto in mezzo con gli spazi: `2.2 Dal piano al progetto · POC`. Non si ripete come argomento quello che dice già l'etichetta (`tipo`), per esempio «Con l'AI» o «Attività». Fanno eccezione la copertina (`Capitolo N`), il compito per la volta dopo (`Per la prossima volta`) e gli approfondimenti (`X.Y <titolo dell'approfondimento>`).
+- **Il kicker** è il numero e il nome della sezione, es. `2.4 Lo stack`. Se il nome della sezione è lungo si usa la forma breve, sempre la stessa in tutta la sezione (es. `3.4 Vibe coding` per «Vibe coding e Claude Code»). Se la slide appartiene a un argomento più piccolo dentro la sezione, il suo nome segue dopo un punto in mezzo con gli spazi: `2.2 Dal piano al progetto · POC`. Non si ripete come argomento quello che dice già l'etichetta (`tipo`), per esempio «Con l'AI» o «Attività». Fanno eccezione la copertina (`Capitolo N`), il compito per la volta dopo (`Per la prossima volta`), gli approfondimenti (`X.Y <titolo dell'approfondimento>`) e la slide del quiz, generata dal layout (`Capitolo N · Quiz finale`).
 - **Fonti e note** vanno nella `.footnote`, con i link che si aprono in una nuova scheda. Tutti i link esterni delle slide finiscono da soli nella pagina `/fonti/`.
 - **Glossario.** Ogni `<Def>` entra nella scheda S.1; quelli che non sono termini si escludono con `glossario={false}`. Un termine spiegato nel testo o in una `Card` si segna, nel file della slide, con `<Voce termine="…">definizione breve</Voce>` (non si vede nella slide). Quando una slide nuova spiega un termine, aggiungete la voce.
 - **Graffe.** In un file `.astro` le `{ }` sono espressioni: nel testo e nei blocchi di codice si scrivono `&#123;` e `&#125;`.
@@ -139,6 +143,32 @@ Nella scaletta sono numerati `X.Y.a1`, `X.Y.a2`…; ogni gruppo indica la slide 
 - **Accessibilità:** focus spostato all'apertura e restituito alla chiusura, ARIA corretta, rispetto di `prefers-reduced-motion`.
 - **Telefono:** sotto i 720 px la barra laterale diventa una striscia in alto.
 - **Dove stanno:** fanno parte della pagina del capitolo (statici, nessun caricamento dal server), organizzati in componenti e file separati come le altre slide.
+
+## I quiz dei capitoli
+
+- **Cosa sono.** Ogni capitolo ha un quiz di verifica in `/capitolo-N/quiz/`.
+  - 20 domande a risposta multipla, 5 opzioni, una sola giusta.
+  - Punteggio in centesimi: +5 per ogni risposta giusta, −1 per ogni sbagliata, 0 per ogni vuota (`PUNTI` in `src/lib/quiz.ts`).
+  - Dopo la consegna c'è la correzione: risposta giusta, spiegazione, link alla slide da ripassare.
+- **Dal capitolo al quiz.** Se il capitolo ha un `quiz.ts`, `Capitolo.astro` aggiunge da solo il pulsante «Quiz» nella barra e una slide di chiusura dopo l'ultima.
+  - La slide ha id `quiz` ed è fuori dalla numerazione X.Y.Z: non va nel registro degli indirizzi.
+  - Ha `data-chapter="quiz"`, quindi `deck.js` la conta e la collega al pulsante.
+- **I dati** stanno in `src/capitoli/capitolo-N/quiz.ts`: un elenco di `{ domanda, opzioni, giusta, spiegazione, slide }`.
+  - `giusta` va da 0 (A) a 4 (E).
+  - `slide` è il nome del file della slide da ripassare, dello stesso capitolo; il link segue la slide se si sposta.
+  - I testi accettano solo `<code>`, `<em>`, `<strong>`, `<br>`; `<`, `>` e `&` si scrivono `&lt;`, `&gt;`, `&amp;`.
+- **La build si ferma** se un quiz non ha 20 domande, se una domanda non ha 5 opzioni diverse o una `giusta` valida, o se la slide citata non esiste o è di un altro capitolo. Se eliminate o spostate in un altro capitolo una slide citata da un quiz, aggiornate il quiz.
+- **Come si scrivono le domande:**
+  - solo quello che dicono le slide; niente che invecchia (versioni, prezzi, prodotti, interfacce);
+  - 16-17 domande sul percorso principale, distribuite su tutte le sezioni, e 2-4 sugli approfondimenti, se ci sono;
+  - non banali, con trabocchetti leali: casi concreti, concetti vicini da distinguere, «quale **non**…», affermazioni quasi giuste; sempre una sola risposta difendibile con la slide;
+  - opzioni di lunghezza simile;
+  - ogni lettera A–E giusta 4 volte per capitolo;
+  - spiegazione di 1-3 frasi, che non cita le lettere;
+  - stile del corso: il «voi», frasi brevi, niente punti esclamativi.
+- **Se cambia una slide** citata da un quiz, ricontrollate le domande che la citano: la risposta giusta deve restare quella che la slide sostiene.
+- **Le risposte nel browser.** Le risposte date restano in `localStorage`, legate a un'impronta delle domande: se il quiz cambia, quelle salvate si scartano.
+- **Le soluzioni** sono nella pagina in base64, per non leggerle a colpo d'occhio nel sorgente. Il sito è statico: non è una protezione vera.
 
 ## Etichette e pagine di consultazione
 
