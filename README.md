@@ -45,6 +45,7 @@ src/
   indirizzi.json              registro degli indirizzi pubblicati
 public/assets/
   css/style.css               stile unico per tutto il sito (con lo stile di stampa delle schede)
+  img/                        immagini delle slide, per esempio la cattura di GitHub in 4.4.4
   js/deck.js                  navigazione a slide (frecce, F per schermo intero)
   js/approfondimenti.js       le finestre degli approfondimenti (capitoli che ne hanno)
   js/rete-minuscola.js        demo "una rete minuscola che impara" (1.1.a5)

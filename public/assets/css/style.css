@@ -1705,3 +1705,8 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .scheda .primo-avvio summary h2 { display: inline; margin: 0; }
 .segreto { margin-top: 12px; display: grid; gap: 10px; justify-items: start; }
 .segreto .copy-wrap { width: 100%; }
+
+/* Una cattura dello schermo dentro una slide (es. 4.4.4) */
+.cattura { margin: 0; }
+.cattura img { display: block; width: 100%; max-width: 560px; height: auto; max-height: 62vh; object-fit: contain; object-position: left top; border: 1px solid var(--line); border-radius: var(--r-m); background: #fff; box-shadow: 0 6px 24px rgba(31, 35, 48, .08); }
+.cattura figcaption { margin-top: 10px; max-width: 560px; font-size: .8em; color: var(--muted); }

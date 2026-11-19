@@ -2,8 +2,8 @@
 import Card from "../../../components/Card.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="4.4 Rami" titolo="I conflitti: due mani sulla stessa riga" lead="Anna e Luca, in due rami diversi, cambiano la stessa riga degli orari. Al momento del merge Git non sa quale tenere.">
-  <div class="versus mt-l">
+<Slide {...Astro.props} split kicker="4.4 Rami" titolo="I conflitti: due mani sulla stessa riga" lead="Anna e Luca, in due rami diversi, cambiano la stessa riga degli orari. Al momento del merge Git non sa quale tenere.">
+  <div class="versus mt-m" slot="intro">
     <div class="card">
       <span class="tag">Ramo di Anna</span>
       <p><code>Aperto dalle 12 alle 14.30</code></p>
@@ -14,5 +14,9 @@ import Slide from "../../../components/slide/Slide.astro";
       <p><code>Aperto dalle 12 alle 15, anche la domenica</code></p>
     </div>
   </div>
-  <Card variante="sky mt-m" titolo="Non è un errore">Se due persone toccano righe diverse, Git unisce da solo. Il conflitto nasce solo sulla stessa riga, ed è Git che chiede a voi di decidere.</Card>
+  <Card slot="intro" variante="sky mt-m" titolo="Non è un errore">Se due persone toccano righe diverse, Git unisce da solo. Il conflitto nasce solo sulla stessa riga, ed è Git che chiede a voi di decidere.</Card>
+  <figure class="cattura">
+    <img src="../assets/img/github-conflitto-pr.png" width="622" height="533" alt="Il riquadro «Merge status» di una pull request su GitHub. Dice «This branch has conflicts that must be resolved» ed elenca cinque file in conflitto: CLAUDE.md, README.md, style.css, Scheda.astro e index.astro. Accanto c'è il pulsante «Resolve conflicts»; il pulsante «Merge pull request» è grigio, non si può usare.">
+    <figcaption>Su GitHub il conflitto si vede nella pull request: il merge è bloccato finché i file elencati non sono sistemati. È successo alla pull request delle schede di questo sito.</figcaption>
+  </figure>
 </Slide>

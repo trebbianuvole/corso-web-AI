@@ -55,6 +55,7 @@ test/                             test dell'accesso (npm test)
 scripts/prova-accesso.mjs         server di prova dell'accesso (npm run prova-accesso)
 src/indirizzi.json                registro degli id pubblicati
 public/assets/css/style.css       un solo foglio di stile, variabili in :root
+public/assets/img/                immagini delle slide (catture dello schermo), con .cattura per mostrarle
 public/assets/js/                 deck.js (navigazione), approfondimenti.js, next-word.js, timeline.js, layers.js (anche i pulsanti Copia), rete-minuscola.js, glossario.js, home.js (titolo animato, passi in data-passi), accedi.js, sessione.js, utenti.js
 docs/scaletta-corso.md            la scaletta del corso
 ```
