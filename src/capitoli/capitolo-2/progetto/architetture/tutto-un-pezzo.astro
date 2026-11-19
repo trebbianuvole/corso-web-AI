@@ -1,0 +1,25 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="2.2 Tre modi di mettere insieme un'applicazione" titolo="Tutto in un pezzo" lead="La trattoria piccola: una sola stanza, e Rina fa tutto. Cucina, serve ai tavoli, fa il conto. Nel software si chiama applicazione monolitica: un solo programma, in un solo posto." split>
+  <Card variante="sky mt-m" titolo="Un esempio" slot="intro">Un sito WordPress nella sua forma classica: pagine, logica e database stanno sullo stesso server e si installano insieme.</Card>
+  <div>
+    <figure class="figure"><svg class="diagram" viewBox="0 0 520 260" role="img" aria-labelledby="mono-t mono-d"><title id="mono-t">Un'applicazione monolitica</title><desc id="mono-d">Un solo grande blocco, su un solo server, che contiene insieme le pagine, la logica e i dati.</desc>
+<rect x="60" y="20" width="400" height="220" rx="18" class="box-hot"/>
+<text x="260" y="56" text-anchor="middle" class="big">un solo programma</text>
+<rect x="100" y="78" width="320" height="42" rx="10" class="mappa"/>
+<text x="260" y="105" text-anchor="middle" class="lbl">le pagine</text>
+<rect x="100" y="128" width="320" height="42" rx="10" class="mappa"/>
+<text x="260" y="155" text-anchor="middle" class="lbl">la logica: regole, controlli, calcoli</text>
+<rect x="100" y="178" width="320" height="42" rx="10" class="mappa"/>
+<text x="260" y="205" text-anchor="middle" class="lbl">i dati</text>
+</svg></figure>
+    <div class="grid g2 mt-m">
+      <Card variante="good" titolo="Pro">Semplice da costruire, da capire e da pubblicare. Se qualcosa si rompe, si cerca in un posto solo.</Card>
+      <Card variante="bad" titolo="Contro">Quando cresce diventa un groviglio. Se un pezzo si blocca, si ferma tutto. Per reggere più visite si deve ingrandire tutto insieme.</Card>
+    </div>
+  </div>
+  <Voce termine="Applicazione monolitica">un'applicazione fatta di un solo programma, che contiene insieme pagine, logica e dati e gira in un solo posto.</Voce>
+</Slide>

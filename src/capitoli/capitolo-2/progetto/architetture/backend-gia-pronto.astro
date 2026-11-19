@@ -1,0 +1,20 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="2.2 Tre modi di mettere insieme un'applicazione" titolo="Il backend già pronto" lead="Invece di costruire la cucina, la si affitta già attrezzata. Un servizio come Supabase vi dà database, accessi degli utenti e archivio dei file. Voi scrivete il frontend e le regole." split>
+  <Fragment slot="intro">
+    <div class="grid g2 mt-m">
+      <Card variante="good" titolo="Pro">Si parte subito. Le parti delicate, come le password, le gestisce chi lo fa di mestiere.</Card>
+      <Card variante="bad" titolo="Contro">Dipendete da loro: prezzi, limiti, cambiamenti. E le regole su chi vede cosa le dovete scrivere bene voi (10.4).</Card>
+    </div>
+    <p class="footnote">Si chiama Backend-as-a-Service, «backend come servizio». Fonte: <a href="https://supabase.com/docs" target="_blank" rel="noopener">documentazione di Supabase</a>.</p>
+  </Fragment>
+  <div class="stack">
+    <Card variante="peach" titolo="I nostri due progetti">Il sito di Da Rina non ha un backend suo: pagine statiche con Astro, contenuti con Keystatic. PrenotaAula ha bisogno di utenti e prenotazioni: frontend con Astro e backend già pronto, Supabase.</Card>
+    <Card variante="sky" tag="Con l'AI" titolo="Se non le dite niente, sceglie l'AI">Di solito propone quello che è più diffuso, non per forza quello che serve a voi (2.4.10). Scrivetelo nel prompt: «Usa Astro e Supabase, niente server nostro. Se pensi che serva altro, chiedimelo prima.»</Card>
+    <Card titolo="Provate in aula">Chiedete a Claude solo «costruiscimi un sito per prenotare le aule». Guardate cosa propone, e confrontatelo con le tre architetture.</Card>
+  </div>
+  <Voce termine="Backend-as-a-Service">un servizio che offre un backend già pronto (database, accessi, archivio dei file): voi scrivete il frontend e le regole. Esempio: Supabase.</Voce>
+</Slide>

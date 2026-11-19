@@ -45,6 +45,19 @@ const capitolo: Capitolo = {
         "quanto-costa-cambiare-idea",
         "domande-tutti-dimenticano",
       ],
+      approfondimenti: [
+        {
+          chiave: "architetture",
+          titolo: "Tre modi di mettere insieme un'applicazione",
+          pulsante: "tre modi di mettere insieme un'applicazione",
+          da: "architettura-dove-sta-ogni",
+          slide: [
+            "tutto-un-pezzo",
+            "pezzo-per-lavoro",
+            "backend-gia-pronto",
+          ],
+        },
+      ],
     },
     {
       chiave: "web",
