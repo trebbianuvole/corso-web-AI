@@ -1,0 +1,22 @@
+---
+import Card from "../../../../components/Card.astro";
+import Passo from "../../../../components/Passo.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Steps from "../../../../components/Steps.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come si addestra un LLM" titolo="Il giudizio umano" lead="Per insegnare cosa è una buona risposta, non bastano gli esempi: servono anche i giudizi." split>
+  <Steps classe="mt-m" slot="intro">
+    <Passo titolo="Due risposte" inLinea>il modello risponde due volte alla stessa domanda</Passo>
+    <Passo titolo="Una scelta" inLinea>una persona indica la migliore</Passo>
+    <Passo titolo="Una correzione" inLinea>il modello impara a preferire risposte come quella</Passo>
+  </Steps>
+  <div class="stack">
+    <Card variante="sky" titolo="Anche i principi scritti">Anthropic dà a Claude una «costituzione»: un testo che spiega quali valori seguire e perché. Il modello la usa per giudicare e correggere le proprie risposte. L'ultima versione è di gennaio 2026.</Card>
+    <Card variante="bad" titolo="Il rischio: compiacere">Se si premiano le risposte che piacciono, il modello impara a dare ragione. Ad aprile 2025 OpenAI ha ritirato un aggiornamento di GPT-4o perché era diventato troppo accondiscendente.</Card>
+    <Card variante="good" titolo="Per voi">Se l'AI vi dà subito ragione, chiedetele: «Cosa c'è di sbagliato in quello che ho scritto?»</Card>
+  </div>
+  <p class="footnote" slot="intro">Fonti: <a href="https://arxiv.org/abs/2212.08073" target="_blank" rel="noopener">Anthropic, Constitutional AI, 2022</a>; <a href="https://www.anthropic.com/news/claude-new-constitution" target="_blank" rel="noopener">Anthropic, la nuova costituzione di Claude, 2026</a>; <a href="https://openai.com/index/expanding-on-sycophancy/" target="_blank" rel="noopener">OpenAI, maggio 2025</a>.</p>
+  <Voce termine="RLHF">«apprendimento per rinforzo dal feedback umano»: le persone scelgono la risposta migliore tra due, e il modello impara a preferire risposte come quella.</Voce>
+  <Voce termine="Compiacenza">la tendenza di un modello a dare ragione a chi scrive, anche quando sbaglia. In inglese <em>sycophancy</em>.</Voce>
+</Slide>
