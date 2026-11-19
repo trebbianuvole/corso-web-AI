@@ -1,0 +1,121 @@
+---
+// Il quiz di fine capitolo: venti domande a risposta multipla, una alla volta.
+// Senza JavaScript si vedono tutte in elenco, senza punteggio; quiz.js
+// gestisce navigazione, risposte, consegna, punteggio e correzione.
+import { createHash } from "node:crypto";
+import Pagina from "./Pagina.astro";
+import type { Capitolo } from "../lib/numerazione.mjs";
+import { NUMERO_DOMANDE, PUNTI, type DomandaPronta } from "../lib/quiz";
+import { conVersione } from "../lib/versione";
+
+interface Props {
+  cap: Capitolo;
+  domande: DomandaPronta[];
+}
+const { cap, domande } = Astro.props;
+const LETTERE = "ABCDE";
+const massimo = NUMERO_DOMANDE * PUNTI.giusta;
+
+// Le soluzioni servono solo dopo la consegna. Le passo a quiz.js codificate in
+// base64, perché non si leggano a colpo d'occhio nel sorgente della pagina.
+// Non è una protezione: il sito è statico, le risposte stanno comunque qui.
+const soluzioni = domande.map(d => ({
+  giusta: d.giusta,
+  spiegazione: d.spiegazione,
+  slide: { numero: d.rimando.numero, titolo: d.rimando.titolo, indirizzo: `../../${d.rimando.indirizzo}` },
+}));
+const codificate = Buffer.from(JSON.stringify(soluzioni), "utf8").toString("base64");
+
+// Se le domande cambiano cambia la versione, e le risposte salvate nel browser
+// per la versione vecchia non si caricano più.
+const versione = createHash("sha256")
+  .update(JSON.stringify(domande.map(d => [d.domanda, d.opzioni, d.giusta])))
+  .digest("hex")
+  .slice(0, 10);
+---
+<Pagina titolo={`Quiz del capitolo ${cap.numero}: ${cap.home.titolo}`} descrizione={`Venti domande a risposta multipla per verificare il capitolo ${cap.numero} del corso: ${cap.home.desc}`} radice="../../">
+<header class="scheda-top">
+  <a class="home-link" href="../../sviluppo-web-ai/">Corso <span>AI</span></a>
+  <a class="muted" href="../#quiz">← Torna al capitolo {cap.numero}</a>
+</header>
+
+<main
+  class="quiz"
+  id="quiz"
+  data-quiz={cap.slug}
+  data-versione={versione}
+  data-soluzioni={codificate}
+  data-punti={JSON.stringify(PUNTI)}
+>
+  <p class="kicker">Capitolo {cap.numero} · Quiz finale</p>
+  <h1>{cap.home.titolo}</h1>
+  <ul class="quiz-regole">
+    <li><strong>{NUMERO_DOMANDE} domande</strong>, cinque risposte possibili per ciascuna: una sola è giusta.</li>
+    <li><strong>+{PUNTI.giusta}</strong> per ogni risposta giusta, <strong>−{-PUNTI.sbagliata}</strong> per ogni sbagliata, <strong>0</strong> per ogni domanda lasciata vuota. Il massimo è {massimo}.</li>
+    <li>Potete saltare una domanda, tornarci e cambiare la risposta fino alla consegna.</li>
+  </ul>
+  <noscript><p class="quiz-nojs">Per spostarvi tra le domande e calcolare il punteggio serve JavaScript: qui sotto le domande sono tutte in elenco.</p></noscript>
+
+  <section class="quiz-esito" aria-labelledby="quiz-esito-titolo" tabindex="-1" hidden>
+    <h2 id="quiz-esito-titolo">Il vostro risultato</h2>
+    <p class="quiz-punteggio"><span data-punteggio></span><span class="su">/{massimo}</span></p>
+    <ul class="quiz-conti">
+      <li class="ok"><strong data-giuste></strong> <span data-parola-giuste>giuste</span> <span class="muted" data-punti-giuste></span></li>
+      <li class="ko"><strong data-sbagliate></strong> <span data-parola-sbagliate>sbagliate</span> <span class="muted" data-punti-sbagliate></span></li>
+      <li class="vuote"><strong data-vuote></strong> senza risposta <span class="muted">0</span></li>
+    </ul>
+    <p class="quiz-esito-nota">Qui sotto c'è la correzione, domanda per domanda: la risposta giusta, il perché e la slide da ripassare.</p>
+    <p class="quiz-azioni"><button class="btn ghost" type="button" data-rifai>Rifai il quiz</button></p>
+  </section>
+
+  <nav class="quiz-mappa" aria-label="Vai alla domanda" hidden>
+    {domande.map((_, i) => <button type="button" data-vai={i}>{i + 1}</button>)}
+  </nav>
+
+  <ol class="quiz-domande">
+    {domande.map((d, i) => (
+      <li class="quiz-domanda" id={`domanda-${i + 1}`}>
+        <fieldset>
+          <legend tabindex="-1">
+            <span class="quiz-quale">Domanda {i + 1} di {NUMERO_DOMANDE}</span>
+            <span class="quiz-testo" set:html={d.domanda} />
+          </legend>
+          <div class="quiz-opzioni">
+            {d.opzioni.map((o, j) => (
+              <label class="quiz-opzione">
+                <input type="radio" name={`d${i + 1}`} value={j} />
+                <span class="quiz-lettera">{LETTERE[j]}</span>
+                <span class="quiz-opzione-testo" set:html={o} />
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <div class="quiz-correzione" hidden></div>
+      </li>
+    ))}
+  </ol>
+
+  <div class="quiz-comandi" hidden>
+    <div class="quiz-sposta">
+      <button class="btn ghost" type="button" data-prima>← Precedente</button>
+      <button class="btn ghost" type="button" data-dopo>Successiva →</button>
+    </div>
+    <p class="quiz-stato" aria-live="polite" data-stato></p>
+    <div class="quiz-azioni">
+      <button class="btn ghost" type="button" data-bianco>Lascia in bianco</button>
+      <button class="btn orange" type="button" data-consegna>Consegna</button>
+    </div>
+  </div>
+
+  <dialog class="quiz-conferma" aria-labelledby="quiz-conferma-titolo" aria-describedby="quiz-conferma-testo">
+    <h2 id="quiz-conferma-titolo" data-titolo></h2>
+    <p id="quiz-conferma-testo" data-testo></p>
+    <div class="quiz-azioni">
+      <button class="btn ghost" type="button" data-annulla></button>
+      <button class="btn orange" type="button" data-conferma></button>
+    </div>
+  </dialog>
+</main>
+
+<script is:inline src={`../../${conVersione("assets/js/quiz.js")}`}></script>
+</Pagina>

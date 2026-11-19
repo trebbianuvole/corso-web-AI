@@ -5,7 +5,9 @@ import Pagina from "./Pagina.astro";
 import type { Capitolo } from "../lib/numerazione.mjs";
 import { slideDel, approfondimentiDel, rimandiDel } from "../lib/capitoli";
 import Approfondimento from "../components/slide/Approfondimento.astro";
+import Slide from "../components/slide/Slide.astro";
 import { conVersione } from "../lib/versione";
+import { quizDel, NUMERO_DOMANDE, PUNTI } from "../lib/quiz";
 
 interface Props {
   cap: Capitolo;
@@ -14,6 +16,10 @@ const { cap } = Astro.props;
 const slide = slideDel(cap);
 const gruppi = approfondimentiDel(cap);
 const rimandi = rimandiDel(cap);
+// Il quiz di fine capitolo (src/capitoli/capitolo-N/quiz.ts), se c'è: il layout
+// aggiunge il pulsante «Quiz» nella barra e una slide di chiusura (id "quiz"),
+// fuori dalla numerazione X.Y.Z, che porta alla pagina /capitolo-N/quiz/.
+const quiz = quizDel(cap);
 
 // Indirizzi pubblicati in passato che oggi puntano altrove (vedi src/indirizzi.json)
 const codiceRimandi = Object.keys(rimandi).length
@@ -43,6 +49,7 @@ const codiceRimandi = Object.keys(rimandi).length
     {cap.sezioni.map(s => (
       <button type="button" data-chapter={s.chiave}>{s.num} <span class="ch-name">{s.nome}</span></button>
     ))}
+    {quiz && <button type="button" data-chapter="quiz">Quiz</button>}
   </nav>
   <span class="counter" aria-live="polite"></span>
   <button class="icon-btn" type="button" data-fullscreen aria-label="Schermo intero" title="Schermo intero (F)">
@@ -57,6 +64,17 @@ const codiceRimandi = Object.keys(rimandi).length
     ? <Componente id={id} numero={numero} sezione={sezione} approfondimenti={approfondimenti} />
     : <Componente id={id} numero={numero} sezione={sezione} />
 ))}
+{quiz && (
+  <Slide id="quiz" numero={`${cap.numero}.Q`} sezione="quiz" kicker={`Capitolo ${cap.numero} · Quiz finale`} titolo="Verificate cosa avete capito" lead={`${NUMERO_DOMANDE} domande sul capitolo, cinque risposte possibili per ciascuna. Una sola è giusta. Leggete bene: qualcuna è a trabocchetto.`}>
+    <div class="quiz-punti mt-l">
+      <div class="ok"><strong>+{PUNTI.giusta}</strong><span>per ogni risposta giusta</span></div>
+      <div class="ko"><strong>−{-PUNTI.sbagliata}</strong><span>per ogni risposta sbagliata</span></div>
+      <div><strong>0</strong><span>per ogni domanda lasciata vuota</span></div>
+    </div>
+    <p class="mt-l"><a class="btn orange quiz-via" href="quiz/">Inizia il quiz →</a></p>
+    <p class="footnote">Valutazione in centesimi: il massimo è {NUMERO_DOMANDE * PUNTI.giusta}. Potete saltare una domanda e tornarci; le risposte restano nel vostro browser finché non rifate il quiz.</p>
+  </Slide>
+)}
 </main>
 
 {gruppi.map(g => <Approfondimento chiave={g.chiave} titolo={g.titolo} num={g.num} idDa={g.idDa} posti={g.posti} />)}
