@@ -1,0 +1,93 @@
+---
+// Scheda operativa S.5: due CLAUDE.md di partenza, da copiare e adattare.
+// Riprendono le slide 6.2, 7.3, 8.5 e 10.2.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Copiabile from "../../components/Copiabile.astro";
+---
+<Scheda sigla="S.5" script={["layers.js"]} descrizione="Scheda del corso: due CLAUDE.md di partenza da copiare, uno per un sito con Astro e Keystatic e uno per una webapp con Supabase.">
+  <p class="lead">Il CLAUDE.md è il file con le regole del progetto che Claude Code carica da solo a ogni sessione. Questi due sono un punto di partenza: le parti tra parentesi quadre sono da riempire, e ogni riga che non vi serve si toglie.</p>
+
+  <h2>Le regole del file</h2>
+  <ul>
+    <li><b>Corto.</b> Si carica in ogni sessione e occupa contesto: la documentazione consiglia di restare sotto le 200 righe.</li>
+    <li><b>Concreto.</b> «Ogni pagina usa il layout Base.astro», non «scrivi codice di qualità».</li>
+    <li><b>Niente segreti</b> (sta nel repository), niente elenco dei file (Claude li legge da solo), niente diario del lavoro (va nei commit).</li>
+    <li><b>Cresce con il progetto.</b> Quando Claude sbaglia due volte la stessa cosa, si aggiunge una regola.</li>
+    <li>In un progetto che esiste già, <code>/init</code> scrive una prima versione: i comandi li trova, il perché del progetto lo scrivete voi.</li>
+  </ul>
+
+  <h2>Il sito: Astro e Keystatic</h2>
+  <p>Come quello della trattoria Da Rina.</p>
+  <Copiabile id="md-sito"># [Nome del progetto]: sito
+[Cos'è, per chi è, cosa deve fare: due righe.]
+
+## Stack
+Astro, solo pagine statiche. Keystatic per [i contenuti che cambia il cliente].
+Codice su GitHub, pubblicato con Vercel.
+
+## Comandi
+- npm run dev: sito in locale
+- npm run build: deve passare prima di ogni commit
+
+## Regole
+- Testi in italiano, tono [caldo e semplice]
+- Un componente per ogni pezzo che si ripete
+- Ogni pagina usa il layout [Base.astro]
+- Niente librerie nuove senza chiedere
+- Prima di finire: npm run build e controllo dal telefono
+
+## Design
+- Colori, caratteri e spazi: solo le variabili in [src/styles/global.css]. Mai valori scritti a mano nei componenti.
+- Pulsanti: sempre il componente [Pulsante].
+- Se serve una variabile o un componente nuovo, chiedimelo.
+
+## Tono dei testi
+- [Si dà del «voi».] Frasi corte, niente superlativi.
+- Esempi giusti: «[una frase del cliente]», «[un'altra]».
+
+## Contenuti (Keystatic)
+- Lo schema è in keystatic.config.ts: le pagine leggono i contenuti da lì, non li scrivono a mano.
+- Usa solo i campi che esistono nella documentazione di Keystatic.
+
+## Mai
+- Mai chiavi o password nei file
+- Mai inventare [piatti, prezzi, orari]: se manca un'informazione, chiedi</Copiabile>
+
+  <h2>La webapp: si aggiunge Supabase</h2>
+  <p>Come PrenotaAula. Tutto quello del sito vale ancora; in più, i dati, gli utenti e le chiavi.</p>
+  <Copiabile id="md-webapp"># [Nome del progetto]: webapp
+[Cos'è, chi la usa, cosa fa: due righe.]
+
+## Stack
+Astro, Supabase (database, accessi, permessi), GitHub e Vercel.
+
+## Comandi
+- npm run dev: app in locale
+- npm run build: deve passare prima di ogni commit
+- [npx playwright test]: i test devono passare prima di ogni pull request
+
+## Utenti e ruoli
+- [studente | docente | segreteria]: la tabella dei permessi è in [DOCUMENTO.md]
+
+## Dati (Supabase)
+- [tabella]: [colonne], [chiave esterna → altra tabella]
+- Vincolo: [per esempio, nessuna sovrapposizione per la stessa aula]
+
+## Regole sui dati
+- Ogni modifica allo schema è una migrazione, mai a mano dal pannello
+- Mai cancellare o rinominare colonne senza chiedere
+- Si prova sul progetto di prova, mai su quello vero
+
+## Sicurezza
+- L'accesso degli utenti si fa con Supabase Auth: non scrivere un sistema di login
+- Ogni permesso si controlla nel database (Row Level Security), non solo nel browser
+- Le chiavi stanno nel .env e nelle variabili di Vercel. Solo quelle pubbliche cominciano con PUBLIC_
+- Prima del codice di una funzione: elenca i casi limite e aspetta
+
+## Mai
+- Mai la chiave segreta in un file che arriva al browser
+- Mai modificare un test per farlo passare senza chiedere</Copiabile>
+
+  <p class="footnote scheda-fonti">Fonte: <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code, come ricorda il progetto</a>. Nel corso: <RimandoSlide slide="documento-claude-md" />, <RimandoSlide slide="claude-md-commentato" />, <RimandoSlide slide="cosa-non-ci-va" />, <RimandoSlide slide="claude-md-cresce" />, <RimandoSlide slide="init-claude-md" />, <RimandoSlide slide="design-system-claude-md" />, <RimandoSlide slide="tono-claude-md" />, <RimandoSlide slide="schema-claude-md" />, <RimandoSlide slide="env-vercel" />.</p>
+</Scheda>

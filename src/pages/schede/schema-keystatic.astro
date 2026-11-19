@@ -1,0 +1,104 @@
+---
+// Scheda operativa S.6: lo schema Keystatic di partenza della trattoria.
+// Sintassi controllata sulla documentazione di Keystatic: se cambia, aggiornate qui.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Copiabile from "../../components/Copiabile.astro";
+---
+<Scheda sigla="S.6" script={["layers.js"]} descrizione="Scheda del corso: lo schema Keystatic di partenza per il sito della trattoria, con piatti, orari e contatti, e i passi per installarlo in Astro.">
+  <p class="lead">Lo schema dice quali contenuti esistono e com'è fatto ciascuno. Questo è quello della trattoria: una collezione (i piatti) e due singoli (orari e contatti). Adattatelo al vostro progetto, prima su carta.</p>
+
+  <h2>Installare</h2>
+  <pre class="code"># 1. le integrazioni di Astro
+npx astro add react markdoc
+# 2. i pacchetti di Keystatic
+npm install @keystatic/core @keystatic/astro
+# 3. keystatic() in astro.config.mjs, lo schema in keystatic.config.ts
+npm run dev    # il pannello è su /keystatic</pre>
+
+  <h2>Lo schema</h2>
+  <Copiabile id="ks-schema">// keystatic.config.ts
+import &#123; config, collection, singleton, fields &#125; from "@keystatic/core";
+
+export default config(&#123;
+  // "local" mentre sviluppate; online: &#123; kind: "github", repo: "proprietario/nome-repository" &#125;
+  storage: &#123; kind: "local" &#125;,
+
+  collections: &#123;
+    piatti: collection(&#123;
+      label: "Piatti",
+      slugField: "nome",
+      path: "src/content/piatti/*",
+      schema: &#123;
+        nome: fields.slug(&#123; name: &#123; label: "Nome" &#125; &#125;),
+        categoria: fields.select(&#123;
+          label: "Categoria",
+          options: [
+            &#123; label: "Antipasti", value: "antipasti" &#125;,
+            &#123; label: "Primi", value: "primi" &#125;,
+            &#123; label: "Secondi", value: "secondi" &#125;,
+            &#123; label: "Dolci", value: "dolci" &#125;,
+          ],
+          defaultValue: "primi",
+        &#125;),
+        prezzo: fields.number(&#123; label: "Prezzo (€)" &#125;),
+        descrizione: fields.text(&#123; label: "Descrizione", multiline: true &#125;),
+        allergeni: fields.multiselect(&#123;
+          label: "Allergeni",
+          // l'elenco completo è quello del regolamento europeo: non inventatelo
+          options: [
+            &#123; label: "Glutine", value: "glutine" &#125;,
+            &#123; label: "Uova", value: "uova" &#125;,
+            &#123; label: "Latte", value: "latte" &#125;,
+            // …
+          ],
+          defaultValue: [],
+        &#125;),
+        foto: fields.image(&#123; label: "Foto", directory: "src/assets/piatti" &#125;),
+      &#125;,
+    &#125;),
+  &#125;,
+
+  singletons: &#123;
+    orari: singleton(&#123;
+      label: "Orari",
+      path: "src/content/orari",
+      schema: &#123;
+        giorni: fields.array(
+          fields.object(&#123;
+            giorno: fields.text(&#123; label: "Giorno" &#125;),
+            orario: fields.text(&#123; label: "Orario (es. 12–15, 19–23 oppure Chiuso)" &#125;),
+          &#125;),
+          &#123; label: "Giorni", itemLabel: (riga) =&gt; riga.fields.giorno.value &#125;
+        ),
+      &#125;,
+    &#125;),
+    contatti: singleton(&#123;
+      label: "Contatti",
+      path: "src/content/contatti",
+      schema: &#123;
+        indirizzo: fields.text(&#123; label: "Indirizzo" &#125;),
+        telefono: fields.text(&#123; label: "Telefono" &#125;),
+        whatsapp: fields.text(&#123; label: "Numero WhatsApp" &#125;),
+      &#125;,
+    &#125;),
+  &#125;,
+&#125;);</Copiabile>
+
+  <h2>Le scelte, una per una</h2>
+  <ul>
+    <li><b>Una scelta, non un testo libero</b> per la categoria: così nessuno scrive «primo» o «Primi piatti».</li>
+    <li><b>Un numero</b> per il prezzo: il pannello non accetta lettere.</li>
+    <li><b>Collezioni</b> per quello che si aggiunge e si toglie (i piatti), <b>singoli</b> per quello che esiste una volta (orari, contatti).</li>
+    <li><b>Un file per piatto</b> in <code>src/content/piatti/</code>: ogni modifica di Rina diventa un commit leggibile.</li>
+  </ul>
+
+  <h2>Con l'AI</h2>
+  <ul>
+    <li>Keystatic cambia e il modello ne conosce spesso una versione vecchia: dategli il link alla pagina giusta di keystatic.com e chiedetegli di leggerla prima di scrivere.</li>
+    <li>Campi come <code>fields.price</code> o <code>fields.currency</code> sembrano plausibili, ma non esistono. Se la build si lamenta di un campo sconosciuto, il primo sospetto è un'invenzione.</li>
+    <li>Per la modalità GitHub servono un adattatore (<code>npx astro add vercel</code>), un'app GitHub e quattro variabili nel <code>.env</code> e su Vercel: un passo alla volta.</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti, controllate il 19 novembre 2026: <a href="https://keystatic.com/docs/installation-astro" target="_blank" rel="noopener">Keystatic, installazione con Astro</a>; <a href="https://keystatic.com/docs/collections" target="_blank" rel="noopener">collezioni</a> e <a href="https://keystatic.com/docs/singletons" target="_blank" rel="noopener">singoli</a>; i campi <a href="https://keystatic.com/docs/fields/select" target="_blank" rel="noopener">select</a>, <a href="https://keystatic.com/docs/fields/multiselect" target="_blank" rel="noopener">multiselect</a>, <a href="https://keystatic.com/docs/fields/array" target="_blank" rel="noopener">array</a> e <a href="https://keystatic.com/docs/fields/image" target="_blank" rel="noopener">image</a>; <a href="https://keystatic.com/docs/github-mode" target="_blank" rel="noopener">modalità GitHub</a>. Nel corso: <RimandoSlide slide="schema-keystatic" />, <RimandoSlide slide="campi-keystatic" />, <RimandoSlide slide="installare-keystatic" />, <RimandoSlide slide="schema-trattoria" />, <RimandoSlide slide="online-github" />, <RimandoSlide slide="ai-sbaglia-keystatic" />.</p>
+</Scheda>
