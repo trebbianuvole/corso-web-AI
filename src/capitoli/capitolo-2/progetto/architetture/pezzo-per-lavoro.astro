@@ -1,0 +1,33 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="2.2 Tre modi di mettere insieme un'applicazione" titolo="Un pezzo per lavoro" lead="Il ristorante grande: la sala, la cucina, e i fornitori esterni per il pane e il vino. Ogni pezzo fa un lavoro solo e parla con gli altri attraverso regole precise." split>
+  <Card variante="sky mt-m" titolo="All'estremo: i microservizi" slot="intro">Decine di piccoli programmi, ognuno con il suo compito e la sua squadra. Ha senso per aziende con molti sviluppatori; per i nostri progetti è troppo.</Card>
+  <div>
+    <figure class="figure"><svg class="diagram" viewBox="0 0 520 280" role="img" aria-labelledby="sep-t sep-d"><title id="sep-t">Un'applicazione divisa in pezzi</title><desc id="sep-d">Il frontend nel browser parla con il backend sul server. Il backend parla con il database e con due servizi esterni: i pagamenti e le email.</desc>
+<rect x="20" y="20" width="180" height="70" rx="14" class="mappa"/>
+<text x="110" y="52" text-anchor="middle" class="big">frontend</text>
+<text x="110" y="76" text-anchor="middle" class="lbl">nel browser</text>
+<rect x="320" y="20" width="180" height="70" rx="14" class="box-hot"/>
+<text x="410" y="52" text-anchor="middle" class="big">backend</text>
+<text x="410" y="76" text-anchor="middle" class="lbl">sul server</text>
+<line x1="200" y1="55" x2="320" y2="55" class="freccia"/>
+<rect x="20" y="190" width="150" height="70" rx="14" class="mappa"/>
+<text x="95" y="232" text-anchor="middle" class="big">database</text>
+<rect x="190" y="190" width="150" height="70" rx="14" class="zona"/>
+<text x="265" y="222" text-anchor="middle" class="big">pagamenti</text>
+<text x="265" y="246" text-anchor="middle" class="lbl">servizio esterno</text>
+<rect x="360" y="190" width="150" height="70" rx="14" class="zona"/>
+<text x="435" y="222" text-anchor="middle" class="big">email</text>
+<text x="435" y="246" text-anchor="middle" class="lbl">servizio esterno</text>
+<line x1="370" y1="90" x2="110" y2="190" class="freccia"/>
+<line x1="400" y1="90" x2="275" y2="190" class="freccia"/>
+<line x1="430" y1="90" x2="435" y2="190" class="freccia"/>
+</svg></figure>
+    <div class="grid g2 mt-m">
+      <Card variante="good" titolo="Pro">Ogni pezzo si cambia e cresce da solo. Per i lavori difficili, come i pagamenti, si usa chi lo fa di mestiere.</Card>
+      <Card variante="bad" titolo="Contro">Più pezzi, più collegamenti che si possono rompere. Più chiavi da custodire (2.5.4), più conti da pagare.</Card>
+    </div>
+  </div>
+</Slide>
