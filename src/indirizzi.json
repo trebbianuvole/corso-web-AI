@@ -70,7 +70,20 @@
     "1-4-3": "parole-conoscere",
     "1-4-4": "nato-questo-sito",
     "1-3-5": "classifiche-limiti",
-    "1-3-6": "matematica-lezione"
+    "1-3-6": "matematica-lezione",
+    "1-2-a1": "transformer-una-slide",
+    "1-2-a2": "attenzione",
+    "1-2-a3": "scegliere-pezzo-successivo",
+    "1-2-a4": "pre-addestramento",
+    "1-2-a5": "completatore-assistente",
+    "1-2-a6": "giudizio-umano",
+    "1-2-a7": "modelli-ragionano",
+    "1-2-a8": "data-taglio",
+    "1-3-a1": "oro-olimpiadi",
+    "1-3-a2": "problemi-erdos",
+    "1-3-a3": "congettura-jacobiana",
+    "1-3-a4": "fermat-lean",
+    "1-3-a5": "dimostrazione-verificata"
   },
   "capitolo-2": {
     "s1": "copertina-2",
