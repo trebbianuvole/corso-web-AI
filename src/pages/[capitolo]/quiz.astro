@@ -1,0 +1,15 @@
+---
+// Il quiz di fine capitolo: /capitolo-1/quiz/, /capitolo-2/quiz/, …
+// Solo per i capitoli che hanno un file quiz.ts (src/lib/quiz.ts).
+import Quiz from "../../layouts/Quiz.astro";
+import { capitoli } from "../../lib/capitoli";
+import { quizDel } from "../../lib/quiz";
+
+export function getStaticPaths() {
+  return capitoli
+    .filter(cap => quizDel(cap))
+    .map(cap => ({ params: { capitolo: cap.slug }, props: { cap, domande: quizDel(cap)! } }));
+}
+const { cap, domande } = Astro.props;
+---
+<Quiz cap={cap} domande={domande} />
