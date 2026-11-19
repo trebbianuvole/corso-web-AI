@@ -3,7 +3,7 @@ import Card from "../../../components/Card.astro";
 import Voce from "../../../components/Voce.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} split kicker="2.6 Funzionalità · Criteri di accettazione" titolo="Quando una funzione è finita" lead="I criteri di accettazione sono frasi che si possono controllare: o sono vere, o no. Quando sono tutte vere, la funzione è finita.">
+<Slide {...Astro.props} tipo="concetto" split kicker="2.6 Funzionalità · Criteri di accettazione" titolo="Quando una funzione è finita" lead="I criteri di accettazione sono frasi che si possono controllare: o sono vere, o no. Quando sono tutte vere, la funzione è finita.">
   <Fragment slot="intro">
   <Card variante="sky mt-m" titolo="Li ritroverete">Nel prompt, per dire a Claude cosa deve funzionare (6.5). Nei test, per controllarlo da soli (11.2).</Card>
   <p class="footnote">Lo schema «dato che, quando, allora» in inglese è <i>Given, When, Then</i>.</p>
