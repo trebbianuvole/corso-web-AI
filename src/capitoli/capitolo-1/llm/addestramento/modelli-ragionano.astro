@@ -1,0 +1,18 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come si addestra un LLM" titolo="I modelli che ragionano" lead="Prima di rispondere scrivono una brutta copia: un ragionamento passo per passo. Di solito ne vedete solo un riassunto." split>
+  <div class="chat mt-m" slot="intro">
+    <div class="bubble user">Il menu costa 24 €. Con lo sconto studenti del 25%, e poi 2 € di coperto, quanto pago?</div>
+    <div class="bubble bot"><span class="muted">Ragionamento: il 25% di 24 è 6. 24 − 6 = 18. Il coperto si aggiunge dopo lo sconto: 18 + 2 = 20.</span><br>Pagate 20 €.</div>
+  </div>
+  <div class="stack">
+    <Card variante="good" titolo="Cosa cambia">Vanno molto meglio nei problemi a più passaggi: matematica, codice, piani. Nella gara di matematica AIME 2024, GPT-4o risolveva in media il 12% dei problemi, il primo modello che ragiona di OpenAI il 74%.</Card>
+    <Card variante="bad" titolo="Cosa non cambia">Possono ancora inventare, anche con un ragionamento che sembra filare. E pensare costa: più tempo, più token, più limiti d'uso consumati.</Card>
+    <Card variante="sky" titolo="Da dove viene">L'addestramento premia i ragionamenti che arrivano alla risposta giusta. Il primo è stato o1 di OpenAI, a settembre 2024; oggi lo fanno anche Claude, Gemini e gli altri grandi modelli.</Card>
+  </div>
+  <p class="footnote" slot="intro">Esempio di risposta costruito a mano. Fonte: <a href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener">OpenAI, «Learning to reason with LLMs», settembre 2024</a>.</p>
+  <Voce termine="Modello che ragiona">un modello addestrato a scrivere un ragionamento passo per passo prima della risposta. In inglese <em>reasoning model</em>.</Voce>
+</Slide>

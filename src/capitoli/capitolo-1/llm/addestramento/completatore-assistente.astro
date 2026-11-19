@@ -1,0 +1,26 @@
+---
+import Card from "../../../../components/Card.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come si addestra un LLM" titolo="Da completatore ad assistente" lead="Dopo il pre-addestramento si continua ad addestrare il modello su esempi di conversazioni: una domanda e una buona risposta, scritte o scelte da persone." split>
+  <Card variante="sky mt-m" titolo="Si chiama fine-tuning" slot="intro">«Messa a punto»: lo stesso modello, gli stessi pesi, corretti ancora un po' con esempi scelti. Gli esempi sono molti meno di quelli del pre-addestramento, ma insegnano il ruolo.</Card>
+  <div class="stack">
+    <div>
+      <p class="kicker">Prima: un completatore</p>
+      <div class="chat">
+        <div class="bubble user">Scrivi la ricetta della carbonara.</div>
+        <div class="bubble bot">Scrivi la ricetta dell'amatriciana. Scrivi la ricetta della gricia. Scrivi la ricetta…</div>
+      </div>
+    </div>
+    <div>
+      <p class="kicker">Dopo: un assistente</p>
+      <div class="chat">
+        <div class="bubble user">Scrivi la ricetta della carbonara.</div>
+        <div class="bubble bot">Per quattro persone servono 400 g di spaghetti, 150 g di guanciale, 4 tuorli, pecorino e pepe. Ecco i passi…</div>
+      </div>
+    </div>
+  </div>
+  <p class="footnote" slot="intro">Esempio costruito per mostrare la differenza: il primo modello continua l'elenco, come se fosse un quaderno di esercizi. Il metodo è descritto, tra gli altri, da <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener">Ouyang e altri, OpenAI, 2022</a>.</p>
+  <Voce termine="Fine-tuning">l'addestramento che si fa dopo il pre-addestramento, con esempi scelti: insegna al modello un ruolo, per esempio quello dell'assistente che risponde.</Voce>
+</Slide>

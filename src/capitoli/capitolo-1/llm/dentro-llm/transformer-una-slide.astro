@@ -1,0 +1,19 @@
+---
+import Card from "../../../../components/Card.astro";
+import Passo from "../../../../components/Passo.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Steps from "../../../../components/Steps.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Dentro un LLM" titolo="Il Transformer in una slide" lead="Quasi tutti gli LLM di oggi sono costruiti sullo stesso disegno, il Transformer. Nasce nel 2017, da un gruppo di ricercatori di Google." split>
+  <Card variante="sky mt-m" titolo="Perché ha vinto" slot="intro">Legge tutti i token insieme, non uno alla volta. Così il lavoro si divide bene tra migliaia di GPU, e si possono addestrare modelli enormi (1.1.5).</Card>
+  <Steps>
+    <Passo titolo="Token">Il testo si taglia in pezzi di parola (1.2.2).</Passo>
+    <Passo titolo="Embedding">Ogni token diventa una lista di numeri: le sue coordinate sulla mappa delle parole (1.1.a8).</Passo>
+    <Passo titolo="Strati">Decine di strati, uno sopra l'altro. In ognuno, ogni token guarda gli altri (l'attenzione, slide seguente) e aggiorna i suoi numeri.</Passo>
+    <Passo titolo="Probabilità">Alla fine esce una probabilità per ogni token possibile: quale viene dopo?</Passo>
+    <Passo titolo="Scelta">Se ne sceglie uno, si aggiunge al testo e si ricomincia dal primo passo.</Passo>
+  </Steps>
+  <p class="footnote" slot="intro">L'articolo che lo ha presentato: Vaswani e altri, <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">«Attention Is All You Need»</a>, 2017. La «T» di GPT sta per Transformer.</p>
+  <Voce termine="Transformer">il disegno su cui sono costruiti quasi tutti gli LLM: token, embedding, tanti strati con l'attenzione, e alla fine le probabilità del pezzo successivo.</Voce>
+</Slide>

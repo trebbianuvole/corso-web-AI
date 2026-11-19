@@ -1,0 +1,26 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come si addestra un LLM" titolo="La data di taglio" lead="Il modello sa solo quello che ha letto durante l'addestramento. Quello che è successo dopo, per lui, non esiste.">
+  <figure class="figure mt-m"><svg class="diagram" viewBox="0 0 760 150" role="img" aria-labelledby="tg-t tg-d"><title id="tg-t">La data di taglio sulla linea del tempo</title><desc id="tg-d">Una linea del tempo. A sinistra il periodo dei testi letti nell'addestramento, fino alla data di taglio. Poi, mesi dopo, l'uscita del modello; poi oggi, quando lo usate. Tutto quello che sta dopo la data di taglio il modello non lo sa.</desc>
+<rect x="20" y="58" width="360" height="34" rx="8" class="zona"/>
+<rect x="380" y="58" width="360" height="34" rx="8" class="box-hot"/>
+<line x1="380" y1="40" x2="380" y2="110" class="axis"/>
+<circle cx="520" cy="75" r="9" class="pt"/>
+<circle cx="700" cy="75" r="9" class="tappa-fine"/>
+<text x="200" y="81" text-anchor="middle" class="lbl">i testi che ha letto</text>
+<text x="380" y="30" text-anchor="middle" class="big">data di taglio</text>
+<text x="520" y="128" text-anchor="middle" class="lbl">esce il modello</text>
+<text x="700" y="128" text-anchor="middle" class="lbl">oggi lo usate voi</text>
+<text x="560" y="30" text-anchor="middle" class="lbl">questo non lo sa</text>
+</svg></figure>
+  <Grid colonne={2} classe="mt-m">
+    <Card variante="bad" titolo="Dove sbaglia">Versioni dei programmi, prezzi, leggi, prodotti nuovi. Scrive codice per la versione di un anno fa, senza dirvelo (2.4.10).</Card>
+    <Card variante="good" titolo="Cosa fare">Dategli la documentazione aggiornata, o chiedetegli di cercare sul web se lo strumento lo permette. Poi controllate (8.4.7).</Card>
+  </Grid>
+  <p class="footnote">Tra la data di taglio e l'uscita di un modello passano di solito alcuni mesi; poi lo si usa per mesi o anni. La data di taglio di ogni modello è nella sua documentazione.</p>
+  <Voce termine="Data di taglio">la data fino alla quale arrivano i testi letti da un modello durante l'addestramento. Quello che è successo dopo, il modello non lo sa.</Voce>
+</Slide>

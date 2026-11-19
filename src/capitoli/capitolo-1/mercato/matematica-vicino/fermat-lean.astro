@@ -1,0 +1,14 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 L'AI e la matematica, da vicino" titolo="Fermat riscritto in Lean (settembre 2026)" lead="Se n è maggiore di 2, l'equazione aⁿ + bⁿ = cⁿ non ha soluzioni con numeri interi positivi. Fermat lo scrisse nel 1637; Andrew Wiles lo dimostrò solo nel 1994, in più di cento pagine.">
+  <Grid colonne={3} classe="mt-l">
+    <Card variante="peach" titolo="Cosa ha fatto Claude">Un gruppo di agenti Claude ha tradotto tutta la dimostrazione in Lean: circa 13 milioni di righe, in circa 11 giorni, quasi da soli.</Card>
+    <Card variante="good" titolo="Chi ha controllato">Lean ha controllato ogni passo. Un altro programma ha confermato che l'enunciato è proprio quello di Fermat. Il matematico Kevin Buzzard ha rivisto il risultato.</Card>
+    <Card variante="sky" titolo="Cosa non dice">La matematica è quella di Wiles, in una versione semplificata: l'AI l'ha tradotta, non inventata. E si è appoggiata al lavoro che il gruppo di Buzzard aveva avviato nel 2024.</Card>
+  </Grid>
+  <Card variante="mt-m" titolo="Perché conta">Controllare a mano una dimostrazione lunga richiede anni a pochi esperti. Una volta in Lean, il controllo è meccanico: chiunque può rifarlo sul suo computer.</Card>
+  <p class="footnote">Fonte: <a href="https://www.anthropic.com/news/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Anthropic, 4 settembre 2026</a>. Il lavoro l'ha fatto un modello di ricerca interno, simile a Claude Fable 5.1.</p>
+</Slide>

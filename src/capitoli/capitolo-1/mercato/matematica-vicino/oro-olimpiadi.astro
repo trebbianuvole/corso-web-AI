@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+---
+<Slide {...Astro.props} kicker="1.3 L'AI e la matematica, da vicino" titolo="Oro alle Olimpiadi (luglio 2025)" lead="Le Olimpiadi internazionali di matematica sono la gara più difficile per i ragazzi delle superiori: sei problemi in due giorni, quattro ore e mezza per giornata.">
+  <Grid colonne={2} classe="mt-l">
+    <Card variante="peach" tag="Google DeepMind" titolo="5 problemi su 6, 35 punti su 42">Una versione di Gemini Deep Think, con dimostrazioni scritte in linguaggio normale, nei tempi della gara. Il punteggio l'hanno corretto e certificato i coordinatori delle Olimpiadi: è oro.</Card>
+    <Card tag="OpenAI" titolo="Lo stesso punteggio, senza timbro">Un modello sperimentale ha risolto gli stessi cinque problemi. OpenAI l'ha annunciato da sola, prima della fine della gara, senza la correzione ufficiale.</Card>
+  </Grid>
+  <Grid colonne={2} classe="mt-m">
+    <Card variante="sky" titolo="Un anno prima">Nel 2024 i sistemi di DeepMind si erano fermati all'argento.</Card>
+    <Card variante="sky" titolo="E i ragazzi?">Cinque studenti hanno risolto tutti e sei i problemi: 42 su 42. Meglio delle macchine.</Card>
+  </Grid>
+  <p class="footnote">Fonti: <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad" target="_blank" rel="noopener">Google DeepMind, 21 luglio 2025</a>; <a href="https://www.euronews.com/2025/07/22/did-google-deepmind-or-openai-win-gold-at-the-worlds-most-prestigious-math-competition" target="_blank" rel="noopener">Euronews, 22 luglio 2025</a>.</p>
+</Slide>

@@ -1,0 +1,16 @@
+---
+import Card from "../../../../components/Card.astro";
+import Grid from "../../../../components/Grid.astro";
+import Slide from "../../../../components/slide/Slide.astro";
+import Voce from "../../../../components/Voce.astro";
+---
+<Slide {...Astro.props} kicker="1.2 Come si addestra un LLM" titolo="Il pre-addestramento" lead="È la prima fase, la più lunga e la più costosa. Il modello legge una quantità enorme di testo e, a ogni pezzo, prova a indovinare quello che viene dopo.">
+  <Grid colonne={3} classe="mt-l">
+    <Card titolo="Cosa legge">Pagine web, libri, articoli, codice: una parte enorme di tutto il testo scritto disponibile.</Card>
+    <Card titolo="Quanto">Llama 3 di Meta, nel 2024, ha letto più di 15.000 miliardi di token. A occhio, più di cento milioni di libri.</Card>
+    <Card titolo="Come impara">Come la rete di 1.1.a4: indovina, misura l'errore, sposta un po' i pesi. Nessuno gli spiega la grammatica o i fatti: li impara indovinando.</Card>
+  </Grid>
+  <Card variante="peach mt-m" titolo="Il risultato: un completatore">Sa continuare qualunque testo, nello stile giusto. Ma non sa ancora conversare: se gli scrivete una domanda, può continuare con altre domande.</Card>
+  <p class="footnote">Fonte: <a href="https://ai.meta.com/blog/meta-llama-3/" target="_blank" rel="noopener">Meta, aprile 2024</a>. Il conto dei libri è nostro e approssimato: un libro di 300 pagine fa circa 130.000 token.</p>
+  <Voce termine="Pre-addestramento">la prima fase dell'addestramento di un LLM: il modello legge enormi quantità di testo e impara a indovinare il pezzo successivo.</Voce>
+</Slide>
