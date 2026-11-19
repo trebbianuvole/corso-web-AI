@@ -227,16 +227,16 @@ const quiz: Domanda[] = [
     slide: "matematica-lezione",
   },
   {
-    domanda: "Lean ha controllato passo per passo una dimostrazione e non ha trovato errori. Quale rischio resta?",
+    domanda: "Lean ha controllato passo per passo una dimostrazione e non ha trovato errori. Quale errore può esserci ancora?",
     opzioni: [
       "Che il nucleo di Lean abbia sbagliato i conti, perché anche lui è un modello linguistico.",
       "Che l'enunciato sia scritto male: Lean controlla la dimostrazione, non la domanda.",
       "Nessuno: una dimostrazione controllata da Lean è corretta in tutto, anche nell'enunciato.",
       "Che la dimostrazione non valga, perché l'ha scritta un'AI e non un matematico.",
-      "Che nessun matematico riesca a leggerla, e che quindi non sia una dimostrazione valida.",
+      "Che nessun matematico riesca a seguirla: in quel caso Lean la considera non verificata.",
     ],
     giusta: 1,
-    spiegazione: "Lean verifica ogni passo, ma non sa se l'enunciato dice davvero quello che volevate: se è scritto male, si dimostra la cosa sbagliata. Per Fermat un programma a parte ha controllato l'enunciato. Il nucleo di Lean è un programma piccolo e molto controllato, non un modello linguistico.",
+    spiegazione: "Lean verifica ogni passo, ma non sa se l'enunciato dice davvero quello che volevate: se è scritto male, si dimostra la cosa sbagliata. Il nucleo di Lean è un programma piccolo e molto controllato, non un modello linguistico. Che una dimostrazione sia difficile da capire per le persone è un problema vero, di cui i matematici discutono, ma non la rende sbagliata e non cambia il giudizio di Lean.",
     slide: "dimostrazione-verificata",
   },
   {
