@@ -1,7 +1,8 @@
 /* Mostra chi è entrato, leggendo il cookie noema_chi che il middleware
    scrive all'accesso («nome» oppure «nome|admin»). Serve solo a mostrare:
-   i permessi veri li controlla il middleware sul server. */
-(function () {
+   i permessi veri li controlla il middleware sul server.
+   Lo script può stare in cima alla pagina: aspetta che sia tutta caricata. */
+function mostraSessione() {
   const voce = document.cookie.split("; ").find(c => c.startsWith("noema_chi="));
   if (!voce) return;
   let valore = "";
@@ -14,4 +15,6 @@
     e.hidden = false;
   });
   if (ruolo === "admin") document.querySelectorAll("[data-solo-admin]").forEach(e => { e.hidden = false; });
-})();
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mostraSessione);
+else mostraSessione();
