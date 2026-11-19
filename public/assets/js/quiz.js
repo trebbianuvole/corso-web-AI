@@ -81,6 +81,9 @@
     return (piu && n > 0 ? "+" : "") + n;
   }
 
+  // 1 giusta, 2 giuste
+  const parola = (n, una, tante) => (n === 1 ? una : tante);
+
   const date = () => stato.risposte.filter(r => r !== null).length;
   const vuoteElenco = () => stato.risposte.map((r, i) => (r === null ? i + 1 : 0)).filter(Boolean);
 
@@ -118,7 +121,7 @@
     btnBianco.disabled = stato.risposte[stato.corrente] === null;
     if (stato.consegnato) {
       const c = conti();
-      statoEl.textContent = `Correzione: ${c.giuste} giuste, ${c.sbagliate} sbagliate, ${c.vuote} senza risposta`;
+      statoEl.textContent = `Correzione: ${c.giuste} ${parola(c.giuste, "giusta", "giuste")}, ${c.sbagliate} ${parola(c.sbagliate, "sbagliata", "sbagliate")}, ${c.vuote} senza risposta`;
     } else {
       statoEl.textContent = `Risposte date: ${date()} su ${N}`;
     }
@@ -197,6 +200,8 @@
     esito.querySelector("[data-punteggio]").textContent = numero(c.punteggio);
     esito.querySelector("[data-giuste]").textContent = c.giuste;
     esito.querySelector("[data-sbagliate]").textContent = c.sbagliate;
+    esito.querySelector("[data-parola-giuste]").textContent = parola(c.giuste, "giusta", "giuste");
+    esito.querySelector("[data-parola-sbagliate]").textContent = parola(c.sbagliate, "sbagliata", "sbagliate");
     esito.querySelector("[data-vuote]").textContent = c.vuote;
     esito.querySelector("[data-punti-giuste]").textContent = numero(c.giuste * PUNTI.giusta, true);
     esito.querySelector("[data-punti-sbagliate]").textContent = numero(c.sbagliate * PUNTI.sbagliata, true);
