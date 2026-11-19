@@ -3,7 +3,7 @@ import Card from "../../../components/Card.astro";
 import Grid from "../../../components/Grid.astro";
 import Slide from "../../../components/slide/Slide.astro";
 ---
-<Slide {...Astro.props} kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Scrivete il documento del vostro progetto" lead="Partite da quello che avete pensato nella 2.1 e aggiungete le scelte del capitolo 2. Diventerà il primo commit del vostro progetto (4.8), e poi il CLAUDE.md.">
+<Slide {...Astro.props} tipo="compito" kicker="Per la prossima volta" titoloStile="max-width:20ch" titolo="Scrivete il documento del vostro progetto" lead="Partite da quello che avete pensato nella 2.1 e aggiungete le scelte del capitolo 2. Diventerà il primo commit del vostro progetto (4.8), e poi il CLAUDE.md.">
   <Grid colonne={4} classe="mt-l">
     <Card variante="peach" titolo="Obiettivo e MVP">Cosa fa il sito, e qual è la versione più piccola che funziona?</Card>
     <Card titolo="Pubblico">Chi lo usa, da quale dispositivo, con quali esigenze?</Card>
