@@ -8,3 +8,7 @@ dist/
 
 # Sistema
 .DS_Store
+
+# Variabili d'ambiente locali (npm run prova-accesso)
+.env
+.env.*

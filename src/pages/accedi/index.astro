@@ -1,0 +1,32 @@
+---
+// La pagina di accesso. Il modulo lo riceve il middleware (src/lib/accesso.mjs):
+// se nome e password sono giusti scrive il cookie della sessione e rimanda alla
+// pagina chiesta (campo «da», compresa la slide dopo il #); altrimenti torna qui
+// con ?errore=… e accedi.js mostra il messaggio.
+import Pagina from "../../layouts/Pagina.astro";
+import { conVersione } from "../../lib/versione";
+---
+<Pagina titolo="Accedi · Noema Lab" descrizione="Accesso ai corsi di Noema Lab." radice="../">
+<header class="scheda-top">
+  <a class="home-link" href="../">Noema <span>Lab</span></a>
+</header>
+<main class="accesso">
+  <h1>Accedi</h1>
+  <p class="lead">I corsi sono riservati agli iscritti. Nome utente e password li consegna il docente.</p>
+
+  <div class="avviso" role="alert" data-messaggio hidden></div>
+  <p class="gia-dentro muted" data-utente hidden>Avete già fatto l'accesso come <b></b>. Per cambiare account, entrate con un altro nome.</p>
+
+  <form class="modulo" method="post" action="/accedi/" data-modulo>
+    <label for="nome">Nome utente</label>
+    <input id="nome" name="nome" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+    <label class="spunta"><input type="checkbox" data-mostra> Mostra la password</label>
+    <input type="hidden" name="da" value="">
+    <button class="btn orange" type="submit">Entra</button>
+  </form>
+</main>
+<script is:inline src={`../${conVersione("assets/js/accedi.js")}`}></script>
+<script is:inline src={`../${conVersione("assets/js/sessione.js")}`}></script>
+</Pagina>

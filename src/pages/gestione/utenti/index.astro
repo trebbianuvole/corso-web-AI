@@ -1,0 +1,92 @@
+---
+// Gestione degli utenti: genera password e righe per la variabile UTENTI di
+// Vercel. Tutto il calcolo avviene nel browser (utenti.js): le password non
+// vengono mandate a nessun server. La pagina è riservata agli account con «*»;
+// finché UTENTI è vuota è aperta, per poter creare il primo account.
+import Pagina from "../../../layouts/Pagina.astro";
+import BarraUtente from "../../../components/BarraUtente.astro";
+import { corsi } from "../../../lib/corsi.mjs";
+import { conVersione } from "../../../lib/versione";
+---
+<Pagina titolo="Gestione utenti · Noema Lab" descrizione="Creare gli account per i corsi di Noema Lab." radice="../../">
+<BarraUtente radice="../../" />
+<main class="scheda gestione">
+  <p class="kicker">Gestione</p>
+  <h1>Utenti</h1>
+  <p class="lead">Qui create gli account degli studenti. La pagina inventa le password e prepara le righe da aggiungere su Vercel, nella variabile <code>UTENTI</code>. Tutto avviene nel vostro browser: le password non escono da questa pagina.</p>
+
+  <form class="modulo mt-l" data-genera>
+    <label for="elenco">Utenti da creare, uno per riga</label>
+    <p class="aiuto">Scrivete nome e cognome (<i>Mario Rossi</i> diventa <code>mario.rossi</code>) oppure direttamente un nome utente. Per scegliere voi la password, scrivetela dopo una barra verticale: <code>admin | la-vostra-password</code>. Altrimenti la pagina ne inventa una.</p>
+    <textarea id="elenco" rows="7" spellcheck="false" placeholder={"Mario Rossi\nGiulia Bianchi"} required></textarea>
+
+    <fieldset>
+      <legend>Possono vedere</legend>
+      {corsi.map((c, i) => (
+        <label class="spunta"><input type="checkbox" name="corso" value={c.slug} checked={i === 0}> {c.titolo}</label>
+      ))}
+      <label class="spunta"><input type="checkbox" name="corso" value="*"> Tutti i corsi e questa pagina (account passe-partout, per i docenti)</label>
+    </fieldset>
+
+    <label for="nota">Nota per ritrovarli nell'elenco (facoltativa)</label>
+    <input id="nota" placeholder="es. Classe 3A, 2026/27" maxlength="80">
+
+    <button class="btn orange" type="submit">Genera password e righe</button>
+    <p class="stato" data-stato aria-live="polite"></p>
+  </form>
+
+  <section data-risultato hidden>
+    <h2>1. Da consegnare</h2>
+    <p>Le password non vengono salvate da nessuna parte: copiatele adesso. Se le perdete, ne generate di nuove.</p>
+    <table class="compare mt-m">
+      <thead><tr><th scope="col">Nome utente</th><th scope="col">Password</th></tr></thead>
+      <tbody data-tabella></tbody>
+    </table>
+    <p class="mt-m"><button class="btn ghost" type="button" data-copia-tabella>Copia la tabella</button></p>
+
+    <h2>2. Da aggiungere su Vercel</h2>
+    <div class="copy-wrap mt-m">
+      <pre class="code" data-righe></pre>
+      <button class="btn" type="button" data-copia-righe>Copia</button>
+    </div>
+    <ol class="passi-vercel">
+      <li>Nel progetto su Vercel aprite <b>Settings</b>, poi <b>Environment Variables</b>.</li>
+      <li>Modificate la variabile <code>UTENTI</code> e incollate le righe in fondo. Se un nome c'è già, vale la riga più in basso: cancellate quella vecchia.</li>
+      <li>Salvate, poi rifate il deploy: le variabili cambiate valgono solo per i deploy successivi. In <b>Deployments</b>, aprite il menu <b>⋯</b> dell'ultimo deploy di produzione e scegliete <b>Redeploy</b>.</li>
+    </ol>
+  </section>
+
+  <h2>Cambiare o togliere un utente</h2>
+  <ul class="elenco">
+    <li><b>Nuova password:</b> generate qui una riga con lo stesso nome e sostituite quella vecchia in <code>UTENTI</code>.</li>
+    <li><b>Togliere un utente:</b> cancellate la sua riga.</li>
+    <li>Dopo ogni modifica serve un nuovo deploy. Le sessioni aperte di quell'utente smettono di valere.</li>
+    <li><b>Chiudere le sessioni di tutti:</b> cambiate <code>SEGRETO_SESSIONI</code> e rifate il deploy.</li>
+  </ul>
+
+  <h2>Com'è fatta una riga</h2>
+  <pre class="code mt-m">{`# Classe 3A, 2026/27           le righe con # sono note
+mario.rossi sviluppo-web-ai pbkdf2-sha256$600000$…
+admin * pbkdf2-sha256$600000$…`}</pre>
+  <p class="mt-m">Tre parti separate da spazi: il nome utente; i corsi che può vedere, separati da virgole (<code>*</code> vuol dire tutti i corsi e questa pagina); l'impronta della password. L'impronta si calcola dalla password, ma dall'impronta non si torna alla password: chi legge l'elenco non trova le password.</p>
+
+  <details class="primo-avvio">
+    <summary><h2>Primo avvio</h2></summary>
+    <ol class="passi-vercel">
+      <li>Generate il segreto che firma le sessioni e copiatelo su Vercel in una variabile <code>SEGRETO_SESSIONI</code> di tipo <b>Secret</b>, per gli ambienti Production e Preview.
+        <div class="segreto">
+          <button class="btn ghost" type="button" data-genera-segreto>Genera il segreto</button>
+          <div class="copy-wrap" data-segreto hidden>
+            <pre class="code" data-segreto-valore></pre>
+            <button class="btn" type="button" data-copia-segreto>Copia</button>
+          </div>
+        </div>
+      </li>
+      <li>Qui sopra create il vostro account con «Tutti i corsi» e copiate la riga su Vercel in una variabile <code>UTENTI</code> di tipo <b>Config</b>, per Production e Preview. Config, non Secret: così potrete rileggerla e modificarla.</li>
+      <li>Rifate il deploy e accedete con il vostro account.</li>
+    </ol>
+    <p class="mt-m muted">Finché <code>UTENTI</code> è vuota, questa pagina è aperta a tutti: non contiene dati, ed è l'unico modo per creare il primo account. I corsi invece restano chiusi.</p>
+  </details>
+</main>
+<script is:inline src={`../../${conVersione("assets/js/utenti.js")}`}></script>
+</Pagina>

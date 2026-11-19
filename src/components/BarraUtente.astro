@@ -1,0 +1,24 @@
+---
+// Barra in alto delle pagine riservate che non sono slide (pagina del corso,
+// gestione utenti): a sinistra Noema Lab, a destra chi è entrato e «Esci».
+// Il nome lo scrive sessione.js leggendo il cookie noema_chi; il pulsante
+// «Esci» funziona anche senza JavaScript.
+import { conVersione } from "../lib/versione";
+
+interface Props {
+  /** percorso relativo verso la radice del sito, es. "../" */
+  radice: string;
+}
+const { radice } = Astro.props;
+---
+<header class="scheda-top barra-utente">
+  <a class="home-link" href={radice}>Noema <span>Lab</span></a>
+  <span class="utente">
+    <span class="muted" data-utente hidden>Entrati come <b></b></span>
+    <a href={`${radice}gestione/utenti/`} data-solo-admin hidden>Gestione utenti</a>
+    <form method="post" action="/esci/">
+      <button class="btn ghost" type="submit">Esci</button>
+    </form>
+  </span>
+</header>
+<script is:inline src={`${radice}${conVersione("assets/js/sessione.js")}`}></script>

@@ -1,0 +1,82 @@
+---
+// La pagina del corso: titolo animato ed elenco dei capitoli, generato dai dati
+// dei capitoli. È riservata: il middleware (middleware.ts) la manda solo a chi
+// ha fatto l'accesso con un account che vede questo corso.
+import Pagina from "../../layouts/Pagina.astro";
+import BarraUtente from "../../components/BarraUtente.astro";
+import { capitoli } from "../../lib/capitoli";
+import { conVersione } from "../../lib/versione";
+import { schede } from "../../lib/schede";
+
+const TOTALE = 12; // capitoli previsti dal corso
+const pronti = new Map(capitoli.map(c => [c.numero, c]));
+const numeri = Array.from({ length: TOTALE }, (_, i) => i + 1);
+// Le pagine di consultazione (src/lib/schede.ts): il glossario sta in evidenza
+const operative = schede.filter(s => s.tipo === "operativa" && s.sigla !== "S.1");
+const aggiornabili = schede.filter(s => s.tipo === "aggiornabile");
+
+// Il titolo si "genera" un token alla volta (home.js)
+const passi = [
+  ["Costruire", ["Costruire", "Creare", "Imparare"]],
+  [" siti", [" siti", " app", " pagine"]],
+  [" web", [" web", " veri", " belli"]],
+  [" con", [" con", " grazie", " usando"]],
+  [" l'", [" l'", " Claude", " un"]],
+  ["AI", ["AI", "aiuto", "intelligenza"]],
+];
+---
+<Pagina titolo="Costruire siti web con l'AI" descrizione="Materiali del corso ENGIM di uso dell'AI e vibe coding: dodici capitoli per progettare e pubblicare un sito con l'intelligenza artificiale." radice="../">
+<BarraUtente radice="../" />
+<main>
+  <section class="home-hero">
+    <p class="eyebrow">Corso ENGIM sull'AI e sul vibe coding</p>
+    <h1 class="gen-title" id="gen-title" aria-label="Costruire siti web con l'AI" data-passi={JSON.stringify(passi)}>Costruire siti web con l'AI</h1>
+    <div class="gen-candidates" id="gen-candidates" aria-hidden="true"></div>
+    <p class="sub">Uso dell'intelligenza artificiale e vibe coding: dodici capitoli per progettare e pubblicare un sito, capendo cosa succede dietro le quinte.</p>
+  </section>
+
+  <section class="lessons" aria-labelledby="capitoli">
+    <h2 id="capitoli">I capitoli</h2>
+    <ol class="lesson-list">
+      {numeri.map(n => {
+        const cap = pronti.get(n);
+        return cap ? (
+          <li>
+            <a href={`../${cap.slug}/`}>
+              <span class="n">{n}</span>
+              <span class="title">{cap.home.titolo}<span class="desc">{cap.home.desc}</span></span>
+              <span class="go">Apri il capitolo</span>
+            </a>
+          </li>
+        ) : (
+          <li><div class="soon"><span class="n">{n}</span><span class="title">Capitolo {n}</span><span>In preparazione</span></div></li>
+        );
+      })}
+    </ol>
+  </section>
+
+  <section class="lessons consulta" aria-labelledby="consultare">
+    <h2 id="consultare">Da consultare</h2>
+    <p class="muted consulta-intro">Le schede da tenere a portata di mano mentre lavorate, anche da stampare. <a href="../schede/">Tutte le schede</a></p>
+    <ul class="indice-schede in-evidenza">
+      <li><a href="../schede/glossario/"><span class="sigla">S.1</span><span class="t">Glossario</span><span class="b">Tutte le parole del corso, con il rimando alla slide che le spiega.</span></a></li>
+      <li><a href="../fonti/"><span class="sigla">Fonti</span><span class="t">Per saperne di più</span><span class="b">Le fonti citate nelle slide, capitolo per capitolo.</span></a></li>
+    </ul>
+    <h3>Schede operative</h3>
+    <ul class="indice-schede">
+      {operative.map(s => <li><a href={`../schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+    </ul>
+    <h3>Schede aggiornabili</h3>
+    <p class="muted">Modelli, prodotti, prezzi e strumenti: con la data dell'ultimo controllo.</p>
+    <ul class="indice-schede">
+      {aggiornabili.map(s => <li><a href={`../schede/${s.nome}/`}><span class="sigla">{s.sigla}</span><span class="t">{s.titolo}</span><span class="b">{s.breve}</span></a></li>)}
+    </ul>
+  </section>
+</main>
+
+<footer class="site-foot">
+  Sito costruito con Claude, pubblicato da GitHub con Vercel.
+</footer>
+
+<script is:inline src={`../${conVersione("assets/js/home.js")}`}></script>
+</Pagina>
