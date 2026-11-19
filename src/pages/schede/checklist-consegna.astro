@@ -1,0 +1,45 @@
+---
+// Scheda operativa S.14: la checklist di consegna al cliente.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.14" descrizione="Scheda del corso: la checklist della consegna professionale di un sito o di una webapp al cliente: account, accessi, backup, documentazione, costi e manutenzione.">
+  <p class="lead">Il lavoro è finito quando il cliente può andare avanti senza di voi: i servizi sono suoi, sa aggiornare i contenuti, sa cosa paga e chi chiamare.</p>
+
+  <h2>La checklist</h2>
+  <Checklist unaColonna>
+    <Punto nota="Repository, dominio, Vercel, Supabase, chiavi API, pagamenti.">Tutto intestato al cliente</Punto>
+    <Punto nota="Voi solo come collaboratori, se concordato. Nessuna password passata in chiaro.">Gli accessi sono suoi</Punto>
+    <Punto nota="Un manuale di una pagina, provato da lui.">Il cliente aggiorna da solo</Punto>
+    <Punto nota="Cosa, dove, ogni quanto; il ripristino provato una volta.">Backup e ripristino</Punto>
+    <Punto nota="README seguito su un computer pulito, CLAUDE.md aggiornato, le decisioni scritte.">La documentazione</Punto>
+    <Punto nota="Cosa paga, a chi, quando si rinnova (scheda U.6).">I costi</Punto>
+    <Punto nota="Chi la fa, con quale frequenza, e cosa succede se nessuno la fa.">La manutenzione</Punto>
+    <Punto nota="Passata tutta (scheda S.13).">La checklist di pubblicazione</Punto>
+  </Checklist>
+
+  <h2>Come passano i servizi</h2>
+  <table class="compare">
+    <thead><tr><th>Servizio</th><th>Come passa al cliente</th></tr></thead>
+    <tbody>
+      <tr><td>Repository GitHub</td><td data-label="Come passa">Settings › Transfer; passano issue, pull request e storia.</td></tr>
+      <tr><td>Progetto Vercel</td><td data-label="Come passa">Settings › General › Transfer, senza interruzioni; passano domini e variabili.</td></tr>
+      <tr><td>Progetto Supabase</td><td data-label="Come passa">Dalle impostazioni, verso l'organizzazione del cliente.</td></tr>
+      <tr><td>Dominio</td><td data-label="Come passa">Registrato a nome del cliente. Per un .it, per cambiare intestatario o registrar serve il codice AuthInfo.</td></tr>
+      <tr><td>Chiavi API, pagamenti, CMS</td><td data-label="Come passa">Create dal cliente; quelle fatte con i vostri account si revocano.</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Meglio ancora: il cliente crea i suoi account dall'inizio e vi invita. Così può togliervi l'accesso quando vuole.</p>
+
+  <h2>I tre documenti</h2>
+  <ul>
+    <li><b>README</b>, per chi apre il progetto la prima volta: cos'è, come si installa e si avvia, dove sono le cose, chi contattare.</li>
+    <li><b>CLAUDE.md</b>, per l'agente: stack, comandi, regole, divieti, lo schema dei dati. Aggiornato a ogni decisione.</li>
+    <li><b>Le decisioni</b>, una riga ciascuna con la data: perché Supabase, perché niente banner dei cookie.</li>
+  </ul>
+  <p>Claude scrive un buon README in un minuto. Poi seguitelo alla lettera su un computer pulito: ogni passo che non funziona è un errore del documento.</p>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository" target="_blank" rel="noopener">GitHub, trasferire un repository</a>; <a href="https://vercel.com/docs/projects/transferring-projects" target="_blank" rel="noopener">Vercel, trasferire un progetto</a>; <a href="https://supabase.com/docs/guides/platform/project-transfer" target="_blank" rel="noopener">Supabase, trasferire un progetto</a>; <a href="https://www.nic.it/en/manage-your-it" target="_blank" rel="noopener">Registro .it</a>. Nel corso: <RimandoSlide slide="chiavi-del-cliente" />, <RimandoSlide slide="cliente-aggiorna" />, <RimandoSlide slide="backup-ripristino" />, <RimandoSlide slide="documentare-progetto" />, <RimandoSlide slide="passaggio-altro-agente" />, <RimandoSlide slide="checklist-consegna" />.</p>
+</Scheda>

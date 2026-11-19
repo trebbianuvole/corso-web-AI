@@ -1,0 +1,40 @@
+---
+// Scheda operativa S.13: la checklist di pubblicazione.
+import Scheda from "../../layouts/Scheda.astro";
+import RimandoSlide from "../../components/RimandoSlide.astro";
+import Checklist from "../../components/Checklist.astro";
+import Punto from "../../components/Punto.astro";
+---
+<Scheda sigla="S.13" descrizione="Scheda del corso: la checklist da passare prima di mettere online un sito o una webapp, e i passi della pubblicazione con Vercel.">
+  <p class="lead">Pubblicare non è finire, ma è il momento in cui gli errori cominciano a costare. Prima di aprire il sito al pubblico, voce per voce: sì, no, non so.</p>
+
+  <h2>La checklist</h2>
+  <Checklist unaColonna>
+    <Punto nota="Tutti i criteri provati, i test passano, anche nei casi limite (S.12).">Funziona</Punto>
+    <Punto nota="Almeno tre persone hanno fatto il compito principale senza aiuto.">Si usa</Punto>
+    <Punto nota="Telefono, tastiera, testo ingrandito, contrasto (S.10).">Si legge ovunque</Punto>
+    <Punto nota="Nessuna chiave segreta nel browser o nel repository, regole sulle righe provate con due utenti, dipendenze senza avvisi (S.9).">È sicuro</Punto>
+    <Punto nota="Informativa pubblicata, niente servizi esterni non necessari, banner dei cookie solo se serve.">Rispetta la privacy</Punto>
+    <Punto nota="Lighthouse sul telefono, sulla versione pubblicata.">È veloce</Punto>
+    <Punto nota="Title, description, sitemap, Search Console (S.11).">Si trova</Punto>
+    <Punto nota="Dominio, Vercel, Supabase e chiavi intestati a lui, backup provato, chi fa la manutenzione è scritto (S.14).">È del cliente</Punto>
+  </Checklist>
+
+  <h2>I passi su Vercel</h2>
+  <ol>
+    <li>Collegate GitHub a Vercel e scegliete il repository: Vercel riconosce Astro, comando di build e cartella <code>dist</code> sono già giusti.</li>
+    <li>Le variabili d'ambiente vanno in Settings › Environment Variables, con gli stessi nomi del <code>.env</code>: valori di prova per l'anteprima, valori veri per la produzione. Dopo una modifica serve una nuova pubblicazione.</li>
+    <li>Il dominio si registra a nome del cliente e si aggiunge in Settings › Domains; Vercel dice quali record impostare. Il certificato per https arriva da solo.</li>
+    <li>Ogni ramo e ogni pull request hanno la loro anteprima: provate lì, poi fate il merge.</li>
+    <li>Il piano Hobby è per uso personale e non commerciale; il sito di un cliente vero va sul piano Pro, intestato a lui (<a href="../costi-piani/">scheda U.6</a>).</li>
+  </ol>
+
+  <h2>Dopo</h2>
+  <ul>
+    <li>Se un rilascio rompe il sito, su Vercel si rimette online la pubblicazione precedente; intanto si prepara il revert.</li>
+    <li>I log di Vercel e del database dicono cosa è successo quando un utente scrive «non funziona».</li>
+    <li>Una revisione incrociata con un altro gruppo, con questa checklist, trova quello che a voi sfugge.</li>
+  </ul>
+
+  <p class="footnote scheda-fonti">Fonti: <a href="https://vercel.com/docs/plans/hobby" target="_blank" rel="noopener">Vercel, piano Hobby</a>; <a href="https://vercel.com/docs/environment-variables" target="_blank" rel="noopener">Vercel, variabili d'ambiente</a>; <a href="https://vercel.com/docs/domains/working-with-domains/add-a-domain" target="_blank" rel="noopener">Vercel, aggiungere un dominio</a>; <a href="https://vercel.com/docs/instant-rollback" target="_blank" rel="noopener">Vercel, Instant Rollback</a>. Nel corso: <RimandoSlide slide="checklist-pubblicazione" />, <RimandoSlide slide="revisione-incrociata" />, <RimandoSlide slide="github-vercel" />, <RimandoSlide slide="anteprima-ramo" />, <RimandoSlide slide="dominio-sito" />, <RimandoSlide slide="env-vercel" />, <RimandoSlide slide="pubblicare-non-finire" />, <RimandoSlide slide="log-produzione" />.</p>
+</Scheda>
