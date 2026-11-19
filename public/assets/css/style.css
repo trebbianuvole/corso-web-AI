@@ -470,7 +470,7 @@ kbd {
 }
 
 /* ---------- Claude: modelli ---------- */
-.models { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--r-l); overflow: hidden; }
+.models { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--r-l); overflow: hidden; }
 .model { padding: 20px 18px; background: var(--card); border-right: 1px solid var(--line); }
 .model:last-child { border-right: 0; }
 .model h3 { font-size: 1.3em; }
@@ -479,8 +479,7 @@ kbd {
 .model .meter i { flex: 1; height: 8px; border-radius: 4px; background: var(--paper-2); }
 .model .meter i.on { background: var(--orange); }
 .models-axis { display: flex; justify-content: space-between; font-size: .75em; color: var(--muted); margin-top: 10px; }
-@media (max-width: 860px) { .models { grid-template-columns: repeat(2, 1fr); } .model:nth-child(2) { border-right: 0; } .model:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
-@media (max-width: 520px) { .models { grid-template-columns: 1fr; } .model { border-right: 0; border-bottom: 1px solid var(--line); } }
+@media (max-width: 720px) { .models { grid-template-columns: 1fr; } .model { border-right: 0; border-bottom: 1px solid var(--line); } .model:last-child { border-bottom: 0; } }
 
 /* Pipeline */
 .pipe { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; align-items: stretch; }
