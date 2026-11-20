@@ -845,21 +845,30 @@ a.card.case:hover p { color: var(--ink); }
 .layers-code .code b { display: block; font-family: var(--f-body); color: var(--sun); margin-bottom: 4px; font-size: 1.05em; }
 .layers-note { font-size: .75em; color: var(--muted); margin-top: 10px; min-height: 1.5em; }
 
-/* Schermi di dimensioni diverse */
-.screens { display: flex; gap: clamp(14px, 3vw, 40px); align-items: flex-end; justify-content: center; }
-.screen { border: 3px solid var(--ink); border-radius: 14px; background: var(--card); padding: 10px; display: grid; gap: 6px; align-content: start; }
-.screen i { display: block; height: 10px; border-radius: 4px; background: var(--paper-2); }
-.screen i.h { background: var(--orange); height: 14px; width: 60%; }
-.screen i.img { height: 40px; background: var(--peach); }
-.screen .cols { display: grid; gap: 6px; }
-.screen.phone { width: 90px; height: 170px; }
-.screen.tablet { width: 170px; height: 220px; }
+/* Schermi di dimensioni diverse.
+   Le misure sono in --u, il «pixel» del disegno: vale 1px se nella colonna c'è posto
+   (il disegno è largo 640), meno se è stretta. Così il disegno si rimpicciolisce tutto
+   insieme e non esce mai dalla sua colonna. */
+.screens { container-type: inline-size; display: flex; align-items: flex-end; justify-content: center; --u: min(1px, 100cqi / 640); }
+.screens figure { margin: 0; flex: none; }
+.screens figure + figure { margin-left: calc(30 * var(--u)); }
+.screen { border: calc(3 * var(--u)) solid var(--ink); border-radius: calc(14 * var(--u)); background: var(--card); padding: calc(10 * var(--u)); display: grid; gap: calc(6 * var(--u)); align-content: start; }
+.screen i { display: block; height: calc(10 * var(--u)); border-radius: calc(4 * var(--u)); background: var(--paper-2); }
+.screen i.h { background: var(--orange); height: calc(14 * var(--u)); width: 60%; }
+.screen i.img { height: calc(40 * var(--u)); background: var(--peach); }
+.screen .cols { display: grid; gap: calc(6 * var(--u)); }
+.screen.phone { width: calc(90 * var(--u)); height: calc(170 * var(--u)); }
+.screen.tablet { width: calc(170 * var(--u)); height: calc(220 * var(--u)); }
 .screen.tablet .cols { grid-template-columns: 1fr 1fr; }
-.screen.desk { width: 320px; height: 200px; border-bottom-width: 14px; }
+.screen.desk { width: calc(320 * var(--u)); height: calc(200 * var(--u)); border-bottom-width: calc(14 * var(--u)); }
 .screen.desk .cols { grid-template-columns: 1fr 1fr 1fr; }
-.screens figcaption { text-align: center; font-size: .75em; color: var(--muted); margin-top: 8px; }
-.screens figure { margin: 0; }
-@media (max-width: 640px) { .screen.desk { width: 180px; } }
+/* La didascalia va a capo dentro la larghezza dello schermo, senza allargare la figura */
+.screens figcaption { width: 0; min-width: 100%; text-align: center; font-size: .75em; color: var(--muted); margin-top: 8px; }
+/* Sul telefono: telefono e tablet in una riga, il computer sotto */
+@media (max-width: 640px) {
+  .screens { flex-wrap: wrap; row-gap: 20px; --u: min(1px, 100cqi / 330); }
+  .screens figure:last-child { flex-basis: 100%; margin-left: 0; display: grid; justify-items: center; }
+}
 
 /* Pipeline a quattro passi */
 .pipe.p4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -947,13 +956,6 @@ a.card.case:hover p { color: var(--ink); }
 .copy-wrap .code { padding-right: 90px; white-space: pre-wrap; }
 .mcp-svg { max-height: 50vh; }
 .split > * { min-width: 0; }
-@media (max-width: 640px) {
-  .screens { flex-wrap: wrap; }
-  .screen.phone { width: 70px; height: 130px; }
-  .screen.tablet { width: 120px; height: 160px; }
-  .screen.desk { width: 100%; max-width: 300px; }
-  .screens figure:last-child { flex-basis: 100%; display: grid; justify-items: center; }
-}
 .compare.c4 td:nth-child(2) { color: var(--ink); }
 .compare.c4 thead th { color: var(--ink); }
 .compare.c4 thead th:nth-child(2) { color: var(--orange-deep); }
