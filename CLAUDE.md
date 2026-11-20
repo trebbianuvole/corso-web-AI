@@ -38,7 +38,7 @@ src/layouts/Quiz.astro            la pagina del quiz di un capitolo
 src/components/slide/Slide.astro  slide normale (con etichetta e pulsante dell'approfondimento)
 src/components/slide/Apertura.astro  apertura di sezione (X.Y.0)
 src/components/slide/Approfondimento.astro  la finestra di un approfondimento
-src/components/                   Card, Grid, Steps + Passo, Defs + Def, SieteQui (la mappa del corso), BarraUtente (chi è entrato, «Esci»);
+src/components/                   Card, Grid, Steps + Passo, Defs + Def, SieteQui (la mappa del corso, per ora non usata), BarraUtente (chi è entrato, «Esci»);
                                   Voce (glossario), RimandoSlide, Checklist + Punto, Copiabile (schede)
 src/capitoli/capitolo-N/capitolo.ts   dati del capitolo e ordine di sezioni e slide
 src/capitoli/capitolo-N/copertina-N.astro
@@ -86,7 +86,7 @@ docs/scaletta-corso.md            la scaletta del corso
   - confronti ed elenchi: `.versus`, `.compare` (tabelle), `.defs` (`Defs`), `.steps` (`Steps`), `.spectrum`, `.milestones`, `.pila`, `.chips`;
   - conversazioni e codice: `.bubble` (chat), `.term` (terminale), i blocchi di codice;
   - impaginazione: `.slide-inner.split`;
-  - la mappa del corso: componente `SieteQui` (`<SieteQui capitolo={N} />` sulle copertine dal capitolo 2 in poi).
+  - la mappa del corso: componente `SieteQui`, tolto per ora dalle copertine e dalla 2.1 perché creava confusione; si rimette con `<SieteQui capitolo={N} />`.
 
   Prima di inventare uno stile nuovo, riusate questi.
 

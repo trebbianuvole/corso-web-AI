@@ -22,7 +22,6 @@ const capitolo: Capitolo = {
       slide: [
         "apertura-piano",
         "sito-ricetta",
-        "mappa-corso",
         "piano-fa-mano-prima",
         "differenza-fa-brief",
         "prima-accendere-fornelli",
