@@ -801,8 +801,10 @@ a.card.case:hover p { color: var(--ink); }
 .url .seg small { font-family: var(--f-body); font-size: .45em; color: var(--muted); line-height: 1.3; max-width: 16ch; }
 .url .seg small b { display: block; color: var(--ink); font-family: var(--f-display); font-size: 1.15em; }
 
-/* Codice piccolo dentro le schede */
-.card .code { font-size: .74em; padding: 12px 14px; margin-top: 12px; }
+/* Codice piccolo dentro le schede: abbastanza piccolo da stare nelle quattro colonne
+   di .g4 (per esempio il JSON della 2.5.3); se una riga non ci sta va a capo,
+   invece di mostrare la barra di scorrimento */
+.card .code { font-size: .68em; padding: 12px 10px; margin-top: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .code .k { color: var(--sun); }
 .code .s { color: #f4b28f; }
 .code .m { color: #9fb0cf; }
