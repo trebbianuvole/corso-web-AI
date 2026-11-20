@@ -121,12 +121,11 @@ Etichette:
 ### 2.1 Organizzare un progetto
 - 2.1.0 Apertura
 - 2.1.1 **Un sito è una ricetta.**
-- 2.1.2 **La mappa del corso.** Novità, idea di Gilberto con le parole della ricetta: la ricetta (progettare), i fornelli (costruire), l'assaggio (verificare), l'impiattamento (pubblicare), il giorno dopo (mantenere). Ogni copertina di capitolo mostra «siete qui» (componente `SieteQui`).
-  - Tappe e capitoli: la ricetta 2 e 3; i fornelli 4, 5, 6, 7, 8 e 10; l'assaggio 11; l'impiattamento 9; il giorno dopo 12. Il capitolo 1 resta fuori dalla mappa.
-- 2.1.3 **Il piano si fa a mano, prima.**
-- 2.1.4 **La differenza la fa il brief.** **[Con l'AI]**
-- 2.1.5 **Prima di accendere i fornelli.** **[Checklist]**
-- 2.1.6 **[Attività] Pensate al vostro sito.**
+- 2.1.2 **Il piano si fa a mano, prima.**
+- 2.1.3 **La differenza la fa il brief.** **[Con l'AI]**
+- 2.1.4 **Prima di accendere i fornelli.** **[Checklist]**
+- 2.1.5 **[Attività] Pensate al vostro sito.**
+- *Tolta per ora:* la slide «La mappa del corso» (idea di Gilberto con le parole della ricetta: la ricetta, i fornelli, l'assaggio, l'impiattamento, il giorno dopo) e il «siete qui» sulle copertine dei capitoli. Creava confusione. Il componente `SieteQui` resta nel codice, con tappe e capitoli: per rimetterla basta richiamarlo.
 
 ### 2.2 Dal piano al progetto
 - 2.2.0 Apertura
