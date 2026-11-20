@@ -272,8 +272,17 @@ kbd {
   font-family: var(--f-mono);
   font-size: .8em;
   line-height: 1.6;
-  overflow-x: auto;
   margin: 0;
+  /* Niente barra di scorrimento: una riga troppo lunga va a capo */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+/* Sul computer il codice delle slide sta nella colonna senza andare a capo.
+   Oltre i 1440px il testo della slide cresce ancora ma la colonna no (1180px):
+   il codice si ferma a 16px. Tra 960 e 1280px scende con la larghezza dello schermo.
+   Le regole più avanti (.card .code, .layers-code .code) hanno le loro misure. */
+@media (min-width: 961px) {
+  .slide .code { font-size: min(.8em, 1.18vw, 16px); }
 }
 
 /* ---------- Timeline storia ---------- */
@@ -790,6 +799,8 @@ a.card.case:hover p { color: var(--ink); }
 /* Albero dei file */
 .tree .c { color: #9fb0cf; }
 .tree .d { color: var(--sun); }
+/* Sul telefono un albero a capo perde la forma: carattere più piccolo, così le righe ci stanno */
+@media (max-width: 640px) { .code.tree { font-size: min(.8em, 3vw); padding-left: 14px; padding-right: 14px; } }
 
 /* Anatomia di un indirizzo */
 .url { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--f-mono); font-size: clamp(1rem, 2.2vw, 1.9rem); }
@@ -802,9 +813,8 @@ a.card.case:hover p { color: var(--ink); }
 .url .seg small b { display: block; color: var(--ink); font-family: var(--f-display); font-size: 1.15em; }
 
 /* Codice piccolo dentro le schede: abbastanza piccolo da stare nelle quattro colonne
-   di .g4 (per esempio il JSON della 2.5.3); se una riga non ci sta va a capo,
-   invece di mostrare la barra di scorrimento */
-.card .code { font-size: .68em; padding: 12px 10px; margin-top: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+   di .g4 (per esempio il JSON della 2.5.3) */
+.card .code { font-size: .68em; padding: 12px 10px; margin-top: 12px; }
 .code .k { color: var(--sun); }
 .code .s { color: #f4b28f; }
 .code .m { color: #9fb0cf; }
@@ -907,7 +917,7 @@ a.card.case:hover p { color: var(--ink); }
 .term { background: #151b2b; color: #e9edf6; border-radius: var(--r-m); overflow: hidden; font-family: var(--f-mono); font-size: .78em; line-height: 1.7; }
 .term .bar { display: flex; gap: 6px; padding: 10px 14px; background: #232b40; }
 .term .bar i { width: 10px; height: 10px; border-radius: 50%; background: #4a5470; }
-.term pre { margin: 0; padding: 16px 20px; white-space: pre-wrap; }
+.term pre { margin: 0; padding: 16px 20px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .term .u { color: var(--sun); }
 .term .dot { color: var(--orange); }
 .term .dim { color: #8a93ab; }
@@ -955,7 +965,7 @@ a.card.case:hover p { color: var(--ink); }
 .copy-wrap { position: relative; }
 .copy-wrap .btn { position: absolute; top: 12px; right: 12px; background: #2c3a5c; border-color: #2c3a5c; font-size: .7em; padding: 8px 12px; }
 .copy-wrap .btn:hover { background: var(--orange); border-color: var(--orange); }
-.copy-wrap .code { padding-right: 90px; white-space: pre-wrap; }
+.copy-wrap .code { padding-right: 90px; }
 .mcp-svg { max-height: 50vh; }
 .split > * { min-width: 0; }
 .compare.c4 td:nth-child(2) { color: var(--ink); }
@@ -1566,7 +1576,6 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 .scheda ul:not([class]) li + li, .scheda ol:not([class]) li + li { margin-top: .35em; }
 .scheda h2 + ul, .scheda h2 + .checklist, .scheda p + .checklist, .scheda h3 + .checklist, .scheda h3 + p { margin-top: .8em; }
 .scheda .nel-corso { margin-top: 2.5em; }
-.scheda pre.code { overflow-x: auto; }
 
 .indice-schede { list-style: none; padding: 0; margin: 1em 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .indice-schede a { display: grid; grid-template-columns: 3.4em 1fr; align-content: start; gap: 2px 12px; height: 100%; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-s); color: var(--ink); text-decoration: none; }
@@ -1720,7 +1729,6 @@ dialog.approf.entra[open] .approf-main { animation: approf-arriva .5s cubic-bezi
 
 /* Gestione utenti */
 .gestione .compare td.mono { font-family: var(--f-mono); font-weight: 400; color: var(--ink); }
-.gestione .copy-wrap .code { overflow-wrap: anywhere; }
 .passi-vercel { margin-top: 18px; padding-left: 1.3em; }
 .passi-vercel li + li { margin-top: 10px; }
 .elenco { padding-left: 1.2em; margin-top: .8em; }
